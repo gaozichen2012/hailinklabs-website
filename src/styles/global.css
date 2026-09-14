@@ -135,7 +135,7 @@ h1 {
 }
 .hero h1 {
   font-size: clamp(48px, 6.3vw, 88px);
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
   line-height: 1.05;
 }
 .muted-heading {
@@ -183,6 +183,9 @@ h1 {
   gap: 64px;
   padding-block: var(--section-space);
 }
+.page-intro + .section-row {
+  padding-top: 24px;
+}
 .section-row + .section-row {
   border-top: 1px solid var(--line);
 }
@@ -209,6 +212,13 @@ h1 {
   font-size: 17px;
   color: var(--muted);
   max-width: 590px;
+}
+.keep-together {
+  white-space: nowrap;
+}
+.section-body > .legal-note {
+  font-size: 14px;
+  margin-block: 24px 12px;
 }
 .company-details {
   margin: 32px 0;
@@ -438,7 +448,7 @@ h1 {
 }
 .product-title {
   font-size: clamp(64px, 7vw, 96px);
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
   margin-top: 32px;
 }
 .product-title .product-category {

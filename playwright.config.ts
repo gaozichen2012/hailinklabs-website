@@ -6,6 +6,8 @@ process.env.NO_PROXY = [process.env.NO_PROXY, '127.0.0.1', 'localhost']
   .join(',');
 process.env.no_proxy = process.env.NO_PROXY;
 
+const production = process.env.PLAYWRIGHT_PRODUCTION === '1';
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
@@ -13,23 +15,25 @@ export default defineConfig({
   retries: 0,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: 'http://127.0.0.1:4321',
+    baseURL: production ? 'https://hailinklabs.com' : 'http://127.0.0.1:4321',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
-  webServer: {
-    command: 'npm run preview',
-    url: 'http://127.0.0.1:4321',
-    reuseExistingServer: !process.env.CI,
-    timeout: 60000,
-    env: { ASTRO_PREVIEW_BACKGROUND: '1' },
-  },
+  webServer: production
+    ? undefined
+    : {
+        command: 'npm run preview',
+        url: 'http://127.0.0.1:4321',
+        reuseExistingServer: !process.env.CI,
+        timeout: 60000,
+        env: { ASTRO_PREVIEW_BACKGROUND: '1' },
+      },
   projects: [
     {
       name: 'chromium-desktop',
       use: {
         ...devices['Desktop Chrome'],
-        viewport: { width: 1440, height: 1000 },
+        viewport: { width: 1440, height: 900 },
       },
     },
     {

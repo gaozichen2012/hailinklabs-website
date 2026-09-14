@@ -5,12 +5,13 @@ for (const path of routes) {
   test(`${path} content, metadata, navigation and layout`, async ({
     page,
     request,
+    baseURL,
   }, testInfo) => {
     const errors: string[] = [];
     const externalRequests: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
     page.on('request', (req) => {
-      if (new URL(req.url()).hostname !== '127.0.0.1')
+      if (new URL(req.url()).origin !== new URL(baseURL!).origin)
         externalRequests.push(req.url());
     });
     const response = await page.goto(path);

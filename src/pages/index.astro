@@ -40,22 +40,16 @@ import { site } from '../data/site';
       <p class="large-copy">
         Built in Shenzhen.
         <br />
-        Designed for a global audience.
+        Designed for a <span class="keep-together">global audience.</span>
       </p>
       <p>
         Hailink Labs is a software company based in Shenzhen, China. We focus on
         simplicity, reliability, and a practical user experience.
       </p>
-      <dl class="company-details">
-        <div>
-          <dt>Brand</dt>
-          <dd>Hailink Labs</dd>
-        </div>
-        <div>
-          <dt>Legal entity</dt>
-          <dd lang="zh-Hans">{site.legalName}</dd>
-        </div>
-      </dl>
+      <p class="legal-note">
+        Hailink Labs is the brand of{' '}
+        <span lang="zh-Hans">{site.legalName}</span>.
+      </p>
       <a class="text-link" href="/about">
         About Hailink Labs <span aria-hidden="true">→</span>
       </a>
