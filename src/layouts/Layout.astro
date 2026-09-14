@@ -1,0 +1,93 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+const { title, description, noindex = false } = Astro.props;
+const path =
+  Astro.url.pathname
+    .replace(/\.html$/, '')
+    .replace(/\/index$/, '')
+    .replace(/\/$/, '') || '/';
+const canonical = new URL(path, site.url).href;
+const nav = [
+  { href: '/products', label: 'Products' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f8f3" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_US" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header shell">
+      <a class="wordmark" href="/" aria-label="Hailink Labs home">
+        <span class="brand-mark" aria-hidden="true">
+          h.
+        </span>
+        Hailink Labs
+      </a>
+      <nav aria-label="Main navigation">
+        {nav.map(({ href, label }) => (
+          <a
+            href={href}
+            aria-current={
+              path === href || path.startsWith(`${href}/`) ? 'page' : undefined
+            }
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+    </header>
+    <main id="main" class="shell" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer shell">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/">
+            Hailink Labs
+          </a>
+          <p lang="zh-Hans">{site.legalName}</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          {nav.map(({ href, label }) => (
+            <a href={href}>{label}</a>
+          ))}
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Hailink Labs. All rights reserved.</span>
+        <span>Shenzhen, China</span>
+      </div>
+    </footer>
+  </body>
+</html>

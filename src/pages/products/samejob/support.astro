@@ -1,0 +1,54 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { site } from '../../../data/site';
+---
+
+<Layout
+  title="SameJob Support — Hailink Labs"
+  description="Get help with Invoice Maker: SameJob. Contact Hailink Labs for product questions, feedback, and support."
+>
+  <section class="page-intro">
+    <a class="breadcrumb" href="/products/samejob">
+      SameJob <span aria-hidden="true">/</span>
+    </a>
+    <p class="eyebrow">Product support</p>
+    <h1>
+      A little help
+      <br />
+      <span class="muted-heading">goes a long way.</span>
+    </h1>
+    <p class="intro-copy">
+      Questions about Invoice Maker: SameJob?
+      <br />
+      Contact the team at Hailink Labs.
+    </p>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>Email support</h2>
+    </div>
+    <div class="section-body prose">
+      <a
+        class="email-link"
+        href={`mailto:${site.email}?subject=SameJob%20Support`}
+      >
+        {site.email} <span aria-hidden="true">↗</span>
+      </a>
+      <p>
+        Tell us what you need help with. For a technical issue, include your app
+        version, iOS version, and a short description of what happened and what
+        you expected.
+      </p>
+      <p>
+        If a screenshot would help, remove customer details, invoice
+        information, and other private information before sending it. Please
+        don’t send passwords, payment credentials, or full business backups.
+      </p>
+      <p>
+        For questions about personal information, see the{' '}
+        <a href="/products/samejob/privacy">SameJob privacy policy</a> or email
+        us with “SameJob Privacy” in the subject line.
+      </p>
+    </div>
+  </section>
+</Layout>

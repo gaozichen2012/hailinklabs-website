@@ -1,0 +1,69 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { site } from '../../../data/site';
+---
+
+<Layout
+  title="Invoice Maker: SameJob — Hailink Labs"
+  description="Invoice Maker: SameJob is an iOS app in development for solo service businesses in the United States, focused on simplifying repeat invoices."
+>
+  <section class="page-intro product-intro">
+    <a class="breadcrumb" href="/products">
+      Products <span aria-hidden="true">/</span>
+    </a>
+    <p class="eyebrow">For iPhone · In development</p>
+    <h1 class="product-title">
+      Invoice Maker:
+      <br />
+      <span class="muted-heading">SameJob</span>
+    </h1>
+    <p class="intro-copy">
+      The same customer. The same service.
+      <br />
+      Less work on the next invoice.
+    </p>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>Made for repeat work</h2>
+    </div>
+    <div class="section-body prose">
+      <p>
+        When you run a service business on your own, familiar jobs should feel
+        familiar to invoice, too. SameJob is an iOS app focused on simplifying
+        repeat invoicing for solo service businesses in the United States.
+      </p>
+      <p>
+        We’re developing SameJob around a straightforward idea: start with a
+        previous job, review what’s changed, and prepare the next invoice with
+        less repeated entry.
+      </p>
+      <p>
+        SameJob is being developed by Hailink Labs. App Store availability will
+        be shared here when the app is released.
+      </p>
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>Product information</h2>
+    </div>
+    <div class="section-body resource-links">
+      <a href="/products/samejob/support">
+        <span>
+          <strong>SameJob support</strong>
+          <span>Questions, feedback, and product help</span>
+        </span>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a href="/products/samejob/privacy">
+        <span>
+          <strong>Privacy policy</strong>
+          <span>How SameJob handles information</span>
+        </span>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <p class="quiet">A product by {site.name}.</p>
+    </div>
+  </section>
+</Layout>

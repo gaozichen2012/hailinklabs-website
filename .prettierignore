@@ -1,0 +1,11 @@
+package-lock.json
+node_modules
+dist
+.astro
+.wrangler
+artifacts
+playwright-report
+test-results
+AGENTS.md
+docs/项目工程手册.md
+docs/项目当前状态.md
