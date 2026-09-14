@@ -5,6 +5,7 @@ import tseslint from 'typescript-eslint';
 export default [
   {
     ignores: [
+      'internal/**',
       'dist/**',
       '.astro/**',
       '.wrangler/**',

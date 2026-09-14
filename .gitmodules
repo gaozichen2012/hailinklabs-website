@@ -1,0 +1,4 @@
+[submodule "internal"]
+	path = internal
+	url = https://github.com/gaozichen2012/hailinklabs-website-internal.git
+	branch = main

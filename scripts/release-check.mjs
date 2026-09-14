@@ -8,7 +8,7 @@ const review = JSON.parse(
 );
 if (!review.approved || !review.reviewedOn || review.remaining.length) {
   console.error(
-    'Release blocked: the SameJob privacy policy needs owner confirmation. See docs/APPLE_ORGANIZATION_READINESS.md.',
+    'Release blocked: the SameJob privacy policy needs owner confirmation. See docs/DEPLOYMENT.md (privacy publication gate).',
   );
   process.exit(1);
 }
