@@ -1,6 +1,16 @@
 # Domain and DNS
 
-Snapshot date: **2026-09-14**. **Email DNS modified: NO. Two apex A records and one www CNAME are live.**
+## Current approved SPF repair and acceptance
+
+The user approved adding only apex TXT `v=spf1 include:spf.mail.qq.com ~all`, default routing, TTL 600 seconds. After manual SMS verification, it was saved at **2026-09-14 22:14:49 +08:00**. Both authoritative nameservers and public resolver 1.1.1.1 return it.
+
+**Email DNS modified: YES — only this explicitly approved new SPF TXT.** All original MX, NS, website A and www CNAME records remain unchanged, including the fields and timestamps in the complete provider table. The final zone has eight records: three Website, three Email (two MX plus SPF), and two Infrastructure/NS. No DKIM, DMARC or verification TXT was added.
+
+Before SPF writing, the authenticated full seven-row provider table was re-read and saved as `artifacts/dns-backups/hailinklabs-before-spf-20260914.csv`, SHA-256 `0b0ab65861ac5972ac2a63823b00c13c91a4c0d496d782dfbf664fbe084037d9`. The final eight-row DOM transcription is `hailinklabs-after-spf-20260914.csv`, SHA-256 `e4e1e64c47613f479a050e68afae062ba1e8908f6e4b91695778c3a2ff216c9f`. Both files have mode 600. These are full DOM transcriptions, not new provider exports. Rollback removes only the exact new apex TXT tuple; all seven previous records stay intact.
+
+The company received the external test (user confirmed), then its reply was accepted into Gmail INBOX at **22:16:00 +08:00**, after sending at 22:15:42. Gmail Authentication-Results reports **spf=pass**, sender IP 54.204.34.129. No DKIM-Signature exists and no DMARC result is reported; these are not marked PASS. The previous 550 5.7.26 delivery failure is resolved for this actual test. No further manual mail action remains within this approved scope.
+
+Evidence: `artifacts/email-verification.json` contains only relevant authentication headers and test identifiers; `artifacts/dns-spf-final.json` records public and authoritative checks. Historical website-only DNS snapshots below predate the approved SPF exception.
 
 ## Frozen ownership and providers
 
@@ -59,7 +69,7 @@ GitHub Pages API initially returned `https://gaozichen2012.github.io/hailinklabs
 
 The pre-write zone had no A/www records. Rollback removes only the three exact website name/type/value tuples listed above; IDs are not exposed by the provider. Never restore an entire zone over unrelated changes or touch protected mail/NS records.
 
-After website DNS changes, compare the full protected record set and direct authoritative answers against the backup. Check the actual DKIM selector from that export, then test external mail into `gaozichen@hailinklabs.com` and a reply back out. Inspect `Authentication-Results` and `DKIM-Signature` for SPF/DKIM/DMARC. Current end-to-end send/receive: **NOT VERIFIED**. If mailbox access is unavailable, that send/receive/header check remains manual acceptance; do not label it PASS.
+Email acceptance is now complete for the approved SPF repair; see the current result above.
 
 ## Post-change verification
 
@@ -69,4 +79,4 @@ Post-change table transcription: `artifacts/dns-backups/hailinklabs-after-202609
 
 GitHub certificate provisioning completed. The certificate covers `hailinklabs.com` and `www.hailinklabs.com`, expires 2026-12-13, and Enforce HTTPS is enabled. Normal-trust public checks passed all 13 assertions, including HTTP→HTTPS and www→apex with paths/query strings. The custom domain was removed and immediately re-added once after DNS propagation, following [GitHub certificate troubleshooting](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https). Final Pages API evidence is saved in `artifacts/pages-final.json`.
 
-An external Gmail test with subject `Hailink Labs email verification 2026-09-14` was sent to the company mailbox. The user confirmed receipt and sending a reply: company receipt is PASS based on that confirmation. Gmail all-mail search and the original thread have not yet shown the reply, so external delivery and authentication headers remain NOT VERIFIED. Recipient and possible bounce details are pending confirmation. No email DNS was changed.
+The subsequent authorized SPF repair and actual mail result are recorded in the current section above.

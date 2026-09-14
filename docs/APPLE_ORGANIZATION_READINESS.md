@@ -1,6 +1,6 @@
 # Apple Developer Organization readiness
 
-Checked: 2026-09-14. **Public website acceptance: PASS.** All seven HTTPS pages return 200; certificate trust, redirects, company content and live mobile viewport checks pass. The user confirmed company receipt and sending a reply. External reply delivery and authentication headers remain NOT VERIFIED; Gmail has not yet shown the reply. Website readiness is not Apple enrollment approval.
+Checked: 2026-09-14. **Website launch acceptance previously passed; the SPF repair and actual email delivery test now PASS.** The company received the external test and Gmail INBOX received its reply with `spf=pass`. DKIM is unsigned and DMARC is unconfigured; neither is claimed to pass. This does not constitute Apple enrollment approval or retesting another branch's later visual changes.
 
 ## Official Apple requirements
 
@@ -19,7 +19,7 @@ The additional route, responsive-layout and metadata checks below are project ac
 | 深圳市海狸智联科技有限公司 displayed             | PASS                                                                             |
 | Clear brand/legal entity relationship            | PASS — home/about/contact                                                        |
 | Real SameJob product content                     | PASS — accurately described as in development                                    |
-| Company-domain email displayed                   | PASS — gaozichen@hailinklabs.com; actual mailbox test NOT VERIFIED               |
+| Company-domain email displayed                   | PASS — gaozichen@hailinklabs.com; company receipt and Gmail reply delivery PASS  |
 | Contact                                          | PASS — 200                                                                       |
 | Privacy                                          | PASS — 200; source/owner-backed claims, GitHub hosting disclosure                |
 | Support                                          | PASS — 200                                                                       |
@@ -41,7 +41,7 @@ The prior website task checked SameJob source at `263bef96173827698545f434384c2e
 
 ## Remaining acceptance and evidence boundary
 
-The external test email was sent to the company address; company receipt is confirmed by the user, who also confirmed sending a reply. Gmail has not yet shown that reply, so external delivery and SPF/DKIM/DMARC header results remain NOT VERIFIED. Protected MX/NS records are unchanged. The original complete zone contained no SPF, DKIM, DMARC or verification TXT; no mail configuration was added or modified.
+The external test was received by the company (user confirmation), and its reply was delivered to Gmail INBOX at 22:16:00 +08:00 with SPF=pass. The user-authorized apex SPF TXT is live; all original MX/NS and website records are unchanged. Email DNS modified: YES, only that new SPF. There is no DKIM signature or published DMARC record; no DMARC result was reported. No further manual mail acceptance remains for the approved repair.
 
 The user's domain detail screenshot lists an individual registrant, not the legal entity. This task does not claim company registration ownership or independently verify domain/legal-entity association documents. Apple legal entity, D-U-N-S, signing authority, account 2FA and enrollment approval are outside the website acceptance and remain unverified; the cited Apple policy is not interpreted as automatically rejecting an individual registrant.
 
