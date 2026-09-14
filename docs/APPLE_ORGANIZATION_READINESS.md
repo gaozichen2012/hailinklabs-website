@@ -1,6 +1,6 @@
 # Apple Developer Organization readiness
 
-Checked: 2026-09-14. **Public website acceptance: PASS.** All seven HTTPS pages return 200; certificate trust, redirects, company content and live mobile viewport checks pass. Actual corporate email send/receive and authentication headers remain NOT VERIFIED pending the test reply. Website readiness is not Apple enrollment approval.
+Checked: 2026-09-14. **Public website acceptance: PASS.** All seven HTTPS pages return 200; certificate trust, redirects, company content and live mobile viewport checks pass. The user confirmed company receipt and sending a reply. External reply delivery and authentication headers remain NOT VERIFIED; Gmail has not yet shown the reply. Website readiness is not Apple enrollment approval.
 
 ## Official Apple requirements
 
@@ -41,7 +41,7 @@ The prior website task checked SameJob source at `263bef96173827698545f434384c2e
 
 ## Remaining acceptance and evidence boundary
 
-The external test email was sent to the company address; actual receipt, reply delivery and SPF/DKIM/DMARC header results remain NOT VERIFIED until the company mailbox replies. Protected MX/NS records are unchanged. The original complete zone contained no SPF, DKIM, DMARC or verification TXT; no mail configuration was added or modified.
+The external test email was sent to the company address; company receipt is confirmed by the user, who also confirmed sending a reply. Gmail has not yet shown that reply, so external delivery and SPF/DKIM/DMARC header results remain NOT VERIFIED. Protected MX/NS records are unchanged. The original complete zone contained no SPF, DKIM, DMARC or verification TXT; no mail configuration was added or modified.
 
 The user's domain detail screenshot lists an individual registrant, not the legal entity. This task does not claim company registration ownership or independently verify domain/legal-entity association documents. Apple legal entity, D-U-N-S, signing authority, account 2FA and enrollment approval are outside the website acceptance and remain unverified; the cited Apple policy is not interpreted as automatically rejecting an individual registrant.
 
