@@ -43,3 +43,7 @@ The previous website task read SameJob source at `263bef96173827698545f434384c2e
 ## Rollback
 
 Revert the website commit via a normal reviewed Git commit and let `main` deploy again; do not rewrite history or roll back mail DNS. If website DNS must be rolled back, restore only changed A/www records from the full pre-write snapshot. Nameservers and all email records stay unchanged. See current deployment evidence in [project state](项目当前状态.md).
+
+## Current deployment evidence
+
+Source commit `bc0fcdb27a102078f96bb33c2082ba77380d2f2d` was pushed to `main`. [Actions run 34829995379](https://github.com/gaozichen2012/hailinklabs-website/actions/runs/34829995379) completed both check and deploy successfully. Direct HTTP requests to GitHub Pages using the company Host header verified all seven routes and canonical tags, static resources, and custom 404 (11/11). Public DNS still lacks website records, so normal production checks return ENOTFOUND. GitHub rejected Enforce HTTPS with “The certificate does not exist yet”; certificate issuance awaits DNS. No DNS or mail changes were made.

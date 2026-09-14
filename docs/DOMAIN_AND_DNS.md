@@ -46,6 +46,8 @@ Bind `hailinklabs.com` in GitHub Pages before DNS. With the apex selected and ww
 
 ## Rollback and email acceptance
 
+GitHub Pages API initially returned `https://gaozichen2012.github.io/hailinklabs-website/`, confirming the actual hostname. It now confirms Actions source and custom domain `hailinklabs.com`; the first deployment succeeded. Recheck configuration immediately before DNS writing.
+
 Capture the exact previous A/www configuration before changes. For newly added records, rollback removes only those new record IDs; for replacements, restore exact previous values/TTL/routing. Never restore an entire zone over unrelated changes or touch protected mail/NS records.
 
 After website DNS changes, compare the full protected record set and direct authoritative answers against the backup. Check the actual DKIM selector from that export, then test external mail into `gaozichen@hailinklabs.com` and a reply back out. Inspect `Authentication-Results` and `DKIM-Signature` for SPF/DKIM/DMARC. Current end-to-end send/receive: **NOT VERIFIED**. If mailbox access is unavailable, that send/receive/header check remains manual acceptance; do not label it PASS.

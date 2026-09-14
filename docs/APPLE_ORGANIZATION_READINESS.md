@@ -1,6 +1,6 @@
 # Apple Developer Organization readiness
 
-Checked: 2026-09-14. **Public website acceptance is not complete.** Content exists and is locally verified; DNS and HTTPS have not yet passed production checks. This is website readiness, not Apple enrollment approval.
+Checked: 2026-09-14. **Public website acceptance is not complete.** Content is locally verified and deployed to GitHub Pages; DNS and HTTPS have not yet passed production checks. This is website readiness, not Apple enrollment approval.
 
 ## Official Apple requirements
 
@@ -42,3 +42,5 @@ The prior website task checked SameJob source at `263bef96173827698545f434384c2e
 ## Remaining acceptance
 
 Obtain the full 新网 DNS export; change only approved website A/www records, retain all email records, finish GitHub certificate issuance/Enforce HTTPS, then run `npm run verify:production` and production browser checks. Re-evaluate this matrix from actual production evidence. Perform external inbox/reply tests and inspect SPF/DKIM/DMARC headers; do not assume mail PASS from MX alone.
+
+Deployment evidence: Actions run 34829995379 succeeded for source commit `bc0fcdb`. Direct HTTP origin checks pass all pages and resources, but bypass public DNS and do not verify a certificate. Public acceptance above remains FAIL until normal domain access works.
