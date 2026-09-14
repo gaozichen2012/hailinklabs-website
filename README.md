@@ -2,7 +2,7 @@
 
 English-first company website for **Hailink Labs / 深圳市海狸智联科技有限公司**, including Invoice Maker: SameJob product, support, and privacy pages.
 
-Astro and TypeScript generate static HTML/CSS. No runtime backend, database, CMS, forms, analytics, tracking cookies, or client JavaScript. Hosting is **GitHub Pages**; registrar and DNS stay at **新网**, and business email stays at **Tencent**. Canonical origin: https://hailinklabs.com.
+Astro and TypeScript generate static HTML/CSS. No runtime backend, database, CMS, forms, analytics, tracking cookies, or client JavaScript. Hosting is **GitHub Pages**. Canonical origin: https://hailinklabs.com.
 
 ## Development
 
@@ -64,4 +64,4 @@ git commit -m "Update internal records reference"
 git push --recurse-submodules=check origin main
 ```
 
-Do not put private contents in public commit messages or CI output. Moving records to the submodule does not remove earlier versions from public Git history. Credentials and raw private evidence belong outside both repositories.
+Do not put private contents in public commit messages or CI output. Credentials and raw private evidence belong outside both repositories.

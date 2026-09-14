@@ -2,7 +2,7 @@
 
 ## Architecture
 
-The public website repository builds with Astro and deploys `dist/` through GitHub Actions to GitHub Pages at **https://hailinklabs.com**. Registrar/DNS remain with 新网 and email remains with Tencent. No runtime backend or paid service is introduced.
+The public website repository builds with Astro and deploys `dist/` through GitHub Actions to GitHub Pages at **https://hailinklabs.com**. The site has no runtime backend.
 
 The private `internal/` submodule contains records only. CI uses `submodules: false`; no private-repository credentials are needed for website builds. Never copy internal records into `src/`, `public/`, `dist/`, public logs or artifacts.
 
