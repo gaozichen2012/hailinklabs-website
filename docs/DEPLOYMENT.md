@@ -25,7 +25,7 @@ Branch and PR runs cannot deploy. The site has no runtime worker or server. GitH
 
 ## Initial setup and verification
 
-Audit all Git history and files before making the repository public. Set Pages source to GitHub Actions (`build_type: workflow`), then bind `hailinklabs.com` through Settings → Pages or the GitHub REST API. After the complete DNS backup gate in [DOMAIN_AND_DNS.md](DOMAIN_AND_DNS.md), add only the four website A records and www CNAME there. Once the GitHub certificate is issued, enable Enforce HTTPS.
+Audit all Git history and files before making the repository public. Set Pages source to GitHub Actions (`build_type: workflow`), then bind `hailinklabs.com` through Settings → Pages or the GitHub REST API. After the complete DNS backup gate in [DOMAIN_AND_DNS.md](DOMAIN_AND_DNS.md), add only the two user-approved website A records and www CNAME there (新网 limits the same name/type to two; the user accepted this on 2026-09-14). Once the GitHub certificate is issued, enable Enforce HTTPS.
 
 ```sh
 npm ci
@@ -46,4 +46,4 @@ Revert the website commit via a normal reviewed Git commit and let `main` deploy
 
 ## Current deployment evidence
 
-Source commit `bc0fcdb27a102078f96bb33c2082ba77380d2f2d` was pushed to `main`. [Actions run 34829995379](https://github.com/gaozichen2012/hailinklabs-website/actions/runs/34829995379) completed both check and deploy successfully. Direct HTTP requests to GitHub Pages using the company Host header verified all seven routes and canonical tags, static resources, and custom 404 (11/11). Public DNS still lacks website records, so normal production checks return ENOTFOUND. GitHub rejected Enforce HTTPS with “The certificate does not exist yet”; certificate issuance awaits DNS. No DNS or mail changes were made.
+Source commit `bc0fcdb27a102078f96bb33c2082ba77380d2f2d` was pushed to `main`. [Actions run 34829995379](https://github.com/gaozichen2012/hailinklabs-website/actions/runs/34829995379) completed both check and deploy successfully. Direct HTTP requests to GitHub Pages using the company Host header verified all seven routes and canonical tags, static resources, and custom 404 (11/11). Public DNS now returns the two approved GitHub A records and www CNAME. GitHub has issued the apex/www certificate (expiry 2026-12-13), and Enforce HTTPS is enabled. Public production verification passes 13/13 checks with normal certificate validation. Live Chrome checks pass all seven HTTPS pages at 390×844 with no horizontal overflow; desktop home and mobile Contact/SameJob screenshots were reviewed. The original four MX/NS records are unchanged, and the full pre/post zone comparison is documented in DOMAIN_AND_DNS.md.

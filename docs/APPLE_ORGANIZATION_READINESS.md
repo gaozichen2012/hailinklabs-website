@@ -1,6 +1,6 @@
 # Apple Developer Organization readiness
 
-Checked: 2026-09-14. **Public website acceptance is not complete.** Content is locally verified and deployed to GitHub Pages; DNS and HTTPS have not yet passed production checks. This is website readiness, not Apple enrollment approval.
+Checked: 2026-09-14. **Public website acceptance: PASS.** All seven HTTPS pages return 200; certificate trust, redirects, company content and live mobile viewport checks pass. Actual corporate email send/receive and authentication headers remain NOT VERIFIED pending the test reply. Website readiness is not Apple enrollment approval.
 
 ## Official Apple requirements
 
@@ -10,22 +10,22 @@ The additional route, responsive-layout and metadata checks below are project ac
 
 ## Website checklist
 
-| Item                                             | Local implementation                                         | Public production acceptance                                      |
-| ------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------------------------- |
-| hailinklabs.com publicly accessible              | Build ready                                                  | FAIL — DNS has no website address                                 |
-| HTTPS and valid certificate                      | Canonical URLs use HTTPS                                     | FAIL — certificate not issued yet                                 |
-| Real company content, not Coming Soon            | PASS                                                         | FAIL — public domain unavailable                                  |
-| Hailink Labs displayed                           | PASS                                                         | FAIL — public domain unavailable                                  |
-| 深圳市海狸智联科技有限公司 displayed             | PASS                                                         | FAIL — public domain unavailable                                  |
-| Clear brand/legal entity relationship            | PASS — home/about/contact                                    | FAIL — public domain unavailable                                  |
-| Real SameJob product content                     | PASS — source-backed, explicitly in development              | FAIL — public domain unavailable                                  |
-| Company-domain email                             | PASS — gaozichen@hailinklabs.com links                       | FAIL — public page unavailable; actual mailbox NOT VERIFIED       |
-| Contact                                          | PASS                                                         | FAIL — DNS                                                        |
-| Privacy                                          | PASS — source/owner-backed claims; GitHub hosting disclosure | FAIL — DNS                                                        |
-| Support                                          | PASS                                                         | FAIL — DNS                                                        |
-| Mobile layout                                    | PASS — Chromium/WebKit mobile viewport pages, no overflow    | FAIL — public mobile URL unavailable; physical phone NOT VERIFIED |
-| Main URLs avoid 404                              | PASS locally                                                 | FAIL — DNS prevents HTTP checks                                   |
-| No TODO, placeholder, Lorem Ipsum or Coming Soon | PASS — rendered content checks                               | FAIL — public domain unavailable                                  |
+| Item                                             | Public production acceptance                                                     |
+| ------------------------------------------------ | -------------------------------------------------------------------------------- |
+| hailinklabs.com publicly accessible              | PASS — HTTPS 200                                                                 |
+| HTTPS and valid certificate                      | PASS — apex/www certificate, Enforce HTTPS enabled                               |
+| Real company content, not Coming Soon            | PASS                                                                             |
+| Hailink Labs displayed                           | PASS                                                                             |
+| 深圳市海狸智联科技有限公司 displayed             | PASS                                                                             |
+| Clear brand/legal entity relationship            | PASS — home/about/contact                                                        |
+| Real SameJob product content                     | PASS — accurately described as in development                                    |
+| Company-domain email displayed                   | PASS — gaozichen@hailinklabs.com; actual mailbox test NOT VERIFIED               |
+| Contact                                          | PASS — 200                                                                       |
+| Privacy                                          | PASS — 200; source/owner-backed claims, GitHub hosting disclosure                |
+| Support                                          | PASS — 200                                                                       |
+| Mobile layout                                    | PASS — seven live HTTPS pages at 390×844, no overflow; not a physical phone test |
+| Main URLs avoid 404                              | PASS — seven pages 200; deliberate unknown path correctly returns 404            |
+| No TODO, placeholder, Lorem Ipsum or Coming Soon | PASS — production response checks                                                |
 
 ## SameJob URL contract
 
@@ -33,14 +33,16 @@ The additional route, responsive-layout and metadata checks below are project ac
 - Support: https://hailinklabs.com/products/samejob/support
 - Privacy: https://hailinklabs.com/products/samejob/privacy
 
-These are the final canonical addresses, not a claim that DNS is already active. No github.io URL is proposed for App Store public metadata.
+These canonical addresses are now live and each returns HTTPS 200. No github.io URL is proposed for App Store public metadata.
 
 ## Privacy evidence
 
 The prior website task checked SameJob source at `263bef96173827698545f434384c2ee1091a84d7`, including privacy audit, CloudKit storage, local data flow and StoreKit. The owner answered that there is no additional use of support data for AI/analytics and delegated routine policy choices. The policy covers local data, private iCloud, device/installation sync metadata, purchases, exports, support and retention. That evidence is not a live CloudKit or App Store Connect verification. Website hosting disclosure identifies GitHub Pages.
 
-## Remaining acceptance
+## Remaining acceptance and evidence boundary
 
-Obtain the full 新网 DNS export; change only approved website A/www records, retain all email records, finish GitHub certificate issuance/Enforce HTTPS, then run `npm run verify:production` and production browser checks. Re-evaluate this matrix from actual production evidence. Perform external inbox/reply tests and inspect SPF/DKIM/DMARC headers; do not assume mail PASS from MX alone.
+The external test email was sent to the company address; actual receipt, reply delivery and SPF/DKIM/DMARC header results remain NOT VERIFIED until the company mailbox replies. Protected MX/NS records are unchanged. The original complete zone contained no SPF, DKIM, DMARC or verification TXT; no mail configuration was added or modified.
 
-Deployment evidence: Actions run 34829995379 succeeded for source commit `bc0fcdb`. Direct HTTP origin checks pass all pages and resources, but bypass public DNS and do not verify a certificate. Public acceptance above remains FAIL until normal domain access works.
+The user's domain detail screenshot lists an individual registrant, not the legal entity. This task does not claim company registration ownership or independently verify domain/legal-entity association documents. Apple legal entity, D-U-N-S, signing authority, account 2FA and enrollment approval are outside the website acceptance and remain unverified; the cited Apple policy is not interpreted as automatically rejecting an individual registrant.
+
+Evidence: `artifacts/production-verification.json` (13/13), `artifacts/production-mobile.json` (seven live pages), `artifacts/pages-final.json` (certificate/enforcement), and `artifacts/dns-after.json` (authoritative mail/NS preservation). Source baseline `bc0fcdb` had successful Actions check/deploy; later documentation-only deployments preserve that source. Local Chromium/WebKit suite passed 36/36. These results do not claim actual iPhone hardware or Apple service validation.
