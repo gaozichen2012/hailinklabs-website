@@ -59,7 +59,11 @@ const nav = [
           <a
             href={href}
             aria-current={
-              path === href || path.startsWith(`${href}/`) ? 'page' : undefined
+              path === href
+                ? 'page'
+                : path.startsWith(`${href}/`)
+                  ? 'location'
+                  : undefined
             }
           >
             {label}

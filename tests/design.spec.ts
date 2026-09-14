@@ -24,17 +24,20 @@ test('every page reflows at 320 and 768 pixels with usable navigation', async ({
         return {
           overflow: document.documentElement.scrollWidth > innerWidth,
           clippedHeadings: badHeadings.map((heading) => heading.textContent),
-          navigationHeights: nav.map(
-            (link) => link.getBoundingClientRect().height,
-          ),
+          navigationSizes: nav.map((link) => {
+            const { width, height } = link.getBoundingClientRect();
+            return { width, height };
+          }),
           levels: headings.map((heading) => Number(heading.tagName.slice(1))),
         };
       });
       expect(layout.overflow, `${path} at ${width}px`).toBe(false);
       expect(layout.clippedHeadings, `${path} at ${width}px`).toEqual([]);
-      expect(layout.navigationHeights.every((height) => height >= 44)).toBe(
-        true,
-      );
+      expect(
+        layout.navigationSizes.every(
+          ({ width, height }) => width >= 44 && height >= 44,
+        ),
+      ).toBe(true);
       for (let i = 1; i < layout.levels.length; i++) {
         expect(
           layout.levels[i] - layout.levels[i - 1],

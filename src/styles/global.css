@@ -104,6 +104,7 @@ a {
 }
 .site-header nav a,
 .site-footer nav a {
+  min-width: 44px;
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -332,7 +333,7 @@ h1 {
 .footer-brand {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
+  min-height: 44px;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.3px;
@@ -770,8 +771,21 @@ h1 {
   .product-name {
     font-size: 40px;
   }
+  .product-summary > p:not(.product-detail) {
+    font-size: 24px;
+  }
   .email-link {
     font-size: 16px;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .button > span,
+  .text-link > span {
+    transition: transform 160ms ease;
+  }
+  .button:hover > span,
+  .text-link:hover > span {
+    transform: translateX(2px);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -780,6 +794,7 @@ h1 {
   *::after {
     scroll-behavior: auto !important;
     animation: none !important;
+    transform: none !important;
     transition: none !important;
   }
 }
