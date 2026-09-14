@@ -13,35 +13,33 @@ import { site } from '../../../data/site';
     </a>
     <p class="eyebrow">For iPhone · In development</p>
     <h1 class="product-title">
-      Invoice Maker:
-      <br />
-      <span class="muted-heading">SameJob</span>
+      <span class="product-category">Invoice Maker:</span>
+      <span class="product-word">SameJob</span>
     </h1>
-    <p class="intro-copy">
-      The same customer. The same service.
-      <br />
-      Less work on the next invoice.
-    </p>
+    <p class="intro-copy">Less work on the next invoice.</p>
   </section>
-  <section class="section-row">
-    <div class="section-label">
-      <h2>Made for repeat work</h2>
-    </div>
-    <div class="section-body prose">
-      <p>
-        When you run a service business on your own, familiar jobs should feel
-        familiar to invoice, too. SameJob is an iOS app focused on simplifying
-        repeat invoicing for solo service businesses in the United States.
-      </p>
-      <p>
-        We’re developing SameJob around a straightforward idea: start with a
-        previous job, review what’s changed, and prepare the next invoice with
-        less repeated entry.
-      </p>
-      <p>
-        SameJob is being developed by Hailink Labs. App Store availability will
-        be shared here when the app is released.
-      </p>
+  <section class="product-story" aria-labelledby="repeat-title">
+    <h2 id="repeat-title">Made for repeat work.</h2>
+    <p>
+      The same customer. The same service. SameJob is an iOS app in development
+      for solo service businesses in the United States, built around a simple
+      idea: less repeated entry, every time you invoice.
+    </p>
+    <div class="product-steps">
+      <div>
+        <h3>Start with a previous job.</h3>
+        <p>Use the work you’ve already entered as your starting point.</p>
+      </div>
+      <div>
+        <h3>Review what’s changed.</h3>
+        <p>Keep the familiar details. Adjust what’s different for this job.</p>
+      </div>
+      <div>
+        <h3>Prepare the next invoice.</h3>
+        <p>
+          Move from repeat work to the next invoice with less repeated entry.
+        </p>
+      </div>
     </div>
   </section>
   <section class="section-row">
@@ -54,16 +52,19 @@ import { site } from '../../../data/site';
           <strong>SameJob support</strong>
           <span>Questions, feedback, and product help</span>
         </span>
-        <span aria-hidden="true">↗</span>
+        <span aria-hidden="true">→</span>
       </a>
       <a href="/products/samejob/privacy">
         <span>
           <strong>Privacy policy</strong>
           <span>How SameJob handles information</span>
         </span>
-        <span aria-hidden="true">↗</span>
+        <span aria-hidden="true">→</span>
       </a>
-      <p class="quiet">A product by {site.name}.</p>
+      <p class="quiet">
+        In development by {site.name}. App Store availability will be shared
+        here when the app is released.
+      </p>
     </div>
   </section>
 </Layout>
