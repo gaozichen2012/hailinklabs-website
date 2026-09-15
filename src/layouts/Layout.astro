@@ -1,27 +1,43 @@
 ---
 import '../styles/global.css';
-import { site } from '../data/site';
+import { englishRoutes, site } from '../data/site';
+import {
+  translator,
+  localizedPath,
+  companyName,
+  type Locale,
+} from '../data/i18n';
 interface Props {
+  locale?: Locale;
   title: string;
   description: string;
   noindex?: boolean;
 }
-const { title, description, noindex = false } = Astro.props;
+const { locale = 'en', title, description, noindex = false } = Astro.props;
 const path =
   Astro.url.pathname
     .replace(/\.html$/, '')
     .replace(/\/index$/, '')
     .replace(/\/$/, '') || '/';
+const t = translator(locale);
+const englishPath =
+  locale === 'zh-CN' ? path.replace(/^\/zh/, '') || '/' : path;
+const hasAlternate = englishRoutes.some((route) => route === englishPath);
+const otherLocale = locale === 'en' ? 'zh-CN' : 'en';
+const alternate = localizedPath(englishPath, otherLocale);
 const canonical = new URL(path, site.url).href;
 const nav = [
-  { href: '/products', label: 'Products' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: localizedPath('/products', locale), label: t('Products') },
+  {
+    href: localizedPath('/about', locale),
+    label: locale === 'en' ? 'About' : '关于',
+  },
+  { href: localizedPath('/contact', locale), label: t('Contact') },
 ];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -34,27 +50,50 @@ const nav = [
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {hasAlternate && !noindex && (
+      <>
+        <link
+          rel="alternate"
+          hreflang="en"
+          href={new URL(englishPath, site.url).href}
+        />
+        <link
+          rel="alternate"
+          hreflang="zh-CN"
+          href={new URL(localizedPath(englishPath, 'zh-CN'), site.url).href}
+        />
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={new URL(englishPath, site.url).href}
+        />
+      </>
+    )}
     {noindex && <meta name="robots" content="noindex, follow" />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'zh_CN'} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
     <a class="skip-link" href="#main">
-      Skip to content
+      {t('Skip to content')}
     </a>
     <header class="site-header shell">
-      <a class="wordmark" href="/" aria-label="Hailink Labs home">
+      <a
+        class="wordmark"
+        href={localizedPath('/', locale)}
+        aria-label={t('Hailink Labs home')}
+      >
         <span class="brand-mark" aria-hidden="true">
           h.
         </span>
         Hailink Labs
       </a>
-      <nav aria-label="Main navigation">
+      <nav aria-label={t('Main navigation')}>
         {nav.map(({ href, label }) => (
           <a
             href={href}
@@ -69,6 +108,19 @@ const nav = [
             {label}
           </a>
         ))}
+        {hasAlternate && (
+          <a
+            class="language-switch"
+            href={alternate}
+            lang={otherLocale}
+            hreflang={otherLocale}
+            aria-label={
+              locale === 'en' ? '切换到本页中文版' : 'Read this page in English'
+            }
+          >
+            {locale === 'en' ? '中文' : 'English'}
+          </a>
+        )}
       </nav>
     </header>
     <main id="main" class="shell" tabindex="-1">
@@ -77,20 +129,20 @@ const nav = [
     <footer class="site-footer shell">
       <div class="footer-top">
         <div>
-          <a class="footer-brand" href="/">
+          <a class="footer-brand" href={localizedPath('/', locale)}>
             Hailink Labs
           </a>
-          <p lang="zh-Hans">{site.legalName}</p>
+          <p>{companyName(locale)}</p>
         </div>
-        <nav aria-label="Footer navigation">
+        <nav aria-label={t('Footer navigation')}>
           {nav.map(({ href, label }) => (
             <a href={href}>{label}</a>
           ))}
         </nav>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Hailink Labs. All rights reserved.</span>
-        <span>Shenzhen, China</span>
+        <span>{t('© 2026 Hailink Labs. All rights reserved.')}</span>
+        <span>{t('Shenzhen, China')}</span>
       </div>
     </footer>
   </body>

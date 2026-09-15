@@ -1,22 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Product from '../../components/Product.astro';
+import Page from '../../components/pages/Products.astro';
 ---
 
-<Layout
-  title="Products — Hailink Labs"
-  description="Explore focused apps from Hailink Labs, including Invoice Maker: SameJob for solo service businesses."
->
-  <section class="page-intro">
-    <p class="eyebrow">Our products</p>
-    <h1>
-      Useful by design.
-      <br />
-      <span class="muted-heading">Simple in use.</span>
-    </h1>
-    <p class="intro-copy">Focused apps for the work you do again and again.</p>
-  </section>
-  <section class="product-list" aria-label="Hailink Labs products">
-    <Product headingLevel="h2" />
-  </section>
-</Layout>
+<Page locale="en" />

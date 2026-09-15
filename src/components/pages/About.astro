@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { site } from '../../data/site';
+
+import {
+  translator,
+  localizedPath,
+  companyName,
+  type Locale,
+} from '../../data/i18n';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = translator(locale);
+const href = (path: string) => localizedPath(path, locale);
+---
+
+<Layout
+  locale={locale}
+  title={t('About — Hailink Labs')}
+  description={t(
+    'Hailink Labs is the software brand of Shenzhen Hailink Technology Co., Ltd., based in Shenzhen, China.',
+  )}
+>
+  <section class="page-intro">
+    <p class="eyebrow">{t('About Hailink Labs')}</p>
+    <h1>
+      {t('Small details.')}
+      <br />
+      <span class="muted-heading">{t('Everyday value.')}</span>
+    </h1>
+    <p class="intro-copy">
+      {t('We build focused software around practical needs.')}
+    </p>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{t('Who we are')}</h2>
+    </div>
+    <div class="section-body prose">
+      <p>
+        {t(
+          'Hailink Labs is a software company based in Shenzhen, China. Hailink Labs is the brand of',
+        )}{' '}
+        <span>{companyName(locale)}</span>
+        {locale === 'zh-CN' ? '。' : ''}
+      </p>
+      <p>
+        {t(
+          'Our work centers on useful apps with clear workflows and a considered user experience. We value simplicity and reliability in both the software we build and the way we maintain it.',
+        )}
+      </p>
+      <dl class="company-details">
+        <div>
+          <dt>{t('Brand')}</dt>
+          <dd>{site.name}</dd>
+        </div>
+        <div>
+          <dt>{t('Legal entity')}</dt>
+          <dd>{companyName(locale)}</dd>
+        </div>
+        <div>
+          <dt>{t('Location')}</dt>
+          <dd>{t('Shenzhen, China')}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{t('What we build')}</h2>
+    </div>
+    <div class="section-body prose">
+      <p>
+        {t('Our current product is')}{' '}
+        <a href={href('/products/samejob')}>{t('Invoice Maker: SameJob')}</a>
+        {t(
+          ', an iOS app in development for solo service businesses in the United States. Its focus is reducing the work involved in creating invoices for repeat jobs.',
+        )}
+      </p>
+      <p>
+        {t('For company and product inquiries,')}{' '}
+        <a href={href('/contact')}>{t('get in touch')}</a>
+        {locale === 'zh-CN' ? '。' : '.'}
+      </p>
+    </div>
+  </section>
+</Layout>

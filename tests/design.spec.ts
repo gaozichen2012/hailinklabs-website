@@ -48,36 +48,42 @@ test('every page reflows at 320 and 768 pixels with usable navigation', async ({
   }
 });
 
-test('visible keyboard focus and reduced motion remain available', async ({
-  page,
-  browserName,
-}) => {
-  await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/');
-  const tabKey =
-    browserName === 'webkit' && process.platform === 'darwin'
-      ? 'Alt+Tab'
-      : 'Tab';
-  await page.keyboard.press(tabKey);
-  const skip = page.getByRole('link', { name: 'Skip to content' });
-  await expect(skip).toBeFocused();
-  await expect(skip).toBeInViewport();
-  await page.keyboard.press('Enter');
-  await expect(page.locator('main')).toBeFocused();
-  await page.keyboard.press(tabKey);
-  const products = page.getByRole('link', { name: 'Meet our products' });
-  await expect(products).toBeFocused();
-  const focus = await products.evaluate((link) => {
-    const style = getComputedStyle(link);
-    return {
-      outline: style.outlineStyle,
-      width: parseFloat(style.outlineWidth),
-      transition: style.transitionDuration,
-    };
+for (const chinese of [false, true]) {
+  test(`${chinese ? 'Chinese' : 'English'} visible keyboard focus and reduced motion remain available`, async ({
+    page,
+    browserName,
+  }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto(chinese ? '/zh' : '/');
+    const tabKey =
+      browserName === 'webkit' && process.platform === 'darwin'
+        ? 'Alt+Tab'
+        : 'Tab';
+    await page.keyboard.press(tabKey);
+    const skip = page.getByRole('link', {
+      name: chinese ? '跳至正文' : 'Skip to content',
+    });
+    await expect(skip).toBeFocused();
+    await expect(skip).toBeInViewport();
+    await page.keyboard.press('Enter');
+    await expect(page.locator('main')).toBeFocused();
+    await page.keyboard.press(tabKey);
+    const products = page.getByRole('link', {
+      name: chinese ? '了解我们的产品' : 'Meet our products',
+    });
+    await expect(products).toBeFocused();
+    const focus = await products.evaluate((link) => {
+      const style = getComputedStyle(link);
+      return {
+        outline: style.outlineStyle,
+        width: parseFloat(style.outlineWidth),
+        transition: style.transitionDuration,
+      };
+    });
+    expect(focus.outline).not.toBe('none');
+    expect(focus.width).toBeGreaterThanOrEqual(2);
+    expect(focus.transition).toBe('0s');
+    await page.keyboard.press('Enter');
+    await expect(page).toHaveURL(/\/products$/);
   });
-  expect(focus.outline).not.toBe('none');
-  expect(focus.width).toBeGreaterThanOrEqual(2);
-  expect(focus.transition).toBe('0s');
-  await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(/\/products$/);
-});
+}

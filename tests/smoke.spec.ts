@@ -2,6 +2,8 @@ import { expect, test } from '@playwright/test';
 import { routes, site } from '../src/data/site';
 
 for (const path of routes) {
+  const chinese = path === '/zh' || path.startsWith('/zh/');
+  const legalName = chinese ? site.legalNameZh : site.legalName;
   test(`${path} content, metadata, navigation and layout`, async ({
     page,
     request,
@@ -16,16 +18,19 @@ for (const path of routes) {
     });
     const response = await page.goto(path);
     expect(response?.status()).toBe(200);
-    await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+    await expect(page.locator('html')).toHaveAttribute(
+      'lang',
+      chinese ? 'zh-CN' : 'en',
+    );
     await expect(page.locator('main h1')).toHaveCount(1);
-    await expect(page.locator('footer')).toContainText(site.legalName);
+    await expect(page.locator('footer')).toContainText(legalName);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       'href',
       new URL(path, site.url).href,
     );
     await expect(page.locator('meta[name="description"]')).toHaveAttribute(
       'content',
-      /\S.{30}/,
+      chinese ? /[\u4e00-\u9fff].{15}/ : /\S.{30}/,
     );
     await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
       'content',
@@ -54,8 +59,10 @@ for (const path of routes) {
       fullPage: true,
     });
     const footerLink = page
-      .getByRole('navigation', { name: 'Footer navigation' })
-      .getByRole('link', { name: 'Contact' });
+      .getByRole('navigation', {
+        name: chinese ? '页脚导航' : 'Footer navigation',
+      })
+      .getByRole('link', { name: chinese ? '联系' : 'Contact' });
     await footerLink.click();
     await expect(page).toHaveURL(/\/contact$/);
     await expect(page.locator('main')).toContainText(site.email);

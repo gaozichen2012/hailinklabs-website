@@ -1,0 +1,29 @@
+---
+import { englishRoutes } from '../../data/site';
+import Home from '../../components/pages/Home.astro';
+import About from '../../components/pages/About.astro';
+import Contact from '../../components/pages/Contact.astro';
+import Products from '../../components/pages/Products.astro';
+import SameJob from '../../components/pages/SameJob.astro';
+import Privacy from '../../components/pages/Privacy.astro';
+import Support from '../../components/pages/Support.astro';
+
+export function getStaticPaths() {
+  const pages = {
+    '/': Home,
+    '/about': About,
+    '/products': Products,
+    '/products/samejob': SameJob,
+    '/products/samejob/privacy': Privacy,
+    '/products/samejob/support': Support,
+    '/contact': Contact,
+  } satisfies Record<(typeof englishRoutes)[number], unknown>;
+  return englishRoutes.map((route) => ({
+    params: { path: route === '/' ? undefined : route.slice(1) },
+    props: { Page: pages[route] },
+  }));
+}
+const { Page } = Astro.props;
+---
+
+<Page locale="zh-CN" />

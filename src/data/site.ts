@@ -1,12 +1,13 @@
 export const site = {
   name: 'Hailink Labs',
-  legalName: '深圳市海狸智联科技有限公司',
+  legalName: 'Shenzhen Hailink Technology Co., Ltd.',
+  legalNameZh: '深圳市海狸智联科技有限公司',
   email: 'gaozichen@hailinklabs.com',
   url: 'https://hailinklabs.com',
   productName: 'Invoice Maker: SameJob',
 };
 
-export const routes = [
+export const englishRoutes = [
   '/',
   '/about',
   '/products',
@@ -14,4 +15,9 @@ export const routes = [
   '/products/samejob/privacy',
   '/products/samejob/support',
   '/contact',
+] as const;
+
+export const routes = [
+  ...englishRoutes,
+  ...englishRoutes.map((path) => `/zh${path === '/' ? '' : path}`),
 ];

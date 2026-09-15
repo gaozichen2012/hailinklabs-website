@@ -1,7 +1,7 @@
 import { writeFile, mkdir } from 'node:fs/promises';
 
 const origin = 'https://hailinklabs.com';
-const paths = [
+const businessPaths = [
   '/',
   '/about',
   '/products',
@@ -9,6 +9,10 @@ const paths = [
   '/products/samejob/privacy',
   '/products/samejob/support',
   '/contact',
+];
+const paths = [
+  ...businessPaths,
+  ...businessPaths.map((path) => `/zh${path === '/' ? '' : path}`),
   '/robots.txt',
   '/sitemap.xml',
   '/favicon.svg',
@@ -27,7 +31,12 @@ for (const path of paths) {
       r.status === 200 &&
       new URL(r.url).origin === origin &&
       (!page ||
-        (body.includes('深圳市海狸智联科技有限公司') &&
+        (body.includes(
+          path.startsWith('/zh')
+            ? '深圳市海狸智联科技有限公司'
+            : 'Shenzhen Hailink Technology Co., Ltd.',
+        ) &&
+          body.includes(`lang="${path.startsWith('/zh') ? 'zh-CN' : 'en'}"`) &&
           (!['/contact', '/products/samejob/support'].includes(path) ||
             body.includes('gaozichen@hailinklabs.com')) &&
           body.includes(`rel="canonical" href="${url}"`) &&

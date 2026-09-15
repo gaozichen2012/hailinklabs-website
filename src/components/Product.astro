@@ -1,28 +1,35 @@
 ---
+import { translator, localizedPath, type Locale } from '../data/i18n';
+
 interface Props {
+  locale: Locale;
   headingLevel?: 'h2' | 'h3';
 }
-const { headingLevel: Heading = 'h3' } = Astro.props;
+const { locale, headingLevel: Heading = 'h3' } = Astro.props;
+
+const t = translator(locale);
 ---
 
 <article class="product-feature">
   <div class="product-identity">
-    <Heading class="product-name">
-      <span>Invoice Maker:</span> SameJob
+    <Heading class="product-name" lang="en">
+      <span>{t('Invoice Maker:')}</span> {t('SameJob')}
     </Heading>
-    <p class="eyebrow">For iPhone · In development</p>
+    <p class="eyebrow">{t('For iPhone · In development')}</p>
   </div>
   <div class="product-summary">
     <p>
-      Less repeat work.
+      {t('Less repeat work.')}
       <br />
-      More time for <span class="keep-together">the job.</span>
+      {t('More time for')} <span class="keep-together">{t('the job.')}</span>
     </p>
     <p class="product-detail">
-      An iOS app for solo service businesses. Simpler invoices for repeat jobs.
+      {t(
+        'An iOS app for solo service businesses. Simpler invoices for repeat jobs.',
+      )}
     </p>
-    <a class="text-link" href="/products/samejob">
-      Explore SameJob <span aria-hidden="true">→</span>
+    <a class="text-link" href={localizedPath('/products/samejob', locale)}>
+      {t('Explore SameJob')} <span aria-hidden="true">→</span>
     </a>
   </div>
 </article>

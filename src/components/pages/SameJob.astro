@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { site } from '../../data/site';
+
+import { translator, localizedPath, type Locale } from '../../data/i18n';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = translator(locale);
+const href = (path: string) => localizedPath(path, locale);
+---
+
+<Layout
+  locale={locale}
+  title={t('Invoice Maker: SameJob — Hailink Labs')}
+  description={t(
+    'Invoice Maker: SameJob is an iOS app in development for solo service businesses in the United States, focused on simplifying repeat invoices.',
+  )}
+>
+  <section class="page-intro product-intro">
+    <a class="breadcrumb" href={href('/products')}>
+      {t('Products')} <span aria-hidden="true">/</span>
+    </a>
+    <p class="eyebrow">{t('For iPhone · In development')}</p>
+    <h1 class="product-title" lang="en">
+      <span class="product-category">{t('Invoice Maker:')}</span>
+      <span class="product-word">{t('SameJob')}</span>
+    </h1>
+    <p class="intro-copy">{t('Less work on the next invoice.')}</p>
+  </section>
+  <section class="product-story" aria-labelledby="repeat-title">
+    <h2 id="repeat-title">{t('Made for repeat work.')}</h2>
+    <p>
+      {t(
+        'An iOS app in development for solo service businesses in the United States. Built to make familiar jobs easier to invoice.',
+      )}
+    </p>
+    <div class="product-steps">
+      <div>
+        <h3>{t('Start with a previous job.')}</h3>
+        <p>
+          {t('Use the work you’ve already entered as your starting point.')}
+        </p>
+      </div>
+      <div>
+        <h3>{t('Review what’s changed.')}</h3>
+        <p>
+          {t(
+            'Keep the familiar details. Adjust what’s different for this job.',
+          )}
+        </p>
+      </div>
+      <div>
+        <h3>{t('Prepare the next invoice.')}</h3>
+        <p>{t('Prepare the next invoice with the details you’ve reviewed.')}</p>
+      </div>
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{t('Product information')}</h2>
+    </div>
+    <div class="section-body resource-links">
+      <a href={href('/products/samejob/support')}>
+        <span>
+          <strong>{t('SameJob support')}</strong>
+          <span>{t('Questions, feedback, and product help')}</span>
+        </span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href={href('/products/samejob/privacy')}>
+        <span>
+          <strong>{t('Privacy policy')}</strong>
+          <span>{t('How SameJob handles information')}</span>
+        </span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <p class="quiet">
+        {t('In development by')} {site.name}
+        {t(
+          '. App Store availability will be shared here when the app is released.',
+        )}
+      </p>
+    </div>
+  </section>
+</Layout>

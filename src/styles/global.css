@@ -585,7 +585,7 @@ h1 {
     font-size: 17px;
   }
   .site-header nav {
-    gap: 28px;
+    gap: 20px;
     width: 100%;
   }
   .site-header nav a {
@@ -825,4 +825,13 @@ h1 {
   h1 {
     font-size: 36px;
   }
+}
+
+.language-switch {
+  white-space: nowrap;
+}
+
+h1:lang(zh-CN),
+.large-copy:lang(zh-CN) {
+  line-height: 1.25;
 }

@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { site } from '../../data/site';
+import review from '../../data/privacy-review.json';
+
+import {
+  translator,
+  localizedPath,
+  companyName,
+  type Locale,
+} from '../../data/i18n';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = translator(locale);
+const href = (path: string) => localizedPath(path, locale);
+---
+
+<Layout
+  locale={locale}
+  title={t('SameJob Privacy Policy — Hailink Labs')}
+  description={t(
+    'How Invoice Maker: SameJob handles business information, iCloud sync, purchases, exports, and support requests.',
+  )}
+  noindex={!review.approved}
+>
+  <section class="page-intro policy-intro">
+    <a class="breadcrumb" href={href('/products/samejob')}>
+      {t('SameJob')} <span aria-hidden="true">/</span>
+    </a>
+    <p class="eyebrow">{t('Invoice Maker: SameJob')}</p>
+    <h1>{t('Privacy policy')}</h1>
+    <p class="intro-copy">{t('Effective September 14, 2026')}</p>
+  </section>
+  <article class="policy prose" aria-label={t('SameJob privacy policy')}>
+    {locale === 'zh-CN' && (
+      <aside class="review-notice">
+        本中文版本仅为方便阅读提供。如中英文版本存在差异，以
+        <a href="/products/samejob/privacy" lang="en" hreflang="en">
+          英文版本
+        </a>
+        为准。
+      </aside>
+    )}
+    {!review.approved && (
+      <aside class="review-notice">
+        {t(
+          'Review copy — publication is blocked until the company confirms the remaining data handling practices.',
+        )}
+      </aside>
+    )}
+    <h2>{t('Who we are')}</h2>
+    <p>
+      {t(
+        'Invoice Maker: SameJob (“SameJob”) is developed by Hailink Labs, the brand of',
+      )}{' '}
+      <span>{companyName(locale)}</span>
+      {t(
+        ', based in Shenzhen, China. This policy explains how information is handled when you use SameJob or contact us for support.',
+      )}
+    </p>
+    <p>
+      {t('For privacy questions or requests, email')}{' '}
+      <a href={`mailto:${site.email}?subject=SameJob%20Privacy`}>
+        {site.email}
+      </a>
+      {locale === 'zh-CN' ? '。' : '.'}
+    </p>
+    <h2>{t('Information used by the app')}</h2>
+    <p>
+      {t(
+        'SameJob stores the information you enter to create and manage invoices and estimates. This may include your business name and contact details, a logo you select, customer names and contact details, service descriptions, prices, taxes, payment instructions, and payment status.',
+      )}
+    </p>
+    <p>
+      {t(
+        'The app uses a local database on your device as its primary store. You do not need to create a SameJob account. SameJob does not upload your business database, invoice content, or customer details to a server operated by Hailink Labs.',
+      )}
+    </p>
+    <h2>{t('iCloud sync and backup')}</h2>
+    <p>
+      {t(
+        'When iCloud is available and cloud features are enabled in SameJob, the app sends a copy of its business data to your private iCloud database using Apple’s CloudKit service. Cloud features are enabled by default and can be turned off in SameJob settings. Local work remains available when iCloud is unavailable.',
+      )}
+    </p>
+    <p>
+      {t(
+        'Cloud copies may include business and customer details, invoices and estimates, logos, records retained in Recently Deleted, and metadata used to sync changes. Sync metadata includes a device-related identifier and an installation identifier to distinguish edits. These identifiers are used for app functionality, not advertising.',
+      )}
+    </p>
+    <p>
+      {t(
+        'Apple provides iCloud and handles information under its own terms and',
+      )}{' '}
+      <a href="https://www.apple.com/legal/privacy/">{t('privacy policy')}</a>
+      {t(
+        '. Turning off sync stops future sync activity; it does not by itself erase copies already stored in iCloud.',
+      )}
+    </p>
+    <h2>{t('Purchases')}</h2>
+    <p>
+      {t(
+        'Purchases and restores use Apple’s App Store and StoreKit services. The app reads purchase and entitlement information to determine access to paid features. Hailink Labs does not receive your payment card details through SameJob or operate a purchase receipt server.',
+      )}
+    </p>
+    <p>
+      {t(
+        'Payment instructions you add to an invoice are part of your business content. SameJob does not process, hold, or transfer your customers’ payments.',
+      )}
+    </p>
+    <h2>{t('Files you export or share')}</h2>
+    <p>
+      {t(
+        'PDFs, CSV files, and backups can contain personal and business information. You choose where to save them and which apps or people to share them with. Those destinations handle the files under their own practices.',
+      )}
+    </p>
+    <p>
+      {t(
+        'SameJob backup files are not encrypted by the app. Store them somewhere you trust and share them carefully. Removing data in SameJob does not remove files you previously exported or sent.',
+      )}
+    </p>
+    <h2>{t('Analytics and diagnostics')}</h2>
+    <p>
+      {t(
+        'SameJob does not include advertising, third-party analytics, or a third-party crash reporting SDK. Hailink Labs does not use app information for cross-company tracking or upload support messages to AI or analytics services.',
+      )}
+    </p>
+    <p>
+      {t(
+        'Apple may separately handle App Store, purchase, usage, or diagnostic information according to your device settings and Apple’s policies. This policy does not change Apple’s own data handling.',
+      )}
+    </p>
+    <h2>{t('When you contact support')}</h2>
+    <p>
+      {t(
+        'If you email us, we receive your email address, message, and any attachments you send. We use these to answer you and resolve the issue. Our company mailbox uses Tencent’s business email service to deliver and store correspondence. Support messages may be accessed by Hailink Labs in China.',
+      )}
+    </p>
+    <p>
+      {t(
+        'Please avoid sending sensitive customer information, passwords, payment credentials, or full business backups. We do not sell support information or use it for advertising. We keep support correspondence for no longer than 12 months after an issue is closed, unless an ongoing issue or legal obligation requires longer retention.',
+      )}
+    </p>
+    <h2>{t('Retention and your choices')}</h2>
+    <p>
+      {t(
+        'You can edit your business information, export your data, and manage cloud features in the app. Deleted invoices, estimates, and customers are retained in Recently Deleted for 30 days before becoming eligible for permanent removal. Existing backups and exported files may retain older information until you separately remove those copies.',
+      )}
+    </p>
+    <p>
+      {t(
+        'For iCloud storage and backup controls, use the relevant Apple account and device settings. If you need help locating those controls, contact us. We cannot erase files held by recipients you chose or data in your private iCloud account on your behalf.',
+      )}
+    </p>
+    <p>
+      {t(
+        'You may contact us to request access, correction, or deletion of personal information held in our support correspondence, or to ask how it is used. Depending on where you live, you may have additional privacy rights. We may need to verify a request using the relevant email address before acting on it.',
+      )}
+    </p>
+    <h2>{t('Website visits')}</h2>
+    <p>
+      {t(
+        'This website has no advertising trackers, analytics scripts, contact forms, or account system. GitHub Pages provides hosting and delivery; GitHub processes technical request information such as IP addresses to deliver and protect the site. See',
+      )}{' '}
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+        {t('GitHub’s privacy statement')}
+      </a>
+      {locale === 'zh-CN' ? '。' : '.'}
+    </p>
+    <h2>{t('Children')}</h2>
+    <p>
+      {t(
+        'SameJob is intended for people running service businesses and is not directed to children under 13. If you believe a child has sent us personal information through support, contact us so we can address it.',
+      )}
+    </p>
+    <h2>{t('Changes to this policy')}</h2>
+    <p>
+      {t(
+        'We will update this page when our data handling changes and revise the effective date. Material changes will be explained here and, where appropriate, in the app.',
+      )}
+    </p>
+    <h2>{t('Contact')}</h2>
+    <p>
+      {t('Hailink Labs')}
+      <br />
+      <span>{companyName(locale)}</span>
+      <br />
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
+  </article>
+</Layout>
