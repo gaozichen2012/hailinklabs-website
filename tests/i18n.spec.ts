@@ -95,7 +95,7 @@ test('all sitemap URLs are canonical, unique and complete', async ({
   const xml = await (await request.get('/sitemap.xml')).text();
   const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
   expect(urls.sort()).toEqual(routes.map((path) => site.url + path).sort());
-  expect(new Set(urls).size).toBe(14);
+  expect(new Set(urls).size).toBe(routes.length);
   expect(xml).not.toMatch(/\.html|localhost|127\.0\.0\.1/);
 });
 
@@ -111,17 +111,15 @@ test('browser language never redirects the English default', async ({
   await context.close();
 });
 
-test('SameJob name, development status and static bilingual 404', async ({
+test('Product identity, no development labels and static bilingual 404', async ({
   page,
 }) => {
   for (const locale of ['en', 'zh-CN'] as const) {
     for (const path of ['/', '/products', '/products/samejob']) {
       await page.goto(localizedPath(path, locale));
-      await expect(page.locator('main')).toContainText(
-        /Invoice Maker:\s*SameJob/,
-      );
-      await expect(page.locator('main')).toContainText(
-        locale === 'en' ? 'In development' : '开发中',
+      await expect(page.locator('main')).toContainText(/SameJob/);
+      await expect(page.locator('main')).not.toContainText(
+        /In development|开发中|Coming Soon|TestFlight/i,
       );
     }
   }

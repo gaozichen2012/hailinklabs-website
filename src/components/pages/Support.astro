@@ -1,63 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { site } from '../../data/site';
-
-import { translator, localizedPath, type Locale } from '../../data/i18n';
+import Page from './ProductSupport.astro';
+import { products } from '../../data/products';
+import type { Locale } from '../../data/i18n';
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
-const t = translator(locale);
-const href = (path: string) => localizedPath(path, locale);
 ---
 
-<Layout
-  locale={locale}
-  title={t('SameJob Support — Hailink Labs')}
-  description={t(
-    'Get help with Invoice Maker: SameJob. Contact Hailink Labs for product questions, feedback, and support.',
-  )}
->
-  <section class="page-intro">
-    <a class="breadcrumb" href={href('/products/samejob')}>
-      {t('SameJob')} <span aria-hidden="true">/</span>
-    </a>
-    <p class="eyebrow">{t('Product support')}</p>
-    <h1>{t('SameJob support.')}</h1>
-    <p class="intro-copy">
-      {t('Questions about Invoice Maker: SameJob?')}
-      <br />
-      {t('Contact the team at Hailink Labs.')}
-    </p>
-  </section>
-  <section class="section-row">
-    <div class="section-label">
-      <h2>{t('Email support')}</h2>
-    </div>
-    <div class="section-body prose">
-      <a
-        class="email-link"
-        href={`mailto:${site.email}?subject=SameJob%20Support`}
-      >
-        {site.email} <span aria-hidden="true">↗</span>
-      </a>
-      <p>
-        {t(
-          'Tell us what you need help with. For a technical issue, include your app version, iOS version, and a short description of what happened and what you expected.',
-        )}
-      </p>
-      <p>
-        {t(
-          'If a screenshot would help, remove customer details, invoice information, and other private information before sending it. Please don’t send passwords, payment credentials, or full business backups.',
-        )}
-      </p>
-      <p>
-        {t('For questions about personal information, see the')}{' '}
-        <a href={href('/products/samejob/privacy')}>
-          {t('SameJob privacy policy')}
-        </a>{' '}
-        {t('or email us with “SameJob Privacy” in the subject line.')}
-      </p>
-    </div>
-  </section>
-</Layout>
+<Page locale={locale} product={products[0]} />

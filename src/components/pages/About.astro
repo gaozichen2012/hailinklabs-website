@@ -73,11 +73,12 @@ const href = (path: string) => localizedPath(path, locale);
     </div>
     <div class="section-body prose">
       <p>
-        {t('Our current product is')}{' '}
-        <a href={href('/products/samejob')}>{t('Invoice Maker: SameJob')}</a>
-        {t(
-          ', an iOS app in development for solo service businesses in the United States. Its focus is reducing the work involved in creating invoices for repeat jobs.',
-        )}
+        {locale === 'en'
+          ? 'We build SameJob for repeat invoices, TMProof for extra-work tickets, LitterRound for early puppy care and CalvingPocket for field birth records.'
+          : '我们打造了用于重复开票的 SameJob、记录额外工作的 TMProof、记录幼犬早期护理的 LitterRound，以及现场产犊记录本 CalvingPocket。'}
+        <a href={href('/products')}>
+          {locale === 'en' ? 'Explore our products' : '了解我们的产品'}
+        </a>
       </p>
       <p>
         {t('For company and product inquiries,')}{' '}

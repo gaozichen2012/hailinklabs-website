@@ -1,5 +1,8 @@
 ---
-import { englishRoutes } from '../../data/site';
+import { products } from '../../data/products';
+import ProductDetail from '../../components/pages/ProductDetail.astro';
+import ProductSupport from '../../components/pages/ProductSupport.astro';
+import ProductPrivacy from '../../components/pages/ProductPrivacy.astro';
 import Home from '../../components/pages/Home.astro';
 import About from '../../components/pages/About.astro';
 import Contact from '../../components/pages/Contact.astro';
@@ -17,13 +20,31 @@ export function getStaticPaths() {
     '/products/samejob/privacy': Privacy,
     '/products/samejob/support': Support,
     '/contact': Contact,
-  } satisfies Record<(typeof englishRoutes)[number], unknown>;
-  return englishRoutes.map((route) => ({
-    params: { path: route === '/' ? undefined : route.slice(1) },
-    props: { Page: pages[route] },
-  }));
+  };
+  return [
+    ...Object.entries(pages).map(([route, Page]) => ({
+      params: { path: route === '/' ? undefined : route.slice(1) },
+      props: { Page, product: undefined },
+    })),
+    ...products
+      .filter((p) => p.slug !== 'samejob')
+      .flatMap((product) => [
+        {
+          params: { path: `products/${product.slug}` },
+          props: { product, Page: ProductDetail },
+        },
+        {
+          params: { path: `products/${product.slug}/support` },
+          props: { product, Page: ProductSupport },
+        },
+        {
+          params: { path: `products/${product.slug}/privacy` },
+          props: { product, Page: ProductPrivacy },
+        },
+      ]),
+  ];
 }
-const { Page } = Astro.props;
+const { Page, product } = Astro.props;
 ---
 
-<Page locale="zh-CN" />
+<Page locale="zh-CN" product={product!} />

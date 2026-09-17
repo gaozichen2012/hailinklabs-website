@@ -12,4 +12,20 @@ if (!review.approved || !review.reviewedOn || review.remaining.length) {
   );
   process.exit(1);
 }
-console.log('Privacy publication review is complete.');
+for (const slug of ['samejob', 'tmproof', 'litterround', 'calvingpocket']) {
+  const product = review.productSourceReviews?.[slug];
+  if (
+    !product?.reviewedOn ||
+    product.method !== 'source-audit' ||
+    !Array.isArray(product.remaining) ||
+    product.remaining.length
+  ) {
+    console.error(
+      `Release blocked: missing or incomplete ${slug} privacy source review.`,
+    );
+    process.exit(1);
+  }
+}
+console.log(
+  'Company privacy publication review and all four product source reviews are complete.',
+);

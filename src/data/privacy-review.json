@@ -1,5 +1,27 @@
 {
   "approved": true,
   "reviewedOn": "2026-09-14",
-  "remaining": []
+  "remaining": [],
+  "productSourceReviews": {
+    "samejob": {
+      "reviewedOn": "2026-09-17",
+      "method": "source-audit",
+      "remaining": []
+    },
+    "tmproof": {
+      "reviewedOn": "2026-09-17",
+      "method": "source-audit",
+      "remaining": []
+    },
+    "litterround": {
+      "reviewedOn": "2026-09-17",
+      "method": "source-audit",
+      "remaining": []
+    },
+    "calvingpocket": {
+      "reviewedOn": "2026-09-17",
+      "method": "source-audit",
+      "remaining": []
+    }
+  }
 }

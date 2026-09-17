@@ -53,8 +53,8 @@ export const zh = {
   'We’d like to hear it.': '欢迎与我们交流。',
   'Hailink Labs — Focused software for everyday work':
     'Hailink Labs — 专注日常工作的实用软件',
-  'Hailink Labs is a software company based in Shenzhen, China. We build focused apps for everyday work, including Invoice Maker: SameJob.':
-    'Hailink Labs 是一家位于中国深圳的软件公司，打造服务日常工作的实用应用，包括 Invoice Maker: SameJob。',
+  'Hailink Labs builds focused iPhone apps for repeat invoices, extra-work tickets, early puppy care and field calving records.':
+    'Hailink Labs 打造专注的 iPhone 应用，用于重复开票、额外工作工单、幼犬早期护理和现场产犊记录。',
   Contact: '联系',
   'Get in touch.': '联系我们。',
   'Company inquiries, product questions,': '无论是公司咨询、产品问题，',
@@ -71,8 +71,8 @@ export const zh = {
   'Focused apps for the work you do again and again.':
     '为日常重复的工作，提供专注实用的应用。',
   'Products — Hailink Labs': '产品 — Hailink Labs',
-  'Explore focused apps from Hailink Labs, including Invoice Maker: SameJob for solo service businesses.':
-    '了解 Hailink Labs 的实用应用，包括面向个人服务经营者的 Invoice Maker: SameJob。',
+  'Explore SameJob, TMProof, LitterRound and CalvingPocket: focused iPhone apps for everyday work and records.':
+    '了解 SameJob、TMProof、LitterRound 与 CalvingPocket，为日常工作与记录打造的专注型 iPhone 应用。',
   'Hailink Labs products': 'Hailink Labs 产品',
   'Privacy policy': '隐私政策',
   'Effective September 14, 2026': '生效日期：2026 年 9 月 14 日',

@@ -20,11 +20,11 @@ npm run release:check
 npm run verify:production
 ```
 
-Production checks cover seven pages, sitemap, robots, favicon, missing-path 404, normal certificate trust, HTTP-to-HTTPS and www-to-apex redirects. Browser emulation does not constitute physical-device testing.
+Production checks cover all 32 English and Chinese pages, sitemap, robots, favicon, missing-path 404, normal certificate trust, HTTP-to-HTTPS and www-to-apex redirects. Browser emulation does not constitute physical-device testing.
 
 ## Privacy publication gate
 
-`src/data/privacy-review.json` records approval, review date and unresolved items. `npm run release:check` blocks publication until the recorded approval is complete. Authorized maintainers must review the private supporting records when data practices change; the public build does not access them.
+`src/data/privacy-review.json` records the existing company publication decision, review date, unresolved items and per-product source-review completion. `npm run release:check` blocks publication until the recorded approval is complete. Authorized maintainers must review the private supporting records when data practices change; the public build does not access them.
 
 ## Operations and rollback
 

@@ -15,6 +15,15 @@ export const englishRoutes = [
   '/products/samejob/privacy',
   '/products/samejob/support',
   '/contact',
+  '/products/tmproof',
+  '/products/tmproof/privacy',
+  '/products/tmproof/support',
+  '/products/litterround',
+  '/products/litterround/privacy',
+  '/products/litterround/support',
+  '/products/calvingpocket',
+  '/products/calvingpocket/privacy',
+  '/products/calvingpocket/support',
 ] as const;
 
 export const routes = [

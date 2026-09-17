@@ -1,35 +1,39 @@
 ---
-import { translator, localizedPath, type Locale } from '../data/i18n';
-
+import { localizedPath, type Locale } from '../data/i18n';
+import { copy, type ProductData } from '../data/products';
 interface Props {
   locale: Locale;
+  product: ProductData;
+  compact?: boolean;
   headingLevel?: 'h2' | 'h3';
 }
-const { locale, headingLevel: Heading = 'h3' } = Astro.props;
-
-const t = translator(locale);
+const {
+  locale,
+  product,
+  compact = false,
+  headingLevel: Heading = 'h3',
+} = Astro.props;
 ---
 
-<article class="product-feature">
-  <div class="product-identity">
-    <Heading class="product-name" lang="en">
-      <span>{t('Invoice Maker:')}</span> {t('SameJob')}
-    </Heading>
-    <p class="eyebrow">{t('For iPhone · In development')}</p>
-  </div>
-  <div class="product-summary">
-    <p>
-      {t('Less repeat work.')}
-      <br />
-      {t('More time for')} <span class="keep-together">{t('the job.')}</span>
+<article class="matrix-card">
+  <Heading lang="en">{product.name}</Heading>
+  {!compact && (
+    <p class="eyebrow" lang="en">
+      {product.storeName}
     </p>
-    <p class="product-detail">
-      {t(
-        'An iOS app for solo service businesses. Simpler invoices for repeat jobs.',
-      )}
-    </p>
-    <a class="text-link" href={localizedPath('/products/samejob', locale)}>
-      {t('Explore SameJob')} <span aria-hidden="true">→</span>
-    </a>
-  </div>
+  )}
+  <p class="card-value">
+    {copy(compact ? product.summary : product.value, locale)}
+  </p>
+  {!compact && (
+    <p class="card-description">{copy(product.description, locale)}</p>
+  )}
+  <a
+    class="text-link"
+    href={localizedPath(`/products/${product.slug}`, locale)}
+    aria-label={`${locale === 'en' ? 'Learn more about' : '了解'} ${product.name}`}
+  >
+    {locale === 'en' ? 'Learn More' : '了解更多'}{' '}
+    <span aria-hidden="true">→</span>
+  </a>
 </article>

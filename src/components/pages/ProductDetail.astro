@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, type Locale } from '../../data/i18n';
+import { copy, type ProductData } from '../../data/products';
+import Pricing from '../Pricing.astro';
+interface Props {
+  locale: Locale;
+  product: ProductData;
+}
+const { locale, product: p } = Astro.props;
+const c = (value: readonly [string, string]) => copy(value, locale);
+const href = (suffix: string) =>
+  localizedPath(`/products/${p.slug}${suffix}`, locale);
+---
+
+<Layout
+  locale={locale}
+  title={`${p.storeName}${locale === 'zh-CN' ? ' · 产品介绍' : ''} | Hailink Labs`}
+  description={c(p.description)}
+>
+  <section class="page-intro product-intro">
+    <a class="breadcrumb" href={localizedPath('/products', locale)}>
+      {c(['Products', '产品'])} <span aria-hidden="true">/</span>
+    </a>
+    <p class="eyebrow">{c(['For iPhone', '适用于 iPhone'])}</p>
+    <h1 class="matrix-title" lang="en">
+      {p.storeName}
+    </h1>
+    <p class="intro-copy">{c(p.subtitle)}</p>
+    <p class="product-positioning">{c(p.description)}</p>
+  </section>
+  <section class="product-story">
+    <h2>{c(p.value)}</h2>
+    <p>{c(p.problem)}</p>
+    <div class="product-steps">
+      {p.steps.map(([heading, body]) => (
+        <div>
+          <h3>{c(heading)}</h3>
+          <p>{c(body)}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{c(['Main features', '主要功能'])}</h2>
+    </div>
+    <div class="section-body prose">
+      <ul>
+        {p.features.map((feature) => (
+          <li>{c(feature)}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{c(['Product principles', '产品原则'])}</h2>
+    </div>
+    <div class="section-body">
+      <p>{c(p.principles)}</p>
+    </div>
+  </section>
+  <section class="section-row" id="pricing">
+    <div class="section-label">
+      <h2>{c(['Pricing', '价格'])}</h2>
+    </div>
+    <div class="section-body prose">
+      <Pricing locale={locale} slug={p.slug} />
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{c(['Your data', '你的数据'])}</h2>
+    </div>
+    <div class="section-body">
+      <p>{c(p.storage)}</p>
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{c(['Product information', '产品信息'])}</h2>
+    </div>
+    <div class="section-body resource-links">
+      <a href={href('/support')}>
+        <strong>{c(['Support', '使用支持'])}</strong>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href={href('/privacy')}>
+        <strong>{c(['Privacy policy', '隐私政策'])}</strong>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+</Layout>

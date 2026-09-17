@@ -19,9 +19,11 @@ const href = (path: string) => localizedPath(path, locale);
 <Layout
   locale={locale}
   title={t('Contact — Hailink Labs')}
-  description={t(
-    'Contact Hailink Labs at gaozichen@hailinklabs.com for company inquiries and SameJob product support.',
-  )}
+  description={
+    locale === 'en'
+      ? 'Contact Hailink Labs for company inquiries and support for SameJob, TMProof, LitterRound and CalvingPocket.'
+      : '联系 Hailink Labs，获取公司咨询及 SameJob、TMProof、LitterRound、CalvingPocket 产品支持。'
+  }
 >
   <section class="page-intro">
     <p class="eyebrow">{t('Contact')}</p>
@@ -55,9 +57,15 @@ const href = (path: string) => localizedPath(path, locale);
         </div>
       </dl>
       <p>
-        {t('Looking for help with Invoice Maker: SameJob? Visit')}{' '}
-        <a href={href('/products/samejob/support')}>{t('SameJob support')}</a>
-        {locale === 'zh-CN' ? '。' : '.'}
+        {locale === 'en'
+          ? 'For help with an app, choose it from our '
+          : '如需 App 使用帮助，请从'}
+        <a href={href('/products')}>
+          {locale === 'en' ? 'products' : '产品目录'}
+        </a>
+        {locale === 'en'
+          ? ' to find its support and privacy pages.'
+          : '进入相应的支持与隐私页面。'}
       </p>
     </div>
   </section>

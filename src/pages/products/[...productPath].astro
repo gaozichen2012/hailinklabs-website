@@ -1,0 +1,27 @@
+---
+import { products } from '../../data/products';
+import ProductDetail from '../../components/pages/ProductDetail.astro';
+import ProductSupport from '../../components/pages/ProductSupport.astro';
+import ProductPrivacy from '../../components/pages/ProductPrivacy.astro';
+export function getStaticPaths() {
+  return products
+    .filter((p) => p.slug !== 'samejob')
+    .flatMap((product) => [
+      {
+        params: { productPath: product.slug },
+        props: { product, Page: ProductDetail },
+      },
+      {
+        params: { productPath: `${product.slug}/support` },
+        props: { product, Page: ProductSupport },
+      },
+      {
+        params: { productPath: `${product.slug}/privacy` },
+        props: { product, Page: ProductPrivacy },
+      },
+    ]);
+}
+const { Page, product } = Astro.props;
+---
+
+<Page locale="en" product={product} />

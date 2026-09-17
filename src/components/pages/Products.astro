@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Product from '../../components/Product.astro';
+import { products } from '../../data/products';
 
 import { translator, type Locale } from '../../data/i18n';
 interface Props {
@@ -14,7 +15,7 @@ const t = translator(locale);
   locale={locale}
   title={t('Products — Hailink Labs')}
   description={t(
-    'Explore focused apps from Hailink Labs, including Invoice Maker: SameJob for solo service businesses.',
+    'Explore SameJob, TMProof, LitterRound and CalvingPocket: focused iPhone apps for everyday work and records.',
   )}
 >
   <section class="page-intro">
@@ -28,7 +29,12 @@ const t = translator(locale);
       {t('Focused apps for the work you do again and again.')}
     </p>
   </section>
-  <section class="product-list" aria-label={t('Hailink Labs products')}>
-    <Product locale={locale} headingLevel="h2" />
+  <section
+    class="product-list product-grid"
+    aria-label={t('Hailink Labs products')}
+  >
+    {products.map((product) => (
+      <Product locale={locale} product={product} headingLevel="h2" />
+    ))}
   </section>
 </Layout>

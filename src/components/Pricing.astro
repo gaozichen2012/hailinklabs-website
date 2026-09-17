@@ -1,0 +1,50 @@
+---
+import type { Locale } from '../data/i18n';
+interface Props {
+  locale: Locale;
+  slug: string;
+}
+const { locale, slug } = Astro.props;
+const zh = locale === 'zh-CN';
+---
+
+{slug === 'samejob' ? (
+  <>
+    <p>
+      {zh
+        ? '终身 Pro：$29.99，一次性购买，包含未来更新。也可选择 $1.49/月或 $14.99/年的 Pro 订阅。'
+        : 'Lifetime Pro: $29.99 once, including future updates. Pro is also offered at $1.49/month or $14.99/year.'}
+    </p>
+    <p>
+      {zh
+        ? '免费方案每个自然月可确认合计 5 张发票和估价单。Pro 不限数量。没有七天试用；月度和年度订阅自动续费，终身购买不续费。无广告。'
+        : 'Free includes 5 finalized invoices and estimates combined per calendar month. Pro removes that limit. There is no seven-day trial; monthly and yearly subscriptions renew automatically, while lifetime does not. No ads.'}
+    </p>
+  </>
+) : slug === 'tmproof' ? (
+  <p>
+    {zh
+      ? '有关价格及购买问题，请联系 Hailink Labs。'
+      : 'Contact Hailink Labs for pricing and purchase questions.'}
+  </p>
+) : (
+  <>
+    <p>
+      {zh
+        ? `免费完整试用 7 天，之后可一次性支付 ${slug === 'calvingpocket' ? '$19.99' : '$9.99'} 解锁。无订阅。`
+        : `Try everything free for 7 days. Unlock the full app with a ${slug === 'calvingpocket' ? '$19.99' : '$9.99'} one-time purchase. No subscription.`}
+    </p>
+    <p>
+      {zh
+        ? '试用在你主动通过 App Store 确认后开始，不会自动扣款。无广告，解锁后核心功能无使用数量限制。首次激活及购买需连接 App Store。'
+        : 'The trial starts when you choose it and confirm with the App Store. It does not charge automatically. No ads or usage limits on core features after unlock. Initial activation and purchases require an App Store connection.'}
+    </p>
+  </>
+)}
+{slug !== 'tmproof' && (
+  <p class="quiet">
+    {zh
+      ? '以上为美元价格；购买时以 App Store 显示的当地价格为准。'
+      : 'Prices shown in USD. The App Store displays the applicable local price before purchase.'}
+  </p>
+)}

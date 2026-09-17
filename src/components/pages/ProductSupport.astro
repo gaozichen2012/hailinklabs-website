@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Pricing from '../Pricing.astro';
+import { localizedPath, type Locale } from '../../data/i18n';
+import { copy, type ProductData } from '../../data/products';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  product: ProductData;
+}
+const { locale, product: p } = Astro.props;
+const c = (value: readonly [string, string]) => copy(value, locale);
+const href = (suffix: string) =>
+  localizedPath(`/products/${p.slug}${suffix}`, locale);
+---
+
+<Layout
+  locale={locale}
+  title={`${p.name} ${c(['Support', '使用支持'])} | Hailink Labs`}
+  description={c([
+    `Help with ${p.name}: getting started, local data, backups, exports and product questions.`,
+    `${p.name} 使用支持：了解如何开始使用、保存本地数据、备份、导出及解决常见问题。`,
+  ])}
+>
+  <section class="page-intro policy-intro">
+    <a class="breadcrumb" href={href('')}>
+      {p.name} <span aria-hidden="true">/</span>
+    </a>
+    <h1>
+      {p.name}
+      <br />
+      {c(['Support', '使用支持'])}
+    </h1>
+    <p class="intro-copy">{c(p.description)}</p>
+  </section>
+  <article class="policy prose">
+    <h2>{c(['Getting started', '开始使用'])}</h2>
+    <ol>
+      {p.steps.map(([heading, body]) => (
+        <li>
+          <strong>{c(heading)}</strong> {c(body)}
+        </li>
+      ))}
+    </ol>
+    <h2>{c(['Common questions', '常见问题'])}</h2>
+    <p>{c(p.faq)}</p>
+    <h2>{c(['Data & backup', '数据与备份'])}</h2>
+    <p>{c(p.storage)}</p>
+    <p>{c(p.backup)}</p>
+    <p>
+      {c([
+        'Keep backups outside the app before uninstalling it or resetting a device. Deleting the app removes its local records. If saving fails, keep the existing data, free device storage and retry.',
+        '卸载 App 或重置设备前，请将备份保存在 App 之外。删除 App 会移除其本地记录。保存失败时，请保留现有数据，释放设备空间后重试。',
+      ])}
+    </p>
+    <h2>{c(['Export & files', '导出与文件'])}</h2>
+    <p>{c(p.export)}</p>
+    <h2>{c(['Purchase & trial', '购买与试用'])}</h2>
+    <Pricing locale={locale} slug={p.slug} />
+    {p.slug !== 'tmproof' && (
+      <>
+        <h2>{c(['Restore Purchases', '恢复购买'])}</h2>
+        <p>
+          {c([
+            'Open the app’s purchase screen and choose Restore Purchases while connected to the App Store with the Apple Account used for the purchase. Restoring a business backup does not restore purchase access.',
+            '连接 App Store 并使用原购买 Apple 账号，在 App 购买页面选择 Restore Purchases（恢复购买）。恢复业务备份不会恢复购买权益。',
+          ])}
+        </p>
+        {p.slug !== 'samejob' && (
+          <p>
+            {c([
+              'Restoring a trial keeps its original start date; it does not begin a new seven-day period.',
+              '恢复试用会保留原始开始日期，不会重新开始七天试用。',
+            ])}
+          </p>
+        )}
+      </>
+    )}
+    <h2>{c(['Privacy', '隐私'])}</h2>
+    <p>
+      <a href={href('/privacy')}>
+        {c(['Read the privacy policy', '阅读隐私政策'])}
+      </a>
+    </p>
+    <h2>{c(['Contact', '联系'])}</h2>
+    <p>
+      <a
+        class="email-link"
+        href={`mailto:${site.email}?subject=${p.name}%20Support`}
+      >
+        {site.email}
+      </a>
+    </p>
+    <p>
+      {c([
+        'Include your app version, iOS version and a short description of the issue. Remove private information from screenshots. Please do not send passwords, payment credentials, customer records or full backups.',
+        '请提供 App 版本、iOS 版本及问题简述。发送截图前请移除私人信息，不要发送密码、支付凭据、客户记录或完整备份。',
+      ])}
+    </p>
+  </article>
+</Layout>

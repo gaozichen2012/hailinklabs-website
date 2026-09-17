@@ -37,7 +37,7 @@ for (const path of routes) {
       new URL(path, site.url).href,
     );
     await expect(page.locator('body')).not.toContainText(
-      /lorem ipsum|placeholder|\bTODO\b|review copy|coming soon/i,
+      /lorem ipsum|placeholder|\bTODO\b|review copy|coming soon|in development|开发中|TestFlight|\bBeta\b/i,
     );
     expect(await page.locator('script').count()).toBe(0);
     expect(

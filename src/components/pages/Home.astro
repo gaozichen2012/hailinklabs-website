@@ -1,14 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Product from '../../components/Product.astro';
+import { products } from '../../data/products';
 import { site } from '../../data/site';
 
-import {
-  translator,
-  localizedPath,
-  companyName,
-  type Locale,
-} from '../../data/i18n';
+import { translator, localizedPath, type Locale } from '../../data/i18n';
 interface Props {
   locale: Locale;
 }
@@ -21,7 +17,7 @@ const href = (path: string) => localizedPath(path, locale);
   locale={locale}
   title={t('Hailink Labs — Focused software for everyday work')}
   description={t(
-    'Hailink Labs is a software company based in Shenzhen, China. We build focused apps for everyday work, including Invoice Maker: SameJob.',
+    'Hailink Labs builds focused iPhone apps for repeat invoices, extra-work tickets, early puppy care and field calving records.',
   )}
 >
   <section class="hero">
@@ -46,7 +42,11 @@ const href = (path: string) => localizedPath(path, locale);
     <div class="section-label">
       <h2 id="products-title">{t('Our products')}</h2>
     </div>
-    <Product locale={locale} />
+    <div class="product-grid">
+      {products.map((product) => (
+        <Product locale={locale} product={product} compact />
+      ))}
+    </div>
   </section>
   <section class="section-row company-section" aria-labelledby="company-title">
     <div class="section-label">
@@ -64,10 +64,7 @@ const href = (path: string) => localizedPath(path, locale);
           'Hailink Labs is a software company based in Shenzhen, China. We focus on simplicity, reliability, and a practical user experience.',
         )}
       </p>
-      <p class="legal-note">
-        {t('Hailink Labs is the brand of')} <span>{companyName(locale)}</span>
-        {locale === 'zh-CN' ? '。' : ''}
-      </p>
+
       <a class="text-link" href={href('/about')}>
         {t('About Hailink Labs')} <span aria-hidden="true">→</span>
       </a>
