@@ -57,6 +57,17 @@ const href = (suffix: string) =>
     <p>{c(p.export)}</p>
     <h2>{c(['Purchase & trial', '购买与试用'])}</h2>
     <Pricing locale={locale} slug={p.slug} />
+    {p.slug === 'tmproof' && (
+      <>
+        <h2>{c(['Purchase support', '购买支持'])}</h2>
+        <p>
+          {c([
+            'For help with a purchase or restoring access, contact Hailink Labs with the app version and a description of the issue. Do not send payment credentials.',
+            '如需购买或恢复使用权限方面的帮助，请联系 Hailink Labs，提供 App 版本及问题描述。不要发送支付凭据。',
+          ])}
+        </p>
+      </>
+    )}
     {p.slug !== 'tmproof' && (
       <>
         <h2>{c(['Restore Purchases', '恢复购买'])}</h2>

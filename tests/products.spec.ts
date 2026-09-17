@@ -78,3 +78,23 @@ test('published pricing matches implemented access', async ({ page }) => {
     await expect(page.locator('#pricing')).toContainText('7 days');
   }
 });
+
+test('TMProof approved commercial model is consistent in both languages', async ({
+  page,
+}) => {
+  for (const prefix of ['', '/zh']) {
+    for (const suffix of ['', '/support']) {
+      await page.goto(`${prefix}/products/tmproof${suffix}`);
+      await expect(page.locator('main')).toContainText('$9.99');
+      await expect(page.locator('main')).toContainText(
+        prefix ? '完整免费试用 7 天' : 'full app free for 7 days',
+      );
+      await expect(page.locator('main')).toContainText(
+        prefix ? '核心功能不拆分收费' : 'no separate charges for core features',
+      );
+      await expect(page.locator('main')).not.toContainText(
+        'Contact Hailink Labs for pricing',
+      );
+    }
+  }
+});
