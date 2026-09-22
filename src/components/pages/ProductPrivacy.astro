@@ -35,9 +35,11 @@ const path = `/products/${p.slug}`;
     </p>
     <h1>{c(['Privacy policy', '隐私政策'])}</h1>
     <p class="intro-copy">
-      {p.slug === 'gearproof'
-        ? c(['Effective September 22, 2026', '生效日期：2026 年 9 月 22 日'])
-        : c(['Effective September 17, 2026', '生效日期：2026 年 9 月 17 日'])}
+      {p.slug === 'tmproof'
+        ? c(['Effective September 23, 2026', '生效日期：2026 年 9 月 23 日'])
+        : p.slug === 'gearproof'
+          ? c(['Effective September 22, 2026', '生效日期：2026 年 9 月 22 日'])
+          : c(['Effective September 17, 2026', '生效日期：2026 年 9 月 17 日'])}
     </p>
   </section>
   <article class="policy prose">
@@ -98,8 +100,8 @@ const path = `/products/${p.slug}`;
     ) : p.slug === 'tmproof' ? (
       <p>
         {c([
-          'TMProof does not use in-app purchase processing or store purchase entitlements. Hailink Labs does not receive payment card details through the app.',
-          'TMProof 不使用 App 内购买处理，也不保存购买权益。Hailink Labs 不会通过 App 接收支付卡信息。',
+          'Apple processes the free seven-day trial, lifetime purchase and purchase restoration through StoreKit. TMProof uses verified transaction information stored by Apple on the device to determine access, including offline access. Purchase access is separate from ticket backups. Hailink Labs does not receive payment card details or operate a receipt server.',
+          'Apple 通过 StoreKit 处理免费七天试用、终身购买和购买恢复。TMProof 使用 Apple 在设备上保存的已验证交易信息判断权益，包括离线权益。购买权益与工单备份分开处理。Hailink Labs 不接收支付卡信息，也不运营收据服务器。',
         ])}
       </p>
     ) : (

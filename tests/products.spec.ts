@@ -47,7 +47,7 @@ test('product-specific privacy stays faithful to data use', async ({
     'drawn mark, signer name and signing time',
   );
   await expect(page.locator('article')).toContainText(
-    'does not use in-app purchase processing',
+    'Apple processes the free seven-day trial',
   );
   await page.goto('/products/litterround/privacy');
   await expect(page.locator('article')).toContainText(
