@@ -21,6 +21,19 @@ const zh = locale === 'zh-CN';
         : 'Free includes 5 finalized invoices and estimates combined per calendar month. Pro removes that limit. There is no seven-day trial; monthly and yearly subscriptions renew automatically, while lifetime does not. No ads.'}
     </p>
   </>
+) : slug === 'gearproof' ? (
+  <>
+    <p>
+      {zh
+        ? '完整免费试用 7 天，之后以 $19.99 一次性买断。无订阅、广告或器材数量配额。'
+        : 'Try the full app free for 7 days, then unlock lifetime access with a $19.99 one-time purchase. No subscription, ads or gear quotas.'}
+    </p>
+    <p>
+      {zh
+        ? '试用从首次运行开始，在本机记录，不会自动扣款。购买及恢复购买需要连接 App Store。试用后仍可处理已有交接的归还、查看历史与导出。'
+        : 'Your trial starts on first launch and is recorded locally. It does not charge automatically. Purchases and restoring purchases require the App Store. Existing returns, history and exports remain available after the trial.'}
+    </p>
+  </>
 ) : slug === 'tmproof' ? (
   <p>
     {zh

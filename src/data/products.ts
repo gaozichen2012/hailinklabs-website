@@ -359,4 +359,90 @@ export const products = [
       ],
     ],
   },
+  {
+    slug: 'gearproof',
+    name: 'GearProof',
+    storeName: 'GearProof: Equipment Checkout',
+    subtitle: ['Scan Gear. Prove Returns.', '扫描器材，核对归还。'],
+    value: ['One handoff. Every item accounted for.', '一次交接，逐件有据。'],
+    summary: [
+      'Check out shared gear and reconcile every return.',
+      '记录共享器材借出，逐件核对归还。',
+    ],
+    description: [
+      'Equipment checkout for small video and media teams with one gear room and one primary iPhone. Record who took the gear and what came back.',
+      '为使用一个器材间和一台主要 iPhone 的小型视频与媒体团队记录器材交接，明确谁借走了什么、归还情况如何。',
+    ],
+    problem: [
+      'Scattered notes make missing accessories and changed conditions hard to trace. Keep the original handoff and return evidence together.',
+      '分散的记录让附件缺失和状况变化难以追溯。将原始交接与归还证据保存在一起。',
+    ],
+    steps: [
+      [
+        ['Set up your gear.', '建立器材资料。'],
+        [
+          'Add gear, saved kits and accessories. Link existing QR or barcode labels, or share and print generated QR codes.',
+          '添加器材、套件与附件，关联已有二维码或条码，也可分享打印生成的二维码。',
+        ],
+      ],
+      [
+        ['Record one handoff.', '一次记录整次交接。'],
+        [
+          'Scan or select multiple items and kits, choose a borrower and due date, then confirm with one optional signature.',
+          '扫描或选择多件器材与套件，选择借用人和归还日期，可选签名后确认。',
+        ],
+      ],
+      [
+        ['Reconcile the return.', '核对归还。'],
+        [
+          'Compare checkout condition with returned gear. Record missing or damaged items and export an Incident Record when needed.',
+          '对照借出时状况核对归还，记录缺失或损坏，按需导出事件记录。',
+        ],
+      ],
+    ],
+    features: [
+      ['Mixed items and kits in one checkout', '一次交接混合器材与套件'],
+      [
+        'Partial returns and missing or damaged items',
+        '部分归还与缺失损坏记录',
+      ],
+      ['Condition photos and optional signatures', '状况照片与可选签名'],
+      [
+        'Local reminders, history, PDF, CSV and full backups',
+        '本地提醒、历史、PDF、CSV 与完整备份',
+      ],
+    ],
+    principles: [
+      'No account, subscription, ads, team sync or reservation calendar. Designed for one coordinator and one primary checkout iPhone.',
+      '无需账号、无订阅广告、无团队同步或预约日历。面向一个主要负责人和一台主要交接 iPhone。',
+    ],
+    storage: [
+      'Gear, kits, borrowers, history, photos, signatures and drafts are stored locally on your iPhone. Core handoffs and exports work offline. GearProof has no backend or automatic cloud sync.',
+      '器材、套件、借用人、历史、照片、签名和草稿保存在 iPhone 本地。核心交接与导出支持离线，不使用后台或自动云同步。',
+    ],
+    backup: [
+      'In Settings, choose Create full backup and save the JSON outside the app. Restore from backup validates the file, asks before replacing records and keeps a local pre-restore recovery copy. Trial and purchase access are separate from backups.',
+      '在 Settings 中选择 Create full backup，将 JSON 保存到 App 之外。恢复前检查文件并确认替换，保留本地恢复前副本；试用和购买权益不随备份迁移。',
+    ],
+    export: [
+      'Export history CSV in Settings, or an Incident Record PDF from a handoff. Full JSON backups include photos, signatures and drafts; CSV and PDF are not restorable backups.',
+      '在设置中导出历史 CSV，或从交接记录导出事件 PDF。完整 JSON 备份包含照片、签名和草稿；CSV 与 PDF 不可替代完整备份。',
+    ],
+    faq: [
+      'If scanning is unavailable, use manual label entry or select gear from the list. Allow camera access in iPhone Settings to scan. Local reminders are optional and can be enabled in Settings. Out Now always shows due dates. After the trial, existing handoffs, returns and exports remain accessible.',
+      '扫码不可用时可手动输入标签或从列表选择器材。可在 iPhone 设置中允许相机权限。本地提醒可在 App 设置中开启，Out Now 始终显示到期日期。试用后仍可访问已有交接、归还和导出。',
+    ],
+    privacy: [
+      [
+        'GearProof stores equipment labels and names, kit contents and quantities, borrower names and optional references, checkout and due dates, return events, condition notes, issues, photos, optional signature strokes and unfinished drafts. Hailink Labs does not automatically receive these records.',
+        'GearProof 保存器材标签及名称、套件内容和数量、借用人姓名及可选备注、借出及到期日期、归还事件、状况说明、问题、照片、可选签名笔迹与草稿。Hailink Labs 不会自动接收这些记录。',
+      ],
+    ],
+    media: [
+      [
+        'Camera access supports label scanning and condition photos. The system photo picker shares only selected images. Photos and signature strokes are stored in local records and can be included in PDFs and backups. Optional local notifications use checkout and due-date information; no server or borrower messages are sent.',
+        '相机用于标签扫描及状况拍照，系统照片选择器仅提供所选图片。照片和签名笔迹保存在本地，可能包含于 PDF 和备份。本地通知使用交接及到期信息，不发送服务器或借用人消息。',
+      ],
+    ],
+  },
 ] as const satisfies readonly ProductData[];

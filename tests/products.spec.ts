@@ -1,13 +1,19 @@
 import { expect, test } from '@playwright/test';
 
-const names = ['SameJob', 'TMProof', 'LitterRound', 'CalvingPocket'];
+const names = [
+  'SameJob',
+  'TMProof',
+  'LitterRound',
+  'CalvingPocket',
+  'GearProof',
+];
 for (const prefix of ['', '/zh']) {
   test(`${prefix || 'English'} complete product matrix and resource paths`, async ({
     page,
   }) => {
     for (const route of [prefix || '/', `${prefix}/products`]) {
       await page.goto(route);
-      await expect(page.locator('.matrix-card')).toHaveCount(4);
+      await expect(page.locator('.matrix-card')).toHaveCount(names.length);
       for (const name of names) {
         const card = page
           .locator('.matrix-card')
@@ -70,6 +76,7 @@ test('published pricing matches implemented access', async ({ page }) => {
   for (const [slug, price] of [
     ['litterround', '$9.99'],
     ['calvingpocket', '$19.99'],
+    ['gearproof', '$19.99'],
   ]) {
     await page.goto(`/products/${slug}`);
     await expect(page.locator('#pricing')).toContainText(

@@ -35,7 +35,9 @@ const path = `/products/${p.slug}`;
     </p>
     <h1>{c(['Privacy policy', '隐私政策'])}</h1>
     <p class="intro-copy">
-      {c(['Effective September 17, 2026', '生效日期：2026 年 9 月 17 日'])}
+      {p.slug === 'gearproof'
+        ? c(['Effective September 22, 2026', '生效日期：2026 年 9 月 22 日'])
+        : c(['Effective September 17, 2026', '生效日期：2026 年 9 月 17 日'])}
     </p>
   </section>
   <article class="policy prose">
@@ -86,7 +88,14 @@ const path = `/products/${p.slug}`;
       ])}
     </p>
     <h2>{c(['Purchases', '购买'])}</h2>
-    {p.slug === 'tmproof' ? (
+    {p.slug === 'gearproof' ? (
+      <p>
+        {c([
+          'Apple processes lifetime purchases and restores through StoreKit. GearProof verifies transaction information and stores access information locally. The seven-day trial start and observed time are stored in the iPhone Keychain; the trial is not an Apple subscription and does not transfer with record backups. Hailink Labs does not receive payment card details or operate a receipt server.',
+          'Apple 通过 StoreKit 处理终身购买与恢复。GearProof 验证交易并在本地保存权益信息。七天试用起点及已观察时间保存在 iPhone 钥匙串中；试用不是 Apple 订阅，不随记录备份迁移。Hailink Labs 不接收支付卡信息，也不运营收据服务器。',
+        ])}
+      </p>
+    ) : p.slug === 'tmproof' ? (
       <p>
         {c([
           'TMProof does not use in-app purchase processing or store purchase entitlements. Hailink Labs does not receive payment card details through the app.',

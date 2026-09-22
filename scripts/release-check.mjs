@@ -12,7 +12,13 @@ if (!review.approved || !review.reviewedOn || review.remaining.length) {
   );
   process.exit(1);
 }
-for (const slug of ['samejob', 'tmproof', 'litterround', 'calvingpocket']) {
+for (const slug of [
+  'samejob',
+  'tmproof',
+  'litterround',
+  'calvingpocket',
+  'gearproof',
+]) {
   const product = review.productSourceReviews?.[slug];
   if (
     !product?.reviewedOn ||
@@ -27,5 +33,5 @@ for (const slug of ['samejob', 'tmproof', 'litterround', 'calvingpocket']) {
   }
 }
 console.log(
-  'Company privacy publication review and all four product source reviews are complete.',
+  'Company privacy publication review and all product source reviews are complete.',
 );
