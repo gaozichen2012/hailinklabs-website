@@ -16,11 +16,21 @@ const href = (path: string) => localizedPath(path, locale);
 <Layout
   locale={locale}
   title={t('Hailink Labs — Focused software for everyday work')}
-  description={t(
-    'Hailink Labs builds focused iPhone apps for repeat invoices, extra-work tickets, early puppy care and field calving records.',
-  )}
+  description={
+    locale === 'en'
+      ? 'Hailink Labs builds focused iPhone apps for everyday work: invoices, field records, equipment handoffs, workouts and heat press settings.'
+      : 'Hailink Labs 打造专注日常工作的 iPhone App，涵盖发票、现场记录、器材交接、训练和热压参数。'
+  }
 >
   <section class="hero">
+    <img
+      class="hero-symbol"
+      src="/brand/hailink-symbol.svg"
+      width="552"
+      height="369"
+      alt=""
+      aria-hidden="true"
+    />
     <p class="eyebrow">{t('Hailink Labs · Independent software')}</p>
     <h1>
       {t('Focused software.')}
@@ -41,6 +51,10 @@ const href = (path: string) => localizedPath(path, locale);
   <section class="products-section" aria-labelledby="products-title">
     <div class="section-label">
       <h2 id="products-title">{t('Our products')}</h2>
+      <span class="catalog-count">
+        {products.length}{' '}
+        {locale === 'en' ? 'focused apps' : '款专注实用的 App'}
+      </span>
     </div>
     <div class="product-grid">
       {products.map((product) => (

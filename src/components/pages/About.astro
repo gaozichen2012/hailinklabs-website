@@ -1,4 +1,5 @@
 ---
+import BrandLogo from '../BrandLogo.astro';
 import Layout from '../../layouts/Layout.astro';
 import { site } from '../../data/site';
 
@@ -39,6 +40,9 @@ const href = (path: string) => localizedPath(path, locale);
       <h2>{t('Who we are')}</h2>
     </div>
     <div class="section-body prose">
+      <div class="about-brand">
+        <BrandLogo />
+      </div>
       <p>
         {t(
           'Hailink Labs is a software company based in Shenzhen, China. Hailink Labs is the brand of',
@@ -74,8 +78,8 @@ const href = (path: string) => localizedPath(path, locale);
     <div class="section-body prose">
       <p>
         {locale === 'en'
-          ? 'We build SameJob for repeat invoices, TMProof for extra-work tickets, LitterRound for early puppy care CalvingPocket for field birth records, GearProof for equipment handoffs and HybridLoop for workout timing and records.'
-          : '我们打造了用于重复开票的 SameJob、记录额外工作的 TMProof、记录幼犬早期护理的 LitterRound，现场产犊记录本 CalvingPocket、器材交接工具 GearProof，以及训练计时与记录工具 HybridLoop。'}
+          ? 'We build SameJob for repeat invoices, TMProof for extra-work tickets, LitterRound for early puppy care, CalvingPocket for field birth records, GearProof for equipment handoffs, HybridLoop for workout timing and records, and PressRecipe for heat press settings and test records. '
+          : '我们打造了用于重复开票的 SameJob、记录额外工作的 TMProof、记录幼犬早期护理的 LitterRound，现场产犊记录本 CalvingPocket、器材交接工具 GearProof，训练计时与记录工具 HybridLoop，以及热压参数与测试记录工具 PressRecipe。'}
         <a href={href('/products')}>
           {locale === 'en' ? 'Explore our products' : '了解我们的产品'}
         </a>

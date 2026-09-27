@@ -20,7 +20,7 @@ npm run release:check
 npm run verify:production
 ```
 
-Production checks cover all 44 English and Chinese pages, sitemap, robots, favicon, missing-path 404, normal certificate trust, HTTP-to-HTTPS and www-to-apex redirects. Browser emulation does not constitute physical-device testing.
+Production checks cover all 50 English and Chinese pages, sitemap, robots, favicon, missing-path 404, normal certificate trust, HTTP-to-HTTPS and www-to-apex redirects. Browser emulation does not constitute physical-device testing.
 
 ## Privacy publication gate
 
@@ -33,3 +33,7 @@ For DNS, email or account operations, authorized maintainers must initialize the
 Revert a website change with a normal reviewed Git commit and let `main` deploy again. Do not rewrite history or change DNS as a routine deployment rollback.
 
 See [project state](项目当前状态.md) for the public engineering snapshot and [private records instructions](../README.md#private-records) for submodule maintenance.
+
+## Brand assets
+
+Website brand files are byte-for-byte copies of the HailinkLogo V1.0 release at commit `2820694d0ac0dfc42b0d2ee8ac17d73e2ee14cd4`. Source paths and SHA-256 values are recorded in `src/data/brand-assets.json`. Use the outlined Primary SVG to avoid external font dependencies; keep the original proportions and at least 0.5W surrounding clear space. The header, footer and About use Primary; the homepage uses Symbol; favicon and Apple touch icon use the supplied platform exports. Update assets from the source repository, never redraw them in this website.

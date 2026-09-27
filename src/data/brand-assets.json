@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/gaozichen2012/HailinkLogo",
+  "commit": "2820694d0ac0dfc42b0d2ee8ac17d73e2ee14cd4",
+  "version": "1.0",
+  "assets": [
+    {
+      "file": "public/brand/hailink-logo.svg",
+      "source": "assets/logo/v1.0/svg/hailink-logo-a2-outlined.svg",
+      "sha256": "63a7d2f9f76a712f0e44ab7ec4fad6ec15f92bcce2bada853ea7ff4793a73250"
+    },
+    {
+      "file": "public/brand/hailink-symbol.svg",
+      "source": "assets/logo/v1.0/svg/hailink-symbol-color.svg",
+      "sha256": "ca9d270faf7ec02a87d394aa32dcb34af28e86bcdf4d785465b7e2ea58378bac"
+    },
+    {
+      "file": "public/favicon.svg",
+      "source": "assets/logo/v1.0/favicon/favicon.svg",
+      "sha256": "bfdfd53833c073ef28730fab43cfa55773ce5ab2ebbb81a7c6b91688c54745ab"
+    },
+    {
+      "file": "public/favicon-32.png",
+      "source": "assets/logo/v1.0/favicon/favicon-32.png",
+      "sha256": "c7861f16b7f1117af0f8da6dcf89ea9a83b6314a06c6165f47d3ed4f27b2a94e"
+    },
+    {
+      "file": "public/apple-touch-icon.png",
+      "source": "assets/logo/v1.0/favicon/apple-touch-icon.png",
+      "sha256": "15a495d14e7aeaa1fb78599f6bb01f82be6fc2fce9090049c660db4585fda117"
+    }
+  ]
+}

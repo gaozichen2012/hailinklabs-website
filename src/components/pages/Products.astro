@@ -14,9 +14,11 @@ const t = translator(locale);
 <Layout
   locale={locale}
   title={t('Products — Hailink Labs')}
-  description={t(
-    'Explore SameJob, TMProof, LitterRound, CalvingPocket, GearProof and HybridLoop: focused iPhone apps for everyday work and records.',
-  )}
+  description={
+    locale === 'en'
+      ? 'Explore SameJob, TMProof, LitterRound, CalvingPocket, GearProof, HybridLoop and PressRecipe: focused iPhone apps for everyday work and records.'
+      : '探索 SameJob、TMProof、LitterRound、CalvingPocket、GearProof、HybridLoop 和 PressRecipe，专注日常工作与记录的 iPhone App。'
+  }
 >
   <section class="page-intro">
     <p class="eyebrow">{t('Our products')}</p>

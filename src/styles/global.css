@@ -1,14 +1,14 @@
 :root {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #1d1d1f;
+  color: #17191b;
   background: #fff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   --muted: #626269;
   --line: #dedee2;
-  --green: #245647;
-  --surface: #f5f5f7;
+  --green: #2f7a58;
+  --surface: #f5f7f5;
   --section-space: 88px;
 }
 * {
@@ -46,7 +46,7 @@ h3,
   text-wrap: balance;
 }
 a {
-  -webkit-tap-highlight-color: #24564720;
+  -webkit-tap-highlight-color: #2f7a5820;
 }
 .shell {
   width: 100%;
@@ -67,7 +67,8 @@ a {
   top: 12px;
 }
 .site-header {
-  height: 72px;
+  height: 88px;
+  border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,19 +83,6 @@ a {
   font-weight: 600;
   letter-spacing: -0.5px;
   text-decoration: none;
-}
-.brand-mark {
-  display: grid;
-  place-items: center;
-  background: var(--green);
-  color: white;
-  width: 25px;
-  height: 25px;
-  border-radius: 6px;
-  font-size: 21px;
-  font-weight: 600;
-  letter-spacing: -1.5px;
-  padding-right: 2px;
 }
 .site-header nav,
 .site-footer nav {
@@ -117,7 +105,7 @@ a {
   text-underline-offset: 6px;
 }
 .hero {
-  padding-block: 102px 104px;
+  padding-block: 72px 88px;
   text-align: center;
 }
 .eyebrow {
@@ -172,7 +160,7 @@ h1 {
   transition: background 160ms ease;
 }
 .button:hover {
-  background: #326a58;
+  background: #245f44;
   color: white;
 }
 .button span {
@@ -843,7 +831,9 @@ h1:lang(zh-CN),
 }
 .matrix-card {
   background: var(--surface);
-  padding: 40px;
+  border: 1px solid #e3e9e4;
+  border-radius: 20px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -902,5 +892,100 @@ h1:lang(zh-CN),
   }
   .product-positioning {
     font-size: 16px;
+  }
+}
+
+/* Shared brand presentation and catalogue rhythm. */
+.brand-logo {
+  display: block;
+  width: 190px;
+  height: auto;
+}
+.wordmark,
+.footer-brand {
+  padding: 8px;
+  margin-left: -8px;
+}
+.hero-symbol {
+  display: block;
+  width: 100px;
+  height: auto;
+  margin: 0 auto 32px;
+}
+.about-brand {
+  padding: 12px;
+  margin: 0 0 28px -12px;
+}
+.about-brand .brand-logo {
+  width: min(100%, 300px);
+}
+.hero {
+  background: radial-gradient(ellipse at 50% 45%, #f1f6f1, transparent 68%);
+}
+.products-section > .section-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.catalog-count {
+  color: var(--muted);
+  font-size: 13px;
+}
+.card-category {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.matrix-card h2,
+.matrix-card h3 {
+  font-weight: 600;
+}
+.matrix-card .text-link {
+  border-top: 1px solid #dce5de;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+.product-grid {
+  gap: 20px;
+}
+.support-directory {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+}
+.support-directory a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 52px;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+.support-directory span {
+  color: var(--green);
+}
+@media (hover: hover) {
+  .matrix-card:hover {
+    border-color: #a2bbaa;
+  }
+}
+@media (max-width: 600px) {
+  .site-header nav {
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .support-directory {
+    grid-template-columns: 1fr;
+  }
+  .catalog-count {
+    font-size: 12px;
   }
 }

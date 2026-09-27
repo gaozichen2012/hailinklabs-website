@@ -1,4 +1,13 @@
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir, readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { Buffer } from 'node:buffer';
+
+const brand = JSON.parse(
+  await readFile(
+    new URL('../src/data/brand-assets.json', import.meta.url),
+    'utf8',
+  ),
+);
 
 const origin = 'https://hailinklabs.com';
 const businessPaths = [
@@ -34,6 +43,10 @@ const paths = [
   '/robots.txt',
   '/sitemap.xml',
   '/favicon.svg',
+  '/favicon-32.png',
+  '/apple-touch-icon.png',
+  '/brand/hailink-logo.svg',
+  '/brand/hailink-symbol.svg',
 ];
 const results = [];
 for (const path of paths) {
@@ -43,10 +56,14 @@ for (const path of paths) {
       redirect: 'follow',
       signal: AbortSignal.timeout(15000),
     });
-    const body = await r.text();
+    const bytes = Buffer.from(await r.arrayBuffer());
+    const body = bytes.toString();
+    const asset = brand.assets.find((entry) => entry.file === `public${path}`);
     const page = !path.includes('.');
     const pass =
       r.status === 200 &&
+      (!asset ||
+        createHash('sha256').update(bytes).digest('hex') === asset.sha256) &&
       new URL(r.url).origin === origin &&
       (!page ||
         (body.includes(
@@ -58,6 +75,7 @@ for (const path of paths) {
           (!['/contact', '/products/samejob/support'].includes(path) ||
             body.includes('gaozichen@hailinklabs.com')) &&
           body.includes(`rel="canonical" href="${url}"`) &&
+          body.includes('/brand/hailink-logo.svg') &&
           !/lorem ipsum|placeholder|\bTODO\b|review copy|coming soon/i.test(
             body,
           )));

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { site } from '../../data/site';
+import { products } from '../../data/products';
 
 import {
   translator,
@@ -21,8 +22,8 @@ const href = (path: string) => localizedPath(path, locale);
   title={t('Contact — Hailink Labs')}
   description={
     locale === 'en'
-      ? 'Contact Hailink Labs for company inquiries and support for SameJob, TMProof, LitterRound, CalvingPocket, GearProof and HybridLoop.'
-      : '联系 Hailink Labs，获取公司咨询及 SameJob、TMProof、LitterRound、CalvingPocket、GearProof、HybridLoop 产品支持。'
+      ? 'Contact Hailink Labs for company inquiries and support for SameJob, TMProof, LitterRound, CalvingPocket, GearProof, HybridLoop and PressRecipe.'
+      : '联系 Hailink Labs，获取公司咨询及 SameJob、TMProof、LitterRound、CalvingPocket、GearProof、HybridLoop、PressRecipe 产品支持。'
   }
 >
   <section class="page-intro">
@@ -67,6 +68,23 @@ const href = (path: string) => localizedPath(path, locale);
           ? ' to find its support and privacy pages.'
           : '进入相应的支持与隐私页面。'}
       </p>
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{locale === 'en' ? 'Product support' : '产品支持'}</h2>
+    </div>
+    <div class="section-body">
+      <ul class="support-directory">
+        {products.map((product) => (
+          <li>
+            <a href={href(`/products/${product.slug}/support`)}>
+              {product.name}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 </Layout>
