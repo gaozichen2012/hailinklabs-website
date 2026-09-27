@@ -18,6 +18,7 @@ for (const slug of [
   'litterround',
   'calvingpocket',
   'gearproof',
+  'hybridloop',
 ]) {
   const product = review.productSourceReviews?.[slug];
   if (

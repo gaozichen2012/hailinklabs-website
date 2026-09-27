@@ -20,7 +20,7 @@ npm run release:check
 npm run verify:production
 ```
 
-Production checks cover all 32 English and Chinese pages, sitemap, robots, favicon, missing-path 404, normal certificate trust, HTTP-to-HTTPS and www-to-apex redirects. Browser emulation does not constitute physical-device testing.
+Production checks cover all 44 English and Chinese pages, sitemap, robots, favicon, missing-path 404, normal certificate trust, HTTP-to-HTTPS and www-to-apex redirects. Browser emulation does not constitute physical-device testing.
 
 ## Privacy publication gate
 

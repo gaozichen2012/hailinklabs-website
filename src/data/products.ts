@@ -445,4 +445,104 @@ export const products = [
       ],
     ],
   },
+  {
+    slug: 'hybridloop',
+    name: 'HybridLoop',
+    storeName: 'HybridLoop: Workout Timer',
+    subtitle: ['Voice-Guided Hybrid Training', '语音引导的混合训练'],
+    value: ['Train. Record. Repeat.', '训练、记录，再练一次。'],
+    summary: [
+      'Execute hybrid workouts and build a history worth repeating.',
+      '执行混合训练，留下可供重复与比较的记录。',
+    ],
+    description: [
+      'An iPhone workout timer and recorder for hybrid and functional training. Follow your own workout with automatic timing, large touch controls and optional voice commands.',
+      '面向混合训练与功能性训练的 iPhone 计时和记录工具。通过自动计时、大触控按钮及可选语音指令，执行你自己的训练。',
+    ],
+    problem: [
+      'You already know what to train. Keep your attention on the workout, see what comes next and save a useful record for next time.',
+      '你已经知道要练什么。专注当下训练，清楚下一项目，为下次留下有用的记录。',
+    ],
+    steps: [
+      [
+        ['Choose your workout.', '选择训练。'],
+        [
+          'Create a workout, review an imported text or image draft, repeat a saved workout, or start an Open Workout.',
+          '创建训练，核对文字或图片导入的草稿，重复已保存的训练，或直接开始 Open Workout。',
+        ],
+      ],
+      [
+        ['Follow the timer.', '跟随计时。'],
+        [
+          'Use For Time, Interval, Fixed Cycle / EMOM, AMRAP or Open. Confirm actions with large buttons or optional English voice commands.',
+          '使用 For Time、Interval、Fixed Cycle / EMOM、AMRAP 或 Open 模式，通过大按钮或可选英文语音指令确认操作。',
+        ],
+      ],
+      [
+        ['Review and repeat.', '回顾并重复。'],
+        [
+          'Review recorded results, repeat a workout and compare sessions when their training conditions are comparable.',
+          '回顾实际记录，重复训练，在训练条件可比时比较历史表现。',
+        ],
+      ],
+    ],
+    features: [
+      [
+        'Five timing modes for structured and open workouts',
+        '五种计时模式，支持结构化与开放训练',
+      ],
+      [
+        'Audio guidance and optional on-device English voice commands',
+        '语音播报与可选的设备端英文语音指令',
+      ],
+      [
+        'Text and image import with a draft you review before saving',
+        '文字与图片导入，保存前核对草稿',
+      ],
+      [
+        'Workout history, repeat and condition-based comparison',
+        '训练历史、重复训练与基于可比条件的比较',
+      ],
+      [
+        'CSV exports, JSON backups and private iCloud sync',
+        'CSV 导出、JSON 备份与私有 iCloud 同步',
+      ],
+    ],
+    principles: [
+      'Your plan is not proof of performance. Missing data stays missing, and a tap or voice confirmation is not a sensor measurement. No account, ads, subscription or AI-generated training program.',
+      '计划不等于实际完成。缺失数据保持缺失，触控或语音确认不等于传感器测量。无需注册账号，无广告、订阅或 AI 生成训练计划。',
+    ],
+    storage: [
+      'Workouts and templates are saved locally first, so training does not wait for a network connection. When iCloud is available, the app can sync these records through your Apple Account’s private CloudKit database. No Hailink Labs account is required.',
+      '训练与模板优先保存在本地，开练无需等待网络。iCloud 可用时，App 可通过你的 Apple 账号私有 CloudKit 数据库同步这些记录。无需 Hailink Labs 账号。',
+    ],
+    backup: [
+      'In Settings, choose Create JSON Backup and save it outside the app. Restore Backup validates the file and adds missing records without replacing existing records with the same identifiers. Purchase access is not included.',
+      '在 Settings 中选择 Create JSON Backup，将文件保存到 App 之外。Restore Backup 会验证文件并添加缺失记录，不替换相同标识的现有记录。购买权益不包含在备份中。',
+    ],
+    export: [
+      'Choose Export CSV in Settings for workout records, or Create JSON Backup for templates, sessions and backup data. CSV uses meters and kilograms and is not a restorable full backup.',
+      '在 Settings 中选择 Export CSV 导出训练记录，或选择 Create JSON Backup 保存模板、训练及备份数据。CSV 使用米与千克，不能替代可恢复的完整备份。',
+    ],
+    faq: [
+      'Voice commands are optional and use English on-device recognition. If permissions or recognition are unavailable, use touch controls. Background audio and voice availability depend on iOS. Review image-import drafts before saving. After the trial, history, corrections, exports, backups and an already started workout remain available; starting a new workout requires Lifetime.',
+      '语音指令可选，使用设备端英文识别。权限或识别不可用时可使用触控。后台音频与语音可用性取决于 iOS。图片导入后请先核对草稿。试用结束后，历史、修正、导出、备份及已开始的训练仍可继续；新训练需要终身解锁。',
+    ],
+    privacy: [
+      [
+        'HybridLoop stores workout templates, exercise names, planned targets, recorded timing and results, session progress, corrections and preferences. Planned targets and user confirmations are recorded as such; they are not sensor measurements. Hailink Labs does not automatically receive these records.',
+        'HybridLoop 保存训练模板、动作名称、计划目标、已记录时间与结果、训练进度、修正及偏好设置。计划目标与用户确认按其本来含义记录，不是传感器测量。Hailink Labs 不会自动接收这些记录。',
+      ],
+    ],
+    media: [
+      [
+        'Optional voice control requests microphone and speech-recognition permission and requires on-device recognition. The app does not save raw audio or full transcripts. If on-device recognition is unavailable, touch controls remain available.',
+        '可选语音控制会请求麦克风及语音识别权限，并要求在设备端识别。App 不保存原始音频或完整转写。设备端识别不可用时，仍可使用触控。',
+      ],
+      [
+        'The system photo picker provides only an image you select for on-device text recognition. Clipboard text is read when you choose Paste Clipboard. Review the resulting workout draft before saving; the app does not upload source images to a Hailink Labs server.',
+        '系统照片选择器仅提供你选择的图片，用于设备端文字识别。仅在选择 Paste Clipboard 时读取剪贴板文字。保存前请核对生成的训练草稿；App 不向 Hailink Labs 服务器上传原始图片。',
+      ],
+    ],
+  },
 ] as const satisfies readonly ProductData[];

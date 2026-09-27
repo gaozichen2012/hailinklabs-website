@@ -6,6 +6,7 @@ const names = [
   'LitterRound',
   'CalvingPocket',
   'GearProof',
+  'HybridLoop',
 ];
 for (const prefix of ['', '/zh']) {
   test(`${prefix || 'English'} complete product matrix and resource paths`, async ({
@@ -77,6 +78,7 @@ test('published pricing matches implemented access', async ({ page }) => {
     ['litterround', '$9.99'],
     ['calvingpocket', '$19.99'],
     ['gearproof', '$19.99'],
+    ['hybridloop', '$19.99'],
   ]) {
     await page.goto(`/products/${slug}`);
     await expect(page.locator('#pricing')).toContainText(
@@ -104,4 +106,25 @@ test('TMProof approved commercial model is consistent in both languages', async 
       );
     }
   }
+});
+
+test('HybridLoop privacy distinguishes private cloud, on-device voice and local trial', async ({
+  page,
+}) => {
+  await page.goto('/products/hybridloop/privacy');
+  for (const text of [
+    'private CloudKit database',
+    'does not save raw audio or full transcripts',
+    'iPhone Keychain',
+    'does not delete records already stored',
+  ])
+    await expect(page.locator('article')).toContainText(text);
+  await page.goto('/zh/products/hybridloop/privacy');
+  for (const text of [
+    '私有 CloudKit',
+    '不保存原始音频或完整转写',
+    '钥匙串',
+    '移除 App 不会删除',
+  ])
+    await expect(page.locator('article')).toContainText(text);
 });

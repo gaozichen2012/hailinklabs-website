@@ -77,14 +77,16 @@ const href = (suffix: string) =>
             '连接 App Store 并使用原购买 Apple 账号，在 App 购买页面选择 Restore Purchases（恢复购买）。恢复业务备份不会恢复购买权益。',
           ])}
         </p>
-        {p.slug !== 'samejob' && p.slug !== 'gearproof' && (
-          <p>
-            {c([
-              'Restoring a trial keeps its original start date; it does not begin a new seven-day period.',
-              '恢复试用会保留原始开始日期，不会重新开始七天试用。',
-            ])}
-          </p>
-        )}
+        {p.slug !== 'samejob' &&
+          p.slug !== 'gearproof' &&
+          p.slug !== 'hybridloop' && (
+            <p>
+              {c([
+                'Restoring a trial keeps its original start date; it does not begin a new seven-day period.',
+                '恢复试用会保留原始开始日期，不会重新开始七天试用。',
+              ])}
+            </p>
+          )}
       </>
     )}
     <h2>{c(['Privacy', '隐私'])}</h2>

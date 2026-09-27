@@ -71,8 +71,8 @@ export const zh = {
   'Focused apps for the work you do again and again.':
     '为日常重复的工作，提供专注实用的应用。',
   'Products — Hailink Labs': '产品 — Hailink Labs',
-  'Explore SameJob, TMProof, LitterRound and CalvingPocket: focused iPhone apps for everyday work and records.':
-    '了解 SameJob、TMProof、LitterRound 与 CalvingPocket，为日常工作与记录打造的专注型 iPhone 应用。',
+  'Explore SameJob, TMProof, LitterRound, CalvingPocket, GearProof and HybridLoop: focused iPhone apps for everyday work and records.':
+    '了解 SameJob、TMProof、LitterRound、CalvingPocket、GearProof 与 HybridLoop，为日常工作与记录打造的专注型 iPhone 应用。',
   'Hailink Labs products': 'Hailink Labs 产品',
   'Privacy policy': '隐私政策',
   'Effective September 14, 2026': '生效日期：2026 年 9 月 14 日',

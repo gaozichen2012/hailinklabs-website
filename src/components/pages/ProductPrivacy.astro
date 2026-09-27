@@ -35,11 +35,19 @@ const path = `/products/${p.slug}`;
     </p>
     <h1>{c(['Privacy policy', '隐私政策'])}</h1>
     <p class="intro-copy">
-      {p.slug === 'tmproof'
-        ? c(['Effective September 23, 2026', '生效日期：2026 年 9 月 23 日'])
-        : p.slug === 'gearproof'
-          ? c(['Effective September 22, 2026', '生效日期：2026 年 9 月 22 日'])
-          : c(['Effective September 17, 2026', '生效日期：2026 年 9 月 17 日'])}
+      {p.slug === 'hybridloop'
+        ? c(['Effective September 27, 2026', '生效日期：2026 年 9 月 27 日'])
+        : p.slug === 'tmproof'
+          ? c(['Effective September 23, 2026', '生效日期：2026 年 9 月 23 日'])
+          : p.slug === 'gearproof'
+            ? c([
+                'Effective September 22, 2026',
+                '生效日期：2026 年 9 月 22 日',
+              ])
+            : c([
+                'Effective September 17, 2026',
+                '生效日期：2026 年 9 月 17 日',
+              ])}
     </p>
   </section>
   <article class="policy prose">
@@ -77,7 +85,7 @@ const path = `/products/${p.slug}`;
         'Hailink Labs 不会自动接收你的 App 记录，也不为这些记录运营服务器。iPhone 操作系统备份可能根据 Apple 设置包含 App 数据。将导出文件保存到 iCloud Drive 是你选择的文件保存方式，不是 App 自动同步。',
       ])}
     </p>
-    <h2>{c(['Photos, signatures and permissions', '照片、签名与权限'])}</h2>
+    <h2>{c(['Media and permissions', '媒体与权限'])}</h2>
     {p.media.map((text) => (
       <p>{c(text)}</p>
     ))}
@@ -90,7 +98,14 @@ const path = `/products/${p.slug}`;
       ])}
     </p>
     <h2>{c(['Purchases', '购买'])}</h2>
-    {p.slug === 'gearproof' ? (
+    {p.slug === 'hybridloop' ? (
+      <p>
+        {c([
+          'Apple processes Lifetime purchases and restores through StoreKit. HybridLoop verifies transaction information to determine access. Trial dates are stored locally in the iPhone Keychain; the trial is not an Apple subscription and does not transfer with workout backups. Hailink Labs does not receive payment card details or operate a receipt server.',
+          'Apple 通过 StoreKit 处理终身购买与恢复。HybridLoop 验证交易信息以判断权益。试用日期保存在 iPhone 本地钥匙串中；试用不是 Apple 订阅，不随训练备份转移。Hailink Labs 不接收支付卡信息，也不运营收据服务器。',
+        ])}
+      </p>
+    ) : p.slug === 'gearproof' ? (
       <p>
         {c([
           'Apple processes lifetime purchases and restores through StoreKit. GearProof verifies transaction information and stores access information locally. The seven-day trial start and observed time are stored in the iPhone Keychain; the trial is not an Apple subscription and does not transfer with record backups. Hailink Labs does not receive payment card details or operate a receipt server.',
@@ -144,6 +159,14 @@ const path = `/products/${p.slug}`;
         'App 记录保存在本地，直到你删除记录或移除 App。删除不会移除之前的导出文件、设备备份或分享给他人的文件，这些副本需要单独管理。卸载 App 或换机前请保留完整备份。我们无法从 Hailink Labs 服务器找回本地记录，也不能代你删除由所选接收方持有的副本。',
       ])}
     </p>
+    {p.slug === 'hybridloop' && (
+      <p>
+        {c([
+          'Removing the app does not delete records already stored in your private iCloud database. Manage iCloud copies through your Apple settings separately; they may sync back when iCloud becomes available. Hailink Labs cannot access or delete that private database for you.',
+          '移除 App 不会删除已存入私有 iCloud 数据库的记录。请通过 Apple 设置单独管理 iCloud 副本；iCloud 可用时，这些记录可能再次同步到设备。Hailink Labs 无法代你访问或删除该私有数据库。',
+        ])}
+      </p>
+    )}
     <p>
       {t(
         'You may contact us to request access, correction, or deletion of personal information held in our support correspondence, or to ask how it is used. Depending on where you live, you may have additional privacy rights. We may need to verify a request using the relevant email address before acting on it.',
