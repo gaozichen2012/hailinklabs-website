@@ -545,4 +545,97 @@ export const products = [
       ],
     ],
   },
+  {
+    slug: 'pressrecipe',
+    name: 'PressRecipe',
+    storeName: 'PressRecipe: Heat Press Log',
+    subtitle: ['Your heat press test log', '你的热压测试记录'],
+    value: ['Repeat what worked.', '重复已验证的好结果。'],
+    summary: [
+      'Save the heat press settings that work on your equipment and materials.',
+      '记录适合你的设备与材料的热压参数。',
+    ],
+    description: [
+      'An iPhone log for your presses, transfers, blanks, test runs and wash tests. Find proven settings and repeat them with a new test.',
+      '在 iPhone 上记录热压机、转印材料、坯料、测试与水洗结果，找到已验证参数并开始新的重复测试。',
+    ],
+    problem: [
+      'Good results deserve more than a loose note. Keep the settings, materials and actual outcome together.',
+      '好结果值得完整记录。将参数、材料和实际结果保存在一起。',
+    ],
+    steps: [
+      [
+        ['Add your setup.', '添加设备与材料。'],
+        [
+          'Save a press, transfer and blank in Library.',
+          '在 Library 中保存热压机、转印材料和坯料。',
+        ],
+      ],
+      [
+        ['Record a real test.', '记录真实测试。'],
+        [
+          'Enter temperature, time, pressure and peel details, then complete the test with its actual result.',
+          '填写温度、时间、压力和撕膜细节，再按实际结果完成测试。',
+        ],
+      ],
+      [
+        ['Prove and repeat.', '验证并重复。'],
+        [
+          'Mark a completed Pass as Proven, add wash tests, and repeat the recipe as a fresh draft.',
+          '将已完成的 Pass 标记为 Proven，添加水洗测试，再将配方重复为新的草稿。',
+        ],
+      ],
+    ],
+    features: [
+      ['Press, transfer and blank libraries', '热压机、转印材料和坯料资料库'],
+      [
+        'Immutable setup snapshots for historical tests',
+        '历史测试保留不随资料库编辑变化的快照',
+      ],
+      [
+        'Proven settings, wash-test history and search',
+        '已验证参数、水洗历史与搜索',
+      ],
+      [
+        'Optional test photos copied into the app',
+        '可选测试照片，保存独立 App 副本',
+      ],
+      [
+        'CSV export and complete .pressrecipe backups',
+        'CSV 导出与完整 .pressrecipe 备份',
+      ],
+    ],
+    principles: [
+      'Your own test results are the evidence. PressRecipe does not recommend temperatures or guarantee results. Follow your equipment and material instructions. No account, ads or subscription.',
+      '以你自己的测试结果为依据。PressRecipe 不推荐温度，也不保证结果。请遵循设备与材料说明。无需注册账号，无广告或订阅。',
+    ],
+    storage: [
+      'Records and selected photos are saved locally first. When available, private CloudKit sync uses your Apple Account. Hailink Labs does not operate a record server or automatically receive these records.',
+      '记录与所选照片优先保存在本地。可用时，私有 CloudKit 同步使用你的 Apple 账号。Hailink Labs 不运营记录服务器，也不会自动接收这些记录。',
+    ],
+    backup: [
+      'Choose Create Full Backup in Settings and save the .pressrecipe file outside the app. Restore Full Backup validates its schema, checksums, media and references before you confirm replacing all records. A safety backup is created first. Purchase access is excluded. Keep your own external backups; iCloud sync is not a backup history.',
+      '在 Settings 中选择 Create Full Backup，将 .pressrecipe 文件保存在 App 之外。Restore Full Backup 会先验证版本、校验和、媒体和引用，再由你确认替换全部记录；替换前创建安全备份。备份不包含购买权益。请保留外部备份，iCloud 同步不是历史备份。',
+    ],
+    export: [
+      'Export CSV in Settings provides test records and settings in a spreadsheet-friendly file. CSV does not include photo files and cannot replace a full backup. Full backups include records, preferences and copied photos.',
+      'Settings 中的 Export CSV 将测试记录和参数导出为表格文件。CSV 不包含照片文件，不能代替完整备份。完整备份包含记录、偏好和照片副本。',
+    ],
+    faq: [
+      'Only a completed Pass can become Proven. Its core settings then stay locked; repeat it to try a change. A failed wash test flags the recipe Needs Review. After trial expiry, viewing, search, photos, export, backup, restore and deletion remain available; creating and editing requires Lifetime Unlock.',
+      '只有已完成的 Pass 才能设为 Proven，核心参数随后锁定；要尝试修改，请重复为新测试。水洗失败会将配方标记为 Needs Review。试用到期后仍可查看、搜索、看照片、导出、备份、恢复和删除；新建及编辑需要终身解锁。',
+    ],
+    privacy: [
+      [
+        'PressRecipe stores equipment and material descriptions, recipe titles, test settings and results, immutable setup snapshots, wash results, notes, dates, preferences and photos you choose. Purchase transaction facts and observed time are cached separately in the iPhone Keychain for verified offline access; business backups do not include them.',
+        'PressRecipe 保存设备与材料说明、配方标题、测试参数及结果、不可变配置快照、水洗结果、备注、日期、偏好及你选择的照片。购买交易事实与已观察时间单独缓存在 iPhone 钥匙串中，用于已验证的离线权益；业务备份不包含这些内容。',
+      ],
+    ],
+    media: [
+      [
+        'The system photo picker shares only images you select. PressRecipe saves its own JPEG copies, so deleting the original photo does not remove the saved test image. Photos may be included in private iCloud sync and full backups. The app does not request microphone, location or broad photo-library access.',
+        '系统照片选择器仅提供你选择的图片。PressRecipe 保存独立 JPEG 副本，因此删除原始照片不会移除已保存的测试图片。照片可能包含在私有 iCloud 同步和完整备份中。App 不请求麦克风、定位或完整相册访问。',
+      ],
+    ],
+  },
 ] as const satisfies readonly ProductData[];

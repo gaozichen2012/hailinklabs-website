@@ -19,6 +19,7 @@ for (const slug of [
   'calvingpocket',
   'gearproof',
   'hybridloop',
+  'pressrecipe',
 ]) {
   const product = review.productSourceReviews?.[slug];
   if (

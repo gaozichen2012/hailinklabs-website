@@ -7,6 +7,7 @@ const names = [
   'CalvingPocket',
   'GearProof',
   'HybridLoop',
+  'PressRecipe',
 ];
 for (const prefix of ['', '/zh']) {
   test(`${prefix || 'English'} complete product matrix and resource paths`, async ({
@@ -79,6 +80,7 @@ test('published pricing matches implemented access', async ({ page }) => {
     ['calvingpocket', '$19.99'],
     ['gearproof', '$19.99'],
     ['hybridloop', '$19.99'],
+    ['pressrecipe', '$9.99'],
   ]) {
     await page.goto(`/products/${slug}`);
     await expect(page.locator('#pricing')).toContainText(
