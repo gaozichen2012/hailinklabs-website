@@ -73,9 +73,31 @@ for (const englishPath of englishRoutes) {
           locale === 'en' ? !link.startsWith('/zh') : link.startsWith('/zh'),
         ).toBe(true);
       }
+      expect(await page.locator('script, form').count()).toBe(0);
+      const expectedStoreLinks = [
+        ...(['/', '/products', '/products/samejob'].includes(englishPath)
+          ? ['https://apps.apple.com/us/app/invoice-maker-samejob/id6814700434']
+          : []),
+        ...(['/', '/products', '/products/gearproof'].includes(englishPath)
+          ? [
+              'https://apps.apple.com/us/app/gearproof-equipment-checkout/id6814847023',
+            ]
+          : []),
+      ];
       expect(
-        await page.locator('script, form, a[href*="apps.apple.com"]').count(),
-      ).toBe(0);
+        await page
+          .locator('a[href*="apps.apple.com"]')
+          .evaluateAll((links) =>
+            links.map((link) => link.getAttribute('href')),
+          ),
+      ).toEqual(expectedStoreLinks);
+      for (const download of await page.locator('.store-download').all()) {
+        await expect(download).toContainText(
+          locale === 'en'
+            ? 'Currently available only in the US App Store.'
+            : '目前仅在美国区供应，中国区 Apple 账号无法下载。',
+        );
+      }
       expect(await context.cookies()).toEqual([]);
       expect(
         await page.evaluate(() => ({

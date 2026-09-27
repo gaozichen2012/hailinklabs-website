@@ -20,7 +20,7 @@ for (const prefix of ['', '/zh']) {
         const card = page
           .locator('.matrix-card')
           .filter({ has: page.getByRole('heading', { name, exact: true }) });
-        await expect(card.locator('a')).toHaveAttribute(
+        await expect(card.locator('a[href^="/"]')).toHaveAttribute(
           'href',
           `${prefix}/products/${name.toLowerCase()}`,
         );
