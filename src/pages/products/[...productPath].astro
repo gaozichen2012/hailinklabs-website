@@ -3,6 +3,7 @@ import { products } from '../../data/products';
 import ProductDetail from '../../components/pages/ProductDetail.astro';
 import ProductSupport from '../../components/pages/ProductSupport.astro';
 import ProductPrivacy from '../../components/pages/ProductPrivacy.astro';
+import TurnMathPrivacy from '../../components/pages/TurnMathPrivacy.astro';
 export function getStaticPaths() {
   return products
     .filter((p) => p.slug !== 'samejob')
@@ -17,7 +18,10 @@ export function getStaticPaths() {
       },
       {
         params: { productPath: `${product.slug}/privacy` },
-        props: { product, Page: ProductPrivacy },
+        props: {
+          product,
+          Page: product.slug === 'turnmath' ? TurnMathPrivacy : ProductPrivacy,
+        },
       },
     ]);
 }

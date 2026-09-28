@@ -8,6 +8,7 @@ const names = [
   'GearProof',
   'HybridLoop',
   'PressRecipe',
+  'TurnMath',
 ];
 for (const prefix of ['', '/zh']) {
   test(`${prefix || 'English'} complete product matrix and resource paths`, async ({

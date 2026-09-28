@@ -17,10 +17,17 @@ const href = (suffix: string) =>
 <Layout
   locale={locale}
   title={`${p.name} ${c(['Support', '使用支持'])} | Hailink Labs`}
-  description={c([
-    `Help with ${p.name}: getting started, local data, backups, exports and product questions.`,
-    `${p.name} 使用支持：了解如何开始使用、保存本地数据、备份、导出及解决常见问题。`,
-  ])}
+  description={
+    p.slug === 'turnmath'
+      ? c([
+          'TurnMath parent support: physical play, parental gate, sound and purchases.',
+          'TurnMath 家长支持：实体玩法、家长验证、声音与购买。',
+        ])
+      : c([
+          `Help with ${p.name}: getting started, local data, backups, exports and product questions.`,
+          `${p.name} 使用支持：了解如何开始使用、保存本地数据、备份、导出及解决常见问题。`,
+        ])
+  }
 >
   <section class="page-intro policy-intro">
     <a class="breadcrumb" href={href('')}>
@@ -47,15 +54,21 @@ const href = (suffix: string) =>
     <h2>{c(['Data & backup', '数据与备份'])}</h2>
     <p>{c(p.storage)}</p>
     <p>{c(p.backup)}</p>
-    <p>
-      {c([
-        'Keep backups outside the app before uninstalling it or resetting a device. Deleting the app removes its local records. If saving fails, keep the existing data, free device storage and retry.',
-        '卸载 App 或重置设备前，请将备份保存在 App 之外。删除 App 会移除其本地记录。保存失败时，请保留现有数据，释放设备空间后重试。',
-      ])}
-    </p>
+    {p.slug !== 'turnmath' && (
+      <p>
+        {c([
+          'Keep backups outside the app before uninstalling it or resetting a device. Deleting the app removes its local records. If saving fails, keep the existing data, free device storage and retry.',
+          '卸载 App 或重置设备前，请将备份保存在 App 之外。删除 App 会移除其本地记录。保存失败时，请保留现有数据，释放设备空间后重试。',
+        ])}
+      </p>
+    )}
     <h2>{c(['Export & files', '导出与文件'])}</h2>
     <p>{c(p.export)}</p>
-    <h2>{c(['Purchase & trial', '购买与试用'])}</h2>
+    <h2>
+      {p.slug === 'turnmath'
+        ? c(['Free Starter & Lifetime Unlock', '免费版与终身解锁'])
+        : c(['Purchase & trial', '购买与试用'])}
+    </h2>
     <Pricing locale={locale} slug={p.slug} />
     {p.slug === 'tmproof' && (
       <>
@@ -68,7 +81,7 @@ const href = (suffix: string) =>
         </p>
       </>
     )}
-    {p.slug !== 'tmproof' && (
+    {p.slug !== 'tmproof' && p.slug !== 'turnmath' && (
       <>
         <h2>{c(['Restore Purchases', '恢复购买'])}</h2>
         <p>

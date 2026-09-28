@@ -8,7 +8,20 @@ const { locale, slug } = Astro.props;
 const zh = locale === 'zh-CN';
 ---
 
-{slug === 'samejob' ? (
+{slug === 'turnmath' ? (
+  <>
+    <p>
+      {zh
+        ? 'Free Starter 免费不限时、不限次数，包含三模式、10 以内加法、Move Boost、Reroll、Manual 与朗读。'
+        : 'Free Starter has no time or usage limit: all three modes, addition within 10, Move Boost, Reroll, Manual challenges and speech.'}
+    </p>
+    <p>
+      {zh
+        ? '$6.99 一次性 Lifetime Unlock 解锁其余数学级别、Shield、Bonus Point、全部节奏与更多设置。支持符合条件的家庭共享，无订阅、广告或计时试用。'
+        : 'A $6.99 one-time Lifetime Unlock adds the remaining math levels, Shield, Bonus Point, all paces and more settings. Supports eligible Family Sharing. No subscriptions, ads or timed trial.'}
+    </p>
+  </>
+) : slug === 'samejob' ? (
   <>
     <p>
       {zh

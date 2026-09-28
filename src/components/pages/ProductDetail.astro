@@ -23,7 +23,14 @@ const href = (suffix: string) =>
     <a class="breadcrumb" href={localizedPath('/products', locale)}>
       {c(['Products', '产品'])} <span aria-hidden="true">/</span>
     </a>
-    <p class="eyebrow">{c(['For iPhone', '适用于 iPhone'])}</p>
+    <p class="eyebrow">
+      {p.slug === 'turnmath'
+        ? c([
+            'For iPad and iPhone · iOS 18+',
+            '适用于 iPad 与 iPhone · iOS 18+',
+          ])
+        : c(['For iPhone', '适用于 iPhone'])}
+    </p>
     <h1 class="matrix-title" lang="en">
       {p.storeName}
     </h1>

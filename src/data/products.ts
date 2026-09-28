@@ -638,4 +638,80 @@ export const products = [
       ],
     ],
   },
+  {
+    slug: 'turnmath',
+    name: 'TurnMath',
+    storeName: 'TurnMath: Kids Math Games',
+    subtitle: ['For Cards, Dice & Board Games', '为纸牌、骰子与桌游加入数学'],
+    value: ['Keep the game. Add the math.', '保留游戏，加入数学。'],
+    summary: [
+      'Quick math challenges for the physical games your family already plays.',
+      '为家庭已有实体游戏加入短数学挑战。',
+    ],
+    description: [
+      'An English-language math companion for ages 6–8. Play with your own board games, cards or dice on iPad and iPhone with iOS 18 or later.',
+      '面向 6–8 岁儿童的英语数学伴侣，搭配家庭已有桌游、纸牌或骰子，支持 iOS 18 及以上的 iPad 与 iPhone。',
+    ],
+    problem: [
+      'Keep family play at the table. Use a short addition or subtraction challenge, then return to your physical game.',
+      '让家庭互动留在桌面上：完成简短加减法挑战，然后回到实体游戏。',
+    ],
+    steps: [
+      [
+        ['Choose a mode.', '选择模式。'],
+        [
+          'Choose Game Night, Cards or Dice. A parent chooses suitable materials and agrees on the bonus.',
+          '选择 Game Night、Cards 或 Dice，由家长准备适合的材料并约定奖励。',
+        ],
+      ],
+      [
+        ['Reveal and self-mark.', '揭晓并自行标记。'],
+        [
+          'Say your answer aloud, reveal it, then choose Got It or Not Yet. The app does not record or judge speech.',
+          '口头回答、揭晓答案，再选择 Got It 或 Not Yet；App 不录音，也不判断语音答案。',
+        ],
+      ],
+      [
+        ['Return to the game.', '回到游戏。'],
+        [
+          'Apply the physical bonus and pass the turn. Manual challenges keep the family in control.',
+          '执行实体奖励并轮换回合，Manual 模式让家庭自主决定挑战时机。',
+        ],
+      ],
+    ],
+    features: [
+      ['Game Night, Cards and Dice modes', 'Game Night、Cards、Dice 三种模式'],
+      ['Five addition and subtraction levels within 20', '20 以内的五级加减法'],
+      [
+        'Move Boost, Reroll, Shield and Bonus Point',
+        'Move Boost、Reroll、Shield、Bonus Point 四种奖励',
+      ],
+      [
+        'On-device English speech and offline core play',
+        '设备端英语朗读与离线核心玩法',
+      ],
+    ],
+    principles: [
+      'A companion, not a curriculum or assessment. Self-marked counts do not measure mastery. Purchases, settings and external links are behind a randomized parent gate.',
+      '数学伴侣，不是课程或测评；自行标记的统计不代表能力评估。购买、设置和外链均位于随机家长验证之后。',
+    ],
+    storage: [
+      'Settings and unnamed session counts stay on your device. No account, backend, cloud sync, advertising or analytics.',
+      '设置和无姓名的会话统计仅保存在本机，无账号、后端、云同步、广告或分析。',
+    ],
+    backup: [
+      'There is no in-app export or backup feature. Removing the app removes local play data; Apple device backups follow your Apple settings.',
+      'App 不提供导出或备份功能。卸载会删除本地游戏数据；Apple 设备备份由你的 Apple 设置控制。',
+    ],
+    export: [
+      'No record export, sharing or child profile is provided.',
+      '不提供记录导出、分享或儿童档案。',
+    ],
+    faq: [
+      'Tap Parents, hold the lock for two seconds, then select shapes in the displayed random order. In Parent Area, use Restore Purchases with the purchasing Apple Account and an internet connection. For sound, check media volume and Read challenges aloud, or tap Hear again.',
+      '点击 Parents，长按锁两秒，再按显示的随机顺序选择形状。在 Parent Area 中联网并使用购买时的 Apple 账号执行 Restore Purchases。声音问题请检查媒体音量与 Read challenges aloud，或点击 Hear again。',
+    ],
+    privacy: [],
+    media: [],
+  },
 ] as const satisfies readonly ProductData[];

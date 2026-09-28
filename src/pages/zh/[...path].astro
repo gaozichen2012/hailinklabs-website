@@ -3,6 +3,7 @@ import { products } from '../../data/products';
 import ProductDetail from '../../components/pages/ProductDetail.astro';
 import ProductSupport from '../../components/pages/ProductSupport.astro';
 import ProductPrivacy from '../../components/pages/ProductPrivacy.astro';
+import TurnMathPrivacy from '../../components/pages/TurnMathPrivacy.astro';
 import Home from '../../components/pages/Home.astro';
 import About from '../../components/pages/About.astro';
 import Contact from '../../components/pages/Contact.astro';
@@ -39,7 +40,11 @@ export function getStaticPaths() {
         },
         {
           params: { path: `products/${product.slug}/privacy` },
-          props: { product, Page: ProductPrivacy },
+          props: {
+            product,
+            Page:
+              product.slug === 'turnmath' ? TurnMathPrivacy : ProductPrivacy,
+          },
         },
       ]),
   ];
