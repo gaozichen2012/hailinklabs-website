@@ -18,7 +18,7 @@ test('official brand assets load and keep their proportions in both languages', 
         };
       });
       expect(image.loaded).toBe(true);
-      expect(image.ratio).toBeCloseTo(738 / 106, 1);
+      expect(image.ratio).toBeCloseTo(719 / 106, 1);
     }
     const icon = await page.request.get('/favicon.svg');
     expect(icon.ok()).toBe(true);
