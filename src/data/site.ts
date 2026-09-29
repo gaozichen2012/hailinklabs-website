@@ -15,6 +15,8 @@ export const englishRoutes = [
   '/products/samejob/privacy',
   '/products/samejob/support',
   '/contact',
+  '/products/botsteps/support',
+  '/products/botsteps/privacy',
   '/products/tmproof',
   '/products/tmproof/privacy',
   '/products/tmproof/support',

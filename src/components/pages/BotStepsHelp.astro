@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  privacy?: boolean;
+}
+const { locale, privacy = false } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const heading = privacy
+  ? c('BotSteps Privacy Policy', 'BotSteps 隐私政策')
+  : c('BotSteps Support', 'BotSteps 支持');
+---
+
+<Layout
+  locale={locale}
+  title={`${heading} | Hailink Labs`}
+  description={c(
+    'Parent information for BotSteps real-world robot missions.',
+    'BotSteps 现实机器人任务的家长支持指南，包含玩法、试用、购买恢复和隐私信息。',
+  )}
+>
+  <section class="page-intro policy-intro">
+    <p class="eyebrow">BotSteps: Coding for Kids</p>
+    <h1>{heading}</h1>
+    <p class="intro-copy">
+      {c(
+        'Build the code on iPad. Then a real person becomes the robot.',
+        '在 iPad 上编排指令，再由真人成为机器人。',
+      )}
+    </p>
+  </section>
+  <article class="policy prose">
+    {privacy ? (
+      <>
+        <p>
+          {c(
+            'Effective September 29, 2026. BotSteps is developed by Hailink Labs, the brand of ',
+            '生效日期：2026 年 9 月 29 日。BotSteps 由 Hailink Labs 开发，品牌所属主体为 ',
+          )}
+          {companyName(locale)}.
+        </p>
+        {locale === 'zh-CN' && (
+          <p>
+            中文版本方便阅读，如有差异以
+            <a href="/products/botsteps/privacy">英文版本</a>为准。
+          </p>
+        )}
+        <h2>{c('Children and local data', '儿童与本地数据')}</h2>
+        <p>
+          {c(
+            'BotSteps is designed for children ages 6–8 and their parents. No account, child identity, birthday, email or profile is requested in the app. We do not collect personal information through the app. Progress, completion counts, the current program, settings and up to 20 custom missions stay on the device. Use a playful mission title instead of a real name. Custom content is never published or uploaded.',
+            'BotSteps 面向 6–8 岁儿童及家长。App 不要求账号、儿童身份、生日、邮箱或档案，不通过 App 收集个人信息。进度、完成次数、当前程序、设置及最多 20 个自定义任务仅保存在设备上。请用有趣的任务标题而非真实姓名。自定义内容不会公开或上传。',
+          )}
+        </p>
+        <h2>{c('Audio, permissions and tracking', '声音、权限与跟踪')}</h2>
+        <p>
+          {c(
+            'Fixed English voice prompts are bundled with the app and play offline. The app does not listen or record. No camera, microphone, photos, location, contacts, Bluetooth or notification permission is requested. There are no ads, tracking, third-party analytics or third-party crash reporting SDKs.',
+            '固定英语提示音随 App 打包并离线播放。App 不聆听或录音，不请求相机、麦克风、照片、位置、通讯录、蓝牙或通知权限。没有广告、跟踪、第三方分析或第三方崩溃报告 SDK。',
+          )}
+        </p>
+        <h2>{c('Trial and Apple purchases', '试用与 Apple 购买')}</h2>
+        <p>
+          {c(
+            'Trial start and last observed time are stored in the device Keychain and may remain after reinstalling. This seven-day trial is not a subscription. Apple processes the single lifetime purchase and restores through StoreKit. The app checks verified transactions for access. Hailink Labs does not receive payment card details or run a receipt server. Apple may process purchase and diagnostic information under its own policies and your device settings.',
+            '试用起点和最后观察时间保存在设备钥匙串中，重新安装后可能保留。七天试用不是订阅。Apple 通过 StoreKit 处理单一终身购买及恢复，App 检查已验证交易判断权益。Hailink Labs 不接收支付卡信息，也不运营收据服务器。Apple 可能依据其政策及设备设置处理购买和诊断信息。',
+          )}
+        </p>
+        <p>
+          <a href="https://www.apple.com/legal/privacy/">
+            {c('Apple Privacy Policy', 'Apple 隐私政策')}
+          </a>
+        </p>
+        <h2>{c('Storage and deletion', '存储与删除')}</h2>
+        <p>
+          {c(
+            'There is no app backend, cloud sync, public sharing or export. Reset Progress removes structured mission progress. Custom missions can be deleted in Mission Maker. Removing the app removes its local app data; Keychain trial dates may remain. Operating-system backups may include app data according to your Apple settings. Manage those backups separately. We cannot recover local missions from a server.',
+            '没有 App 后端、云同步、公开分享或导出。Reset Progress 清除内置任务进度；自定义任务可在 Mission Maker 中删除。移除 App 会移除其本地数据，但钥匙串试用日期可能保留。系统备份可能按 Apple 设置包含 App 数据，需要另行管理。我们无法从服务器恢复本地任务。',
+          )}
+        </p>
+        <h2>{c('Parent support and websites', '家长支持与网站')}</h2>
+        <p>
+          {c(
+            'Purchases, restore and external links are behind a parental gate. If a parent emails support, we receive the email address, message and attachments. Do not send children’s names, photos, voices or other personal details. We use correspondence only to provide support, not advertising. Our company mailbox uses Tencent business email; Hailink Labs in China may access support messages. Messages are retained for no longer than 12 months after the issue closes unless an ongoing issue or legal obligation requires longer.',
+            '购买、恢复和外部链接位于家长门禁后。家长发送支持邮件时，我们会收到邮箱地址、正文和附件。请勿发送儿童姓名、照片、声音或其他个人信息。邮件仅用于支持，不用于广告。公司邮箱使用腾讯企业邮箱，中国境内的 Hailink Labs 可能访问支持邮件。问题关闭后保留不超过 12 个月，持续问题或法律义务要求更久时除外。',
+          )}
+        </p>
+        <p>
+          {c(
+            'This website has no analytics, tracking scripts, accounts or contact forms. GitHub Pages processes technical requests such as IP addresses to deliver and protect the site. Parents can email us to request access, correction or deletion of support information. We may verify the request using the relevant email address. Material policy changes will be explained here with an updated effective date.',
+            '本网站没有分析、跟踪脚本、账号或联系表单。GitHub Pages 为网站交付与保护处理 IP 地址等技术请求。家长可通过邮件请求访问、更正或删除支持信息，我们可能通过对应邮箱核实请求。重大政策变更将在本页说明并更新生效日期。',
+          )}
+        </p>
+        <p>
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+            {c('GitHub Privacy Statement', 'GitHub 隐私声明')}
+          </a>
+        </p>
+      </>
+    ) : (
+      <>
+        <h2>{c('How to play', '如何游戏')}</h2>
+        <p>
+          {c(
+            'Choose a mission, set up household props, build a sequence, predict and run. A child or grown-up follows the spoken commands in the room. One step means one normal child step. Turns happen in place. Choose Made It! or Not Yet based on what really happened; edit the program and run again.',
+            '选择任务，摆放家庭道具，编排指令，预测并运行。儿童或家长按语音在房间里执行动作。一步指儿童正常一步，转向在原地进行。根据实际结果选择 Made It! 或 Not Yet，修改程序后再次运行。',
+          )}
+        </p>
+        <h2>{c('A safe, simple setup', '简单安全的布置')}</h2>
+        <p>
+          {c(
+            'Use a clear play area away from stairs and sharp objects. A grown-up should help set up. No special robot, camera, printed cards or hardware is required.',
+            '在远离楼梯和尖锐物品的空旷区域游戏，由成人协助布置。不需要专用机器人、相机、打印卡片或硬件。',
+          )}
+        </p>
+        <h2>{c('Trial, purchase and restore', '试用、购买与恢复')}</h2>
+        <p>
+          {c(
+            'The full trial lasts seven days from first use. The US lifetime price is $9.99, a one-time purchase with no subscription. Open Parent, answer the adult check, and use Unlock Lifetime or Restore Purchase. Restore uses the Apple Account that made the purchase. Pending purchases unlock after Apple approves them. Mission progress is local and does not transfer with a purchase.',
+            '首次使用开始七天完整试用。美国区终身价格为 $9.99，一次性购买，无订阅。打开 Parent，完成成人验证后使用 Unlock Lifetime 或 Restore Purchase。恢复使用原购买 Apple 账号；待批准购买在 Apple 批准后解锁。任务进度仅在本地，不随购买迁移。',
+          )}
+        </p>
+        <h2>{c('Audio and Mission Maker', '声音与 Mission Maker')}</h2>
+        <p>
+          {c(
+            'If you cannot hear commands, check device volume and Parent → Sound. Audio works offline. Pause before leaving the play area. Mission Maker saves up to 20 custom missions; delete an old one to make room. Progress can be reset in Parent without resetting trial or purchase access.',
+            '听不到指令时检查设备音量和 Parent → Sound。音频支持离线。离开游戏区域前请暂停。Mission Maker 最多保存 20 个自定义任务，空间满时删除旧任务。家长区可重置进度，不重置试用或购买权益。',
+          )}
+        </p>
+        <h2>{c('Contact a grown-up support team', '联系支持')}</h2>
+        <p>
+          {c(
+            'A parent can email the app version, device model and a short description of the issue. Please do not include children’s personal information.',
+            '家长可发送 App 版本、设备型号和简短问题描述，请勿包含儿童个人信息。',
+          )}
+        </p>
+      </>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=BotSteps%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a
+        href={localizedPath(
+          `/products/botsteps/${privacy ? 'support' : 'privacy'}`,
+          locale,
+        )}
+      >
+        {privacy
+          ? c('BotSteps support', 'BotSteps 支持')
+          : c('Privacy policy', '隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>
