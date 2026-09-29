@@ -1,0 +1,171 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  kind: 'product' | 'support' | 'privacy';
+}
+const { locale, kind } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const titles = {
+  product: c('MinuteSprout: Kids Time Games', 'MinuteSprout 儿童时间游戏'),
+  support: c('MinuteSprout Support', 'MinuteSprout 支持'),
+  privacy: c('MinuteSprout Privacy Policy', 'MinuteSprout 隐私政策'),
+};
+const sections = {
+  product: [
+    [
+      'Learn how long things take',
+      '学习事情需要多长时间',
+      'Guess. Do. Discover. Children ages 6–8 predict a duration, prepare familiar household materials, and measure a real activity. Compare the prediction with what happened, then plan using personal time cards.',
+      '先猜测，再动手，发现时间。6–8 岁儿童使用熟悉的家庭材料，预测并测量真实活动的用时，再用个人时间卡练习安排。',
+    ],
+    [
+      'Three free activities, the complete learning loop',
+      '三个免费活动，完整学习闭环',
+      'Crayon Row, Shape Pattern and Sock Match remain free. Each includes prediction, measurement, comparison and personal time cards. With two measured cards, explore See & Fit and Guess & Check plans. Whole-plan timing includes transitions and stays separate from individual activity records.',
+      'Crayon Row、Shape Pattern 和 Sock Match 永久免费，包含预测、测量、比较和个人时间卡。拥有两张有效时间卡后，可以练习 See & Fit 和 Guess & Check；整组计时包含活动切换，不冒充单活动样本。',
+    ],
+    [
+      'Made for family use',
+      '为家庭使用设计',
+      'iPad-first with full iPhone support, for iOS and iPadOS 18 or later. American English. Full Game Unlock is a $6.99 US one-time purchase for all 18 activities and parent-created activities, with Family Sharing. No trial, subscriptions or ads. Purchases and sensitive settings are behind a parental gate.',
+      '优先适配 iPad，完整支持 iPhone，要求 iOS / iPadOS 18 或更高版本，App 使用美式英语。美国区 Full Game Unlock 为 $6.99 一次性购买，解锁全部 18 个活动及家长自定义，支持家人共享。无试用、订阅或广告，购买和敏感设置位于家长门后。',
+    ],
+  ],
+  support: [
+    [
+      'Start with a real experiment',
+      '从真实实验开始',
+      'Choose an activity and prepare all materials before tapping Start. Pick 15 seconds, 30 seconds, 1, 2, 3 or 5 minutes as your prediction. Tap Done when the completion condition is met. Save the result and mark assistance or changed conditions honestly. Backgrounding or locking does not pause elapsed time.',
+      '先选择活动并准备全部材料，预测 15 秒、30 秒或 1、2、3、5 分钟，再点击 Start。达到完成条件时点击 Done，保存结果并如实标注协助或条件变化。进入后台或锁屏不会暂停经过时间。',
+    ],
+    [
+      'Time cards and plans',
+      '时间卡与计划',
+      'A personal reference uses the median of up to three recent valid measurements for the same profile and activity version. Interrupted, assisted and abnormal results are excluded. Unknown is not zero. Plans need at least two valid cards and a meaningful combination; collect more experiments if no suitable challenge is available.',
+      '个人参考值取同一档案、同一活动版本最近最多三次有效记录的中位数。中断、协助和异常记录不纳入计算，未知不等于零。计划需要至少两张有效时间卡及合理组合；没有合适挑战时请继续实验。',
+    ],
+    [
+      'Purchase and restore',
+      '购买与恢复',
+      'Open Parent Area and complete the adult check. Full Game Unlock is $6.99 in the US, once, with no subscription. Restore purchases using the Apple Account that purchased or shares the eligible purchase. A pending purchase unlocks only after Apple approves it. Purchase access does not transfer learning records.',
+      '进入 Parent Area 并完成成人验证。美国区完整解锁为 $6.99 一次性购买，无订阅。使用原购买或符合家人共享资格的 Apple 账号恢复。待批准交易由 Apple 批准后解锁；购买权益不会搬移学习记录。',
+    ],
+    [
+      'Backup and optional iCloud',
+      '备份与可选 iCloud',
+      'Parent Area offers CSV for viewing and JSON for backup and restore. Keep backup files private. Import previews and validates records; conflicting records leave the current library unchanged. Private iCloud sync starts off and uses the same iCloud account on your devices. Local play continues when sync is unavailable. A running timer remains on its original device.',
+      '家长区提供用于查看的 CSV 和用于备份恢复的 JSON。请妥善保管备份。导入先预览并校验，冲突不会覆盖当前库。私有 iCloud 同步默认关闭，使用设备上的同一 iCloud 账号；同步不可用时本地游戏继续。正在运行的计时留在原设备。',
+    ],
+    [
+      'Help for parents',
+      '家长帮助',
+      'A parent can email the app version, device model and a short description. Please do not include children’s real names, photos, voices or personal details. Activity instructions remain readable if a voice clip is unavailable.',
+      '家长可发送 App 版本、设备型号及简短问题描述。请勿包含儿童真实姓名、照片、声音或个人信息。语音片段不可用时，活动文字说明仍可阅读。',
+    ],
+  ],
+  privacy: [
+    [
+      'Local learning data',
+      '本地学习数据',
+      'MinuteSprout is designed for children ages 6–8 and parents. It does not request an app account, real name, email, birthday or school. Automatically named profiles, activity definitions, measurements, predictions, plans and settings are stored locally. Parent-created activity text should not contain personal information. Hailink Labs has no app database server.',
+      'MinuteSprout 面向 6–8 岁儿童及家长，不要求 App 账号、真实姓名、邮箱、生日或学校。自动命名的档案、活动定义、实测、预测、计划和设置保存在本地。家长自定义文本请勿包含个人信息。Hailink Labs 不运营 App 数据库服务器。',
+    ],
+    [
+      'Optional private iCloud sync',
+      '可选私有 iCloud 同步',
+      'Sync is off by default. A parent can enable it to upload profiles, activities, experiments and plans to the private CloudKit database in their Apple iCloud account. It is not a public or cross-account family database. Apple provides this storage; Hailink Labs does not receive these learning records. The app remembers the account association locally to avoid mixing accounts. Device boot identifiers and raw clock anchors are excluded from sync and exported backups.',
+      '同步默认关闭。家长可主动开启，将档案、活动、实验和计划上传至其 Apple iCloud 账号的 CloudKit 私有数据库，不是公开或跨账号家庭数据库。存储由 Apple 提供，Hailink Labs 不接收这些学习记录。App 在本地记住账号关联，避免混合账号。设备启动标识和原始计时锚点不进入同步或导出备份。',
+    ],
+    [
+      'Permissions and Apple purchases',
+      '权限与 Apple 购买',
+      'There are no ads, tracking, third-party analytics or third-party crash reporting SDKs. The app does not request camera, microphone, photos, location or contacts access. Audio playback does not record or listen. Apple handles the one-time purchase and Family Sharing through StoreKit; verified transactions determine access. We do not receive payment card details or operate a receipt server. Apple may process transactions and diagnostics under its policies and your settings.',
+      '没有广告、跟踪、第三方分析或第三方崩溃报告 SDK。App 不请求相机、麦克风、照片、位置或通讯录访问，音频播放不录音或聆听。Apple 通过 StoreKit 处理一次性购买和家人共享，已验证交易决定权益。我们不接收支付卡信息，也不运营收据服务器。Apple 可能依据其政策和设备设置处理交易及诊断。',
+    ],
+    [
+      'Exports, recovery and deletion',
+      '导出、恢复与删除',
+      'Parents control exports and imports. JSON and CSV files contain learning data, not purchase credentials. Exported files are not password-encrypted by the app; protect or delete your copies in the chosen destination. Deleting a profile removes its experiments and plans. Damaged local records and conflicting sync versions may be retained for recovery. Removing the app removes its local data; exports and Apple backups need separate management. Turning sync off does not delete cloud data. Use Delete cloud data in Parent Area to remove the private cloud zone; other devices with sync enabled may upload their data again, so disable sync there first.',
+      '家长控制导出与导入。JSON 和 CSV 包含学习数据，不含购买凭据。App 不为导出文件设置密码加密，请在所选位置保护或删除副本。删除档案会移除其实验和计划。损坏的本地记录及同步冲突版本可能保留用于恢复。移除 App 会移除本地数据；导出和 Apple 备份需单独管理。关闭同步不删除云数据。家长区 Delete cloud data 可移除私有云区域；其他开启同步的设备可能重新上传，请先在其他设备关闭同步。',
+    ],
+    [
+      'Parent support and this website',
+      '家长支持与本网站',
+      'Purchases, restore, external links, sync and data management are behind a parental gate. If a parent emails support, we receive the email address, message and attachments only to provide support. Do not send children’s personal details. Our company mailbox uses Tencent business email; Hailink Labs in China may access support correspondence. Messages are retained no longer than 12 months after the issue closes unless an ongoing issue or legal obligation requires longer. Parents can request access, correction or deletion by email; we may verify the relevant email address.',
+      '购买、恢复、外部链接、同步和数据管理均位于家长门后。家长发送支持邮件时，我们收到邮箱、正文和附件，仅用于提供支持。请勿发送儿童个人信息。公司邮箱使用腾讯企业邮箱，中国境内的 Hailink Labs 可能访问支持邮件。问题关闭后保留不超过 12 个月，持续问题或法律义务要求更久时除外。家长可邮件申请访问、更正或删除，我们可能核实对应邮箱。',
+    ],
+    [
+      'Website delivery and changes',
+      '网站交付与变更',
+      'This website has no analytics, tracking scripts, accounts or contact forms. GitHub Pages processes technical requests such as IP addresses to deliver and protect the site. Material policy changes will be explained here with an updated effective date.',
+      '本网站没有分析、跟踪脚本、账号或联系表单。GitHub Pages 为交付和保护网站处理 IP 地址等技术请求。重大政策变更将在本页说明并更新生效日期。',
+    ],
+  ],
+};
+---
+
+<Layout
+  locale={locale}
+  title={`${titles[kind]} | Hailink Labs`}
+  description={c(
+    'MinuteSprout time experiments, personal time cards and family information.',
+    'MinuteSprout 时间实验、个人时间卡与家长指南。',
+  )}
+>
+  <section class="page-intro policy-intro">
+    <p class="eyebrow">MinuteSprout</p>
+    <h1>{titles[kind]}</h1>
+    <p class="intro-copy">
+      {c('Guess. Do. Discover.', '先猜测，再动手，发现时间。')}
+    </p>
+  </section>
+  <article class="policy prose">
+    {kind === 'privacy' && (
+      <p>
+        {c(
+          'Effective September 29, 2026. Developed by Hailink Labs, the brand of ',
+          '生效日期：2026 年 9 月 29 日。开发品牌 Hailink Labs 的所属主体为 ',
+        )}
+        {companyName(locale)}.
+      </p>
+    )}
+    {sections[kind].map(([enTitle, zhTitle, enText, zhText]) => (
+      <>
+        <h2>{c(enTitle, zhTitle)}</h2>
+        <p>{c(enText, zhText)}</p>
+      </>
+    ))}
+    {kind === 'privacy' && (
+      <p>
+        <a href="https://www.apple.com/legal/privacy/">
+          {c('Apple Privacy Policy', 'Apple 隐私政策')}
+        </a>{' '}
+        ·{' '}
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+          {c('GitHub Privacy Statement', 'GitHub 隐私声明')}
+        </a>
+      </p>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=MinuteSprout%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a href={localizedPath('/products/minutesprout', locale)}>
+        {c('About MinuteSprout', '了解 MinuteSprout')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath('/products/minutesprout/support', locale)}>
+        {c('Support', '支持')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath('/products/minutesprout/privacy', locale)}>
+        {c('Privacy policy', '隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>
