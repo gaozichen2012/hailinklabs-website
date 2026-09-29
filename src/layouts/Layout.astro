@@ -30,10 +30,13 @@ const canonical = new URL(path, site.url).href;
 const nav = [
   { href: localizedPath('/products', locale), label: t('Products') },
   {
+    href: localizedPath('/support', locale),
+    label: locale === 'en' ? 'Support' : '支持',
+  },
+  {
     href: localizedPath('/about', locale),
     label: locale === 'en' ? 'About' : '关于',
   },
-  { href: localizedPath('/contact', locale), label: t('Contact') },
 ];
 ---
 
@@ -147,6 +150,7 @@ const nav = [
           {nav.map(({ href, label }) => (
             <a href={href}>{label}</a>
           ))}
+          <a href={localizedPath('/contact', locale)}>{t('Contact')}</a>
         </nav>
       </div>
       <div class="footer-bottom">

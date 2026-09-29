@@ -10,6 +10,7 @@ export const site = {
 export const englishRoutes = [
   '/',
   '/about',
+  '/support',
   '/products',
   '/products/samejob',
   '/products/samejob/privacy',

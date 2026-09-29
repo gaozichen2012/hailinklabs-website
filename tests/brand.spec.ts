@@ -26,12 +26,12 @@ test('official brand assets load and keep their proportions in both languages', 
   }
 });
 
-test('contact offers direct support for all eight products', async ({
+test('contact offers direct support for all supported apps', async ({
   page,
 }) => {
   for (const path of ['/contact', '/zh/contact']) {
     await page.goto(path);
-    await expect(page.locator('.support-directory a')).toHaveCount(8);
+    await expect(page.locator('.support-directory a')).toHaveCount(11);
     await page
       .locator('.support-directory a')
       .filter({ hasText: 'PressRecipe' })

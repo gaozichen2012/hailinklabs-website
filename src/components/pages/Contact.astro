@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { site } from '../../data/site';
-import { products } from '../../data/products';
+import { supportProducts } from '../../data/catalog';
 
 import {
   translator,
@@ -61,8 +61,8 @@ const href = (path: string) => localizedPath(path, locale);
         {locale === 'en'
           ? 'For help with an app, choose it from our '
           : '如需 App 使用帮助，请从'}
-        <a href={href('/products')}>
-          {locale === 'en' ? 'products' : '产品目录'}
+        <a href={href('/support')}>
+          {locale === 'en' ? 'support directory' : '支持目录'}
         </a>
         {locale === 'en'
           ? ' to find its support and privacy pages.'
@@ -76,7 +76,7 @@ const href = (path: string) => localizedPath(path, locale);
     </div>
     <div class="section-body">
       <ul class="support-directory">
-        {products.map((product) => (
+        {supportProducts.map((product) => (
           <li>
             <a href={href(`/products/${product.slug}/support`)}>
               {product.name}

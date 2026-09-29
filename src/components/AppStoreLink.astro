@@ -1,20 +1,12 @@
 ---
+import { listings, highlights } from '../data/catalog';
+import { copy } from '../data/products';
 import type { Locale } from '../data/i18n';
 interface Props {
   locale: Locale;
   slug: string;
 }
 const { locale, slug } = Astro.props;
-const listings: Record<string, { url: string; ios: number }> = {
-  samejob: {
-    url: 'https://apps.apple.com/us/app/invoice-maker-samejob/id6814700434',
-    ios: 17,
-  },
-  gearproof: {
-    url: 'https://apps.apple.com/us/app/gearproof-equipment-checkout/id6814847023',
-    ios: 18,
-  },
-};
 const listing = listings[slug];
 ---
 
@@ -26,10 +18,13 @@ const listing = listings[slug];
         : '前往美国 App Store 下载'}
       <span aria-hidden="true">↗</span>
     </a>
+    <p class="price-summary">
+      {highlights[slug] && copy(highlights[slug].price, locale)}
+    </p>
     <p>
       {locale === 'en'
-        ? `Free download · iOS ${listing.ios} or later. Currently available only in the US App Store.`
-        : `免费下载 · 需要 iOS ${listing.ios} 或更新版本。目前仅在美国区供应，中国区 Apple 账号无法下载。`}
+        ? `Free download · iOS ${listing.ios} or later. Link opens the US store. Availability and local prices depend on your Apple account region.`
+        : `免费下载 · 需要 iOS ${listing.ios} 或更新版本。链接前往美国商店。实际供应范围和当地价格以 Apple 账号地区为准。`}
     </p>
   </div>
 )}

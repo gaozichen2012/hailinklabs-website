@@ -1,7 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Product from '../../components/Product.astro';
-import { products } from '../../data/products';
+import { copy } from '../../data/products';
+import { catalog, categories } from '../../data/catalog';
 
 import { translator, type Locale } from '../../data/i18n';
 interface Props {
@@ -16,8 +17,8 @@ const t = translator(locale);
   title={t('Products — Hailink Labs')}
   description={
     locale === 'en'
-      ? 'Explore SameJob, TMProof, LitterRound, CalvingPocket, GearProof, HybridLoop and PressRecipe: focused iPhone apps for everyday work and records.'
-      : '探索 SameJob、TMProof、LitterRound、CalvingPocket、GearProof、HybridLoop 和 PressRecipe，专注日常工作与记录的 iPhone App。'
+      ? 'Find your next app by what you need: work and business, animal records, fitness, or kids and family. Explore the Hailink Labs collection.'
+      : '按工作与业务、动物记录、运动训练、儿童与家庭场景，找到适合你的 Hailink Labs App。'
   }
 >
   <section class="page-intro">
@@ -28,15 +29,34 @@ const t = translator(locale);
       <span class="muted-heading">{t('Simple in use.')}</span>
     </h1>
     <p class="intro-copy">
-      {t('Focused apps for the work you do again and again.')}
+      {locale === 'en'
+        ? 'Find an app for the thing you want to do.'
+        : '按你想做的事，找到合适的 App。'}
     </p>
   </section>
-  <section
-    class="product-list product-grid"
-    aria-label={t('Hailink Labs products')}
+  <nav
+    class="category-links"
+    aria-label={locale === 'en' ? 'Product categories' : '产品分类'}
   >
-    {products.map((product) => (
-      <Product locale={locale} product={product} headingLevel="h2" />
+    {categories.map((category) => (
+      <a href={`#${category.id}`}>{copy(category.title, locale)}</a>
     ))}
-  </section>
+  </nav>
+  {categories.map((category) => (
+    <section
+      class="catalog-group"
+      id={category.id}
+      aria-labelledby={`${category.id}-title`}
+    >
+      <h2 id={`${category.id}-title`}>{copy(category.title, locale)}</h2>
+      <div class="product-grid">
+        {category.slugs.map((slug) => (
+          <Product
+            locale={locale}
+            product={catalog.find((p) => p.slug === slug)!}
+          />
+        ))}
+      </div>
+    </section>
+  ))}
 </Layout>

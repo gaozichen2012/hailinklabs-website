@@ -15,9 +15,12 @@ for (const prefix of ['', '/zh']) {
     page,
   }) => {
     for (const route of [prefix || '/', `${prefix}/products`]) {
+      const shown = route.endsWith('/products')
+        ? [...names, 'MinuteSprout']
+        : ['SameJob', 'GearProof', 'LitterRound'];
       await page.goto(route);
-      await expect(page.locator('.matrix-card')).toHaveCount(names.length);
-      for (const name of names) {
+      await expect(page.locator('.matrix-card')).toHaveCount(shown.length);
+      for (const name of shown) {
         const card = page
           .locator('.matrix-card')
           .filter({ has: page.getByRole('heading', { name, exact: true }) });

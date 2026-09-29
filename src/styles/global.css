@@ -989,3 +989,62 @@ h1:lang(zh-CN),
     font-size: 12px;
   }
 }
+
+/* Static product discovery and real application screens. */
+.catalog-all {
+  margin-top: 2rem;
+}
+.category-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 3rem;
+}
+.category-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.catalog-group {
+  margin-bottom: 4rem;
+  scroll-margin-top: 2rem;
+}
+.catalog-group > h2 {
+  margin-bottom: 1.5rem;
+}
+.price-summary {
+  font-weight: 600;
+}
+.data-summary {
+  max-width: 46rem;
+}
+.product-gallery {
+  margin-bottom: 4rem;
+}
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.screenshot-grid figure {
+  margin: 0;
+  min-width: 0;
+}
+.screenshot-grid img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e2e5e3;
+  border-radius: 1rem;
+}
+.screenshot-grid figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+@media (max-width: 680px) {
+  .screenshot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 1rem;
+  }
+}

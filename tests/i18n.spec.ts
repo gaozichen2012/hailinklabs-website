@@ -83,6 +83,11 @@ for (const englishPath of englishRoutes) {
               'https://apps.apple.com/us/app/gearproof-equipment-checkout/id6814847023',
             ]
           : []),
+        ...(['/', '/products', '/products/litterround'].includes(englishPath)
+          ? [
+              'https://apps.apple.com/us/app/litterround-puppy-tracker/id6814862263',
+            ]
+          : []),
       ];
       expect(
         await page
@@ -93,9 +98,7 @@ for (const englishPath of englishRoutes) {
       ).toEqual(expectedStoreLinks);
       for (const download of await page.locator('.store-download').all()) {
         await expect(download).toContainText(
-          locale === 'en'
-            ? 'Currently available only in the US App Store.'
-            : '目前仅在美国区供应，中国区 Apple 账号无法下载。',
+          locale === 'en' ? 'Link opens the US store.' : '链接前往美国商店。',
         );
       }
       expect(await context.cookies()).toEqual([]);

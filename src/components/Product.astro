@@ -1,10 +1,11 @@
 ---
 import AppStoreLink from './AppStoreLink.astro';
 import { localizedPath, type Locale } from '../data/i18n';
-import { copy, type ProductData } from '../data/products';
+import { copy } from '../data/products';
+import type { CatalogProduct } from '../data/catalog';
 interface Props {
   locale: Locale;
-  product: ProductData;
+  product: CatalogProduct;
   compact?: boolean;
   headingLevel?: 'h2' | 'h3';
 }

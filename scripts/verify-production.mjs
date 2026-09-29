@@ -10,36 +10,25 @@ const brand = JSON.parse(
 );
 
 const origin = 'https://hailinklabs.com';
-const businessPaths = [
-  '/',
-  '/about',
-  '/products',
-  '/products/samejob',
-  '/products/samejob/privacy',
-  '/products/samejob/support',
-  '/contact',
-  '/products/tmproof',
-  '/products/tmproof/privacy',
-  '/products/tmproof/support',
-  '/products/litterround',
-  '/products/litterround/privacy',
-  '/products/litterround/support',
-  '/products/hybridloop',
-  '/products/hybridloop/privacy',
-  '/products/hybridloop/support',
-  '/products/pressrecipe',
-  '/products/pressrecipe/privacy',
-  '/products/pressrecipe/support',
-  '/products/gearproof',
-  '/products/gearproof/privacy',
-  '/products/gearproof/support',
-  '/products/calvingpocket',
-  '/products/calvingpocket/privacy',
-  '/products/calvingpocket/support',
-];
+// Read the built sitemap so new language routes cannot be silently skipped.
+const sitemap = await readFile(
+  new URL('../dist/sitemap.xml', import.meta.url),
+  'utf8',
+);
+const businessPaths = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+  (match) => new URL(match[1]).pathname,
+);
+if (businessPaths.length === 0)
+  throw new Error('Build the site before verifying production.');
+const media = JSON.parse(
+  await readFile(
+    new URL('../src/data/product-media.json', import.meta.url),
+    'utf8',
+  ),
+);
 const paths = [
   ...businessPaths,
-  ...businessPaths.map((path) => `/zh${path === '/' ? '' : path}`),
+  ...media.assets.map((asset) => asset.file.replace(/^public/, '')),
   '/robots.txt',
   '/sitemap.xml',
   '/favicon.svg',

@@ -1,0 +1,76 @@
+---
+import { copy, type Copy } from '../data/products';
+import type { Locale } from '../data/i18n';
+interface Props {
+  locale: Locale;
+  slug: string;
+}
+const { locale, slug } = Astro.props;
+const galleries: Record<string, readonly { file: string; caption: Copy }[]> = {
+  samejob: [
+    {
+      file: '01-repeat-invoices',
+      caption: ['Start from a repeat customer', '从回头客的历史工作开始'],
+    },
+    {
+      file: '02-reuse-job-details',
+      caption: ['Review the customer and service', '核对客户与服务内容'],
+    },
+    {
+      file: '03-preview-pdf',
+      caption: ['Preview the finished invoice PDF', '预览生成的发票 PDF'],
+    },
+    {
+      file: '04-keep-your-records',
+      caption: ['Export and back up your records', '导出与备份记录'],
+    },
+  ],
+  gearproof: [
+    {
+      file: '04-gearproof',
+      caption: ['Start with your equipment', '从器材首页开始'],
+    },
+    {
+      file: '01-multi-item-handoff',
+      caption: ['Choose gear for a handoff', '选择本次交接的器材'],
+    },
+    {
+      file: '02-reconcile-returns',
+      caption: ['Check what came back', '逐项核对归还器材'],
+    },
+    {
+      file: '03-handoff-history',
+      caption: ['See returns and open issues', '查看归还记录与未解决异常'],
+    },
+  ],
+};
+const shots = galleries[slug];
+---
+
+{shots && (
+  <section class="product-gallery" aria-labelledby="gallery-title">
+    <h2 id="gallery-title">
+      {locale === 'en' ? 'See it in action' : '看看实际使用过程'}
+    </h2>
+    <p>
+      {locale === 'en'
+        ? 'Actual app screens from the App Store listing. Example records shown.'
+        : '来自 App Store 展示素材的真实 App 界面，使用示例记录；App 界面为英文。'}
+    </p>
+    <div class="screenshot-grid">
+      {shots.map((shot) => (
+        <figure>
+          <img
+            src={`/products/${slug}/${shot.file}.jpg`}
+            width="663"
+            height="1440"
+            loading="lazy"
+            decoding="async"
+            alt={copy(shot.caption, locale)}
+          />
+          <figcaption>{copy(shot.caption, locale)}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+)}

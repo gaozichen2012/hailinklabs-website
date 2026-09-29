@@ -1,0 +1,54 @@
+{
+  "checked": "2026-09-29",
+  "note": "Existing App Store screenshots, checked against public Apple listing filenames. Resized only; interface content unchanged. English app UI on both language pages.",
+  "assets": [
+    {
+      "file": "public/products/samejob/01-repeat-invoices.jpg",
+      "source": "ios-release-hub/apps/SameJob/screenshots/en-US/iphone-6.9/01-repeat-invoices.jpg",
+      "sourceSha256": "aec52bcf6e137791e4a032a6d3f2eac47f407c8c1b2f5058e98b7f19556fbe3c",
+      "sha256": "94198277c416116743abf52c18c9d66679cf594e078b6f010973e97d0b72a3da"
+    },
+    {
+      "file": "public/products/samejob/02-reuse-job-details.jpg",
+      "source": "ios-release-hub/apps/SameJob/screenshots/en-US/iphone-6.9/02-reuse-job-details.jpg",
+      "sourceSha256": "e49232e24409e4503b2be5715b00fba49c36581d58707c3d59c8bd371ee050ac",
+      "sha256": "80b9f13005dd4250d17d192e4027415757c69cee0e514a6fe5ca8db1223591b0"
+    },
+    {
+      "file": "public/products/samejob/03-preview-pdf.jpg",
+      "source": "ios-release-hub/apps/SameJob/screenshots/en-US/iphone-6.9/03-preview-pdf.jpg",
+      "sourceSha256": "4d366d19efaf4b46cc0e471850fd314a431821394808eda4bd8acc513ba8ceae",
+      "sha256": "dde5e2214d6de167a70e48fd8ddec4420f4e92adba0605089a3de2283a550554"
+    },
+    {
+      "file": "public/products/samejob/04-keep-your-records.jpg",
+      "source": "ios-release-hub/apps/SameJob/screenshots/en-US/iphone-6.9/04-keep-your-records.jpg",
+      "sourceSha256": "88f66730310437ea3fdf0e9565d72a305a9fa4355b399b48b56d81fea2cb1735",
+      "sha256": "ec17b6533a0baf4519bafc7df59638693ffae14a05445416b3dbbfd0b6560308"
+    },
+    {
+      "file": "public/products/gearproof/01-multi-item-handoff.jpg",
+      "source": "ios-release-hub/apps/GearProof/screenshots/en-US/iphone-6.9/01-multi-item-handoff.png",
+      "sourceSha256": "df818ed5ddb1613be96ccd9292ad0635b76f960c5ee65926515791354996df5d",
+      "sha256": "00d84e65b39cf58ee897fb1fff4f4f77ba49313eeafeb967139c57bd1facaea2"
+    },
+    {
+      "file": "public/products/gearproof/02-reconcile-returns.jpg",
+      "source": "ios-release-hub/apps/GearProof/screenshots/en-US/iphone-6.9/02-reconcile-returns.png",
+      "sourceSha256": "d67d274e8afa628c673eb32d4b3a215670d127fc29177457558f4bc4a40418bc",
+      "sha256": "0826ad2b9a69edb8095963cf365d21ced5baa0abc3eab9bb80615401bfcbdf61"
+    },
+    {
+      "file": "public/products/gearproof/03-handoff-history.jpg",
+      "source": "ios-release-hub/apps/GearProof/screenshots/en-US/iphone-6.9/03-handoff-history.png",
+      "sourceSha256": "0c46c8b3c37aa0dd1d359c87c5b79f2a4fccb97244fbbff35df8903dabb1dd4f",
+      "sha256": "034db4c8560e75fd658525251ee7a2d7e2f8c376e93933faf0113c00c5e0f870"
+    },
+    {
+      "file": "public/products/gearproof/04-gearproof.jpg",
+      "source": "ios-release-hub/apps/GearProof/screenshots/en-US/iphone-6.9/04-gearproof.png",
+      "sourceSha256": "e3b0cc13f0230fee7a3832f656711bda21b66543529a46007a1d261b96e154ae",
+      "sha256": "04234b8e618bee89cab77f0a7a8aab4630885164fa368d3ca2b6b33f1cb8656e"
+    }
+  ]
+}

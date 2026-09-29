@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { supportProducts } from '../../data/catalog';
+import { localizedPath, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+---
+
+<Layout
+  locale={locale}
+  title={c('App Support — Hailink Labs', 'App 使用支持 — Hailink Labs')}
+  description={c(
+    'Choose your Hailink Labs app for help with purchases, free access, backups, moving devices and exports, or contact our support email.',
+    '选择你的 Hailink Labs App，查看购买恢复、免费与试用规则、备份换机、导出和问题反馈说明。',
+  )}
+>
+  <section class="page-intro">
+    <p class="eyebrow">{c('Support', '使用支持')}</p>
+    <h1>{c('A little help.', '帮助，从这里开始。')}</h1>
+    <p class="intro-copy">
+      {c(
+        'Choose your app to find the answers that fit.',
+        '选择你的 App，找到对应的使用说明。',
+      )}
+    </p>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{c('Choose an app', '选择 App')}</h2>
+    </div>
+    <div class="section-body">
+      <p>
+        {c(
+          'Purchases and restores, free or trial access, keeping your records, and getting in touch. Data and backup options vary by app.',
+          '购买与恢复、免费或试用规则、数据保存及问题反馈。各 App 的数据和备份方式不同，请查看对应说明。',
+        )}
+      </p>
+      <ul class="support-directory">
+        {supportProducts.map((p) => (
+          <li>
+            <a href={localizedPath(`/products/${p.slug}/support`, locale)}>
+              {p.name}
+              <span aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{c('Still need help?', '还需要帮助？')}</h2>
+    </div>
+    <div class="section-body prose">
+      <a class="email-link" href={`mailto:${site.email}`}>
+        {site.email}
+      </a>
+      <p>
+        {c(
+          'Include the app name, device and iOS version, and what happened. Please leave out private records and payment details.',
+          '请说明 App 名称、设备与 iOS 版本，以及遇到的问题。请勿发送私人记录或付款信息。',
+        )}
+      </p>
+    </div>
+  </section>
+</Layout>

@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Product from '../../components/Product.astro';
-import { products } from '../../data/products';
+import { catalog, featured } from '../../data/catalog';
 import { site } from '../../data/site';
 
 import { translator, localizedPath, type Locale } from '../../data/i18n';
@@ -15,11 +15,15 @@ const href = (path: string) => localizedPath(path, locale);
 
 <Layout
   locale={locale}
-  title={t('Hailink Labs — Focused software for everyday work')}
+  title={
+    locale === 'en'
+      ? 'Hailink Labs — Small apps. Real-life value.'
+      : 'Hailink Labs — 小而专注的 App，解决日常具体问题'
+  }
   description={
     locale === 'en'
-      ? 'Hailink Labs builds focused iPhone apps for everyday work: invoices, field records, equipment handoffs, workouts and heat press settings.'
-      : 'Hailink Labs 打造专注日常工作的 iPhone App，涵盖发票、现场记录、器材交接、训练和热压参数。'
+      ? 'Focused apps for work, training and family life. Explore practical tools for invoices, equipment, animal care, workouts and learning.'
+      : 'Hailink Labs 打造专注工作、运动与家庭生活的 App，涵盖开票、器材交接、动物护理、训练和学习。'
   }
 >
   <section class="hero">
@@ -33,15 +37,17 @@ const href = (path: string) => localizedPath(path, locale);
     />
     <p class="eyebrow">{t('Hailink Labs · Independent software')}</p>
     <h1>
-      {t('Focused software.')}
+      {locale === 'en' ? 'Small apps.' : '小而专注的 App。'}
       <br />
-      <span class="muted-heading">{t('For everyday work.')}</span>
+      <span class="muted-heading">
+        {locale === 'en' ? 'Real-life value.' : '解决具体问题。'}
+      </span>
     </h1>
     <div class="hero-bottom">
       <p>
-        {t('We build practical apps with a simple purpose:')}
-        <br class="desktop-break" />{' '}
-        {t('make the work you do every day a little easier.')}
+        {locale === 'en'
+          ? 'Focused apps for work, training, and family life — built to solve one problem well.'
+          : '从工作记录到运动训练与家庭学习，把一件事做好。'}
       </p>
       <a class="button" href={href('/products')}>
         {t('Meet our products')} <span aria-hidden="true">→</span>
@@ -50,17 +56,24 @@ const href = (path: string) => localizedPath(path, locale);
   </section>
   <section class="products-section" aria-labelledby="products-title">
     <div class="section-label">
-      <h2 id="products-title">{t('Our products')}</h2>
+      <h2 id="products-title">
+        {locale === 'en' ? 'Featured apps' : '精选 App'}
+      </h2>
       <span class="catalog-count">
-        {products.length}{' '}
-        {locale === 'en' ? 'focused apps' : '款专注实用的 App'}
+        {locale === 'en'
+          ? `${catalog.length} apps in the full collection`
+          : `完整目录共 ${catalog.length} 款 App`}
       </span>
     </div>
     <div class="product-grid">
-      {products.map((product) => (
+      {featured.map((product) => (
         <Product locale={locale} product={product} compact />
       ))}
     </div>
+    <a class="text-link catalog-all" href={href('/products')}>
+      {locale === 'en' ? 'Explore all apps' : '浏览全部 App'}{' '}
+      <span aria-hidden="true">→</span>
+    </a>
   </section>
   <section class="section-row company-section" aria-labelledby="company-title">
     <div class="section-label">
