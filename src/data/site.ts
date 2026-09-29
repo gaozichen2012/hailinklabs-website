@@ -18,6 +18,8 @@ export const englishRoutes = [
   '/products/minutesprout',
   '/products/minutesprout/privacy',
   '/products/minutesprout/support',
+  '/products/heardraw/support',
+  '/products/heardraw/privacy',
   '/products/botsteps/support',
   '/products/botsteps/privacy',
   '/products/tmproof',

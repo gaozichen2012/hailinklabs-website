@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  privacy?: boolean;
+}
+const { locale, privacy = false } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const heading = privacy
+  ? c('HearDraw Privacy Policy', 'HearDraw 隐私政策')
+  : c('HearDraw Support', 'HearDraw 支持');
+---
+
+<Layout
+  locale={locale}
+  title={`${heading} | Hailink Labs`}
+  description={c(
+    'Parent support and privacy information for HearDraw listening and paper drawing mysteries.',
+    'HearDraw 听力与纸上神秘绘画的家长支持指南，包含玩法、试用、购买恢复和隐私信息。',
+  )}
+>
+  <section class="page-intro policy-intro">
+    <p class="eyebrow">HearDraw: Listen & Draw</p>
+    <h1>{heading}</h1>
+    <p class="intro-copy">
+      {c(
+        'Listen to the clues on iPhone, draw on real paper, then reveal the mystery.',
+        '听 iPhone 播放线索，在真实纸张上绘画，最后揭晓谜底。',
+      )}
+    </p>
+  </section>
+  <article class="policy prose">
+    {privacy ? (
+      <>
+        <p>
+          {c(
+            'Effective September 29, 2026. HearDraw is developed by Hailink Labs, the brand of ',
+            '生效日期：2026 年 9 月 29 日。HearDraw 由 Hailink Labs 开发，品牌所属主体为 ',
+          )}
+          {companyName(locale)}.
+        </p>
+        {locale === 'zh-CN' && (
+          <p>
+            中文版本方便阅读，如有差异以
+            <a href="/products/heardraw/privacy">英文版本</a>为准。
+          </p>
+        )}
+        <h2>{c('Children and local data', '儿童与本地数据')}</h2>
+        <p>
+          {c(
+            'HearDraw is designed for children ages 6–8 and their parents. No account, child identity, birthday, email or profile is requested in the app. We do not collect personal information through the app. Mystery progress, completion dates and settings stay on the device. Drawings remain on real paper; the app does not photograph, upload or evaluate them.',
+            'HearDraw 面向 6–8 岁儿童及家长。App 不要求账号、儿童身份、生日、邮箱或档案，不通过 App 收集个人信息。任务进度、完成日期和设置保存在设备上。绘画留在真实纸张上，App 不拍摄、上传或评价作品。',
+          )}
+        </p>
+        <h2>{c('Audio, permissions and tracking', '声音、权限与跟踪')}</h2>
+        <p>
+          {c(
+            'Fixed English voice prompts are bundled with the app and play offline. The app does not listen or record. No camera, microphone, photos, location, contacts, Bluetooth or notification permission is requested. There are no ads, tracking, third-party analytics or third-party crash reporting SDKs.',
+            '固定英语提示音随 App 打包并离线播放。App 不聆听或录音，不请求相机、麦克风、照片、位置、通讯录、蓝牙或通知权限。没有广告、跟踪、第三方分析或第三方崩溃报告 SDK。',
+          )}
+        </p>
+        <h2>{c('Trial and Apple purchases', '试用与 Apple 购买')}</h2>
+        <p>
+          {c(
+            'Trial start and last observed time are stored in the device Keychain and may remain after reinstalling. This seven-day trial is not a subscription. Apple processes the single lifetime purchase and restores through StoreKit. The app checks verified transactions for access. Hailink Labs does not receive payment card details or run a receipt server. Apple may process purchase and diagnostic information under its own policies and your device settings.',
+            '试用起点和最后观察时间保存在设备钥匙串中，重新安装后可能保留。七天试用不是订阅。Apple 通过 StoreKit 处理单一终身购买及恢复，App 检查已验证交易判断权益。Hailink Labs 不接收支付卡信息，也不运营收据服务器。Apple 可能依据其政策及设备设置处理购买和诊断信息。',
+          )}
+        </p>
+        <p>
+          <a href="https://www.apple.com/legal/privacy/">
+            {c('Apple Privacy Policy', 'Apple 隐私政策')}
+          </a>
+        </p>
+        <h2>{c('Storage and deletion', '存储与删除')}</h2>
+        <p>
+          {c(
+            'There is no app backend, cloud sync, public sharing or export. Removing the app removes its local app data; Keychain trial dates may remain. Operating-system backups may include app data according to your Apple settings. Manage those backups separately. We cannot recover local missions from a server.',
+            '没有 App 后端、云同步、公开分享或导出。移除 App 会移除其本地数据，但钥匙串试用日期可能保留。系统备份可能按 Apple 设置包含 App 数据，需要另行管理。我们无法从服务器恢复本地任务。',
+          )}
+        </p>
+        <h2>{c('Parent support and websites', '家长支持与网站')}</h2>
+        <p>
+          {c(
+            'Purchases, restore and external links are behind a parental gate. If a parent emails support, we receive the email address, message and attachments. Do not send children’s names, photos, voices or other personal details. We use correspondence only to provide support, not advertising. Our company mailbox uses Tencent business email; Hailink Labs in China may access support messages. Messages are retained for no longer than 12 months after the issue closes unless an ongoing issue or legal obligation requires longer.',
+            '购买、恢复和外部链接位于家长门禁后。家长发送支持邮件时，我们会收到邮箱地址、正文和附件。请勿发送儿童姓名、照片、声音或其他个人信息。邮件仅用于支持，不用于广告。公司邮箱使用腾讯企业邮箱，中国境内的 Hailink Labs 可能访问支持邮件。问题关闭后保留不超过 12 个月，持续问题或法律义务要求更久时除外。',
+          )}
+        </p>
+        <p>
+          {c(
+            'This website has no analytics, tracking scripts, accounts or contact forms. GitHub Pages processes technical requests such as IP addresses to deliver and protect the site. Parents can email us to request access, correction or deletion of support information. We may verify the request using the relevant email address. Material policy changes will be explained here with an updated effective date.',
+            '本网站没有分析、跟踪脚本、账号或联系表单。GitHub Pages 为网站交付与保护处理 IP 地址等技术请求。家长可通过邮件请求访问、更正或删除支持信息，我们可能通过对应邮箱核实请求。重大政策变更将在本页说明并更新生效日期。',
+          )}
+        </p>
+        <p>
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+            {c('GitHub Privacy Statement', 'GitHub 隐私声明')}
+          </a>
+        </p>
+      </>
+    ) : (
+      <>
+        <h2>{c('How to play', '如何游戏')}</h2>
+        <p>
+          {c(
+            'Choose Start Drawing or Mystery Library, select a mystery, and prepare paper and a pencil. Listen to each clue and draw. Tap Repeat to hear it again and Next when ready. After the final clue, tap Reveal to see the reference drawing. There are 30 mysteries across three levels, with no scoring or digital canvas.',
+            '选择 Start Drawing 或 Mystery Library，选择任务并准备纸和铅笔。听每条线索后绘画；Repeat 重听，准备好后点 Next。最后点 Reveal 查看参考图。共有三个等级、30 个任务，不评分，也没有数字画板。',
+          )}
+        </p>
+        <h2>{c('Paper, pencil and time to listen', '准备纸笔，慢慢听')}</h2>
+        <p>
+          {c(
+            'Place the iPhone beside the drawing paper. Crayons are optional. A grown-up can help with setup. The default Manual mode lets each child choose when to continue; optional 10, 15 or 20 second delays are available in Settings.',
+            '将 iPhone 放在纸旁，蜡笔为可选材料，家长可协助准备。默认 Manual 模式由孩子决定何时继续；Settings 可选择 10、15 或 20 秒的自动继续等待。',
+          )}
+        </p>
+        <h2>{c('Trial, purchase and restore', '试用、购买与恢复')}</h2>
+        <p>
+          {c(
+            'The full trial lasts seven days from first use. The US lifetime price is $9.99, a one-time purchase with no subscription. Open Parent Area, reverse the displayed digits for the adult check, and use Unlock Lifetime or Restore Purchases. The trial never charges automatically. The purchase unlocks all 30 V1 mysteries. Restore uses the Apple Account that made the purchase. Pending purchases unlock after Apple approves them. Mission progress is local and does not transfer with a purchase.',
+            '首次使用开始七天完整试用。美国区终身价格为 $9.99，一次性购买，无订阅。打开 Parent Area，将显示的数字倒序输入完成成人验证，再使用 Unlock Lifetime 或 Restore Purchases。试用不会自动扣费，购买解锁 V1 全部 30 个任务。恢复使用原购买 Apple 账号；待批准购买在 Apple 批准后解锁。任务进度仅在本地，不随购买迁移。',
+          )}
+        </p>
+        <h2>{c('Audio and resuming a mystery', '声音与继续任务')}</h2>
+        <p>
+          {c(
+            'If you cannot hear a clue, check device volume and the audio output, then use Repeat. The bundled narration works offline. Audio pauses when the app goes into the background or an interruption occurs; resume when ready. Saved progress lets you return to an unfinished mystery. This app offers playful listening practice, not medical assessment or treatment.',
+            '听不到线索时检查设备音量和声音输出，再用 Repeat 重听。内置旁白支持离线。进入后台或声音中断时会暂停，准备好后继续。已保存的进度允许继续未完成任务。本 App 用于趣味听力练习，不提供医疗评估或治疗。',
+          )}
+        </p>
+        <h2>{c('Contact a grown-up support team', '联系支持')}</h2>
+        <p>
+          {c(
+            'A parent can email the app version, device model and a short description of the issue. Please do not include children’s personal information.',
+            '家长可发送 App 版本、设备型号和简短问题描述，请勿包含儿童个人信息。',
+          )}
+        </p>
+      </>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=HearDraw%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a
+        href={localizedPath(
+          `/products/heardraw/${privacy ? 'support' : 'privacy'}`,
+          locale,
+        )}
+      >
+        {privacy
+          ? c('HearDraw support', 'HearDraw 支持')
+          : c('Privacy policy', '隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>
