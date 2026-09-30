@@ -30,6 +30,9 @@ Follow [deployment](docs/DEPLOYMENT.md). DNS and account operations require the 
 - Pages: `src/pages`; shared layout/CSS: `src/layouts`, `src/styles`.
 - SameJob privacy publication decision: `src/data/privacy-review.json`. Recheck against app source and actual operations when practices change.
 - No App Store download badge until a real listing exists.
+- Download availability and verification dates: `src/data/catalog.ts`. An unverified listing is not a claim that an app is unreleased.
+- Social preview metadata and static JSON-LD: `src/data/seo.ts`. No invented ratings/reviews; structured data does not guarantee search rich results.
+- Regenerate the ten checked-in social PNGs after product copy changes with `node scripts/generate-social-images.mjs` after `npm ci`, then visually review them. The script checks existing source-asset hashes and uses the sharp version already locked through Astro; it adds no runtime JavaScript.
 - Keep credentials, complete private DNS exports, browser state and mail contents outside Git.
 - Project rules: [AGENTS](AGENTS.md), [engineering handbook](docs/项目工程手册.md), [current state](docs/项目当前状态.md).
 

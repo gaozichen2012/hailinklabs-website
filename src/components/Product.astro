@@ -2,7 +2,7 @@
 import AppStoreLink from './AppStoreLink.astro';
 import { localizedPath, type Locale } from '../data/i18n';
 import { copy } from '../data/products';
-import type { CatalogProduct } from '../data/catalog';
+import { availability, listings, type CatalogProduct } from '../data/catalog';
 interface Props {
   locale: Locale;
   product: CatalogProduct;
@@ -20,6 +20,11 @@ const {
 <article class="matrix-card">
   <p class="card-category">{copy(product.subtitle, locale)}</p>
   <Heading lang="en">{product.name}</Heading>
+  <p
+    class:list={['availability', { 'is-available': !!listings[product.slug] }]}
+  >
+    {copy(availability(product.slug), locale)}
+  </p>
   {!compact && (
     <p class="eyebrow" lang="en">
       {product.storeName}

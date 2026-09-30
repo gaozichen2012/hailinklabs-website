@@ -73,7 +73,11 @@ for (const englishPath of englishRoutes) {
           locale === 'en' ? !link.startsWith('/zh') : link.startsWith('/zh'),
         ).toBe(true);
       }
-      expect(await page.locator('script, form').count()).toBe(0);
+      expect(
+        await page
+          .locator('script:not([type="application/ld+json"]), form')
+          .count(),
+      ).toBe(0);
       const expectedStoreLinks = [
         ...(['/', '/products', '/products/samejob'].includes(englishPath)
           ? ['https://apps.apple.com/us/app/invoice-maker-samejob/id6814700434']
@@ -88,6 +92,14 @@ for (const englishPath of englishRoutes) {
               'https://apps.apple.com/us/app/litterround-puppy-tracker/id6814862263',
             ]
           : []),
+        ...(['/products', '/products/tmproof'].includes(englishPath)
+          ? ['https://apps.apple.com/us/app/tmproof-t-m-tickets/id6814884804']
+          : []),
+        ...(['/products', '/products/calvingpocket'].includes(englishPath)
+          ? [
+              'https://apps.apple.com/us/app/calvingpocket-calf-records/id6815103146',
+            ]
+          : []),
       ];
       expect(
         await page
@@ -95,7 +107,10 @@ for (const englishPath of englishRoutes) {
           .evaluateAll((links) =>
             links.map((link) => link.getAttribute('href')),
           ),
-      ).toEqual(expectedStoreLinks);
+      ).toEqual(expect.arrayContaining(expectedStoreLinks));
+      await expect(page.locator('a[href*="apps.apple.com"]')).toHaveCount(
+        expectedStoreLinks.length,
+      );
       for (const download of await page.locator('.store-download').all()) {
         await expect(download).toContainText(
           locale === 'en' ? 'Link opens the US store.' : '链接前往美国商店。',

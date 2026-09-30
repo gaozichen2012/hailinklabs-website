@@ -3,6 +3,11 @@ import '../styles/global.css';
 import BrandLogo from '../components/BrandLogo.astro';
 import { englishRoutes, site } from '../data/site';
 import {
+  socialImage,
+  structuredData,
+  serializeStructuredData,
+} from '../data/seo';
+import {
   translator,
   localizedPath,
   companyName,
@@ -27,6 +32,10 @@ const hasAlternate = englishRoutes.some((route) => route === englishPath);
 const otherLocale = locale === 'en' ? 'zh-CN' : 'en';
 const alternate = localizedPath(englishPath, otherLocale);
 const canonical = new URL(path, site.url).href;
+const preview = socialImage(englishPath, locale);
+const schema = noindex
+  ? undefined
+  : structuredData(englishPath, canonical, locale);
 const nav = [
   { href: localizedPath('/products', locale), label: t('Products') },
   {
@@ -80,6 +89,23 @@ const nav = [
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'zh_CN'} />
+    <meta property="og:image" content={preview.url} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content={String(preview.width)} />
+    <meta property="og:image:height" content={String(preview.height)} />
+    <meta property="og:image:alt" content={preview.alt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={preview.url} />
+    <meta name="twitter:image:alt" content={preview.alt} />
+    {schema && (
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={serializeStructuredData(schema)}
+      ></script>
+    )}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1.1" />
     <link
       rel="icon"

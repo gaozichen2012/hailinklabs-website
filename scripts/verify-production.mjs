@@ -1,4 +1,4 @@
-import { writeFile, mkdir, readFile } from 'node:fs/promises';
+import { writeFile, mkdir, readFile, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { Buffer } from 'node:buffer';
 
@@ -29,6 +29,9 @@ const media = JSON.parse(
 const paths = [
   ...businessPaths,
   ...media.assets.map((asset) => asset.file.replace(/^public/, '')),
+  ...(await readdir(new URL('../public/social/', import.meta.url)))
+    .filter((file) => file.endsWith('.png'))
+    .map((file) => `/social/${file}`),
   '/robots.txt',
   '/sitemap.xml',
   '/favicon.svg',
