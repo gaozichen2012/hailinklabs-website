@@ -8,7 +8,7 @@ for (const prefix of ['', '/zh']) {
     page,
   }) => {
     await page.goto(`${prefix}/products`);
-    await expect(page.locator('.availability')).toHaveCount(9);
+    await expect(page.locator('.availability')).toHaveCount(13);
     await expect(page.locator('.availability.is-available')).toHaveCount(5);
     await expect(page.locator('.store-download')).toHaveCount(5);
     for (const product of catalog) {
@@ -20,9 +20,13 @@ for (const prefix of ['', '/zh']) {
           ? prefix
             ? '已在美国 App Store 上架'
             : 'Available on the US App Store'
-          : prefix
-            ? 'App Store 上架状态待确认'
-            : 'App Store availability not confirmed',
+          : ['rulesprout', 'tilltinker'].includes(product.slug)
+            ? prefix
+              ? '尚未在 App Store 提供'
+              : 'Not yet available on the App Store'
+            : prefix
+              ? '等待 App Store 审核'
+              : 'Awaiting App Store review',
       );
     }
     for (const [slug, id, price] of [
@@ -118,7 +122,7 @@ test('social previews cover every route and resolve to real 1200 × 630 PNGs', a
     expect(html).toMatch(/property="og:image:alt" content="[^"]+"/);
     images.add(new URL(image!).pathname);
   }
-  expect(images.size).toBe(10);
+  expect(images.size).toBe(14);
   for (const image of images) {
     const response = await request.get(image);
     expect(response.ok(), image).toBe(true);

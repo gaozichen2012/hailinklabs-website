@@ -1,4 +1,6 @@
 ---
+import { availability } from '../../data/catalog';
+import { copy } from '../../data/products';
 import Layout from '../../layouts/Layout.astro';
 import { localizedPath, companyName, type Locale } from '../../data/i18n';
 import { site } from '../../data/site';
@@ -123,6 +125,18 @@ const sections = {
     </p>
   </section>
   <article class="policy prose">
+    {kind === 'product' && (
+      <p class="availability">{copy(availability('minutesprout'), locale)}</p>
+    )}
+    {kind === 'privacy' && locale === 'zh-CN' && (
+      <p>
+        中文版本方便阅读，如有差异以{' '}
+        <a href="/products/minutesprout/privacy" lang="en" hreflang="en">
+          英文版本
+        </a>
+        为准。
+      </p>
+    )}
     {kind === 'privacy' && (
       <p>
         {c(

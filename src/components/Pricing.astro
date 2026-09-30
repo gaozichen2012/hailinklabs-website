@@ -80,10 +80,8 @@ const zh = locale === 'zh-CN';
     </p>
   </>
 )}
-{slug !== 'tmproof' && (
-  <p class="quiet">
-    {zh
-      ? '以上为美元价格；购买时以 App Store 显示的当地价格为准。'
-      : 'Prices shown in USD. The App Store displays the applicable local price before purchase.'}
-  </p>
-)}
+<p class="quiet">
+  {zh
+    ? '以上为美元价格；购买时以 App Store 显示的当地价格为准。'
+    : 'Prices shown in USD. The App Store displays the applicable local price before purchase.'}
+</p>

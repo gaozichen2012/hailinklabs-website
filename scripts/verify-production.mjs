@@ -28,6 +28,7 @@ const media = JSON.parse(
 );
 const paths = [
   ...businessPaths,
+  '/404',
   ...media.assets.map((asset) => asset.file.replace(/^public/, '')),
   ...(await readdir(new URL('../public/social/', import.meta.url)))
     .filter((file) => file.endsWith('.png'))
@@ -39,6 +40,9 @@ const paths = [
   '/apple-touch-icon.png',
   '/brand/hailink-logo.svg',
   '/brand/hailink-symbol.svg',
+  ...(await readdir(new URL('../dist/_astro/', import.meta.url)))
+    .filter((file) => file.endsWith('.css'))
+    .map((file) => `/_astro/${file}`),
 ];
 const results = [];
 for (const path of paths) {
@@ -52,8 +56,17 @@ for (const path of paths) {
     const body = bytes.toString();
     const asset = brand.assets.find((entry) => entry.file === `public${path}`);
     const page = !path.includes('.');
+    const expected = await readFile(
+      new URL(
+        `../dist/${path === '/' ? 'index.html' : page ? `${path.slice(1)}.html` : path.slice(1)}`,
+        import.meta.url,
+      ),
+    );
+    const sha256 = createHash('sha256').update(bytes).digest('hex');
+    const expectedSha256 = createHash('sha256').update(expected).digest('hex');
     const pass =
       r.status === 200 &&
+      sha256 === expectedSha256 &&
       (!asset ||
         createHash('sha256').update(bytes).digest('hex') === asset.sha256) &&
       new URL(r.url).origin === origin &&
@@ -71,7 +84,14 @@ for (const path of paths) {
           !/lorem ipsum|placeholder|\bTODO\b|review copy|coming soon/i.test(
             body,
           )));
-    results.push({ url, status: r.status, finalUrl: r.url, pass });
+    results.push({
+      url,
+      status: r.status,
+      finalUrl: r.url,
+      sha256,
+      expectedSha256,
+      pass,
+    });
   } catch (error) {
     results.push({
       url,

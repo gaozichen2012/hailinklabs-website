@@ -4,7 +4,7 @@ import { routes } from '../src/data/site';
 test('every page reflows at 320 and 768 pixels with usable navigation', async ({
   page,
 }) => {
-  // This aggregate check navigates all 72 routes at both widths. Give the full
+  // This aggregate check navigates all business routes at both widths. Give the full
   // matrix a realistic CI budget without relaxing any per-page assertion.
   test.setTimeout(120_000);
   for (const width of [320, 768]) {
