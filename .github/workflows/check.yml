@@ -12,6 +12,9 @@ jobs:
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble
+      options: --ipc=host --init
     steps:
       - uses: actions/checkout@v7
         with:
@@ -25,7 +28,6 @@ jobs:
       - run: npm run typecheck
       - run: npm run release:check
       - run: npm run build
-      - run: npx playwright install --with-deps chromium webkit
       - run: npm test
         env:
           SITE_VISUAL_AUDIT: '1'
@@ -64,6 +66,9 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble
+      options: --ipc=host --init
     steps:
       - uses: actions/checkout@v7
         with:
@@ -79,7 +84,6 @@ jobs:
       - run: mkdir dist && tar -xf artifacts/pages-build/artifact.tar -C dist
       - run: npm ci
       - run: npm run verify:production
-      - run: npx playwright install --with-deps chromium webkit
       - run: npm test
         env:
           PLAYWRIGHT_PRODUCTION: '1'
