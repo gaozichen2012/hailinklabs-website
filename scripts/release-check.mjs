@@ -23,6 +23,7 @@ for (const slug of [
   'turnmath',
   'minutesprout',
   'heardraw',
+  'rulesprout',
 ]) {
   const product = review.productSourceReviews?.[slug];
   if (

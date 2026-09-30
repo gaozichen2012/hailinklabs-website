@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  privacy?: boolean;
+}
+const { locale, privacy = false } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const heading = privacy
+  ? c('RuleSprout Privacy Policy', 'RuleSprout 隐私政策')
+  : c('RuleSprout Support', 'RuleSprout 支持');
+---
+
+<Layout
+  locale={locale}
+  title={`${heading} | Hailink Labs`}
+  description={c(
+    'Parent information for RuleSprout offline logic lessons: local progress, purchases, privacy and support.',
+    'RuleSprout 离线逻辑游戏的家长指南，说明本地关卡进度、一次性购买与恢复、儿童隐私及支持方式。',
+  )}
+>
+  <section class="page-intro policy-intro">
+    <p class="eyebrow">RuleSprout: Logic for Kids</p>
+    <h1>{heading}</h1>
+    <p class="intro-copy">
+      {c(
+        'A little evidence. A new way to think.',
+        '一点证据，一种新的思考方式。',
+      )}
+    </p>
+  </section>
+  <article class="policy prose">
+    {privacy ? (
+      <>
+        <p>
+          {c(
+            'Effective September 30, 2026. RuleSprout is developed by Hailink Labs, the brand of ',
+            '生效日期：2026 年 9 月 30 日。RuleSprout 由 Hailink Labs 开发，品牌所属主体为 ',
+          )}
+          {companyName(locale)}.
+        </p>
+        {locale === 'zh-CN' && (
+          <p>
+            中文版本方便阅读，如有差异以
+            <a href="/products/rulesprout/privacy">英文版本</a>为准。
+          </p>
+        )}
+        <h2>{c('Children and local data', '儿童与本地数据')}</h2>
+        <p>
+          {c(
+            'RuleSprout is designed for children ages 6-8 and their parents. The app does not request an account, child identity, birthday, name, email or profile. We do not collect personal information through the app. Lesson progress, attempts, completion dates, the current lesson checkpoint and settings stay on the device. There is no developer backend, cloud sync, public sharing or export.',
+            'RuleSprout 面向 6-8 岁儿童及家长。App 不要求账号、儿童身份、生日、姓名、邮箱或档案，不通过 App 收集个人信息。关卡进度、尝试次数、完成日期、当前关卡检查点和设置保存在本机。没有开发者后端、云同步、公开分享或导出。',
+          )}
+        </p>
+        <h2>{c('Permissions and tracking', '权限与跟踪')}</h2>
+        <p>
+          {c(
+            'The app does not request camera, microphone, photos, location, contacts, Bluetooth or notification permission. It does not listen or record. There are no ads, tracking, third-party analytics or third-party crash reporting SDKs. Core lessons use visual feedback and work offline.',
+            'App 不请求相机、麦克风、照片、位置、通讯录、蓝牙或通知权限，不聆听或录音。没有广告、跟踪、第三方分析或第三方崩溃报告 SDK。核心关卡通过视觉反馈运行，支持离线游戏。',
+          )}
+        </p>
+        <h2>{c('Apple purchases', 'Apple 购买')}</h2>
+        <p>
+          {c(
+            'The first six lessons are free. Apple processes the optional single lifetime purchase and restoration through StoreKit. The app checks verified purchase information for paid access. Hailink Labs does not receive payment card details or operate a receipt server. Apple may process purchase and diagnostic information under its own policies and your device settings.',
+            '前六关免费。Apple 通过 StoreKit 处理可选的单一终身购买及恢复；App 检查已验证购买信息判断付费权益。Hailink Labs 不接收支付卡信息，也不运营收据服务器。Apple 可能依据其政策和设备设置处理购买及诊断信息。',
+          )}
+        </p>
+        <p>
+          <a href="https://www.apple.com/legal/privacy/">
+            {c('Apple Privacy Policy', 'Apple 隐私政策')}
+          </a>
+        </p>
+        <h2>{c('Storage and deletion', '存储与删除')}</h2>
+        <p>
+          {c(
+            'Removing the app removes its local app data. Reinstalling can lose lesson progress; restoring a purchase does not restore that progress. Operating-system backups may include app data according to your Apple settings. Manage those backups separately. We cannot recover lesson progress from a server.',
+            '移除 App 会移除其本地数据，重新安装可能丢失关卡进度；恢复购买不恢复学习进度。系统备份可能按 Apple 设置包含 App 数据，需要另行管理。我们无法从服务器恢复关卡进度。',
+          )}
+        </p>
+        <h2>{c('Parent support and websites', '家长支持与网站')}</h2>
+        <p>
+          {c(
+            'Purchases, restoration, privacy, support and external links are behind a parent check. If a parent emails support, we receive the email address, message and attachments. Do not send children’s names, photos, voices, payment details or other personal information. We use correspondence only to provide support, not advertising. Our company mailbox uses Tencent business email; Hailink Labs in China may access support messages. Messages are retained for no longer than 12 months after the issue closes unless an ongoing issue or legal obligation requires longer.',
+            '购买、恢复、隐私、支持和外部链接均位于家长验证之后。家长发送支持邮件时，我们会收到邮箱地址、正文和附件。请勿发送儿童姓名、照片、声音、支付信息或其他个人信息。邮件仅用于支持，不用于广告。公司邮箱使用腾讯企业邮箱，中国境内的 Hailink Labs 可能访问支持邮件。问题关闭后保留不超过 12 个月，持续问题或法律义务要求更久时除外。',
+          )}
+        </p>
+        <p>
+          {c(
+            'This website has no analytics, tracking scripts, accounts or contact forms. GitHub Pages processes technical requests such as IP addresses to deliver and protect the site. Parents can email us to request access, correction or deletion of support information. We may verify the request using the relevant email address. Material policy changes will be explained here with an updated effective date.',
+            '本网站没有分析、跟踪脚本、账号或联系表单。GitHub Pages 为网站交付与保护处理 IP 地址等技术请求。家长可通过邮件请求访问、更正或删除支持信息，我们可能通过对应邮箱核实请求。重大政策变更将在本页说明并更新生效日期。',
+          )}
+        </p>
+        <p>
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+            {c('GitHub Privacy Statement', 'GitHub 隐私声明')}
+          </a>
+        </p>
+      </>
+    ) : (
+      <>
+        <h2>{c('How to play', '如何游戏')}</h2>
+        <p>
+          {c(
+            'Look at the clues and Sprig’s idea. Choose the example that gives a different answer from that idea. Watch the rule change, then check three new examples. An example that both ideas accept or both reject cannot tell them apart. Four worlds contain 24 curated lessons. Children can replay completed lessons.',
+            '观察线索和 Sprig 的想法，选择与该想法产生不同判断的例子。看规则发生变化，再检查三个新例子。两种想法都接受或都拒绝的例子不能区分它们。四个世界共有 24 个精编关卡，已完成关卡可以重玩。',
+          )}
+        </p>
+        <h2>
+          {c('Free lessons, purchase and restore', '免费关卡、购买与恢复')}
+        </h2>
+        <p>
+          {c(
+            'Six complete lessons are free. RuleSprout Lifetime unlocks access to all 24 lessons for US $5.99 as a one-time purchase with no subscription. Worlds still open in learning order. Open Parent Area, hold the leaf for three seconds, then tap GROW. Choose RuleSprout Lifetime to see Apple’s current localized price, Unlock Full Game or Restore Purchase. Restore with the Apple Account used to buy. A pending purchase unlocks after Apple approves it.',
+            '六个完整关卡免费。RuleSprout Lifetime 为美国区 $5.99 一次性购买，可获得全部 24 关权益，无订阅；世界仍按学习顺序开放。打开 Parent Area，按住叶片三秒，再点 GROW。选择 RuleSprout Lifetime 查看 Apple 当前本地化价格，使用 Unlock Full Game 或 Restore Purchase。请用原购买 Apple 账号恢复；待批准购买在 Apple 批准后解锁。',
+          )}
+        </p>
+        <h2>{c('Progress and offline play', '进度与离线游戏')}</h2>
+        <p>
+          {c(
+            'Progress saves automatically on this device after important steps. Continue resumes a stable lesson checkpoint. Core gameplay works offline; Apple product loading, purchase and restore require an internet connection. Purchase restoration restores access, not lesson progress. Avoid deleting the app to troubleshoot a purchase, because local progress can be lost.',
+            '重要步骤后，进度会自动保存在本机，Continue 从稳定检查点继续。核心游戏支持离线；Apple 商品加载、购买及恢复需要网络。恢复购买恢复权益，不恢复关卡进度。不要通过删除 App 排查购买问题，以免丢失本地学习进度。',
+          )}
+        </p>
+        <h2>{c('Display and support', '显示与支持')}</h2>
+        <p>
+          {c(
+            'The app follows system appearance, text size and Reduce Motion. Silent play includes all lesson feedback. A parent can email the app version, device model and a short description of an issue. Please do not include children’s personal information.',
+            'App 遵循系统外观、文字大小及减少动态效果设置。静音状态下仍有完整关卡反馈。家长可发送 App 版本、设备型号和简短问题说明，请勿包含儿童个人信息。',
+          )}
+        </p>
+      </>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=RuleSprout%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a
+        href={localizedPath(
+          `/products/rulesprout/${privacy ? 'support' : 'privacy'}`,
+          locale,
+        )}
+      >
+        {privacy
+          ? c('RuleSprout support', 'RuleSprout 支持')
+          : c('Privacy policy', '隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>

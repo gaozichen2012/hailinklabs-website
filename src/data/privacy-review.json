@@ -3,6 +3,11 @@
   "reviewedOn": "2026-09-14",
   "remaining": [],
   "productSourceReviews": {
+    "rulesprout": {
+      "reviewedOn": "2026-09-30",
+      "method": "source-audit",
+      "remaining": []
+    },
     "samejob": {
       "reviewedOn": "2026-09-17",
       "method": "source-audit",

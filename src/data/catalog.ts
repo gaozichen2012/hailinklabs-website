@@ -59,6 +59,7 @@ export const supportProducts = [
   ...catalog,
   { slug: 'botsteps', name: 'BotSteps' },
   { slug: 'heardraw', name: 'HearDraw' },
+  { slug: 'rulesprout', name: 'RuleSprout' },
 ];
 // Public US listings checked against Apple's lookup endpoint on 2026-09-29.
 // A US URL is not a claim of worldwide availability or a device purchase test.
