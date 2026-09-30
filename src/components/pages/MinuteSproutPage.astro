@@ -117,14 +117,24 @@ const sections = {
     'MinuteSprout 时间实验、个人时间卡与家长指南。',
   )}
 >
-  <section class="page-intro policy-intro">
+  <section
+    class:list={[
+      'page-intro',
+      kind === 'product' ? 'product-intro' : 'policy-intro',
+    ]}
+  >
     <p class="eyebrow">MinuteSprout</p>
-    <h1>{titles[kind]}</h1>
+    <h1 class:list={{ 'matrix-title': kind === 'product' }}>{titles[kind]}</h1>
     <p class="intro-copy">
       {c('Guess. Do. Discover.', '先猜测，再动手，发现时间。')}
     </p>
   </section>
-  <article class="policy prose">
+  <article
+    class:list={[
+      'prose',
+      kind === 'product' ? 'product-story minute-product' : 'policy',
+    ]}
+  >
     {kind === 'product' && (
       <p class="availability">{copy(availability('minutesprout'), locale)}</p>
     )}

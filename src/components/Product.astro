@@ -2,7 +2,12 @@
 import AppStoreLink from './AppStoreLink.astro';
 import { localizedPath, type Locale } from '../data/i18n';
 import { copy } from '../data/products';
-import { availability, listings, type CatalogProduct } from '../data/catalog';
+import {
+  availability,
+  catalog,
+  listings,
+  type CatalogProduct,
+} from '../data/catalog';
 interface Props {
   locale: Locale;
   product: CatalogProduct;
@@ -15,9 +20,33 @@ const {
   compact = false,
   headingLevel: Heading = 'h3',
 } = Astro.props;
+const index = String(
+  catalog.findIndex((p) => p.slug === product.slug) + 1,
+).padStart(2, '0');
+const preview =
+  product.slug === 'samejob'
+    ? '01-repeat-invoices'
+    : product.slug === 'gearproof'
+      ? '04-gearproof'
+      : undefined;
 ---
 
-<article class="matrix-card">
+<article class:list={['matrix-card', { 'has-screen': !!preview }]}>
+  <div class="card-art" aria-hidden="true">
+    <span class="card-index">{index}</span>
+    <span class="card-art-name">{product.name}</span>
+    {preview && (
+      <img
+        src={`/products/${product.slug}/${preview}.jpg`}
+        width="663"
+        height="1440"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    )}
+    <span class="card-art-rule"></span>
+  </div>
   <p class="card-category">{copy(product.subtitle, locale)}</p>
   <Heading lang="en">{product.name}</Heading>
   <p
