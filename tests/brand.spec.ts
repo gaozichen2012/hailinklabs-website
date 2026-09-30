@@ -31,7 +31,7 @@ test('contact offers direct support for all supported apps', async ({
 }) => {
   for (const path of ['/contact', '/zh/contact']) {
     await page.goto(path);
-    await expect(page.locator('.support-directory a')).toHaveCount(12);
+    await expect(page.locator('.support-directory a')).toHaveCount(13);
     await page
       .locator('.support-directory a')
       .filter({ hasText: 'PressRecipe' })

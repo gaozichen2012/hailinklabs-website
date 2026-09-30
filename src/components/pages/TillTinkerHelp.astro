@@ -1,0 +1,182 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  privacy?: boolean;
+}
+const { locale, privacy = false } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const heading = privacy
+  ? c('TillTinker Privacy Policy', 'TillTinker 隐私政策')
+  : c('TillTinker Support', 'TillTinker 支持');
+---
+
+<Layout
+  locale={locale}
+  title={`${heading} | Hailink Labs`}
+  description={c(
+    'Parent information for TillTinker money games: coin trades, local learning, a seven-day trial, purchases, backups and private iCloud progress.',
+    'TillTinker 钱币学习游戏的家长指南，说明等值兑换、本地学习、七天试用、一次性购买与恢复、JSON 备份和可选私有 iCloud 进度同步。',
+  )}
+>
+  <section class="page-intro policy-intro">
+    <p class="eyebrow">TillTinker: Money Games</p>
+    <h1>{heading}</h1>
+    <p class="intro-copy">
+      {c(
+        'Build the trade. Use the money. See every step.',
+        '构造等值兑换，动手使用钱币，回看每一步。',
+      )}
+    </p>
+  </section>
+  <article class="policy prose">
+    {privacy ? (
+      <>
+        <p>
+          {c(
+            'Effective September 30, 2026. TillTinker is developed by Hailink Labs, the brand of ',
+            '生效日期：2026 年 9 月 30 日。TillTinker 由 Hailink Labs 开发，品牌所属主体为 ',
+          )}
+          {companyName(locale)}.
+        </p>
+        {locale === 'zh-CN' && (
+          <p>
+            中文版本方便阅读，如有差异以
+            <a href="/products/tilltinker/privacy">英文版本</a>为准。
+          </p>
+        )}
+        <h2>{c('Children and local learning', '儿童与本地学习')}</h2>
+        <p>
+          {c(
+            'TillTinker is designed for children ages 6–8 and their parents. It does not request an app account, child name, email, birthday or identity profile. Hailink Labs does not collect personal information through the app or operate an app backend. Guided mission progress, active rounds, coin moves, Undo history, Replay, receipts, completion dates and settings are stored on the device using SwiftData.',
+            'TillTinker 面向 6–8 岁儿童及家长，不要求 App 账号、儿童姓名、邮箱、生日或身份档案。Hailink Labs 不通过 App 收集个人信息，也不运营 App 后端。引导任务进度、进行中的轮次、移币步骤、Undo 历史、Replay、收据、完成日期及设置通过 SwiftData 保存在本机。',
+          )}
+        </p>
+        <h2>{c('Optional private iCloud progress', '可选私有 iCloud 进度')}</h2>
+        <p>
+          {c(
+            'Progress sync is off by default. A parent can enable it in Parents. It uses Apple CloudKit private storage to merge completed guided mission IDs and chapter progress across devices using the same iCloud account. Active rounds, drawers, trays, Undo history and detailed Replay do not sync. Apple processes iCloud information under its policies. Hailink Labs does not receive these records on a developer-operated server. Core learning remains available when iCloud is off, unavailable or not signed in.',
+            '进度同步默认关闭，家长可在 Parents 中启用。同步通过 Apple CloudKit 私有存储，在使用同一 iCloud 账号的设备间合并已完成引导任务的 ID 和章节进度。进行中的轮次、钱箱、托盘、Undo 历史及详细 Replay 不同步。Apple 按其政策处理 iCloud 信息；Hailink Labs 不通过开发者运营的服务器接收这些记录。关闭 iCloud、服务不可用或未登录时，核心学习仍可使用。',
+          )}
+        </p>
+        <h2>
+          {c('Apple purchases and the trial clock', 'Apple 购买与试用时钟')}
+        </h2>
+        <p>
+          {c(
+            'Apple processes the parent-started free seven-day trial, the one-time Lifetime purchase and purchase restoration through StoreKit. The app uses verified Apple transaction information for access; it does not store an unlock flag in a learning backup. A local Keychain time watermark prevents moving the device clock backward from extending the trial. Hailink Labs does not receive payment card details or operate a purchase receipt server. Apple may process purchase and diagnostic information under its policies and your device settings.',
+            'Apple 通过 StoreKit 处理家长主动启动的免费七天试用、一次性 Lifetime 购买及购买恢复。App 通过已验证的 Apple 交易信息判断权益，不在学习备份中保存解锁标志。设备 Keychain 中的本地时间记录用于防止通过回拨设备时钟延长试用。Hailink Labs 不接收支付卡信息，也不运营购买收据服务器。Apple 可能按其政策和设备设置处理购买及诊断信息。',
+          )}
+        </p>
+        <p>
+          <a href="https://www.apple.com/legal/privacy/">
+            {c('Apple Privacy Policy', 'Apple 隐私政策')}
+          </a>
+        </p>
+        <h2>
+          {c('Backups, safety copies and deletion', '备份、安全副本与删除')}
+        </h2>
+        <p>
+          {c(
+            'A parent can export a versioned JSON learning backup to a destination they choose. It includes learning history and settings, never purchase access, trial entitlement or Apple receipts. Importing or resetting learning first saves a safety copy on this device. Reset Learning Data removes current local rounds and receipts; internal safety copies can remain. If sync is enabled, cloud completion progress can return. Turning sync off does not delete previous iCloud records.',
+            '家长可将带版本的 JSON 学习备份导出到自行选择的位置。备份包含学习历史与设置，不包含购买权益、试用授权或 Apple 收据。导入备份或重置学习数据前，App 会先在本机保存安全副本。Reset Learning Data 移除当前本地轮次和收据，内部安全副本可能保留。同步开启时，云端完成进度可能再次合并回来；关闭同步不会删除原有 iCloud 记录。',
+          )}
+        </p>
+        <p>
+          {c(
+            'Removing the app removes its app-container learning data and internal safety copies. Exported files, Apple-managed iCloud data and operating-system backups must be managed separately through their storage services and Apple settings. The Keychain trial-clock record can remain after reinstalling. Restoring purchases restores access, not detailed learning history. Hailink Labs cannot recover local learning history from a server.',
+            '移除 App 会移除其容器内的学习数据和内部安全副本。已导出文件、Apple 管理的 iCloud 数据及系统备份需要通过对应存储服务与 Apple 设置另行管理。Keychain 中的试用时钟记录可能在重新安装后保留。恢复购买恢复权益，不恢复详细学习历史；Hailink Labs 无法从服务器找回本地学习历史。',
+          )}
+        </p>
+        <h2>{c('Permissions, sound and tracking', '权限、声音与跟踪')}</h2>
+        <p>
+          {c(
+            'The app does not request microphone, camera, location, photos, contacts, Bluetooth or notification permission. Sound plays prerecorded files; it does not listen, record or send audio to a voice service. All learning can be completed silently. There are no ads, tracking, third-party analytics or third-party crash reporting SDKs.',
+            'App 不请求麦克风、相机、位置、照片、通讯录、蓝牙或通知权限。声音只播放预录文件，不聆听、录音或向语音服务发送音频；静音时也能完成全部学习。没有广告、跟踪、第三方分析或第三方崩溃报告 SDK。',
+          )}
+        </p>
+        <h2>{c('Parent support and websites', '家长支持与网站')}</h2>
+        <p>
+          {c(
+            'Purchases, restoration, data export and external links are behind a parent check. If a parent emails support, we receive the email address, message and attachments. Do not send children’s names, photos, voices, learning backups, payment details or other personal information. We use correspondence only to provide support, not advertising. Our company mailbox uses Tencent business email; Hailink Labs in China may access support messages. Messages are retained for no longer than 12 months after the issue closes unless an ongoing issue or legal obligation requires longer.',
+            '购买、恢复、数据导出和外部链接均位于家长验证之后。家长发送支持邮件时，我们会收到邮箱地址、正文和附件。请勿发送儿童姓名、照片、声音、学习备份、支付信息或其他个人信息。邮件仅用于支持，不用于广告。公司邮箱使用腾讯企业邮箱，中国境内的 Hailink Labs 可能访问支持邮件。问题关闭后保留不超过 12 个月，持续问题或法律义务要求更久时除外。',
+          )}
+        </p>
+        <p>
+          {c(
+            'This website has no analytics, tracking scripts, accounts or contact forms. GitHub Pages processes technical requests such as IP addresses to deliver and protect the site. Parents can email us to request access, correction or deletion of support information. We may verify a request using the relevant email address. Material policy changes will be explained here with an updated effective date.',
+            '本网站没有分析、跟踪脚本、账号或联系表单。GitHub Pages 为网站交付与保护处理 IP 地址等技术请求。家长可通过邮件请求访问、更正或删除支持信息，我们可能通过对应邮箱核实请求。重大政策变更将在本页说明并更新生效日期。',
+          )}
+        </p>
+        <p>
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+            {c('GitHub Privacy Statement', 'GitHub 隐私声明')}
+          </a>
+        </p>
+      </>
+    ) : (
+      <>
+        <h2>{c('Build, trade, pay and replay', '构造、兑换、支付与回放')}</h2>
+        <p>
+          {c(
+            'Choose one of 36 guided missions or practice Pay Exact, Make Change or Trade First. Tap a drawer coin to move it into the tray; tap a tray coin to return it. In Trade, choose money to Give and Get with the same total value. Your trade changes the coins you can use. Check accepts any exact combination your inventory permits. Undo restores an unfinished step. Replay shows your actual steps, and a receipt records the completed round. Learning activities use educational practice money.',
+            '选择 36 个引导任务之一，或练习 Pay Exact、Make Change、Trade First。点击钱箱中的钱币将其移入托盘，点击托盘钱币将其放回。在 Trade 中选择总值相等的 Give 和 Get；兑换会真实改变可用的钱币。Check 接受库存允许的任意精确组合。Undo 恢复未完成轮次的上一步，Replay 展示实际步骤，收据记录完成轮次。所有钱币仅用于教学，不处理真实支付。',
+          )}
+        </p>
+        <h2>
+          {c(
+            'Seven-day trial, Lifetime and restore',
+            '七天试用、Lifetime 与恢复',
+          )}
+        </h2>
+        <p>
+          {c(
+            'Installing the app does not start the trial. Open Parents and complete the grown-up multiplication check, then choose Start 7-Day Full Trial. The trial lasts seven full days from Apple’s verified transaction date. There is no subscription or automatic renewal. Unlock Forever is a one-time Lifetime purchase; Apple’s current localized price is shown before purchase. Use Restore Purchases with the Apple Account used to buy. Pending access begins after Apple approves the purchase.',
+            '安装 App 不会自动开始试用。打开 Parents，完成成人乘法验证，再选择 Start 7-Day Full Trial。试用从 Apple 已验证交易日期开始持续七个完整日，没有订阅或自动续费。Unlock Forever 为一次性 Lifetime 购买，购买前显示 Apple 当前本地化价格。请用原购买 Apple 账号执行 Restore Purchases；待批准购买在 Apple 批准后生效。',
+          )}
+        </p>
+        <p>
+          {c(
+            'When the trial ends, new learning rounds require Lifetime access. An already-started round can finish. Saved receipts, Replay, backups and parent settings remain available. Purchase restoration does not restore detailed learning history. If products are unavailable, retry in Parents when connected; avoid deleting the app to troubleshoot a purchase.',
+            '试用结束后，新学习轮次需要 Lifetime 权益；已开始的轮次可继续完成。已有收据、Replay、备份和家长设置仍可使用。恢复购买不恢复详细学习历史。商品不可用时，可联网后在 Parents 重试；请勿通过删除 App 排查购买问题。',
+          )}
+        </p>
+        <h2>
+          {c('Saved steps, backups and iCloud', '已保存步骤、备份与 iCloud')}
+        </h2>
+        <p>
+          {c(
+            'Confirmed coin moves and trades save on this device before success is shown. Continue resumes an active round. Export Learning Backup before moving devices, and Restore Learning Backup to import the JSON file. Keep exported files private. Optional iCloud sync merges only completed guided mission progress, not live coins or detailed Replay. If iCloud is unavailable, local learning continues. Reset creates a local safety copy; cloud progress may return if sync remains on.',
+            '已确认的移币和兑换会先保存到本机，再显示成功。Continue 恢复进行中的轮次。换机前请执行 Export Learning Backup，再用 Restore Learning Backup 导入 JSON 文件；请妥善保管备份。可选 iCloud 同步只合并已完成引导任务进度，不同步实时钱币或详细 Replay。iCloud 不可用时，本地学习继续。重置会创建本机安全副本；同步保持开启时，云端进度可能返回。',
+          )}
+        </p>
+        <h2>{c('Sound, accessibility and help', '声音、无障碍与帮助')}</h2>
+        <p>
+          {c(
+            'Sound can be turned off in Parents. Text and coin controls remain available without audio. All coin and trade actions have tap controls; dragging is not required. The app follows system text size and appearance. A parent can email the app version, device model and a short issue description. Please do not include children’s personal information or a learning backup.',
+            '家长可在 Parents 关闭声音，文字和钱币操作仍可使用。所有移币与兑换动作均提供点击控件，不需要拖拽。App 遵循系统文字大小与外观。家长可发送 App 版本、设备型号和简短问题说明，请勿包含儿童个人信息或学习备份。',
+          )}
+        </p>
+      </>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=TillTinker%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a
+        href={localizedPath(
+          `/products/tilltinker/${privacy ? 'support' : 'privacy'}`,
+          locale,
+        )}
+      >
+        {privacy
+          ? c('TillTinker support', 'TillTinker 支持')
+          : c('Privacy policy', '隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>

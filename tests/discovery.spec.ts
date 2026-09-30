@@ -11,7 +11,7 @@ for (const prefix of ['', '/zh']) {
     await expect(page.locator('#family')).toContainText('TurnMath');
     await expect(page.locator('#family')).toContainText('MinuteSprout');
     await page.locator(`header a[href="${prefix}/support"]`).click();
-    await expect(page.locator('.support-directory a')).toHaveCount(12);
+    await expect(page.locator('.support-directory a')).toHaveCount(13);
     await page
       .locator('.support-directory a')
       .filter({ hasText: 'HearDraw' })

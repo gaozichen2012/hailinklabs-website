@@ -25,6 +25,8 @@ export const englishRoutes = [
   '/products/botsteps/privacy',
   '/products/rulesprout/support',
   '/products/rulesprout/privacy',
+  '/products/tilltinker/support',
+  '/products/tilltinker/privacy',
   '/products/tmproof',
   '/products/tmproof/privacy',
   '/products/tmproof/support',
