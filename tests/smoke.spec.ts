@@ -39,7 +39,9 @@ for (const path of routes) {
     await expect(page.locator('body')).not.toContainText(
       /lorem ipsum|placeholder|\bTODO\b|review copy|coming soon|in development|开发中|TestFlight|\bBeta\b/i,
     );
-    expect(await page.locator('script').count()).toBe(0);
+    expect(
+      await page.locator('script:not([type="application/ld+json"])').count(),
+    ).toBe(0);
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= window.innerWidth,

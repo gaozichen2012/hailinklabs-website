@@ -1015,6 +1015,22 @@ h1:lang(zh-CN),
 .price-summary {
   font-weight: 600;
 }
+.availability {
+  display: inline-block;
+  align-self: flex-start;
+  margin: 0 0 1rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.availability.is-available {
+  border-color: #c8dbcd;
+  background: #edf5ef;
+  color: var(--green);
+}
 .data-summary {
   max-width: 46rem;
 }

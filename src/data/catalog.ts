@@ -60,7 +60,7 @@ export const supportProducts = [
   { slug: 'botsteps', name: 'BotSteps' },
   { slug: 'heardraw', name: 'HearDraw' },
 ];
-// Public US listings checked against Apple's lookup endpoint on 2026-09-29.
+// Public US listings checked against Apple's public pages/lookup endpoint.
 // A US URL is not a claim of worldwide availability or a device purchase test.
 export const listings: Record<
   string,
@@ -69,23 +69,66 @@ export const listings: Record<
   samejob: {
     url: 'https://apps.apple.com/us/app/invoice-maker-samejob/id6814700434',
     ios: 17,
-    verified: '2026-09-29',
+    verified: '2026-09-30',
   },
   gearproof: {
     url: 'https://apps.apple.com/us/app/gearproof-equipment-checkout/id6814847023',
     ios: 18,
-    verified: '2026-09-29',
+    verified: '2026-09-30',
   },
   litterround: {
     url: 'https://apps.apple.com/us/app/litterround-puppy-tracker/id6814862263',
     ios: 18,
-    verified: '2026-09-29',
+    verified: '2026-09-30',
+  },
+  tmproof: {
+    url: 'https://apps.apple.com/us/app/tmproof-t-m-tickets/id6814884804',
+    ios: 18,
+    verified: '2026-09-30',
+  },
+  calvingpocket: {
+    url: 'https://apps.apple.com/us/app/calvingpocket-calf-records/id6815103146',
+    ios: 18,
+    verified: '2026-09-30',
   },
 };
+// Missing public evidence means availability is unconfirmed, not unreleased.
+export const availability = (slug: string): Copy =>
+  listings[slug]
+    ? ['Available on the US App Store', '已在美国 App Store 上架']
+    : ['App Store availability not confirmed', 'App Store 上架状态待确认'];
 export const highlights: Record<
   string,
   { price: Copy; data: Copy; seo: Copy }
 > = {
+  tmproof: {
+    price: [
+      '7-day full trial · $9.99 lifetime · No subscription',
+      '7 天完整试用 · $9.99 终身买断 · 无订阅',
+    ],
+    data: [
+      'Keep T&M tickets, photos and signatures on your device. Export a backup before moving phones.',
+      '工时与材料工单、照片和签认保存在本机，换机前请导出备份。',
+    ],
+    seo: [
+      'TMProof — Time and Materials Tickets for Extra Work',
+      'TMProof — 额外工作的工时与材料工单',
+    ],
+  },
+  calvingpocket: {
+    price: [
+      '7-day full trial · $19.99 lifetime · No subscription',
+      '7 天完整试用 · $19.99 终身买断 · 无订阅',
+    ],
+    data: [
+      'Keep calving and calf records on your device. Export a full backup before moving phones.',
+      '产犊与犊牛记录保存在本机，换机前请导出完整备份。',
+    ],
+    seo: [
+      'CalvingPocket — Calving and Calf Records',
+      'CalvingPocket — 产犊与犊牛记录',
+    ],
+  },
   samejob: {
     price: [
       '5 free invoices and estimates combined each month · Pro $29.99 lifetime, $1.49/month or $14.99/year',
