@@ -175,7 +175,16 @@ async function renderCard(card) {
 }
 
 await mkdir(output, { recursive: true });
-for (const card of cards) {
+const selectedSlugs = process.argv.slice(2);
+for (const slug of selectedSlugs) {
+  assert(
+    cards.some((card) => card.slug === slug),
+    `Unknown card: ${slug}`,
+  );
+}
+for (const card of cards.filter(
+  (card) => !selectedSlugs.length || selectedSlugs.includes(card.slug),
+)) {
   const svg = await renderCard(card);
   const png = await sharp(Buffer.from(svg))
     .png({ compressionLevel: 9 })

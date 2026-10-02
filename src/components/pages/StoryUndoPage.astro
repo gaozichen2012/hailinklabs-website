@@ -1,0 +1,251 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  kind: 'product' | 'support' | 'privacy';
+}
+const { locale, kind } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const base = Astro.url.pathname.includes('/products/storyundo')
+  ? '/products/storyundo'
+  : '/storyundo';
+const titles = {
+  product: c('StoryUndo: Math Word Problems', 'StoryUndo 数学应用题'),
+  support: c('StoryUndo Support', 'StoryUndo 支持'),
+  privacy: c('StoryUndo Privacy Policy', 'StoryUndo 隐私政策'),
+};
+const descriptions = {
+  product: c(
+    'Build, predict, play forward and undo addition and subtraction stories. StoryUndo is for ages 6–8, with six free stories and a one-time full unlock.',
+    'StoryUndo 面向 6–8 岁儿童，通过摆放事实、预测、正放与倒放练习一步加减法应用题。六题永久免费，其余故事一次性解锁。',
+  ),
+  support: c(
+    'Parent help for StoryUndo: free stories, building a model, purchase restoration, learner profiles, sound, local backups, deletion and optional private iCloud.',
+    'StoryUndo 家长指南：六题免费、故事模型、购买恢复、学习档案、声音、本地备份、删除与默认关闭的私有 iCloud 学习同步。',
+  ),
+  privacy: c(
+    'How StoryUndo handles children’s local learning, optional private iCloud, Apple purchases, parent-controlled backups, deletion and support correspondence.',
+    'StoryUndo 隐私政策：了解儿童本地学习、可选私有 iCloud、Apple 购买、家长控制的备份、删除和支持邮件的处理方式。',
+  ),
+};
+const sections = {
+  product: [
+    [
+      'Build a story you can check',
+      '构造可以检验的故事',
+      'Place the known facts, choose Add or Take Away, identify what is unknown, and make a prediction. Submit your model, then play it forward and undo the change. The story follows the model you submitted, so you can see whether your choices match the words.',
+      '摆放已知事实，选择 Add 或 Take Away，指出未知的是哪一部分，再作预测。提交模型后，正放故事并倒放变化。故事按你实际提交的模型运行，帮助你观察自己的选择是否符合题目。',
+    ],
+    [
+      'Six structures, 48 fixed stories',
+      '六种结构，48 个固定故事',
+      'Practice one-step joining and taking-away stories with an unknown starting amount, change or result. There are 36 guided stories and 12 new-situation stories. Spoken American English and tap controls support the same written story. No dragging or speech recording is required.',
+      '练习合并和取走的一步应用题，未知量可以是开始数量、变化量或结果。共 36 个引导故事和 12 个新情境故事，旁白使用美式英语，点击控件与同一书面故事对应；无需拖拽或录音。',
+    ],
+    [
+      'A clear view of practice',
+      '看清练习情况',
+      'Parents can use up to four learner profiles with optional nicknames and preset avatars. Learning records distinguish a first independent correct response from completion with help. StoryUndo is for children ages 6–8 who can count to 20 and are beginning addition and subtraction. It is not a complete curriculum or a validated learning assessment.',
+      '家长可使用最多四个学习档案，设置可选昵称和预设头像。记录区分首次独立正确与在帮助下完成。StoryUndo 适合能数到 20、开始学习加减法的 6–8 岁儿童，不是完整课程或经过验证的学习评估。',
+    ],
+    [
+      'Six free stories, one full unlock',
+      '六题免费，一次完整解锁',
+      'The first story in each structure stays free: six stories with the complete learning loop. Full Unlock is planned at US$6.99 as a one-time purchase for the remaining 42 stories. No subscription, timed trial or ads. Apple shows the current price in Parents before a purchase. StoryUndo is planned for the US App Store only, on iPhone and iPad with iOS or iPadOS 18 or later.',
+      '每种结构的第一个故事永久免费，共六题，均包含完整学习闭环。美国区 Full Unlock 定价为 US$6.99，一次购买解锁其余 42 题，无订阅、计时试用或广告。购买前，Apple 在 Parents 中显示当前价格。StoryUndo 计划仅在美国 App Store 提供，支持 iPhone 和 iPad，要求 iOS／iPadOS 18 或更高版本。',
+    ],
+    [
+      'Local learning, parent choices',
+      '本地学习，由家长选择',
+      'Core practice works offline without an app account. Private iCloud learning sync starts off; a parent decides whether to enable it. Purchases, external links, sync and learning backups require a parent check. Full Unlock is configured for Apple Family Sharing; learning records do not automatically move between different family members’ iCloud accounts.',
+      '核心练习可离线使用，无需 App 账号。私有 iCloud 学习同步默认关闭，由家长决定是否开启。购买、外部链接、同步和学习备份需要家长验证。Full Unlock 已配置 Apple 家人共享；学习记录不会自动在不同家庭成员的 iCloud 账号之间转移。',
+    ],
+  ],
+  support: [
+    [
+      'Start with one free story',
+      '从一个免费故事开始',
+      'Choose a Story group, then Story 01. Tap a known fact and place it in Start, Change or Now. Place both facts, choose Add or Take Away, select the unknown slot, and choose a prediction from 0–20. Submit before checking the result. If you change your model, submit again before playback.',
+      '选择一个 Story group，再选择 Story 01。点击已知事实并放入 Start、Change 或 Now。放好两张事实卡，选择 Add 或 Take Away，选定未知位置，并预测 0–20 中的一个数量。先提交，再查看结果；修改模型后，要重新提交才能播放。',
+    ],
+    [
+      'Play forward and undo',
+      '正放与倒放',
+      'Play the model you submitted, then undo its change. Read the matching quantities and equations. A wrong prediction does not secretly play the correct model. Review the story and your placements, edit your model, and try again. A completed story and a first independent correct response are recorded separately.',
+      '先播放你实际提交的模型，再倒放变化，阅读对应数量和方程。错误预测不会暗中播放正确模型。重新看题目和摆放位置，修改模型后再试。完成故事和首次独立正确分开记录。',
+    ],
+    [
+      'Parents, learner profiles and sound',
+      '家长区、学习档案与声音',
+      'Open Parents and follow three changing hold-and-release instructions. Leaving Parents or backgrounding the app ends that authorization. Parents manages up to four profiles, nicknames, preset avatars, Read stories aloud and learning records. Use a nickname only; do not enter a child’s full name, birthday, school, email or contact details. Prerecorded audio never records your child. Written stories remain available with sound off.',
+      '打开 Parents，按提示完成三步变化的按住与松开操作。离开家长区或进入后台会结束本次授权。Parents 可管理最多四个档案、昵称、预设头像、Read stories aloud 和学习记录。只用昵称，请勿输入儿童全名、生日、学校、邮箱或联系信息。预录音频不会录下儿童声音，关闭声音后仍可阅读故事。',
+    ],
+    [
+      'Full Unlock and Restore Purchases',
+      '完整解锁与恢复购买',
+      'Six stories remain free, one per structure. Full Unlock is a US$6.99 one-time purchase for the other 42; it has no subscription or automatic renewal. In Parents, Apple shows the current localized price. If the price cannot load, connect and use Reload Price. Use Restore Purchases with the Apple Account that purchased or is eligible for Apple Family Sharing. Pending purchases unlock after Apple approves them. Purchase restoration restores access, not learning records. Do not delete the app to troubleshoot a purchase.',
+      '每种结构一个故事永久免费，共六题。Full Unlock 为美国区 US$6.99 一次性购买，解锁其余 42 题，没有订阅或自动续费。Apple 在 Parents 显示当前本地化价格；价格无法载入时，请联网并使用 Reload Price。使用原购买或符合 Apple 家人共享资格的 Apple 账号执行 Restore Purchases。待批准购买由 Apple 批准后解锁。恢复购买恢复权益，不恢复学习记录；请勿通过删除 App 排查购买问题。',
+    ],
+    [
+      'Backup and validated import',
+      '备份与校验导入',
+      'In Parents, Export Learning Backup saves JSON to a destination you choose. Import Learning Backup validates a file and shows a preview before restore. A local recovery copy is saved first. Invalid data is rejected without replacing your existing learning store. Backups contain learning records and settings, never purchase entitlement or Apple receipts. The app does not password-encrypt exports; keep them private. Before changing devices, export a backup and confirm that you can access the file.',
+      'Parents 中的 Export Learning Backup 将 JSON 保存到你选择的位置。Import Learning Backup 校验文件，并在恢复前显示预览，先保存本机恢复副本。无效数据会被拒绝，不会替换现有学习库。备份包含学习记录与设置，不含购买权益或 Apple 收据。App 不为导出设置密码加密，请保管好文件。换机前请导出备份，并确认能访问该文件。',
+    ],
+    [
+      'Optional private iCloud',
+      '可选私有 iCloud',
+      'Sync learning records with iCloud is off by default. A parent can enable it for devices using the same iCloud account. Profiles, submitted models, help events and completed learning can sync; an unfinished draft stays on its original device. If iCloud is unavailable or storage is full, local learning continues and the status explains the problem. Turning sync off stops learning uploads and fetches; it does not erase earlier cloud copies. Family Sharing purchase access is separate from private iCloud learning.',
+      'Sync learning records with iCloud 默认关闭，家长可为使用同一 iCloud 账号的设备启用。档案、已提交模型、帮助事件和完成记录可以同步，未完成草稿留在原设备。iCloud 不可用或空间不足时，本地学习继续，状态文字说明问题。关闭同步会停止学习上传和拉取，但不会擦除既有云端副本。家人共享购买权益与私有 iCloud 学习数据相互独立。',
+    ],
+    [
+      'Delete learning records',
+      '删除学习记录',
+      'Parents can confirm deletion of one learner or all learners. The app removes the selected local learning and cleans its automatic recovery copies. An identifier-only deletion marker prevents older synchronized records from restoring deleted learning. When sync is on, private cloud deletion is requested and remains pending until sync succeeds; other devices keep their copies until they sync. When sync is off, previous cloud copies remain. Exported files and operating-system backups are managed separately. Verified purchase access is retained. If cleanup or saving fails, read the status before trying again.',
+      '家长可确认删除一个或全部学习档案。App 移除所选本地学习资料，并清理自动恢复副本，保留仅含标识的删除标记，防止较旧同步记录恢复已删学习。同步开启时会请求删除私有云端记录，在同步成功前保持待处理；其他设备在同步前仍保留副本。同步关闭时，旧云端副本仍存在。已导出文件和操作系统备份需要另行管理，已验证购买权益保留。清理或保存失败时，请先阅读状态提示再重试。',
+    ],
+    [
+      'Contact support',
+      '联系支持',
+      'A parent can email the app version, device model, system version and a short description of the issue. Please do not send children’s real names, photos, voices, learning backups, payment details or other personal information. StoryUndo is in internal testing and is not publicly available on the App Store. A support page is not a download invitation.',
+      '家长可邮件提供 App 版本、设备型号、系统版本和简短问题说明。请勿发送儿童真实姓名、照片、声音、学习备份、支付详情或其他个人信息。StoryUndo 当前处于内部测试，尚未在 App Store 公开提供；支持页面不代表下载邀请。',
+    ],
+  ],
+  privacy: [
+    [
+      'Children and local learning',
+      '儿童与本地学习',
+      'StoryUndo is designed for children ages 6–8 and parents. It does not require an app account, real name, email, birthday or school. A parent can create up to four profiles with an optional nickname and a preset avatar. Use a nickname, not identifying information. Profile IDs, submitted models, help and completion records, drafts, dates and preferences are stored on the device. Hailink Labs does not operate a learning-data server or automatically receive these records.',
+      'StoryUndo 面向 6–8 岁儿童与家长，不要求 App 账号、真实姓名、邮箱、生日或学校。家长可创建最多四个档案，设置可选昵称和预设头像；请用昵称，不要输入可识别身份的信息。档案 ID、提交模型、帮助与完成记录、草稿、日期和偏好保存在本机。Hailink Labs 不运营学习数据服务器，也不会自动接收这些记录。',
+    ],
+    [
+      'Optional Apple private iCloud',
+      '可选 Apple 私有 iCloud',
+      'Learning sync is off by default. Only a parent can enable it. It uses Apple CloudKit private storage for profiles, submitted models, help events, completions and deletion markers on devices using the same iCloud account. Unfinished drafts do not sync. Opaque account and installation identifiers help separate accounts and merge records; they are not advertising identifiers. It is not a public database or a cross-account family learning service. Hailink Labs does not receive these records on a developer-operated server. Apple handles its storage under its policies. Core learning works when sync is off or unavailable. Turning sync off does not erase records already stored in iCloud.',
+      '学习同步默认关闭，只有家长可启用。同步通过 Apple CloudKit 私有存储，在同一 iCloud 账号的设备间处理档案、提交模型、帮助事件、完成记录和删除标记；未完成草稿不同步。不透明的账号和安装标识用于区分账号与合并记录，不是广告标识。这不是公开数据库或跨账号家庭学习服务，Hailink Labs 不通过开发者运营的服务器接收这些记录。Apple 按其政策处理存储。同步关闭或不可用时，核心学习仍可使用；关闭同步不会擦除已存入 iCloud 的记录。',
+    ],
+    [
+      'Apple purchases',
+      'Apple 购买',
+      'Apple handles the one-time Full Unlock purchase, restoration and eligible Family Sharing through StoreKit. The app uses verified transaction information to determine access. Purchase access is separate from learning records and is never imported from a learning backup. Hailink Labs does not receive payment card details or operate a purchase receipt server. Apple may process purchases, diagnostics and TestFlight information according to its policies and your Apple settings.',
+      'Apple 通过 StoreKit 处理一次性 Full Unlock 购买、恢复及符合资格的家人共享，App 使用已验证交易信息判断权益。购买权益与学习记录独立，不会从学习备份导入。Hailink Labs 不接收支付卡详情，也不运营购买收据服务器。Apple 可能按其政策和你的 Apple 设置处理购买、诊断及 TestFlight 信息。',
+    ],
+    [
+      'Sound, permissions and tracking',
+      '声音、权限与跟踪',
+      'Sound plays prerecorded files bundled in the app. StoryUndo does not listen, record or send speech to a voice or AI service. It does not request microphone, camera, photos, location or contacts access. There are no ads, tracking, third-party analytics or third-party crash reporting SDKs. Story text remains available with sound off.',
+      '声音只播放 App 内置的预录文件。StoryUndo 不聆听、录音或向语音／AI 服务发送声音，不请求麦克风、相机、照片、位置或通讯录访问。没有广告、跟踪、第三方分析或第三方崩溃报告 SDK，关闭声音后仍可阅读题目。',
+    ],
+    [
+      'Parent-controlled files and recovery copies',
+      '家长控制的文件与恢复副本',
+      'A parent can export a JSON learning backup to a chosen file provider and import a supported backup after validation and preview. Files include learning data and preferences, never purchase entitlement or Apple receipts. Before a restore, the app saves a recovery copy on the device. It may also preserve conflicting learning versions for review. Exports are not password-encrypted by the app. Protect them and manage copies in the destination you choose. Hailink Labs does not automatically receive your exports. Other providers or recipients process shared files under their own practices.',
+      '家长可将 JSON 学习备份导出到所选文件服务，在校验和预览后导入受支持备份。文件包含学习资料和偏好，不含购买权益或 Apple 收据。恢复前，App 在本机保存恢复副本，也可能保留冲突学习版本供查看。App 不为导出文件设置密码加密，请保护文件并管理所选位置的副本。Hailink Labs 不会自动接收导出文件，其他服务商或接收方按其规则处理分享文件。',
+    ],
+    [
+      'Retention and deletion',
+      '保存与删除',
+      'Learning remains locally until a parent deletes it or removes the app. Parent-confirmed deletion removes the selected profiles’ nicknames, learning, drafts and related conflict records and cleans this app’s automatic recovery copies. A minimal profile identifier and deletion timestamp remain to prevent older copies from restoring deleted learning. If sync is enabled, the deletion marker is synchronized before older cloud learning is removed; deletion is pending until successful sync. With sync off, previous private cloud copies remain until sync is enabled again. Other devices keep local copies until they sync. If a file or database step fails, the app reports the partial result rather than claiming deletion finished.',
+      '学习资料保存在本机，直到家长删除或移除 App。家长确认删除后，会移除所选档案的昵称、学习、草稿和相关冲突记录，并清理 App 自动恢复副本；保留最少的档案标识与删除时间，防止旧副本恢复已删学习。开启同步时，先同步删除标记，再移除旧云端学习，成功同步前删除仍待处理。关闭同步时，之前的私有云副本保留至重新启用同步；其他设备在同步前仍保留本地副本。文件或数据库步骤失败时，App 报告实际部分进度，不会宣称删除已经完成。',
+    ],
+    [
+      'Copies outside the app',
+      'App 之外的副本',
+      'Deleting learning or removing the app does not erase files you exported, operating-system backups, Apple purchase records or existing iCloud copies by itself. Manage those separately through their storage services and Apple settings. Purchase restoration restores access, not learning history. Hailink Labs cannot recover local learning from a server or erase copies held by your chosen file recipients.',
+      '删除学习或移除 App 本身不会擦除你导出的文件、操作系统备份、Apple 购买记录或既有 iCloud 副本。请通过对应存储服务与 Apple 设置另行管理。恢复购买恢复权益，不恢复学习历史；Hailink Labs 无法从服务器找回本地学习，也无法代你删除所选文件接收方持有的副本。',
+    ],
+    [
+      'Parent support correspondence',
+      '家长支持邮件',
+      'Purchases, external links, sync and backup management require a parent check. If a parent emails support, we receive the email address, message and attachments to answer and resolve the issue. Do not send children’s real names, photos, voices, learning backups, payment details or other personal information. Our company mailbox uses Tencent business email; Hailink Labs in China may access support messages. We do not sell this information or use it for advertising. Correspondence is retained for no longer than 12 months after the issue closes unless an ongoing issue or legal obligation requires longer. Parents can request access, correction or deletion by email; we may verify the relevant email address.',
+      '购买、外部链接、同步与备份管理需要家长验证。家长发送支持邮件时，我们收到邮箱地址、正文和附件，用于回答和解决问题。请勿发送儿童真实姓名、照片、声音、学习备份、支付详情或其他个人信息。公司邮箱使用腾讯企业邮箱，中国境内的 Hailink Labs 可能访问支持邮件。我们不出售这些资料，也不用于广告。问题关闭后保留不超过 12 个月，持续问题或法律义务要求更久时除外。家长可通过邮件请求访问、更正或删除，我们可能核实对应邮箱。',
+    ],
+    [
+      'This website and policy changes',
+      '本网站与政策变更',
+      'This website has no analytics, tracking scripts, accounts or contact forms. GitHub Pages processes technical requests such as IP addresses to deliver and protect the site. Material changes to this policy will be explained here with an updated effective date.',
+      '本网站没有分析、跟踪脚本、账号或联系表单。GitHub Pages 为交付和保护网站处理 IP 地址等技术请求。本政策重大变化将在此说明，并更新生效日期。',
+    ],
+  ],
+};
+---
+
+<Layout
+  locale={locale}
+  title={`${titles[kind]} | Hailink Labs`}
+  description={descriptions[kind]}
+>
+  <section class="page-intro policy-intro">
+    <p class="eyebrow">StoryUndo</p>
+    <h1>{titles[kind]}</h1>
+    <p class="intro-copy">
+      {c('Build it. Play it. Undo it.', '构造故事，正放检验，倒放理解。')}
+    </p>
+    <p class="availability">
+      {c(
+        'Coming soon — internal testing. Not publicly available on the App Store.',
+        '即将推出，目前处于内部测试，尚未在 App Store 公开提供。',
+      )}
+    </p>
+  </section>
+  <article class="policy prose">
+    {kind === 'privacy' && (
+      <>
+        <p>
+          {c(
+            'Effective October 2, 2026. StoryUndo is developed by Hailink Labs, the brand of ',
+            '生效日期：2026 年 10 月 2 日。StoryUndo 由 Hailink Labs 开发，品牌所属主体为 ',
+          )}
+          {companyName(locale)}
+          {c('.', '。')}
+        </p>
+        {locale === 'zh-CN' && (
+          <aside class="review-notice">
+            中文版本方便阅读，如有差异以
+            <a href={`${base}/privacy`} lang="en" hreflang="en">
+              英文版本
+            </a>
+            为准。
+          </aside>
+        )}
+      </>
+    )}
+    {sections[kind].map(([enTitle, zhTitle, enText, zhText]) => (
+      <>
+        <h2>{c(enTitle, zhTitle)}</h2>
+        <p>{c(enText, zhText)}</p>
+      </>
+    ))}
+    {kind === 'privacy' && (
+      <p>
+        <a href="https://www.apple.com/legal/privacy/">
+          {c('Apple Privacy Policy', 'Apple 隐私政策')}
+        </a>{' '}
+        ·{' '}
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+          {c('GitHub Privacy Statement', 'GitHub 隐私声明')}
+        </a>
+      </p>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=StoryUndo%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a href={localizedPath(base, locale)}>
+        {c('About StoryUndo', '了解 StoryUndo')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath(`${base}/support`, locale)}>
+        {c('Support', '支持')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath(`${base}/privacy`, locale)}>
+        {c('Privacy policy', '隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>

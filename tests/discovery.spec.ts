@@ -10,8 +10,9 @@ for (const prefix of ['', '/zh']) {
     await expect(page.locator('#family')).toBeInViewport();
     await expect(page.locator('#family')).toContainText('TurnMath');
     await expect(page.locator('#family')).toContainText('MinuteSprout');
+    await expect(page.locator('#family')).toContainText('StoryUndo');
     await page.locator(`header a[href="${prefix}/support"]`).click();
-    await expect(page.locator('.support-directory a')).toHaveCount(13);
+    await expect(page.locator('.support-directory a')).toHaveCount(14);
     await page
       .locator('.support-directory a')
       .filter({ hasText: 'HearDraw' })

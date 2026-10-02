@@ -29,6 +29,21 @@ export const catalog: readonly CatalogProduct[] = [
       '适合 6–8 岁儿童：猜测活动用时，动手测量，再用个人时间卡练习安排。',
     ],
   },
+  {
+    slug: 'storyundo',
+    name: 'StoryUndo',
+    storeName: 'StoryUndo: Math Word Problems',
+    subtitle: ['Act out addition and subtraction', '动手理解加法与减法'],
+    summary: [
+      'Build, play and undo math stories.',
+      '构造、正放与倒放数学故事。',
+    ],
+    value: ['Build a story you can check.', '构造可以检验的故事。'],
+    description: [
+      'For ages 6–8: place the facts, predict, and check one-step math stories. Six stories stay free; one purchase unlocks 42 more.',
+      '适合 6–8 岁儿童：摆放事实、预测并检验一步数学故事。六题永久免费，一次购买解锁其余 42 题。',
+    ],
+  },
 ];
 export const categories: readonly {
   id: string;
@@ -49,7 +64,7 @@ export const categories: readonly {
   {
     id: 'family',
     title: ['Kids & Family', '儿童与家庭'],
-    slugs: ['turnmath', 'minutesprout'],
+    slugs: ['turnmath', 'minutesprout', 'storyundo'],
   },
 ];
 export const featured = ['samejob', 'gearproof', 'litterround'].map((slug) =>
@@ -96,9 +111,14 @@ export const listings: Record<
 };
 // Missing public evidence means availability is unconfirmed, not unreleased.
 export const availability = (slug: string): Copy =>
-  listings[slug]
-    ? ['Available on the US App Store', '已在美国 App Store 上架']
-    : ['App Store availability not confirmed', 'App Store 上架状态待确认'];
+  slug === 'storyundo'
+    ? [
+        'Internal testing · No public App Store release',
+        '内部测试 · 尚未公开上架',
+      ]
+    : listings[slug]
+      ? ['Available on the US App Store', '已在美国 App Store 上架']
+      : ['App Store availability not confirmed', 'App Store 上架状态待确认'];
 export const highlights: Record<
   string,
   { price: Copy; data: Copy; seo: Copy }

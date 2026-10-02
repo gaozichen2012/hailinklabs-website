@@ -36,9 +36,22 @@ for (const path of routes) {
       'content',
       new URL(path, site.url).href,
     );
+    const storyUndo = /\/(?:products\/)?storyundo(?:\/|$)/.test(path);
     await expect(page.locator('body')).not.toContainText(
-      /lorem ipsum|placeholder|\bTODO\b|review copy|coming soon|in development|开发中|TestFlight|\bBeta\b/i,
+      storyUndo
+        ? /lorem ipsum|placeholder|\bTODO\b|review copy|in development|开发中|\bBeta\b/i
+        : /lorem ipsum|placeholder|\bTODO\b|review copy|coming soon|in development|开发中|TestFlight|\bBeta\b/i,
     );
+    if (storyUndo) {
+      await expect(page.locator('.page-intro .availability')).toHaveText(
+        chinese
+          ? '即将推出，目前处于内部测试，尚未在 App Store 公开提供。'
+          : 'Coming soon — internal testing. Not publicly available on the App Store.',
+      );
+      await expect(
+        page.locator('a[href^="https://apps.apple.com"]'),
+      ).toHaveCount(0);
+    }
     expect(
       await page.locator('script:not([type="application/ld+json"])').count(),
     ).toBe(0);
