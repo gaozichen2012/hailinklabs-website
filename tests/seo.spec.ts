@@ -126,7 +126,7 @@ test('social previews cover every route and resolve to real 1200 × 630 PNGs', a
     expect(html).toMatch(/property="og:image:alt" content="[^"]+"/);
     images.add(new URL(image!).pathname);
   }
-  expect(images.size).toBe(15);
+  expect(images.size).toBe(16);
   for (const image of images) {
     const response = await request.get(image);
     expect(response.ok(), image).toBe(true);
