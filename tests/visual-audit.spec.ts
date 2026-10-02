@@ -4,17 +4,18 @@ import { routes } from '../src/data/site';
 
 // Capture on the remote runner only. The full normal suite still checks all four
 // Chromium/WebKit projects; this avoids redundant copies of visual evidence.
-test('release screenshots and layout of every bilingual page', async ({
-  page,
-}, testInfo) => {
-  test.skip(
-    process.env.SITE_VISUAL_AUDIT !== '1' ||
-      testInfo.project.name !== 'chromium-desktop',
-  );
-  test.setTimeout(300_000);
-  await mkdir('artifacts/visual-audit', { recursive: true });
-  const results = [];
-  for (const width of [1440, 390]) {
+// Separate tests give each viewport its own page and the same bounded budget.
+for (const width of [1440, 390]) {
+  test(`release screenshots and layout of every bilingual page at ${width}px`, async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      process.env.SITE_VISUAL_AUDIT !== '1' ||
+        testInfo.project.name !== 'chromium-desktop',
+    );
+    test.setTimeout(300_000);
+    await mkdir('artifacts/visual-audit', { recursive: true });
+    const results = [];
     await page.setViewportSize({ width, height: 900 });
     for (const path of [...routes, '/404']) {
       const response = await page.goto(path);
@@ -50,9 +51,9 @@ test('release screenshots and layout of every bilingual page', async ({
       });
       results.push({ path, width, filename, status: response?.status() });
     }
-  }
-  await writeFile(
-    'artifacts/visual-audit/index.json',
-    JSON.stringify(results, null, 2),
-  );
-});
+    await writeFile(
+      `artifacts/visual-audit/index-${width}.json`,
+      JSON.stringify(results, null, 2),
+    );
+  });
+}
