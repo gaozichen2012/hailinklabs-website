@@ -15,10 +15,11 @@ const prices = [
   ['rulesprout', ['$5.99']],
   ['tilltinker', ['$4.99']],
   ['storyundo', ['US$6.99']],
+  ['cluemend', ['US$9.99']],
 ] as const;
 
 for (const prefix of ['', '/zh']) {
-  test(`${prefix || 'English'} all 14 products retain their own prices and resources`, async ({
+  test(`${prefix || 'English'} all 15 products retain their own prices and resources`, async ({
     page,
   }) => {
     test.setTimeout(120_000);

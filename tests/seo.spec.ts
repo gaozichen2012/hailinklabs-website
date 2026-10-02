@@ -8,7 +8,7 @@ for (const prefix of ['', '/zh']) {
     page,
   }) => {
     await page.goto(`${prefix}/products`);
-    await expect(page.locator('.availability')).toHaveCount(14);
+    await expect(page.locator('.availability')).toHaveCount(15);
     await expect(page.locator('.availability.is-available')).toHaveCount(5);
     await expect(page.locator('.store-download')).toHaveCount(5);
     for (const product of catalog) {
@@ -24,7 +24,7 @@ for (const prefix of ['', '/zh']) {
             ? prefix
               ? '已在美国 App Store 上架'
               : 'Available on the US App Store'
-            : ['rulesprout', 'tilltinker'].includes(product.slug)
+            : ['rulesprout', 'tilltinker', 'cluemend'].includes(product.slug)
               ? prefix
                 ? '尚未在 App Store 提供'
                 : 'Not yet available on the App Store'

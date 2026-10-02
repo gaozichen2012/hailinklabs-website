@@ -9,7 +9,9 @@ export function socialImage(englishPath: string, locale: Locale) {
   const product = catalog.find(
     (item) =>
       englishPath === `/products/${item.slug}` ||
-      englishPath.startsWith(`/products/${item.slug}/`),
+      englishPath.startsWith(`/products/${item.slug}/`) ||
+      (item.slug === 'cluemend' &&
+        (englishPath === '/cluemend' || englishPath.startsWith('/cluemend/'))),
   );
   const screenshot = product && ['samejob', 'gearproof'].includes(product.slug);
   return {

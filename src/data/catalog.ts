@@ -14,6 +14,18 @@ export const catalog: readonly CatalogProduct[] = [
   ...products,
   ...familyProducts,
   {
+    slug: 'cluemend',
+    name: 'ClueMend',
+    storeName: 'ClueMend: Talk & Build',
+    subtitle: ['Listening & Describing Games', '倾听与描述游戏'],
+    summary: ['Describe, listen and build together.', '描述、倾听，一起搭建。'],
+    value: ['Two players. One device.', '两位伙伴，一台设备。'],
+    description: [
+      'For ages 6–8 and a familiar partner: make your own clues, rebuild a secret scene and ask for clearer information.',
+      '适合 6–8 岁儿童与熟悉的伙伴：自己描述线索、重建秘密场景，并主动提问获取更清楚的信息。',
+    ],
+  },
+  {
     slug: 'minutesprout',
     name: 'MinuteSprout',
     storeName: 'MinuteSprout: Kids Time Games',
@@ -74,6 +86,7 @@ export const categories: readonly {
       'rulesprout',
       'tilltinker',
       'storyundo',
+      'cluemend',
     ],
   },
 ];

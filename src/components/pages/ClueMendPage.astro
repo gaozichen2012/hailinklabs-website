@@ -1,0 +1,248 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  kind: 'product' | 'support' | 'privacy';
+}
+const { locale, kind } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const base = Astro.url.pathname.includes('/products/cluemend')
+  ? '/products/cluemend'
+  : '/cluemend';
+const titles = {
+  product: c('ClueMend: Talk & Build', 'ClueMend：描述与搭建'),
+  support: c('ClueMend Support', 'ClueMend 支持'),
+  privacy: c('ClueMend Privacy Policy', 'ClueMend 隐私政策'),
+};
+const descriptions = {
+  product: c(
+    'Two players, one device: describe a secret scene, listen, build and ask for a clearer clue. ClueMend has 24 cooperative missions for ages 6–8.',
+    'ClueMend 面向 6–8 岁儿童与熟悉的伙伴，两人共用一台设备，描述秘密场景、倾听、搭建并请求更清楚的线索，共有 24 个合作任务。',
+  ),
+  support: c(
+    'Parent help for ClueMend: the free demo, local recordings, Talk Live, seven-day trial, Lifetime Unlock, purchase restoration, backups and private iCloud.',
+    'ClueMend 家长指南：免费演示、本地录音、Talk Live、七天试用、永久解锁、恢复购买、备份及默认关闭的私有 iCloud 进度同步。',
+  ),
+  privacy: c(
+    'How ClueMend handles local voice clues, game progress, optional private iCloud, Apple purchases, parent-controlled backups, deletion and support email.',
+    'ClueMend 隐私政策：本地语音线索、游戏进度、可选私有 iCloud、Apple 购买、家长控制的备份、删除与支持邮件的处理方式。',
+  ),
+};
+const sections = {
+  product: [
+    [
+      'Two players. One device.',
+      '两位伙伴，一台设备。',
+      'ClueMend is a cooperative talking and listening game for children ages 6–8 and a parent, sibling or familiar partner. The Speaker sees a secret scene and makes their own clues. The Builder listens and rebuilds it without seeing the target.',
+      'ClueMend 面向 6–8 岁儿童与家长、兄弟姐妹或熟悉的伙伴。一人担任 Speaker，查看秘密场景并自己描述；另一人担任 Builder，听线索搭建，不直接查看目标。',
+    ],
+    [
+      'A clearer clue can change the scene',
+      '用更清楚的线索共同修正',
+      'Record a short clue, cover the scene and pass the device. Replay, place objects and check the result. Not the same yet? Use Ask to request which item, where it goes or the clue again, then pass back for a clearer description. Match together, choose See together, or switch roles for another round.',
+      '录制短线索，遮住场景并交出设备。回听、摆放物品，再检查结果。还没匹配时，通过 Ask 询问是哪件物品、放在哪里或再说一次，再交机补充描述。共同匹配，也可选择 See together 揭晓，或交换角色开始下一回合。',
+    ],
+    [
+      '24 missions, four ways to practice',
+      '24 个任务，四组练习',
+      'Say Which explores objects, colors and sizes. Say Where explores positions. Put It Together combines details. Ask & Repair practices requesting information and adding clearer clues. A separate free teaching demo introduces the same two-player loop. There are no timers, lives or competitive rankings.',
+      'Say Which 练习物品、颜色和大小；Say Where 练习位置；Put It Together 组合场景细节；Ask & Repair 练习提问与补充线索。独立免费教学 Demo 介绍同样的双人闭环，没有倒计时、生命值或竞争排名。',
+    ],
+    [
+      'A free demo, a full trial, one purchase',
+      '免费演示、完整试用、一次买断',
+      'The teaching demo stays free. A parent can start a 7-day full trial through Apple; installing the app does not start it. Lifetime Unlock is planned at US$9.99 for all 24 missions. No subscription or automatic charge; Apple shows the current price before purchase. Existing history, playback and data-management tools remain available after the trial. Apple Family Sharing is not offered.',
+      '教学 Demo 永久免费。家长可通过 Apple 启动 7 天完整试用，安装 App 不会启动试用。Lifetime Unlock 美国区计划定价 US$9.99，一次解锁全部 24 个任务，无订阅或自动扣费；购买前以 Apple 显示的价格为准。试用结束后，已有历史、回放和数据管理仍可使用。不提供 Apple 家人共享。',
+    ],
+    [
+      'Shared play, with parent choices',
+      '伙伴共同游戏，由家长管理',
+      'Choose Record & Pass for local voice clues or Talk Live without recording. No app account, ads, third-party tracking, speech analysis or remote AI. Optional private iCloud progress sync starts off and excludes recordings. ClueMend is planned for the US App Store, in American English, on iPad and iPhone with iOS or iPadOS 18 or later. It is not a solo tutor, assessment, diagnosis or treatment.',
+      '可用 Record & Pass 录制本地线索，也可选择 Talk Live，不录音完成游戏。无需 App 账号，没有广告、第三方跟踪、语音分析或远程 AI。私有 iCloud 进度同步默认关闭，不包含录音。ClueMend 计划在美国 App Store 提供，内容使用美式英语，支持 iOS／iPadOS 18 及以上的 iPad 和 iPhone；它不是单人家教、测评、诊断或治疗工具。',
+    ],
+  ],
+  support: [
+    [
+      'Start with the teaching demo',
+      '从教学 Demo 开始',
+      'Play with a familiar partner and choose the free teaching demo. Decide who is Speaker and who is Builder. Only the Speaker looks at the secret scene. Make your own clue, confirm it, cover the screen and pass the device. The Builder replays the clue and places objects before choosing Check.',
+      '与熟悉的伙伴一起选择免费教学 Demo，确定 Speaker 和 Builder。只有 Speaker 查看秘密场景，自己描述线索并确认，然后遮罩交机。Builder 回听线索、摆放物品后选择 Check。',
+    ],
+    [
+      'Ask, replay and switch roles',
+      '提问、回听与交换角色',
+      'Replay repeats a recorded clue. Ask requests new information: Which one?, Where? or Say that again? Pass back so the Speaker can add a clearer clue, then continue building. See together reveals the scene and records a shared reveal rather than an independent match. Switch roles after a round so each partner can describe and build.',
+      'Replay 重放已录制线索；Ask 请求新的信息，包括 Which one?、Where? 或 Say that again?。交回设备，让 Speaker 补充线索后继续搭建。See together 会揭晓场景，并记录为共同揭晓，不算独立匹配。回合结束后交换角色，让双方都体验描述和搭建。',
+    ],
+    [
+      'Recording and Talk Live',
+      '录音与 Talk Live',
+      'In Parents, complete the changing adult question and choose Enable microphone recording. Each clue has a visible stop control and a 30-second limit. Backgrounding, interruptions or route changes stop audio; recording does not automatically resume. If permission is refused, sound is unavailable or storage is low, choose Talk Live and say clues aloud without recording. Check device volume and the selected speaker or headphones before replay.',
+      '进入 Parents，完成变化的成人问题，再选择 Enable microphone recording。每段线索有明确停止按钮，最长 30 秒。进入后台、中断或音频路由变化会停止音频，不会自动恢复录音。权限被拒、声音不可用或存储不足时，可选择 Talk Live，当面说线索，无需录音。回放前检查设备音量以及当前扬声器或耳机。',
+    ],
+    [
+      'Trial, Lifetime Unlock and Restore Purchases',
+      '试用、永久解锁与恢复购买',
+      'In Parents, Start 7-day trial begins seven days from the original Apple trial transaction; restoring does not restart that clock. Lifetime Unlock is planned at US$9.99 for all 24 missions, with no subscription or automatic charge. Use Restore Purchases with the Apple Account used for the purchase. Pending purchases wait for Apple approval. Restoration restores access, not game history or recordings. Apple Family Sharing is not offered. Do not delete the app to fix a purchase issue.',
+      '在 Parents 选择 Start 7-day trial，从 Apple 原始试用交易开始计算七天；恢复购买不会重新计时。Lifetime Unlock 美国区计划价格 US$9.99，一次解锁全部 24 个任务，无订阅或自动扣费。使用原购买 Apple 账号执行 Restore Purchases，待处理购买需要等待 Apple 批准。恢复购买恢复权益，不恢复游戏历史或录音。不提供 Apple 家人共享，请勿通过删除 App 排查购买问题。',
+    ],
+    [
+      'Export and complete backups',
+      '导出与完整备份',
+      'Parents offers Export progress as CSV or JSON for completed activity summaries. Create complete backup prepares a ZIP that can include games, settings and recordings. Use Save or share prepared export to choose the destination. ZIP files are not encrypted by ClueMend. Keep them private and check your backup before moving devices. Restore from backup validates the file, previews its contents and saves a safety copy before merging; it never imports purchases.',
+      'Parents 可通过 CSV 或 JSON 导出已完成活动摘要。Create complete backup 生成 ZIP，可包含游戏、设置和录音；通过 Save or share prepared export 选择保存位置。ClueMend 不加密 ZIP，请妥善保管，换设备前确认备份可访问。Restore from backup 会校验文件、预览内容，并在合并前保存安全副本；备份不会导入购买权益。',
+    ],
+    [
+      'Private iCloud progress',
+      '私有 iCloud 进度',
+      'Sync is off by default. A parent can enable it for devices using the same iCloud account. Only completed activity summaries and experience settings sync; recordings, secret scenes and unfinished games do not. Sync cannot move an ongoing round to another device. When the account changes, sync pauses and requires the parent to enable it again; older local games are excluded from uploads to the new account.',
+      '同步默认关闭，家长可为同一 iCloud 账号的设备启用。仅同步已完成活动摘要和体验设置，录音、秘密场景和未完成游戏不同步，不能跨设备接着玩同一个回合。iCloud 账号变更后，同步暂停，须由家长重新开启；旧本地游戏不会上传到新账号。',
+    ],
+    [
+      'Delete recordings and manage copies',
+      '删除录音与管理副本',
+      'In History and storage, a parent can delete a clue, all recordings, a game or the local library. Deleting recordings keeps game progress and separately prepared backups. Clearing the local library also removes its prepared exports and recovery copies. Private iCloud progress has a separate deletion action that marks summaries as deleted; local games and purchases remain. Files already shared, system backups and copies on other devices need separate management. Read the result message before assuming an action completed.',
+      '在 History and storage 中，家长可删除单条线索、全部录音、某个游戏或本地库。删除录音会保留游戏进度与独立预备备份；清空本地库也会删除库内预备导出和恢复副本。私有 iCloud 进度有单独删除操作，将摘要标记为已删除，本地游戏和购买权益保留。已分享文件、系统备份和其他设备副本需要另行管理；请阅读结果提示，确认实际完成情况。',
+    ],
+    [
+      'Contact support',
+      '联系支持',
+      'A parent can email the app version, device model, system version and a short description of the issue. Do not send children’s names, photos, voices, recordings, complete backups or payment details. ClueMend is not yet available on the App Store; this page does not provide a download or testing invitation.',
+      '家长可邮件提供 App 版本、设备型号、系统版本和简短问题说明。请勿发送儿童姓名、照片、声音、录音、完整备份或支付详情。ClueMend 尚未在 App Store 提供，本页面不提供下载或测试邀请。',
+    ],
+  ],
+  privacy: [
+    [
+      'Children and local game data',
+      '儿童与本地游戏数据',
+      'ClueMend is designed for children ages 6–8 with a familiar partner. It does not require an app account, name, birthday, school, photo, email address or phone number. Player 1 and Player 2 describe roles, not persistent child profiles. Game identifiers, target scenes, placements, check and clarification events, activity outcomes, dates and settings are stored locally. These results describe activity, not a child’s ability. Hailink Labs does not operate a game-data server or automatically receive these records.',
+      'ClueMend 面向 6–8 岁儿童及熟悉的伙伴，不要求 App 账号、姓名、生日、学校、照片、邮箱或电话号码。Player 1 和 Player 2 表示角色，不是持久儿童档案。游戏标识、目标场景、摆放、检查与澄清事件、活动结果、日期和设置保存在本机；结果描述活动，不评判儿童能力。Hailink Labs 不运营游戏数据服务器，也不会自动接收这些记录。',
+    ],
+    [
+      'Microphone, recordings and prerecorded sound',
+      '麦克风、录音与预录声音',
+      'A parent enables microphone access for short clues to a partner. Recordings are stored on the device, are limited to 30 seconds per clip and are not sent to Hailink Labs. ClueMend does not transcribe, analyze or score speech, or send it to a remote voice or AI service. Talk Live works without microphone access. Prerecorded narration is produced offline and bundled with the app; the voice model is not included. Backups and parent-initiated exports may include recordings, so recordings are not guaranteed to stay on one device.',
+      '家长可为伙伴短线索启用麦克风。录音保存在本机，每段最长 30 秒，不发送给 Hailink Labs。ClueMend 不转写、分析或评分语音，不将语音发给远程声音或 AI 服务。Talk Live 无需麦克风权限。预录旁白离线制作后内置，语音模型不随 App 分发。备份与家长主动导出可能包含录音，因此不能保证录音永远留在同一设备。',
+    ],
+    [
+      'Optional private iCloud',
+      '可选私有 iCloud',
+      'Progress sync is off by default and can be enabled only in Parents. Apple CloudKit private storage holds completed activity identifiers, mission and content version, outcome, dates, check and clarification counts, deletion flags and experience settings. Recordings, raw target scenes, unfinished games and purchase receipts never enter this app sync. An opaque account-derived value separates iCloud accounts; it is not an advertising identifier. This is not public sharing or cross-account family sync. Apple handles the storage under its policies; Hailink Labs does not receive it on a developer-operated server.',
+      '进度同步默认关闭，只能在 Parents 启用。Apple CloudKit 私有存储处理已完成活动标识、任务及内容版本、结果、日期、检查与澄清次数、删除标记和体验设置。录音、原始目标场景、未完成游戏和购买收据不会进入此 App 同步。由账号派生的不透明值用于区分 iCloud 账号，不是广告标识。这不是公开分享或跨账号家庭同步。Apple 按其政策处理存储，Hailink Labs 不通过开发者服务器接收这些资料。',
+    ],
+    [
+      'Apple purchases',
+      'Apple 购买',
+      'Apple StoreKit handles the zero-price non-consumable trial and the one-time Lifetime Unlock, purchase restoration and transaction verification. The trial runs for seven days from the original transaction; it does not renew or automatically charge. The app stores verified access, original dates and revocation status in protected local storage; purchase access is not restored from a game backup. Hailink Labs does not receive payment card details or operate a receipt server. Apple processes transaction and diagnostic information under its policies and your account settings.',
+      'Apple StoreKit 处理零价非消耗型试用、一次性 Lifetime Unlock、恢复购买和交易验证。试用从原始交易开始持续七天，不续订、不自动扣费。App 在受保护的本地存储保存已验证权益、原始日期和撤销状态，游戏备份不恢复购买权益。Hailink Labs 不接收支付卡详情，也不运营收据服务器；Apple 按其政策和账号设置处理交易及诊断信息。',
+    ],
+    [
+      'Parent-controlled files and safety copies',
+      '家长控制的文件与安全副本',
+      'CSV and JSON exports contain completed progress. Complete ZIP backups may include local games, settings and recordings, but not purchase entitlement, Apple receipts or microphone permission. Restore validates files and creates a local safety copy before merging. ZIP exports are not encrypted by the app. Parents choose the destination and are responsible for protecting copies. Other file providers and recipients process shared files under their practices. Support email does not automatically attach recordings or a database.',
+      'CSV 和 JSON 导出包含已完成进度；完整 ZIP 备份可包含本地游戏、设置和录音，不含购买权益、Apple 收据或麦克风权限。恢复会先校验文件，合并前创建本地安全副本。App 不加密导出 ZIP，由家长选择保存位置并保护副本。其他文件服务商与接收方按其规则处理分享文件。支持邮件不会自动附加录音或数据库。',
+    ],
+    [
+      'Retention and deletion',
+      '保存与删除',
+      'Parents can remove recordings, games or the local library. Clearing the local library removes its recordings, staged clues, prepared exports and recovery copies. Previously exported files, system backups, preserved damaged libraries and private iCloud copies require separate management. Turning sync off stops app synchronization; it does not erase prior cloud records. Delete private iCloud progress marks existing activity summaries as deleted to prevent older devices from restoring them. Summary fields and deletion markers can remain in private cloud storage; this action is not a complete erasure of every cloud record. Local recordings and verified purchases are unchanged.',
+      '家长可删除录音、游戏或本地库。清空本地库会移除库内录音、待确认线索、预备导出和恢复副本；之前已导出的文件、系统备份、保留的损坏库和私有 iCloud 副本须另行管理。关闭同步会停止 App 同步，不会擦除已有云端记录。Delete private iCloud progress 将现有活动摘要标记为已删除，防止旧设备恢复这些活动；摘要字段与删除标记可能继续留在私有云存储中，该操作并不完整擦除每条云端记录。本地录音与已验证购买权益不变。',
+    ],
+    [
+      'Parent controls and no third-party tracking',
+      '家长控制与无第三方跟踪',
+      'Purchases, restoration, external links, export, import, deletion, sync and permission settings are protected by an adult question. This control is not a legal identity or parental-consent verification service. The app has no ads, third-party analytics, tracking or third-party crash reporting SDKs. It does not request camera, location, contacts or photo-library access. Disk-space checks only help prevent failed saves and restores; that information is not sent out or used for fingerprinting.',
+      '购买、恢复、外部链接、导出、导入、删除、同步与权限设置受成人问题保护；该控制不等同法律身份或监护人同意验证服务。App 没有广告、第三方分析、跟踪或第三方崩溃报告 SDK，不请求相机、位置、通讯录或照片库访问。磁盘容量检查只用于避免保存和恢复失败，不外发，也不用于指纹识别。',
+    ],
+    [
+      'Parent support correspondence',
+      '家长支持邮件',
+      'If a parent emails support, we receive the email address, message and attachments to answer and resolve the issue. Do not send children’s names, photos, voices, recordings, backups or payment details. Our company mailbox uses Tencent business email; Hailink Labs in China may access support messages. We do not sell this information or use it for advertising. Correspondence is retained for no longer than 12 months after the issue closes unless an ongoing issue or legal obligation requires longer. Parents can request access, correction or deletion by email; we may verify the relevant email address.',
+      '家长发送支持邮件时，我们收到邮箱地址、正文与附件，用于回答和解决问题。请勿发送儿童姓名、照片、声音、录音、备份或支付详情。公司邮箱使用腾讯企业邮箱，中国境内的 Hailink Labs 可能访问支持邮件。我们不出售这些资料，也不用于广告。问题关闭后保留不超过 12 个月，持续问题或法律义务要求更久时除外。家长可通过邮件请求访问、更正或删除，我们可能核实对应邮箱。',
+    ],
+    [
+      'This website and policy changes',
+      '本网站与政策变更',
+      'This website has no analytics, tracking scripts, accounts or contact forms. GitHub Pages processes technical requests such as IP addresses to deliver and protect the site. Material changes to this policy will be explained here with an updated effective date.',
+      '本网站没有分析、跟踪脚本、账号或联系表单。GitHub Pages 为交付和保护网站处理 IP 地址等技术请求。本政策重大变化将在此说明，并更新生效日期。',
+    ],
+  ],
+};
+---
+
+<Layout
+  locale={locale}
+  title={`${titles[kind]} | Hailink Labs`}
+  description={descriptions[kind]}
+>
+  <section class="page-intro policy-intro">
+    <p class="eyebrow">ClueMend</p>
+    <h1>{titles[kind]}</h1>
+    <p class="intro-copy">
+      {c('Describe. Listen. Build together.', '描述、倾听，一起搭建。')}
+    </p>
+    <p class="availability">
+      {c('Not yet available on the App Store.', '尚未在 App Store 提供。')}
+    </p>
+  </section>
+  <article class="policy prose">
+    {kind === 'privacy' && (
+      <>
+        <p>
+          {c(
+            'Effective October 3, 2026. ClueMend is developed by Hailink Labs, the brand of ',
+            '生效日期：2026 年 10 月 3 日。ClueMend 由 Hailink Labs 开发，品牌所属主体为 ',
+          )}
+          {companyName(locale)}
+          {c('', '。')}
+        </p>
+        {locale === 'zh-CN' && (
+          <aside class="review-notice">
+            中文版本方便阅读，如有差异以{' '}
+            <a href={`${base}/privacy`} lang="en" hreflang="en">
+              英文版本
+            </a>{' '}
+            为准。
+          </aside>
+        )}
+      </>
+    )}
+    {sections[kind].map(([enTitle, zhTitle, enText, zhText]) => (
+      <>
+        <h2>{c(enTitle, zhTitle)}</h2>
+        <p>{c(enText, zhText)}</p>
+      </>
+    ))}
+    {kind === 'privacy' && (
+      <p>
+        <a href="https://www.apple.com/legal/privacy/">
+          {c('Apple Privacy Policy', 'Apple 隐私政策')}
+        </a>{' '}
+        ·{' '}
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+          {c('GitHub Privacy Statement', 'GitHub 隐私声明')}
+        </a>
+      </p>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=ClueMend%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a href={localizedPath(base, locale)}>
+        {c('About ClueMend', '了解 ClueMend')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath(`${base}/support`, locale)}>
+        {c('Support', '支持')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath(`${base}/privacy`, locale)}>
+        {c('Privacy policy', '隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>

@@ -36,7 +36,7 @@ for (const prefix of ['', '/zh']) {
     ).toBe('none');
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL(new RegExp(`${prefix}/products$`));
-    await expect(page.locator('.matrix-card')).toHaveCount(14);
+    await expect(page.locator('.matrix-card')).toHaveCount(15);
     await page.locator('.category-links a[href="#family"]').click();
     await expect(page.locator('#family')).toBeInViewport();
   });

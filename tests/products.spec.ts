@@ -24,6 +24,7 @@ for (const prefix of ['', '/zh']) {
             'RuleSprout',
             'TillTinker',
             'StoryUndo',
+            'ClueMend',
           ]
         : ['SameJob', 'GearProof', 'LitterRound'];
       await page.goto(route);

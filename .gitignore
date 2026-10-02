@@ -9,3 +9,13 @@ test-results/
 .env.*
 .dev.vars*
 .DS_Store
+
+# Local credentials and signing material
+*.p8
+*.p12
+*.mobileprovision
+*.pfx
+*.key
+*.pem
+.secrets/
+secrets/
