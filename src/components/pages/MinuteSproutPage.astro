@@ -1,4 +1,6 @@
 ---
+import { availability } from '../../data/catalog';
+import { copy } from '../../data/products';
 import Layout from '../../layouts/Layout.astro';
 import { localizedPath, companyName, type Locale } from '../../data/i18n';
 import { site } from '../../data/site';
@@ -115,14 +117,36 @@ const sections = {
     'MinuteSprout 时间实验、个人时间卡与家长指南。',
   )}
 >
-  <section class="page-intro policy-intro">
+  <section
+    class:list={[
+      'page-intro',
+      kind === 'product' ? 'product-intro' : 'policy-intro',
+    ]}
+  >
     <p class="eyebrow">MinuteSprout</p>
-    <h1>{titles[kind]}</h1>
+    <h1 class:list={{ 'matrix-title': kind === 'product' }}>{titles[kind]}</h1>
     <p class="intro-copy">
       {c('Guess. Do. Discover.', '先猜测，再动手，发现时间。')}
     </p>
   </section>
-  <article class="policy prose">
+  <article
+    class:list={[
+      'prose',
+      kind === 'product' ? 'product-story minute-product' : 'policy',
+    ]}
+  >
+    {kind === 'product' && (
+      <p class="availability">{copy(availability('minutesprout'), locale)}</p>
+    )}
+    {kind === 'privacy' && locale === 'zh-CN' && (
+      <p>
+        中文版本方便阅读，如有差异以{' '}
+        <a href="/products/minutesprout/privacy" lang="en" hreflang="en">
+          英文版本
+        </a>
+        为准。
+      </p>
+    )}
     {kind === 'privacy' && (
       <p>
         {c(

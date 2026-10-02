@@ -1,7 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Product from '../../components/Product.astro';
-import { catalog, featured } from '../../data/catalog';
+import { catalog, categories, featured } from '../../data/catalog';
+import { copy } from '../../data/products';
 import { site } from '../../data/site';
 
 import { translator, localizedPath, type Locale } from '../../data/i18n';
@@ -26,34 +27,88 @@ const href = (path: string) => localizedPath(path, locale);
       : 'Hailink Labs 打造专注工作、运动与家庭生活的 App，涵盖开票、器材交接、动物护理、训练和学习。'
   }
 >
-  <section class="hero">
-    <img
-      class="hero-symbol"
-      src="/brand/hailink-symbol.svg?v=1.1"
-      width="552"
-      height="369"
-      alt=""
-      aria-hidden="true"
-    />
-    <p class="eyebrow">{t('Hailink Labs · Independent software')}</p>
-    <h1>
-      {locale === 'en' ? 'Small apps.' : '小而专注的 App。'}
-      <br />
-      <span class="muted-heading">
-        {locale === 'en' ? 'Real-life value.' : '解决具体问题。'}
-      </span>
-    </h1>
-    <div class="hero-bottom">
-      <p>
-        {locale === 'en'
-          ? 'Focused apps for work, training, and family life — built to solve one problem well.'
-          : '从工作记录到运动训练与家庭学习，把一件事做好。'}
-      </p>
-      <a class="button" href={href('/products')}>
-        {t('Meet our products')} <span aria-hidden="true">→</span>
-      </a>
+  <section class="hero studio-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">{t('Hailink Labs · Independent software')}</p>
+      <h1>
+        {locale === 'en' ? 'Small apps.' : '小而专注的 App。'}
+        <br />
+        <span class="muted-heading">
+          {locale === 'en' ? 'Real-life value.' : '解决具体问题。'}
+        </span>
+      </h1>
+      <div class="hero-bottom">
+        <p>
+          {locale === 'en'
+            ? 'Focused apps for work, training, and family life — built to solve one problem well.'
+            : '从工作记录到运动训练与家庭学习，把一件事做好。'}
+        </p>
+        <a class="button" href={href('/products')}>
+          {t('Meet our products')} <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
+    <figure class="hero-showcase">
+      <div class="showcase-heading">
+        <span>
+          {locale === 'en' ? 'Made for the everyday' : '为日常而设计'}
+        </span>
+        <span aria-hidden="true">01 / {catalog.length}</span>
+      </div>
+      <div class="showcase-screens">
+        <div class="showcase-screen screen-primary">
+          <img
+            src="/products/samejob/01-repeat-invoices.jpg"
+            width="663"
+            height="1440"
+            fetchpriority="high"
+            alt={
+              locale === 'en'
+                ? 'SameJob: actual App Store screen showing repeat invoices'
+                : 'SameJob：展示重复开票的真实 App Store 界面'
+            }
+          />
+        </div>
+        <div class="showcase-screen screen-secondary">
+          <img
+            src="/products/gearproof/04-gearproof.jpg"
+            width="663"
+            height="1440"
+            decoding="async"
+            alt={
+              locale === 'en'
+                ? 'GearProof: actual App Store equipment screen'
+                : 'GearProof：真实 App Store 器材界面'
+            }
+          />
+        </div>
+      </div>
+      <figcaption>
+        <span>SameJob &amp; GearProof</span>
+        <span>
+          {locale === 'en'
+            ? 'Actual app screens · Example records'
+            : '真实 App 界面 · 示例记录'}
+        </span>
+      </figcaption>
+    </figure>
   </section>
+  <nav
+    class="collection-strip"
+    aria-label={locale === 'en' ? 'Explore by everyday need' : '按日常需求浏览'}
+  >
+    {categories.map((category, index) => (
+      <a href={`${href('/products')}#${category.id}`}>
+        <span class="collection-index" aria-hidden="true">
+          0{index + 1}
+        </span>
+        <span>{copy(category.title, locale)}</span>
+        <span class="collection-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </a>
+    ))}
+  </nav>
   <section class="products-section" aria-labelledby="products-title">
     <div class="section-label">
       <h2 id="products-title">

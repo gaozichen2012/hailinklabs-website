@@ -38,6 +38,8 @@ for (const prefix of ['', '/zh']) {
         await expect(page.locator('article.policy')).toContainText(
           prefix ? 'off by default' : '默认关闭',
         );
+        // New document text can arrive before its stylesheet finishes loading.
+        await page.waitForLoadState('load');
         for (const width of [320, 768]) {
           await page.setViewportSize({ width, height: 900 });
           expect(

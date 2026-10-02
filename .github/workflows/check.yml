@@ -12,6 +12,9 @@ jobs:
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble
+      options: --ipc=host --init
     steps:
       - uses: actions/checkout@v7
         with:
@@ -25,8 +28,14 @@ jobs:
       - run: npm run typecheck
       - run: npm run release:check
       - run: npm run build
-      - run: npx playwright install --with-deps chromium webkit
       - run: npm test
+        env:
+          SITE_VISUAL_AUDIT: '1'
+      - uses: actions/upload-artifact@v7
+        with:
+          name: website-visual-audit
+          path: artifacts/visual-audit/
+          retention-days: 7
       - uses: actions/upload-pages-artifact@v5
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
@@ -53,3 +62,37 @@ jobs:
       - uses: actions/configure-pages@v6
       - uses: actions/deploy-pages@v5
         id: deployment
+  verify-production:
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble
+      options: --ipc=host --init
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - uses: actions/download-artifact@v8
+        with:
+          name: github-pages
+          path: artifacts/pages-build
+      - run: mkdir dist && tar -xf artifacts/pages-build/artifact.tar -C dist
+      - run: npm ci
+      - run: npm run verify:production
+      - run: npm test
+        env:
+          PLAYWRIGHT_PRODUCTION: '1'
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: website-production-verification
+          path: |
+            artifacts/production-verification.json
+            playwright-report/
+            test-results/
+          retention-days: 7

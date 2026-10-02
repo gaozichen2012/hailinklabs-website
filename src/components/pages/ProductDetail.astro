@@ -1,5 +1,5 @@
 ---
-import { highlights } from '../../data/catalog';
+import { highlights, availability } from '../../data/catalog';
 import ProductGallery from '../ProductGallery.astro';
 import AppStoreLink from '../AppStoreLink.astro';
 import Layout from '../../layouts/Layout.astro';
@@ -40,6 +40,7 @@ const href = (suffix: string) =>
     <p class="intro-copy">{c(p.subtitle)}</p>
     <p class="product-positioning">{c(p.description)}</p>
     {highlight && <p class="data-summary">{c(highlight.data)}</p>}
+    <p class="availability">{c(availability(p.slug))}</p>
     <AppStoreLink locale={locale} slug={p.slug} />
     {p.slug === 'turnmath' && <p class="price-summary">{c(highlight.price)}</p>}
     <a class="text-link" href="#pricing">

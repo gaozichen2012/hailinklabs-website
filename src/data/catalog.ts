@@ -1,3 +1,4 @@
+import { familyProducts } from './family-products';
 import { products, type ProductData, type Copy } from './products';
 export type CatalogProduct = Pick<
   ProductData,
@@ -11,6 +12,7 @@ export type CatalogProduct = Pick<
 >;
 export const catalog: readonly CatalogProduct[] = [
   ...products,
+  ...familyProducts,
   {
     slug: 'minutesprout',
     name: 'MinuteSprout',
@@ -64,19 +66,21 @@ export const categories: readonly {
   {
     id: 'family',
     title: ['Kids & Family', '儿童与家庭'],
-    slugs: ['turnmath', 'minutesprout', 'storyundo'],
+    slugs: [
+      'turnmath',
+      'minutesprout',
+      'botsteps',
+      'heardraw',
+      'rulesprout',
+      'tilltinker',
+      'storyundo',
+    ],
   },
 ];
 export const featured = ['samejob', 'gearproof', 'litterround'].map((slug) =>
   catalog.find((p) => p.slug === slug)!,
 );
-export const supportProducts = [
-  ...catalog,
-  { slug: 'botsteps', name: 'BotSteps' },
-  { slug: 'heardraw', name: 'HearDraw' },
-  { slug: 'rulesprout', name: 'RuleSprout' },
-  { slug: 'tilltinker', name: 'TillTinker' },
-];
+export const supportProducts = catalog;
 // Public US listings checked against Apple's public pages/lookup endpoint.
 // A US URL is not a claim of worldwide availability or a device purchase test.
 export const listings: Record<
@@ -109,7 +113,16 @@ export const listings: Record<
     verified: '2026-09-30',
   },
 };
-// Missing public evidence means availability is unconfirmed, not unreleased.
+// Review status was confirmed by the owner on 2026-09-30; only public listings
+// justify a download link. Recheck before updating these publication labels.
+const awaitingReview = new Set([
+  'hybridloop',
+  'pressrecipe',
+  'turnmath',
+  'botsteps',
+  'heardraw',
+  'minutesprout',
+]);
 export const availability = (slug: string): Copy =>
   slug === 'storyundo'
     ? [
@@ -118,7 +131,9 @@ export const availability = (slug: string): Copy =>
       ]
     : listings[slug]
       ? ['Available on the US App Store', '已在美国 App Store 上架']
-      : ['App Store availability not confirmed', 'App Store 上架状态待确认'];
+      : awaitingReview.has(slug)
+        ? ['Awaiting App Store review', '等待 App Store 审核']
+        : ['Not yet available on the App Store', '尚未在 App Store 提供'];
 export const highlights: Record<
   string,
   { price: Copy; data: Copy; seo: Copy }

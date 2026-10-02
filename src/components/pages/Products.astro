@@ -39,16 +39,29 @@ const t = translator(locale);
     aria-label={locale === 'en' ? 'Product categories' : '产品分类'}
   >
     {categories.map((category) => (
-      <a href={`#${category.id}`}>{copy(category.title, locale)}</a>
+      <a href={`#${category.id}`}>
+        {copy(category.title, locale)}{' '}
+        <span class="category-count">{category.slugs.length}</span>
+      </a>
     ))}
   </nav>
-  {categories.map((category) => (
+  {categories.map((category, index) => (
     <section
       class="catalog-group"
       id={category.id}
       aria-labelledby={`${category.id}-title`}
     >
-      <h2 id={`${category.id}-title`}>{copy(category.title, locale)}</h2>
+      <div class="catalog-heading">
+        <span class="catalog-index" aria-hidden="true">
+          0{index + 1}
+        </span>
+        <h2 id={`${category.id}-title`}>{copy(category.title, locale)}</h2>
+        <span class="catalog-count">
+          {locale === 'en'
+            ? `${category.slugs.length} apps`
+            : `${category.slugs.length} 款 App`}
+        </span>
+      </div>
       <div class="product-grid">
         {category.slugs.map((slug) => (
           <Product

@@ -23,6 +23,7 @@ for (const slug of [
   'turnmath',
   'minutesprout',
   'heardraw',
+  'botsteps',
   'rulesprout',
   'tilltinker',
   'storyundo',

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/studio.css';
 import BrandLogo from '../components/BrandLogo.astro';
 import { englishRoutes, site } from '../data/site';
 import {
@@ -119,7 +120,7 @@ const nav = [
       href="/apple-touch-icon.png?v=1.1"
     />
   </head>
-  <body>
+  <body data-page={englishPath}>
     <a class="skip-link" href="#main">
       {t('Skip to content')}
     </a>

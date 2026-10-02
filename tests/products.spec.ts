@@ -16,7 +16,15 @@ for (const prefix of ['', '/zh']) {
   }) => {
     for (const route of [prefix || '/', `${prefix}/products`]) {
       const shown = route.endsWith('/products')
-        ? [...names, 'MinuteSprout', 'StoryUndo']
+        ? [
+            ...names,
+            'MinuteSprout',
+            'BotSteps',
+            'HearDraw',
+            'RuleSprout',
+            'TillTinker',
+            'StoryUndo',
+          ]
         : ['SameJob', 'GearProof', 'LitterRound'];
       await page.goto(route);
       await expect(page.locator('.matrix-card')).toHaveCount(shown.length);
