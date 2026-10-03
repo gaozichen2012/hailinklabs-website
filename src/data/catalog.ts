@@ -14,6 +14,18 @@ export const catalog: readonly CatalogProduct[] = [
   ...products,
   ...familyProducts,
   {
+    slug: 'affixhop',
+    name: 'AffixHop',
+    storeName: 'AffixHop: Word Meaning Games',
+    subtitle: ['Make Prefixes Come to Life', '让前缀含义活起来'],
+    summary: ['Change a word. Explore its meaning.', '改变词语，探索含义。'],
+    value: ['Predict, compare and try a new word.', '预测、比较并尝试新词。'],
+    description: [
+      'For ages 6–8: explore selected meanings of re- and un- through 36 visual word activities. Three demos stay free.',
+      '适合 6–8 岁儿童：通过 36 个可视化词语活动探索 re- 和 un- 的部分含义，三个演示永久免费。',
+    ],
+  },
+  {
     slug: 'cluemend',
     name: 'ClueMend',
     storeName: 'ClueMend: Talk & Build',
@@ -87,6 +99,7 @@ export const categories: readonly {
       'tilltinker',
       'storyundo',
       'cluemend',
+      'affixhop',
     ],
   },
 ];

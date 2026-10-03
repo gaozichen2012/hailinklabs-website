@@ -3,6 +3,11 @@
   "reviewedOn": "2026-09-14",
   "remaining": [],
   "productSourceReviews": {
+    "affixhop": {
+      "reviewedOn": "2026-10-03",
+      "method": "source-audit",
+      "remaining": []
+    },
     "storyundo": {
       "reviewedOn": "2026-10-02",
       "method": "source-audit",

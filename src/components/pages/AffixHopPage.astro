@@ -1,0 +1,230 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  kind: 'product' | 'support' | 'privacy';
+}
+const { locale, kind } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const base = Astro.url.pathname.includes('/products/affixhop')
+  ? '/products/affixhop'
+  : '/affixhop';
+const titles = {
+  product: c('AffixHop: Word Meaning Games', 'AffixHop：词义游戏'),
+  support: c('AffixHop Support', 'AffixHop 支持'),
+  privacy: c('AffixHop Privacy Policy', 'AffixHop 隐私政策'),
+};
+const descriptions = {
+  product: c(
+    'Explore re- and un- through 36 visual word activities for ages 6–8. Predict, compare and try a new word.',
+    '面向 6–8 岁儿童，通过 36 个可视化词语活动探索 re- 和 un-，预测、比较并尝试新词。',
+  ),
+  support: c(
+    'Parent help for AffixHop demos, seven-day trial, Unlock Forever, purchase restoration, JSON backups and private iCloud.',
+    'AffixHop 家长指南：演示、七天试用、永久解锁、恢复购买、JSON 备份和私有 iCloud。',
+  ),
+  privacy: c(
+    'How AffixHop handles local learning records, optional private iCloud, Apple purchases, parent-controlled files, deletion and support email.',
+    'AffixHop 隐私政策：本地学习记录、可选私有 iCloud、Apple 购买、家长控制文件、删除和支持邮件。',
+  ),
+};
+const sections = {
+  product: [
+    [
+      'Change a word. Explore its meaning.',
+      '改变词语，探索含义。',
+      'AffixHop helps children ages 6–8 explore selected meanings of re- and un-. Change a familiar word, predict its meaning, and compare the prediction with a visual scene or sequence. Feedback explains the chosen word and the task goal separately.',
+      'AffixHop 帮助 6–8 岁儿童探索 re- 与 un- 的部分含义。改变熟悉的词语，预测含义，再与画面或序列比较；反馈分别解释所选词语与任务目标。',
+    ],
+    [
+      'Again, undo an action, not a state',
+      '再次、撤销动作、不处于某状态',
+      'Again shows an action happening again. Undo an action explores words such as unwrap, unpack and untie from an appropriate starting state. Not that state compares descriptions such as untidy and unfinished; it does not turn every word into an undo action.',
+      'Again 展示动作再次发生；Undo an action 从适当的起始状态探索 unwrap、unpack 和 untie；Not that state 比较 untidy 和 unfinished 等描述，不把所有词语都解释成撤销动作。',
+    ],
+    [
+      '36 activities for short sessions',
+      '36 个短时活动',
+      '24 guided activities introduce the ideas. 12 transfer challenges use base words not taught in that module’s guided activities. Hear a base word explained, tap a choice and prediction, then compare. There are hints and saved practice reports, without timers, rankings or streak pressure. Reports describe activity, not reading ability.',
+      '24 个引导活动介绍概念，12 个迁移挑战使用该模块引导活动未教过的基础词。可先听基础词解释，再点选词语和预测，最后比较；提供提示和已保存练习报告，没有倒计时、排名或连续打卡压力。报告描述活动，不评判阅读能力。',
+    ],
+    [
+      'Three free demos, a trial and one purchase',
+      '三个免费演示、试用与一次买断',
+      'Three guided demos stay free, one per module. A parent may activate a full 7-day trial through Apple; installing does not start it. Unlock Forever is planned at US$5.99 for all 36 V1 activities. No subscription or automatic charge. Apple shows the current price before purchase. After trial expiry, demos, saved progress, reports, backup/import and purchase restoration remain available. Family Sharing is not offered.',
+      '每个模块各有一个引导演示，三个演示永久免费。家长可通过 Apple 主动启用 7 天完整试用，安装不会启动试用。Unlock Forever 美国区计划价格 US$5.99，一次解锁全部 36 个 V1 活动；无订阅或自动扣费，购买前以 Apple 显示的价格为准。试用到期后，演示、已保存进度、报告、备份/导入及恢复购买仍可使用。不提供家人共享。',
+    ],
+    [
+      'Offline activities, parent choices',
+      '离线活动，由家长管理',
+      'Activities, graphics and prerecorded narration are bundled. No app account, ads, third-party tracking or online AI. Progress stays local by default; optional private iCloud sync and file backups are controlled by a parent. AffixHop is planned for the US App Store in American English on iPad and iPhone with iOS or iPadOS 18 or later. It is a focused practice app, not a complete phonics course, reading assessment, diagnosis or treatment.',
+      '活动、图形和预录旁白内置，无需 App 账号，没有广告、第三方跟踪或在线 AI。进度默认保存在本机；可选私有 iCloud 同步与文件备份由家长控制。AffixHop 计划在美国 App Store 提供，内容使用美式英语，支持 iOS／iPadOS 18 及以上的 iPad 和 iPhone。它是专门的练习 App，不是完整自然拼读课程、阅读测评、诊断或治疗。',
+    ],
+  ],
+  support: [
+    [
+      'Start with three demos',
+      '从三个演示开始',
+      'Choose one of the three permanently free guided demos. Select a word and a prediction, then submit before the scene is revealed. Feedback explains whether the word matches the goal and whether the prediction matches the word selected. Tap written instructions to hear bundled narration; use hints or repeat without a timer.',
+      '选择三个永久免费引导演示中的一个，选词、预测并提交，再查看画面。反馈分别解释词语是否符合目标、预测是否符合所选词语。点按文字可听内置旁白，也可使用提示或不限时重试。',
+    ],
+    [
+      'For Parents',
+      '家长区域',
+      'Tap For Parents and complete the randomized three-step adult-reading challenge. This protects purchases, restore, external links, backup/import, deletion and sync. The parent session expires after 60 seconds idle, leaving the area or backgrounding. Returning from Apple or Files may require the challenge again. Profiles use preset avatars and do not ask for a child’s name.',
+      '点按 For Parents，完成随机的三步成人阅读挑战。购买、恢复、外部链接、备份/导入、删除和同步受此保护。闲置 60 秒、离开家长区或进入后台会结束家长会话，从 Apple 或 Files 返回可能需要重新完成挑战。档案使用预设头像，不要求儿童姓名。',
+    ],
+    [
+      'Trial, Unlock Forever and Restore Purchases',
+      '试用、永久解锁与恢复购买',
+      'The full trial lasts exactly 168 hours from the original verified Apple trial transaction. Restore, reinstall, time-zone changes and learning backups do not restart it. Unlock Forever is planned at US$5.99, with no subscription or automatic charge. Use Restore Purchases with the Apple Account used to purchase. Pending purchases wait for Apple approval. Restoration restores access, not learning history. A task started before expiry can finish; the next paid task remains locked. Do not delete the app to troubleshoot purchases.',
+      '完整试用从 Apple 原始已验证试用交易起持续 168 小时；恢复、重装、时区变化或学习备份不会重新计时。Unlock Forever 美国区计划价格 US$5.99，无订阅或自动扣费。使用原购买 Apple 账号执行 Restore Purchases；待处理购买须等待 Apple 批准。恢复购买恢复权益，不恢复学习历史。到期前开始的任务可完成，下一道付费任务仍锁定。不要通过删除 App 排查购买问题。',
+    ],
+    [
+      'Backup and restore',
+      '备份与恢复',
+      'Export full backup creates a readable JSON file containing learning records and allowed settings. Choose its destination in Files. The app does not encrypt the file; protect exported copies. Choose backup to restore validates and previews a file before Merge verified backup. Records merge by identifier; damaged or unsupported files are rejected without replacing the library. Backups do not contain purchases, cloud authorization or parent-gate sessions.',
+      'Export full backup 生成可读 JSON，包含学习记录及允许的设置，由家长通过 Files 选择保存位置。App 不加密该文件，请保护导出副本。Choose backup to restore 在 Merge verified backup 前校验并预览文件，按记录标识合并；损坏或不支持的文件不会替换本地库。备份不含购买、云授权或家长门禁会话。',
+    ],
+    [
+      'Private iCloud progress',
+      '私有 iCloud 进度',
+      'Sync starts off. A parent can enable private sync for devices using the same iCloud account. Profiles, committed learning records and deletion markers can merge across devices; unfinished control checkpoints and audio preferences remain local. Account changes pause the old scope instead of uploading its records to a new account. Deletion may need connectivity and synchronization to reach another device. Exported files and system backups are separate copies.',
+      '同步默认关闭。家长可为同一 iCloud 账号的设备启用私有同步。档案、已提交学习记录和删除标记可跨设备合并；未完成的控制点与音频偏好留在本机。账号变更会暂停旧作用域，不把旧记录自动上传到新账号。删除传递到另一台设备可能需要联网和完成同步；导出文件与系统备份是独立副本。',
+    ],
+    [
+      'Contact support',
+      '联系支持',
+      'A parent can email the app version, device model, system version and a short issue description. Do not send children’s names, recordings, full backups, receipts or payment details. Email does not automatically attach learning records. AffixHop is not yet available on the App Store; this page provides no download or testing invitation.',
+      '家长可邮件提供 App 版本、设备型号、系统版本和简短问题说明。请勿发送儿童姓名、录音、完整备份、收据或支付详情。邮件不会自动附加学习记录。AffixHop 尚未在 App Store 提供，本页面不提供下载或测试邀请。',
+    ],
+  ],
+  privacy: [
+    [
+      'Children and local learning records',
+      '儿童与本地学习记录',
+      'AffixHop is designed for children ages 6–8 with parent or guardian involvement. It asks for no app account, child name, birthday, school, email, photo or recording. Preset avatar IDs, random profile/session/attempt identifiers, task choices, predictions, feedback and hint history, completion records, timestamps and settings are stored locally. Hailink Labs does not operate a learning-data server or automatically receive these records.',
+      'AffixHop 面向 6–8 岁儿童，由家长或监护人参与，不要求 App 账号、儿童姓名、生日、学校、邮箱、照片或录音。预设头像编号、随机档案/会话/尝试标识、任务选择、预测、反馈和提示历史、完成记录、时间戳及设置保存在本机。Hailink Labs 不运营学习数据服务器，也不自动接收这些记录。',
+    ],
+    [
+      'Optional private iCloud',
+      '可选私有 iCloud',
+      'Private CloudKit sync is off by default and controlled in For Parents. It can transfer profiles, committed learning records, content versions and deletion markers to the parent’s private iCloud database. A random device identifier supports merging; account-derived scope identifiers and change tokens are local control information. Narration, purchase credentials, parent-gate sessions, preferences and active control checkpoints are excluded from app sync. Account changes pause the prior scope. This is not public sharing or cross-account family sync. Apple handles iCloud under its policies; Hailink Labs has no server receiving these private records.',
+      '私有 CloudKit 同步默认关闭，由 For Parents 控制，可将档案、已提交学习记录、内容版本及删除标记传至家长私有 iCloud 数据库。随机设备标识用于合并；账号派生的作用域标识和变更 token 是本地控制信息。旁白、购买凭据、家长门禁会话、偏好和当前控制点不进入 App 同步。账号变化会暂停旧作用域。这不是公开分享或跨账号家庭同步。Apple 按其政策处理 iCloud，Hailink Labs 没有接收这些私有记录的服务器。',
+    ],
+    [
+      'Apple purchases',
+      'Apple 购买',
+      'Apple StoreKit handles the zero-price non-consumable trial, one-time Unlock Forever, verified transactions and Restore Purchases. The trial lasts 168 hours from the original verified transaction and does not renew or automatically charge. Verified entitlement summaries are held in the device Keychain and excluded from learning backups and sync. Hailink Labs receives no payment-card details and operates no receipt server. Apple handles commerce accounts, transactions and diagnostics under its policies and settings.',
+      'Apple StoreKit 处理零价非消耗型试用、一次性 Unlock Forever、交易验证及 Restore Purchases。试用从原始已验证交易起持续 168 小时，不续订、不自动扣费。已验证权益摘要保存在设备 Keychain，不进入学习备份或同步。Hailink Labs 不接收支付卡详情，也不运营收据服务器。Apple 按其政策与设置处理商业账号、交易和诊断信息。',
+    ],
+    [
+      'Parent-controlled backups and deletion',
+      '家长控制的备份与删除',
+      'JSON backups contain learning records and allowed settings, without purchases, cloud authorization or parent-gate sessions. These readable files are not encrypted by AffixHop. Parents choose a destination and protect copies; file providers and recipients use their own practices. Import validates and previews data before merging. Parents can delete learning profiles and history; deletion markers prevent older records from returning through sync. Turning sync off does not erase previous cloud copies. Previously exported files, system backups and other-device copies require separate management. Purchase access can still be restored through Apple.',
+      'JSON 备份包含学习记录与允许的设置，不含购买、云授权或家长门禁会话。AffixHop 不加密这些可读文件。家长选择目的地并保护副本；文件服务商与接收方按其规则处理。导入会在合并前校验并预览数据。家长可删除学习档案与历史，删除标记防止旧记录通过同步重新出现。关闭同步不会擦除已有云端副本。已导出文件、系统备份及其他设备副本须另行管理。购买权益仍可通过 Apple 恢复。',
+    ],
+    [
+      'Bundled audio and parent controls',
+      '内置音频与家长控制',
+      'Narration is created offline and bundled; no voice model or generation service runs in the app. AffixHop does not request microphone, camera, photos, contacts, location or notification access. File size, integrity and metadata checks support safe backup handling, not advertising or fingerprinting. Purchases, restoration, files, sync, deletion and external links require the parent area. This control is not a legal identity or parental-consent verification service.',
+      '旁白离线制作后内置，App 内不运行声音模型或生成服务。AffixHop 不请求麦克风、相机、照片、通讯录、位置或通知权限。文件大小、完整性与元数据检查用于安全处理备份，不用于广告或指纹识别。购买、恢复、文件、同步、删除和外部链接须进入家长区域；该控制不等同法律身份或监护人同意验证服务。',
+    ],
+    [
+      'No third-party advertising or analytics',
+      '没有第三方广告或分析',
+      'AffixHop has no ads, analytics, tracking, third-party crash reporting, social features, online AI or developer-operated backend. On-device learning records, optional Apple private storage and files voluntarily shared by a parent are different data paths. Support email never automatically attaches a database or receipt.',
+      'AffixHop 没有广告、分析、跟踪、第三方崩溃报告、社交功能、在线 AI 或开发者后端。本地学习记录、可选 Apple 私有存储与家长主动分享的文件属于不同数据路径。支持邮件不会自动附加数据库或收据。',
+    ],
+    [
+      'Parent support correspondence',
+      '家长支持邮件',
+      'If a parent emails support, we receive the email address, message and attachments to answer and resolve the issue. Do not send children’s identities, recordings, backups, receipts or payment details. Our company mailbox uses Tencent business email; Hailink Labs in China may access support messages. We do not sell this information or use it for advertising. Correspondence is retained for no longer than 12 months after the issue closes unless an ongoing issue or legal obligation requires longer. Parents can request access, correction or deletion by email; we may verify the relevant email address.',
+      '家长发送支持邮件时，我们收到邮箱地址、正文及附件，用于回答和解决问题。请勿发送儿童身份资料、录音、备份、收据或支付详情。公司邮箱使用腾讯企业邮箱，中国境内的 Hailink Labs 可能访问支持邮件。我们不出售这些资料，也不用于广告。问题关闭后保留不超过 12 个月，持续问题或法律义务要求更久时除外。家长可通过邮件请求访问、更正或删除，我们可能核实对应邮箱。',
+    ],
+    [
+      'This website and policy changes',
+      '本网站与政策变更',
+      'This website has no analytics, tracking scripts, accounts or contact forms. GitHub Pages processes technical requests such as IP addresses to deliver and protect the site. Material policy changes will be explained here with an updated effective date.',
+      '本网站没有分析、跟踪脚本、账号或联系表单。GitHub Pages 为交付和保护网站处理 IP 地址等技术请求。本政策重大变化将在此说明，并更新生效日期。',
+    ],
+  ],
+};
+---
+
+<Layout
+  locale={locale}
+  title={`${titles[kind]} | Hailink Labs`}
+  description={descriptions[kind]}
+>
+  <section class="page-intro policy-intro">
+    <p class="eyebrow">AffixHop</p>
+    <h1>{titles[kind]}</h1>
+    <p class="intro-copy">
+      {c('Change a word. Explore its meaning.', '改变词语，探索含义。')}
+    </p>
+    <p class="availability">
+      {c('Not yet available on the App Store.', '尚未在 App Store 提供。')}
+    </p>
+  </section>
+  <article class="policy prose">
+    {kind === 'privacy' && (
+      <>
+        <p>
+          {c(
+            'Effective October 3, 2026. AffixHop is developed by Hailink Labs, the brand of ',
+            '生效日期：2026 年 10 月 3 日。AffixHop 由 Hailink Labs 开发，品牌所属主体为 ',
+          )}
+          {companyName(locale)}
+          {c('', '。')}
+        </p>
+        {locale === 'zh-CN' && (
+          <aside class="review-notice">
+            中文版本方便阅读，如有差异以{' '}
+            <a href={`${base}/privacy`} lang="en" hreflang="en">
+              英文版本
+            </a>{' '}
+            为准。
+          </aside>
+        )}
+      </>
+    )}
+    {sections[kind].map(([enTitle, zhTitle, enText, zhText]) => (
+      <>
+        <h2>{c(enTitle, zhTitle)}</h2>
+        <p>{c(enText, zhText)}</p>
+      </>
+    ))}
+    {kind === 'privacy' && (
+      <p>
+        <a href="https://www.apple.com/legal/privacy/">
+          {c('Apple Privacy Policy', 'Apple 隐私政策')}
+        </a>{' '}
+        ·{' '}
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+          {c('GitHub Privacy Statement', 'GitHub 隐私声明')}
+        </a>
+      </p>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=AffixHop%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a href={localizedPath(base, locale)}>
+        {c('About AffixHop', '了解 AffixHop')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath(`${base}/support`, locale)}>
+        {c('Support', '支持')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath(`${base}/privacy`, locale)}>
+        {c('Privacy policy', '隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>

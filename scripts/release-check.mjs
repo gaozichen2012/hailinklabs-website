@@ -28,6 +28,7 @@ for (const slug of [
   'tilltinker',
   'storyundo',
   'cluemend',
+  'affixhop',
 ]) {
   const product = review.productSourceReviews?.[slug];
   if (
