@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile, readdir, access, mkdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
+import { URLSearchParams } from 'node:url';
 import { parse } from 'parse5';
 import { XMLParser, XMLValidator } from 'fast-xml-parser';
 const origin = 'https://hailinklabs.com';
@@ -173,9 +174,19 @@ for (const name of names.filter((name) => name.endsWith('.html'))) {
       assert.equal(software.offers.priceCurrency, 'USD');
     }
   }
-  for (const key of ['google-site-verification', 'msvalidate.01']) {
+  for (const [key, expected] of [
+    [
+      'google-site-verification',
+      process.env.GOOGLE_SITE_VERIFICATION || config.googleVerification,
+    ],
+    [
+      'msvalidate.01',
+      process.env.BING_SITE_VERIFICATION || config.bingVerification,
+    ],
+  ]) {
     const value = attr(meta(key), 'content');
     if (value) assert(!/placeholder|example|your_|todo/i.test(value), path);
+    assert.equal(value || null, expected || null, `${path} ${key}`);
   }
   if (!config.appleProviderToken && !process.env.APPLE_PROVIDER_TOKEN)
     assert(
@@ -187,6 +198,46 @@ for (const name of names.filter((name) => name.endsWith('.html'))) {
   const links = get('a')
     .map((n) => attr(n, 'href'))
     .filter(Boolean);
+  const provider =
+    process.env.APPLE_PROVIDER_TOKEN || config.appleProviderToken;
+  for (const href of links.filter((href) =>
+    href.startsWith('https://apps.apple.com/'),
+  )) {
+    const url = new URL(href);
+    assert(
+      [...listings.values()].some(
+        (listing) => new URL(listing).pathname === url.pathname,
+      ),
+      `${path} genuine App Store destination`,
+    );
+    assert.equal(
+      url.searchParams.get('pt'),
+      provider || null,
+      `${path} provider token`,
+    );
+    if (provider) {
+      assert.match(
+        url.searchParams.get('ct') || '',
+        /^hailink_[a-z0-9_]{1,22}$/,
+        `${path} campaign name`,
+      );
+      assert.equal(
+        url.searchParams.get('mt'),
+        '8',
+        `${path} campaign media type`,
+      );
+    }
+  }
+  if (banner && provider) {
+    const affiliate = new URLSearchParams(banner.split('affiliate-data=')[1]);
+    assert.equal(affiliate.get('pt'), provider, `${path} banner provider`);
+    assert.match(
+      affiliate.get('ct') || '',
+      /^hailink_[a-z0-9_]{1,22}$/,
+      `${path} banner campaign`,
+    );
+    assert.equal(affiliate.get('mt'), '8', `${path} banner media type`);
+  }
   const internal = links.filter(
     (href) => href.startsWith('/') && !href.startsWith('//'),
   );
