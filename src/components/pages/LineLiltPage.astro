@@ -1,0 +1,222 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  kind: 'product' | 'support' | 'privacy';
+}
+const { locale, kind } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const base = '/products/linelilt';
+const titles = {
+  product: c('LineLilt: Reading Fluency', 'LineLilt：朗读小剧场'),
+  support: c('LineLilt Support', 'LineLilt 支持'),
+  privacy: c('LineLilt Privacy Policy', 'LineLilt 隐私政策'),
+};
+const descriptions = {
+  product: c(
+    'Read aloud in 12 original tiny plays. Practice phrasing, expression and same-scene take comparisons.',
+    '通过 12 篇原创短剧练习朗读、意群和表达，并在同一剧情中比较录音。',
+  ),
+  support: c(
+    'Parent help for recording, retries, 7-day Trial, Lifetime, backups and optional private iCloud.',
+    'LineLilt 家长支持：录音、改读、七天试用、买断、备份和可选私有 iCloud。',
+  ),
+  privacy: c(
+    'How LineLilt handles private voice recordings, custom text, optional Apple services, parent exports and support.',
+    'LineLilt 如何处理私人录音、自建文字、可选 Apple 服务、家长导出和支持。',
+  ),
+};
+const sections = {
+  product: [
+    [
+      'Take a role. Read with feeling.',
+      '选一个角色，读出感情。',
+      'LineLilt turns short reading practice into a tiny play. Choose Pip or Kit, hear the prerecorded partner, and record your lines one at a time. For children ages 6–8 who can already read short English sentences, with a grown-up helping them get started.',
+      'LineLilt 把短时朗读练习变成小小剧场。选择 Pip 或 Kit，听预录搭档，逐句录下自己的台词。适合已经能读简短英文句子的 6–8 岁儿童，首用由成人陪同。',
+    ],
+    [
+      'Hear both takes in the same scene',
+      '在同一剧情中听两个版本',
+      'Twelve original eight-line plays support punctuation, phrasing and expression. Optional phrase cues keep the words visible. Retry one line, compare the first and new take in the same partner context, choose a version, remove cues, then try an unheard line with help or skip available. These are practice actions, not automated ability scores.',
+      '12 篇原创八行短剧支持标点、意群和表达练习。可选意群提示保留原文；单句重录后，在同一搭档情境比较首次与新版本，自主选择，再撤提示、尝试未听过的新句，也可求助或跳过。这些是练习行为，不是自动能力评分。',
+    ],
+    [
+      'Your materials and your saved voices',
+      '自己的材料与保存的声音',
+      'Parent Studio supports two-role custom plays of 4–24 lines, partner recording, revisions, performance audio export and full backups. Recordings remain local by default; private iCloud sync starts off. No child accounts, ads, analytics, speech recognition or runtime AI. iPad-first, with full iPhone support on iOS/iPadOS 18 or later.',
+      'Parent Studio 支持 4–24 行双角色自建短剧、搭档录音、修订、作品音频导出和完整备份。录音默认本地保存，私有 iCloud 同步初始关闭。无儿童账号、广告、分析、语音识别或运行时 AI。以 iPad 为主，完整支持 iPhone，最低 iOS／iPadOS 18。',
+    ],
+    [
+      'A parent-activated trial, then one purchase',
+      '家长主动试用，再一次买断',
+      'Free download is planned for the US App Store. A parent can activate a full 7-day Trial through Apple or buy Lifetime access for US$6.99. Installation does not start the trial. No subscription or automatic charge; Apple displays the actual price before purchase. Saved works remain available for listening, export, backup, read-only restore and deletion after expiry. Family Sharing is not offered.',
+      '计划在美国 App Store 免费下载。家长可通过 Apple 主动启动 7-day Trial 完整试用，或以 US$6.99 一次买断 Lifetime。安装不会启动试用，无订阅或自动扣费，实际购买前以 Apple 显示价格为准。到期后仍可回听、导出、备份、只读恢复和删除已有作品。不提供家人共享。',
+    ],
+  ],
+  support: [
+    [
+      'Start in Stage',
+      '从 Stage 开始',
+      'Choose a play, role and reading goal. You can browse and listen to examples before activating access. A parent must explain recording and activate the trial or Lifetime before new practice recording. Listen to the partner, then manually start and stop your line. Saved means the audio and library record have been committed.',
+      '选择短剧、角色和朗读目标。激活前可浏览并听示范；新增练习录音前，家长须了解录音说明并开启试用或买断。先听搭档，再手动开始和结束自己的台词；Saved 表示音频与资料记录已提交保存。',
+    ],
+    [
+      'Retry, compare and save',
+      '重读、比较与保存',
+      'Your first valid take is kept. Record another take to compare A and B in the same scene; keep either, retry or leave the choice for later. Removing cues keeps the original words. New lines are not automatically demonstrated; Help and Skip are recorded as actions. You can save an unfinished play and return later. Examples are labeled and never substituted for missing child recordings.',
+      '保留首次有效录音，再录一次后在同一剧情比较 A/B，可任选、重试或稍后决定。撤提示保留原文，新句不会自动示范；Help 和 Skip 如实记录。可保存未完成作品以后继续，示范有明确标签，不替代缺失的儿童录音。',
+    ],
+    [
+      'Parent Studio, trial and restoration',
+      '家长区、试用与恢复',
+      'Complete the adult-reading gate to open Parent Studio. It relocks on leaving, backgrounding or session expiry. The trial lasts 168 hours from the original verified Apple transaction. Restore Purchases with the Apple Account used to activate or buy; restoration does not restart the trial or restore your recordings. Lifetime is planned at US$6.99 with no subscription. Purchase activation and restoration need Apple services; verified access is cached for offline practice.',
+      '完成成人阅读门禁进入 Parent Studio；离开、进入后台或会话到期会重新锁定。试用从原始已验证 Apple 交易起持续 168 小时；用原购买 Apple 账号 Restore Purchases，恢复不会重启试用，也不会恢复录音。Lifetime 计划价格 US$6.99，无订阅。激活和恢复需 Apple 服务，已验证权益缓存可用于离线练习。',
+    ],
+    [
+      'Microphone and interruptions',
+      '麦克风与中断',
+      'Recording requires microphone permission after the parent explanation. If denied, existing audio and examples remain available; use the parent-only Microphone settings link to review permission. Locking, backgrounding, a call or route change stops capture safely, and returning does not start it automatically. Check saved takes before trying again. Do not uninstall or reset the device to troubleshoot.',
+      '录音须在家长说明后取得麦克风权限。拒绝后仍可听已有音频与示范，通过家长区 Microphone settings 核对权限。锁屏、后台、来电或路由变化会安全停止录制，返回不会自动录音。重试前先查看已保存版本；不要为排查而卸载或重置设备。',
+    ],
+    [
+      'Backups, exports and private sync',
+      '备份、导出与私有同步',
+      'Export Play Audio creates a composed .m4a for a fully recorded role. Export Full Backup creates a .lineliltbackup file containing private text and voices; protect it and choose the recipient carefully. Import validates and previews before merging, with explicit confirmation to restore deleted material. Purchases and parent sessions are excluded. Private iCloud is optional and does not replace an independent backup; cloud deletion and local deletion are separate.',
+      'Export Play Audio 为已录完整的角色生成合成 .m4a；Export Full Backup 生成含私人文字和声音的 .lineliltbackup，请妥善保护并谨慎选择接收方。导入会校验、预览后合并，恢复已删材料需明确确认；备份不含购买和家长会话。私有 iCloud 可选，不能代替独立备份；云端与本地删除分开管理。',
+    ],
+    [
+      'Contact a grown-up support channel',
+      '由家长联系支持',
+      'Email the app version, device/iOS version and steps to reproduce. Do not send a child’s identity, voice, custom text, backup or purchase receipt unless you deliberately choose material needed for the issue. LineLilt never automatically attaches your library or recordings to support.',
+      '请邮件说明 App 版本、设备／系统和复现步骤。不要发送儿童身份、声音、自建文字、备份或购买收据，除非你主动选择解决问题所需的材料。LineLilt 不会自动附加资料库或录音。',
+    ],
+  ],
+  privacy: [
+    [
+      'Local library and manual recordings',
+      '本地资料与手动录音',
+      'LineLilt stores custom play text, scene revisions, role and goal choices, immutable voice takes, selected versions, practice actions and recovery/deletion records in private device storage. Microphone recording starts only after the parent explanation, system permission and a manual action, with visible controls. The app does not request a child’s real name, birthday, school, location, contacts or photos. Functional record IDs are not advertising or device identifiers.',
+      'LineLilt 在设备私有存储保存自建台词、短剧修订、角色与目标、不可变录音、选用版本、练习行为及恢复／删除记录。麦克风只在家长说明、系统授权和手动操作后启动，并有可见控制。App 不要求儿童真名、生日、学校、位置、通讯录或照片；功能记录 ID 不是广告或设备标识。',
+    ],
+    [
+      'Optional Apple private iCloud',
+      '可选 Apple 私有 iCloud',
+      'App sync is off by default. After a parent explicitly enables it, custom text, recordings, saved works, choices, functional events and deletion markers may be stored in that Apple Account’s CloudKit Private Database. LineLilt uses neither public nor shared CloudKit databases, invites or a developer-operated content server. Account availability is checked for sync. Local saving does not require sync; turning it off keeps existing copies. System iCloud/device backups are separate and may still include app data.',
+      'App 同步默认关闭。家长明确启用后，自建文字、录音、作品、选择、功能行为及删除标记可存于该 Apple 账号的 CloudKit Private Database。不使用公共或共享 CloudKit 数据库、邀请或开发者内容服务器；同步会核对账号可用性。本地保存不依赖同步，关闭保留现有副本。系统 iCloud／设备备份独立，仍可能包含 App 数据。',
+    ],
+    [
+      'Apple purchases and access cache',
+      'Apple 购买与权益缓存',
+      'Apple StoreKit handles the zero-price non-consumable 7-day Trial, Lifetime purchase, transaction verification and restoration. The app caches verified access facts in the device Keychain, outside user backups and app sync. Hailink Labs receives no payment-card information and operates no receipt server. Apple handles commerce accounts, transactions and diagnostics under its policies and settings.',
+      'Apple StoreKit 处理零价非消耗型 7-day Trial、Lifetime、交易验证与恢复。已验证权益事实保存在设备 Keychain，不进入用户备份或 App 同步。Hailink Labs 不接收支付卡信息，也不运营收据服务器；Apple 按其政策和设置处理商业账号、交易与诊断。',
+    ],
+    [
+      'Parent-chosen exports and backups',
+      '家长选择的导出与备份',
+      'Audio exports contain voices, and .lineliltbackup files contain private text, audio and functional metadata. Backups are readable JSON/base64 files and are not encrypted by LineLilt. A parent chooses the destination; file providers and recipients have their own practices. LineLilt cannot revoke external copies. Backups exclude purchases, credentials, parent sessions and sync consent. Imports validate integrity and limits before merging, without silently overwriting existing recordings.',
+      '音频导出含声音，.lineliltbackup 含私人文字、音频及功能元数据。备份是可读的 JSON／base64 文件，LineLilt 不对其加密。家长选择目的地，文件服务商与接收方按各自规则处理，App 无法撤回外部副本。备份排除购买、凭据、家长会话与同步同意；导入先校验完整性和容量限制后合并，不静默覆盖已有录音。',
+    ],
+    [
+      'Protection and deletion',
+      '保护与删除',
+      'Original files use iOS file protection in persistent app storage. Temporary exports/production files are excluded from system backup, while user originals remain eligible. Parents can delete saved works or custom materials; historical works may retain their own text/audio snapshots. Deletion markers coordinate enabled sync. Delete cloud copies turns sync off first and keeps local work. Turning sync off is not deletion. Other devices, exported files and system backups require separate management; the app does not promise independently verified end-to-end encryption or that voices can never leave a device.',
+      '原始文件在 App 持久目录使用 iOS 文件保护。临时导出／制作文件排除系统备份，用户原文件仍可由系统备份。家长可删除作品或自建材料；历史作品可能保留自己的文字／音频快照，删除标记协调已启用同步。Delete cloud copies 会先关同步并保留本地；关闭同步不等于删除。其他设备、导出文件及系统备份需另行管理；不承诺已独立验证的端到端加密或声音永不离机。',
+    ],
+    [
+      'No ads, analytics or runtime AI',
+      '无广告、分析或运行时 AI',
+      'No advertising, third-party analytics/crash-reporting SDK, tracking, child account, public community, speech recognition, automatic ability scoring or runtime AI is included. Prerecorded original scripts/audio are bundled; the offline narration tools and models stay on the production Mac. Functional practice records support local/private library features and are not uploaded as analytics. Parent gates protect adult actions but are not legal identity or parental-consent verification.',
+      '不包含广告、第三方分析／崩溃报告 SDK、跟踪、儿童账号、公共社区、语音识别、自动能力评分或运行时 AI。原创文字与预录音频内置，离线制作工具和模型留在制作 Mac。功能练习记录支持本地／私有资料功能，不作为分析上传；家长门禁保护成人操作，不等于法律身份或监护人同意验证。',
+    ],
+    [
+      'Parent support correspondence',
+      '家长支持邮件',
+      'If a parent emails support, we receive the email address, message and deliberately attached files to answer and resolve the issue. Do not send children’s identities, voices, backups, receipts or payment details. Our company mailbox uses Tencent business email; Hailink Labs in China may access support messages. We do not sell this information or use it for advertising. Correspondence is retained for no longer than 12 months after issue closure unless an ongoing issue or legal obligation requires longer. Parents may request access, correction or deletion by email; we may verify the relevant email address.',
+      '家长发支持邮件时，我们收到邮箱地址、正文和主动附加的文件，用于回答和解决问题。请勿发送儿童身份、声音、备份、收据或支付详情。公司邮箱使用腾讯企业邮箱，中国境内的 Hailink Labs 可能访问支持邮件。我们不出售资料或用于广告；问题关闭后保留不超过 12 个月，持续问题或法律义务要求更久时除外。家长可邮件请求访问、更正或删除，我们可能核实对应邮箱。',
+    ],
+    [
+      'This website and policy changes',
+      '本网站与政策变更',
+      'This website has no analytics, tracking scripts, accounts or contact forms. GitHub Pages processes technical requests such as IP addresses to deliver and protect the site. Material policy changes will be explained here with an updated effective date. Contact the company email below with privacy questions.',
+      '本网站无分析、跟踪脚本、账号或联系表单。GitHub Pages 为交付和保护网站处理 IP 地址等技术请求。重大政策变更会在此说明并更新生效日期；隐私问题请联系下方公司邮箱。',
+    ],
+  ],
+};
+---
+
+<Layout
+  locale={locale}
+  title={`${titles[kind]} | Hailink Labs`}
+  description={descriptions[kind]}
+>
+  <section class="page-intro policy-intro">
+    <p class="eyebrow">LineLilt</p>
+    <h1>{titles[kind]}</h1>
+    <p class="intro-copy">
+      {c('Take a role. Read with feeling.', '选一个角色，读出感情。')}
+    </p>
+    <p class="availability">
+      {c('Not yet available on the App Store.', '尚未在 App Store 提供。')}
+    </p>
+  </section>
+  <article class="policy prose">
+    {kind === 'privacy' && (
+      <>
+        <p>
+          {c(
+            'Effective October 4, 2026. LineLilt is developed by Hailink Labs, the brand of ',
+            '生效日期：2026 年 10 月 4 日。LineLilt 由 Hailink Labs 开发，品牌所属主体为 ',
+          )}
+          {companyName(locale)}
+          {c('', '。')}
+        </p>
+        {locale === 'zh-CN' && (
+          <aside class="review-notice">
+            中文版本方便阅读，如有差异以{' '}
+            <a href={`${base}/privacy`} lang="en" hreflang="en">
+              英文版本
+            </a>{' '}
+            为准。
+          </aside>
+        )}
+      </>
+    )}
+    {sections[kind].map(([enTitle, zhTitle, enText, zhText]) => (
+      <>
+        <h2>{c(enTitle, zhTitle)}</h2>
+        <p>{c(enText, zhText)}</p>
+      </>
+    ))}
+    {kind === 'privacy' && (
+      <p>
+        <a href="https://www.apple.com/legal/privacy/">
+          {c('Apple Privacy Policy', 'Apple 隐私政策')}
+        </a>{' '}
+        ·{' '}
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+          {c('GitHub Privacy Statement', 'GitHub 隐私声明')}
+        </a>
+      </p>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=LineLilt%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a href={localizedPath(base, locale)}>
+        {c('About LineLilt', '了解 LineLilt')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath(`${base}/support`, locale)}>
+        {c('Support', '支持')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath(`${base}/privacy`, locale)}>
+        {c('Privacy policy', '隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>

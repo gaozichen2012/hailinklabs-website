@@ -13,7 +13,7 @@ for (const prefix of ['', '/zh']) {
     await expect(page.locator('#family')).toContainText('StoryUndo');
     await expect(page.locator('#family')).toContainText('ClueMend');
     await page.locator(`header a[href="${prefix}/support"]`).click();
-    await expect(page.locator('.support-directory a')).toHaveCount(16);
+    await expect(page.locator('.support-directory a')).toHaveCount(17);
     await page
       .locator('.support-directory a')
       .filter({ hasText: 'HearDraw' })

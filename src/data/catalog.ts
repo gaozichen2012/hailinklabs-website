@@ -14,6 +14,21 @@ export const catalog: readonly CatalogProduct[] = [
   ...products,
   ...familyProducts,
   {
+    slug: 'linelilt',
+    name: 'LineLilt',
+    storeName: 'LineLilt: Reading Fluency',
+    subtitle: ['Read Aloud in Tiny Plays', '在小短剧中大声朗读'],
+    summary: ['Take a role. Read with feeling.', '选一个角色，读出感情。'],
+    value: [
+      'Retry a line. Hear both takes in the scene.',
+      '重读一句，在剧情里听两个版本。',
+    ],
+    description: [
+      'For children who can read short English sentences: 12 original plays, optional phrase cues, same-scene comparisons and parent-created materials.',
+      '适合已能读简短英文句子的儿童：12 篇原创短剧、可选意群提示、同情境比较和家长自建材料。',
+    ],
+  },
+  {
     slug: 'affixhop',
     name: 'AffixHop',
     storeName: 'AffixHop: Word Meaning Games',
@@ -100,6 +115,7 @@ export const categories: readonly {
       'storyundo',
       'cluemend',
       'affixhop',
+      'linelilt',
     ],
   },
 ];
