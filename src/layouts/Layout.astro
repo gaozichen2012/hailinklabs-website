@@ -14,6 +14,7 @@ import {
   structuredData,
   serializeStructuredData,
   searchTitle,
+  searchDescription,
 } from '../data/seo';
 import {
   translator,
@@ -30,7 +31,7 @@ interface Props {
 const {
   locale = 'en',
   title: requestedTitle,
-  description,
+  description: requestedDescription,
   noindex: requestedNoindex = false,
 } = Astro.props;
 const path =
@@ -47,6 +48,7 @@ const alternate = localizedPath(canonicalPath(englishPath), otherLocale);
 const noindex = requestedNoindex || isAlias(path);
 const canonical = new URL(canonicalPath(path), site.url).href;
 const title = searchTitle(path, requestedTitle);
+const description = searchDescription(path, requestedDescription);
 const resource = resourceForPath(englishPath);
 const appSlug =
   resource?.app ||

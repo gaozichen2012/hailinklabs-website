@@ -102,7 +102,11 @@ for (const name of names.filter((name) => name.endsWith('.html'))) {
     !get('script').some((n) => attr(n, 'type') !== 'application/ld+json'),
     `${path} executable JS`,
   );
-  assert(attr(meta('description'), 'content')?.length > 25, path);
+  const description = attr(meta('description'), 'content') || '';
+  assert(
+    description.length > 25 && description.length <= 160,
+    `${path} description length`,
+  );
   assert.equal(
     attr(get('meta', (n) => attr(n, 'property') === 'og:url')[0], 'content'),
     origin + canonicalPath(path),

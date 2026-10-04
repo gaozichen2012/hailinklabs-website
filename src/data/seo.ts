@@ -17,6 +17,21 @@ const searchTitles: Record<string, string> = {
 export const searchTitle = (path: string, fallback: string) =>
   searchTitles[path] || fallback;
 
+const searchDescriptions: Record<string, string> = {
+  '/products/hybridloop':
+    'Time and record your own hybrid workouts on iPhone with automatic timing, large controls and optional voice commands. Keep your routine customizable.',
+  '/guides/contractors':
+    'Practical guides and free templates for T&M tickets, extra work and tool handovers. Keep job records separate from equipment movements.',
+  '/guides/animal-records':
+    'Organize puppy observations and calf birth records with clear identities, dates and units. Explore free logs and guides for reliable handovers.',
+  '/guides/heat-press':
+    'Keep heat press setup and wash-test records tied to materials, equipment and sample IDs. Explore free templates without universal setting claims.',
+  '/guides/small-business':
+    'Prepare repeat-customer invoices and estimates with clear job details. Explore guides and free templates for solo service businesses.',
+};
+export const searchDescription = (path: string, fallback: string) =>
+  searchDescriptions[path] || fallback;
+
 export function socialImage(englishPath: string, locale: Locale) {
   const product = catalog.find(
     (item) =>

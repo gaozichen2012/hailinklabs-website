@@ -9,7 +9,7 @@
       "承包商工时与材料工单模板"
     ],
     "description": [
-      "A time and materials ticket records the work performed, labor hours, materials used, equipment time and on-site acknowledgment for a specific job. Start with the project, customer and date, then itemize actual quantities rather than writing one unexplained total. Use the free printable ticket below, keep supporting notes together and clarify what the signer is acknowledging before sharing it.",
+      "Download a free time and materials ticket template. Record labor, materials, equipment, work details and on-site acknowledgment in PDF or CSV.",
       "工时与材料工单用于记录某项工作的内容、人工工时、材料用量、设备用时和现场签认。先填写项目、客户和日期，再逐项记录实际数量，不要只写一个无法解释的总额。使用下方免费模板，将相关说明保存在一起，并在分享前明确签认人确认的是哪些事项。"
     ],
     "answer": [
@@ -78,7 +78,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "how-to-document-extra-work",
@@ -90,7 +90,7 @@
       "如何记录施工项目中的额外工作"
     ],
     "description": [
-      "Document extra work by separating the original scope from the additional task, recording who requested it, when it happened and what was actually done. Keep labor, materials, equipment and supporting photos under one job reference. Record unresolved questions explicitly and share the record promptly. A work ticket helps organize facts; it is not a substitute for the project’s approval or contract process.",
+      "Document extra work with a dated work description, quantities, photos and on-site acknowledgment. Keep changes traceable without promising payment.",
       "记录额外工作时，应区分原范围与新增任务，写明谁提出、发生时间以及实际完成的内容。将人工、材料、设备和相关照片放在同一项目引用下。未解决的问题明确注明，并及时分享记录。工单有助于整理事实，但不能替代项目本身的审批或合同流程。"
     ],
     "answer": [
@@ -156,7 +156,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "what-to-include-in-a-tm-ticket",
@@ -168,7 +168,7 @@
       "工时与材料工单应该包含什么？"
     ],
     "description": [
-      "Include the job identity, date, work description, labor entries, material quantities, equipment usage, notes and a clearly scoped acknowledgment in a T&M ticket. Every number needs a unit, and each entry should identify what it belongs to. Keep factual records separate from estimated costs or unresolved rates. Use a final review checklist so missing names, dates and quantities are caught before the record is shared.",
+      "Review the fields a T&M ticket needs: project, date, work, labor, materials, equipment and acknowledgment. Use the checklist before sharing.",
       "工时与材料工单应包含项目标识、日期、工作描述、人工、材料数量、设备用量、备注，以及范围明确的签认。每个数字都要带单位，每条记录都应能对应到实际工作。将事实记录与预估成本或未确认单价区分开，分享前用清单检查遗漏的姓名、日期和数量。"
     ],
     "answer": [
@@ -237,7 +237,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "equipment-checkout-log-template",
@@ -249,7 +249,7 @@
       "小团队器材借出归还记录模板"
     ],
     "description": [
-      "An equipment checkout log records which asset left, who took it, when it is expected back and what condition it was in at handover. Start a new transaction for every loan and close it with the actual return time and condition. The free template below works on paper or in a spreadsheet; use consistent asset IDs so repeated loans remain distinguishable.",
+      "Use a free equipment checkout log to record asset IDs, borrowers, due dates, return condition and sign-off. Print it or download PDF and CSV.",
       "器材借出记录应写明借出的具体资产、借用人、预计归还时间和交接状态。每次借用新建一条记录，归还时补上实际时间与状态。下方免费模板可以打印或导入电子表格；使用一致的资产编号，让同一器材的多次借用能够区分。"
     ],
     "answer": [
@@ -315,7 +315,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "tool-sign-out-sheet",
@@ -324,7 +324,7 @@
     "template": "equipment-checkout-log",
     "title": ["Tool Sign-Out Sheet for Small Teams", "小团队工具领用签认表"],
     "description": [
-      "A tool sign-out sheet pairs a named borrower with an identifiable tool and an expected return. Add a checkout time, accessories, outgoing condition and a place for return sign-off. Make the sheet easy to use where tools are handed over, and use a new entry for each loan. A signature records the handover described on the sheet; it should not imply an unstated responsibility agreement.",
+      "Organize tool sign-outs with identifiable tools, borrowers, checkout times, expected returns and condition notes. Use a free paper or CSV sheet.",
       "工具领用签认表应将具体借用人与可识别的工具对应，并记录预计归还时间、领用时间、附件、借出状态及归还签认。将表放在实际交接处，每次借用新建记录。签名仅记录表上说明的交接，不应暗示未写明的责任约定。"
     ],
     "answer": [
@@ -390,7 +390,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "how-to-track-borrowed-tools",
@@ -402,7 +402,7 @@
       "如何追踪员工借用的工具"
     ],
     "description": [
-      "Track borrowed tools with stable asset IDs, named borrowers and an open checkout record for each loan. Record the due date and close the record only when the tool is checked back in. Review outstanding loans at a predictable interval and contact the borrower using your team’s existing process. Keep exceptions visible, including missing accessories or damage, instead of treating every return as complete.",
+      "Track borrowed tools with stable asset IDs, dated handovers, named borrowers and return checks. Keep missing or damaged items traceable.",
       "追踪员工借用工具时，使用固定资产编号、实名借用人，并为每次借用建立未关闭记录。写明预计归还日期，仅在实际检查归还后关闭。定期查看未归还清单，通过团队已有流程联系借用人。附件缺失或损坏等异常应保持可见，不要把每次归还都视为完整。"
     ],
     "answer": [
@@ -471,7 +471,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "puppy-weight-log-template",
@@ -480,7 +480,7 @@
     "template": "puppy-weight-log",
     "title": ["Puppy Weight Log Template", "幼犬体重记录模板"],
     "description": [
-      "A puppy weight log pairs a stable puppy identifier with a date, time, measured weight and unit. Keep entries in order and use the same unit so later readings can be compared without guessing. Add feeding or care observations in separate notes. The printable and CSV templates below organize records; they do not interpret growth, diagnose a condition or suggest a treatment.",
+      "Use a free puppy weight log with animal IDs, dates, weights, units and observation notes. Print or download PDF and CSV; leave diagnosis to a vet.",
       "幼犬体重记录将固定识别标记与日期、时间、实测体重和单位对应。按时间顺序填写，并使用一致单位，避免日后比较时猜测。喂养和护理观察单独写入备注。下方打印与 CSV 模板仅用于整理记录，不解释生长情况、诊断问题或建议治疗。"
     ],
     "answer": [
@@ -549,7 +549,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "newborn-puppy-record-keeping",
@@ -558,7 +558,7 @@
     "template": "puppy-weight-log",
     "title": ["How to Keep Newborn Puppy Records", "如何保存新生幼犬记录"],
     "description": [
-      "Keep newborn puppy records by assigning each puppy a clear identifier and recording dated observations under that identity. Separate measured weights, feeding or care notes and general litter notes so a later reader can tell what was observed and when. Use one consistent format for handovers between carers. Record keeping supports communication; it does not replace a veterinarian’s assessment or provide care instructions.",
+      "Organize newborn puppy observations by litter, puppy ID and date. Keep weight and care notes traceable, with medical decisions left to a veterinarian.",
       "为每只新生幼犬设置清晰标识，将带日期的观察记录归入对应幼犬。区分实测体重、喂养与护理备注和整窝备注，让后来阅读的人能知道观察内容和时间。照护者交接时使用一致格式。记录有助于沟通，但不替代兽医评估，也不提供护理操作指导。"
     ],
     "answer": [
@@ -627,7 +627,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "puppy-litter-care-record",
@@ -636,7 +636,7 @@
     "template": "puppy-weight-log",
     "title": ["Puppy Litter Care Record Template", "整窝幼犬护理记录模板"],
     "description": [
-      "A puppy litter care record brings individual puppy observations and litter-wide notes into one dated handover format. Record who made each entry, identify the puppy when an event concerns only one animal and keep shared litter notes clearly separate. The free worksheet can be used for care observations and measurements. It contains no diagnosis, dosing schedule or treatment recommendation.",
+      "Keep puppy litter care records with individual IDs, dated observations and clear handover notes. Use a free log without adding treatment advice.",
       "整窝幼犬护理记录将个体观察与整窝备注放入带日期的交接格式。每条注明记录人，只涉及一只幼犬时写明标识，并与整窝事项区分。免费工作表可记录护理观察和测量，不包含诊断、剂量安排或治疗建议。"
     ],
     "answer": [
@@ -705,7 +705,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "calving-record-book-template",
@@ -714,7 +714,7 @@
     "template": "calving-record-sheet",
     "title": ["Calving Record Book Template", "产犊记录簿模板"],
     "description": [
-      "A calving record book connects a season, dam and calf with the birth date, time and recorded observations. Use stable IDs, state weight units and keep unknown values explicit. Start with the printable sheet below or use its CSV for a seasonal register. Keep the original observations when correcting a record. This template organizes birth records and does not provide veterinary instructions.",
+      "Download a free calving record sheet for season, dam and calf IDs, birth details and notes. Print it or use PDF and CSV to organize observations.",
       "产犊记录簿将产犊季、母牛与犊牛对应到出生日期、时间及观察。使用固定编号，注明体重单位，未知值明确标记。可使用下方打印表或 CSV 季度登记；更正时保留原始观察。模板只整理出生记录，不提供兽医操作指导。"
     ],
     "answer": [
@@ -783,7 +783,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "calf-birth-record-sheet",
@@ -792,7 +792,7 @@
     "template": "calving-record-sheet",
     "title": ["Calf Birth Record Sheet", "犊牛出生记录表"],
     "description": [
-      "A calf birth record sheet captures one birth with enough identification to link the calf to its dam and season. Record the known date and time, sex, weight with units if measured, birth type and factual notes. Mark incomplete details clearly for later review. The free sheet provides a consistent record format; it does not define a veterinary assessment or prescribe what to do at a birth.",
+      "Record calf births with dam and calf IDs, birth date, sex, weight and calving notes. Use a free sheet; leave health interpretation to a veterinarian.",
       "犊牛出生记录表记录一次出生，并提供足够标识，将犊牛与母牛和产犊季关联。填写已知日期、时间、性别、实测体重及单位、出生类型和事实备注。未完整的信息明确注明，供后续核对。免费表提供一致格式，不作兽医评估，也不指导生产时的操作。"
     ],
     "answer": [
@@ -864,7 +864,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "offline-calving-records",
@@ -876,7 +876,7 @@
       "如何在无网络时保存产犊记录"
     ],
     "description": [
-      "Keep calving records without internet by preparing the season and animal IDs in advance, using a local record or printed sheet at the birth site and backing up later. Capture known facts immediately, flag missing details and reconcile paper entries carefully when returning to the office. CalvingPocket stores calving records on the device; keep a full exported backup before changing phones.",
+      "Keep identifiable, dated calving records on paper or locally on an iPhone without internet. Review entries and retain a separate backup.",
       "无网络时，可提前准备产犊季与动物编号，在现场使用本地记录或打印表，稍后备份。及时记录已知事实，标注缺失信息，回到办公室后仔细核对纸面转录。CalvingPocket 将产犊记录保存在设备上，换机前应保留完整导出备份。"
     ],
     "answer": [
@@ -942,7 +942,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "heat-press-settings-log",
@@ -951,7 +951,7 @@
     "template": "heat-press-settings-log",
     "title": ["Heat Press Settings Log Template", "热压参数记录模板"],
     "description": [
-      "A heat press settings log records the exact material, blank, transfer and machine settings used for a test, together with the observed result. Include temperature units, time, pressure description and peel method, then link any later wash test to that sample. Use the free log below to preserve your own tested settings. Parameters must follow the relevant material, transfer and equipment manufacturer instructions.",
+      "Record heat press material, transfer, temperature, time, pressure and peel method in a free log. Follow the actual material and equipment instructions.",
       "热压参数记录应写明测试的材料、坯件、转印产品、机器参数及观察结果。温度注明单位，时间、压力描述和揭膜方式完整记录，后续水洗测试关联同一试样。下方免费模板用于保留自己实际测试的参数；设置必须遵循相应材料、转印产品及设备厂商说明。"
     ],
     "answer": [
@@ -1020,7 +1020,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "wash-test-log-for-heat-press",
@@ -1029,7 +1029,7 @@
     "template": "heat-press-settings-log",
     "title": ["Heat Press Wash Test Log", "热压水洗测试记录"],
     "description": [
-      "A heat press wash test log connects a finished sample to its original settings and records what happened after washing. Identify the sample, record the wash conditions and cycle count, then describe visible changes consistently. Keep photos and observations linked to that sample rather than comparing unrelated items. Follow the product’s care instructions; a home test record does not establish a certification or universal durability claim.",
+      "Track heat press wash tests by sample ID, tested settings, wash conditions and observed results. Use a free log without implying certification.",
       "热压水洗测试日志将成品试样与原始参数关联，记录清洗后的实际情况。写明试样、清洗条件和次数，统一描述可见变化。照片和观察始终关联同一试样，不将不相关物品直接比较。遵循产品护理说明；家庭测试记录不等于认证，也不能证明通用耐久性。"
     ],
     "answer": [
@@ -1101,7 +1101,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "how-to-record-heat-press-settings",
@@ -1110,7 +1110,7 @@
     "template": "heat-press-settings-log",
     "title": ["How to Record Heat Press Settings", "如何记录热压参数"],
     "description": [
-      "Record heat press settings by naming the sample and equipment, identifying the blank and transfer, and writing down the actual temperature, time, pressure setting and peel method. Add units and record any changed variable. Keep results and later wash observations connected to the same sample. Consult the applicable manufacturer instructions before testing; do not copy an unlabeled temperature from an unrelated setup.",
+      "Record heat press settings with units, material and equipment references, peel timing and sample IDs. Keep setup and wash observations separate.",
       "记录热压参数时，标明试样与设备、坯件与转印产品，填写实际温度、时间、压力设置和揭膜方式。注明单位以及改变的变量。结果和后续水洗观察都关联同一试样。测试前查阅适用厂商说明，不复制不相关设置中未注明单位的温度。"
     ],
     "answer": [
@@ -1182,7 +1182,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "invoice-template-repeat-customers",
@@ -1194,7 +1194,7 @@
       "重复服务客户发票模板"
     ],
     "description": [
-      "An invoice template for repeat customers saves the customer and service layout while leaving every new date, invoice number, quantity and rate open for review. Copy the structure, not an old invoice’s assumptions. Use the free worksheet below to list line items and notes, verify amounts and give each issued invoice a distinct identifier. It provides a practical record format, not tax or legal advice.",
+      "Use a free repeat-customer invoice template to record the current service, quantities, rates and totals. Recheck each visit before issuing an invoice.",
       "回头客发票模板保留客户与服务结构，但每次日期、编号、数量和单价仍需重新核对。复制结构，不沿用旧发票的假设。下方免费工作表可列出明细与备注，核对金额并为每张发票设置不同编号。它提供实用记录格式，不提供税务或法律建议。"
     ],
     "answer": [
@@ -1260,7 +1260,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "repeat-invoice-workflow",
@@ -1269,7 +1269,7 @@
     "template": "repeat-customer-invoice",
     "title": ["How to Create Repeat Invoices Faster", "如何更快创建重复发票"],
     "description": [
-      "Create repeat invoices faster by reusing a checked customer and service draft, then reviewing only the details that can change on each visit. Update the date, invoice number, work description, quantity, rate and recipient before confirmation. Keep the previous invoice intact and save the new one as a distinct record. Reuse reduces typing; it should never skip the final review of the actual work.",
+      "Reuse customer and service details while reviewing each new job, date, quantity and rate. Keep drafts separate from confirmed invoices.",
       "复用已核对的客户与服务草稿，可以减少重复开票输入，但每次服务会变化的详情仍需检查。确认前更新日期、编号、工作描述、数量、单价和收件人。保留前一张发票，新发票单独保存。复用减少输入，不能省略对实际工作的最终核对。"
     ],
     "answer": [
@@ -1338,7 +1338,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04"
+    "updatedAt": "2026-10-05"
   },
   {
     "slug": "estimate-to-invoice-workflow",
@@ -1350,7 +1350,7 @@
       "个人服务经营者的估价单转发票流程"
     ],
     "description": [
-      "An estimate-to-invoice workflow starts with proposed work and ends with a reviewed record of what was actually supplied. Keep the estimate identifiable, check changes to scope, quantity and rate, then create a distinct invoice with its own date and number. Preserve the original estimate and explain differences in notes. The workflow organizes documents; it does not decide contract enforceability or tax treatment.",
+      "Move from an identifiable estimate to a distinct invoice. Review supplied work, scope, quantities and rates, and preserve the original estimate.",
       "估价单转发票流程从拟议工作开始，以已实际提供服务的核对记录结束。保留可识别的估价单，检查范围、数量与单价变化，创建含独立日期和编号的发票。原估价单保留，差异用备注说明。流程用于整理文件，不判断合同效力或税务处理。"
     ],
     "answer": [

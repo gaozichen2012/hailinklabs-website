@@ -5,6 +5,10 @@ import { resourceForPath } from './resources';
 const pageUpdates: Record<string, string> = {
   '/products/hybridloop': '2026-10-05',
   '/products/rulesprout': '2026-10-05',
+  '/guides/contractors': '2026-10-05',
+  '/guides/animal-records': '2026-10-05',
+  '/guides/heat-press': '2026-10-05',
+  '/guides/small-business': '2026-10-05',
 };
 export const lastModified = (path: string) => {
   const english = path.replace(/^\/zh/, '') || '/';
