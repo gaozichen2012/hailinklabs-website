@@ -104,7 +104,7 @@ for (const path of paths) {
           (!['/contact', '/products/samejob/support'].includes(path) ||
             body.includes('gaozichen@hailinklabs.com')) &&
           body.includes(
-            `rel="canonical" href="${url.replace(/(\/(?:zh\/)?)(storyundo|cluemend|affixhop)(?=\/|$)/, '$1products/$2')}"`,
+            `rel="canonical" href="${origin}${path.replace(/^((?:\/zh)?)(\/(?:storyundo|cluemend|affixhop))(?=\/|$)/, '$1/products$2')}"`,
           ) &&
           body.includes('/brand/hailink-logo.svg') &&
           !(
