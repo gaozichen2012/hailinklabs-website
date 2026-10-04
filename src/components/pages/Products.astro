@@ -35,6 +35,7 @@ const t = translator(locale);
     </p>
   </section>
   <nav
+    id="product-categories"
     class="category-links"
     aria-label={locale === 'en' ? 'Product categories' : '产品分类'}
   >
@@ -45,16 +46,13 @@ const t = translator(locale);
       </a>
     ))}
   </nav>
-  {categories.map((category, index) => (
+  {categories.map((category) => (
     <section
       class="catalog-group"
       id={category.id}
       aria-labelledby={`${category.id}-title`}
     >
       <div class="catalog-heading">
-        <span class="catalog-index" aria-hidden="true">
-          0{index + 1}
-        </span>
         <h2 id={`${category.id}-title`}>{copy(category.title, locale)}</h2>
         <span class="catalog-count">
           {locale === 'en'
@@ -70,6 +68,10 @@ const t = translator(locale);
           />
         ))}
       </div>
+      <a class="text-link category-return" href="#product-categories">
+        {locale === 'en' ? 'Back to categories' : '返回产品分类'}{' '}
+        <span aria-hidden="true">↑</span>
+      </a>
     </section>
   ))}
 </Layout>

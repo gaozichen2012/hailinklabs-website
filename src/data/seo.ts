@@ -10,9 +10,8 @@ export function socialImage(englishPath: string, locale: Locale) {
     (item) =>
       englishPath === `/products/${item.slug}` ||
       englishPath.startsWith(`/products/${item.slug}/`) ||
-      (['cluemend', 'affixhop'].includes(item.slug) &&
-        (englishPath === `/${item.slug}` ||
-          englishPath.startsWith(`/${item.slug}/`))),
+      englishPath === `/${item.slug}` ||
+      englishPath.startsWith(`/${item.slug}/`),
   );
   const screenshot = product && ['samejob', 'gearproof'].includes(product.slug);
   return {

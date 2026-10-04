@@ -95,6 +95,11 @@ for (const englishPath of englishRoutes) {
         ...(['/products', '/products/tmproof'].includes(englishPath)
           ? ['https://apps.apple.com/us/app/tmproof-t-m-tickets/id6814884804']
           : []),
+        ...(['/products', '/products/pressrecipe'].includes(englishPath)
+          ? [
+              'https://apps.apple.com/us/app/pressrecipe-heat-press-log/id6816618604',
+            ]
+          : []),
         ...(['/products', '/products/calvingpocket'].includes(englishPath)
           ? [
               'https://apps.apple.com/us/app/calvingpocket-calf-records/id6815103146',

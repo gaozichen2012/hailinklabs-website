@@ -14,9 +14,7 @@ for (const prefix of ['', '/zh']) {
           `https://hailinklabs.com${path}`,
         );
         await expect(page.locator('.page-intro .availability')).toHaveText(
-          prefix
-            ? '尚未在 App Store 提供。'
-            : 'Not yet available on the App Store.',
+          prefix ? '下载链接暂未提供。' : 'Download link not yet available.',
         );
         await expect(
           page.locator('a[href^="https://apps.apple.com"]'),

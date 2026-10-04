@@ -178,10 +178,6 @@ h1 {
   line-height: 1.5;
   letter-spacing: 0.025em;
 }
-.showcase-heading > :last-child {
-  opacity: 0.65;
-  font-variant-numeric: tabular-nums;
-}
 .showcase-screens {
   display: grid;
   grid-template-columns: 1.08fr 0.9fr;
@@ -241,11 +237,6 @@ h1 {
 .collection-strip a:last-child {
   border-right: 0;
 }
-.collection-index {
-  color: var(--muted);
-  font-size: 10px;
-  font-variant-numeric: tabular-nums;
-}
 .collection-arrow {
   margin-left: auto;
   color: var(--green);
@@ -302,20 +293,13 @@ h1 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-.card-index {
-  font-size: 94px;
-  line-height: 1;
-  letter-spacing: -0.07em;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-  color: #55765f;
+  justify-content: center;
 }
 .card-art-name {
-  font-size: 11px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
   color: #365941;
 }
 .card-art-rule {
@@ -342,9 +326,11 @@ h1 {
 .has-screen .card-art {
   background: #173d2c;
 }
-.has-screen .card-index,
 .has-screen .card-art-name {
   color: #dae8d4;
+  max-width: calc(100% - 126px);
+  font-size: 22px;
+  overflow-wrap: anywhere;
 }
 .card-art img {
   position: absolute;
@@ -390,6 +376,11 @@ h1 {
 .category-links {
   gap: 10px;
   margin-bottom: 64px;
+  scroll-margin-top: 28px;
+}
+.category-return {
+  margin-top: 24px;
+  font-size: 14px;
 }
 .category-links a {
   gap: 18px;
@@ -433,11 +424,6 @@ h1 {
 }
 .catalog-heading > .catalog-count {
   margin-left: auto;
-}
-.catalog-index {
-  color: var(--green);
-  font-size: 11px;
-  font-variant-numeric: tabular-nums;
 }
 .company-section .section-body {
   max-width: 680px;
@@ -963,9 +949,6 @@ h1 {
     font-size: 11px;
     gap: 6px;
     padding-inline: 8px;
-  }
-  .collection-index {
-    font-size: 9px;
   }
   .product-intro .matrix-title {
     font-size: 34px;

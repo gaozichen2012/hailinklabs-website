@@ -5,6 +5,12 @@ for (const prefix of ['', '/zh']) {
     page,
   }) => {
     await page.goto(prefix || '/');
+    await expect(
+      page.locator('.card-index, .collection-index, .catalog-index'),
+    ).toHaveCount(0);
+    await expect(page.locator('.showcase-heading')).not.toContainText(
+      /\d+\s*\/\s*\d+/,
+    );
     await expect(page.locator('.hero-showcase img')).toHaveCount(2);
     for (const image of await page.locator('.hero-showcase img').all()) {
       await expect(image).toBeVisible();
@@ -37,8 +43,11 @@ for (const prefix of ['', '/zh']) {
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL(new RegExp(`${prefix}/products$`));
     await expect(page.locator('.matrix-card')).toHaveCount(17);
+    await expect(page.locator('.card-index, .catalog-index')).toHaveCount(0);
     await page.locator('.category-links a[href="#family"]').click();
     await expect(page.locator('#family')).toBeInViewport();
+    await page.locator('#family .category-return').click();
+    await expect(page.locator('#product-categories')).toBeInViewport();
   });
 
   test(`${prefix || 'English'} studio reading text maintains accessible contrast`, async ({

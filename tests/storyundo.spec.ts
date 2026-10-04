@@ -9,12 +9,16 @@ for (const prefix of ['', '/zh']) {
         const path = `${prefix}${base}${kind}`;
         expect((await page.goto(path))?.status()).toBe(200);
         await expect(page.locator('h1')).toContainText('StoryUndo');
+        await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+          'content',
+          'https://hailinklabs.com/social/storyundo.png',
+        );
         await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
           'href',
           `https://hailinklabs.com${path}`,
         );
         await expect(page.locator('.page-intro .availability')).toContainText(
-          prefix ? '尚未在 App Store 公开提供' : 'Not publicly available',
+          prefix ? '下载链接暂未提供' : 'Download link not yet available',
         );
         await expect(
           page.locator('a[href^="https://apps.apple.com"]'),

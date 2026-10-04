@@ -93,8 +93,8 @@ for (const path of paths) {
           (!storyUndo ||
             (body.includes(
               path.startsWith('/zh')
-                ? '即将推出，目前处于内部测试，尚未在 App Store 公开提供。'
-                : 'Coming soon — internal testing. Not publicly available on the App Store.',
+                ? '下载链接暂未提供。'
+                : 'Download link not yet available.',
             ) &&
               !/href=["']https:\/\/apps\.apple\.com(?:\/|["'])/i.test(body)))));
     results.push({

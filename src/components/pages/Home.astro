@@ -53,7 +53,6 @@ const href = (path: string) => localizedPath(path, locale);
         <span>
           {locale === 'en' ? 'Made for the everyday' : '为日常而设计'}
         </span>
-        <span aria-hidden="true">01 / {catalog.length}</span>
       </div>
       <div class="showcase-screens">
         <div class="showcase-screen screen-primary">
@@ -97,11 +96,8 @@ const href = (path: string) => localizedPath(path, locale);
     class="collection-strip"
     aria-label={locale === 'en' ? 'Explore by everyday need' : '按日常需求浏览'}
   >
-    {categories.map((category, index) => (
+    {categories.map((category) => (
       <a href={`${href('/products')}#${category.id}`}>
-        <span class="collection-index" aria-hidden="true">
-          0{index + 1}
-        </span>
         <span>{copy(category.title, locale)}</span>
         <span class="collection-arrow" aria-hidden="true">
           ↗

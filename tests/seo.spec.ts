@@ -9,39 +9,26 @@ for (const prefix of ['', '/zh']) {
   }) => {
     await page.goto(`${prefix}/products`);
     await expect(page.locator('.availability')).toHaveCount(17);
-    await expect(page.locator('.availability.is-available')).toHaveCount(5);
-    await expect(page.locator('.store-download')).toHaveCount(5);
+    await expect(page.locator('.availability.is-available')).toHaveCount(6);
+    await expect(page.locator('.store-download')).toHaveCount(6);
     for (const product of catalog) {
       const card = page.locator('.matrix-card').filter({
         has: page.getByRole('heading', { name: product.name, exact: true }),
       });
       await expect(card.locator('.availability')).toHaveText(
-        product.slug === 'storyundo'
+        listings[product.slug]
           ? prefix
-            ? '内部测试 · 尚未公开上架'
-            : 'Internal testing · No public App Store release'
-          : listings[product.slug]
-            ? prefix
-              ? '已在美国 App Store 上架'
-              : 'Available on the US App Store'
-            : [
-                  'rulesprout',
-                  'tilltinker',
-                  'cluemend',
-                  'affixhop',
-                  'linelilt',
-                ].includes(product.slug)
-              ? prefix
-                ? '尚未在 App Store 提供'
-                : 'Not yet available on the App Store'
-              : prefix
-                ? '等待 App Store 审核'
-                : 'Awaiting App Store review',
+            ? '已在美国 App Store 上架'
+            : 'Available on the US App Store'
+          : prefix
+            ? '下载链接暂未提供'
+            : 'Download link not yet available',
       );
     }
     for (const [slug, id, price] of [
       ['tmproof', '6814884804', '$9.99'],
       ['calvingpocket', '6815103146', '$19.99'],
+      ['pressrecipe', '6816618604', '$9.99'],
     ]) {
       const link = page.locator(`.matrix-card a[href$="/id${id}"]`);
       await expect(link).toBeVisible();
@@ -97,7 +84,7 @@ for (const prefix of ['', '/zh']) {
         expect(app.offers.description).toContain(
           product.slug === 'samejob'
             ? '$29.99'
-            : ['tmproof', 'litterround'].includes(product.slug)
+            : ['tmproof', 'litterround', 'pressrecipe'].includes(product.slug)
               ? '$9.99'
               : '$19.99',
         );

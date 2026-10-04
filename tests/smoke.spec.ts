@@ -44,9 +44,7 @@ for (const path of routes) {
     );
     if (storyUndo) {
       await expect(page.locator('.page-intro .availability')).toHaveText(
-        chinese
-          ? '即将推出，目前处于内部测试，尚未在 App Store 公开提供。'
-          : 'Coming soon — internal testing. Not publicly available on the App Store.',
+        chinese ? '下载链接暂未提供。' : 'Download link not yet available.',
       );
       await expect(
         page.locator('a[href^="https://apps.apple.com"]'),

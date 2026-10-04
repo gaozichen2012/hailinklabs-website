@@ -132,50 +132,39 @@ export const listings: Record<
   samejob: {
     url: 'https://apps.apple.com/us/app/invoice-maker-samejob/id6814700434',
     ios: 17,
-    verified: '2026-09-30',
+    verified: '2026-10-04',
   },
   gearproof: {
     url: 'https://apps.apple.com/us/app/gearproof-equipment-checkout/id6814847023',
     ios: 18,
-    verified: '2026-09-30',
+    verified: '2026-10-04',
   },
   litterround: {
     url: 'https://apps.apple.com/us/app/litterround-puppy-tracker/id6814862263',
     ios: 18,
-    verified: '2026-09-30',
+    verified: '2026-10-04',
   },
   tmproof: {
     url: 'https://apps.apple.com/us/app/tmproof-t-m-tickets/id6814884804',
     ios: 18,
-    verified: '2026-09-30',
+    verified: '2026-10-04',
+  },
+  pressrecipe: {
+    url: 'https://apps.apple.com/us/app/pressrecipe-heat-press-log/id6816618604',
+    ios: 18,
+    verified: '2026-10-04',
   },
   calvingpocket: {
     url: 'https://apps.apple.com/us/app/calvingpocket-calf-records/id6815103146',
     ios: 18,
-    verified: '2026-09-30',
+    verified: '2026-10-04',
   },
 };
-// Review status was confirmed by the owner on 2026-09-30; only public listings
-// justify a download link. Recheck before updating these publication labels.
-const awaitingReview = new Set([
-  'hybridloop',
-  'pressrecipe',
-  'turnmath',
-  'botsteps',
-  'heardraw',
-  'minutesprout',
-]);
+// A missing verified link is not proof of an app's review or release status.
 export const availability = (slug: string): Copy =>
-  slug === 'storyundo'
-    ? [
-        'Internal testing · No public App Store release',
-        '内部测试 · 尚未公开上架',
-      ]
-    : listings[slug]
-      ? ['Available on the US App Store', '已在美国 App Store 上架']
-      : awaitingReview.has(slug)
-        ? ['Awaiting App Store review', '等待 App Store 审核']
-        : ['Not yet available on the App Store', '尚未在 App Store 提供'];
+  listings[slug]
+    ? ['Available on the US App Store', '已在美国 App Store 上架']
+    : ['Download link not yet available', '下载链接暂未提供'];
 export const highlights: Record<
   string,
   { price: Copy; data: Copy; seo: Copy }
@@ -248,6 +237,20 @@ export const highlights: Record<
     seo: [
       'LitterRound — Puppy Weight and Care Records',
       'LitterRound — 幼犬称重与护理记录',
+    ],
+  },
+  pressrecipe: {
+    price: [
+      '7-day full trial · $9.99 lifetime · No subscription',
+      '7 天完整试用 · $9.99 终身买断 · 无订阅',
+    ],
+    data: [
+      'Save your tested settings on this iPhone, with optional private iCloud sync. Keep a full backup before moving devices.',
+      '测试参数保存在这台 iPhone 上，可选私有 iCloud 同步。换机前请保留完整备份。',
+    ],
+    seo: [
+      'PressRecipe — Heat Press Settings and Wash Test Log',
+      'PressRecipe — 热压参数与水洗测试记录',
     ],
   },
   turnmath: {
