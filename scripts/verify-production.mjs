@@ -26,7 +26,23 @@ const media = JSON.parse(
     'utf8',
   ),
 );
+const searchConfig = JSON.parse(
+  await readFile('src/data/search-config.json', 'utf8'),
+);
 const paths = [
+  ...['storyundo', 'cluemend', 'affixhop'].flatMap((slug) =>
+    ['', '/zh'].flatMap((prefix) =>
+      ['', '/support', '/privacy'].map(
+        (suffix) => `${prefix}/${slug}${suffix}`,
+      ),
+    ),
+  ),
+  ...(await readdir(new URL('../public/downloads/', import.meta.url))).map(
+    (file) => `/downloads/${file}`,
+  ),
+  '/llms.txt',
+  '/indexnow-manifest.json',
+  `/${searchConfig.indexNowKey}.txt`,
   ...businessPaths,
   '/404',
   ...media.assets.map((asset) => asset.file.replace(/^public/, '')),
@@ -74,6 +90,10 @@ for (const path of paths) {
       (!asset ||
         createHash('sha256').update(bytes).digest('hex') === asset.sha256) &&
       new URL(r.url).origin === origin &&
+      (!path.endsWith('.pdf') ||
+        r.headers.get('content-type')?.includes('application/pdf')) &&
+      (!path.endsWith('.csv') ||
+        r.headers.get('content-type')?.includes('text/csv')) &&
       (!page ||
         (body.includes(
           path.startsWith('/zh')
@@ -83,7 +103,9 @@ for (const path of paths) {
           body.includes(`lang="${path.startsWith('/zh') ? 'zh-CN' : 'en'}"`) &&
           (!['/contact', '/products/samejob/support'].includes(path) ||
             body.includes('gaozichen@hailinklabs.com')) &&
-          body.includes(`rel="canonical" href="${url}"`) &&
+          body.includes(
+            `rel="canonical" href="${url.replace(/(\/(?:zh\/)?)(storyundo|cluemend|affixhop)(?=\/|$)/, '$1products/$2')}"`,
+          ) &&
           body.includes('/brand/hailink-logo.svg') &&
           !(
             storyUndo

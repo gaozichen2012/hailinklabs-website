@@ -1,3 +1,4 @@
+import { canonicalPath } from '../src/data/route-policy';
 import { test, expect } from '@playwright/test';
 
 for (const prefix of ['', '/zh']) {
@@ -15,7 +16,7 @@ for (const prefix of ['', '/zh']) {
         );
         await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
           'href',
-          `https://hailinklabs.com${path}`,
+          `https://hailinklabs.com${canonicalPath(path)}`,
         );
         await expect(page.locator('.page-intro .availability')).toContainText(
           prefix ? '下载链接暂未提供' : 'Download link not yet available',
@@ -30,14 +31,14 @@ for (const prefix of ['', '/zh']) {
         await page.locator('.language-switch').click();
         const otherPrefix = prefix ? '' : '/zh';
         await expect(page).toHaveURL(
-          new RegExp(`${otherPrefix}${base}${kind}$`),
+          new RegExp(`${otherPrefix}${canonicalPath(base)}${kind}$`),
         );
         await page
-          .locator(`main a[href="${otherPrefix}${base}/support"]`)
+          .locator(`main a[href="${otherPrefix}/products/storyundo/support"]`)
           .click();
         await expect(page.locator('h1')).toContainText('StoryUndo');
         await page
-          .locator(`main a[href="${otherPrefix}${base}/privacy"]`)
+          .locator(`main a[href="${otherPrefix}/products/storyundo/privacy"]`)
           .click();
         await expect(page.locator('article.policy')).toContainText(
           prefix ? 'off by default' : '默认关闭',
@@ -120,7 +121,7 @@ for (const prefix of ['', '/zh']) {
     if (prefix) {
       await expect(policy.locator('a[hreflang="en"]')).toHaveAttribute(
         'href',
-        '/storyundo/privacy',
+        '/products/storyundo/privacy',
       );
     }
   });

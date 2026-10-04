@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { canonicalPath, isAlias } from '../src/data/route-policy';
 import { routes, site } from '../src/data/site';
 
 for (const path of routes) {
@@ -26,7 +27,7 @@ for (const path of routes) {
     await expect(page.locator('footer')).toContainText(legalName);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       'href',
-      new URL(path, site.url).href,
+      new URL(canonicalPath(path), site.url).href,
     );
     await expect(page.locator('meta[name="description"]')).toHaveAttribute(
       'content',
@@ -34,7 +35,7 @@ for (const path of routes) {
     );
     await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
       'content',
-      new URL(path, site.url).href,
+      new URL(canonicalPath(path), site.url).href,
     );
     const storyUndo = /\/(?:products\/)?storyundo(?:\/|$)/.test(path);
     await expect(page.locator('body')).not.toContainText(
@@ -95,9 +96,9 @@ test('404, sitemap, robots, content policy and mail links', async ({
   ).toHaveAttribute('content', /default-src 'none'/);
   const sitemap = await request.get('/sitemap.xml');
   expect(sitemap.status()).toBe(200);
-  for (const path of routes)
+  for (const path of routes.filter((route) => !isAlias(route)))
     expect(await sitemap.text()).toContain(
-      `<loc>${new URL(path, site.url).href}</loc>`,
+      `<loc>${new URL(canonicalPath(path), site.url).href}</loc>`,
     );
   expect(await (await request.get('/robots.txt')).text()).toContain(
     'Sitemap: https://hailinklabs.com/sitemap.xml',

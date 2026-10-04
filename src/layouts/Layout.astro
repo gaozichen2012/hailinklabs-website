@@ -1,6 +1,12 @@
 ---
 import '../styles/global.css';
 import '../styles/studio.css';
+import '../styles/resources.css';
+import { canonicalPath, isAlias } from '../data/route-policy';
+import { resourceForPath } from '../data/resources';
+import { listings } from '../data/catalog';
+import { smartAppBanner } from '../data/app-store';
+import searchConfig from '../data/search-config.json';
 import BrandLogo from '../components/BrandLogo.astro';
 import { englishRoutes, site } from '../data/site';
 import {
@@ -20,7 +26,12 @@ interface Props {
   description: string;
   noindex?: boolean;
 }
-const { locale = 'en', title, description, noindex = false } = Astro.props;
+const {
+  locale = 'en',
+  title,
+  description,
+  noindex: requestedNoindex = false,
+} = Astro.props;
 const path =
   Astro.url.pathname
     .replace(/\.html$/, '')
@@ -31,14 +42,42 @@ const englishPath =
   locale === 'zh-CN' ? path.replace(/^\/zh/, '') || '/' : path;
 const hasAlternate = englishRoutes.some((route) => route === englishPath);
 const otherLocale = locale === 'en' ? 'zh-CN' : 'en';
-const alternate = localizedPath(englishPath, otherLocale);
-const canonical = new URL(path, site.url).href;
+const alternate = localizedPath(canonicalPath(englishPath), otherLocale);
+const noindex = requestedNoindex || isAlias(path);
+const canonical = new URL(canonicalPath(path), site.url).href;
+const resource = resourceForPath(englishPath);
+const appSlug =
+  resource?.app ||
+  Object.keys(listings).find((slug) => englishPath === `/products/${slug}`);
+const banner =
+  appSlug &&
+  smartAppBanner(
+    appSlug,
+    englishPath.startsWith('/guides/')
+      ? 'guide'
+      : englishPath.startsWith('/templates/')
+        ? 'template'
+        : 'product',
+    resource?.slug || '',
+  );
+const googleVerification =
+  import.meta.env.GOOGLE_SITE_VERIFICATION || searchConfig.googleVerification;
+const bingVerification =
+  import.meta.env.BING_SITE_VERIFICATION || searchConfig.bingVerification;
+if (googleVerification && !/^[A-Za-z0-9_-]{20,}$/.test(googleVerification))
+  throw new Error('Invalid Search Console verification');
+if (bingVerification && !/^[a-f0-9]{32}$/i.test(bingVerification))
+  throw new Error('Invalid Bing verification');
 const preview = socialImage(englishPath, locale);
 const schema = noindex
   ? undefined
   : structuredData(englishPath, canonical, locale);
 const nav = [
   { href: localizedPath('/products', locale), label: t('Products') },
+  {
+    href: localizedPath('/guides', locale),
+    label: locale === 'en' ? 'Guides' : '指南',
+  },
   {
     href: localizedPath('/support', locale),
     label: locale === 'en' ? 'Support' : '支持',
@@ -60,6 +99,13 @@ const nav = [
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {banner && <meta name="apple-itunes-app" content={banner} />}
+    {googleVerification && (
+      <meta name="google-site-verification" content={googleVerification} />
+    )}
+    {bingVerification && (
+      <meta name="msvalidate.01" content={bingVerification} />
+    )}
     <meta name="theme-color" content="#ffffff" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -84,7 +130,12 @@ const nav = [
       </>
     )}
     {noindex && <meta name="robots" content="noindex, follow" />}
-    <meta property="og:type" content="website" />
+    <meta
+      property="og:type"
+      content={
+        englishPath.startsWith('/guides/') && resource ? 'article' : 'website'
+      }
+    />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -177,6 +228,9 @@ const nav = [
           {nav.map(({ href, label }) => (
             <a href={href}>{label}</a>
           ))}
+          <a href={localizedPath('/templates', locale)}>
+            {locale === 'en' ? 'Free Templates' : '免费模板'}
+          </a>
           <a href={localizedPath('/contact', locale)}>{t('Contact')}</a>
         </nav>
       </div>

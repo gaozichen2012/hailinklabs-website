@@ -68,3 +68,30 @@ git push --recurse-submodules=check origin main
 ```
 
 Do not put private contents in public commit messages or CI output. Credentials and raw private evidence belong outside both repositories.
+
+## Guides, free templates and search
+
+`src/data/guides.json` and `templates.json` feed static English/Chinese routes,
+topic hubs, product resource links, Article/Breadcrumb schema and real App Store
+banners. Each published app starts with three distinct guides and a suitable free
+resource. HTML, English PDFs and bilingual CSVs require no account or tracking.
+
+After substantial content changes, update the explicit content dates; regenerate
+PDF/CSV assets with `python3 scripts/generate-templates.py` in an authoring
+environment with reportlab and visually review the PDFs. Checked-in assets and
+`template-assets.json` let builds verify source freshness without Python.
+
+Run `npm run seo:check` after building and `npm run audit:quality` for Lighthouse
+reports. `npm run check` retains the full four-project Playwright suite. Optional
+`SITE_VISUAL_AUDIT=1 npm test` captures every page at both release widths.
+
+IndexNow snapshots the previous live content manifest before deployment and
+submits only changed indexable URLs after verified deployment. Receipts are saved
+in artifacts. A temporary service failure leaves Pages online; retain the original
+baseline when retrying. Acceptance does not prove indexing.
+
+Optional real public verification/provider values are configured in
+`src/data/search-config.json` or GitHub repository variables
+`GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION`, `APPLE_PROVIDER_TOKEN`.
+Do not use sample values. Normal App Store URLs remain active until a real Apple
+provider token exists. See [external platform actions](docs/SEO_EXTERNAL_ACTIONS.md).

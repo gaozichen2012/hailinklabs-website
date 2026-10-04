@@ -1,3 +1,4 @@
+import { buildAppStoreUrl } from '../src/data/app-store';
 import { expect, test } from '@playwright/test';
 import { catalog, listings } from '../src/data/catalog';
 import { routes, site } from '../src/data/site';
@@ -30,14 +31,14 @@ for (const prefix of ['', '/zh']) {
       ['calvingpocket', '6815103146', '$19.99'],
       ['pressrecipe', '6816618604', '$9.99'],
     ]) {
-      const link = page.locator(`.matrix-card a[href$="/id${id}"]`);
+      const link = page.locator(`.matrix-card a[href*="/id${id}"]`);
       await expect(link).toBeVisible();
       await page
         .locator(`.matrix-card a[href="${prefix}/products/${slug}"]`)
         .click();
       await expect(
         page.locator('.product-intro .store-download a'),
-      ).toHaveAttribute('href', listings[slug].url);
+      ).toHaveAttribute('href', buildAppStoreUrl({ slug, source: 'product' })!);
       await expect(page.locator('.product-intro .price-summary')).toContainText(
         price,
       );
@@ -47,7 +48,7 @@ for (const prefix of ['', '/zh']) {
       await page.locator('.language-switch').click();
       await expect(
         page.locator('.product-intro .store-download a'),
-      ).toHaveAttribute('href', listings[slug].url);
+      ).toHaveAttribute('href', buildAppStoreUrl({ slug, source: 'product' })!);
       await page.goBack();
       await expect(page).toHaveURL(new RegExp(`${prefix}/products/${slug}$`));
       await page.goBack();
@@ -103,6 +104,7 @@ for (const prefix of ['', '/zh']) {
 test('social previews cover every route and resolve to real 1200 × 630 PNGs', async ({
   request,
 }) => {
+  test.setTimeout(120_000);
   const images = new Set<string>();
   for (const path of routes) {
     const response = await request.get(path);
@@ -140,13 +142,14 @@ test('organization data is scoped and JSON-LD remains inert', async ({
     const schema = JSON.parse(
       await page.locator('script[type="application/ld+json"]').innerText(),
     );
-    expect(schema['@graph']).toHaveLength(1);
+    expect(schema['@graph']).toHaveLength(
+      path === '/' || path === '/zh' ? 2 : 1,
+    );
     expect(schema['@graph'][0]['@type']).toBe('Organization');
     expect(schema['@graph'][0].legalName).toBe(site.legalNameZh);
     expect(schema['@graph'][0].alternateName).toBe(site.legalName);
   }
   for (const path of [
-    '/products',
     '/products/tmproof/support',
     '/zh/products/samejob/privacy',
     '/404',

@@ -1,0 +1,159 @@
+[
+  {
+    "slug": "time-and-materials-ticket",
+    "app": "tmproof",
+    "title": ["Time and Materials Ticket Template", "工时与材料工单模板"],
+    "description": [
+      "A printable T&M ticket with labor, materials, equipment and on-site acknowledgment, plus a spreadsheet-ready CSV.",
+      "可打印的工时与材料工单，涵盖人工、材料、设备及现场签认，并提供可导入电子表格的 CSV。"
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04",
+    "fields": [
+      ["Date", "日期"],
+      ["Project", "项目"],
+      ["Customer", "客户"],
+      ["Work description", "工作描述"],
+      ["Labor: person, hours, rate", "人工：人员、工时、单价"],
+      ["Materials: item, quantity, unit, cost", "材料：项目、数量、单位、成本"],
+      ["Equipment: item, duration, rate", "设备：项目、用时、单价"],
+      ["Notes", "备注"],
+      ["Acknowledgment scope", "签认范围"],
+      ["Signer name / role", "签认人姓名／角色"],
+      ["Signature / date", "签名／日期"]
+    ],
+    "note": [
+      "Use additional sheets for itemized work. This record is not a contract or a guarantee of payment. Define what the acknowledgment confirms.",
+      "明细较多时使用附页。这是记录工具，不是合同或付款保证；请明确签认确认的事项。"
+    ]
+  },
+  {
+    "slug": "equipment-checkout-log",
+    "app": "gearproof",
+    "title": ["Equipment Checkout Log Template", "器材借出归还记录模板"],
+    "description": [
+      "Track the asset, borrower, expected return, actual return and condition without an account or registration.",
+      "无需账号或注册，即可记录器材编号、借用人、预计及实际归还时间、状态和交接签认。"
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04",
+    "fields": [
+      ["Equipment", "器材"],
+      ["Asset ID", "资产编号"],
+      ["Borrower", "借用人"],
+      ["Checked out: date / time", "借出日期／时间"],
+      ["Expected return", "预计归还"],
+      ["Returned: date / time", "实际归还日期／时间"],
+      ["Condition out / in", "借出／归还状态"],
+      ["Missing / damaged notes", "缺失／损坏备注"],
+      ["Sign-off", "交接签认"]
+    ],
+    "note": [
+      "Use one record for each checkout. Keep past transactions when an item is borrowed again.",
+      "每次借出使用一条记录，同一器材再次借出时保留此前交接历史。"
+    ]
+  },
+  {
+    "slug": "puppy-weight-log",
+    "app": "litterround",
+    "title": ["Puppy Weight Log Template", "幼犬体重记录模板"],
+    "description": [
+      "A simple puppy identification, date, weight and care-notes sheet in printable and spreadsheet formats.",
+      "提供可打印及电子表格格式，记录幼犬标识、日期、体重、喂养与护理备注，方便统一整理每次观察。"
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04",
+    "fields": [
+      ["Puppy", "幼犬"],
+      ["Identifier", "识别标记"],
+      ["Date / time", "日期／时间"],
+      ["Weight", "体重"],
+      ["Weight unit", "体重单位"],
+      ["Feeding / care notes", "喂养／护理备注"],
+      ["Notes", "备注"]
+    ],
+    "note": [
+      "Record observations only. This log does not diagnose illness or recommend treatment. Discuss health concerns with a veterinarian.",
+      "仅记录观察情况。本表不诊断疾病，也不提供治疗建议；健康问题请联系兽医。"
+    ]
+  },
+  {
+    "slug": "calving-record-sheet",
+    "app": "calvingpocket",
+    "title": ["Calving Record Sheet", "产犊记录表"],
+    "description": [
+      "Record season, dam and calf IDs, birth details and observations on paper or in a spreadsheet.",
+      "在纸面或电子表格中记录产犊季、母牛与犊牛编号、出生详情及观察，便于日后核对和整理。"
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04",
+    "fields": [
+      ["Season", "产犊季"],
+      ["Dam ID", "母牛编号"],
+      ["Calf ID", "犊牛编号"],
+      ["Birth date / time", "出生日期／时间"],
+      ["Sex", "性别"],
+      ["Birth weight / unit", "出生体重／单位"],
+      ["Calving ease: observed description", "产犊难易：观察描述"],
+      ["Birth type", "出生类型"],
+      ["Notes", "备注"]
+    ],
+    "note": [
+      "Use your existing record definitions; identify unknown values explicitly. This is a record sheet, not veterinary guidance.",
+      "沿用已有记录定义，未知值明确注明。本表仅用于记录，不提供兽医诊疗指导。"
+    ]
+  },
+  {
+    "slug": "heat-press-settings-log",
+    "app": "pressrecipe",
+    "title": ["Heat Press Settings Log Template", "热压参数记录模板"],
+    "description": [
+      "Record material, blank, transfer, actual settings and wash-test results without invented universal temperatures.",
+      "记录材料、坯件、转印类型、实际参数和水洗测试结果；不提供虚构的通用最佳温度，方便复核自己的试样。"
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04",
+    "fields": [
+      ["Material", "材料"],
+      ["Blank", "坯件"],
+      ["Transfer type", "转印类型"],
+      ["Temperature / unit", "温度／单位"],
+      ["Time / unit", "时间／单位"],
+      ["Pressure: machine setting", "压力：机器设置"],
+      ["Peel", "揭膜方式"],
+      ["Wash test: conditions / date", "水洗测试：条件／日期"],
+      ["Result", "结果"],
+      ["Notes", "备注"]
+    ],
+    "note": [
+      "Follow the material, transfer and equipment manufacturer instructions. Record your actual settings; this sheet supplies no recommended temperature.",
+      "遵循材料、转印产品与设备厂商的说明，记录实际参数；本表不提供建议温度。"
+    ]
+  },
+  {
+    "slug": "repeat-customer-invoice",
+    "app": "samejob",
+    "title": ["Repeat Customer Invoice Template", "回头客发票模板"],
+    "description": [
+      "An invoice worksheet for recurring service customers with quantity, rate, amount, date and invoice number.",
+      "面向重复服务客户的发票工作表，包含服务描述、数量、单价、金额、日期及发票编号，便于逐次核对。"
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04",
+    "fields": [
+      ["Customer", "客户"],
+      ["Service", "服务"],
+      ["Description", "描述"],
+      ["Quantity", "数量"],
+      ["Rate / currency", "单价／币种"],
+      ["Amount / currency", "金额／币种"],
+      ["Date", "日期"],
+      ["Invoice number", "发票编号"],
+      ["Notes", "备注"]
+    ],
+    "note": [
+      "Recheck quantities, rates and customer details for every invoice. This worksheet provides no tax or legal advice.",
+      "每张发票均重新核对数量、单价和客户信息。本表不提供税务或法律建议。"
+    ]
+  }
+]

@@ -1,3 +1,4 @@
+import { canonicalPath } from '../src/data/route-policy';
 import { test, expect } from '@playwright/test';
 
 for (const prefix of ['', '/zh']) {
@@ -11,7 +12,7 @@ for (const prefix of ['', '/zh']) {
         await expect(page.locator('h1')).toContainText('ClueMend');
         await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
           'href',
-          `https://hailinklabs.com${path}`,
+          `https://hailinklabs.com${canonicalPath(path)}`,
         );
         await expect(page.locator('.page-intro .availability')).toHaveText(
           prefix ? '下载链接暂未提供。' : 'Download link not yet available.',
@@ -29,7 +30,7 @@ for (const prefix of ['', '/zh']) {
         );
         await page.locator('.language-switch').click();
         await expect(page).toHaveURL(
-          new RegExp(`${prefix ? '' : '/zh'}${base}${kind}$`),
+          new RegExp(`${prefix ? '' : '/zh'}${canonicalPath(base)}${kind}$`),
         );
         await page.waitForLoadState('load');
         for (const width of [320, 768]) {

@@ -1,0 +1,95 @@
+{
+  "sourceSha256": "c03d1ef96f03c82a82fcf4eb60f702408e7db6fef9b5092ed2f8b7196d496089",
+  "assets": [
+    {
+      "file": "/downloads/time-and-materials-ticket.pdf",
+      "sha256": "d742445abac4d71ad6e78eacc4e137cf80a8b5f702e70e0d22d709834e53ed1e",
+      "bytes": 2647
+    },
+    {
+      "file": "/downloads/time-and-materials-ticket.csv",
+      "sha256": "7f0c62ed44ce1cde53ada8ae830a6321781868136d6e6f9a1becd416d4ccdab1",
+      "bytes": 318
+    },
+    {
+      "file": "/downloads/time-and-materials-ticket-zh.csv",
+      "sha256": "feac083f05b786fdacc66c918d08a7ce26c2c62e9fd926157e5c1b4b4ae67082",
+      "bytes": 319
+    },
+    {
+      "file": "/downloads/equipment-checkout-log.pdf",
+      "sha256": "8eaf0b388bc95dd9da76016f3d80e0d795aba8b3592f95f45032bf4e042693ff",
+      "bytes": 2491
+    },
+    {
+      "file": "/downloads/equipment-checkout-log.csv",
+      "sha256": "b40b06f49d1470f594aa748fa813dc75edf1c6a1c4aea89f8edcb85cc0b8122c",
+      "bytes": 236
+    },
+    {
+      "file": "/downloads/equipment-checkout-log-zh.csv",
+      "sha256": "a83dc2cc2e8f5cdd5fcc7aa9f35a76b19fb32d034276cfaa7a7c529b70fa5309",
+      "bytes": 243
+    },
+    {
+      "file": "/downloads/puppy-weight-log.pdf",
+      "sha256": "75848e6473113cb130752680fee2daf5a938c39b2cb8f7a67680ffb1abb8225a",
+      "bytes": 2445
+    },
+    {
+      "file": "/downloads/puppy-weight-log.csv",
+      "sha256": "a30b746473be32c625af1ec1952b832186152ff1acf95966de00c85d24b01b12",
+      "bytes": 148
+    },
+    {
+      "file": "/downloads/puppy-weight-log-zh.csv",
+      "sha256": "41a48446bd879c67f7c28a949aba7bf1f05c1fba317c691f19f3b81a906f64ec",
+      "bytes": 158
+    },
+    {
+      "file": "/downloads/calving-record-sheet.pdf",
+      "sha256": "a01f88f3b7cbc1b148ed0018337daf8762165298159b4bcbb5f685c74128d4af",
+      "bytes": 2504
+    },
+    {
+      "file": "/downloads/calving-record-sheet.csv",
+      "sha256": "dd5e812904b98f345f6149d30f0c9b60703e17a7b7d428f171c66c5583b83703",
+      "bytes": 209
+    },
+    {
+      "file": "/downloads/calving-record-sheet-zh.csv",
+      "sha256": "9f27da21002130e0fff1aa4e7f174d458baa2b806c51caf93e1c847f02d49a7e",
+      "bytes": 228
+    },
+    {
+      "file": "/downloads/heat-press-settings-log.pdf",
+      "sha256": "f95d2c60ae69af32edb2ec125468a415802542e2750569e18be32e208929ab3e",
+      "bytes": 2568
+    },
+    {
+      "file": "/downloads/heat-press-settings-log.csv",
+      "sha256": "562774f0b3e96c4815e661e8c05fb9be37b9965da9a025c925346f1342947cf9",
+      "bytes": 236
+    },
+    {
+      "file": "/downloads/heat-press-settings-log-zh.csv",
+      "sha256": "25e4849f56cb9ae8e9ac4a6b4bf689f8e1f23319427a575b9bb9bc01a06dc097",
+      "bytes": 242
+    },
+    {
+      "file": "/downloads/repeat-customer-invoice.pdf",
+      "sha256": "17d6e3398646790c0ffebf8360af38db606c99e68368748886763f26304092d8",
+      "bytes": 2463
+    },
+    {
+      "file": "/downloads/repeat-customer-invoice.csv",
+      "sha256": "cf3e5aa10646cc4a10c19beef057f0b1074b6abf251401b110653f549d8bd3e9",
+      "bytes": 191
+    },
+    {
+      "file": "/downloads/repeat-customer-invoice-zh.csv",
+      "sha256": "170c2ac3101dc8f6abed5d0540cde928fbfa0f1bc19f1faa895c7c3eca6482d4",
+      "bytes": 180
+    }
+  ]
+}

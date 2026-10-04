@@ -1,18 +1,21 @@
 ---
+import { buildAppStoreUrl, type CampaignSource } from '../data/app-store';
 import { listings, highlights } from '../data/catalog';
 import { copy } from '../data/products';
 import type { Locale } from '../data/i18n';
 interface Props {
   locale: Locale;
   slug: string;
+  source?: CampaignSource;
+  content?: string;
 }
-const { locale, slug } = Astro.props;
+const { locale, slug, source = 'product', content = '' } = Astro.props;
 const listing = listings[slug];
 ---
 
 {listing && (
   <div class="store-download">
-    <a class="text-link" href={listing.url}>
+    <a class="text-link" href={buildAppStoreUrl({ slug, source, content })}>
       {locale === 'en'
         ? 'Download on the US App Store'
         : '前往美国 App Store 下载'}

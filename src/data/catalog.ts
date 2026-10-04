@@ -179,7 +179,7 @@ export const highlights: Record<
       '工时与材料工单、照片和签认保存在本机，换机前请导出备份。',
     ],
     seo: [
-      'TMProof — Time and Materials Tickets for Extra Work',
+      'TMProof — Time and Materials Ticket App for Contractors',
       'TMProof — 额外工作的工时与材料工单',
     ],
   },
@@ -193,7 +193,7 @@ export const highlights: Record<
       '产犊与犊牛记录保存在本机，换机前请导出完整备份。',
     ],
     seo: [
-      'CalvingPocket — Calving and Calf Records',
+      'CalvingPocket — Offline Calving and Calf Record App',
       'CalvingPocket — 产犊与犊牛记录',
     ],
   },
@@ -221,7 +221,7 @@ export const highlights: Record<
       '记录保存在这台 iPhone 上。换机前请导出备份；不支持自动云同步。',
     ],
     seo: [
-      'GearProof — Equipment Checkout for Small Teams',
+      'GearProof — Equipment Checkout App for Small Teams',
       'GearProof — 小团队器材借出与归还记录',
     ],
   },
@@ -235,7 +235,7 @@ export const highlights: Record<
       '幼犬护理记录保存在本机，换机前请导出完整备份。',
     ],
     seo: [
-      'LitterRound — Puppy Weight and Care Records',
+      'LitterRound — Puppy Weight and Care Record App',
       'LitterRound — 幼犬称重与护理记录',
     ],
   },
@@ -249,7 +249,7 @@ export const highlights: Record<
       '测试参数保存在这台 iPhone 上，可选私有 iCloud 同步。换机前请保留完整备份。',
     ],
     seo: [
-      'PressRecipe — Heat Press Settings and Wash Test Log',
+      'PressRecipe — Heat Press Settings and Wash Test Log App',
       'PressRecipe — 热压参数与水洗测试记录',
     ],
   },

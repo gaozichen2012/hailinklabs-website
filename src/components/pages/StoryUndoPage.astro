@@ -8,9 +8,7 @@ interface Props {
 }
 const { locale, kind } = Astro.props;
 const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
-const base = Astro.url.pathname.includes('/products/storyundo')
-  ? '/products/storyundo'
-  : '/storyundo';
+const base = '/products/storyundo';
 const titles = {
   product: c('StoryUndo: Math Word Problems', 'StoryUndo 数学应用题'),
   support: c('StoryUndo Support', 'StoryUndo 支持'),

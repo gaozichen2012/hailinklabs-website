@@ -8,9 +8,7 @@ interface Props {
 }
 const { locale, kind } = Astro.props;
 const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
-const base = Astro.url.pathname.includes('/products/cluemend')
-  ? '/products/cluemend'
-  : '/cluemend';
+const base = '/products/cluemend';
 const titles = {
   product: c('ClueMend: Talk & Build', 'ClueMend：描述与搭建'),
   support: c('ClueMend Support', 'ClueMend 支持'),

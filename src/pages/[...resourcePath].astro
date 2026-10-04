@@ -1,0 +1,11 @@
+---
+import ResourcePage from '../components/pages/ResourcePage.astro';
+import { resourceRoutes } from '../data/resources';
+export function getStaticPaths() {
+  return resourceRoutes.map((route) => ({
+    params: { resourcePath: route.slice(1) },
+  }));
+}
+---
+
+<ResourcePage locale="en" />

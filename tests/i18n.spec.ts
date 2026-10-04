@@ -1,3 +1,6 @@
+import { canonicalPath, isAlias } from '../src/data/route-policy';
+import { resourceForPath } from '../src/data/resources';
+import { listings } from '../src/data/catalog';
 import { createHash } from 'node:crypto';
 import { expect, test } from '@playwright/test';
 import { englishRoutes, routes, site } from '../src/data/site';
@@ -8,7 +11,7 @@ for (const englishPath of englishRoutes) {
     for (const locale of ['en', 'zh-CN'] as const) {
       const path = localizedPath(englishPath, locale);
       const otherLocale = locale === 'en' ? 'zh-CN' : 'en';
-      const otherPath = localizedPath(englishPath, otherLocale);
+      const otherPath = localizedPath(canonicalPath(englishPath), otherLocale);
       await page.goto(path);
       await expect(page).toHaveURL(
         new RegExp(`${path.replaceAll('/', '\\/')}$`),
@@ -41,17 +44,24 @@ for (const englishPath of englishRoutes) {
       );
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
         'href',
-        site.url + path,
+        site.url + canonicalPath(path),
       );
-      for (const [lang, target] of [
-        ['en', englishPath],
-        ['zh-CN', localizedPath(englishPath, 'zh-CN')],
-        ['x-default', englishPath],
-      ]) {
-        await expect(
-          page.locator(`link[rel="alternate"][hreflang="${lang}"]`),
-        ).toHaveAttribute('href', site.url + target);
-      }
+      if (isAlias(path)) {
+        await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+          'content',
+          'noindex, follow',
+        );
+        await expect(page.locator('link[rel="alternate"]')).toHaveCount(0);
+      } else
+        for (const [lang, target] of [
+          ['en', englishPath],
+          ['zh-CN', localizedPath(englishPath, 'zh-CN')],
+          ['x-default', englishPath],
+        ]) {
+          await expect(
+            page.locator(`link[rel="alternate"][hreflang="${lang}"]`),
+          ).toHaveAttribute('href', site.url + target);
+        }
       const switcher = page.locator('header .language-switch');
       await expect(switcher).toHaveText(locale === 'en' ? '中文' : 'English');
       await expect(switcher).toHaveAttribute('href', otherPath);
@@ -68,7 +78,7 @@ for (const englishPath of englishRoutes) {
       // All business links stay in the current language, except the explicit switch
       // and the Chinese policy's link to its authoritative English version.
       for (const link of links) {
-        if (link === otherPath) continue;
+        if (link === otherPath || link.startsWith('/downloads/')) continue;
         expect(
           locale === 'en' ? !link.startsWith('/zh') : link.startsWith('/zh'),
         ).toBe(true);
@@ -78,7 +88,9 @@ for (const englishPath of englishRoutes) {
           .locator('script:not([type="application/ld+json"]), form')
           .count(),
       ).toBe(0);
+      const resource = resourceForPath(englishPath);
       const expectedStoreLinks = [
+        ...(resource ? [listings[resource.app].url] : []),
         ...(['/', '/products', '/products/samejob'].includes(englishPath)
           ? ['https://apps.apple.com/us/app/invoice-maker-samejob/id6814700434']
           : []),
@@ -107,11 +119,13 @@ for (const englishPath of englishRoutes) {
           : []),
       ];
       expect(
-        await page
-          .locator('a[href*="apps.apple.com"]')
-          .evaluateAll((links) =>
-            links.map((link) => link.getAttribute('href')),
-          ),
+        await page.locator('a[href*="apps.apple.com"]').evaluateAll((links) =>
+          links.map((link) => {
+            const url = new URL(link.getAttribute('href')!);
+            url.search = '';
+            return url.href;
+          }),
+        ),
       ).toEqual(expect.arrayContaining(expectedStoreLinks));
       await expect(page.locator('a[href*="apps.apple.com"]')).toHaveCount(
         expectedStoreLinks.length,
@@ -139,8 +153,15 @@ test('all sitemap URLs are canonical, unique and complete', async ({
 }) => {
   const xml = await (await request.get('/sitemap.xml')).text();
   const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  expect(urls.sort()).toEqual(routes.map((path) => site.url + path).sort());
-  expect(new Set(urls).size).toBe(routes.length);
+  expect(urls.sort()).toEqual(
+    routes
+      .filter((path) => !isAlias(path))
+      .map((path) => site.url + path)
+      .sort(),
+  );
+  expect(new Set(urls).size).toBe(
+    routes.filter((path) => !isAlias(path)).length,
+  );
   expect(xml).not.toMatch(/\.html|localhost|127\.0\.0\.1/);
 });
 

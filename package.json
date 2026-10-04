@@ -11,12 +11,16 @@
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
     "typecheck": "astro check",
-    "build": "astro build",
+    "build": "astro build && node scripts/search-manifest.mjs",
     "preview": "astro preview --host 127.0.0.1 --port 4321",
     "test": "playwright test",
-    "check": "npm run lint && npm run typecheck && npm run build && npm test",
+    "check": "npm run lint && npm run typecheck && npm run release:check && npm run build && npm run seo:check && npm test",
     "release:check": "node scripts/release-check.mjs",
-    "verify:production": "node scripts/verify-production.mjs"
+    "verify:production": "node scripts/verify-production.mjs",
+    "seo:check": "node scripts/seo-check.mjs && node --test scripts/search-infrastructure.test.mjs",
+    "indexnow:snapshot": "node scripts/indexnow-submit.mjs snapshot",
+    "indexnow:submit": "node scripts/indexnow-submit.mjs",
+    "audit:quality": "node scripts/audit-quality.mjs"
   },
   "dependencies": {
     "astro": "^7.3.2"
@@ -28,6 +32,9 @@
     "@types/node": "^26.5.1",
     "eslint": "^10.10.0",
     "eslint-plugin-astro": "^1.7.0",
+    "fast-xml-parser": "^5.11.2",
+    "lighthouse": "^13.5.0",
+    "parse5": "^8.0.1",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^1.0.0",
     "typescript": "^6.0.3",

@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Generated PDFs are binary assets, including ReportLab ASCII-encoded streams.
+public/downloads/*.pdf binary

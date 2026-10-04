@@ -1,4 +1,6 @@
 ---
+import ResourcePage from '../../components/pages/ResourcePage.astro';
+import { resourceRoutes } from '../../data/resources';
 import { products } from '../../data/products';
 import ProductDetail from '../../components/pages/ProductDetail.astro';
 import ProductSupport from '../../components/pages/ProductSupport.astro';
@@ -25,6 +27,10 @@ export function getStaticPaths() {
     '/contact': Contact,
   };
   return [
+    ...resourceRoutes.map((route) => ({
+      params: { path: route.slice(1) },
+      props: { Page: ResourcePage, product: undefined },
+    })),
     ...Object.entries(pages).map(([route, Page]) => ({
       params: { path: route === '/' ? undefined : route.slice(1) },
       props: { Page, product: undefined },

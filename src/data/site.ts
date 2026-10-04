@@ -1,3 +1,4 @@
+import { resourceRoutes } from './resources';
 export const site = {
   name: 'Hailink Labs',
   legalName: 'Shenzhen Hailink Technology Co., Ltd.',
@@ -8,6 +9,7 @@ export const site = {
 };
 
 export const englishRoutes = [
+  ...resourceRoutes,
   '/',
   '/about',
   '/support',

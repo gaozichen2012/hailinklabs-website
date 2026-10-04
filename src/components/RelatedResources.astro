@@ -1,0 +1,38 @@
+---
+import { guides, templates, resourceText } from '../data/resources';
+import { localizedPath, type Locale } from '../data/i18n';
+interface Props {
+  slug: string;
+  locale: Locale;
+}
+const { slug, locale } = Astro.props;
+const related = guides.filter((g) => g.app === slug);
+const sheet = templates.find((t) => t.app === slug);
+---
+
+{related.length > 0 && (
+  <section class="section-row related-resources">
+    <div class="section-label">
+      <h2>{locale === 'en' ? 'Related Guides' : '相关指南'}</h2>
+    </div>
+    <div class="section-body prose">
+      <ul>
+        {related.map((g) => (
+          <li>
+            <a href={localizedPath(`/guides/${g.slug}`, locale)}>
+              {resourceText(g.title, locale)}
+            </a>
+          </li>
+        ))}
+      </ul>
+      {sheet && (
+        <p>
+          <a href={localizedPath(`/templates/${sheet.slug}`, locale)}>
+            {locale === 'en' ? 'Free Template: ' : '免费模板：'}
+            {resourceText(sheet.title, locale)}
+          </a>
+        </p>
+      )}
+    </div>
+  </section>
+)}

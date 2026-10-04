@@ -1,0 +1,1424 @@
+[
+  {
+    "slug": "time-and-materials-ticket-template",
+    "app": "tmproof",
+    "category": "contractors",
+    "template": "time-and-materials-ticket",
+    "title": [
+      "Time and Materials Ticket Template for Contractors",
+      "承包商工时与材料工单模板"
+    ],
+    "description": [
+      "A time and materials ticket records the work performed, labor hours, materials used, equipment time and on-site acknowledgment for a specific job. Start with the project, customer and date, then itemize actual quantities rather than writing one unexplained total. Use the free printable ticket below, keep supporting notes together and clarify what the signer is acknowledging before sharing it.",
+      "工时与材料工单用于记录某项工作的内容、人工工时、材料用量、设备用时和现场签认。先填写项目、客户和日期，再逐项记录实际数量，不要只写一个无法解释的总额。使用下方免费模板，将相关说明保存在一起，并在分享前明确签认人确认的是哪些事项。"
+    ],
+    "answer": [
+      "A time and materials ticket records the work performed, labor hours, materials used, equipment time and on-site acknowledgment for a specific job. Start with the project, customer and date, then itemize actual quantities rather than writing one unexplained total. Use the free printable ticket below, keep supporting notes together and clarify what the signer is acknowledging before sharing it.",
+      "工时与材料工单用于记录某项工作的内容、人工工时、材料用量、设备用时和现场签认。先填写项目、客户和日期，再逐项记录实际数量，不要只写一个无法解释的总额。使用下方免费模板，将相关说明保存在一起，并在分享前明确签认人确认的是哪些事项。"
+    ],
+    "definition": [
+      "A T&M ticket is a work record. It supports a later review or invoice but does not itself settle contract terms or guarantee payment.",
+      "工单是工作记录，可支持后续核对或开票，但本身不决定合同条款，也不保证付款。"
+    ],
+    "audience": [
+      "Contractors and small crews documenting a discrete piece of work at the job site.",
+      "需要在现场记录一项具体工作的承包商和小型施工团队。"
+    ],
+    "fields": [
+      ["Project, customer, date", "项目、客户、日期"],
+      ["Work performed and location", "完成的工作与位置"],
+      ["Labor, material and equipment quantities", "人工、材料及设备数量"],
+      ["Acknowledgment scope and signer role", "签认范围与签认人角色"]
+    ],
+    "example": [
+      "Illustrative entry: Project A, west doorway repair; one worker, 2 hours; three replacement pieces; equipment not used. The supervisor acknowledges the recorded work and quantities, with any disagreement written in notes. This is an example, not a rate schedule.",
+      "示例：项目 A 西侧门口维修；一名工人工作 2 小时；三个替换件；未使用设备。主管确认记录的工作和数量，分歧写入备注。这仅是示例，不是收费标准。"
+    ],
+    "steps": [
+      [
+        "Identify the job and the specific work before recording line items.",
+        "先确定项目和具体工作，再填写明细。"
+      ],
+      [
+        "Enter labor, materials and equipment with units; mark unused sections clearly.",
+        "填写人工、材料与设备及单位；未使用的部分明确标注。"
+      ],
+      [
+        "Review quantities and acknowledgment wording together, then keep a copy.",
+        "一起核对数量和签认措辞，然后保留副本。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "A single total with no itemized quantities is hard to check.",
+        "只有总额、没有数量明细，难以核对。"
+      ],
+      [
+        "A signature without a stated acknowledgment scope can be ambiguous.",
+        "签名未说明确认范围，容易产生歧义。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["Is the template free?", "模板免费吗？"],
+        "answer": [
+          "Yes. HTML, PDF and CSV are available without registration.",
+          "是的，HTML、PDF 和 CSV 均无需注册。"
+        ]
+      },
+      {
+        "question": [
+          "Does a signed ticket guarantee payment?",
+          "签认工单保证付款吗？"
+        ],
+        "answer": [
+          "No. It records an acknowledgment; payment depends on your separate arrangements.",
+          "不保证。它仅记录签认，付款取决于另行约定。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "how-to-document-extra-work",
+    "app": "tmproof",
+    "category": "contractors",
+    "template": "time-and-materials-ticket",
+    "title": [
+      "How to Document Extra Work on a Construction Job",
+      "如何记录施工项目中的额外工作"
+    ],
+    "description": [
+      "Document extra work by separating the original scope from the additional task, recording who requested it, when it happened and what was actually done. Keep labor, materials, equipment and supporting photos under one job reference. Record unresolved questions explicitly and share the record promptly. A work ticket helps organize facts; it is not a substitute for the project’s approval or contract process.",
+      "记录额外工作时，应区分原范围与新增任务，写明谁提出、发生时间以及实际完成的内容。将人工、材料、设备和相关照片放在同一项目引用下。未解决的问题明确注明，并及时分享记录。工单有助于整理事实，但不能替代项目本身的审批或合同流程。"
+    ],
+    "answer": [
+      "Document extra work by separating the original scope from the additional task, recording who requested it, when it happened and what was actually done. Keep labor, materials, equipment and supporting photos under one job reference. Record unresolved questions explicitly and share the record promptly. A work ticket helps organize facts; it is not a substitute for the project’s approval or contract process.",
+      "记录额外工作时，应区分原范围与新增任务，写明谁提出、发生时间以及实际完成的内容。将人工、材料、设备和相关照片放在同一项目引用下。未解决的问题明确注明，并及时分享记录。工单有助于整理事实，但不能替代项目本身的审批或合同流程。"
+    ],
+    "definition": [
+      "Extra-work documentation is a dated account of a scope difference and its execution, rather than a vague note that a crew did more work.",
+      "额外工作记录应说明范围差异、日期和实际执行，不能只笼统写“团队多做了工作”。"
+    ],
+    "audience": [
+      "Site supervisors and crews handling a requested change or unexpected task.",
+      "处理客户变更或意外任务的现场主管和施工团队。"
+    ],
+    "fields": [
+      ["Original scope vs additional task", "原范围与新增任务"],
+      ["Requester, date and job reference", "提出人、日期与项目引用"],
+      ["Actual inputs and evidence", "实际投入与佐证"],
+      ["Open questions and follow-up owner", "未决问题与后续负责人"]
+    ],
+    "example": [
+      "Illustrative entry: the original task covered one wall; a second wall was requested later. Record the second wall separately, reference the request, attach the relevant photos and note that commercial approval is still pending.",
+      "示例：原任务只覆盖一面墙，后来要求处理第二面墙。单独记录第二面墙，关联请求和相关照片，并注明商业审批仍待完成。"
+    ],
+    "steps": [
+      [
+        "Write the scope difference and request reference before work details are forgotten.",
+        "趁细节清楚时写下范围差异和请求引用。"
+      ],
+      [
+        "Record actual work and resources without assuming that a request is commercial approval.",
+        "记录实际工作与资源，不将普通请求视为商业批准。"
+      ],
+      [
+        "Share a dated copy and list any unresolved approval questions.",
+        "分享带日期的副本，并列出未解决的审批问题。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Mixing base work and extra work obscures the change.",
+        "将原工作与额外工作混在一起会掩盖差异。"
+      ],
+      [
+        "Photos without a job reference are difficult to match later.",
+        "照片没有项目引用，日后难以对应。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["What if approval is pending?", "审批尚未完成怎么办？"],
+        "answer": [
+          "Record that status explicitly and follow the project process; do not describe the work as approved.",
+          "明确记录状态并按项目流程跟进，不写成已批准。"
+        ]
+      },
+      {
+        "question": ["Can I record a correction later?", "可以后续更正吗？"],
+        "answer": [
+          "Keep the original and add a dated correction that identifies what changed.",
+          "保留原记录，添加带日期的更正，说明改了什么。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "what-to-include-in-a-tm-ticket",
+    "app": "tmproof",
+    "category": "contractors",
+    "template": "time-and-materials-ticket",
+    "title": [
+      "What Should Be Included in a T&M Ticket?",
+      "工时与材料工单应该包含什么？"
+    ],
+    "description": [
+      "Include the job identity, date, work description, labor entries, material quantities, equipment usage, notes and a clearly scoped acknowledgment in a T&M ticket. Every number needs a unit, and each entry should identify what it belongs to. Keep factual records separate from estimated costs or unresolved rates. Use a final review checklist so missing names, dates and quantities are caught before the record is shared.",
+      "工时与材料工单应包含项目标识、日期、工作描述、人工、材料数量、设备用量、备注，以及范围明确的签认。每个数字都要带单位，每条记录都应能对应到实际工作。将事实记录与预估成本或未确认单价区分开，分享前用清单检查遗漏的姓名、日期和数量。"
+    ],
+    "answer": [
+      "Include the job identity, date, work description, labor entries, material quantities, equipment usage, notes and a clearly scoped acknowledgment in a T&M ticket. Every number needs a unit, and each entry should identify what it belongs to. Keep factual records separate from estimated costs or unresolved rates. Use a final review checklist so missing names, dates and quantities are caught before the record is shared.",
+      "工时与材料工单应包含项目标识、日期、工作描述、人工、材料数量、设备用量、备注，以及范围明确的签认。每个数字都要带单位，每条记录都应能对应到实际工作。将事实记录与预估成本或未确认单价区分开，分享前用清单检查遗漏的姓名、日期和数量。"
+    ],
+    "definition": [
+      "A complete ticket lets another person trace the recorded work and understand each quantity without relying on the author’s memory.",
+      "完整工单应让其他人无需依赖填写人的记忆，就能核对工作和每项数量。"
+    ],
+    "audience": [
+      "Anyone reviewing a ticket before acknowledgment, export or invoice preparation.",
+      "准备签认、导出或开票前需要审核工单的人。"
+    ],
+    "fields": [
+      [
+        "Labor: worker, date, hours and rate status",
+        "人工：人员、日期、工时及单价状态"
+      ],
+      ["Materials: item, quantity and unit", "材料：项目、数量及单位"],
+      ["Equipment: item, duration and unit", "设备：项目、时长及单位"],
+      [
+        "Acknowledgment: scope, name, role and date",
+        "签认：范围、姓名、角色及日期"
+      ]
+    ],
+    "example": [
+      "Illustrative check: “6” in a material row is incomplete. “6 pieces, replacement trim” identifies both the quantity and the item. If the rate is undecided, mark it as pending instead of entering zero.",
+      "核对示例：材料行只有“6”不完整；“替换饰条，6 件”明确了项目和数量。单价未确定时标为待确认，不要填写零。"
+    ],
+    "steps": [
+      [
+        "Check the header against the job reference and work date.",
+        "用项目引用和施工日期核对表头。"
+      ],
+      [
+        "Read every resource row and confirm its item, quantity, unit and rate status.",
+        "逐行确认资源项目、数量、单位及单价状态。"
+      ],
+      [
+        "Check signer details and state exactly what the acknowledgment covers.",
+        "核对签认人信息并明确确认范围。"
+      ]
+    ],
+    "mistakes": [
+      ["Blank and zero are not interchangeable.", "空白与零不能混用。"],
+      [
+        "An estimated amount should not be labeled as an actual quantity.",
+        "不能把估计金额标为实际数量。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["Must every section be used?", "必须填写每个部分吗？"],
+        "answer": [
+          "No. Mark unused sections as not used so they cannot be mistaken for omissions.",
+          "不必。未使用的部分明确标注，避免误认为遗漏。"
+        ]
+      },
+      {
+        "question": ["Where should photos go?", "照片放在哪里？"],
+        "answer": [
+          "Keep them linked to the same job and ticket reference with a short explanation.",
+          "关联到相同项目与工单引用，并附简短说明。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "equipment-checkout-log-template",
+    "app": "gearproof",
+    "category": "contractors",
+    "template": "equipment-checkout-log",
+    "title": [
+      "Equipment Checkout Log Template for Small Teams",
+      "小团队器材借出归还记录模板"
+    ],
+    "description": [
+      "An equipment checkout log records which asset left, who took it, when it is expected back and what condition it was in at handover. Start a new transaction for every loan and close it with the actual return time and condition. The free template below works on paper or in a spreadsheet; use consistent asset IDs so repeated loans remain distinguishable.",
+      "器材借出记录应写明借出的具体资产、借用人、预计归还时间和交接状态。每次借用新建一条记录，归还时补上实际时间与状态。下方免费模板可以打印或导入电子表格；使用一致的资产编号，让同一器材的多次借用能够区分。"
+    ],
+    "answer": [
+      "An equipment checkout log records which asset left, who took it, when it is expected back and what condition it was in at handover. Start a new transaction for every loan and close it with the actual return time and condition. The free template below works on paper or in a spreadsheet; use consistent asset IDs so repeated loans remain distinguishable.",
+      "器材借出记录应写明借出的具体资产、借用人、预计归还时间和交接状态。每次借用新建一条记录，归还时补上实际时间与状态。下方免费模板可以打印或导入电子表格；使用一致的资产编号，让同一器材的多次借用能够区分。"
+    ],
+    "definition": [
+      "A checkout log is a transaction history for equipment, not merely a list of what a team owns.",
+      "借出记录是器材交接历史，不只是团队资产清单。"
+    ],
+    "audience": [
+      "Small teams sharing equipment between employees, jobs or locations.",
+      "在员工、项目或地点之间共用器材的小团队。"
+    ],
+    "fields": [
+      ["Asset name and unique ID", "资产名称与唯一编号"],
+      ["Borrower and checkout time", "借用人与借出时间"],
+      ["Expected and actual return", "预计与实际归还"],
+      ["Condition and sign-off", "状态与交接签认"]
+    ],
+    "example": [
+      "Illustrative entry: drill DR-014 goes to Alex at 08:30, due back Friday. The case is already scratched. On return, record the time and whether the drill, battery and case were all received.",
+      "示例：电钻 DR-014 在 08:30 借给 Alex，预计周五归还。工具箱已有划痕。归还时记录时间，并确认电钻、电池和工具箱是否全部收到。"
+    ],
+    "steps": [
+      [
+        "Label the asset and list the parts that travel with it.",
+        "为资产编号，列出随附部件。"
+      ],
+      [
+        "Agree on the expected return and record outgoing condition.",
+        "确定预计归还时间并记录借出状态。"
+      ],
+      [
+        "Close the loan only after checking the returned item and parts.",
+        "检查归还器材和部件后再关闭借用记录。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Reusing one row overwrites useful history.",
+        "重复使用同一行会覆盖历史。"
+      ],
+      [
+        "A returned date alone does not record missing accessories.",
+        "只有归还日期，不能说明附件是否缺失。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["Should I use one row per asset?", "每件资产只用一行吗？"],
+        "answer": [
+          "Use one row per checkout; an asset can have many transactions.",
+          "每次借出一行，一件资产可有多条交接记录。"
+        ]
+      },
+      {
+        "question": ["Can a spreadsheet handle this?", "电子表格可以处理吗？"],
+        "answer": [
+          "Yes, with consistent IDs and a clear process for checkout and return updates.",
+          "可以，需要一致编号和明确的借出、归还更新流程。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "tool-sign-out-sheet",
+    "app": "gearproof",
+    "category": "contractors",
+    "template": "equipment-checkout-log",
+    "title": ["Tool Sign-Out Sheet for Small Teams", "小团队工具领用签认表"],
+    "description": [
+      "A tool sign-out sheet pairs a named borrower with an identifiable tool and an expected return. Add a checkout time, accessories, outgoing condition and a place for return sign-off. Make the sheet easy to use where tools are handed over, and use a new entry for each loan. A signature records the handover described on the sheet; it should not imply an unstated responsibility agreement.",
+      "工具领用签认表应将具体借用人与可识别的工具对应，并记录预计归还时间、领用时间、附件、借出状态及归还签认。将表放在实际交接处，每次借用新建记录。签名仅记录表上说明的交接，不应暗示未写明的责任约定。"
+    ],
+    "answer": [
+      "A tool sign-out sheet pairs a named borrower with an identifiable tool and an expected return. Add a checkout time, accessories, outgoing condition and a place for return sign-off. Make the sheet easy to use where tools are handed over, and use a new entry for each loan. A signature records the handover described on the sheet; it should not imply an unstated responsibility agreement.",
+      "工具领用签认表应将具体借用人与可识别的工具对应，并记录预计归还时间、领用时间、附件、借出状态及归还签认。将表放在实际交接处，每次借用新建记录。签名仅记录表上说明的交接，不应暗示未写明的责任约定。"
+    ],
+    "definition": [
+      "A sign-out sheet emphasizes the handover: who received a tool, what they received and when the record was made.",
+      "领用表强调交接：谁收到了工具、收到哪些物品以及何时记录。"
+    ],
+    "audience": [
+      "Teams using a shared cupboard, van or tool station with frequent handovers.",
+      "经常从共享工具柜、车辆或工具站领用工具的团队。"
+    ],
+    "fields": [
+      ["Tool ID and included accessories", "工具编号及附件"],
+      ["Borrower name and handover time", "借用人姓名及交接时间"],
+      ["Return expectation", "预计归还"],
+      ["Outgoing and incoming sign-off", "借出与归还签认"]
+    ],
+    "example": [
+      "Illustrative entry: saw SAW-03, two blades and a case handed to Morgan for Job B. The sign-off describes those items. A later return entry records that one blade was not returned, rather than silently closing the row.",
+      "示例：锯 SAW-03、两片锯片和工具箱交给 Morgan 用于项目 B。签认说明这些物品；归还时发现一片锯片未归还，应记录，而不是直接关闭该行。"
+    ],
+    "steps": [
+      [
+        "Place the sheet next to the actual handover point.",
+        "把表放在实际交接处。"
+      ],
+      [
+        "Write the borrower and tool details before the tool leaves.",
+        "工具离开前填写借用人和工具详情。"
+      ],
+      [
+        "Review contents on return and sign off the actual outcome.",
+        "归还时核对物品并按实际结果签认。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Initials that several people share do not identify a borrower.",
+        "多人共用的姓名缩写无法确定借用人。"
+      ],
+      [
+        "Signing an empty row does not explain what was handed over.",
+        "空白行签名无法说明交接了什么。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["What does the signature confirm?", "签名确认什么？"],
+        "answer": [
+          "State the handover scope on the sheet; do not rely on an implied agreement.",
+          "在表上写明交接范围，不依赖隐含约定。"
+        ]
+      },
+      {
+        "question": ["Should accessories be separate?", "附件需要单独记录吗？"],
+        "answer": [
+          "List them with the tool or use linked entries if they have their own IDs.",
+          "随工具列明；有独立编号时可用关联记录。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "how-to-track-borrowed-tools",
+    "app": "gearproof",
+    "category": "contractors",
+    "template": "equipment-checkout-log",
+    "title": [
+      "How to Track Tools Borrowed by Employees",
+      "如何追踪员工借用的工具"
+    ],
+    "description": [
+      "Track borrowed tools with stable asset IDs, named borrowers and an open checkout record for each loan. Record the due date and close the record only when the tool is checked back in. Review outstanding loans at a predictable interval and contact the borrower using your team’s existing process. Keep exceptions visible, including missing accessories or damage, instead of treating every return as complete.",
+      "追踪员工借用工具时，使用固定资产编号、实名借用人，并为每次借用建立未关闭记录。写明预计归还日期，仅在实际检查归还后关闭。定期查看未归还清单，通过团队已有流程联系借用人。附件缺失或损坏等异常应保持可见，不要把每次归还都视为完整。"
+    ],
+    "answer": [
+      "Track borrowed tools with stable asset IDs, named borrowers and an open checkout record for each loan. Record the due date and close the record only when the tool is checked back in. Review outstanding loans at a predictable interval and contact the borrower using your team’s existing process. Keep exceptions visible, including missing accessories or damage, instead of treating every return as complete.",
+      "追踪员工借用工具时，使用固定资产编号、实名借用人，并为每次借用建立未关闭记录。写明预计归还日期，仅在实际检查归还后关闭。定期查看未归还清单，通过团队已有流程联系借用人。附件缺失或损坏等异常应保持可见，不要把每次归还都视为完整。"
+    ],
+    "definition": [
+      "A tracking process maintains both the current holder and the history of prior loans so that an overdue record can be followed up.",
+      "追踪流程同时保留当前持有人与过往借用历史，方便跟进逾期记录。"
+    ],
+    "audience": [
+      "Team leads who need to know where shared tools are without repeatedly asking everyone.",
+      "希望无需反复询问全员就能了解共享工具去向的负责人。"
+    ],
+    "fields": [
+      ["Stable asset ID", "固定资产编号"],
+      ["Current borrower and job", "当前借用人与项目"],
+      ["Due date and open status", "预计归还日期与未关闭状态"],
+      ["Exception and follow-up note", "异常与跟进说明"]
+    ],
+    "example": [
+      "Illustrative review: three open loans are listed. One is still within its expected return date, one has a changed due date with a note, and one is overdue. Follow up the overdue loan without changing its original checkout date.",
+      "核对示例：三条未关闭借用，一条未到期、一条有备注的延期、一条逾期。跟进逾期项时保留原借出日期。"
+    ],
+    "steps": [
+      [
+        "Create or confirm asset IDs before lending.",
+        "借出前创建或确认资产编号。"
+      ],
+      [
+        "Maintain a list of open loans with expected return dates.",
+        "维护含预计归还日期的未关闭借用清单。"
+      ],
+      [
+        "Review exceptions, then record the actual return and its condition.",
+        "查看异常，再记录实际归还与状态。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Renaming asset IDs breaks continuity across loans.",
+        "更改资产编号会打断借用历史关联。"
+      ],
+      [
+        "Changing a due date without a note hides the reason for delay.",
+        "无备注修改到期日会掩盖延期原因。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["How often should I review loans?", "多久核对一次借用？"],
+        "answer": [
+          "Choose an interval that fits your handover routine and apply it consistently.",
+          "按交接节奏选择频率，并保持一致。"
+        ]
+      },
+      {
+        "question": [
+          "What if a tool moves to another employee?",
+          "工具转交给另一名员工怎么办？"
+        ],
+        "answer": [
+          "Record the transfer explicitly and identify the new holder; keep the prior record.",
+          "明确记录转交及新持有人，保留原记录。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "puppy-weight-log-template",
+    "app": "litterround",
+    "category": "animal-records",
+    "template": "puppy-weight-log",
+    "title": ["Puppy Weight Log Template", "幼犬体重记录模板"],
+    "description": [
+      "A puppy weight log pairs a stable puppy identifier with a date, time, measured weight and unit. Keep entries in order and use the same unit so later readings can be compared without guessing. Add feeding or care observations in separate notes. The printable and CSV templates below organize records; they do not interpret growth, diagnose a condition or suggest a treatment.",
+      "幼犬体重记录将固定识别标记与日期、时间、实测体重和单位对应。按时间顺序填写，并使用一致单位，避免日后比较时猜测。喂养和护理观察单独写入备注。下方打印与 CSV 模板仅用于整理记录，不解释生长情况、诊断问题或建议治疗。"
+    ],
+    "answer": [
+      "A puppy weight log pairs a stable puppy identifier with a date, time, measured weight and unit. Keep entries in order and use the same unit so later readings can be compared without guessing. Add feeding or care observations in separate notes. The printable and CSV templates below organize records; they do not interpret growth, diagnose a condition or suggest a treatment.",
+      "幼犬体重记录将固定识别标记与日期、时间、实测体重和单位对应。按时间顺序填写，并使用一致单位，避免日后比较时猜测。喂养和护理观察单独写入备注。下方打印与 CSV 模板仅用于整理记录，不解释生长情况、诊断问题或建议治疗。"
+    ],
+    "definition": [
+      "This is a chronological measurement record for one puppy. A litter-level summary should still preserve each puppy’s identity.",
+      "这是单只幼犬的连续测量记录；整窝汇总也必须保留每只幼犬的身份。"
+    ],
+    "audience": [
+      "Carers who want a readable history of measurements and observations.",
+      "希望清楚保留测量与观察历史的照护者。"
+    ],
+    "fields": [
+      ["Puppy name and stable identifier", "幼犬名称与固定识别标记"],
+      ["Measurement date and time", "测量日期与时间"],
+      ["Weight and unit", "体重与单位"],
+      ["Care observation, kept separate", "单独记录的护理观察"]
+    ],
+    "example": [
+      "Illustrative record only: Puppy Blue, October 4 at 09:00, 310 g. A note identifies the scale used. This number is not a target or a statement that the puppy is healthy.",
+      "纯记录示例：Blue 幼犬，10 月 4 日 09:00，310 克；备注写明使用的秤。该数值不是目标，也不说明幼犬健康。"
+    ],
+    "steps": [
+      [
+        "Choose an identifier that remains clear across the litter.",
+        "选择在整窝中持续明确的识别标记。"
+      ],
+      [
+        "Write the measured number, unit and time immediately.",
+        "及时填写实测数值、单位与时间。"
+      ],
+      [
+        "Keep the original reading and date any later correction.",
+        "保留原读数，后续更正注明日期。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Mixing grams and ounces without labels makes comparison unreliable.",
+        "克和盎司混用却不注明，会影响比较。"
+      ],
+      [
+        "A log entry cannot establish a health diagnosis.",
+        "日志记录不能用于作出健康诊断。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": [
+          "Does the sheet provide weight targets?",
+          "表格提供体重目标吗？"
+        ],
+        "answer": [
+          "No. It records measurements only. Ask a veterinarian about health interpretation.",
+          "不提供，只记录测量。健康解释请咨询兽医。"
+        ]
+      },
+      {
+        "question": ["Can I use it for a whole litter?", "可以用于整窝吗？"],
+        "answer": [
+          "Yes. Keep a distinct identifier on every row and filter by puppy in the CSV.",
+          "可以。每行保留不同识别标记，CSV 可按幼犬筛选。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "newborn-puppy-record-keeping",
+    "app": "litterround",
+    "category": "animal-records",
+    "template": "puppy-weight-log",
+    "title": ["How to Keep Newborn Puppy Records", "如何保存新生幼犬记录"],
+    "description": [
+      "Keep newborn puppy records by assigning each puppy a clear identifier and recording dated observations under that identity. Separate measured weights, feeding or care notes and general litter notes so a later reader can tell what was observed and when. Use one consistent format for handovers between carers. Record keeping supports communication; it does not replace a veterinarian’s assessment or provide care instructions.",
+      "为每只新生幼犬设置清晰标识，将带日期的观察记录归入对应幼犬。区分实测体重、喂养与护理备注和整窝备注，让后来阅读的人能知道观察内容和时间。照护者交接时使用一致格式。记录有助于沟通，但不替代兽医评估，也不提供护理操作指导。"
+    ],
+    "answer": [
+      "Keep newborn puppy records by assigning each puppy a clear identifier and recording dated observations under that identity. Separate measured weights, feeding or care notes and general litter notes so a later reader can tell what was observed and when. Use one consistent format for handovers between carers. Record keeping supports communication; it does not replace a veterinarian’s assessment or provide care instructions.",
+      "为每只新生幼犬设置清晰标识，将带日期的观察记录归入对应幼犬。区分实测体重、喂养与护理备注和整窝备注，让后来阅读的人能知道观察内容和时间。照护者交接时使用一致格式。记录有助于沟通，但不替代兽医评估，也不提供护理操作指导。"
+    ],
+    "definition": [
+      "A newborn record is a factual timeline. An observation, a measurement and a professional instruction are different kinds of information and should be labeled accordingly.",
+      "新生幼犬记录是事实时间线。观察、测量和专业指导是不同信息，应分别标注。"
+    ],
+    "audience": [
+      "Carers sharing responsibility for a litter and preparing a factual handover.",
+      "共同照护一窝幼犬并需要事实交接的照护者。"
+    ],
+    "fields": [
+      ["Litter and puppy identifiers", "整窝与幼犬标识"],
+      ["Timestamp and recorder", "时间与记录人"],
+      ["Measured values with units", "带单位的实测值"],
+      ["Observed event and follow-up note", "观察事件与后续备注"]
+    ],
+    "example": [
+      "Illustrative handover: Casey records a measurement for Puppy Green at 10:00. Jordan adds a separate observation at 12:00. Neither entry overwrites the other, and any veterinarian instructions are attributed separately.",
+      "交接示例：Casey 在 10:00 为 Green 幼犬记录测量；Jordan 在 12:00 添加另一条观察。两条互不覆盖，兽医指导另行标明来源。"
+    ],
+    "steps": [
+      [
+        "Create the litter and individual identifiers before collecting entries.",
+        "记录前创建整窝与个体标识。"
+      ],
+      [
+        "Log each event with its own date, time and recorder.",
+        "每个事件单独注明日期、时间与记录人。"
+      ],
+      [
+        "Share a readable copy at handover and retain a backup.",
+        "交接时分享可读副本并保留备份。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Undated notes lose their place in the timeline.",
+        "无日期备注会失去时间线位置。"
+      ],
+      [
+        "Describing an assumption as an observation changes the meaning.",
+        "将推测写成观察会改变信息含义。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["What if I missed an event?", "漏记一个事件怎么办？"],
+        "answer": [
+          "Mark it as not recorded; do not reconstruct an exact time or value from guesswork.",
+          "标为未记录，不靠猜测补出精确时间或数值。"
+        ]
+      },
+      {
+        "question": [
+          "Can notes replace veterinary advice?",
+          "备注能代替兽医建议吗？"
+        ],
+        "answer": [
+          "No. Record observations and contact a veterinarian about health concerns.",
+          "不能。记录观察，健康问题联系兽医。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "puppy-litter-care-record",
+    "app": "litterround",
+    "category": "animal-records",
+    "template": "puppy-weight-log",
+    "title": ["Puppy Litter Care Record Template", "整窝幼犬护理记录模板"],
+    "description": [
+      "A puppy litter care record brings individual puppy observations and litter-wide notes into one dated handover format. Record who made each entry, identify the puppy when an event concerns only one animal and keep shared litter notes clearly separate. The free worksheet can be used for care observations and measurements. It contains no diagnosis, dosing schedule or treatment recommendation.",
+      "整窝幼犬护理记录将个体观察与整窝备注放入带日期的交接格式。每条注明记录人，只涉及一只幼犬时写明标识，并与整窝事项区分。免费工作表可记录护理观察和测量，不包含诊断、剂量安排或治疗建议。"
+    ],
+    "answer": [
+      "A puppy litter care record brings individual puppy observations and litter-wide notes into one dated handover format. Record who made each entry, identify the puppy when an event concerns only one animal and keep shared litter notes clearly separate. The free worksheet can be used for care observations and measurements. It contains no diagnosis, dosing schedule or treatment recommendation.",
+      "整窝幼犬护理记录将个体观察与整窝备注放入带日期的交接格式。每条注明记录人，只涉及一只幼犬时写明标识，并与整窝事项区分。免费工作表可记录护理观察和测量，不包含诊断、剂量安排或治疗建议。"
+    ],
+    "definition": [
+      "A litter care record is a shared observation log, with enough context to distinguish one puppy’s event from a note about the whole litter.",
+      "整窝护理记录是共享观察日志，应能区分个体事件和整窝备注。"
+    ],
+    "audience": [
+      "Carers coordinating shifts or sharing a litter’s record with another responsible person.",
+      "需要轮班交接或与另一名负责人共享整窝记录的照护者。"
+    ],
+    "fields": [
+      ["Litter reference and date", "整窝引用与日期"],
+      ["Puppy ID or litter-wide label", "幼犬标识或整窝标记"],
+      ["Observation and recorder", "观察与记录人"],
+      ["Handover note and unresolved item", "交接说明与未决事项"]
+    ],
+    "example": [
+      "Illustrative entry: a morning note concerns Puppy Yellow; a second note concerns the whole litter’s record handover. Label each scope explicitly so the next carer does not apply the individual note to every puppy.",
+      "示例：晨间一条备注涉及 Yellow 幼犬，另一条涉及整窝的记录交接。明确范围，避免下一名照护者将个体备注套用于所有幼犬。"
+    ],
+    "steps": [
+      [
+        "Use distinct labels for individual and litter-wide entries.",
+        "为个体与整窝事项使用不同标记。"
+      ],
+      [
+        "Write observations with a timestamp and author.",
+        "观察注明时间与记录人。"
+      ],
+      [
+        "Review unresolved items at handover without inventing missing information.",
+        "交接时核对未决事项，不编造缺失信息。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Copying one puppy’s notes to all puppies creates misleading records.",
+        "把一只幼犬的备注复制给全部幼犬会造成误导。"
+      ],
+      [
+        "A check mark without context is difficult to interpret.",
+        "没有说明的勾选难以理解。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["Can I add custom columns?", "可以添加自定义列吗？"],
+        "answer": [
+          "Yes. Keep the puppy ID, date and units clear when editing the CSV.",
+          "可以。编辑 CSV 时保留清楚的幼犬标识、日期与单位。"
+        ]
+      },
+      {
+        "question": [
+          "Does the template tell me how to care for puppies?",
+          "模板指导如何护理幼犬吗？"
+        ],
+        "answer": [
+          "No. It organizes observations and handovers, with health decisions left to qualified professionals.",
+          "不指导。它整理观察与交接，健康决策由合格专业人员处理。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "calving-record-book-template",
+    "app": "calvingpocket",
+    "category": "animal-records",
+    "template": "calving-record-sheet",
+    "title": ["Calving Record Book Template", "产犊记录簿模板"],
+    "description": [
+      "A calving record book connects a season, dam and calf with the birth date, time and recorded observations. Use stable IDs, state weight units and keep unknown values explicit. Start with the printable sheet below or use its CSV for a seasonal register. Keep the original observations when correcting a record. This template organizes birth records and does not provide veterinary instructions.",
+      "产犊记录簿将产犊季、母牛与犊牛对应到出生日期、时间及观察。使用固定编号，注明体重单位，未知值明确标记。可使用下方打印表或 CSV 季度登记；更正时保留原始观察。模板只整理出生记录，不提供兽医操作指导。"
+    ],
+    "answer": [
+      "A calving record book connects a season, dam and calf with the birth date, time and recorded observations. Use stable IDs, state weight units and keep unknown values explicit. Start with the printable sheet below or use its CSV for a seasonal register. Keep the original observations when correcting a record. This template organizes birth records and does not provide veterinary instructions.",
+      "产犊记录簿将产犊季、母牛与犊牛对应到出生日期、时间及观察。使用固定编号，注明体重单位，未知值明确标记。可使用下方打印表或 CSV 季度登记；更正时保留原始观察。模板只整理出生记录，不提供兽医操作指导。"
+    ],
+    "definition": [
+      "A record book is a collection of birth entries organized by season and animal identity, so a record can be found later.",
+      "记录簿是按产犊季与动物标识整理的出生记录集合，便于日后查找。"
+    ],
+    "audience": [
+      "People maintaining a seasonal calving register with identifiable dams and calves.",
+      "为可识别的母牛与犊牛维护产犊季登记的人。"
+    ],
+    "fields": [
+      ["Season, dam ID and calf ID", "产犊季、母牛编号、犊牛编号"],
+      ["Birth date/time and sex", "出生日期／时间与性别"],
+      ["Birth weight with unit, if recorded", "已记录的出生体重及单位"],
+      ["Birth type, observed ease and notes", "出生类型、观察到的难易与备注"]
+    ],
+    "example": [
+      "Illustrative entry: season 2026, dam D-042, calf C-018, birth date October 4. Birth weight was not recorded, so the field says “not recorded” instead of zero.",
+      "示例：2026 产犊季，母牛 D-042，犊牛 C-018，出生日期 10 月 4 日。未记录出生体重时填写“未记录”，而不是零。"
+    ],
+    "steps": [
+      [
+        "Prepare the season and ID conventions before entering births.",
+        "录入前确定产犊季与编号规则。"
+      ],
+      [
+        "Record each birth under the dam and calf IDs.",
+        "将每次出生对应到母牛和犊牛编号。"
+      ],
+      [
+        "Check missing fields and save a readable seasonal copy.",
+        "检查缺失字段，保存可读的季度副本。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Unlabeled weights cannot be compared safely.",
+        "未注明单位的体重无法可靠比较。"
+      ],
+      [
+        "Guessing a birth time creates false precision.",
+        "猜测出生时间会造成虚假精度。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["Can I leave a value unknown?", "可以保留未知值吗？"],
+        "answer": [
+          "Yes. Write unknown or not recorded rather than inventing a measurement.",
+          "可以。写未知或未记录，不编造测量值。"
+        ]
+      },
+      {
+        "question": [
+          "Is this a herd-management system?",
+          "这是完整牛群管理系统吗？"
+        ],
+        "answer": [
+          "No. The worksheet focuses on calving and birth records.",
+          "不是。工作表专注于产犊与出生记录。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "calf-birth-record-sheet",
+    "app": "calvingpocket",
+    "category": "animal-records",
+    "template": "calving-record-sheet",
+    "title": ["Calf Birth Record Sheet", "犊牛出生记录表"],
+    "description": [
+      "A calf birth record sheet captures one birth with enough identification to link the calf to its dam and season. Record the known date and time, sex, weight with units if measured, birth type and factual notes. Mark incomplete details clearly for later review. The free sheet provides a consistent record format; it does not define a veterinary assessment or prescribe what to do at a birth.",
+      "犊牛出生记录表记录一次出生，并提供足够标识，将犊牛与母牛和产犊季关联。填写已知日期、时间、性别、实测体重及单位、出生类型和事实备注。未完整的信息明确注明，供后续核对。免费表提供一致格式，不作兽医评估，也不指导生产时的操作。"
+    ],
+    "answer": [
+      "A calf birth record sheet captures one birth with enough identification to link the calf to its dam and season. Record the known date and time, sex, weight with units if measured, birth type and factual notes. Mark incomplete details clearly for later review. The free sheet provides a consistent record format; it does not define a veterinary assessment or prescribe what to do at a birth.",
+      "犊牛出生记录表记录一次出生，并提供足够标识，将犊牛与母牛和产犊季关联。填写已知日期、时间、性别、实测体重及单位、出生类型和事实备注。未完整的信息明确注明，供后续核对。免费表提供一致格式，不作兽医评估，也不指导生产时的操作。"
+    ],
+    "definition": [
+      "This sheet is an individual event record. A season register can collect many such sheets without losing the dam–calf relationship.",
+      "本表是单次事件记录；季度登记可以汇集多张表，同时保留母犊对应关系。"
+    ],
+    "audience": [
+      "Record keepers who prefer one sheet per calf or need a paper entry to transcribe later.",
+      "偏好每头犊牛一张表，或需要稍后转录纸面记录的人。"
+    ],
+    "fields": [
+      ["Dam and calf identifiers", "母牛与犊牛标识"],
+      ["Known birth time and date", "已知出生时间与日期"],
+      ["Measured vs unrecorded values", "实测值与未记录值"],
+      ["Observation notes", "观察备注"]
+    ],
+    "example": [
+      "Illustrative entry: a calf was found at 07:00 but the exact birth time is unknown. Record the observation time in notes and leave the birth time unknown instead of substituting the time it was found.",
+      "示例：07:00 发现犊牛，但确切出生时间未知。备注记录发现时间，出生时间保留未知，不用发现时间替代。"
+    ],
+    "steps": [
+      [
+        "Confirm the dam and calf IDs before filling other fields.",
+        "填写其他字段前确认母牛与犊牛编号。"
+      ],
+      [
+        "Separate known birth details from the time of observation.",
+        "区分已知出生详情与观察时间。"
+      ],
+      [
+        "Review and transfer the record without silently filling gaps.",
+        "核对并转录，不悄悄补填未知信息。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Observation time is not necessarily birth time.",
+        "观察时间不一定是出生时间。"
+      ],
+      [
+        "A calf nickname alone may not remain unique across seasons.",
+        "仅用昵称可能无法跨季度保持唯一。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": [
+          "Can this work with a season book?",
+          "可以与季度记录簿配合吗？"
+        ],
+        "answer": [
+          "Yes. Use the same IDs in both and keep each sheet attached to its event.",
+          "可以。两者使用相同编号，并将每张表关联到对应事件。"
+        ]
+      },
+      {
+        "question": [
+          "Does “calving ease” require a universal score?",
+          "产犊难易必须使用统一评分吗？"
+        ],
+        "answer": [
+          "No. The sheet accepts your recorded description; do not infer a medical score.",
+          "不需要。可填写已有观察描述，不推断医疗评分。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "offline-calving-records",
+    "app": "calvingpocket",
+    "category": "animal-records",
+    "template": "calving-record-sheet",
+    "title": [
+      "How to Keep Calving Records Without Internet",
+      "如何在无网络时保存产犊记录"
+    ],
+    "description": [
+      "Keep calving records without internet by preparing the season and animal IDs in advance, using a local record or printed sheet at the birth site and backing up later. Capture known facts immediately, flag missing details and reconcile paper entries carefully when returning to the office. CalvingPocket stores calving records on the device; keep a full exported backup before changing phones.",
+      "无网络时，可提前准备产犊季与动物编号，在现场使用本地记录或打印表，稍后备份。及时记录已知事实，标注缺失信息，回到办公室后仔细核对纸面转录。CalvingPocket 将产犊记录保存在设备上，换机前应保留完整导出备份。"
+    ],
+    "answer": [
+      "Keep calving records without internet by preparing the season and animal IDs in advance, using a local record or printed sheet at the birth site and backing up later. Capture known facts immediately, flag missing details and reconcile paper entries carefully when returning to the office. CalvingPocket stores calving records on the device; keep a full exported backup before changing phones.",
+      "无网络时，可提前准备产犊季与动物编号，在现场使用本地记录或打印表，稍后备份。及时记录已知事实，标注缺失信息，回到办公室后仔细核对纸面转录。CalvingPocket 将产犊记录保存在设备上，换机前应保留完整导出备份。"
+    ],
+    "definition": [
+      "Offline record keeping means the entry does not depend on a live connection. Backup and sharing are separate steps that still need a deliberate process.",
+      "离线记录指录入不依赖实时连接；备份和分享是另外的步骤，仍需明确流程。"
+    ],
+    "audience": [
+      "People recording births where mobile coverage is unreliable.",
+      "在移动网络不稳定地点记录出生情况的人。"
+    ],
+    "fields": [
+      ["Prepared season and animal IDs", "预先准备的产犊季与动物编号"],
+      ["Local entry or paper sheet", "本地记录或纸面表"],
+      ["Unreconciled paper reference", "尚未核对的纸面引用"],
+      ["Backup date and saved copy location", "备份日期与副本位置"]
+    ],
+    "example": [
+      "Illustrative workflow: write a birth on sheet P-07 in the field. Later, add it to the local register and mark P-07 as transcribed after checking the IDs and date. Retain the original sheet and a separate backup.",
+      "流程示例：现场填写纸表 P-07；稍后录入本地登记，核对编号和日期后标记 P-07 已转录。保留原表和独立备份。"
+    ],
+    "steps": [
+      [
+        "Prepare IDs and blank sheets before leaving coverage.",
+        "离开有网络区域前准备编号与空白表。"
+      ],
+      [
+        "Record facts locally and keep pending transcription visible.",
+        "本地记录事实，让待转录项目保持可见。"
+      ],
+      [
+        "Reconcile once, then export and verify the saved backup exists.",
+        "逐项核对转录，再导出并确认备份文件已保存。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Local storage is not automatically an independent backup.",
+        "本地存储不自动等于独立备份。"
+      ],
+      [
+        "Transcribing the same sheet twice creates duplicate births.",
+        "同一纸表转录两次会产生重复出生记录。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["Do I need an app account?", "需要 App 账号吗？"],
+        "answer": [
+          "The record workflow can stay local; see CalvingPocket’s product and privacy pages for its data practices.",
+          "记录流程可以保持本地；数据实践见 CalvingPocket 产品和隐私页。"
+        ]
+      },
+      {
+        "question": ["Will this sync automatically?", "会自动同步吗？"],
+        "answer": [
+          "Do not assume cloud sync. Follow the documented export and backup workflow.",
+          "不要假定支持云同步，请按说明导出和备份。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "heat-press-settings-log",
+    "app": "pressrecipe",
+    "category": "heat-press",
+    "template": "heat-press-settings-log",
+    "title": ["Heat Press Settings Log Template", "热压参数记录模板"],
+    "description": [
+      "A heat press settings log records the exact material, blank, transfer and machine settings used for a test, together with the observed result. Include temperature units, time, pressure description and peel method, then link any later wash test to that sample. Use the free log below to preserve your own tested settings. Parameters must follow the relevant material, transfer and equipment manufacturer instructions.",
+      "热压参数记录应写明测试的材料、坯件、转印产品、机器参数及观察结果。温度注明单位，时间、压力描述和揭膜方式完整记录，后续水洗测试关联同一试样。下方免费模板用于保留自己实际测试的参数；设置必须遵循相应材料、转印产品及设备厂商说明。"
+    ],
+    "answer": [
+      "A heat press settings log records the exact material, blank, transfer and machine settings used for a test, together with the observed result. Include temperature units, time, pressure description and peel method, then link any later wash test to that sample. Use the free log below to preserve your own tested settings. Parameters must follow the relevant material, transfer and equipment manufacturer instructions.",
+      "热压参数记录应写明测试的材料、坯件、转印产品、机器参数及观察结果。温度注明单位，时间、压力描述和揭膜方式完整记录，后续水洗测试关联同一试样。下方免费模板用于保留自己实际测试的参数；设置必须遵循相应材料、转印产品及设备厂商说明。"
+    ],
+    "definition": [
+      "A settings log is a record of a particular test, not a universal recipe for all presses and materials.",
+      "参数日志记录具体测试，不是适用于所有机器和材料的通用配方。"
+    ],
+    "audience": [
+      "Small makers comparing their own test samples or repeating a previously recorded setup.",
+      "比较自有试样或重复既有设置的小型制作者。"
+    ],
+    "fields": [
+      ["Material, blank and transfer identity", "材料、坯件与转印产品标识"],
+      [
+        "Temperature unit, duration and machine pressure setting",
+        "温度单位、时长与机器压力设置"
+      ],
+      ["Peel method and result", "揭膜方式与结果"],
+      ["Sample ID linked to wash test", "关联水洗测试的试样编号"]
+    ],
+    "example": [
+      "Illustrative record: sample S-12 uses blank B and transfer T on press P. Enter the settings actually used and the observed result. Leave the temperature blank until verified against the relevant instructions; this example supplies no recommended value.",
+      "示例：试样 S-12 在机器 P 上使用坯件 B 和转印产品 T。填写实际设置和观察结果；温度按相关说明核对后填写，本示例不提供建议值。"
+    ],
+    "steps": [
+      [
+        "Identify the sample and consult the applicable manufacturer instructions.",
+        "确定试样并查阅适用厂商说明。"
+      ],
+      [
+        "Record the settings actually used, including units and pressure notation.",
+        "记录实际参数，包括单位和压力表达方式。"
+      ],
+      [
+        "Write the observed outcome and link later tests to the same sample.",
+        "记录观察结果，将后续测试关联到相同试样。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "A pressure label from one press may not describe another press.",
+        "一台机器的压力标签未必能描述另一台机器。"
+      ],
+      [
+        "A good immediate result does not prove wash durability.",
+        "当下效果良好并不证明水洗耐久性。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["Is there one best temperature?", "存在唯一最佳温度吗？"],
+        "answer": [
+          "No universal value is supplied here. Use the instructions for the actual materials and equipment.",
+          "这里不提供通用值，请遵循实际材料与设备说明。"
+        ]
+      },
+      {
+        "question": ["Can I reuse a logged setup?", "能重用已记录设置吗？"],
+        "answer": [
+          "Use it as a reference and recheck when the material, transfer or equipment changes.",
+          "可作参考；材料、转印产品或设备变化时重新核对。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "wash-test-log-for-heat-press",
+    "app": "pressrecipe",
+    "category": "heat-press",
+    "template": "heat-press-settings-log",
+    "title": ["Heat Press Wash Test Log", "热压水洗测试记录"],
+    "description": [
+      "A heat press wash test log connects a finished sample to its original settings and records what happened after washing. Identify the sample, record the wash conditions and cycle count, then describe visible changes consistently. Keep photos and observations linked to that sample rather than comparing unrelated items. Follow the product’s care instructions; a home test record does not establish a certification or universal durability claim.",
+      "热压水洗测试日志将成品试样与原始参数关联，记录清洗后的实际情况。写明试样、清洗条件和次数，统一描述可见变化。照片和观察始终关联同一试样，不将不相关物品直接比较。遵循产品护理说明；家庭测试记录不等于认证，也不能证明通用耐久性。"
+    ],
+    "answer": [
+      "A heat press wash test log connects a finished sample to its original settings and records what happened after washing. Identify the sample, record the wash conditions and cycle count, then describe visible changes consistently. Keep photos and observations linked to that sample rather than comparing unrelated items. Follow the product’s care instructions; a home test record does not establish a certification or universal durability claim.",
+      "热压水洗测试日志将成品试样与原始参数关联，记录清洗后的实际情况。写明试样、清洗条件和次数，统一描述可见变化。照片和观察始终关联同一试样，不将不相关物品直接比较。遵循产品护理说明；家庭测试记录不等于认证，也不能证明通用耐久性。"
+    ],
+    "definition": [
+      "A wash-test log is an observation series tied to a sample. It distinguishes initial appearance from appearance after stated washing conditions.",
+      "水洗日志是与试样关联的连续观察，区分初始外观和特定清洗条件后的外观。"
+    ],
+    "audience": [
+      "Makers comparing changes in their own test transfers over recorded wash cycles.",
+      "比较自有转印试样在记录的清洗次数后变化的制作者。"
+    ],
+    "fields": [
+      ["Sample ID and original settings reference", "试样编号与原始参数引用"],
+      ["Wash date, conditions and cycle count", "清洗日期、条件与次数"],
+      ["Before/after observation", "清洗前后观察"],
+      ["Photo reference and limits of comparison", "照片引用与比较限制"]
+    ],
+    "example": [
+      "Illustrative observation: sample S-12 has a lifting corner after a recorded wash cycle. Note the location and wash conditions and retain the comparison photo. Do not turn that single observation into a claim about every transfer of that type.",
+      "观察示例：试样 S-12 在一次已记录清洗后出现角部翘起。注明位置和清洗条件，保留对比照片，不据此推断所有同类转印产品。"
+    ],
+    "steps": [
+      [
+        "Record the initial appearance and link the original press settings.",
+        "记录初始外观并关联原始热压参数。"
+      ],
+      [
+        "Follow care instructions and record the conditions actually used.",
+        "遵循护理说明，记录实际清洗条件。"
+      ],
+      [
+        "Compare the same sample and describe changes without overstating them.",
+        "比较相同试样，描述变化而不夸大。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Comparing different blanks confuses the result.",
+        "比较不同坯件会混淆结果。"
+      ],
+      [
+        "“Passed” without conditions or observations is hard to reproduce.",
+        "仅写“通过”而无条件与观察，难以复现。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": [
+          "Does this certify wash durability?",
+          "这能认证水洗耐久性吗？"
+        ],
+        "answer": [
+          "No. It records your test conditions and observations only.",
+          "不能，只记录你的测试条件与观察。"
+        ]
+      },
+      {
+        "question": [
+          "Should I keep the original settings?",
+          "应保留原参数吗？"
+        ],
+        "answer": [
+          "Yes. Link the wash observation to its sample and settings record.",
+          "应保留，将水洗观察与试样及参数记录关联。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "how-to-record-heat-press-settings",
+    "app": "pressrecipe",
+    "category": "heat-press",
+    "template": "heat-press-settings-log",
+    "title": ["How to Record Heat Press Settings", "如何记录热压参数"],
+    "description": [
+      "Record heat press settings by naming the sample and equipment, identifying the blank and transfer, and writing down the actual temperature, time, pressure setting and peel method. Add units and record any changed variable. Keep results and later wash observations connected to the same sample. Consult the applicable manufacturer instructions before testing; do not copy an unlabeled temperature from an unrelated setup.",
+      "记录热压参数时，标明试样与设备、坯件与转印产品，填写实际温度、时间、压力设置和揭膜方式。注明单位以及改变的变量。结果和后续水洗观察都关联同一试样。测试前查阅适用厂商说明，不复制不相关设置中未注明单位的温度。"
+    ],
+    "answer": [
+      "Record heat press settings by naming the sample and equipment, identifying the blank and transfer, and writing down the actual temperature, time, pressure setting and peel method. Add units and record any changed variable. Keep results and later wash observations connected to the same sample. Consult the applicable manufacturer instructions before testing; do not copy an unlabeled temperature from an unrelated setup.",
+      "记录热压参数时，标明试样与设备、坯件与转印产品，填写实际温度、时间、压力设置和揭膜方式。注明单位以及改变的变量。结果和后续水洗观察都关联同一试样。测试前查阅适用厂商说明，不复制不相关设置中未注明单位的温度。"
+    ],
+    "definition": [
+      "A useful settings record makes the tested setup identifiable. It should tell a future reader which variables were used and which remain unknown.",
+      "有用的参数记录应能识别测试配置，让日后阅读者知道已使用的变量和未知项。"
+    ],
+    "audience": [
+      "Makers moving from handwritten scraps to a repeatable record format.",
+      "希望将零散手写备注转为一致记录格式的制作者。"
+    ],
+    "fields": [
+      ["Press and sample identifier", "设备与试样标识"],
+      ["Material and transfer reference", "材料与转印产品引用"],
+      ["Actual settings and units", "实际参数及单位"],
+      ["Changed variable and observed result", "改变变量与观察结果"]
+    ],
+    "example": [
+      "Illustrative comparison: tests S-20 and S-21 use the same labeled blank and transfer but one recorded variable differs. Keep separate entries and identify the difference explicitly. Do not overwrite S-20 with the later setup.",
+      "对比示例：S-20 和 S-21 使用相同标记的坯件与转印产品，只改变一个已记录变量。单独保存两条并注明差异，不用后续设置覆盖 S-20。"
+    ],
+    "steps": [
+      [
+        "Start a new sample record and identify the inputs.",
+        "新建试样记录，确定投入材料。"
+      ],
+      [
+        "Capture the settings during the test, not from memory later.",
+        "测试时记录参数，不事后靠记忆补写。"
+      ],
+      [
+        "Save the outcome and keep each revision distinguishable.",
+        "保存结果，使各次修订可以区分。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Missing units turn a number into a guess.",
+        "缺少单位会让数字变成猜测。"
+      ],
+      [
+        "Changing several unrecorded variables prevents useful comparison.",
+        "多个变量变化却未记录，无法有效比较。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": [
+          "Should I save unsuccessful tests?",
+          "应保存不成功的测试吗？"
+        ],
+        "answer": [
+          "Yes. They show the actual setup and outcome and can prevent repeating an undocumented test.",
+          "应保存。它们记录实际配置与结果，避免重复未留记录的测试。"
+        ]
+      },
+      {
+        "question": [
+          "Can I use paper instead of an app?",
+          "可以用纸代替 App 吗？"
+        ],
+        "answer": [
+          "Yes. Use the free sheet and keep it linked to your samples; an app is another way to organize records.",
+          "可以。使用免费表并关联试样；App 是另一种整理方式。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "invoice-template-repeat-customers",
+    "app": "samejob",
+    "category": "small-business",
+    "template": "repeat-customer-invoice",
+    "title": [
+      "Invoice Template for Repeat Service Customers",
+      "重复服务客户发票模板"
+    ],
+    "description": [
+      "An invoice template for repeat customers saves the customer and service layout while leaving every new date, invoice number, quantity and rate open for review. Copy the structure, not an old invoice’s assumptions. Use the free worksheet below to list line items and notes, verify amounts and give each issued invoice a distinct identifier. It provides a practical record format, not tax or legal advice.",
+      "回头客发票模板保留客户与服务结构，但每次日期、编号、数量和单价仍需重新核对。复制结构，不沿用旧发票的假设。下方免费工作表可列出明细与备注，核对金额并为每张发票设置不同编号。它提供实用记录格式，不提供税务或法律建议。"
+    ],
+    "answer": [
+      "An invoice template for repeat customers saves the customer and service layout while leaving every new date, invoice number, quantity and rate open for review. Copy the structure, not an old invoice’s assumptions. Use the free worksheet below to list line items and notes, verify amounts and give each issued invoice a distinct identifier. It provides a practical record format, not tax or legal advice.",
+      "回头客发票模板保留客户与服务结构，但每次日期、编号、数量和单价仍需重新核对。复制结构，不沿用旧发票的假设。下方免费工作表可列出明细与备注，核对金额并为每张发票设置不同编号。它提供实用记录格式，不提供税务或法律建议。"
+    ],
+    "definition": [
+      "A repeat-customer template is a reusable draft structure. A new invoice remains a separate record for the service actually performed.",
+      "回头客模板是可复用草稿结构；新发票仍是实际已完成服务的独立记录。"
+    ],
+    "audience": [
+      "Solo service businesses invoicing the same customer for separate visits.",
+      "为同一客户的多次服务分别开票的个人服务经营者。"
+    ],
+    "fields": [
+      ["Customer and service description", "客户与服务描述"],
+      ["Quantity, rate and currency", "数量、单价及币种"],
+      ["Calculated amount", "核算金额"],
+      ["New date and invoice number", "新日期与发票编号"]
+    ],
+    "example": [
+      "Illustrative entry: a return visit has two service units at 50 USD per unit, for a line amount of 100 USD. Recheck that the rate still applies and use a new invoice number. The numbers are an arithmetic example, not recommended prices.",
+      "示例：再次服务数量 2、每单位 50 美元，行金额 100 美元。重新确认单价仍适用，使用新发票编号。这是算术示例，不是建议价格。"
+    ],
+    "steps": [
+      [
+        "Use the customer and service structure as a draft.",
+        "用客户与服务结构创建草稿。"
+      ],
+      [
+        "Replace the date and number and verify each quantity and rate.",
+        "更换日期与编号，核对每项数量和单价。"
+      ],
+      [
+        "Check arithmetic and the recipient before issuing the new record.",
+        "发出前核对计算和收件人。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "An old invoice number can make two visits appear to be one record.",
+        "旧编号会让两次服务看起来是同一记录。"
+      ],
+      [
+        "CSV is a worksheet, not a finished branded invoice.",
+        "CSV 是工作表，不是排版完成的品牌发票。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["Does the CSV calculate totals?", "CSV 自动计算总额吗？"],
+        "answer": [
+          "No. It contains columns for entry; verify arithmetic in your spreadsheet or invoice app.",
+          "不计算。它提供录入列，计算请在电子表格或开票 App 中核对。"
+        ]
+      },
+      {
+        "question": ["Can I add local tax fields?", "可以添加当地税项吗？"],
+        "answer": [
+          "The worksheet can be adapted, but this guide does not determine applicable tax requirements.",
+          "可修改工作表，但本指南不判断适用税务要求。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "repeat-invoice-workflow",
+    "app": "samejob",
+    "category": "small-business",
+    "template": "repeat-customer-invoice",
+    "title": ["How to Create Repeat Invoices Faster", "如何更快创建重复发票"],
+    "description": [
+      "Create repeat invoices faster by reusing a checked customer and service draft, then reviewing only the details that can change on each visit. Update the date, invoice number, work description, quantity, rate and recipient before confirmation. Keep the previous invoice intact and save the new one as a distinct record. Reuse reduces typing; it should never skip the final review of the actual work.",
+      "复用已核对的客户与服务草稿，可以减少重复开票输入，但每次服务会变化的详情仍需检查。确认前更新日期、编号、工作描述、数量、单价和收件人。保留前一张发票，新发票单独保存。复用减少输入，不能省略对实际工作的最终核对。"
+    ],
+    "answer": [
+      "Create repeat invoices faster by reusing a checked customer and service draft, then reviewing only the details that can change on each visit. Update the date, invoice number, work description, quantity, rate and recipient before confirmation. Keep the previous invoice intact and save the new one as a distinct record. Reuse reduces typing; it should never skip the final review of the actual work.",
+      "复用已核对的客户与服务草稿，可以减少重复开票输入，但每次服务会变化的详情仍需检查。确认前更新日期、编号、工作描述、数量、单价和收件人。保留前一张发票，新发票单独保存。复用减少输入，不能省略对实际工作的最终核对。"
+    ],
+    "definition": [
+      "A repeat workflow separates stable information from per-visit information, with a review checkpoint before issue.",
+      "重复流程将稳定信息与每次服务信息分开，在发出前设核对步骤。"
+    ],
+    "audience": [
+      "Service operators who repeatedly enter the same customer details.",
+      "反复输入相同客户信息的服务经营者。"
+    ],
+    "fields": [
+      ["Reusable customer and service structure", "可复用客户与服务结构"],
+      ["Per-visit date and work", "本次日期与工作"],
+      ["Current quantity and rate", "当前数量与单价"],
+      ["Review and confirmation state", "核对与确认状态"]
+    ],
+    "example": [
+      "Illustrative workflow: last month’s service draft has the right customer but this visit takes a different quantity. Reuse the draft structure, change the quantity and date, check the recipient and confirm a new invoice.",
+      "流程示例：上月草稿客户正确，本次数量不同。复用结构，修改数量与日期，核对收件人后确认一张新发票。"
+    ],
+    "steps": [
+      [
+        "Keep reusable drafts separate from confirmed historical invoices.",
+        "将可复用草稿与已确认历史发票区分。"
+      ],
+      [
+        "Update the variable fields for the actual visit.",
+        "按实际服务更新变化字段。"
+      ],
+      [
+        "Review the complete new invoice before confirming and sharing.",
+        "确认和分享前审核完整新发票。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Editing a historical invoice erases the earlier event.",
+        "修改历史发票会覆盖此前事件。"
+      ],
+      [
+        "Automatic reuse of an old rate may no longer match the agreement.",
+        "自动沿用旧单价可能不符合现有约定。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": [
+          "Is this automatic recurring billing?",
+          "这是自动周期扣费吗？"
+        ],
+        "answer": [
+          "No. This guide describes manually reviewed repeat invoice preparation.",
+          "不是。本指南描述人工核对的重复发票制作。"
+        ]
+      },
+      {
+        "question": ["What does SameJob reuse?", "SameJob 复用什么？"],
+        "answer": [
+          "Its documented workflow reuses customer and work information; see the product page for current features and pricing.",
+          "其已说明流程复用客户与工作信息；当前功能和收费见产品页。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  },
+  {
+    "slug": "estimate-to-invoice-workflow",
+    "app": "samejob",
+    "category": "small-business",
+    "template": "repeat-customer-invoice",
+    "title": [
+      "Estimate-to-Invoice Workflow for Solo Service Businesses",
+      "个人服务经营者的估价单转发票流程"
+    ],
+    "description": [
+      "An estimate-to-invoice workflow starts with proposed work and ends with a reviewed record of what was actually supplied. Keep the estimate identifiable, check changes to scope, quantity and rate, then create a distinct invoice with its own date and number. Preserve the original estimate and explain differences in notes. The workflow organizes documents; it does not decide contract enforceability or tax treatment.",
+      "估价单转发票流程从拟议工作开始，以已实际提供服务的核对记录结束。保留可识别的估价单，检查范围、数量与单价变化，创建含独立日期和编号的发票。原估价单保留，差异用备注说明。流程用于整理文件，不判断合同效力或税务处理。"
+    ],
+    "answer": [
+      "An estimate-to-invoice workflow starts with proposed work and ends with a reviewed record of what was actually supplied. Keep the estimate identifiable, check changes to scope, quantity and rate, then create a distinct invoice with its own date and number. Preserve the original estimate and explain differences in notes. The workflow organizes documents; it does not decide contract enforceability or tax treatment.",
+      "估价单转发票流程从拟议工作开始，以已实际提供服务的核对记录结束。保留可识别的估价单，检查范围、数量与单价变化，创建含独立日期和编号的发票。原估价单保留，差异用备注说明。流程用于整理文件，不判断合同效力或税务处理。"
+    ],
+    "definition": [
+      "An estimate describes proposed work; an invoice records the billed work. Keeping them distinct makes changes visible.",
+      "估价单描述拟议工作，发票记录计费工作。两者分开保存，变化才能清晰可见。"
+    ],
+    "audience": [
+      "Solo businesses preparing an estimate before a service visit and billing afterward.",
+      "服务前提供估价、服务后开票的个人经营者。"
+    ],
+    "fields": [
+      ["Original estimate reference", "原估价单引用"],
+      ["Proposed vs actual scope", "拟议与实际范围"],
+      ["Reviewed quantities and rates", "核对后的数量与单价"],
+      ["Distinct invoice date and number", "独立发票日期与编号"]
+    ],
+    "example": [
+      "Illustrative entry: an estimate described two tasks, but only one was completed. Create the invoice for the reviewed actual work and explain the scope difference, while retaining the estimate instead of rewriting it as if both tasks happened.",
+      "示例：估价单列两项工作，实际只完成一项。按核对后的实际工作开票，注明范围差异，并保留原估价单，不改写成两项都已完成。"
+    ],
+    "steps": [
+      ["Keep the original estimate and its reference.", "保留原估价单与引用。"],
+      [
+        "Compare actual work with the proposed scope and check differences.",
+        "比较实际工作与拟议范围，核对差异。"
+      ],
+      [
+        "Create and review a separate invoice before sharing it.",
+        "创建并核对独立发票后再分享。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "A proposed quantity is not proof that work was completed.",
+        "拟议数量不证明工作已完成。"
+      ],
+      [
+        "Reusing an estimate identifier as the invoice number can blur the record types.",
+        "把估价编号直接当发票编号，会混淆文件类型。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": [
+          "Should I keep the estimate after invoicing?",
+          "开票后应保留估价单吗？"
+        ],
+        "answer": [
+          "Yes. Retain it as the proposal reference and keep the invoice as a separate record.",
+          "应保留，作为拟议工作引用；发票另行保存。"
+        ]
+      },
+      {
+        "question": [
+          "Does conversion remove the need to review?",
+          "转换后不用核对了吗？"
+        ],
+        "answer": [
+          "No. Check actual work, quantities, rates and recipient every time.",
+          "仍需每次核对实际工作、数量、单价和收件人。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-04",
+    "updatedAt": "2026-10-04"
+  }
+]

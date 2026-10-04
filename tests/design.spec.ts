@@ -1,55 +1,56 @@
 import { expect, test } from '@playwright/test';
 import { routes } from '../src/data/site';
 
-test('every page reflows at 320 and 768 pixels with usable navigation', async ({
-  page,
-}) => {
-  // This aggregate check navigates all business routes at both widths. Give the full
-  // matrix a realistic CI budget without relaxing any per-page assertion.
-  test.setTimeout(120_000);
-  for (const width of [320, 768]) {
-    await page.setViewportSize({ width, height: 844 });
-    for (const path of routes) {
-      await page.goto(path);
-      const layout = await page.evaluate(() => {
-        const headings = Array.from(
-          document.querySelectorAll('main h1, main h2, main h3'),
-        );
-        const badHeadings = headings.filter((heading) => {
-          const rect = heading.getBoundingClientRect();
-          return (
-            rect.left < 0 ||
-            rect.right > innerWidth ||
-            heading.scrollWidth > heading.clientWidth
+for (const width of [320, 768])
+  test(`every page reflows at ${width} pixels with usable navigation`, async ({
+    page,
+  }) => {
+    // This aggregate check navigates all business routes at both widths. Give the full
+    // matrix a realistic CI budget without relaxing any per-page assertion.
+    test.setTimeout(120_000);
+    {
+      await page.setViewportSize({ width, height: 844 });
+      for (const path of routes) {
+        await page.goto(path);
+        const layout = await page.evaluate(() => {
+          const headings = Array.from(
+            document.querySelectorAll('main h1, main h2, main h3'),
           );
+          const badHeadings = headings.filter((heading) => {
+            const rect = heading.getBoundingClientRect();
+            return (
+              rect.left < 0 ||
+              rect.right > innerWidth ||
+              heading.scrollWidth > heading.clientWidth
+            );
+          });
+          const nav = Array.from(document.querySelectorAll('header a'));
+          return {
+            overflow: document.documentElement.scrollWidth > innerWidth,
+            clippedHeadings: badHeadings.map((heading) => heading.textContent),
+            navigationSizes: nav.map((link) => {
+              const { width, height } = link.getBoundingClientRect();
+              return { width, height };
+            }),
+            levels: headings.map((heading) => Number(heading.tagName.slice(1))),
+          };
         });
-        const nav = Array.from(document.querySelectorAll('header a'));
-        return {
-          overflow: document.documentElement.scrollWidth > innerWidth,
-          clippedHeadings: badHeadings.map((heading) => heading.textContent),
-          navigationSizes: nav.map((link) => {
-            const { width, height } = link.getBoundingClientRect();
-            return { width, height };
-          }),
-          levels: headings.map((heading) => Number(heading.tagName.slice(1))),
-        };
-      });
-      expect(layout.overflow, `${path} at ${width}px`).toBe(false);
-      expect(layout.clippedHeadings, `${path} at ${width}px`).toEqual([]);
-      expect(
-        layout.navigationSizes.every(
-          ({ width, height }) => width >= 44 && height >= 44,
-        ),
-      ).toBe(true);
-      for (let i = 1; i < layout.levels.length; i++) {
+        expect(layout.overflow, `${path} at ${width}px`).toBe(false);
+        expect(layout.clippedHeadings, `${path} at ${width}px`).toEqual([]);
         expect(
-          layout.levels[i] - layout.levels[i - 1],
-          `${path} heading hierarchy`,
-        ).toBeLessThanOrEqual(1);
+          layout.navigationSizes.every(
+            ({ width, height }) => width >= 44 && height >= 44,
+          ),
+        ).toBe(true);
+        for (let i = 1; i < layout.levels.length; i++) {
+          expect(
+            layout.levels[i] - layout.levels[i - 1],
+            `${path} heading hierarchy`,
+          ).toBeLessThanOrEqual(1);
+        }
       }
     }
-  }
-});
+  });
 
 for (const chinese of [false, true]) {
   test(`${chinese ? 'Chinese' : 'English'} visible keyboard focus and reduced motion remain available`, async ({

@@ -8,9 +8,7 @@ interface Props {
 }
 const { locale, kind } = Astro.props;
 const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
-const base = Astro.url.pathname.includes('/products/affixhop')
-  ? '/products/affixhop'
-  : '/affixhop';
+const base = '/products/affixhop';
 const titles = {
   product: c('AffixHop: Word Meaning Games', 'AffixHop：词义游戏'),
   support: c('AffixHop Support', 'AffixHop 支持'),

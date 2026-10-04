@@ -8,10 +8,14 @@ permissions:
 concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: false
+env:
+  APPLE_PROVIDER_TOKEN: ${{ vars.APPLE_PROVIDER_TOKEN }}
+  GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+  BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     container:
       image: mcr.microsoft.com/playwright:v1.63.0-noble
       options: --ipc=host --init
@@ -27,7 +31,24 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run release:check
+      - run: npm run indexnow:snapshot
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
       - run: npm run build
+        env:
+          APPLE_PROVIDER_TOKEN: ${{ vars.APPLE_PROVIDER_TOKEN }}
+          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+          BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
+      - run: npm run seo:check
+      - run: npm run audit:quality
+        continue-on-error: true
+      - uses: actions/upload-artifact@v7
+        with:
+          name: website-search-reports
+          path: |
+            artifacts/seo-check.json
+            artifacts/quality/
+            artifacts/indexnow-baseline.json
+          retention-days: 7
       - run: npm test
         env:
           SITE_VISUAL_AUDIT: '1'
@@ -83,16 +104,25 @@ jobs:
           path: artifacts/pages-build
       - run: mkdir dist && tar -xf artifacts/pages-build/artifact.tar -C dist
       - run: npm ci
+      - uses: actions/download-artifact@v8
+        with:
+          name: website-search-reports
+          path: artifacts/search-reports
+      - run: cp artifacts/search-reports/indexnow-baseline.json artifacts/indexnow-baseline.json
+      - run: npm run seo:check
       - run: npm run verify:production
       - run: npm test
         env:
           PLAYWRIGHT_PRODUCTION: '1'
+      - run: npm run indexnow:submit
       - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: website-production-verification
           path: |
             artifacts/production-verification.json
+            artifacts/indexnow-receipt.json
+            artifacts/seo-check.json
             playwright-report/
             test-results/
           retention-days: 7
