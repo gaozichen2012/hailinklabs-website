@@ -1,32 +1,26 @@
 # 搜索平台接入状态
 
-2026-10-05：Google、Bing、App Store Connect 已取得可用登录会话，三项真实公开配置值已从官方后台获得并接入 `src/data/search-config.json`。Agent 正在部署、Verify 和 sitemap/索引回读，不再将这些操作交给人工。当前尚未完成后台验证；不能把crawler可访问或IndexNow接收称为已索引。
+2026-10-05：Google Search Console、Bing Webmaster Tools 已完成真实 HTML meta 所有权验证；Apple 官方生成的 Provider Token 已启用。网站源码 `3029ec01a1d17b5466510857f1ff9710f959c23b` 的 [Actions 37225394228](https://github.com/gaozichen2012/hailinklabs-website/actions/runs/37225394228) 检查、Pages 部署和生产验收全部成功，生产配置与构建产物一致。
 
-## 1. Google Search Console
+**No pending external actions requiring user input.** 当前没有缺失登录、权限或真实平台 ID；下述平台处理结果与异常不作为人工配置任务。详细后台数据仅记入私有当前状态。
 
-- 页面：[Search Console](https://search.google.com/search-console)。选择已有 `https://hailinklabs.com/` Property；若不存在，新增此 URL-prefix Property，使用官方 HTML tag 验证，无需修改 DNS。
-- 需要的真实值：后台生成的 `google-site-verification` 的 `content`。可以保存为 GitHub repository variable `GOOGLE_SITE_VERIFICATION`，或 `src/data/search-config.json` 的 `googleVerification`；重新部署后回读首页 HTML，点击 Verify。若采用官方 HTML 验证文件，将后台提供的原文件放入 `public/`，保留原文件名和正文。
-- 权限依赖：需要拥有或获授权访问该 Property 的 Google 登录会话；当前已有可用会话和真实值，后台验证待部署后由Agent继续执行。
-- 验证后：在 Sitemaps 提交 `https://hailinklabs.com/sitemap.xml`；记录处理结果，检查 Page indexing 中 Crawled/Discovered/Indexed、HTTPS、Core Web Vitals、Manual Actions、Security Issues。
-- URL Inspection：抽检首页、Products、六款已核实产品页、Guides、Templates，以及每类至少一个新 Guide/Template。记录 Google-selected canonical、last crawl 和实际 indexing 状态；Live Test 成功不等于已索引。
-- 不使用普通网页 Google Indexing API。若已有 Domain Property，沿用已有验证；本次不要求新增 DNS 验证或更改 Nameserver/邮件记录。
+## Google Search Console
 
-## 2. Bing Webmaster Tools
+- 已验证 URL-prefix Property `https://hailinklabs.com/`，使用官方 `google-site-verification`，真实值保存于 `src/data/search-config.json`；正式首页已回读，无 DNS 变更。
+- 已提交 `https://hailinklabs.com/sitemap.xml`，后台仍显示“无法抓取/无法读取此站点地图”。同一 XML 的官方 Live Test 允许抓取且抓取成功；正式文件为 HTTP 200、合法 XML、172 个唯一可索引网址。错误原因尚未确认，不报告 sitemap 后台处理成功，不重复删除或提交。
+- 已完成首页、Products、六款产品、Guides/Templates 入口及每类代表 Guide/Template 的 URL Inspection，并查看 Page indexing、HTTPS、Core Web Vitals、Manual Actions、Security Issues。首页、Guides、Templates入口的请求索引均已受理。Live Test 或请求索引成功不等于网址已经索引；缺乏真实用户指标不写成通过。
+- 后续核对 sitemap 错误与实际抓取/收录变化；当前未使用普通网页 Google Indexing API，也未修改 Nameserver、MX 或邮箱记录。诊断步骤依据 [Google 官方 Sitemaps report](https://support.google.com/webmasters/answer/7451001?hl=en-GB)。
 
-- 页面：[Bing Webmaster Tools](https://www.bing.com/webmasters/)。选择或添加 `https://hailinklabs.com`，使用已验证 Search Console 导入或官方 HTML meta 验证。
-- 需要的真实值：官方 `msvalidate.01` 的 `content`，配置 GitHub variable `BING_SITE_VERIFICATION` 或 `search-config.json` 的 `bingVerification`，部署回读后点击 Verify。
-- 权限依赖：需要能访问该站点的 Microsoft/Google 等受支持登录会话；当前已有可用会话和真实HTML标记，后台验证待部署后由Agent继续执行。
-- 验证后：提交正式 sitemap，执行上述代表 URL 的 URL Inspection，检查 Crawl issues、Site Scan、Index coverage。
-- 如账号已提供 AI Performance，查看 AI citations、Grounding queries、Referenced pages、Search intents 和 Citation share；将日期范围和实际可用指标记录在当前状态，缺数据不推断排名。参考 [Bing 官方 AI Performance](https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/) 与 [后续指标](https://blogs.bing.com/search/2026/6/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare/)。
+## Bing Webmaster Tools
 
-## 3. Apple App Store campaign attribution
+- 已使用官方 `msvalidate.01` 完成站点验证，真实值保存于构建配置；正式首页已回读。
+- 已提交正式 sitemap，后台显示 **Success、172 URLs discovered、0 errors、0 warnings**。这证明 sitemap 处理成功，不证明所有网址已经索引。
+- 已完成与 Google 相同范围的 URL Inspection、Live URL、Site Explorer 覆盖与 AI Performance BETA 回读。sitemap 范围的 Site Scan 已完成；三项过长标题及后续实时检查发现的23条英文meta摘要均已修复、部署并通过全站长度Gate及生产哈希核验，指南直接答案、正文、来源和中文摘要保持。最终源码的HybridLoop、估价转发票指南、热压主题页Live URL均可索引且无SEO/GEO问题；未将代表实时检查等同重新完成全站Site Scan。装饰图片空alt与既有aria-hidden语义一致，不为清空扫描提示增加冗余替代文本，依据 [W3C 装饰图片规范](https://www.w3.org/WAI/tutorials/images/decorative/)。
+- 后续核对扫描、覆盖与真实搜索/AI 指标；未把旧抓取错误当作当前 DNS 故障，也未根据空报告推断无问题或排名。
 
-- 页面：[App Store Connect](https://appstoreconnect.apple.com/) → Apps → 已有 Analytics 数据的六款之一 → Analytics → Acquisition → Campaigns → `+`。
-- 需要的真实值：从 Apple 生成的 Campaign Link 提取 `pt`（Provider Token），保存到 GitHub variable `APPLE_PROVIDER_TOKEN` 或 `search-config.json` 的 `appleProviderToken`。**不是 App ID、Team ID 或 Issuer ID，也不能手工猜测。**
-- 权限依赖：当前已从官方Analytics生成的SameJob campaign link取得真实pt。若 Campaigns/`+` 尚未出现，需等待 App 产生符合 Apple 条件的 Analytics 数据，不创建伪 campaign。
-- 真实Provider Token已配置，构建后的商店链接含 `pt`/`ct`/`mt`，Smart Banner含affiliate-data；上线后回读才能确认生产启用。当前营销活动页数据不足，不声称已有实际转化。
-- 加入真实值后无需改页面：静态构建自动为 Product/Guide/Template/Catalog CTA 生成含 `pt`、`ct`、`mt=8` 的链接，Banner 自动附带 affiliate-data。部署后核对参数及正确 App ID，在 Analytics 达到平台阈值后核对实际数据；参数正确不等于已有下载转化。
-- Campaign 名称最多30字符；共享方法保留 `hailink_<app>_<source>_<content>` 语义，过长时使用稳定 hash 后缀避免重名。Provider Token 是公开归因标识，绝不填写账号凭据。
-- [Apple 官方 Campaign Links](https://developer.apple.com/help/app-store-connect/view-app-analytics/manage-campaigns/)。
+## Apple App Store campaign attribution
 
-No pending external actions requiring user input. 剩余部署与后台验证由Agent继续执行；当前数据不足与搜索平台处理时间不等于权限阻塞。
+- 已从 App Store Connect 官方生成的 SameJob Campaign Link 取得真实 Provider Token，保存于 `search-config.json` 的 `appleProviderToken`。Provider Token 为公开归因标识，不是账号凭据、App ID、Team ID 或 Issuer ID。
+- 生产中的六款真实 listing 对应 CTA 均启用 `pt`、`ct`、`mt=8`；Product/Guide/Template Smart Banner 包含对应 `affiliate-data`。全站静态 Gate 核对准确 App ID、真实 token、合法 campaign 名称及参数；生产产物哈希与构建一致。
+- `buildAppStoreUrl` 统一生成链接；campaign 最多30字符，过长时使用稳定 hash 后缀。新增真实 listing 可沿用同一配置，无需在页面散落 query string。
+- 当前 Campaigns 数据不足，未验证实际归因下载或转化。按 [Apple 官方 Campaign links](https://developer.apple.com/help/app-store-connect-analytics/acquisition/campaign-links)，数据展示仍需满足首次用户与处理时间条件；链接启用不能代替真实业务数据。
