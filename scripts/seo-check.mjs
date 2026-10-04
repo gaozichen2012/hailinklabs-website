@@ -273,6 +273,7 @@ for (const name of names.filter((name) => name.endsWith('.html'))) {
 }
 const titles = new Set();
 for (const [path, p] of pages) {
+  assert(p.title.length > 0 && p.title.length <= 70, `${path} title length`);
   if (p.noindex) continue;
   assert(!titles.has(p.title), `${path} duplicate title`);
   titles.add(p.title);

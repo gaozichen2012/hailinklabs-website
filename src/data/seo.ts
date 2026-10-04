@@ -6,6 +6,17 @@ import { site } from './site';
 
 const absolute = (path: string) => new URL(path, site.url).href;
 
+// Keep page headings intact while giving long search titles a concise variant.
+const searchTitles: Record<string, string> = {
+  '/products/hybridloop':
+    'HybridLoop — Voice-Guided Workout Timer | Hailink Labs',
+  '/products/rulesprout': 'RuleSprout: Logic for Kids | Hailink Labs',
+  '/guides/estimate-to-invoice-workflow':
+    'Estimate-to-Invoice Workflow for Solo Businesses | Hailink Labs',
+};
+export const searchTitle = (path: string, fallback: string) =>
+  searchTitles[path] || fallback;
+
 export function socialImage(englishPath: string, locale: Locale) {
   const product = catalog.find(
     (item) =>

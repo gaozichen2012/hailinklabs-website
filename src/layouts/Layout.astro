@@ -13,6 +13,7 @@ import {
   socialImage,
   structuredData,
   serializeStructuredData,
+  searchTitle,
 } from '../data/seo';
 import {
   translator,
@@ -28,7 +29,7 @@ interface Props {
 }
 const {
   locale = 'en',
-  title,
+  title: requestedTitle,
   description,
   noindex: requestedNoindex = false,
 } = Astro.props;
@@ -45,6 +46,7 @@ const otherLocale = locale === 'en' ? 'zh-CN' : 'en';
 const alternate = localizedPath(canonicalPath(englishPath), otherLocale);
 const noindex = requestedNoindex || isAlias(path);
 const canonical = new URL(canonicalPath(path), site.url).href;
+const title = searchTitle(path, requestedTitle);
 const resource = resourceForPath(englishPath);
 const appSlug =
   resource?.app ||
