@@ -12,7 +12,7 @@ const privacy = kind === 'privacy';
 const title = privacy
   ? c('CartTinker Privacy Policy', 'CartTinker 隐私政策')
   : kind === 'overview'
-    ? 'CartTinker: Kids Money Games'
+    ? c('CartTinker: Kids Money Games', 'CartTinker 儿童预算游戏')
     : c('CartTinker Support', 'CartTinker 使用支持');
 const sections = privacy
   ? [
