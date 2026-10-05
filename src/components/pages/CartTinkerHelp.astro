@@ -1,0 +1,180 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  kind?: 'overview' | 'privacy' | 'support';
+}
+const { locale, kind = 'support' } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const privacy = kind === 'privacy';
+const title = privacy
+  ? c('CartTinker Privacy Policy', 'CartTinker 隐私政策')
+  : kind === 'overview'
+    ? 'CartTinker: Kids Money Games'
+    : c('CartTinker Support', 'CartTinker 使用支持');
+const sections = privacy
+  ? [
+      [
+        c('Local learning records', '本地学习记录'),
+        c(
+          'Profiles use a fixed avatar and random identifier. The app saves activity choices, checks, hints, reported help, timestamps and results on your device. It does not ask for a child’s name, birthday, email, photograph or school. Hailink Labs does not automatically receive learning records.',
+          '档案使用固定头像和随机标识。App 在设备上保存任务选择、检查、提示、已报告的协助、时间和结果，不要求儿童姓名、生日、邮箱、照片或学校。Hailink Labs 不会自动接收学习记录。',
+        ),
+      ],
+      [
+        c('Optional private iCloud', '可选私有 iCloud'),
+        c(
+          'Sync is off by default. A grown-up can enable it in the parent area. Anonymous profiles, learning records and deletion markers then use the current Apple account’s private CartTinker CloudKit database. Static activities, narration and purchase credentials are excluded. Account changes pause sync and require confirmation. Turning sync off preserves local data and existing private cloud records.',
+          '同步默认关闭，家长可在家长区启用。匿名档案、学习记录和删除标记通过当前 Apple 账户的 CartTinker 私有 CloudKit 数据库同步，不包含固定题库、旁白或购买凭据。账户变化会暂停同步并要求确认。关闭同步保留本地数据及已有私有云记录。',
+        ),
+      ],
+      [
+        c('Apple purchases', 'Apple 购买'),
+        c(
+          'Apple StoreKit supplies product information and handles the optional seven-day trial, one-time Lifetime purchase and restore. The app checks verified transactions and keeps access information and time anchors separately in device-only Keychain storage. Hailink Labs does not receive payment card details or operate a receipt server. Learning backups and profile changes do not grant or reset purchase access.',
+          'Apple StoreKit 提供商品信息，并处理可选七天试用、一次性终身购买及恢复。App 检查已验证交易，将权益信息和时间依据独立保存在仅限本设备的 Keychain 中。Hailink Labs 不接收支付卡信息，也不运营收据服务器。学习备份和档案变化不会授予或重置购买权益。',
+        ),
+      ],
+      [
+        c('Backups, sharing and deletion', '备份、分享与删除'),
+        c(
+          'A grown-up can export a readable JSON learning backup and choose its destination using Apple’s Files or Share Sheet. It contains anonymous learning records and deletion markers, not purchase credentials or cloud account bindings. Keep external copies private. Restore validates and previews the file before merging; conflicts are preserved separately. A confirmed profile or learning-data deletion propagates through enabled sync when devices connect. The app cannot remove backups saved or shared elsewhere. Learning deletion does not erase Apple purchase or trial history.',
+          '家长可导出可读取的 JSON 学习备份，使用 Apple Files 或系统分享选择目的地。备份包含匿名学习记录和删除标记，不含购买凭据或云账户关联。请保护外部副本。恢复先验证和预览，再合并；冲突记录分别保留。确认删除档案或学习数据后，删除通过已启用的同步在设备联网时传播。App 无法删除已另存或分享的备份。删除学习记录不会清除 Apple 购买或试用历史。',
+        ),
+      ],
+      [
+        c('Sound, permissions and tracking', '声音、权限与跟踪'),
+        c(
+          'Narration is prerecorded and bundled for offline playback. The app has no microphone recording, online voice service, ads, analytics SDK, tracking, social feature or child account. It requests no camera, microphone, location or contacts permission. Optional Apple services can communicate with Apple; offline play does not require iCloud.',
+          '旁白预录并随包提供，可离线播放。App 没有麦克风录音、在线语音服务、广告、分析 SDK、跟踪、社交或儿童账号，不请求相机、麦克风、定位或通讯录权限。可选 Apple 服务会与 Apple 通信；离线游玩无需 iCloud。',
+        ),
+      ],
+      [
+        c('Support email', '支持邮件'),
+        c(
+          'If a grown-up emails us, we use the information they choose to send to handle the support request under our company support-email policy. Avoid sending child identities, photographs, receipts or complete backups. Apple handles its services under its own privacy policy and your account settings.',
+          '家长主动发送邮件时，我们按公司支持邮件政策使用其选择提供的信息处理请求。请避免发送儿童身份、照片、收据或完整备份。Apple 按自身隐私政策及你的账户设置处理其服务。',
+        ),
+      ],
+    ]
+  : [
+      [
+        c('Keep the goal. Make the plan fit.', '保留目标，让计划符合条件。'),
+        c(
+          'CartTinker is a budget puzzle game for ages 6–8. Start with an existing supply plan, compare alternatives, swap items and check every condition. The four modules cover fitting a budget, keeping a favorite, leaving money for later and finding an alternative when plans change. Prices are pretend; there is no real shopping or financial advice.',
+          'CartTinker 面向 6–8 岁儿童，通过预算谜题练习计划调整。从已有用品计划开始，比较替代品、替换并检查全部条件。四个模块涵盖预算内选择、保留指定用品、预留金额和缺货后的调整。价格均为虚构，不涉及真实购物或金融建议。',
+        ),
+      ],
+      [
+        c('Free example and parent access', '免费示例与家长入口'),
+        c(
+          'Use Free example on Home to play Art Table anytime. Parents opens an adult gate; follow the displayed instructions to reach the parent area. A grown-up may start a 7-day full trial or choose a one-time Lifetime unlock. The trial starts only after Apple verifies activation and never renews or charges automatically. Lifetime includes 24 base missions and 192 fixed practice variations. No subscriptions or ads. Apple supplies local prices and availability; the US Lifetime base price is $5.99.',
+          '首页 Free example 可随时体验 Art Table。Parents 打开成人门禁，按屏幕指示进入家长区。家长可主动开启七天完整试用或选择一次性终身解锁。试用仅在 Apple 验证激活后开始，不自动续期或扣款。终身解锁包含 24 个基础任务及 192 个固定复练变式，无订阅和广告。当地价格及供应以 Apple 为准，美国终身基础价为 $5.99。',
+        ),
+      ],
+      [
+        c('Restore and saved progress', '恢复购买与学习记录'),
+        c(
+          'Use Restore purchases in the parent area with the Apple account used for the original purchase. Activation, purchase and restore may require an internet connection and Apple authentication. Switching profiles, importing a backup or clearing learning data does not restart the trial. Verified access and learning progress are separate.',
+          '在家长区使用 Restore purchases，并登录原购买所用的 Apple 账户。激活、购买和恢复可能需要联网及 Apple 认证。切换档案、导入备份或清空学习记录不会重启试用。已验证购买权益与学习进度独立保存。',
+        ),
+      ],
+      [
+        c('Backup and private sync', '备份与私有同步'),
+        c(
+          'Learning saves locally. In the parent area, use Export JSON backup and keep a private copy outside the app. Import validates and previews records before merging. Optional private iCloud sync is off by default and is separate from a recovery backup. Keep the original file until the restored records have been checked. The app cannot recall copies shared elsewhere.',
+          '学习数据保存在本地。在家长区使用 Export JSON backup，并在 App 外保留私有副本。导入先验证和预览，再合并记录。可选私有 iCloud 默认关闭，同步与恢复备份用途不同。核对恢复记录前请保留原文件；App 无法撤回已分享副本。',
+        ),
+      ],
+      [
+        c('Sound and troubleshooting', '声音与问题处理'),
+        c(
+          'Spoken guidance is optional; sound can be turned off while the rules remain visible. If saving fails, preserve existing data, check device storage and retry. If a product or iCloud is unavailable, keep playing the free example and retry in the parent area. Avoid uninstalling the app before exporting your learning data.',
+          '语音引导可关闭，规则仍在屏幕显示。保存失败时请保留已有数据，检查设备空间并重试。商品或 iCloud 暂不可用时可继续免费示例，再到家长区重试。导出学习数据前请避免卸载 App。',
+        ),
+      ],
+    ];
+---
+
+<Layout
+  locale={locale}
+  title={`${title} | Hailink Labs`}
+  description={c(
+    'CartTinker support and privacy: pretend budget puzzles, parent controls, local progress, private iCloud and Apple purchases.',
+    'CartTinker 使用支持与隐私：虚构预算谜题、家长门禁、本地学习记录、可选私有 iCloud，以及 Apple 试用、购买与恢复。',
+  )}
+>
+  <section class="page-intro policy-intro">
+    <a class="breadcrumb" href={localizedPath('/support', locale)}>
+      {c('Support', '使用支持')}
+    </a>
+    <p class="eyebrow" lang="en">
+      CartTinker: Kids Money Games
+    </p>
+    <h1>{title}</h1>
+  </section>
+  <article class="policy prose">
+    {privacy && (
+      <p>
+        {c(
+          'Effective October 5, 2026. CartTinker is developed by Hailink Labs, the brand of ',
+          '生效日期：2026 年 10 月 5 日。CartTinker 由 Hailink Labs 开发，品牌所属法律主体为 ',
+        )}
+        {companyName(locale)}.
+      </p>
+    )}
+    {privacy && locale === 'zh-CN' && (
+      <aside class="review-notice">
+        中文方便阅读；如有差异，以
+        <a href="/carttinker/privacy" lang="en">
+          英文版本
+        </a>
+        为准。
+      </aside>
+    )}
+    {sections.map(([heading, body]) => (
+      <Fragment>
+        <h2>{heading}</h2>
+        <p>{body}</p>
+      </Fragment>
+    ))}
+    <h2>{c('Contact', '联系')}</h2>
+    <p>
+      <a
+        class="email-link"
+        href={`mailto:${site.email}?subject=CartTinker%20Support`}
+      >
+        {site.email}
+      </a>
+    </p>
+    <p>
+      {c(
+        'Include the app version, device model, iOS version and a brief description. Do not send passwords, payment credentials or personal information about a child.',
+        '请提供 App 版本、设备型号、iOS 版本及问题简述。不要发送密码、支付凭据或儿童个人信息。',
+      )}
+    </p>
+    <p>
+      <a
+        href={localizedPath(
+          `/carttinker/${privacy ? 'support' : 'privacy'}`,
+          locale,
+        )}
+      >
+        {privacy
+          ? c('CartTinker support', 'CartTinker 使用支持')
+          : c('Read the privacy policy', '阅读隐私政策')}
+      </a>
+    </p>
+    <p>
+      <a href="https://www.apple.com/legal/privacy/">
+        {c('Apple privacy policy', 'Apple 隐私政策')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath('/products/samejob/privacy', locale)}>
+        {c('Company support-email handling', '公司支持邮件处理')}
+      </a>
+    </p>
+  </article>
+</Layout>

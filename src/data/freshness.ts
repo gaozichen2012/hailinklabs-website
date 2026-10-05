@@ -3,6 +3,9 @@ import { resourceForPath } from './resources';
 // across existing pages. This is an explicit content date, never a build clock.
 // For later substantive edits, add an override and update the resource itself.
 const pageUpdates: Record<string, string> = {
+  '/carttinker': '2026-10-05',
+  '/carttinker/support': '2026-10-05',
+  '/carttinker/privacy': '2026-10-05',
   '/products/panebatch/support': '2026-10-05',
   '/products/panebatch/privacy': '2026-10-05',
   '/zh/products/panebatch/support': '2026-10-05',

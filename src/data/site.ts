@@ -9,6 +9,9 @@ export const site = {
 };
 
 export const englishRoutes = [
+  '/carttinker',
+  '/carttinker/support',
+  '/carttinker/privacy',
   ...resourceRoutes,
   '/',
   '/about',
