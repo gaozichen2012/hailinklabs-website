@@ -27,6 +27,7 @@ for (const prefix of ['', '/zh']) {
             'ClueMend',
             'AffixHop',
             'LineLilt',
+            'FormalsFlow',
           ]
         : ['SameJob', 'GearProof', 'LitterRound'];
       await page.goto(route);
