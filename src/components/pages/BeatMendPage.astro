@@ -15,24 +15,30 @@ const titles = {
   privacy: 'BeatMend Privacy Policy',
 };
 const descriptions = {
-  product:
+  product: c(
     'Explore sounds and quiet through 24 short rhythm activities for ages 6–8, with a parent nearby and one large sound pad.',
-  support:
+    '为 6–8 岁儿童提供 24 个节奏小实验，用一个大按键探索声音与安静，首次练习由家长陪伴。',
+  ),
+  support: c(
     'Help with BeatMend activities, parent access, seven-day trial, lifetime purchase, backups, private iCloud and purchase restoration.',
-  privacy:
+    'BeatMend 活动、家长入口、七天试用、一次买断、备份、私有 iCloud 和恢复购买帮助。',
+  ),
+  privacy: c(
     'How BeatMend handles local rhythm records, optional private iCloud, Apple purchases, parent-directed exports and support email.',
+    '说明 BeatMend 的本地节奏记录、可选私有 iCloud、Apple 购买、家长主动导出及支持邮件处理方式。',
+  ),
 };
 ---
 
 <Layout
   locale={locale}
   title={c(
-    titles[kind],
+    `${titles[kind]} — Hailink Labs`,
     kind === 'privacy'
-      ? 'BeatMend 隐私政策'
+      ? 'BeatMend 隐私政策 — Hailink Labs'
       : kind === 'support'
-        ? 'BeatMend 支持'
-        : 'BeatMend 儿童节奏游戏',
+        ? 'BeatMend 支持 — Hailink Labs'
+        : 'BeatMend 儿童节奏游戏 — Hailink Labs',
   )}
   description={descriptions[kind]}
 >
