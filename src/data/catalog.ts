@@ -14,6 +14,24 @@ export const catalog: readonly CatalogProduct[] = [
   ...products,
   ...familyProducts,
   {
+    slug: 'formalsflow',
+    name: 'FormalsFlow',
+    storeName: 'FormalsFlow: Wedding Shot List',
+    subtitle: ['Family Formals & Retake Cues', '家庭合影与补拍提示'],
+    summary: [
+      'Keep family formals moving when the plan changes.',
+      '计划变化时，让家庭合影继续进行。',
+    ],
+    value: [
+      'Away, partial and retake stay accountable.',
+      '暂离、部分拍摄与补拍均明确核对。',
+    ],
+    description: [
+      'A local iPhone tool for wedding photographers and assistants managing named groups, missing people, retakes and portable backups.',
+      '为婚礼摄影师和现场助理提供的本地 iPhone 工具，管理具名组合、暂离人员、补拍和便携备份。',
+    ],
+  },
+  {
     slug: 'linelilt',
     name: 'LineLilt',
     storeName: 'LineLilt: Reading Fluency',
@@ -94,7 +112,7 @@ export const categories: readonly {
   {
     id: 'work',
     title: ['Work & Business', '工作与业务'],
-    slugs: ['samejob', 'gearproof', 'tmproof', 'pressrecipe'],
+    slugs: ['samejob', 'gearproof', 'tmproof', 'pressrecipe', 'formalsflow'],
   },
   {
     id: 'animals',

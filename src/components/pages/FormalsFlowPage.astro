@@ -1,0 +1,207 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  kind: 'product' | 'support' | 'privacy';
+}
+const { locale, kind } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const base = '/products/formalsflow';
+const titles = {
+  product: c('FormalsFlow: Wedding Shot List', 'FormalsFlow：婚礼合影清单'),
+  support: c('FormalsFlow Support', 'FormalsFlow 支持'),
+  privacy: c('FormalsFlow Privacy Policy', 'FormalsFlow 隐私政策'),
+};
+const descriptions = {
+  product: c(
+    'Run family formals from one iPhone. Track absent people, partial groups and retakes, then export local plans and reports.',
+    '在一台 iPhone 执行家庭正式合影，处理暂离、部分拍摄和补拍，导出本地计划及报告。',
+  ),
+  support: c(
+    'Help with Demo, wedding plans, people, Catch-up, 7-day Trial, Lifetime, backups and purchase restoration in FormalsFlow.',
+    'FormalsFlow 演示、婚礼计划、人员、补拍、七天试用、买断、备份及购买恢复帮助。',
+  ),
+  privacy: c(
+    'How FormalsFlow handles local wedding names, capture history, Apple purchases, user-directed exports and support correspondence.',
+    'FormalsFlow 如何处理本地婚礼姓名、拍摄记录、Apple 购买、用户导出和支持邮件。',
+  ),
+};
+const sections = {
+  product: [
+    [
+      'Keep family formals moving',
+      '让家庭合影继续进行',
+      'For wedding photographers and on-site assistants managing a named family photo plan. Mark one person Away to update every affected pending group, and continue with a group that is ready. One iPhone is the authoritative device for the current run; iOS 18 or later is required.',
+      '为执行具名家庭合影计划的婚礼摄影师和现场助理设计。将一人标为 Away，即更新所有受影响的待拍组合，并继续拍摄已就绪组合。当前运行以一台 iPhone 为权威设备，最低 iOS 18。',
+    ],
+    [
+      'Partial stays pending; retakes recall people',
+      '部分拍摄仍待完成，补拍重新需要人员',
+      'A partial capture records the people actually present without completing the promised full group. Catch-up includes blocked and held groups. Reopening a retake keeps the old capture and immediately recalculates who is still needed. Can Leave This Plan only means no unresolved group on this plan needs that person.',
+      '部分拍摄记录实际在场人员，不将承诺的完整组合标为完成。Catch-up 包含被阻塞及暂缓组合。重开补拍保留旧记录并立即重算仍需参与的人。Can Leave This Plan 仅表示当前名单没有未决组合仍需要该人。',
+    ],
+    [
+      'Local plans, reports and portable backups',
+      '本地计划、报告和便携备份',
+      'Create people and groups, or import a structured UTF-8 CSV with explicit identity mapping. Export PDF plans, results and CSV, or save a complete .formalsflow backup. Restore creates independent copies instead of replacing current weddings. No camera connection, guest recognition or photo-quality verification is provided.',
+      '创建人员和组合，或通过显式身份映射导入结构化 UTF-8 CSV。导出 PDF 计划、结果及 CSV，或保存完整 .formalsflow 备份。恢复创建独立副本，不覆盖当前婚礼。不提供相机连接、人物识别或照片质量验证。',
+    ],
+    [
+      'Seven days, then one purchase',
+      '七天试用，然后一次买断',
+      'Planned as a free US App Store download. Activate the zero-price non-consumable 7-day Trial when ready, or buy Lifetime for US$9.99. No subscription or automatic recurring charge. An authorized run continues until Finish after trial expiry. History, export, backup, restore and delete remain available. Apple shows the actual price before purchase.',
+      '计划在美国 App Store 免费下载。准备好后主动激活零价非消耗型 7-day Trial，或以 US$9.99 一次买断 Lifetime。无订阅和自动续费。试用到期后已授权运行可持续到 Finish，历史、导出、备份、恢复和删除仍可使用。实际购买价格以 Apple 确认页为准。',
+    ],
+  ],
+  support: [
+    [
+      'Try the free Demo',
+      '先尝试免费演示',
+      'Choose Try Demo from Weddings or Settings & Data. The fictional plan is separate from your wedding library and never starts your trial. Mark Morgan Away, record a partial group, return Morgan, complete the pending groups, then reopen a retake to see the release cue change.',
+      '从 Weddings 或 Settings & Data 选择 Try Demo。虚构计划独立于婚礼资料库，也不会启动试用。将 Morgan 标为 Away、记录部分组合、让 Morgan 返回、补齐待拍组合，再重开补拍观察放行提示变化。',
+    ],
+    [
+      'Plan and run a wedding',
+      '准备并执行婚礼计划',
+      'Create a wedding, add distinguishable people and named groups, then open Preflight. Confirm who is present before starting Live. Full Captured requires confirmation of the complete group. Partial, Hold, Away and Retake remain unresolved until you complete or explicitly waive the affected group. Finish requires zero pending groups; Pause preserves an unfinished run.',
+      '创建婚礼，添加可区分人员和具名组合，然后进入 Preflight。开始 Live 前确认在场情况。Full Captured 要确认完整名单；Partial、Hold、Away 和 Retake 仍待处理，直到完成或明确 Waive 对应组合。Finish 要求待拍数为零，Pause 保留未完成运行。',
+    ],
+    [
+      'Import, export and restore safely',
+      '安全导入、导出和恢复',
+      'CSV uses order,shot,people columns, with semicolons between people. Review every identity mapping before import. Event Plan provides PDF/CSV and wedding backup; Settings & Data provides complete backup, restore and recovery snapshots. Back up to a trusted destination. A .formalsflow file restores an independent copy and excludes purchases and device run grants; CSV is not a complete backup.',
+      'CSV 使用 order,shot,people 三列，人员以分号分隔。导入前逐项确认身份映射。Event Plan 提供 PDF/CSV 和单场备份；Settings & Data 提供完整备份、恢复及内部快照。选择可信目的地。.formalsflow 恢复为独立副本，不含购买或设备运行授权，CSV 不是完整备份。',
+    ],
+    [
+      'Trial, Lifetime and Restore Purchases',
+      '试用、买断和恢复购买',
+      'Open Settings & Data → Trial & Lifetime. The zero-price 7-day Trial lasts 168 hours from the original verified Apple transaction; installation and Demo do not start it. Lifetime is a one-time US$9.99 purchase, with no subscription. Apple shows the actual price before purchase. Restore Purchases uses the same Apple Account and does not restart a used trial or recover wedding files. First activation, purchase and explicit restoration need Apple services. Verified access is cached for offline work; an already authorized run can continue until Finish.',
+      '进入 Settings & Data → Trial & Lifetime。零价 7-day Trial 从原始已验证 Apple 交易起持续 168 小时，安装和演示不会启动。Lifetime 为 US$9.99 一次买断，无订阅，实际价格以 Apple 确认页为准。Restore Purchases 使用同一 Apple 账号，不重启已用试用，也不恢复婚礼文件。首次激活、购买和主动恢复需要 Apple 服务；已验证权益缓存支持离线使用，已授权运行可持续到 Finish。',
+    ],
+    [
+      'Saving problems and support',
+      '保存问题与支持',
+      'If a save fails, the last saved state is retained. Check available device storage and retry; do not uninstall or reset the device. Rejected backups do not replace your current library. Email the app version, device/iOS version and reproduction steps. Avoid sending guest names, wedding notes, backup files, receipts or payment details unless deliberately needed for the issue.',
+      '保存失败会保留最后成功保存的状态。检查设备剩余空间后重试，不要卸载或重置设备。被拒绝的备份不会替换当前资料库。邮件说明 App 版本、设备/系统及复现步骤；除非主动判断问题所需，否则请勿发送客人姓名、婚礼备注、备份、收据或支付详情。',
+    ],
+  ],
+  privacy: [
+    [
+      'Wedding data stays local by default',
+      '婚礼资料默认留在本地',
+      'FormalsFlow stores wedding titles, dates, notes, guest names and distinguishing labels, group memberships, presence, capture attempts, historical snapshots and audit records in private device storage. It has no app account, developer-operated server, CloudKit sync, analytics, advertising or third-party crash-reporting SDK. It requests no camera, microphone, location, Contacts or photo-library access. It does not take or inspect photographs.',
+      'FormalsFlow 在设备私有存储保存婚礼标题、日期、备注、客人姓名及区分标签、组合成员、在场状态、拍摄尝试、历史快照和审计记录。无 App 账号、开发者服务器、CloudKit 同步、分析、广告或第三方崩溃报告 SDK。不请求相机、麦克风、位置、通讯录或照片库权限，不拍摄或检查照片。',
+    ],
+    [
+      'Apple purchases and device access records',
+      'Apple 购买与设备权益记录',
+      'Apple StoreKit handles the zero-price 7-day Trial, Lifetime purchase, verification and Restore Purchases. Verified transaction facts and conservative time observations are cached in device Keychain. A separate local run grant protects an authorized wedding until Finish. These access records are excluded from user business backups. Hailink Labs operates no receipt server and receives no payment-card details. Apple processes commerce and system diagnostics under its own policies.',
+      'Apple StoreKit 处理零价 7-day Trial、Lifetime、交易验证和 Restore Purchases。已验证交易事实和保守时间观察缓存在设备 Keychain，独立本地运行授权保护已开始婚礼直到 Finish。这些权益记录不进入业务备份。Hailink Labs 不运营收据服务器，也不接收支付卡详情。Apple 按自己的政策处理商业服务和系统诊断。',
+    ],
+    [
+      'Exports are chosen by you',
+      '由你选择导出目的地',
+      'PDF, CSV and .formalsflow backups may contain guest names, notes and capture history. You preview and choose a Files or Share destination. FormalsFlow does not automatically send your wedding library to Hailink Labs. Backups are readable JSON, not encrypted by this app; their checksum detects corruption and is not an authentication guarantee. File providers, iCloud Drive, system/device backups and recipients have their own practices. We cannot recall exported copies.',
+      'PDF、CSV 和 .formalsflow 备份可能含客人姓名、备注和拍摄记录。由你预览并选择 Files 或 Share 目的地，App 不自动将资料库发送给 Hailink Labs。备份为可读 JSON，App 不另行加密；校验和用于发现损坏，不保证身份认证。文件服务商、iCloud Drive、系统/设备备份及接收方有各自规则，我们无法撤回已导出副本。',
+    ],
+    [
+      'Storage protection, recovery and deletion',
+      '存储保护、恢复与删除',
+      'Persistent files use iOS data protection. The app keeps up to five local recovery snapshots; these do not replace an external backup or protect against losing the device. Deleted weddings remain in Trash for 30 days. Permanent deletion requires confirmation. Historical snapshots can retain names as they appeared when recorded. Manage recovery snapshots, external files and system backups separately; deleting or uninstalling the app does not revoke shared copies or necessarily erase Keychain purchase records.',
+      '持久文件使用 iOS 数据保护。App 最多保留五份本地恢复快照，不能代替外部备份或防止设备遗失。删除婚礼进入 Trash 保留 30 天，永久删除需确认。历史快照可保留记录时姓名。内部快照、外部文件和系统备份需分别管理；删除或卸载 App 不会撤回共享副本，也不一定清除 Keychain 购买记录。',
+    ],
+    [
+      'Support correspondence',
+      '支持邮件',
+      'If you email support, we receive your email address, message and deliberately attached files to answer and resolve the issue. Do not send guest identities, wedding backups, receipts or payment details. Our company mailbox uses Tencent business email; Hailink Labs in China may access support messages. We do not sell this information or use it for advertising. Correspondence is retained for no longer than 12 months after issue closure unless an ongoing issue or legal obligation requires longer. You may request access, correction or deletion by email; we may verify the relevant email address.',
+      '你发支持邮件时，我们收到邮箱地址、正文和主动附加文件，用于回答和解决问题。请勿发送客人身份、婚礼备份、收据或支付详情。公司邮箱使用腾讯企业邮箱，中国境内 Hailink Labs 可能访问邮件。我们不出售资料或用于广告；问题关闭后保留不超过 12 个月，持续问题或法律义务要求更久时除外。你可邮件请求访问、更正或删除，我们可能核实对应邮箱。',
+    ],
+    [
+      'Website and policy changes',
+      '网站与政策变更',
+      'This website has no analytics, tracking scripts, accounts or contact forms. GitHub Pages processes technical requests such as IP addresses to deliver and protect the website. Material policy changes will be explained here with an updated effective date. Contact the company email below with privacy questions.',
+      '本网站无分析、跟踪脚本、账号或联系表单。GitHub Pages 为交付及保护网站处理 IP 地址等技术请求。重大政策变更会在此说明并更新生效日期，隐私问题请联系下方邮箱。',
+    ],
+  ],
+};
+---
+
+<Layout
+  locale={locale}
+  title={`${titles[kind]} | Hailink Labs`}
+  description={descriptions[kind]}
+>
+  <section class="page-intro policy-intro">
+    <p class="eyebrow">FormalsFlow</p>
+    <h1>{titles[kind]}</h1>
+    <p class="intro-copy">
+      {c(
+        'Keep family formals moving when the plan changes.',
+        '计划变化时，让家庭正式合影继续进行。',
+      )}
+    </p>
+    <p class="availability">
+      {c('Download link not yet available.', '下载链接暂未提供。')}
+    </p>
+  </section>
+  <article class="policy prose">
+    {kind === 'privacy' && (
+      <>
+        <p>
+          {c(
+            'Effective October 5, 2026. FormalsFlow is developed by Hailink Labs, the brand of ',
+            '生效日期：2026 年 10 月 5 日。FormalsFlow 由 Hailink Labs 开发，品牌所属主体为 ',
+          )}
+          {companyName(locale)}
+          {c('.', '。')}
+        </p>
+        {locale === 'zh-CN' && (
+          <aside class="review-notice">
+            中文版本方便阅读，如有差异以{' '}
+            <a href={`${base}/privacy`} lang="en" hreflang="en">
+              英文版本
+            </a>{' '}
+            为准。
+          </aside>
+        )}
+      </>
+    )}
+    {sections[kind].map(([et, zt, ep, zp]) => (
+      <>
+        <h2>{c(et, zt)}</h2>
+        <p>{c(ep, zp)}</p>
+      </>
+    ))}
+    {kind === 'privacy' && (
+      <p>
+        <a href="https://www.apple.com/legal/privacy/">
+          {c('Apple Privacy Policy', 'Apple 隐私政策')}
+        </a>{' '}
+        ·{' '}
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+          {c('GitHub Privacy Statement', 'GitHub 隐私声明')}
+        </a>
+      </p>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=FormalsFlow%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a href={localizedPath(base, locale)}>
+        {c('About FormalsFlow', '了解 FormalsFlow')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath(`${base}/support`, locale)}>
+        {c('Support', '支持')}
+      </a>{' '}
+      ·{' '}
+      <a href={localizedPath(`${base}/privacy`, locale)}>
+        {c('Privacy policy', '隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>

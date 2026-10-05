@@ -9,6 +9,18 @@ test('official brand assets load and keep their proportions in both languages', 
     expect(await logos.count()).toBeGreaterThanOrEqual(2);
     for (const logo of await logos.all()) {
       await expect(logo).toBeVisible();
+      // Footer images are lazy-loaded; visibility alone does not load an
+      // offscreen image on a longer catalogue page.
+      await logo.scrollIntoViewIfNeeded();
+      await expect
+        .poll(() =>
+          logo.evaluate(
+            (element) =>
+              (element as HTMLImageElement).complete &&
+              (element as HTMLImageElement).naturalWidth > 0,
+          ),
+        )
+        .toBe(true);
       const image = await logo.evaluate((element) => {
         const img = element as HTMLImageElement;
         const rect = img.getBoundingClientRect();
@@ -31,7 +43,7 @@ test('contact offers direct support for all supported apps', async ({
 }) => {
   for (const path of ['/contact', '/zh/contact']) {
     await page.goto(path);
-    await expect(page.locator('.support-directory a')).toHaveCount(17);
+    await expect(page.locator('.support-directory a')).toHaveCount(18);
     await page
       .locator('.support-directory a')
       .filter({ hasText: 'PressRecipe' })

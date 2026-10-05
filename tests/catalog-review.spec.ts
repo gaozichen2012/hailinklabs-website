@@ -18,10 +18,11 @@ const prices = [
   ['cluemend', ['US$9.99']],
   ['affixhop', ['US$5.99']],
   ['linelilt', ['US$6.99']],
+  ['formalsflow', ['US$9.99']],
 ] as const;
 
 for (const prefix of ['', '/zh']) {
-  test(`${prefix || 'English'} all 17 products retain their own prices and resources`, async ({
+  test(`${prefix || 'English'} all 18 products retain their own prices and resources`, async ({
     page,
   }) => {
     test.setTimeout(120_000);

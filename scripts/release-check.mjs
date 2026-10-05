@@ -31,6 +31,7 @@ for (const slug of [
   'affixhop',
   'linelilt',
   'panebatch',
+  'formalsflow',
 ]) {
   const product = review.productSourceReviews?.[slug];
   if (
