@@ -102,6 +102,11 @@
       "reviewedOn": "2026-10-05",
       "method": "source-audit",
       "remaining": []
+    },
+    "beatmend": {
+      "reviewedOn": "2026-10-06",
+      "method": "source-audit",
+      "remaining": []
     }
   }
 }

@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { site } from '../../data/site';
+import copy from '../../data/beatmend.json';
+interface Props {
+  locale?: 'en' | 'zh-CN';
+  kind: 'product' | 'support' | 'privacy';
+}
+const { kind, locale = 'en' } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const prefix = locale === 'en' ? '' : '/zh';
+const titles = {
+  product: 'BeatMend: Kids Rhythm Games',
+  support: 'BeatMend Support',
+  privacy: 'BeatMend Privacy Policy',
+};
+const descriptions = {
+  product:
+    'Explore sounds and quiet through 24 short rhythm activities for ages 6–8, with a parent nearby and one large sound pad.',
+  support:
+    'Help with BeatMend activities, parent access, seven-day trial, lifetime purchase, backups, private iCloud and purchase restoration.',
+  privacy:
+    'How BeatMend handles local rhythm records, optional private iCloud, Apple purchases, parent-directed exports and support email.',
+};
+---
+
+<Layout
+  locale={locale}
+  title={c(
+    titles[kind],
+    kind === 'privacy'
+      ? 'BeatMend 隐私政策'
+      : kind === 'support'
+        ? 'BeatMend 支持'
+        : 'BeatMend 儿童节奏游戏',
+  )}
+  description={descriptions[kind]}
+>
+  <section class="section intro">
+    <p class="eyebrow">Hailink Labs · BeatMend</p>
+    <h1>
+      {c(
+        titles[kind],
+        kind === 'privacy'
+          ? 'BeatMend 隐私政策'
+          : kind === 'support'
+            ? 'BeatMend 支持'
+            : 'BeatMend 儿童节奏游戏',
+      )}
+    </h1>
+    {kind === 'product' && (
+      <p class="intro-copy">Listen, Fix &amp; Play Again</p>
+    )}
+  </section>
+  <article class="policy prose">
+    {locale === 'zh-CN' && kind === 'privacy' && (
+      <aside class="review-notice">
+        中文版本方便阅读，如有差异以<a href="/beatmend-privacy">英文版本</a>
+        为准。
+      </aside>
+    )}
+    {copy[kind][locale].map(({ heading, text }) => (
+      <>
+        {heading && <h2>{heading}</h2>}
+        <p>{text}</p>
+      </>
+    ))}
+    {kind === 'privacy' && (
+      <>
+        <h2>{c('Website and support correspondence', '网站与支持邮件')}</h2>
+        <p>
+          {c(
+            'This website is hosted by GitHub Pages, whose service may process connection and request information under its own privacy statement. The website has no advertising, analytics, contact form or tracking cookies. Voluntary parent support email is handled under the existing company support policy; it is separate from app practice records.',
+            '网站由 GitHub Pages 托管，托管方按自身隐私声明处理连接和请求资料。网站无广告、分析、联系表单或追踪 Cookie。家长自愿支持邮件沿用公司支持政策，与 App 练习记录分开。',
+          )}
+        </p>
+        <p>
+          <a href="https://www.apple.com/legal/privacy/">
+            Apple Privacy Policy
+          </a>{' '}
+          ·{' '}
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+            GitHub Privacy Statement
+          </a>
+        </p>
+      </>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=BeatMend%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a href={`${prefix}/beatmend`}>About BeatMend</a> ·{' '}
+      <a href={`${prefix}/beatmend-support`}>Support</a> ·{' '}
+      <a href={`${prefix}/beatmend-privacy`}>Privacy policy</a>
+    </p>
+  </article>
+</Layout>

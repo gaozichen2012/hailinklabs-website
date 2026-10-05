@@ -1,0 +1,212 @@
+{
+  "product": {
+    "en": [
+      {
+        "heading": "",
+        "text": "BeatMend turns rhythm practice into a small experiment. Listen to a short pattern, hold one large sound pad, let go for quiet, and hear your own playing. Predict a change, explore one part of a separate copy, listen to the difference, then play again with your own hands."
+      },
+      {
+        "heading": "",
+        "text": "Designed for ages 6–8, with a parent nearby for the first session. No instrument, microphone or in-app account is needed. BeatMend is a rhythm activity, not a professional assessment or a replacement for a music teacher."
+      },
+      {
+        "heading": "",
+        "text": "Explore 24 short activities across four chapters: First Experiments, Change the Start, Change the End, and Move the Sound. Changing a start keeps its ending still; changing an ending keeps its start still; moving a sound keeps its length the same. Clearly marked teaching Examples remain separate from your own playing. Moving a block is an experiment, not proof of a successful new performance."
+      },
+      {
+        "heading": "",
+        "text": "One free Example is available without starting a trial. A parent can actively start a seven-day full trial or purchase lifetime access. Opening the app does not start the trial. The U.S. lifetime purchase is $9.99; the current App Store price appears in the parent area before purchase. No subscription, automatic renewal, advertisements or paid activity packs."
+      },
+      {
+        "heading": "",
+        "text": "Practice works locally after access is activated. Private iCloud sync is off by default and can be enabled by a parent. Complete JSON export and merge restore, deletion and purchase restoration are managed behind a parent reading gate. Records and data tools remain available after trial expiry. Use the device speaker at a comfortable volume; this version uses unscored exploration and awards no formal progress because speaker timing has not been calibrated."
+      },
+      {
+        "heading": "",
+        "text": "Available platform target: iPhone and iPad, iOS/iPadOS 18 or later. Planned store availability: 58 markets; language: English (U.S.). Public availability is not announced until an actual App Store listing has been verified."
+      }
+    ],
+    "zh-CN": [
+      {
+        "heading": "节奏探索",
+        "text": "BeatMend 将节奏练习变成小实验。听短节奏，用一个大按键按住发声、松开留出安静，听自己的演奏。预测一次改动，调整独立副本的一处，试听差别，再亲手重新演奏。"
+      },
+      {
+        "heading": "为初学者设计",
+        "text": "面向 6–8 岁儿童，首次由家长陪同。不需要乐器、麦克风或 App 账号。这是节奏活动，不是专业测评，也不代替音乐教师。"
+      },
+      {
+        "heading": "24 个短活动",
+        "text": "四章分别探索首次实验、改变开始、改变结束和移动声音。改变开始固定结束，改变结束固定开始，移动保持时长。明确标记的教学 Example 与自己的输入分开，移动图块不代表新演奏成功。"
+      },
+      {
+        "heading": "七天试用与一次买断",
+        "text": "无需启动试用即可使用一个免费 Example。家长主动通过 Apple 激活七天完整试用或购买终身访问。打开 App 不启动试用。美国买断价 US$9.99，实际价格在购买前显示。无订阅、自动续费、广告或付费活动包。"
+      },
+      {
+        "heading": "本地练习与家长管理",
+        "text": "激活访问后可在本地练习。私有 iCloud 同步默认关闭，由家长启用。完整 JSON 导出、合并恢复、删除和购买恢复在家长阅读门禁内。试用到期后记录和数据工具仍可用。使用舒适音量的内置扬声器；当前未校准的输出不评分，也不授予正式进度。"
+      },
+      {
+        "heading": "平台与供应",
+        "text": "支持 iPhone、iPad，最低 iOS/iPadOS 18。计划在固定 58 个市场供应，App 内容为美式英语；尚未宣布公开可下载。"
+      }
+    ]
+  },
+  "privacy": {
+    "en": [
+      {
+        "heading": "",
+        "text": "Effective October 6, 2026. Operator: Shenzhen Hailink Technology Co., Ltd., trading as Hailink Labs. This policy describes the BeatMend app and the optional support contact below."
+      },
+      {
+        "heading": "Local practice.",
+        "text": "BeatMend does not request a child's name, birthday, school or an in-app account. It stores one anonymous practice profile on the device: original press and release events, note intervals, timing context, playing attempts, predictions, edited copies, listening revisions and activity records. Random record and installation identifiers keep records distinct and support recovery; they are not advertising identifiers. App preferences and verified access state are also stored locally."
+      },
+      {
+        "heading": "No recording, advertising or tracking.",
+        "text": "The app does not use a microphone, camera, location, advertising network, third-party analytics, tracking or a developer-operated data backend. Rhythm input is touch timing, not a recording of a child's voice. English narration is bundled in the app; speech generation tools and voice models do not run in the app or receive practice data."
+      },
+      {
+        "heading": "Optional private iCloud.",
+        "text": "Private sync is off by default. A parent who enables it allows practice records to be stored and merged through Apple's CloudKit private database in their Apple account. Local practice continues without a network. Account changes isolate the previous account's upload queue. Sync is not a backup. Apple operates iCloud under its own terms and privacy policy."
+      },
+      {
+        "heading": "Purchases.",
+        "text": "Apple processes the free, parent-started seven-day non-consumable trial and the non-consumable lifetime purchase. There is no subscription or automatic renewal. BeatMend keeps verified transaction identifiers, original dates, environment and revocation state securely on the device to apply access rules. It does not receive payment-card or bank details. Restore purchases uses Apple to refresh verified access; import and reinstall do not create a new trial start date."
+      },
+      {
+        "heading": "Export and restore.",
+        "text": "A parent may export complete practice records to Files or a selected share destination. The selected destination receives the exported file. Exports include practice timing and record relationships, not purchase credentials. Restore checks integrity and references, preserves a rollback snapshot and merges records; it does not unlock purchases or restart a trial. Keep exported files in a location appropriate for your family and remove copies from those destinations when no longer needed."
+      },
+      {
+        "heading": "Deletion.",
+        "text": "Delete this local copy removes practice from the device and turns off sync while retaining the cloud copy. Delete from connected devices and iCloud sends deletion-generation markers to the current private cloud database; connected offline devices apply them after reconnecting. Purchases and original trial dates remain separate. Records, export, restore and deletion tools remain available after trial expiry."
+      },
+      {
+        "heading": "Support chosen by a parent.",
+        "text": "A parent may email gaozichen@hailinklabs.com. The email address, message and any voluntarily supplied diagnostic details are used to respond to the request. Do not send a child's identity, private account information, purchase receipts or full practice backups. Start with the app version, device/system version, activity ID and a description of the problem. Any requested follow-up should use an anonymized example."
+      },
+      {
+        "heading": "Changes and contact.",
+        "text": "Changes to data recipients or app functionality require this policy and the App Store privacy information to be reviewed. For questions about BeatMend's data handling, contact the public business email above. The parent gate prevents accidental access; it is not represented as legally verifiable parental consent or a privacy certification."
+      }
+    ],
+    "zh-CN": [
+      {
+        "heading": "适用范围",
+        "text": "生效日期：2026 年 10 月 6 日。BeatMend 由 Hailink Labs 开发，运营主体为深圳市海狸智联科技有限公司。本政策说明 App 数据及家长主动支持联系。"
+      },
+      {
+        "heading": "本地练习",
+        "text": "不要求儿童姓名、生日、学校或 App 账号。设备保存一个匿名练习档案，包括原始按下和松开事件、音符区间、时序上下文、演奏、预测、编辑副本、试听修订及活动记录。随机记录和安装标识用于区分记录和恢复，不是广告标识。设置和已验证权益也在本地保存。"
+      },
+      {
+        "heading": "无录音、广告或追踪",
+        "text": "不使用麦克风、相机、定位、广告网络、第三方分析、追踪或开发者数据后台。输入是触摸时序，不是儿童声音录音。英文旁白已随 App 打包，语音生成工具和模型不在 App 内运行，也不接收练习数据。"
+      },
+      {
+        "heading": "可选私有 iCloud",
+        "text": "同步默认关闭。家长启用后，练习记录通过其 Apple 账号的 CloudKit 私有数据库保存和合并。离线仍可本地练习，切换账号隔离旧账号上传队列。同步不是备份。Apple 按自身条款和隐私政策运营 iCloud。"
+      },
+      {
+        "heading": "购买",
+        "text": "Apple 处理家长主动领取的免费七天非消耗型试用及一次性买断，无订阅或自动续费。App 在设备安全保存已验证交易标识、原始日期、环境及撤销状态，以应用权益规则，不接收银行卡或银行资料。购买恢复向 Apple 刷新权益；导入和重装不重置试用起始日期。"
+      },
+      {
+        "heading": "导出与恢复",
+        "text": "家长可将完整练习记录导出到 Files 或选择的分享目的地，该目的地接收文件。导出含练习时序和记录关系，不含购买凭据。恢复检查完整性及引用，保存回滚快照后合并，不解锁购买或重启试用。请妥善保存及删除目的地中的备份副本。"
+      },
+      {
+        "heading": "删除",
+        "text": "删除本地副本移除设备练习并关闭同步，保留云副本。删除已连接设备与 iCloud 的内容向当前私有云写入删除代际标记，离线设备重新连接后处理。购买和原始试用日期单独保留；试用到期后记录、导出、恢复和删除工具仍可用。"
+      },
+      {
+        "heading": "家长主动支持",
+        "text": "可发送邮件至 gaozichen@hailinklabs.com。邮箱、消息及自愿提供的诊断用于回复。不要发送儿童身份、私有账号、购买收据或完整练习备份。先提供 App 版本、设备和系统、活动 ID 及问题描述；后续示例应匿名化。"
+      },
+      {
+        "heading": "变更与联系",
+        "text": "接收方或功能变化时重新审阅本政策及商店隐私资料。数据处理问题可联系公开业务邮箱。家长门禁防止误触，不宣称法律意义的可验证家长同意或隐私认证。"
+      }
+    ]
+  },
+  "support": {
+    "en": [
+      {
+        "heading": "",
+        "text": "For a parent or caregiver: gaozichen@hailinklabs.com."
+      },
+      {
+        "heading": "",
+        "text": "When contacting us, include BeatMend's version/build, iPhone or iPad model, iOS/iPadOS version, activity ID and the steps that led to the issue. Do not include a child's name, birthday, school, Apple credentials or payment details. Use an anonymized example rather than a complete practice backup."
+      },
+      {
+        "heading": "Get started.",
+        "text": "Join your child for the first session. Choose the free P03 Example, listen to the target, predict a change, adjust one ending, hear original then changed copy, and play again. Examples are clearly marked and are not the child's own repair. Use comfortable speaker volume and stop if sound or interaction is uncomfortable."
+      },
+      {
+        "heading": "Parent area.",
+        "text": "Tap Parents. Read the instruction and choose the first symbol, then the second symbol. A wrong choice creates a new two-step instruction. Purchase, restore, sync, backup and deletion tools are in this area. The gate relocks after the app leaves the foreground."
+      },
+      {
+        "heading": "Trial and lifetime access.",
+        "text": "Opening the app does not start the seven-day trial. A parent must actively start it through the App Store. The trial does not renew automatically. The U.S. lifetime purchase is $9.99; check the actual displayed App Store price before purchase. Use Restore purchases with the purchasing Apple account to refresh verified access. A restored or reinstalled trial uses its original start date. Importing a backup does not unlock access."
+      },
+      {
+        "heading": "Sound and timing.",
+        "text": "Use the built-in speaker. Bluetooth, AirPlay and unvalidated outputs use unscored exploration. Waiting for the full four-beat preparation helps distinguish ready beats from your own playing. Backgrounding, locking or an audio-route change stops an unfinished sound safely; an interrupted turn is not a completed note."
+      },
+      {
+        "heading": "Records and storage.",
+        "text": "Practice saves locally. If storage cannot open or a save fails, stop, free device space and relaunch. Do not delete the app or database as the first troubleshooting step. Export a complete JSON backup before intentionally deleting records. A failed or invalid import keeps the original data intact; merge restore does not replace the whole database or purchase state."
+      },
+      {
+        "heading": "Private iCloud.",
+        "text": "Sync is off by default and uses the signed-in Apple account's private database when enabled. If a sync attempt fails, keep practicing locally and retry from Parents after checking network and iCloud availability. Account changes require review before uploading to the new account. Sync does not replace an independent backup."
+      },
+      {
+        "heading": "After trial expiry.",
+        "text": "New full-practice activities need valid access. Existing records, replay, backup, merge restore, deletion, privacy and sync-management tools remain available. Purchase restoration can refresh an existing verified entitlement."
+      }
+    ],
+    "zh-CN": [
+      {
+        "heading": "联系支持",
+        "text": "家长或照护者可联系 gaozichen@hailinklabs.com。"
+      },
+      {
+        "heading": "问题信息",
+        "text": "提供版本及 Build、iPhone/iPad 型号、系统、活动 ID 和复现步骤。不要提供儿童姓名、生日、学校、Apple 凭据或付款资料，使用匿名示例代替完整备份。"
+      },
+      {
+        "heading": "开始使用",
+        "text": "首次陪同儿童。选择免费 P03 Example，听目标、预测、改一次结束、听原始与修改副本，再演奏。Example 是编写示例，不是儿童自己的修复。使用舒适音量，声音或交互不适时停止。"
+      },
+      {
+        "heading": "家长区域",
+        "text": "点击 Parents，阅读指令后依次选择两个指定符号。选错生成新指令；购买、恢复、同步、备份和删除都在该区域，App 离开前台后重新锁定。"
+      },
+      {
+        "heading": "试用与买断",
+        "text": "打开 App 不启动试用，家长必须通过 Apple 主动领取七天试用，无自动续费。美国买断价 US$9.99，实际价格以购买页面为准。用原购买 Apple 账号 Restore purchases；恢复或重装的试用沿用原始日期。导入不解锁权益。"
+      },
+      {
+        "heading": "声音与时序",
+        "text": "使用内置扬声器。Bluetooth、AirPlay 和未验证输出不评分。等完整四拍预备后再演奏。后台、锁屏或路由变化安全停止未完成声音，中断不作为完整音符。当前没有生产校准，不评分且不授予正式进度。"
+      },
+      {
+        "heading": "记录与存储",
+        "text": "本地保存练习。存储打不开或保存失败时先停止、检查剩余空间并重启 App，不先卸载或删库。有意删除前导出完整 JSON。无效或失败导入保持原库，合并恢复不替换整个数据库或购买状态。"
+      },
+      {
+        "heading": "私有 iCloud",
+        "text": "同步默认关闭，启用后使用当前 Apple 账号私有数据库。失败时继续本地练习，检查网络及 iCloud 后在 Parents 重试；换账号前核对是否上传新账号。同步不代替独立备份。"
+      },
+      {
+        "heading": "试用到期",
+        "text": "新的完整练习需要有效访问。已有记录、回放、备份、合并恢复、删除、隐私及同步管理仍可用。购买恢复可刷新既有已验证权益。"
+      }
+    ]
+  }
+}

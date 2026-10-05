@@ -9,6 +9,9 @@ export const site = {
 };
 
 export const englishRoutes = [
+  '/beatmend',
+  '/beatmend-support',
+  '/beatmend-privacy',
   '/carttinker',
   '/carttinker/support',
   '/carttinker/privacy',
