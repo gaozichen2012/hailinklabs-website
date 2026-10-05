@@ -1,0 +1,239 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { localizedPath, companyName, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+interface Props {
+  locale: Locale;
+  privacy?: boolean;
+}
+const { locale, privacy = false } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const heading = privacy
+  ? c('PaneBatch Privacy Policy', 'PaneBatch 隐私政策')
+  : c('PaneBatch Support', 'PaneBatch 使用支持');
+const href = (suffix: string) =>
+  localizedPath(`/products/panebatch/${suffix}`, locale);
+---
+
+<Layout
+  locale={locale}
+  title={`${heading} | Hailink Labs`}
+  description={c(
+    'PaneBatch support and privacy: screen repair jobs, measurements, workshop, refit, local backups and Lifetime purchases.',
+    'PaneBatch 使用支持与隐私说明：纱窗维修工单、尺寸和五金记录、工作台与返装、本地完整备份，以及终身购买与恢复。',
+  )}
+>
+  <section class="page-intro policy-intro">
+    <a class="breadcrumb" href={localizedPath('/support', locale)}>
+      {c('Support', '使用支持')} <span aria-hidden="true">/</span>
+    </a>
+    <p class="eyebrow" lang="en">
+      PaneBatch: Window Screen Jobs
+    </p>
+    <h1>{heading}</h1>
+    <p class="intro-copy">
+      {c(
+        'Keep every screen matched to its opening.',
+        '让每扇纱窗始终对应原来的窗口。',
+      )}
+    </p>
+  </section>
+  <article class="policy prose">
+    {privacy ? (
+      <>
+        <p>
+          {c(
+            'Effective October 5, 2026. PaneBatch is developed by Hailink Labs, the brand of ',
+            '生效日期：2026 年 10 月 5 日。PaneBatch 由 Hailink Labs 开发，品牌所属法律主体为 ',
+          )}
+          {companyName(locale)}.
+        </p>
+        {locale === 'zh-CN' && (
+          <aside class="review-notice">
+            本中文版本方便阅读。如有差异，以
+            <a href="/products/panebatch/privacy" lang="en" hreflang="en">
+              英文版本
+            </a>
+            为准。
+          </aside>
+        )}
+        <h2>{c('Local records', '本地记录')}</h2>
+        <p>
+          {c(
+            'PaneBatch stores jobs, optional customer/property labels and location text, screen identities, openings, measurements, frame and mesh specifications, hardware, notes, photos, revisions, status history, exports and settings on your device. There is no app account, developer backend or CloudKit synchronization. Hailink Labs does not automatically receive these records.',
+            'PaneBatch 在设备上保存工单、可选客户或房产标签与位置文字、纱窗身份、原窗口、尺寸、框架和网材规格、五金、备注、照片、修订、状态历史、导出及设置。无需 App 账号，没有开发者后台或 CloudKit 同步。Hailink Labs 不会自动接收这些记录。',
+          )}
+        </p>
+        <h2>{c('Camera and photos', '相机与照片')}</h2>
+        <p>
+          {c(
+            'Camera permission is requested only when you choose Take Photo. Choose Photo uses Apple’s system picker and supplies only images you select. The app saves its own local image copies. Camera refusal does not block text records. No microphone, location or contacts permission is requested.',
+            '仅在你选择 Take Photo 时请求相机权限。Choose Photo 使用 Apple 系统选择器，仅提供你选中的图片。App 保存独立本地图片副本。拒绝相机权限不会阻止文字记录。不请求麦克风、定位或通讯录权限。',
+          )}
+        </p>
+        <h2>{c('Apple services and purchases', 'Apple 服务与购买')}</h2>
+        <p>
+          {c(
+            'Apple StoreKit loads the Lifetime product and processes purchase and restore. PaneBatch checks verified transactions to determine unlimited-job access. Hailink Labs does not receive payment card details or operate a receipt server. The free model is one complete job; there is no timed trial or subscription. Purchase entitlement is separate from job data and is excluded from full backups.',
+            'Apple StoreKit 加载终身商品并处理购买与恢复。PaneBatch 检查已验证交易以判断不限工单权益。Hailink Labs 不接收支付卡信息，也不运营收据服务器。免费模式为一个完整工单，无计时试用或订阅。购买权益与业务数据独立，不包含在完整备份中。',
+          )}
+        </p>
+        <p>
+          {c(
+            'Core work is offline. Apple purchases and restores may need a connection. Apple handles its services and operating-system backups under your Apple settings and its own ',
+            '核心工作可离线进行。Apple 购买与恢复可能需要联网。Apple 按你的设置及自身的',
+          )}
+          <a href="https://www.apple.com/legal/privacy/">
+            {c('privacy policy', '隐私政策')}
+          </a>
+          {c('.', '处理服务和操作系统备份。')}
+        </p>
+        <h2>{c('Export, backup and sharing', '导出、备份与分享')}</h2>
+        <p>
+          {c(
+            'PDF and CSV are worksheets, not full backups. A .panebatchbackup includes records, revisions/history, photos, relevant export files and settings with integrity hashes. It is readable and not password-encrypted. Files and Share Sheet transfer data only when you choose a destination or recipient. Saving to iCloud Drive is a destination you select, not automatic app sync. Protect backups and manage external copies separately; the app cannot recall shared files.',
+            'PDF 和 CSV 是工作表，不是完整备份。.panebatchbackup 包含记录、修订与历史、照片、相关导出文件、设置及完整性哈希，可读取且不做密码加密。仅在你选择保存位置或接收方时，Files 和系统分享才传输数据。保存到 iCloud Drive 是你选择的目的地，不是 App 自动同步。请保护备份并单独管理外部副本；App 无法撤回已分享文件。',
+          )}
+        </p>
+        <h2>{c('Retention, restore and deletion', '保存、恢复与删除')}</h2>
+        <p>
+          {c(
+            'Records remain until you delete them or remove the app. Normal deletion moves records to Trash, which is not emptied automatically. Full Replace restore validates the backup, previews counts and requires confirmation, then retains an internal rollback snapshot. Permanent deletion removes relevant managed media, exports and internal retained copies; Delete All Data also clears personal settings. Save a backup outside the app first. External exports, shared copies and Apple-managed backups are not recalled. We have no server copy from which to recover your job data.',
+            '记录保留至你删除或移除 App。普通删除进入 Trash，不自动清空。Full Replace 恢复先验证备份、预览数量并明确确认，然后保留内部回滚快照。永久删除会移除相关受管理媒体、导出及内部保留副本；Delete All Data 也清除个人设置。请先将备份保存到 App 外。外部导出、分享副本及 Apple 管理的备份不会被撤回。我们没有可用于找回工单的服务器副本。',
+          )}
+        </p>
+        <h2>{c('Analytics and tracking', '分析与跟踪')}</h2>
+        <p>
+          {c(
+            'The app has no ads, analytics, third-party crash SDK, tracking or AI service. Apple may independently process diagnostics under your device settings and its policies.',
+            'App 没有广告、分析、第三方崩溃 SDK、跟踪或 AI 服务。Apple 可能依据设备设置及其政策独立处理诊断数据。',
+          )}
+        </p>
+        <h2>{c('Support correspondence', '支持邮件')}</h2>
+        <p>
+          {c(
+            'If you email us, we receive your address, message and attachments to answer and resolve the issue. Our company mailbox uses Tencent’s business email service. Hailink Labs may access support mail in China. We do not sell it or use it for advertising. We retain correspondence for no longer than 12 months after an issue closes unless an ongoing issue or legal obligation requires longer. Avoid sending customer records, full backups, passwords or payment credentials.',
+            '发邮件时，我们为回复与处理问题接收你的邮箱、正文和附件。公司邮箱使用腾讯企业邮箱，Hailink Labs 可能在中国访问支持邮件。我们不出售这些信息，也不用于广告。问题关闭后最多保留 12 个月，除非未解决问题或法律义务要求更久。请避免发送客户记录、完整备份、密码或支付凭据。',
+          )}
+        </p>
+        <p>
+          {c(
+            'Contact us to request access, correction or deletion of information held in support mail, or ask about its use. We may verify the request using the relevant email address. Local app records are controlled on your device; chosen recipients manage external copies.',
+            '你可以联系我们，申请访问、更正或删除支持邮件中的信息，或询问用途。我们可能通过对应邮箱核实请求。本地 App 记录由你在设备上管理；外部副本由所选接收方管理。',
+          )}
+        </p>
+        <h2>{c('Website visits', '网站访问')}</h2>
+        <p>
+          {c(
+            'This website has no analytics scripts, advertising trackers, contact form or account system. GitHub Pages hosts it and processes technical request information such as IP addresses to deliver and protect the site. See ',
+            '网站没有分析脚本、广告跟踪、联系表单或账号系统。GitHub Pages 托管并为交付和保护网站处理 IP 地址等技术请求信息。参见 ',
+          )}
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+            {c('GitHub’s privacy statement', 'GitHub 隐私声明')}
+          </a>
+          .
+        </p>
+        <h2>{c('Policy updates', '政策更新')}</h2>
+        <p>
+          {c(
+            'Substantive changes will be described on this page with an updated effective date.',
+            '实质变化将在本页说明并更新生效日期。',
+          )}
+        </p>
+      </>
+    ) : (
+      <>
+        <h2>
+          {c('Create, record, workshop and refit', '建单、记录、工作台与返装')}
+        </h2>
+        <ol>
+          <li>
+            {c(
+              'Create First Job, then Add Screen. Physically tag each screen with its stable number. Record its room and original opening.',
+              '选择 Create First Job，再 Add Screen。用稳定编号给实体纱窗做标记，记录房间及原窗口。',
+            )}
+          </li>
+          <li>
+            {c(
+              'Choose Rescreen Existing Frame or New/Replacement Frame. Enter your own finished outside-frame dimensions, frame, mesh and hardware. Measurements are inches in exact 1/32 increments; unknown rescreen dimensions can remain blank.',
+              '选择 Rescreen Existing Frame 或 New/Replacement Frame。录入自行测量的成品框外尺寸、框架、网材及五金。英寸按精确 1/32 递增；换网任务的未知尺寸可留空。',
+            )}
+          </li>
+          <li>
+            {c(
+              'Review the specification and Confirm Ready. Workshop marks each current revision Built/Rescreened. Refit records Installed or Fit Issue at the original opening.',
+              '复核规格后 Confirm Ready。在 Workshop 将当前修订标为 Built/Rescreened，再在 Refit 记录原窗口的 Installed 或 Fit Issue。',
+            )}
+          </li>
+          <li>
+            {c(
+              'Complete all non-cancelled screens before the job is complete. Critical edits create a revision and Needs Check. Export a current PDF/CSV and keep a Full Backup.',
+              '所有未取消纱窗装回后工单才完成。关键编辑创建新修订及 Needs Check。导出当前 PDF/CSV 并保存 Full Backup。',
+            )}
+          </li>
+        </ol>
+        <h2>{c('Measurements and hardware', '尺寸与五金')}</h2>
+        <p>
+          {c(
+            'PaneBatch does not measure from photos or calculate manufacturing clearances. Enter 23, 23 1/2, 23 3/8 or 23.375; off-grid decimals are rejected rather than rounded. Hardware uses an exterior-facing view: top stays up; top/bottom offsets start at the left and left/right offsets at the top. Diagrams are not to scale. Verify physical fit and safety yourself.',
+            'PaneBatch 不从照片测量，也不计算制造间隙。可输入 23、23 1/2、23 3/8 或 23.375；不在网格上的小数会被拒绝，不静默舍入。五金采用朝外视角：顶部朝上；上下边偏移从左起算，左右边从顶起算。图示不按比例，请自行验证实体配合与安全。',
+          )}
+        </p>
+        <h2>
+          {c(
+            'One complete job free and Lifetime',
+            '一个完整工单免费与终身权益',
+          )}
+        </h2>
+        <p>
+          {c(
+            'One Complete Job Free includes all core features without watermarks or screen/photo/export quotas. A US $19.99 one-time Lifetime purchase unlocks Unlimited Jobs. No subscription or timed trial. Archived jobs and jobs in Trash count until permanently deleted. Restoring multiple jobs keeps existing data usable and only limits new excess jobs.',
+            'One Complete Job Free 包含全部核心功能，无水印或纱窗、照片、导出配额。美国参考价 US $19.99 的一次性 Lifetime 购买解锁 Unlimited Jobs，无订阅或计时试用。归档及 Trash 内工单在永久删除前占免费名额。恢复多个工单后已有数据仍可使用，只限制新建超额工单。',
+          )}
+        </p>
+        <p>
+          {c(
+            'Open Settings > Purchase. The App Store displays the applicable price. Settings > Restore Purchase uses the original purchasing Apple Account while online. Backup restore does not restore entitlement; failed or revoked purchases never delete job data.',
+            '打开 Settings > Purchase，购买价格以 App Store 显示为准。联网并使用原购买 Apple 账号，在 Settings > Restore Purchase 恢复。恢复备份不恢复权益；购买失败或撤销不会删除业务数据。',
+          )}
+        </p>
+        <h2>{c('Photos, export and backup', '照片、导出与备份')}</h2>
+        <p>
+          {c(
+            'Take Photo asks for camera permission; Choose Photo uses the system picker. If denied, use text or choose an existing image. Export offers PDF and CSV worksheets. Settings > Export Full Backup prepares .panebatchbackup for Files or Share. Keep a copy outside the app. Restore Backup validates and previews counts before an explicit Full Replace; it does not merge. Save current data before confirming replacement.',
+            'Take Photo 请求相机权限，Choose Photo 使用系统选择器。拒绝权限后可继续文字记录或选已有图片。Export 提供 PDF 和 CSV 工作表。Settings > Export Full Backup 生成 .panebatchbackup，可用 Files 或 Share 保存。请保留 App 外副本。Restore Backup 在验证和数量预览后明确执行 Full Replace，不合并；确认替换前请先保存当前数据。',
+          )}
+        </p>
+        <h2>{c('Troubleshooting', '问题处理')}</h2>
+        <p>
+          {c(
+            'If saving fails, preserve your existing data, check device storage and retry. If a backup is rejected, keep the original and verify its source/version; do not edit its hashes or replace current data. A critical change requires a fresh Ready check and new workshop/refit confirmation. Previous exports are not recalled and may be Outdated. View Sample Job is fictional and read-only.',
+            '保存失败时保留现有数据，检查设备存储后重试。备份被拒绝时保留原文件并检查来源与版本，不修改哈希或替换当前数据。关键变化需要重新 Ready 及制作、返装确认。旧导出无法撤回，可能显示 Outdated。View Sample Job 为虚构、只读示例。',
+          )}
+        </p>
+      </>
+    )}
+    <h2>{c('Contact', '联系')}</h2>
+    <p>
+      <a
+        class="email-link"
+        href={`mailto:${site.email}?subject=PaneBatch%20Support`}
+      >
+        {site.email}
+      </a>
+    </p>
+    <p>
+      {c(
+        'Include your app version, iOS version and a short description. Remove private data from screenshots. Do not send passwords, payment credentials, customer records or full backups.',
+        '请提供 App 版本、iOS 版本与问题简述。截图请移除私人信息，不要发送密码、支付凭据、客户记录或完整备份。',
+      )}
+    </p>
+    <p>
+      <a href={href(privacy ? 'support' : 'privacy')}>
+        {privacy
+          ? c('PaneBatch support', 'PaneBatch 使用支持')
+          : c('Read the privacy policy', '阅读隐私政策')}
+      </a>
+    </p>
+  </article>
+</Layout>

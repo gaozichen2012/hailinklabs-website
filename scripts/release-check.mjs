@@ -30,6 +30,7 @@ for (const slug of [
   'cluemend',
   'affixhop',
   'linelilt',
+  'panebatch',
 ]) {
   const product = review.productSourceReviews?.[slug];
   if (

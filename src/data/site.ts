@@ -45,6 +45,8 @@ export const englishRoutes = [
   '/products/cluemend',
   '/products/cluemend/support',
   '/products/cluemend/privacy',
+  '/products/panebatch/support',
+  '/products/panebatch/privacy',
   '/products/linelilt',
   '/products/linelilt/support',
   '/products/linelilt/privacy',
