@@ -9,6 +9,8 @@ export const site = {
 };
 
 export const englishRoutes = [
+  '/products/patchrelay/support',
+  '/products/patchrelay/privacy',
   '/products/siterevisit/support',
   '/products/siterevisit/privacy',
   '/beatmend',
