@@ -34,6 +34,7 @@ for (const slug of [
   'formalsflow',
   'carttinker',
   'beatmend',
+  'siterevisit',
 ]) {
   const product = review.productSourceReviews?.[slug];
   if (
