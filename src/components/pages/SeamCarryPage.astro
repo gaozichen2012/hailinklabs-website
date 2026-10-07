@@ -1,0 +1,132 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { site } from '../../data/site';
+interface Props {
+  kind: 'privacy' | 'support';
+}
+const { kind } = Astro.props;
+const title =
+  kind === 'privacy' ? 'SeamCarry Privacy Policy' : 'SeamCarry Support';
+---
+
+<Layout
+  title={`${title} — Hailink Labs`}
+  description="SeamCarry local sewing records, paper version checks, backups and purchase support."
+>
+  <section class="section intro">
+    <p class="eyebrow">Hailink Labs · SeamCarry</p>
+    <h1>{title}</h1>
+  </section>
+  <article class="policy prose">
+    {kind === 'privacy' ? (
+      <>
+        <p>Effective October 7, 2026. SeamCarry 1.0.</p>
+        <h2>Local records and photos</h2>
+        <p>
+          Patterns, changes, paper versions, make snapshots, notes and copied
+          photos stay on your device. SeamCarry has no account, advertising,
+          analytics, tracking, AI uploads or user-content server. Hailink Labs
+          does not receive these records through the app.
+        </p>
+        <h2>Optional photo access</h2>
+        <p>
+          Photo selection uses the system picker. Camera permission is requested
+          only when you choose Take Photo. You can continue with text if
+          permission is declined. Imported photos are independent app copies;
+          deleting the original from Photos does not remove the app copy.
+        </p>
+        <h2>Apple and chosen file providers</h2>
+        <p>
+          Apple processes purchases and restores through StoreKit. Verified
+          access is stored locally; backups do not contain purchase credentials.
+          You choose where to save PDF, CSV and complete backups and whom to
+          share them with. Files providers handle transfers under their own
+          policies. iCloud Drive is file backup, not automatic database
+          synchronization. Complete backups may contain original photos and
+          metadata. Protect them as private files; SeamCarry does not
+          additionally encrypt backups.
+        </p>
+        <h2>Retention and deletion</h2>
+        <p>
+          Trash retains deleted patterns for at least 30 days until permanent
+          deletion. Historical snapshots, backups and local recovery checkpoints
+          may retain earlier records. You can edit, export and delete records.
+          Uninstalling, losing or damaging the device may lose local data
+          without an external backup. Restore Purchases restores access, not
+          pattern data.
+        </p>
+        <h2>Website and support</h2>
+        <p>
+          This website uses GitHub Pages, which may process connection and
+          request information under its own privacy statement. There are no
+          website advertising, analytics, contact forms or tracking cookies.
+          Voluntary support email and the information you choose to send are
+          used to respond to your request, separately from local app records.
+          Existing{' '}
+          <a href="/products/samejob/privacy">
+            company support correspondence practices
+          </a>{' '}
+          apply. Do not send private photos or full backups unless needed and
+          intentionally shared.
+        </p>
+        <p>
+          <a href="https://www.apple.com/legal/privacy/">
+            Apple Privacy Policy
+          </a>{' '}
+          ·{' '}
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+            GitHub Privacy Statement
+          </a>
+        </p>
+      </>
+    ) : (
+      <>
+        <h2>Check your paper before cutting</h2>
+        <p>
+          Create a pattern and label the paper copy with its short code. Record
+          changes as Needs check. After making a change on that copy, confirm
+          Applied, or choose Not using with a reason. Confirm the paper label,
+          view and size before sealing a version and before every new make.
+          Ready records your confirmation; it does not certify fit or geometry.
+          New versions copy notes but require fresh confirmations.
+        </p>
+        <h2>History and backups</h2>
+        <p>
+          Make snapshots preserve the version used. PDF and CSV are reports, not
+          full-size sewing patterns or restorable backups. Create a complete
+          .seamcarry backup in Settings and save it outside this device. Restore
+          validates and previews the backup, creates a local checkpoint and
+          replaces the full library. It does not merge libraries or transfer
+          purchases. Keep a current external backup before restoring.
+        </p>
+        <h2>Two patterns free; optional Lifetime</h2>
+        <p>
+          Two patterns are free with every feature. Archived patterns count;
+          Trash and the separate sample do not. The US Lifetime non-consumable
+          purchase is US$9.99 for unlimited new patterns, with the current price
+          shown by Apple. No subscription. Existing records remain available to
+          view, edit, export and back up after refunds or temporary store
+          errors. Restore Purchases uses your App Store account.
+        </p>
+        <h2>Saving and help</h2>
+        <p>
+          If saving fails, preserve your records, check available storage and
+          retry. Do not uninstall or clear data to troubleshoot. Camera is
+          optional; use the photo picker or text instead. Email support with the
+          app version, action and exact error. Do not send private photos or
+          full backups unless you choose to share them for support.
+        </p>
+      </>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=SeamCarry%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a href="/products/seamcarry/support">Support</a> ·{' '}
+      <a href="/products/seamcarry/privacy">Privacy policy</a> ·{' '}
+      <a href="/contact">Contact Hailink Labs</a>
+    </p>
+  </article>
+</Layout>

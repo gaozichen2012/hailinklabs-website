@@ -11,6 +11,8 @@ export const site = {
 export const englishRoutes = [
   '/products/batchmise/support',
   '/products/batchmise/privacy',
+  '/products/seamcarry/support',
+  '/products/seamcarry/privacy',
   '/products/patchrelay/support',
   '/products/patchrelay/privacy',
   '/products/siterevisit/support',
