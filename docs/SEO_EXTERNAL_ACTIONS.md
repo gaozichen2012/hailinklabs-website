@@ -1,6 +1,6 @@
 # 搜索平台接入状态
 
-2026-10-07 复查：当前线上 sitemap 为220个唯一网址，四种模拟 User-Agent 请求均HTTP200且XML可解析。Bing历史sitemap处理报告尚未跟上当前目录，实时可索引不等于已收录；Google Search Console两次返回504，本轮无法读取最新sitemap与索引报告；Apple代表营销活动数据不足，真实归因仍未验证。下方2026-10-05的平台处理数量与状态均为历史快照。未重复提交/删除sitemap或改变平台配置。
+2026-10-07 当前复查：Google Search Console 的sitemap、索引报告和概述入口均已恢复；sitemap列表与详情已确认成功，官方当日Live Test允许抓取且抓取成功。当前线上sitemap为220个唯一网址。因今日目录实质扩展，已对同一URL提交一次更新并独立读回受理及成功状态；最新统计刷新和全站收录仍未确认。Bing历史sitemap报告尚未跟上当前目录，Apple代表营销活动数据不足，真实归因仍未验证。下方2026-10-05配置与历史产物基线不自动作为当前平台结果。
 
 2026-10-05：Google Search Console、Bing Webmaster Tools 已完成真实 HTML meta 所有权验证；Apple 官方生成的 Provider Token 已启用。网站源码 `3029ec01a1d17b5466510857f1ff9710f959c23b` 的 [Actions 37225394228](https://github.com/gaozichen2012/hailinklabs-website/actions/runs/37225394228) 检查、Pages 部署和生产验收全部成功，生产配置与构建产物一致。
 
@@ -9,9 +9,9 @@
 ## Google Search Console
 
 - 已验证 URL-prefix Property `https://hailinklabs.com/`，使用官方 `google-site-verification`，真实值保存于 `src/data/search-config.json`；正式首页已回读，无 DNS 变更。
-- 已提交 `https://hailinklabs.com/sitemap.xml`，后台仍显示“无法抓取/无法读取此站点地图”。同一 XML 的官方 Live Test 允许抓取且抓取成功；正式文件为 HTTP 200、合法 XML、172 个唯一可索引网址。错误原因尚未确认，不报告 sitemap 后台处理成功，不重复删除或提交。
-- 已完成首页、Products、六款产品、Guides/Templates 入口及每类代表 Guide/Template 的 URL Inspection，并查看 Page indexing、HTTPS、Core Web Vitals、Manual Actions、Security Issues。首页、Guides、Templates入口的请求索引均已受理。Live Test 或请求索引成功不等于网址已经索引；缺乏真实用户指标不写成通过。
-- 后续核对 sitemap 错误与实际抓取/收录变化；当前未使用普通网页 Google Indexing API，也未修改 Nameserver、MX 或邮箱记录。诊断步骤依据 [Google 官方 Sitemaps report](https://support.google.com/webmasters/answer/7451001?hl=en-GB)。
+- 正式 `https://hailinklabs.com/sitemap.xml` 当前HTTP200、合法XML、220个唯一网址，robots允许Googlebot且无响应头索引阻断。2026-10-07已读取列表及详情“成功/已成功处理站点地图”，原“无法抓取”不再是当前状态；官方Live Test当日抓取成功。根据目录实质更新已对现有URL重新提交一次，受理回执与列表仍成功均已读回；尚未确认Google已解析最新220条。此前504及旧失败证据保留，原因未证明，不归因于网站或DNS。
+- 已完成首页、Products、六款产品、Guides/Templates 入口及每类代表 Guide/Template 的 URL Inspection，并查看 Page indexing、HTTPS、Core Web Vitals、Manual Actions、Security Issues。首页、Guides、Templates入口的历史请求索引均已受理，本次已读回索引及排除报告，详细指标只留私有记录。Live Test、提交受理和正式收录分别记录；缺乏真实用户指标不写成通过。
+- 后续只核对最新sitemap统计、实际收录及搜索数据变化；不把低收录量直接当作网站故障，不重复删除/提交sitemap。当前未使用普通网页Google Indexing API，也未修改Nameserver、MX或邮箱记录。诊断与本次更新提交依据 [Google 官方 Sitemaps report](https://support.google.com/webmasters/answer/7451001?hl=en-GB)。
 
 ## Bing Webmaster Tools
 
