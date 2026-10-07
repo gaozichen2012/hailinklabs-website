@@ -1,5 +1,7 @@
 # 搜索平台接入状态
 
+2026-10-07 复查：当前线上 sitemap 为220个唯一网址，四种模拟 User-Agent 请求均HTTP200且XML可解析。Bing历史sitemap处理报告尚未跟上当前目录，实时可索引不等于已收录；Google Search Console两次返回504，本轮无法读取最新sitemap与索引报告；Apple代表营销活动数据不足，真实归因仍未验证。下方2026-10-05的平台处理数量与状态均为历史快照。未重复提交/删除sitemap或改变平台配置。
+
 2026-10-05：Google Search Console、Bing Webmaster Tools 已完成真实 HTML meta 所有权验证；Apple 官方生成的 Provider Token 已启用。网站源码 `3029ec01a1d17b5466510857f1ff9710f959c23b` 的 [Actions 37225394228](https://github.com/gaozichen2012/hailinklabs-website/actions/runs/37225394228) 检查、Pages 部署和生产验收全部成功，生产配置与构建产物一致。
 
 **No pending external actions requiring user input.** 当前没有缺失登录、权限或真实平台 ID；下述平台处理结果与异常不作为人工配置任务。详细后台数据仅记入私有当前状态。
