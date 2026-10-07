@@ -28,10 +28,15 @@ const text = (node) =>
     ? node.value
     : (node.childNodes || []).map(text).join('');
 const canonicalPath = (path) =>
-  path.replace(
-    /^((?:\/zh)?)(\/(?:storyundo|cluemend|affixhop))(?=\/|$)/,
-    '$1/products$2',
-  );
+  path
+    .replace(
+      /^((?:\/zh)?)\/beatmend-(support|privacy)$/,
+      '$1/products/beatmend/$2',
+    )
+    .replace(
+      /^((?:\/zh)?)(\/(?:storyundo|cluemend|affixhop|carttinker|beatmend))(?=\/|$)/,
+      '$1/products$2',
+    );
 const isDate = (value) =>
   /^\d{4}-\d{2}-\d{2}$/.test(value) &&
   new Date(value).toISOString().slice(0, 10) === value;

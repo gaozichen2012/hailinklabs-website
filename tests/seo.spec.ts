@@ -9,7 +9,7 @@ for (const prefix of ['', '/zh']) {
     page,
   }) => {
     await page.goto(`${prefix}/products`);
-    await expect(page.locator('.availability')).toHaveCount(18);
+    await expect(page.locator('.availability')).toHaveCount(25);
     await expect(page.locator('.availability.is-available')).toHaveCount(6);
     await expect(page.locator('.store-download')).toHaveCount(6);
     for (const product of catalog) {
@@ -121,7 +121,7 @@ test('social previews cover every route and resolve to real 1200 × 630 PNGs', a
     expect(html).toMatch(/property="og:image:alt" content="[^"]+"/);
     images.add(new URL(image!).pathname);
   }
-  expect(images.size).toBe(19);
+  expect(images.size).toBe(26);
   for (const image of images) {
     const response = await request.get(image);
     expect(response.ok(), image).toBe(true);

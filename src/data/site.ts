@@ -9,6 +9,18 @@ export const site = {
 };
 
 export const englishRoutes = [
+  '/products/batchmise',
+  '/products/patchrelay',
+  '/products/seamcarry',
+  '/products/siterevisit',
+  '/products/panebatch',
+  '/products/carttinker',
+  '/products/carttinker/support',
+  '/products/carttinker/privacy',
+  '/products/beatmend',
+  '/products/beatmend/support',
+  '/products/beatmend/privacy',
+
   '/products/batchmise/support',
   '/products/batchmise/privacy',
   '/products/seamcarry/support',

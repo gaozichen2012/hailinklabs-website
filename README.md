@@ -20,7 +20,9 @@ Preview: http://127.0.0.1:4321. Tests cover Chromium/WebKit, desktop/mobile view
 
 ## Publishing
 
-Push to `main` runs `.github/workflows/check.yml`: npm ci → lint → typecheck → privacy release check → build → browser tests → upload dist → deploy Pages. Other branches and pull requests run checks only. GitHub's built-in short-lived token and OIDC provide deployment access; no stored custom credentials are needed.
+GitHub Actions is disabled by the user's 2026-10-07 policy. Run checks and tests locally; do not invoke Actions or GitHub AI features (Copilot coding agents, AI reviews, GitHub Models or AI workflows). Keep Actions disabled. The existing workflow file is historical configuration and does not run. Use `[skip ci]` on commits as an additional guard.
+
+Pushes deliver source only. The current GitHub Pages site remains online, but automatic deployment is stopped. A new publishing method requires separate authorization; do not report a Git push as a production release.
 
 Follow [deployment](docs/DEPLOYMENT.md). DNS and account operations require the private operational records. `npm run verify:production` records live acceptance in ignored `artifacts/production-verification.json`; local success is not production success.
 
@@ -32,7 +34,7 @@ Follow [deployment](docs/DEPLOYMENT.md). DNS and account operations require the 
 - No App Store download badge until a real listing exists.
 - Download availability and verification dates: `src/data/catalog.ts`. An unverified listing is not a claim that an app is unreleased.
 - Social preview metadata and static JSON-LD: `src/data/seo.ts`. No invented ratings/reviews; structured data does not guarantee search rich results.
-- Regenerate the ten checked-in social PNGs after product copy changes with `node scripts/generate-social-images.mjs` after `npm ci`, then visually review them. The script checks existing source-asset hashes and uses the sharp version already locked through Astro; it adds no runtime JavaScript.
+- Regenerate the affected checked-in social PNGs after product copy changes with `node scripts/generate-social-images.mjs` after `npm ci`, then visually review them. The script checks existing source-asset hashes and uses the sharp version already locked through Astro; it adds no runtime JavaScript.
 - Keep credentials, complete private DNS exports, browser state and mail contents outside Git.
 - Project rules: [AGENTS](AGENTS.md), [engineering handbook](docs/项目工程手册.md), [current state](docs/项目当前状态.md).
 
@@ -91,7 +93,7 @@ in artifacts. A temporary service failure leaves Pages online; retain the origin
 baseline when retrying. Acceptance does not prove indexing.
 
 Optional real public verification/provider values are configured in
-`src/data/search-config.json` or GitHub repository variables
+`src/data/search-config.json` or local build environment variables
 `GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION`, `APPLE_PROVIDER_TOKEN`.
 Do not use sample values. Normal App Store URLs remain active until a real Apple
 provider token exists. See [external platform actions](docs/SEO_EXTERNAL_ACTIONS.md).

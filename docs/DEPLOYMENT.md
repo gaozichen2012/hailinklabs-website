@@ -2,13 +2,15 @@
 
 ## Architecture
 
-The public website repository builds with Astro and deploys `dist/` through GitHub Actions to GitHub Pages at **https://hailinklabs.com**. The site has no runtime backend.
+The public website repository builds locally with Astro; the existing published site is hosted on GitHub Pages at **https://hailinklabs.com**. The site has no runtime backend.
 
-The private `internal/` submodule contains records only. CI uses `submodules: false`; no private-repository credentials are needed for website builds. Never copy internal records into `src/`, `public/`, `dist/`, public logs or artifacts.
+The private `internal/` submodule contains records only. Local website checks and builds do not read the submodule; no private-repository credentials are needed. Never copy internal records into `src/`, `public/`, `dist/`, public logs or artifacts.
 
 ## Workflow
 
-Push to `main` runs installation, lint, typecheck, privacy release check, build and browser tests, then uploads only `dist/` and deploys Pages. Branches and pull requests run checks without deploying. Deployment uses GitHub's short-lived token and OIDC permissions.
+GitHub Actions is disabled by the user's 2026-10-07 instruction. Do not dispatch, rerun, poll or re-enable Actions. GitHub AI features, including Copilot coding agents, automated AI reviews, GitHub Models and AI workflows, must not be used. The workflow file is retained only as historical configuration.
+
+Run installation, lint, typecheck, privacy release check, build, SEO and browser tests locally. Commit with `[skip ci]` and push ordinary source changes. These pushes do not publish Pages. Production publishing is pending a separately authorized method; retain the current site and do not change hosting, DNS or account settings to bypass this restriction.
 
 A public checkout without initialized submodules supports the complete website check:
 
@@ -30,7 +32,7 @@ Production checks cover all English and Chinese pages listed in the built sitema
 
 For DNS, email or account operations, authorized maintainers must initialize the private submodule and read its engineering handbook and operational records first. Website-only work does not require private access. Do not change infrastructure as part of routine website publishing.
 
-Revert a website change with a normal reviewed Git commit and let `main` deploy again. Do not rewrite history or change DNS as a routine deployment rollback.
+Revert a source change with a normal reviewed Git commit and local verification. Publishing a rollback requires the same separate authorization as a new release. Do not rewrite history or change DNS as a routine deployment rollback.
 
 See [project state](项目当前状态.md) for the public engineering snapshot and [private records instructions](../README.md#private-records) for submodule maintenance.
 

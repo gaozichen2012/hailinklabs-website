@@ -35,11 +35,15 @@ const productsModule = asModule(
 const familyModule = asModule(
   transpile(await readFile(join(root, 'src/data/family-products.ts'), 'utf8')),
 );
+const projectModule = asModule(
+  transpile(await readFile(join(root, 'src/data/project-products.ts'), 'utf8')),
+);
 const catalogSource = transpile(
   await readFile(join(root, 'src/data/catalog.ts'), 'utf8'),
 )
   .replace(/from ['"]\.\/products['"]/g, `from '${productsModule}'`)
-  .replace(/from ['"]\.\/family-products['"]/g, `from '${familyModule}'`);
+  .replace(/from ['"]\.\/family-products['"]/g, `from '${familyModule}'`)
+  .replace(/from ['"]\.\/project-products['"]/g, `from '${projectModule}'`);
 const { catalog, categories } = await import(asModule(catalogSource));
 
 const brandManifest = JSON.parse(

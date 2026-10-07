@@ -57,11 +57,17 @@ const descriptions = {
     {kind === 'product' && (
       <p class="intro-copy">Listen, Fix &amp; Play Again</p>
     )}
+    {kind === 'product' && (
+      <p class="availability">
+        {c('Download link not yet available', '下载链接暂未提供')}
+      </p>
+    )}
   </section>
   <article class="policy prose">
     {locale === 'zh-CN' && kind === 'privacy' && (
       <aside class="review-notice">
-        中文版本方便阅读，如有差异以<a href="/beatmend-privacy">英文版本</a>
+        中文版本方便阅读，如有差异以
+        <a href="/products/beatmend/privacy">英文版本</a>
         为准。
       </aside>
     )}
@@ -97,9 +103,15 @@ const descriptions = {
       </a>
     </p>
     <p>
-      <a href={`${prefix}/beatmend`}>About BeatMend</a> ·{' '}
-      <a href={`${prefix}/beatmend-support`}>Support</a> ·{' '}
-      <a href={`${prefix}/beatmend-privacy`}>Privacy policy</a>
+      <a href={`${prefix}/products/beatmend`}>
+        {c('About BeatMend', '了解 BeatMend')}
+      </a>{' '}
+      ·{' '}
+      <a href={`${prefix}/products/beatmend/support`}>{c('Support', '支持')}</a>{' '}
+      ·{' '}
+      <a href={`${prefix}/products/beatmend/privacy`}>
+        {c('Privacy policy', '隐私政策')}
+      </a>
     </p>
   </article>
 </Layout>

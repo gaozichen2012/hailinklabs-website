@@ -1,3 +1,4 @@
+import { projectProducts, existingProjectProducts } from './project-products';
 import { familyProducts } from './family-products';
 import { products, type ProductData, type Copy } from './products';
 export type CatalogProduct = Pick<
@@ -13,6 +14,8 @@ export type CatalogProduct = Pick<
 export const catalog: readonly CatalogProduct[] = [
   ...products,
   ...familyProducts,
+  ...projectProducts,
+  ...existingProjectProducts,
   {
     slug: 'formalsflow',
     name: 'FormalsFlow',
@@ -112,7 +115,18 @@ export const categories: readonly {
   {
     id: 'work',
     title: ['Work & Business', '工作与业务'],
-    slugs: ['samejob', 'gearproof', 'tmproof', 'pressrecipe', 'formalsflow'],
+    slugs: [
+      'samejob',
+      'gearproof',
+      'tmproof',
+      'pressrecipe',
+      'formalsflow',
+      'batchmise',
+      'patchrelay',
+      'seamcarry',
+      'siterevisit',
+      'panebatch',
+    ],
   },
   {
     id: 'animals',
@@ -134,6 +148,8 @@ export const categories: readonly {
       'cluemend',
       'affixhop',
       'linelilt',
+      'carttinker',
+      'beatmend',
     ],
   },
 ];

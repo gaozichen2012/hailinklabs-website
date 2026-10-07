@@ -28,6 +28,13 @@ for (const prefix of ['', '/zh']) {
             'AffixHop',
             'LineLilt',
             'FormalsFlow',
+            'BatchMise',
+            'PatchRelay',
+            'SeamCarry',
+            'SiteRevisit',
+            'PaneBatch',
+            'CartTinker',
+            'BeatMend',
           ]
         : ['SameJob', 'GearProof', 'LitterRound'];
       await page.goto(route);
