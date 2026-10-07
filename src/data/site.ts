@@ -9,6 +9,8 @@ export const site = {
 };
 
 export const englishRoutes = [
+  '/products/cueladder/support',
+  '/products/cueladder/privacy',
   '/products/batchmise',
   '/products/patchrelay',
   '/products/seamcarry',
