@@ -36,6 +36,7 @@ const pageUpdates: Record<string, string> = {
   '/beatmend-support': '2026-10-07',
   '/beatmend-privacy': '2026-10-07',
 
+  '/products/linelilt': '2026-10-07',
   '/products/formalsflow': '2026-10-05',
   '/products/formalsflow/support': '2026-10-05',
   '/products/formalsflow/privacy': '2026-10-05',

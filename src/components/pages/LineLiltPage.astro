@@ -16,8 +16,8 @@ const titles = {
 };
 const descriptions = {
   product: c(
-    'Read aloud in 12 original tiny plays. Practice phrasing, expression and same-scene take comparisons.',
-    '通过 12 篇原创短剧练习朗读、意群和表达，并在同一剧情中比较录音。',
+    'Two-role readers theater for kids who read short English sentences. Try 12 original plays, phrase cues and recorded line comparisons.',
+    '适合已能读简短英文句子的儿童：用双角色朗读剧场练习 12 篇原创短剧、可选意群提示，并在同一情境比较单句录音。',
   ),
   support: c(
     'Parent help for recording, retries, 7-day Trial, Lifetime, backups and optional private iCloud.',
@@ -41,6 +41,18 @@ const sections = {
       '在同一剧情中听两个版本',
       'Twelve original eight-line plays support punctuation, phrasing and expression. Optional phrase cues keep the words visible. Retry one line, compare the first and new take in the same partner context, choose a version, remove cues, then try an unheard line with help or skip available. These are practice actions, not automated ability scores.',
       '12 篇原创八行短剧支持标点、意群和表达练习。可选意群提示保留原文；单句重录后，在同一搭档情境比较首次与新版本，自主选择，再撤提示、尝试未听过的新句，也可求助或跳过。这些是练习行为，不是自动能力评分。',
+    ],
+    [
+      'How to try readers theater at home',
+      '在家如何开始双角色朗读',
+      'Start with a short play your child can read. Choose one goal: pause at punctuation, group a phrase, or show a character’s intention. Listen to the partner line, then record one reply. Try that reply again and hear both versions with the same partner line. Let your child choose a take, continue or stop; a different performance is not automatically a better score. LineLilt provides the partner audio, so an adult can help without performing every other line.',
+      '从孩子能够读懂的短剧开始，只选一个目标：在标点处停顿、连贯读出意群，或表达角色的想法。先听搭档台词，再录一句回应；重读这句后，搭配同一句搭档台词回听两个版本。让孩子选择版本、继续或停止；表现不同不等于分数更高。LineLilt 提供搭档音频，成人可以陪伴，而不必读出每一句对手台词。',
+    ],
+    [
+      'Readers theater, not a learn-to-read course',
+      '朗读剧场与识字课程的区别',
+      'This is role-based read-aloud practice for children who already read short sentences. It does not teach the full phonics sequence or automatically judge pronunciation, reading level or learning progress. A parent can listen and discuss expression. For context on the wider classroom activity, see the Reading Rockets readers theater guide linked below; that resource does not evaluate or endorse LineLilt.',
+      '这是为已经能读短句的儿童设计的分角色朗读练习，不教授完整自然拼读体系，也不自动判断发音、阅读等级或学习进步。家长可以回听并讨论表达。下方 Reading Rockets 朗读剧场指南介绍更广泛的课堂活动；该资料没有评估或推荐 LineLilt。',
     ],
     [
       'Your materials and your saved voices',
@@ -189,6 +201,16 @@ const sections = {
         <p>{c(enText, zhText)}</p>
       </>
     ))}
+    {kind === 'product' && (
+      <p>
+        <a href="https://www.readingrockets.org/classroom/classroom-strategies/readers-theater">
+          {c(
+            'Readers theater — Reading Rockets',
+            '朗读剧场指南 — Reading Rockets',
+          )}
+        </a>
+      </p>
+    )}
     {kind === 'privacy' && (
       <p>
         <a href="https://www.apple.com/legal/privacy/">
