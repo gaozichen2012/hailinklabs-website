@@ -1,128 +1,43 @@
-name: Website checks and Pages deployment
+name: Publish locally verified website
 on:
-  push:
-  pull_request:
   workflow_dispatch:
+    inputs:
+      package_sha256:
+        description: SHA-256 of the locally verified release package
+        required: true
+        type: string
 permissions:
   contents: read
 concurrency:
-  group: pages-${{ github.ref }}
+  group: pages-production
   cancel-in-progress: false
-env:
-  APPLE_PROVIDER_TOKEN: ${{ vars.APPLE_PROVIDER_TOKEN }}
-  GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
-  BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
 jobs:
-  check:
+  publish:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    container:
-      image: mcr.microsoft.com/playwright:v1.63.0-noble
-      options: --ipc=host --init
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          submodules: false
-      - uses: actions/setup-node@v7
-        with:
-          node-version-file: .node-version
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run typecheck
-      - run: npm run release:check
-      - run: npm run indexnow:snapshot
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-      - run: npm run build
-        env:
-          APPLE_PROVIDER_TOKEN: ${{ vars.APPLE_PROVIDER_TOKEN }}
-          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
-          BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
-      - run: npm run seo:check
-      - run: npm run audit:quality
-        continue-on-error: true
-      - uses: actions/upload-artifact@v7
-        with:
-          name: website-search-reports
-          path: |
-            artifacts/seo-check.json
-            artifacts/quality/
-            artifacts/indexnow-baseline.json
-          retention-days: 7
-      - run: npm test
-        env:
-          SITE_VISUAL_AUDIT: '1'
-      - uses: actions/upload-artifact@v7
-        with:
-          name: website-visual-audit
-          path: artifacts/visual-audit/
-          retention-days: 7
-      - uses: actions/upload-pages-artifact@v5
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        with:
-          path: dist
-      - uses: actions/upload-artifact@v7
-        if: failure()
-        with:
-          name: website-test-results
-          path: |
-            playwright-report/
-            test-results/
-          retention-days: 7
-  deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: check
-    runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
+      contents: read
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/configure-pages@v6
-      - uses: actions/deploy-pages@v5
-        id: deployment
-  verify-production:
-    needs: deploy
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    container:
-      image: mcr.microsoft.com/playwright:v1.63.0-noble
-      options: --ipc=host --init
-    steps:
       - uses: actions/checkout@v7
         with:
           submodules: false
-      - uses: actions/setup-node@v7
-        with:
-          node-version-file: .node-version
-          cache: npm
-      - uses: actions/download-artifact@v8
-        with:
-          name: github-pages
-          path: artifacts/pages-build
-      - run: mkdir dist && tar -xf artifacts/pages-build/artifact.tar -C dist
-      - run: npm ci
-      - uses: actions/download-artifact@v8
-        with:
-          name: website-search-reports
-          path: artifacts/search-reports
-      - run: cp artifacts/search-reports/indexnow-baseline.json artifacts/indexnow-baseline.json
-      - run: npm run seo:check
-      - run: npm run verify:production
-      - run: npm test
+      - name: Verify the selected local package and extract it
         env:
-          PLAYWRIGHT_PRODUCTION: '1'
-      - run: npm run indexnow:submit
-      - uses: actions/upload-artifact@v7
-        if: always()
+          EXPECTED_SHA256: ${{ inputs.package_sha256 }}
+        run: |
+          test "${#EXPECTED_SHA256}" -eq 64
+          printf '%s  %s\n' "$EXPECTED_SHA256" '.pages-release/site.tar.gz' | sha256sum --check --strict
+          mkdir pages-output
+          tar -xzf .pages-release/site.tar.gz -C pages-output
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
         with:
-          name: website-production-verification
-          path: |
-            artifacts/production-verification.json
-            artifacts/indexnow-receipt.json
-            artifacts/seo-check.json
-            playwright-report/
-            test-results/
-          retention-days: 7
+          path: pages-output
+      - uses: actions/deploy-pages@v5
+        id: deployment

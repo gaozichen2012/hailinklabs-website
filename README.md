@@ -20,9 +20,9 @@ Preview: http://127.0.0.1:4321. Tests cover Chromium/WebKit, desktop/mobile view
 
 ## Publishing
 
-GitHub Actions is disabled by the user's 2026-10-07 policy. Run checks and tests locally; do not invoke Actions or GitHub AI features (Copilot coding agents, AI reviews, GitHub Models or AI workflows). Keep Actions disabled. The existing workflow file is historical configuration and does not run. Use `[skip ci]` on commits as an additional guard.
+The 2026-10-07 policy permits Actions only for publishing a locally verified static package. Builds, lint, typecheck, release/SEO checks and browser tests run locally. GitHub AI features remain prohibited. `.github/workflows/check.yml` is manual-only on main and requires the package SHA-256; it uploads/deploys `.pages-release/site.tar.gz` without dependencies, builds, tests or private submodules.
 
-Pushes deliver source only. The current GitHub Pages site remains online, but automatic deployment is stopped. A new publishing method requires separate authorization; do not report a Git push as a production release.
+Ordinary pushes use `[skip ci]` and do not deploy. Actions is disabled outside an authorized release; temporarily enable it for publication and disable it after completion. Keep the package manifest and local validation evidence in sync with the website source. A successful deploy still requires local verification against the production domain.
 
 Follow [deployment](docs/DEPLOYMENT.md). DNS and account operations require the private operational records. `npm run verify:production` records live acceptance in ignored `artifacts/production-verification.json`; local success is not production success.
 

@@ -8,9 +8,11 @@ The private `internal/` submodule contains records only. Local website checks an
 
 ## Workflow
 
-GitHub Actions is disabled by the user's 2026-10-07 instruction. Do not dispatch, rerun, poll or re-enable Actions. GitHub AI features, including Copilot coding agents, automated AI reviews, GitHub Models and AI workflows, must not be used. The workflow file is retained only as historical configuration.
+The user's updated 2026-10-07 policy allows Actions only to publish locally verified output and inspect that deployment's progress. All builds and tests remain local. Copilot coding agents, automated AI reviews, GitHub Models and AI workflows remain prohibited.
 
-Run installation, lint, typecheck, privacy release check, build, SEO and browser tests locally. Commit with `[skip ci]` and push ordinary source changes. These pushes do not publish Pages. Production publishing is pending a separately authorized method; retain the current site and do not change hosting, DNS or account settings to bypass this restriction.
+The manual-only workflow on main verifies the operator-supplied SHA-256 of `.pages-release/site.tar.gz`, extracts it and uploads/deploys Pages. It does not install dependencies, build, test or read private submodules. The adjacent manifest records website source and file hashes. Prepare a new verified package after website changes; dispatching an old package does not publish new source.
+
+Use `[skip ci]` for ordinary source pushes. Keep repository Actions disabled except during an authorized release. Such release authorization permits temporarily enabling Actions, manually dispatching the selected package, reading publication progress and disabling Actions after completion. Verify the live website locally before recording it as released. Keep the existing Pages domain, DNS and email configuration.
 
 A public checkout without initialized submodules supports the complete website check:
 

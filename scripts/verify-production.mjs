@@ -30,7 +30,7 @@ const searchConfig = JSON.parse(
   await readFile('src/data/search-config.json', 'utf8'),
 );
 const paths = [
-  ...['storyundo', 'cluemend', 'affixhop'].flatMap((slug) =>
+  ...['storyundo', 'cluemend', 'affixhop', 'carttinker'].flatMap((slug) =>
     ['', '/zh'].flatMap((prefix) =>
       ['', '/support', '/privacy'].map(
         (suffix) => `${prefix}/${slug}${suffix}`,
@@ -39,6 +39,9 @@ const paths = [
   ),
   ...(await readdir(new URL('../public/downloads/', import.meta.url))).map(
     (file) => `/downloads/${file}`,
+  ),
+  ...['', '/zh'].flatMap((prefix) =>
+    ['', '-support', '-privacy'].map((suffix) => `${prefix}/beatmend${suffix}`),
   ),
   '/llms.txt',
   '/indexnow-manifest.json',
@@ -104,7 +107,7 @@ for (const path of paths) {
           (!['/contact', '/products/samejob/support'].includes(path) ||
             body.includes('gaozichen@hailinklabs.com')) &&
           body.includes(
-            `rel="canonical" href="${origin}${path.replace(/^((?:\/zh)?)(\/(?:storyundo|cluemend|affixhop))(?=\/|$)/, '$1/products$2')}"`,
+            `rel="canonical" href="${origin}${path.replace(/^((?:\/zh)?)\/beatmend-(support|privacy)$/, '$1/products/beatmend/$2').replace(/^((?:\/zh)?)(\/(?:storyundo|cluemend|affixhop|carttinker|beatmend))(?=\/|$)/, '$1/products$2')}"`,
           ) &&
           body.includes('/brand/hailink-logo.svg') &&
           !(
