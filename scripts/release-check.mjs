@@ -36,6 +36,7 @@ for (const slug of [
   'beatmend',
   'siterevisit',
   'patchrelay',
+  'batchmise',
 ]) {
   const product = review.productSourceReviews?.[slug];
   if (
