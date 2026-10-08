@@ -1,16 +1,17 @@
 {
-  "contentSourceCommit": "aff93af22241ec9e4c77327ca6eb976444a498a8",
-  "date": "2026-10-07",
+  "contentSourceCommit": "e5dfc5b3301805bd5ec0f0dea5ed32d7e023d5b4",
+  "date": "2026-10-08",
   "validation": {
+    "lint": "PASS",
     "typecheck": "0 errors,0 warnings,2 existing hints",
     "release": "PASS",
-    "build": "255 pages",
+    "build": "PASS",
     "seo": "PASS",
     "localBrowser": "24/24",
     "visual": "desktop privacy and Chinese320 support viewed"
   },
   "files": {
-    "indexnow-manifest.json": "b5186aa0ca75568c4eea89756d4e1d4568f5b3fa67100b41d8c73cd627261782",
+    "indexnow-manifest.json": "2cb0e9165c1e459ea234eb9ec7757a5e85e29090e445b790fae0e76ee3f7d39c",
     "llms.txt": "055911aa01d3efd22376f6c9d2dc61606ff5d49da35aa20de5daff11a155e32e",
     "index.html": "b90c88a05d6deb6947a200c4fdbf06139fde5c304d66515a03f1ac011b2d136b",
     "beatmend-privacy.html": "d53d196244b8c889728d30b49a61862f7b4993bfa82f15bba828cd210e5a4bba",
@@ -30,7 +31,7 @@
     "guides.html": "ddeeb5a1082d7ab370c73c7bd84924bf73d9c2501152f9e0dc6bbb48e71867af",
     "favicon-32.png": "c7861f16b7f1117af0f8da6dcf89ea9a83b6314a06c6165f47d3ed4f27b2a94e",
     "carttinker.html": "18b9a8514d188fa37846e3f9e202a90fd88480d9b9763d580d9237ff799139d9",
-    "sitemap.xml": "34a5eeb9fd7ddbc8d9510e9b594058bd0ce54607912cfce2219644361722f99d",
+    "sitemap.xml": "183ffbef15eb153ca8f27cdc7a019a175dca67acebe6347fea17600e42047d85",
     "robots.txt": "8f5c664d9a6e2393d16734c23080c1b5cc75250b07943b96f7595ca195c830d8",
     "affixhop.html": "73ecacc4ad635b38414bbbe96027c55cb20f34fc8da885b415019b813e536d2e",
     "cluemend.html": "2f5633f254884c689cebe78d1f06109d46fcdc07463087ee2b19ef44a460bc89",
@@ -99,6 +100,8 @@
     "products/beatmend/privacy.html": "b5fcfe2cbedca2dabc8cd5cd3a2dda42b2e2f99b612f52dbd520561caf778277",
     "products/tmproof/support.html": "54e02c7a5ca88cb987c92f9b92dea9780d1a5169dfd8c4e2b69d67cc43aca0ed",
     "products/tmproof/privacy.html": "40b04e000af2f6fb4b56f789cf091051df81db1bd18075045129eb2edca0cf75",
+    "products/kilnpair/support.html": "1717b43d6c4f27cef6c509d4b6e0d6d526b3350d1844b1b77121cd84c5631934",
+    "products/kilnpair/privacy.html": "ba57df2819bd039e860737013214014193cb863f2368721677b704fe77c49f42",
     "products/cueladder/support.html": "394d15b6af39ff6556eced07a8d87f5eea825360d2823de89ed5d2f8a4a246f3",
     "products/cueladder/privacy.html": "e7098f16e17fa8cb7b7322c91240a194c8c92626823c5e4568b4449848441322",
     "products/litterround/support.html": "c5fa11d0a2dfe30fde03efff7ed49343b625ef112daecfad868c266c665ce5f2",
@@ -221,6 +224,8 @@
     "zh/products/beatmend/privacy.html": "4178199905141dd8fcc0520630d2cbf8e062769e80ec64c890b66996941ef66a",
     "zh/products/tmproof/support.html": "5af02b2392de73fe470bfb876a645c5835b0c7196c8c1228b0e6c0c4102f9392",
     "zh/products/tmproof/privacy.html": "46dfbd13f05e0b714c5e9cdb76a4f03bfa7628e3c57cfc343e082f8ef541a6a7",
+    "zh/products/kilnpair/support.html": "136444356750612eaaa3dfcf41e2cb8787353f80d76aa3368109efad5d73c96a",
+    "zh/products/kilnpair/privacy.html": "741ff33d70c421e82f2ec2901664d85702867cbd7fd55ef46349debaf97c64a7",
     "zh/products/cueladder/support.html": "0b48fddbb9beb37033991daecb3bdb85deafb2f5968d5766a1afc14d2bca8139",
     "zh/products/cueladder/privacy.html": "3c46346cc803382e228ba8adc8d825d705b7799d1943c1bc3e5a0aa55a96e6fb",
     "zh/products/litterround/support.html": "5ae26a6fee9fb2e40d94a8d3d503b4221efe71caf53c029d4c26972231f14cb9",
@@ -332,14 +337,5 @@
     "affixhop/support.html": "ab0a69438ec37ce0790a5263d87acfdca22b3be1b109b068599e299e39ab3c1b",
     "affixhop/privacy.html": "0fe5d455cba024d9eb9168c831d5d1128fcd3d45cbb9e75e01d717c6cf8858b4"
   },
-  "packageSha256": "019c0e67471cfb5a7b487ee2d26ebe8be0d5f17d1c5c712d3cdd5fe91d92c326",
-  "fileCount": 321,
-  "changedFiles": [
-    "indexnow-manifest.json",
-    "sitemap.xml",
-    "products/cueladder/support.html",
-    "products/cueladder/privacy.html",
-    "zh/products/cueladder/support.html",
-    "zh/products/cueladder/privacy.html"
-  ]
+  "packageSHA256": "d54d43d64cd7cca871b9a926877c739d698e5673f7a30e72f0c67c3e64f2ccbe"
 }
