@@ -9,6 +9,8 @@ export const site = {
 };
 
 export const englishRoutes = [
+  '/products/kilnpair/support',
+  '/products/kilnpair/privacy',
   '/products/cueladder/support',
   '/products/cueladder/privacy',
   '/products/batchmise',
