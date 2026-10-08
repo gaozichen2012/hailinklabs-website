@@ -19,7 +19,7 @@ const pageUpdates: Record<string, string> = {
   '/': '2026-10-08',
   '/products': '2026-10-08',
   '/support': '2026-10-08',
-  '/contact': '2026-10-07',
+  '/contact': '2026-10-08',
   '/about': '2026-10-07',
   '/products/batchmise': '2026-10-07',
   '/products/patchrelay': '2026-10-07',
