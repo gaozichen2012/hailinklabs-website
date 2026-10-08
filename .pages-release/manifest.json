@@ -1,7 +1,7 @@
 {
-  "contentSourceCommit": "ac1f3ed3d4e7c2b62c6c580c914f53ae447f3fe3",
+  "contentSourceCommit": "eb72a2f50468c8d7bb4a96b23892bca78aea2f90",
   "date": "2026-10-08",
-  "packageSha256": "de6c169e6300d68ba9d29b97c36aa91633d4bf4893c404ebb757057f5d5231da",
+  "packageSha256": "38abdb36473d66a0fc07ed3dec69f5f29b8014f6fe04875c41ccb678da322867",
   "validation": {
     "lint": "PASS",
     "typecheck": "0 errors,0 warnings,2 existing hints",
@@ -10,7 +10,8 @@
     "seo": "244 unique indexable URLs PASS; infrastructure 2/2",
     "localBrowser": "148 relevant cases: 140 initial PASS; 8 category count failures repaired and 8/8 rechecked; no retries",
     "visual": "4 social cards,4 Chinese768 product pages, English CueLadder and Chinese LoadQuilt320 inspected",
-    "policyIntegrity": "four existing source JSON files byte unchanged"
+    "policyIntegrity": "four existing source JSON files byte unchanged",
+    "dateCorrection": "Contact lastmod corrected; local build/SEO/infrastructure passed again; only sitemap and manifest changed; all275 HTML byte unchanged"
   },
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -80,7 +81,7 @@
     "guides/what-to-include-in-a-tm-ticket.html": "5753c0c8b525a2f46cd3abd93554dcbbb10fbd74fbb82c7935855785223918b7",
     "guides.html": "ddeeb5a1082d7ab370c73c7bd84924bf73d9c2501152f9e0dc6bbb48e71867af",
     "index.html": "91b951589b65105455aec57c717c7fc29f4ee6811b909fad8b47bd085169017f",
-    "indexnow-manifest.json": "1d3cac5b9d48b023f55c0ea0477ceb08e89e26882024089f93f39ae1869ced55",
+    "indexnow-manifest.json": "6c357cd38d81373192f95bc1a9345f129effeef1123f82cecaa999e645450fdd",
     "llms.txt": "c7f582bfa28b3718d65df6128b8ea2e0636f8e10748a6374577c21e1d5d34e0b",
     "products/affixhop/privacy.html": "f7a1516643643de6e7e77a6cd422c5116c71b7640121b464ac04f9bdd6d8df19",
     "products/affixhop/support.html": "f7d7a38c6813a653141287e5666afe1aa544363646fbaef62bc6682664c9ba98",
@@ -179,7 +180,7 @@
     "products/turnmath.html": "fa19c0d733369c91af2162cac1b7bad657ddc6b8168088fef91e067a92e60665",
     "products.html": "c6eaf7f4045267bb832249b3954aa00151e3135527518c907be0a7389d35dc0c",
     "robots.txt": "8f5c664d9a6e2393d16734c23080c1b5cc75250b07943b96f7595ca195c830d8",
-    "sitemap.xml": "7e492e6e653743e22c9e62ca4b80d63ea5924d12219e6ba6d85f0810cd937a1c",
+    "sitemap.xml": "7205ddc7926e2c27d7b5aec43c95e8b81a94d5a367dc0bbc0c8be2ff642cbe3a",
     "social/affixhop.png": "e9c164d373cc6c1b093e64a784adc2181f08a6fa928398591441db526fe52b60",
     "social/batchmise.png": "01056effd8fff84a4faf6873dac522ce3e3922264449c49e652fe6e2a98e1301",
     "social/beatmend.png": "eab01bf6901d987712b9b66fbf83136b2232fc9d02f8ae1b766662b0d359523f",
