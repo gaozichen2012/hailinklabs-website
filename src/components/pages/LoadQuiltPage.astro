@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { site } from '../../data/site';
+import copy from '../../data/loadquilt.json';
+interface Props {
+  locale?: 'en' | 'zh-CN';
+  kind: 'privacy' | 'support';
+}
+const { kind, locale = 'en' } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const prefix = locale === 'en' ? '' : '/zh';
+const title =
+  kind === 'privacy'
+    ? c('LoadQuilt Privacy Policy', 'LoadQuilt 隐私政策')
+    : c('LoadQuilt Support', 'LoadQuilt 支持');
+const description =
+  kind === 'privacy'
+    ? c(
+        'How LoadQuilt handles local quilt intake records, photos and tickets, Apple purchases, user-directed exports and support correspondence.',
+        'LoadQuilt 本地绗缝收件、照片和检查单、Apple 购买、用户主动导出与支持邮件处理说明。',
+      )
+    : c(
+        'Help with backing measurements, intake checks, PDF and CSV exports, local backups and purchase restoration in LoadQuilt.',
+        'LoadQuilt 背布测量、收件复核与 PDF/CSV 导出、本地备份和恢复购买帮助。',
+      );
+---
+
+<Layout
+  locale={locale}
+  title={`${title} — Hailink Labs`}
+  description={description}
+>
+  <section class="section intro">
+    <p class="eyebrow">Hailink Labs · LoadQuilt</p>
+    <h1>{title}</h1>
+  </section>
+  <article class="policy prose">
+    {locale === 'zh-CN' && kind === 'privacy' && (
+      <p>
+        中文版本方便阅读，如有差异以
+        <a href="/products/loadquilt/privacy">英文版本</a>为准。
+      </p>
+    )}
+    <Fragment set:html={copy[kind][locale]} />
+    {kind === 'privacy' && (
+      <>
+        <h2>{c('Website and support correspondence', '网站与支持邮件')}</h2>
+        <p>
+          {c(
+            'This website is hosted by GitHub Pages, whose service may process connection and request information under its own privacy statement. The website has no advertising, analytics, contact form or tracking cookies. Voluntary support email follows the existing company support policy and is separate from local intake records.',
+            '网站由 GitHub Pages 托管，托管方按自身隐私声明处理连接和请求资料。网站无广告、分析、联系表单或追踪 Cookie。自愿发送的支持邮件沿用公司支持政策，与本地收件记录分开。',
+          )}
+        </p>
+        <p>
+          <a href="https://www.apple.com/legal/privacy/">
+            Apple Privacy Policy
+          </a>{' '}
+          ·{' '}
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+            GitHub Privacy Statement
+          </a>{' '}
+          ·{' '}
+          <a href={`${prefix}/products/samejob/privacy`}>
+            {c('Company support correspondence policy', '公司支持邮件政策')}
+          </a>
+        </p>
+      </>
+    )}
+    <p>
+      <a href={`mailto:${site.email}?subject=LoadQuilt%20Support`}>
+        {site.email}
+      </a>
+    </p>
+    <p>
+      <a href={`${prefix}/products/loadquilt/support`}>
+        {c('Support', '支持')}
+      </a>{' '}
+      ·{' '}
+      <a href={`${prefix}/products/loadquilt/privacy`}>
+        {c('Privacy policy', '隐私政策')}
+      </a>{' '}
+      ·{' '}
+      <a href={`${prefix}/contact`}>
+        {c('Contact Hailink Labs', '联系 Hailink Labs')}
+      </a>
+    </p>
+  </article>
+</Layout>

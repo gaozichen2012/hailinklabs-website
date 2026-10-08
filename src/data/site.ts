@@ -9,6 +9,8 @@ export const site = {
 };
 
 export const englishRoutes = [
+  '/products/loadquilt/support',
+  '/products/loadquilt/privacy',
   '/products/refsettle/support',
   '/products/refsettle/privacy',
   '/products/kilnpair/support',
