@@ -1,17 +1,17 @@
 {
-  "contentSourceCommit": "e5dfc5b3301805bd5ec0f0dea5ed32d7e023d5b4",
+  "contentSourceCommit": "a990785daba3da042df94f25acb6bc0954a4c3ed",
   "date": "2026-10-08",
   "validation": {
-    "lint": "PASS",
+    "lint": "scoped PASS",
     "typecheck": "0 errors,0 warnings,2 existing hints",
     "release": "PASS",
-    "build": "PASS",
-    "seo": "PASS",
-    "localBrowser": "24/24",
+    "build": "263 pages PASS",
+    "seo": "232 indexable URLs PASS",
+    "localBrowser": "24/24 affected RefSettle pages",
     "visual": "desktop privacy and Chinese320 support viewed"
   },
   "files": {
-    "indexnow-manifest.json": "2cb0e9165c1e459ea234eb9ec7757a5e85e29090e445b790fae0e76ee3f7d39c",
+    "indexnow-manifest.json": "8115a11df969242a383d06128e0102a8a741576fa57059739d4478d9dafef4f2",
     "llms.txt": "055911aa01d3efd22376f6c9d2dc61606ff5d49da35aa20de5daff11a155e32e",
     "index.html": "b90c88a05d6deb6947a200c4fdbf06139fde5c304d66515a03f1ac011b2d136b",
     "beatmend-privacy.html": "d53d196244b8c889728d30b49a61862f7b4993bfa82f15bba828cd210e5a4bba",
@@ -31,7 +31,7 @@
     "guides.html": "ddeeb5a1082d7ab370c73c7bd84924bf73d9c2501152f9e0dc6bbb48e71867af",
     "favicon-32.png": "c7861f16b7f1117af0f8da6dcf89ea9a83b6314a06c6165f47d3ed4f27b2a94e",
     "carttinker.html": "18b9a8514d188fa37846e3f9e202a90fd88480d9b9763d580d9237ff799139d9",
-    "sitemap.xml": "183ffbef15eb153ca8f27cdc7a019a175dca67acebe6347fea17600e42047d85",
+    "sitemap.xml": "774465c480b79e12ddc5cc6fbb122a4b80c0506389bd3b47d063361be2b79dce",
     "robots.txt": "8f5c664d9a6e2393d16734c23080c1b5cc75250b07943b96f7595ca195c830d8",
     "affixhop.html": "73ecacc4ad635b38414bbbe96027c55cb20f34fc8da885b415019b813e536d2e",
     "cluemend.html": "2f5633f254884c689cebe78d1f06109d46fcdc07463087ee2b19ef44a460bc89",
@@ -90,6 +90,8 @@
     "products/formalsflow/privacy.html": "53feab3490836e51a2eb81267c12c89533a1d9fd610630a0aa5515a8042d1129",
     "products/linelilt/support.html": "84514b54a39421ed9d34f8400f6b8c2b8b5be6adf98b38f7e6f5a0d2b70167a0",
     "products/linelilt/privacy.html": "9763e8d226f233581e23978ed55ed261eeed2d9ccbcbed62a2a5d4011e374910",
+    "products/refsettle/support.html": "759f3ac71269a844ab1ab2030b559f2ae5163009bb711263ba91d2d3981989b9",
+    "products/refsettle/privacy.html": "03eaa5270eec2dbebef3f1b4d90be6ee98edc207ff7e68d2e5048822bbc51a21",
     "products/rulesprout/support.html": "ee790eb6e04998e2730a1a194bb8436d482d2e91616674d940edd68c8a7a795d",
     "products/rulesprout/privacy.html": "809ab8ed7345b72b651ba348c406755cafc8111eed8b85a9dbda9422122082bd",
     "products/siterevisit/support.html": "da6291badeb294e623b1656f8591e2f8f28e246e2a59cca4b826ce0e52771fb4",
@@ -214,6 +216,8 @@
     "zh/products/formalsflow/privacy.html": "ff27f274be181ac71a0757e7053bcc60d306cc5149806cfa42c0115eedfd6142",
     "zh/products/linelilt/support.html": "28d54b4aa3cabecbc6b4391fc5b6c719e2a42ff74a04915623d6b15c2fcba1e5",
     "zh/products/linelilt/privacy.html": "dbe8a71adfd253d5d21465dd00d2da3e3dc21efe1a236bb01671dad3ba563c9b",
+    "zh/products/refsettle/support.html": "6af58d16bd5593495dd2c6d748e0ca13ca6fe3c4ee4d13f5305b035d4aba70ad",
+    "zh/products/refsettle/privacy.html": "04314998ab90ff48ace04b7b6c1b308fdf76f200d4823998f89cde69c7c990f2",
     "zh/products/rulesprout/support.html": "cb64405461318f81d5c14171d5d644b2c1565fb78faa92962dbf39c725726b02",
     "zh/products/rulesprout/privacy.html": "53eb425debc4973872bec6d84cace879f36d646a2022f986b1b16978f78ec7bd",
     "zh/products/siterevisit/support.html": "83f2b92628d73fe5a3faf8c886947fd3aabf9c3b5ba2296c1712b3eb263f2e0b",
@@ -337,5 +341,5 @@
     "affixhop/support.html": "ab0a69438ec37ce0790a5263d87acfdca22b3be1b109b068599e299e39ab3c1b",
     "affixhop/privacy.html": "0fe5d455cba024d9eb9168c831d5d1128fcd3d45cbb9e75e01d717c6cf8858b4"
   },
-  "packageSHA256": "d54d43d64cd7cca871b9a926877c739d698e5673f7a30e72f0c67c3e64f2ccbe"
+  "packageSHA256": "343c939416051be964b7c6e02a617e0318ef96de7838c42c95caec32708be162"
 }
