@@ -1,11 +1,14 @@
 import { catalog, listings } from '../data/catalog';
 import { guides, templates } from '../data/resources';
 import { buildAppStoreUrl, campaignName } from '../data/app-store';
+import { products } from '../data/products';
+import { highlights } from '../data/catalog';
 import { site } from '../data/site';
 export function GET() {
   return new Response(
     JSON.stringify(
       {
+        schemaVersion: 1,
         updatedAt: '2026-10-08',
         origin: site.url,
         listingSource: 'src/data/catalog.ts; verified public US Apple listings',
@@ -16,6 +19,16 @@ export function GET() {
         products: catalog.map((product) => ({
           slug: product.slug,
           name: product.name,
+          publicSummary: product.description,
+          fitAndLimits: highlights[product.slug]?.fit || null,
+          pricing: highlights[product.slug]?.price || null,
+          workflow:
+            products.find((p) => p.slug === product.slug)?.steps || null,
+          data: products.find((p) => p.slug === product.slug)?.storage || null,
+          export: products.find((p) => p.slug === product.slug)?.export || null,
+          backup: products.find((p) => p.slug === product.slug)?.backup || null,
+          support: `${site.url}/products/${product.slug}/support`,
+          privacy: `${site.url}/products/${product.slug}/privacy`,
           website: `${site.url}/products/${product.slug}`,
           chineseWebsite: `${site.url}/zh/products/${product.slug}`,
           downloadStatus: listings[product.slug]

@@ -170,37 +170,76 @@ export const supportProducts = catalog;
 // A US URL is not a claim of worldwide availability or a device purchase test.
 export const listings: Record<
   string,
-  { url: string; ios: number; verified: string }
+  {
+    url: string;
+    ios: number;
+    verified: string;
+    appId: number;
+    storeName: string;
+    version: string;
+    source: string;
+    priceRegion: string;
+  }
 > = {
   samejob: {
     url: 'https://apps.apple.com/us/app/invoice-maker-samejob/id6814700434',
     ios: 17,
     verified: '2026-10-08',
+    appId: 6814700434,
+    storeName: 'Invoice Maker: SameJob',
+    version: '1.0',
+    source: 'https://itunes.apple.com/lookup?id=6814700434&country=us',
+    priceRegion: 'US; lookup confirms free download only, not IAP pricing',
   },
   gearproof: {
     url: 'https://apps.apple.com/us/app/gearproof-equipment-checkout/id6814847023',
     ios: 18,
     verified: '2026-10-08',
+    appId: 6814847023,
+    storeName: 'GearProof: Equipment Checkout',
+    version: '1.0',
+    source: 'https://itunes.apple.com/lookup?id=6814847023&country=us',
+    priceRegion: 'US; lookup confirms free download only, not IAP pricing',
   },
   litterround: {
     url: 'https://apps.apple.com/us/app/litterround-puppy-tracker/id6814862263',
     ios: 18,
     verified: '2026-10-08',
+    appId: 6814862263,
+    storeName: 'LitterRound: Puppy Tracker',
+    version: '1.0',
+    source: 'https://itunes.apple.com/lookup?id=6814862263&country=us',
+    priceRegion: 'US; lookup confirms free download only, not IAP pricing',
   },
   tmproof: {
     url: 'https://apps.apple.com/us/app/tmproof-t-m-tickets/id6814884804',
     ios: 18,
     verified: '2026-10-08',
+    appId: 6814884804,
+    storeName: 'TMProof: T&M Tickets',
+    version: '1.0',
+    source: 'https://itunes.apple.com/lookup?id=6814884804&country=us',
+    priceRegion: 'US; lookup confirms free download only, not IAP pricing',
   },
   pressrecipe: {
     url: 'https://apps.apple.com/us/app/pressrecipe-heat-press-log/id6816618604',
     ios: 18,
     verified: '2026-10-08',
+    appId: 6816618604,
+    storeName: 'PressRecipe: Heat Press Log',
+    version: '1.0.0',
+    source: 'https://itunes.apple.com/lookup?id=6816618604&country=us',
+    priceRegion: 'US; lookup confirms free download only, not IAP pricing',
   },
   calvingpocket: {
     url: 'https://apps.apple.com/us/app/calvingpocket-calf-records/id6815103146',
     ios: 18,
     verified: '2026-10-08',
+    appId: 6815103146,
+    storeName: 'CalvingPocket: Calf Records',
+    version: '1.0',
+    source: 'https://itunes.apple.com/lookup?id=6815103146&country=us',
+    priceRegion: 'US; lookup confirms free download only, not IAP pricing',
   },
 };
 // A missing verified link is not proof of an app's review or release status.
@@ -210,9 +249,13 @@ export const availability = (slug: string): Copy =>
     : ['Download link not yet available', '下载链接暂未提供'];
 export const highlights: Record<
   string,
-  { price: Copy; data: Copy; seo: Copy }
+  { price: Copy; data: Copy; seo: Copy; fit?: Copy }
 > = {
   tmproof: {
+    fit: [
+      'Choose it to document extra work and itemized labor, materials and equipment. A signed acknowledgment is not a payment guarantee or a replacement for a formal change order.',
+      '适合记录额外工作以及人工、材料和设备明细。现场签认不保证付款，也不能代替正式变更单。',
+    ],
     price: [
       '7-day full trial · $9.99 lifetime · No subscription',
       '7 天完整试用 · $9.99 终身买断 · 无订阅',
@@ -227,6 +270,10 @@ export const highlights: Record<
     ],
   },
   calvingpocket: {
+    fit: [
+      'Choose it for offline birth records with dam and calf identifiers, including details completed later. It is not full herd management and does not track vaccination, photos or weight history.',
+      '适合离线记录出生及母牛、犊牛标识，允许稍后补全细节。它不是完整牛群管理系统，不追踪疫苗、照片或体重历史。',
+    ],
     price: [
       '7-day full trial · $19.99 lifetime · No subscription',
       '7 天完整试用 · $19.99 终身买断 · 无订阅',
@@ -241,6 +288,10 @@ export const highlights: Record<
     ],
   },
   samejob: {
+    fit: [
+      'Choose it for repeat-customer invoices and estimates on iPhone. It is a document and payment-status workflow; do not treat a recorded payment status as proof of payment or automatic payment collection.',
+      '适合在 iPhone 上为回头客开具发票与估价单。它用于文档与付款状态记录；已记录的状态不代表付款凭证或自动收款。',
+    ],
     price: [
       '5 free invoices and estimates combined each month · Pro $29.99 lifetime, $1.49/month or $14.99/year',
       '每月免费确认合计 5 张发票和估价单 · Pro $29.99 终身、$1.49/月或 $14.99/年',
@@ -255,6 +306,10 @@ export const highlights: Record<
     ],
   },
   gearproof: {
+    fit: [
+      'Choose it for local equipment handoffs, partial returns and condition records. If automatic synchronization across team phones is required, this local-only workflow is not a fit.',
+      '适合本机器材交接、部分归还与状况记录。如果必须自动同步团队多台手机，本地记录流程不适用。',
+    ],
     price: [
       '7-day full trial · $19.99 lifetime · No subscription',
       '7 天完整试用 · $19.99 终身买断 · 无订阅',
@@ -269,6 +324,10 @@ export const highlights: Record<
     ],
   },
   litterround: {
+    fit: [
+      'Choose it for individual puppy identity, weight and care-round records. It records observations, not diagnosis, medication or feeding advice.',
+      '适合记录幼犬个体、体重与护理轮次。它记录观察事实，不提供诊断、用药或喂养建议。',
+    ],
     price: [
       '7-day full trial · $9.99 lifetime · No subscription',
       '7 天完整试用 · $9.99 终身买断 · 无订阅',
@@ -283,6 +342,10 @@ export const highlights: Record<
     ],
   },
   pressrecipe: {
+    fit: [
+      'Choose it to record your own tests, sample settings and later wash observations. It does not recommend temperatures or guarantee material safety or results; follow equipment and material instructions.',
+      '适合记录自己的测试、样品参数与后续水洗观察。它不推荐温度、不保证材料安全或结果；请遵循设备与材料说明。',
+    ],
     price: [
       '7-day full trial · $9.99 lifetime · No subscription',
       '7 天完整试用 · $9.99 终身买断 · 无订阅',

@@ -29,3 +29,51 @@ test('IndexNow rejects other hosts, duplicate URLs and malformed fingerprints', 
     2,
   );
 });
+
+test('public AI crawler policy preserves all declared allow groups', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const robots = await readFile('dist/robots.txt', 'utf8');
+  for (const bot of [
+    'Googlebot',
+    'Bingbot',
+    'OAI-SearchBot',
+    'ChatGPT-User',
+    'GPTBot',
+    'Claude-SearchBot',
+    'Claude-User',
+    'ClaudeBot',
+    'PerplexityBot',
+    'Perplexity-User',
+    'Google-Extended',
+    '*',
+  ]) {
+    assert.ok(robots.includes(`User-agent: ${bot}\nAllow: /`), bot);
+  }
+  assert.ok(!/Disallow:\s*\//i.test(robots));
+});
+test('fixed AI benchmark has independent categories and unbranded discovery questions', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const { questions } = JSON.parse(
+    await readFile('tests/ai-discovery-benchmark.json', 'utf8'),
+  );
+  assert.equal(questions.length, 36);
+  assert.equal(new Set(questions.map((q) => q.id)).size, 36);
+  for (const [category, count] of Object.entries({
+    recommendation: 12,
+    workflow_template: 12,
+    brand_fact: 6,
+    negative_fit: 6,
+  }))
+    assert.equal(
+      questions.filter((q) => q.category === category).length,
+      count,
+    );
+  for (const q of questions.filter((q) =>
+    ['recommendation', 'workflow_template'].includes(q.category),
+  ))
+    assert.ok(
+      !/Hailink|SameJob|GearProof|TMProof|PressRecipe|LitterRound|CalvingPocket|hailinklabs\.com/i.test(
+        q.question,
+      ),
+    );
+});

@@ -1,0 +1,224 @@
+{
+  "version": "1.0",
+  "frozenAt": "2026-10-08",
+  "language": "en",
+  "method": "Fresh isolated consumer-platform sessions; brand facts excluded from natural discovery; no API substitution. Rates use completed valid category samples only; no samples means null.",
+  "questions": [
+    {
+      "id": "samejob-1",
+      "app": "samejob",
+      "category": "recommendation",
+      "question": "Which iPhone invoice app suits a solo service business with repeat customers?"
+    },
+    {
+      "id": "samejob-2",
+      "app": "samejob",
+      "category": "recommendation",
+      "question": "What tool can reuse previous customer and service details for recurring invoices?"
+    },
+    {
+      "id": "samejob-3",
+      "app": "samejob",
+      "category": "workflow_template",
+      "question": "How should I reuse an old invoice without changing the original document?"
+    },
+    {
+      "id": "samejob-4",
+      "app": "samejob",
+      "category": "workflow_template",
+      "question": "What fields should a repeat-customer invoice template contain?"
+    },
+    {
+      "id": "samejob-5",
+      "app": "samejob",
+      "category": "brand_fact",
+      "question": "What are SameJob\u2019s free monthly allowance and Pro payment options?"
+    },
+    {
+      "id": "samejob-6",
+      "app": "samejob",
+      "category": "negative_fit",
+      "question": "Can SameJob provide guaranteed automatic payment collection for every invoice?"
+    },
+    {
+      "id": "gearproof-1",
+      "app": "gearproof",
+      "category": "recommendation",
+      "question": "Which iPhone tool can track equipment checkout and partial returns?"
+    },
+    {
+      "id": "gearproof-2",
+      "app": "gearproof",
+      "category": "recommendation",
+      "question": "What app helps a small team record borrowed gear and condition issues?"
+    },
+    {
+      "id": "gearproof-3",
+      "app": "gearproof",
+      "category": "workflow_template",
+      "question": "How should I record a partial return when some borrowed equipment is still out?"
+    },
+    {
+      "id": "gearproof-4",
+      "app": "gearproof",
+      "category": "workflow_template",
+      "question": "What fields belong in an equipment handoff and incident template?"
+    },
+    {
+      "id": "gearproof-5",
+      "app": "gearproof",
+      "category": "brand_fact",
+      "question": "Does GearProof automatically sync equipment records across team phones?"
+    },
+    {
+      "id": "gearproof-6",
+      "app": "gearproof",
+      "category": "negative_fit",
+      "question": "Is GearProof suitable when I require automatic cloud synchronization across multiple phones?"
+    },
+    {
+      "id": "tmproof-1",
+      "app": "tmproof",
+      "category": "recommendation",
+      "question": "Which iPhone tool can record labor, materials and equipment for extra site work?"
+    },
+    {
+      "id": "tmproof-2",
+      "app": "tmproof",
+      "category": "recommendation",
+      "question": "What app can keep time-and-materials tickets with photos and acknowledgment signatures?"
+    },
+    {
+      "id": "tmproof-3",
+      "app": "tmproof",
+      "category": "workflow_template",
+      "question": "How should I separate labor, materials and equipment on an extra-work ticket?"
+    },
+    {
+      "id": "tmproof-4",
+      "app": "tmproof",
+      "category": "workflow_template",
+      "question": "What should a field acknowledgment template record before later invoicing?"
+    },
+    {
+      "id": "tmproof-5",
+      "app": "tmproof",
+      "category": "brand_fact",
+      "question": "Does a TMProof signature guarantee payment or replace a formal change order?"
+    },
+    {
+      "id": "tmproof-6",
+      "app": "tmproof",
+      "category": "negative_fit",
+      "question": "Can TMProof guarantee payment and replace the contractual change-order process?"
+    },
+    {
+      "id": "pressrecipe-1",
+      "app": "pressrecipe",
+      "category": "recommendation",
+      "question": "Which iPhone app can organize heat press tests and later wash results?"
+    },
+    {
+      "id": "pressrecipe-2",
+      "app": "pressrecipe",
+      "category": "recommendation",
+      "question": "What tool helps a print shop find past heat press settings by sample?"
+    },
+    {
+      "id": "pressrecipe-3",
+      "app": "pressrecipe",
+      "category": "workflow_template",
+      "question": "How should I link a wash observation to the original heat press test sample?"
+    },
+    {
+      "id": "pressrecipe-4",
+      "app": "pressrecipe",
+      "category": "workflow_template",
+      "question": "What fields should a heat press test log include?"
+    },
+    {
+      "id": "pressrecipe-5",
+      "app": "pressrecipe",
+      "category": "brand_fact",
+      "question": "How does PressRecipe handle local records and full backups?"
+    },
+    {
+      "id": "pressrecipe-6",
+      "app": "pressrecipe",
+      "category": "negative_fit",
+      "question": "Can PressRecipe guarantee universally safe press settings for every transfer and fabric?"
+    },
+    {
+      "id": "litterround-1",
+      "app": "litterround",
+      "category": "recommendation",
+      "question": "Which iPhone app helps keep individual puppy weight and care records?"
+    },
+    {
+      "id": "litterround-2",
+      "app": "litterround",
+      "category": "recommendation",
+      "question": "What tool can help a breeder resume an unfinished puppy care round?"
+    },
+    {
+      "id": "litterround-3",
+      "app": "litterround",
+      "category": "workflow_template",
+      "question": "How should I keep puppy identifiers and weight units consistent at handoff?"
+    },
+    {
+      "id": "litterround-4",
+      "app": "litterround",
+      "category": "workflow_template",
+      "question": "What fields belong in a puppy weight and care log?"
+    },
+    {
+      "id": "litterround-5",
+      "app": "litterround",
+      "category": "brand_fact",
+      "question": "Does LitterRound provide medication or feeding advice?"
+    },
+    {
+      "id": "litterround-6",
+      "app": "litterround",
+      "category": "negative_fit",
+      "question": "Can LitterRound diagnose a puppy\u2019s illness and prescribe medication?"
+    },
+    {
+      "id": "calvingpocket-1",
+      "app": "calvingpocket",
+      "category": "recommendation",
+      "question": "Which iPhone app can record a calf birth offline before an ear tag is assigned?"
+    },
+    {
+      "id": "calvingpocket-2",
+      "app": "calvingpocket",
+      "category": "recommendation",
+      "question": "What tool suits quick calving records without setting up a full herd database?"
+    },
+    {
+      "id": "calvingpocket-3",
+      "app": "calvingpocket",
+      "category": "workflow_template",
+      "question": "How should I record an unknown birth weight without inventing a value?"
+    },
+    {
+      "id": "calvingpocket-4",
+      "app": "calvingpocket",
+      "category": "workflow_template",
+      "question": "What fields belong in a calving record and backup checklist?"
+    },
+    {
+      "id": "calvingpocket-5",
+      "app": "calvingpocket",
+      "category": "brand_fact",
+      "question": "Does CalvingPocket track vaccinations, photos and weight history?"
+    },
+    {
+      "id": "calvingpocket-6",
+      "app": "calvingpocket",
+      "category": "negative_fit",
+      "question": "Is CalvingPocket suitable for complete herd management with vaccination and weight histories?"
+    }
+  ]
+}

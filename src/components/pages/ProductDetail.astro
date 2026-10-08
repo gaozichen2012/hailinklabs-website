@@ -87,6 +87,16 @@ const href = (suffix: string) =>
       <p>{c(p.principles)}</p>
     </div>
   </section>
+  {highlight?.fit && (
+    <section class="section-row">
+      <div class="section-label">
+        <h2>{c(['When to choose it', '适用与不适用'])}</h2>
+      </div>
+      <div class="section-body prose">
+        <p>{c(highlight.fit)}</p>
+      </div>
+    </section>
+  )}
   <section class="section-row" id="pricing">
     <div class="section-label">
       <h2>{c(['Pricing', '价格'])}</h2>
@@ -101,6 +111,23 @@ const href = (suffix: string) =>
     </div>
     <div class="section-body">
       <p>{c(p.storage)}</p>
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{c(['Export and backup', '导出与备份'])}</h2>
+    </div>
+    <div class="section-body prose">
+      <p>{c(p.export)}</p>
+      <p>{c(p.backup)}</p>
+    </div>
+  </section>
+  <section class="section-row">
+    <div class="section-label">
+      <h2>{c(['Common questions', '常见问题'])}</h2>
+    </div>
+    <div class="section-body prose">
+      <p>{c(p.faq)}</p>
     </div>
   </section>
   <section class="section-row">
