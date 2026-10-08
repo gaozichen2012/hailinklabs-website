@@ -338,6 +338,8 @@ for (const asset of assets.assets) {
   assert.equal(createHash('sha256').update(bytes).digest('hex'), asset.sha256);
   if (asset.file.endsWith('.pdf'))
     assert(bytes.toString('utf8', 0, 5) === '%PDF-');
+  else if (asset.file.endsWith('.xlsx'))
+    assert(bytes.subarray(0, 2).toString() === 'PK');
   else assert(bytes.toString('utf8').split(/\r?\n/).length >= 11);
 }
 const report = {

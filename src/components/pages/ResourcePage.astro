@@ -1,8 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import WorksheetPreview from '../WorksheetPreview.astro';
 import AppStoreLink from '../AppStoreLink.astro';
 import { guides, templates, hubs, resourceText } from '../../data/resources';
 import { catalog, highlights } from '../../data/catalog';
+import { products, copy } from '../../data/products';
 import { localizedPath, type Locale } from '../../data/i18n';
 interface Props {
   locale: Locale;
@@ -19,11 +21,15 @@ const sheet = templates.find((t) => path === `/templates/${t.slug}`);
 const hub = hubs.find((h) => path === `/guides/${h.slug}`);
 const resource = guide || sheet;
 const product = resource && catalog.find((p) => p.slug === resource.app);
+const workflowProduct =
+  resource && products.find((p) => p.slug === resource.app);
 const template = guide
   ? templates.find((t) => t.slug === guide.template)
   : sheet;
 const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
 const d = (value: readonly string[]) => resourceText(value, locale);
+const summary = (value: readonly string[]) =>
+  d(value).split(locale === 'en' ? /(?<=[.!?])\s+/ : /(?<=。)/)[0];
 const link = (target: string) => localizedPath(target, locale);
 const isTemplates = path.startsWith('/templates');
 const title = resource
@@ -129,6 +135,9 @@ const templateList = hub
         <section>
           <h2>{c('Example', '示例')}</h2>
           <p class="example-note">{d(guide.example)}</p>
+          {template && (
+            <WorksheetPreview sheet={template} locale={locale} example />
+          )}
         </section>
         <section>
           <h2>{c('Step-by-step workflow', '分步流程')}</h2>
@@ -231,43 +240,70 @@ const templateList = hub
                 English CSV
               </a>
             )}
+            <a
+              class="button secondary"
+              href={`/downloads/${sheet.slug}-a4.pdf`}
+              download
+            >
+              {c('Download A4 PDF (English)', '下载 A4 PDF（英文）')}
+            </a>
+            <a
+              class="text-link"
+              href={`/downloads/${sheet.slug}-example.pdf`}
+              download
+            >
+              {c('Filled example PDF (English)', '完整演示 PDF（英文）')}
+            </a>
+            {sheet.app === 'samejob' && (
+              <>
+                <a
+                  class="button secondary"
+                  href="/downloads/repeat-customer-invoice.xlsx"
+                  download
+                >
+                  {c(
+                    'Invoice XLSX with formulas (English)',
+                    '公式发票 XLSX（英文）',
+                  )}
+                </a>
+                <a
+                  class="text-link"
+                  href="/downloads/repeat-customer-invoice-example.xlsx"
+                  download
+                >
+                  {c('Filled example XLSX (English)', '完整演示 XLSX（英文）')}
+                </a>
+              </>
+            )}
+            {sheet.app === 'gearproof' && (
+              <>
+                <a
+                  class="text-link"
+                  href="/downloads/equipment-checkout-log-handoff.pdf"
+                  download
+                >
+                  {c('Single handoff PDF (English)', '单次交接 PDF（英文）')}
+                </a>
+                <a
+                  class="text-link"
+                  href="/downloads/equipment-checkout-log-ledger.pdf"
+                  download
+                >
+                  {c('Continuous ledger PDF (English)', '连续台账 PDF（英文）')}
+                </a>
+              </>
+            )}
           </div>
         </section>
-        <section class="print-sheet">
-          <h2>{d(sheet.title)}</h2>
-          <p>{d(sheet.note)}</p>
-          <table class="record-table">
-            <caption>
-              {c(
-                'Blank record sheet — use additional copies for more entries',
-                '空白记录表 — 更多记录可使用附页',
-              )}
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">{c('Field', '字段')}</th>
-                <th scope="col">{c('Your record', '填写记录')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sheet.fields.map((f) => (
-                <tr>
-                  <th scope="row">{d(f)}</th>
-                  <td>
-                    <span aria-hidden="true">________________</span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
+        <WorksheetPreview sheet={sheet} locale={locale} />
+        <WorksheetPreview sheet={sheet} locale={locale} example />
         <section>
           <h2>{c('How to use the sheet', '如何使用')}</h2>
           <ol>
             <li>
               {c(
-                'Choose HTML for printing, PDF for a saved printable copy or CSV for a spreadsheet.',
-                '打印可用 HTML，保存打印副本可用 PDF，电子表格可用 CSV。',
+                'Choose HTML for printing, Letter or A4 PDF for printing, or CSV for a spreadsheet. The invoice XLSX calculates line amounts and totals.',
+                '打印可用 HTML，保存打印副本可选 Letter 或 A4 PDF，电子表格可用 CSV；发票 XLSX 计算行金额与合计。',
               )}
             </li>
             <li>
@@ -301,7 +337,18 @@ const templateList = hub
           <h2>{c('Related Templates', '相关模板')}</h2>
           <ul>
             {templates
-              .filter((t) => t.slug !== sheet.slug)
+              .filter(
+                (t) =>
+                  t.slug !== sheet.slug &&
+                  guides.some(
+                    (g) =>
+                      g.app === sheet.app &&
+                      guides.some(
+                        (other) =>
+                          other.app === t.app && other.category === g.category,
+                      ),
+                  ),
+              )
               .map((t) => (
                 <li>
                   <a href={link(`/templates/${t.slug}`)}>{d(t.title)}</a>
@@ -314,9 +361,21 @@ const templateList = hub
     {product && resource && (
       <aside class="related-app resource-body">
         <h2>
-          {c('Keep these records on your iPhone', '在 iPhone 上保存这些记录')}
+          {c(
+            `Continue this task with ${product.name}`,
+            `用 ${product.name} 继续完成这项工作`,
+          )}
         </h2>
         <p>{d(product.description)}</p>
+        {workflowProduct && (
+          <ol>
+            {workflowProduct.steps.map(([heading, body]) => (
+              <li>
+                <strong>{copy(heading, locale)}</strong> — {copy(body, locale)}
+              </li>
+            ))}
+          </ol>
+        )}
         <p>{d(highlights[product.slug].data)}</p>
         <a class="text-link" href={link(`/products/${product.slug}`)}>
           {c('Explore', '了解')} {product.name}{' '}
@@ -370,7 +429,10 @@ const templateList = hub
               {hubs.map((h) => (
                 <a class="resource-card" href={link(`/guides/${h.slug}`)}>
                   <h3>{d(h.title)}</h3>
-                  <p>{d(h.intro)}</p>
+                  <p>{summary(h.intro)}</p>
+                  <small>
+                    {c('Guides and free templates', '指南与免费模板')}
+                  </small>
                 </a>
               ))}
             </div>
@@ -378,12 +440,12 @@ const templateList = hub
         )}
         {!isTemplates && (
           <section>
-            <h2>{c('Search-intent guides', '问题指南')}</h2>
+            <h2>{c('Practical how-to guides', '实用操作指南')}</h2>
             <div class="resource-grid">
               {guideList.map((g) => (
                 <a class="resource-card" href={link(`/guides/${g.slug}`)}>
                   <h3>{d(g.title)}</h3>
-                  <p>{d(g.answer)}</p>
+                  <p>{d(g.description)}</p>
                 </a>
               ))}
             </div>
@@ -402,6 +464,11 @@ const templateList = hub
               <a class="resource-card" href={link(`/templates/${t.slug}`)}>
                 <h3>{d(t.title)}</h3>
                 <p>{d(t.description)}</p>
+                <small>
+                  {t.app === 'samejob'
+                    ? c('PDF · CSV · Formula XLSX', 'PDF · CSV · 公式 XLSX')
+                    : 'PDF · CSV'}
+                </small>
               </a>
             ))}
           </div>

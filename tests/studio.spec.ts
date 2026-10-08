@@ -41,7 +41,9 @@ for (const prefix of ['', '/zh']) {
         .evaluate((el) => getComputedStyle(el).transform),
     ).toBe('none');
     await page.keyboard.press('Enter');
-    await expect(page).toHaveURL(new RegExp(`${prefix}/products$`));
+    await expect(page).toHaveURL(
+      new RegExp(`${prefix}/products#downloadable$`),
+    );
     await expect(page.locator('.matrix-card')).toHaveCount(29);
     await expect(page.locator('.card-index, .catalog-index')).toHaveCount(0);
     await page.locator('.category-links a[href="#family"]').click();

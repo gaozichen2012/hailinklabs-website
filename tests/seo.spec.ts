@@ -11,7 +11,7 @@ for (const prefix of ['', '/zh']) {
     await page.goto(`${prefix}/products`);
     await expect(page.locator('.availability')).toHaveCount(29);
     await expect(page.locator('.availability.is-available')).toHaveCount(6);
-    await expect(page.locator('.store-download')).toHaveCount(6);
+    await expect(page.locator('.catalog-group .store-download')).toHaveCount(6);
     for (const product of catalog) {
       const card = page.locator('.matrix-card').filter({
         has: page.getByRole('heading', { name: product.name, exact: true }),

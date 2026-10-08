@@ -1037,6 +1037,24 @@ h1:lang(zh-CN),
 .product-gallery {
   margin-bottom: 4rem;
 }
+@media (min-width: 1000px) {
+  .product-opening {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: start;
+  }
+  .product-opening .product-gallery {
+    padding-top: 3rem;
+  }
+  .product-opening .screenshot-grid {
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .product-opening .matrix-title {
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+}
 .screenshot-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1062,5 +1080,42 @@ h1:lang(zh-CN),
   .screenshot-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem 1rem;
+  }
+}
+
+.worksheet-section {
+  margin: 1.5rem 0;
+}
+.worksheet-example {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+}
+.worksheet-section .record-table td {
+  min-height: 2rem;
+  overflow-wrap: anywhere;
+}
+@media print {
+  .worksheet-example {
+    display: none;
+  }
+  .worksheet-section {
+    break-inside: avoid;
+  }
+  .worksheet-section thead {
+    display: table-header-group;
+  }
+  .worksheet-section .record-table-wrap {
+    overflow: visible;
+  }
+  .worksheet-section table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  .worksheet-section th,
+  .worksheet-section td {
+    font-size: 8pt;
+    overflow-wrap: anywhere;
   }
 }

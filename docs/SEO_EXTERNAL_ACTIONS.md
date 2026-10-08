@@ -1,5 +1,20 @@
 # 搜索平台接入状态
 
+## 2026-10-08 优化交接
+
+本轮平台读取继续使用现有授权会话。六款 App 的公开美国商店链接、免费下载、系统要求、逐产品试用与收费均已重新核对；目录总数不代表上架数量。Google 已有收录，具体重点页面以 URL Inspection 为准。后台原始数据及最小化指标快照只保存于本机忽略的 `artifacts/full-optimization-20261008/`，不进入官网或公开 Git。
+
+Growth Hub 每日手动运行时读取 `/acquisition-manifest.json`：它由 catalog、guides、templates 和原 Campaign 生成，包含全部目录的官网/中文入口、六款真实 listing、状态来源/核对日期、产品下载 Campaign 及指南/模板关系；缺下载链接为 null，不推断审核状态。部署绑定见项目当前状态与 `.pages-release/manifest.json`，生产 URL/资源持续检查使用 `npm run verify:production`。
+
+- 本轮逐项检查18个重点产品/指南/模板页及首页canonical，收录状态存在差异；实际索引记录、有效搜索窗口、美国缺失明细和六款Campaign数据不足保存在上述本机证据，增长运行按其日期读取，不转存公开报表。Google当前Web搜索报告包含AI功能流量，未提供可分离的AI引用/下载指标，依据 [Google官方AI功能说明](https://developers.google.com/search/docs/appearance/ai-features)。
+- 后续观察六款产品页和对应指南/模板的美国查询、曝光、点击与索引；在 Search Console 记录实际有效日期，不把默认三个月选择视为完整网站历史。
+- 保留现有 `pt`、`ct`、`mt` 和 Smart App Banner。按本次核对的 [Apple 官方规则](https://developer.apple.com/help/app-store-connect-analytics/acquisition/campaign-links)，每个 Campaign 指标需达到所选窗口最低 5 的展示门槛；首次下载归因使用点击后的 24 小时，详细报表小样本还可能被隐私规则隐藏。数据显示不足、破折号与未获取均不能记为零。
+- 官网来源、商店页面访问、首次下载、重新下载、付费用户和购买次数分别记录；站内没有事件跟踪。Google AI 搜索表现按其实际报告能力处理，不能从新增页面或 llms 配置推断 AI 引用。
+- App 上架但网站无链接时，以独立公开商店证据更新 catalog，再检查产品/目录/指南/模板的链接、QR 和 Banner，重新本地验证并部署；不生成猜测的 URL，不改变未核实产品的原路径/支持/隐私。
+- 低流量阶段优先修复事实错误、链接和抓取异常，保持足够观察期，不因一两次访问频繁重写页面。无新调度、后台、第三方脚本或 App 二进制发布。
+
+下方记录为历史接入阶段，不自动作为本轮当前指标。
+
 2026-10-07 当前复查：Google Search Console 的sitemap、索引报告和概述入口均已恢复；sitemap列表与详情已确认成功，官方当日Live Test允许抓取且抓取成功。当前线上sitemap为220个唯一网址。因今日目录实质扩展，已对同一URL提交一次更新并独立读回受理及成功状态；最新统计刷新和全站收录仍未确认。Bing历史sitemap报告尚未跟上当前目录，Apple代表营销活动数据不足，真实归因仍未验证。下方2026-10-05配置与历史产物基线不自动作为当前平台结果。
 
 2026-10-05：Google Search Console、Bing Webmaster Tools 已完成真实 HTML meta 所有权验证；Apple 官方生成的 Provider Token 已启用。网站源码 `3029ec01a1d17b5466510857f1ff9710f959c23b` 的 [Actions 37225394228](https://github.com/gaozichen2012/hailinklabs-website/actions/runs/37225394228) 检查、Pages 部署和生产验收全部成功，生产配置与构建产物一致。

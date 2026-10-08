@@ -1,3 +1,4 @@
+import { catalog, featured } from '../src/data/catalog';
 import { expect, test } from '@playwright/test';
 
 const names = [
@@ -15,28 +16,9 @@ for (const prefix of ['', '/zh']) {
     page,
   }) => {
     for (const route of [prefix || '/', `${prefix}/products`]) {
-      const shown = route.endsWith('/products')
-        ? [
-            ...names,
-            'MinuteSprout',
-            'BotSteps',
-            'HearDraw',
-            'RuleSprout',
-            'TillTinker',
-            'StoryUndo',
-            'ClueMend',
-            'AffixHop',
-            'LineLilt',
-            'FormalsFlow',
-            'BatchMise',
-            'PatchRelay',
-            'SeamCarry',
-            'SiteRevisit',
-            'PaneBatch',
-            'CartTinker',
-            'BeatMend',
-          ]
-        : ['SameJob', 'GearProof', 'LitterRound'];
+      const shown = (route.endsWith('/products') ? catalog : featured).map(
+        (p) => p.name,
+      );
       await page.goto(route);
       await expect(page.locator('.matrix-card')).toHaveCount(shown.length);
       for (const name of shown) {

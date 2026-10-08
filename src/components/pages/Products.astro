@@ -1,8 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Product from '../../components/Product.astro';
+import AppStoreLink from '../AppStoreLink.astro';
+import { localizedPath } from '../../data/i18n';
 import { copy } from '../../data/products';
-import { catalog, categories } from '../../data/catalog';
+import { catalog, categories, listings } from '../../data/catalog';
 
 import { translator, type Locale } from '../../data/i18n';
 interface Props {
@@ -34,6 +36,42 @@ const t = translator(locale);
         : '按你想做的事，找到合适的 App。'}
     </p>
   </section>
+  <section
+    class="products-section"
+    id="downloadable"
+    aria-labelledby="downloadable-title"
+  >
+    <h2 id="downloadable-title">
+      {locale === 'en' ? 'Apps you can download' : '可以实际下载的 App'}
+    </h2>
+    <p>
+      {locale === 'en'
+        ? `${Object.keys(listings).length} verified US store links. Browse the complete collection by category below.`
+        : `${Object.keys(listings).length} 款具有已核实的美国商店入口，下方保留完整分类目录。`}
+    </p>
+    <a class="text-link" href="#product-categories">
+      {locale === 'en' ? 'Browse the full collection' : '浏览完整目录'}
+    </a>
+    <div class="product-grid">
+      {catalog
+        .filter((p) => listings[p.slug])
+        .map((product) => (
+          <article class="resource-card">
+            <h3>
+              <a href={localizedPath(`/products/${product.slug}`, locale)}>
+                {product.name}
+              </a>
+            </h3>
+            <p>{copy(product.summary, locale)}</p>
+            <AppStoreLink
+              locale={locale}
+              slug={product.slug}
+              source="catalog"
+            />
+          </article>
+        ))}
+    </div>
+  </section>
   <nav
     id="product-categories"
     class="category-links"
@@ -42,7 +80,11 @@ const t = translator(locale);
     {categories.map((category) => (
       <a href={`#${category.id}`}>
         {copy(category.title, locale)}{' '}
-        <span class="category-count">{category.slugs.length}</span>
+        <span class="category-count">
+          {locale === 'en'
+            ? `${category.slugs.filter((slug) => listings[slug]).length} downloadable / ${category.slugs.length} total`
+            : `${category.slugs.filter((slug) => listings[slug]).length} 可下载 / ${category.slugs.length} 总数`}
+        </span>
       </a>
     ))}
   </nav>
@@ -56,17 +98,22 @@ const t = translator(locale);
         <h2 id={`${category.id}-title`}>{copy(category.title, locale)}</h2>
         <span class="catalog-count">
           {locale === 'en'
-            ? `${category.slugs.length} apps`
-            : `${category.slugs.length} 款 App`}
+            ? `${category.slugs.length} ${category.slugs.length === 1 ? 'app' : 'apps'} · ${category.slugs.filter((slug) => listings[slug]).length} downloadable`
+            : `${category.slugs.length} 款 App · ${category.slugs.filter((slug) => listings[slug]).length} 可下载`}
         </span>
       </div>
       <div class="product-grid">
-        {category.slugs.map((slug) => (
-          <Product
-            locale={locale}
-            product={catalog.find((p) => p.slug === slug)!}
-          />
-        ))}
+        {category.slugs
+          .toSorted(
+            (a, b) =>
+              Number(Boolean(listings[b])) - Number(Boolean(listings[a])),
+          )
+          .map((slug) => (
+            <Product
+              locale={locale}
+              product={catalog.find((p) => p.slug === slug)!}
+            />
+          ))}
       </div>
       <a class="text-link category-return" href="#product-categories">
         {locale === 'en' ? 'Back to categories' : '返回产品分类'}{' '}

@@ -1,6 +1,6 @@
 import { canonicalPath, isAlias } from '../src/data/route-policy';
 import { resourceForPath } from '../src/data/resources';
-import { listings } from '../src/data/catalog';
+import { listings, featured } from '../src/data/catalog';
 import { createHash } from 'node:crypto';
 import { expect, test } from '@playwright/test';
 import { englishRoutes, routes, site } from '../src/data/site';
@@ -89,35 +89,15 @@ for (const englishPath of englishRoutes) {
           .count(),
       ).toBe(0);
       const resource = resourceForPath(englishPath);
-      const expectedStoreLinks = [
-        ...(resource ? [listings[resource.app].url] : []),
-        ...(['/', '/products', '/products/samejob'].includes(englishPath)
-          ? ['https://apps.apple.com/us/app/invoice-maker-samejob/id6814700434']
-          : []),
-        ...(['/', '/products', '/products/gearproof'].includes(englishPath)
-          ? [
-              'https://apps.apple.com/us/app/gearproof-equipment-checkout/id6814847023',
-            ]
-          : []),
-        ...(['/', '/products', '/products/litterround'].includes(englishPath)
-          ? [
-              'https://apps.apple.com/us/app/litterround-puppy-tracker/id6814862263',
-            ]
-          : []),
-        ...(['/products', '/products/tmproof'].includes(englishPath)
-          ? ['https://apps.apple.com/us/app/tmproof-t-m-tickets/id6814884804']
-          : []),
-        ...(['/products', '/products/pressrecipe'].includes(englishPath)
-          ? [
-              'https://apps.apple.com/us/app/pressrecipe-heat-press-log/id6816618604',
-            ]
-          : []),
-        ...(['/products', '/products/calvingpocket'].includes(englishPath)
-          ? [
-              'https://apps.apple.com/us/app/calvingpocket-calf-records/id6815103146',
-            ]
-          : []),
-      ];
+      const expectedStoreLinks = resource
+        ? [listings[resource.app].url]
+        : englishPath === '/'
+          ? featured.map((p) => listings[p.slug].url)
+          : englishPath === '/products'
+            ? Object.values(listings).map((l) => l.url)
+            : listings[englishPath.replace('/products/', '')]
+              ? [listings[englishPath.replace('/products/', '')].url]
+              : [];
       expect(
         await page.locator('a[href*="apps.apple.com"]').evaluateAll((links) =>
           links.map((link) => {
@@ -128,7 +108,13 @@ for (const englishPath of englishRoutes) {
         ),
       ).toEqual(expect.arrayContaining(expectedStoreLinks));
       await expect(page.locator('a[href*="apps.apple.com"]')).toHaveCount(
-        expectedStoreLinks.length,
+        expectedStoreLinks.length *
+          (englishPath === '/products' ||
+          /^\/products\/(samejob|gearproof|tmproof|litterround|calvingpocket|pressrecipe)$/.test(
+            englishPath,
+          )
+            ? 2
+            : 1),
       );
       for (const download of await page.locator('.store-download').all()) {
         await expect(download).toContainText(

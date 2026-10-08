@@ -1,0 +1,77 @@
+---
+import { resourceText, type Template } from '../data/resources';
+import type { Locale } from '../data/i18n';
+interface Props {
+  sheet: Template;
+  locale: Locale;
+  example?: boolean;
+}
+const { sheet, locale, example = false } = Astro.props;
+const d = (v: readonly string[]) => resourceText(v, locale);
+---
+
+<div class={example ? 'worksheet-example' : 'print-sheet'}>
+  <h2>
+    {example
+      ? locale === 'en'
+        ? 'Filled demonstration'
+        : '完整填写演示'
+      : d(sheet.title)}
+  </h2>
+  <p>{example ? d(sheet.exampleLabel) : d(sheet.note)}</p>
+  {sheet.sections.map((section) => (
+    <section class="worksheet-section">
+      <h3>{d(section.title)}</h3>
+      <div
+        class="record-table-wrap"
+        tabindex="0"
+        role="region"
+        aria-label={d(section.title)}
+      >
+        <table
+          class:list={[
+            'record-table',
+            { 'metadata-table': section.columns.length === 2 },
+          ]}
+        >
+          <caption>
+            {d(section.title)}
+            {example &&
+              (locale === 'en'
+                ? ' (English demonstration data)'
+                : '（英文演示数据）')}
+          </caption>
+          <thead>
+            <tr>
+              {section.columns.map((col) => (
+                <th scope="col">{d(col)}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {(example
+              ? section.exampleRows
+              : section.columns.length === 2
+                ? section.blankLabels.map((label) => [d(label), ''])
+                : Array.from({ length: section.blankRows }, () =>
+                    section.columns.map(() => ''),
+                  )
+            ).map((row) => (
+              <tr>
+                {row.map((value) => (
+                  <td>
+                    {value === '' ? (
+                      <span aria-hidden="true">________________</span>
+                    ) : (
+                      value
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+</div>

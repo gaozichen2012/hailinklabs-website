@@ -57,7 +57,11 @@ test('direct answers and template downloads work with JavaScript disabled', asyn
   await page
     .getByRole('link', { name: 'View, print or download the template' })
     .click();
-  await expect(page.locator('.print-sheet table tbody tr')).toHaveCount(11);
+  await expect(page.locator('.print-sheet table tbody tr')).toHaveCount(
+    templates
+      .find((t) => t.app === 'tmproof')!
+      .sections.reduce((n, section) => n + section.blankRows, 0),
+  );
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('link', { name: 'Download CSV', exact: true }).click();
   expect((await downloadPromise).suggestedFilename()).toBe(

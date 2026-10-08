@@ -1,51 +1,64 @@
-"""Regenerate static English PDFs and bilingual CSVs from public template data.
-Requires reportlab only for authoring; production/build/CI serve checked-in files.
-Use deterministic metadata, Letter paper and ample blank writing space.
-"""
-import csv
-import hashlib
-import json
+"""Generate deterministic task-specific PDFs and bilingual multi-record CSVs."""
+import csv, hashlib, json
 from pathlib import Path
 from xml.sax.saxutils import escape
 from reportlab import rl_config
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_LEFT
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import letter, A4
 from reportlab.lib.styles import ParagraphStyle
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
 rl_config.invariant = 1
-ROOT = Path(__file__).resolve().parents[1]
-source = ROOT / 'src/data/templates.json'
-items = json.loads(source.read_text())
-output = ROOT / 'public/downloads'
-output.mkdir(parents=True, exist_ok=True)
-assets = []
+ROOT=Path(__file__).resolve().parents[1]
+source=ROOT/'src/data/templates.json'
+items=json.loads(source.read_text())
+output=ROOT/'public/downloads'
+output.mkdir(parents=True,exist_ok=True)
+assets=[]
+heading=ParagraphStyle('heading',fontName='Helvetica-Bold',fontSize=18,leading=22,spaceAfter=10,keepWithNext=True,textColor=colors.HexColor('#174c35'))
+body=ParagraphStyle('body',fontName='Helvetica',fontSize=9,leading=13,spaceAfter=10)
+section_heading=ParagraphStyle('section',parent=heading,fontSize=13,leading=17,spaceAfter=8)
+label=ParagraphStyle('label',parent=body,fontName='Helvetica-Bold',fontSize=9,leading=12,spaceAfter=0)
+def cell(value): return Paragraph(escape(str(value)),body)
+def make_pdf(item,suffix,paper,filled=False,sections=None):
+    path=output/(item['slug']+suffix+'.pdf')
+    sections=sections or item['sections']
+    story=[Paragraph('HAILINK LABS / FREE TEMPLATE',label),Spacer(1,12),Paragraph(escape(item['title'][0]),heading),cell(item['description'][0])]
+    if filled: story += [Paragraph('DEMONSTRATION DATA - NOT AN APP EXPORT',label),Spacer(1,12)]
+    width=paper[0]-80
+    for section in sections:
+        story += [Paragraph(escape(section['title'][0]),section_heading)]
+        columns=section['columns']
+        rows=[[Paragraph(escape(c[0]),label) for c in columns]]
+        rows += [[cell(v) for v in row] for row in section['exampleRows']] if filled else ([[cell(row[0]),''] for row in section['exampleRows']] if len(columns)==2 else [['']*len(columns) for _ in range(section['blankRows'])])
+        widths=[width/len(columns)]*len(columns)
+        if len(columns)==2: widths=[width*.38,width*.62]
+        table=Table(rows,colWidths=widths,repeatRows=1,minRowHeights=[24]*len(rows))
+        table.setStyle(TableStyle([('GRID',(0,0),(-1,-1),.4,colors.HexColor('#bccbc0')),('BACKGROUND',(0,0),(-1,0),colors.HexColor('#edf5ef')),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),7),('RIGHTPADDING',(0,0),(-1,-1),7),('TOPPADDING',(0,0),(-1,-1),4),('BOTTOMPADDING',(0,0),(-1,-1),4)]))
+        story += [table,Spacer(1,16)]
+    story += [cell(item['note'][0])]
+    if item['app']=='tmproof' and not filled:
+        story += [PageBreak(),Paragraph('Continuation sheet',heading),cell('Ticket / project / date / page reference: ______________________________')]
+        rows=[[cell(v) for v in ['Category','Item / person','Quantity / unit','Rate / currency','Notes']]]+[['']*5 for _ in range(12)]
+        table=Table(rows,colWidths=[width/5]*5,rowHeights=[38]+[36]*12,repeatRows=1)
+        table.setStyle(TableStyle([('GRID',(0,0),(-1,-1),.4,colors.HexColor('#bccbc0')),('VALIGN',(0,0),(-1,-1),'TOP')]))
+        story += [table,Spacer(1,12),cell('Acknowledgment scope / signer / role / date / signature: __________________________')]
+    def footer(canvas,doc):
+        canvas.setFont('Helvetica',7)
+        canvas.drawString(40,24,'hailinklabs.com/templates/'+item['slug'])
+        canvas.drawRightString(paper[0]-40,24,'2026-10-08 / '+str(doc.page))
+    SimpleDocTemplate(str(path),pagesize=paper,leftMargin=40,rightMargin=40,topMargin=36,bottomMargin=42,title=item['title'][0],author='Hailink Labs').build(story,onFirstPage=footer,onLaterPages=footer)
+    return path
 for item in items:
-    slug = item['slug']
-    pdf = output / (slug + '.pdf')
-    heading = ParagraphStyle('heading', fontName='Helvetica-Bold', fontSize=20, leading=24, textColor=colors.HexColor('#17191b'), spaceAfter=16)
-    body = ParagraphStyle('body', fontName='Helvetica', fontSize=10, leading=15, alignment=TA_LEFT, spaceAfter=12)
-    label = ParagraphStyle('label', parent=body, fontName='Helvetica-Bold', fontSize=9, leading=13, spaceAfter=0)
-    story = [Paragraph('HAILINK LABS / FREE RECORD SHEET', label), Spacer(1, 14), Paragraph(escape(item['title'][0]), heading), Paragraph(escape(item['description'][0]), body)]
-    rows = [[Paragraph('Field', label), Paragraph('Your record', label)]]
-    rows += [[Paragraph(escape(field[0]), label), ''] for field in item['fields']]
-    table = Table(rows, colWidths=[190, 326], rowHeights=[26] + [34]*len(item['fields']))
-    table.setStyle(TableStyle([('GRID',(0,0),(-1,-1),0.5,colors.HexColor('#b8bdb8')),('BACKGROUND',(0,0),(-1,0),colors.HexColor('#f0f5f1')),('VALIGN',(0,0),(-1,-1),'MIDDLE'),('LEFTPADDING',(0,0),(-1,-1),10),('RIGHTPADDING',(0,0),(-1,-1),10)]))
-    story += [table, Spacer(1, 18), Paragraph(escape(item['note'][0]), body), Paragraph('Use a new sheet for each record. For itemized work or additional entries, attach another clearly identified sheet.', body)]
-    def footer(canvas, doc):
-        canvas.setFont('Helvetica', 8)
-        canvas.setFillColor(colors.HexColor('#626269'))
-        canvas.drawString(48, 28, 'hailinklabs.com/templates/' + slug)
-        canvas.drawRightString(564, 28, 'Updated ' + item['updatedAt'] + ' / ' + str(doc.page))
-    SimpleDocTemplate(str(pdf), pagesize=letter, rightMargin=48,leftMargin=48,topMargin=40,bottomMargin=48,title=item['title'][0],author='Hailink Labs').build(story,onFirstPage=footer,onLaterPages=footer)
-    for lang, suffix in [(0,''),(1,'-zh')]:
-        path = output / (slug+suffix+'.csv')
-        with path.open('w', encoding='utf-8-sig', newline='') as f:
-            writer=csv.writer(f, lineterminator='\n')
+    generated=[make_pdf(item,'',letter),make_pdf(item,'-a4',A4),make_pdf(item,'-example',letter,True)]
+    if item['app']=='gearproof': generated += [make_pdf(item,'-handoff',letter,sections=item['sections'][:2]),make_pdf(item,'-ledger',letter,sections=item['sections'][2:])]
+    for lang,suffix in [(0,''),(1,'-zh')]:
+        path=output/(item['slug']+suffix+'.csv')
+        with path.open('w',encoding='utf-8-sig',newline='') as f:
+            writer=csv.writer(f,lineterminator='\n')
             writer.writerow([field[lang] for field in item['fields']])
-            writer.writerows([['']*len(item['fields']) for _ in range(10)])
-    for path in [pdf, output/(slug+'.csv'), output/(slug+'-zh.csv')]:
-        assets.append({'file':'/downloads/'+path.name,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'bytes':path.stat().st_size})
-manifest={'sourceSha256':hashlib.sha256(source.read_bytes()).hexdigest(),'assets':assets}
-(ROOT/'src/data/template-assets.json').write_text(json.dumps(manifest,indent=2)+'\n')
-print(f'Generated {len(items)} PDFs and {len(items)*2} CSVs.')
+            writer.writerows([['']*len(item['fields']) for _ in range(20)])
+        generated.append(path)
+    for path in generated: assets.append({'file':'/downloads/'+path.name,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'bytes':path.stat().st_size})
+for path in sorted(output.glob('*.xlsx')): assets.append({'file':'/downloads/'+path.name,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'bytes':path.stat().st_size})
+(ROOT/'src/data/template-assets.json').write_text(json.dumps({'sourceSha256':hashlib.sha256(source.read_bytes()).hexdigest(),'assets':assets},indent=2)+'\n')
+print(f'Generated {len(assets)} static resources.')

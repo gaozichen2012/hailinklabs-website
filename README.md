@@ -76,7 +76,7 @@ Do not put private contents in public commit messages or CI output. Credentials 
 `src/data/guides.json` and `templates.json` feed static English/Chinese routes,
 topic hubs, product resource links, Article/Breadcrumb schema and real App Store
 banners. Each published app starts with three distinct guides and a suitable free
-resource. HTML, English PDFs and bilingual CSVs require no account or tracking.
+resource. HTML, English Letter/A4 PDFs, filled demonstrations, bilingual CSVs and the invoice XLSX require no account or tracking.
 
 After substantial content changes, update the explicit content dates; regenerate
 PDF/CSV assets with `python3 scripts/generate-templates.py` in an authoring
@@ -97,3 +97,5 @@ Optional real public verification/provider values are configured in
 `GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION`, `APPLE_PROVIDER_TOKEN`.
 Do not use sample values. Normal App Store URLs remain active until a real Apple
 provider token exists. See [external platform actions](docs/SEO_EXTERNAL_ACTIONS.md).
+
+The build also emits `/acquisition-manifest.json` from the shared product/resource data for the existing manual Growth Hub workflow. It contains public listing and campaign relationships; private platform metrics remain outside the public repository.

@@ -1,95 +1,175 @@
 {
-  "sourceSha256": "c03d1ef96f03c82a82fcf4eb60f702408e7db6fef9b5092ed2f8b7196d496089",
+  "sourceSha256": "de045cf57ef28c1ea11e09850cc0f99edec22f01e1d2a036a5ff2950a3834c63",
   "assets": [
     {
       "file": "/downloads/time-and-materials-ticket.pdf",
-      "sha256": "d742445abac4d71ad6e78eacc4e137cf80a8b5f702e70e0d22d709834e53ed1e",
-      "bytes": 2647
+      "sha256": "846b4d1b8f226fa82ddb66d30b71df0362c035b106709ea956c68df0cdefadac",
+      "bytes": 5484
+    },
+    {
+      "file": "/downloads/time-and-materials-ticket-a4.pdf",
+      "sha256": "1431357f5b8b46ca6d3e68e2d2b77b5f0c7abb96ecfda47c8c382e27022c5050",
+      "bytes": 5670
+    },
+    {
+      "file": "/downloads/time-and-materials-ticket-example.pdf",
+      "sha256": "9029c317fd018681ee7d2f8d2e6d91a9213b9c3ca6fa366496f39da640401e6d",
+      "bytes": 4192
     },
     {
       "file": "/downloads/time-and-materials-ticket.csv",
-      "sha256": "7f0c62ed44ce1cde53ada8ae830a6321781868136d6e6f9a1becd416d4ccdab1",
-      "bytes": 318
+      "sha256": "24020559711f6eecd7c1eb324d869911fc9f0f9d85eaad902deb9e218421297b",
+      "bytes": 761
     },
     {
       "file": "/downloads/time-and-materials-ticket-zh.csv",
-      "sha256": "feac083f05b786fdacc66c918d08a7ce26c2c62e9fd926157e5c1b4b4ae67082",
-      "bytes": 319
+      "sha256": "35395a4d2d97cfe577fd12440c0aedc48b464cdf92ca6b4831164b1121ffee97",
+      "bytes": 753
     },
     {
       "file": "/downloads/equipment-checkout-log.pdf",
-      "sha256": "8eaf0b388bc95dd9da76016f3d80e0d795aba8b3592f95f45032bf4e042693ff",
-      "bytes": 2491
+      "sha256": "d8323e6ab6e5a7047de408dd9e58d04f582ed768f33661dbba30667be02d6b75",
+      "bytes": 3875
+    },
+    {
+      "file": "/downloads/equipment-checkout-log-a4.pdf",
+      "sha256": "a982bdac93110f34eac636fffb8fe7882ad91e27aed283534fd45489105ca6f3",
+      "bytes": 3976
+    },
+    {
+      "file": "/downloads/equipment-checkout-log-example.pdf",
+      "sha256": "4e7f5a25b7b7b4c9d0b4ecdd4b142fd1af5e84d23107b70e00f09fed02af2c73",
+      "bytes": 3060
+    },
+    {
+      "file": "/downloads/equipment-checkout-log-handoff.pdf",
+      "sha256": "0ae4795a9b7c0b86642bceae91ad2562b00ee4b5cd08075d1e8de788e153886b",
+      "bytes": 2662
+    },
+    {
+      "file": "/downloads/equipment-checkout-log-ledger.pdf",
+      "sha256": "3b5218afa37b5d6f87cc9029d58b25739c972ab949673b8a19129596369888b3",
+      "bytes": 2546
     },
     {
       "file": "/downloads/equipment-checkout-log.csv",
-      "sha256": "b40b06f49d1470f594aa748fa813dc75edf1c6a1c4aea89f8edcb85cc0b8122c",
-      "bytes": 236
+      "sha256": "8379abe7e91d28cb7e458cbe99e8962124297350681caf26b7fc24de7d7c7eb5",
+      "bytes": 584
     },
     {
       "file": "/downloads/equipment-checkout-log-zh.csv",
-      "sha256": "a83dc2cc2e8f5cdd5fcc7aa9f35a76b19fb32d034276cfaa7a7c529b70fa5309",
-      "bytes": 243
+      "sha256": "4bf09e0ba0f6a7760558bca1b7c152f38dc97265a4808144dbf54f59e4782197",
+      "bytes": 591
     },
     {
       "file": "/downloads/puppy-weight-log.pdf",
-      "sha256": "75848e6473113cb130752680fee2daf5a938c39b2cb8f7a67680ffb1abb8225a",
-      "bytes": 2445
+      "sha256": "4b7ae6ce8e99db2cd61d5b3383201fd681ce49879f5b4d4ee875b700b67544d0",
+      "bytes": 2816
+    },
+    {
+      "file": "/downloads/puppy-weight-log-a4.pdf",
+      "sha256": "4b0589b1cba639b3d3c4455186a6d7a2bf4aeabff57d5131034b7acacda1d7c4",
+      "bytes": 2861
+    },
+    {
+      "file": "/downloads/puppy-weight-log-example.pdf",
+      "sha256": "fdffc2bff6c907452005390241a923a04fa3fcb629b9f4929356719eea19f3ee",
+      "bytes": 2845
     },
     {
       "file": "/downloads/puppy-weight-log.csv",
-      "sha256": "a30b746473be32c625af1ec1952b832186152ff1acf95966de00c85d24b01b12",
-      "bytes": 148
+      "sha256": "34fc79959630bed34bf1bd341528d4e570f74eb67709d9aafabbfee800c6b2db",
+      "bytes": 319
     },
     {
       "file": "/downloads/puppy-weight-log-zh.csv",
-      "sha256": "41a48446bd879c67f7c28a949aba7bf1f05c1fba317c691f19f3b81a906f64ec",
-      "bytes": 158
+      "sha256": "4752b3fa8921f6dedf24b009b230b5a3deed541ff1d49fa903958e9d05520730",
+      "bytes": 333
     },
     {
       "file": "/downloads/calving-record-sheet.pdf",
-      "sha256": "a01f88f3b7cbc1b148ed0018337daf8762165298159b4bcbb5f685c74128d4af",
-      "bytes": 2504
+      "sha256": "b611dda829ee4c6a1a722806b80a6f08b2f1e6407ae7fc1ba69af714ef05a09d",
+      "bytes": 2719
+    },
+    {
+      "file": "/downloads/calving-record-sheet-a4.pdf",
+      "sha256": "f385c7354302f3f99ba763372a59c616212fdc854a081ce87d314ae8043f22e7",
+      "bytes": 2768
+    },
+    {
+      "file": "/downloads/calving-record-sheet-example.pdf",
+      "sha256": "359b5e9e98594b0768513be1e128d8a5da591b13ea3e6952e6ec92ebd1f81566",
+      "bytes": 2795
     },
     {
       "file": "/downloads/calving-record-sheet.csv",
-      "sha256": "dd5e812904b98f345f6149d30f0c9b60703e17a7b7d428f171c66c5583b83703",
-      "bytes": 209
+      "sha256": "e93198fa7b423a6a4d7dfca6f9bfad97aa8411b174b7c84b98c115af3fa8c1b8",
+      "bytes": 428
     },
     {
       "file": "/downloads/calving-record-sheet-zh.csv",
-      "sha256": "9f27da21002130e0fff1aa4e7f174d458baa2b806c51caf93e1c847f02d49a7e",
-      "bytes": 228
+      "sha256": "4224dd7acb2de16d67c0a0dd26263a621e84275ebcb396c0cb220c11280653dd",
+      "bytes": 444
     },
     {
       "file": "/downloads/heat-press-settings-log.pdf",
-      "sha256": "f95d2c60ae69af32edb2ec125468a415802542e2750569e18be32e208929ab3e",
-      "bytes": 2568
+      "sha256": "b320329c14d2fd3064ff482c488246dc1c1622026c25fdc9140bc4daa3be4996",
+      "bytes": 3912
+    },
+    {
+      "file": "/downloads/heat-press-settings-log-a4.pdf",
+      "sha256": "a1c586b9df30a59b598194d46bb75f4cc4801e13a7950799e71b54f033b7844a",
+      "bytes": 3996
+    },
+    {
+      "file": "/downloads/heat-press-settings-log-example.pdf",
+      "sha256": "ec6c9d5d95187e687dc1f9e4749f1e2d99831f5a4e31cb3cac10f99249375f5f",
+      "bytes": 2962
     },
     {
       "file": "/downloads/heat-press-settings-log.csv",
-      "sha256": "562774f0b3e96c4815e661e8c05fb9be37b9965da9a025c925346f1342947cf9",
-      "bytes": 236
+      "sha256": "df336676c63dd080343bc92213ff09bb11ea6b1eda6f2ac23b2c753ef429e4e5",
+      "bytes": 559
     },
     {
       "file": "/downloads/heat-press-settings-log-zh.csv",
-      "sha256": "25e4849f56cb9ae8e9ac4a6b4bf689f8e1f23319427a575b9bb9bc01a06dc097",
-      "bytes": 242
+      "sha256": "594517e395bb3015d4692012052cc07b9979aac330ae7939234c6708332daed6",
+      "bytes": 568
     },
     {
       "file": "/downloads/repeat-customer-invoice.pdf",
-      "sha256": "17d6e3398646790c0ffebf8360af38db606c99e68368748886763f26304092d8",
-      "bytes": 2463
+      "sha256": "56fde3b044e73be5d466a60b381be0d51d3a306fb64e8b66781dc9b61416bc58",
+      "bytes": 2803
+    },
+    {
+      "file": "/downloads/repeat-customer-invoice-a4.pdf",
+      "sha256": "e4791806e18fe9ecc59a1ba53b9793985a1b1334b989fbfcc3c6b1a3cb1f62c9",
+      "bytes": 2847
+    },
+    {
+      "file": "/downloads/repeat-customer-invoice-example.pdf",
+      "sha256": "8d8f034c65e68967b6730a1a785006af4fddaf793b7f96ad1c2cb95b882077b3",
+      "bytes": 2961
     },
     {
       "file": "/downloads/repeat-customer-invoice.csv",
-      "sha256": "cf3e5aa10646cc4a10c19beef057f0b1074b6abf251401b110653f549d8bd3e9",
-      "bytes": 191
+      "sha256": "0969f73018183aac51c464d9c0991d9c0432003f2820b9e28b2cfb8a80cb16ef",
+      "bytes": 617
     },
     {
       "file": "/downloads/repeat-customer-invoice-zh.csv",
-      "sha256": "170c2ac3101dc8f6abed5d0540cde928fbfa0f1bc19f1faa895c7c3eca6482d4",
-      "bytes": 180
+      "sha256": "624053d07d4cbd06dc4289968055504486e38935ca114e4ee2a90179dc6f1f62",
+      "bytes": 598
+    },
+    {
+      "file": "/downloads/repeat-customer-invoice-example.xlsx",
+      "sha256": "8e4ef673a4063b8c52035b1a32823864e711ab976938d00316b3eb103581d006",
+      "bytes": 4915
+    },
+    {
+      "file": "/downloads/repeat-customer-invoice.xlsx",
+      "sha256": "75ea40a3fd5ba41a5dd2370164ece1515313ed9120027342092e1c6745737bfb",
+      "bytes": 4722
     }
   ]
 }

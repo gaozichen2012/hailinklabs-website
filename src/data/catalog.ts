@@ -157,9 +157,14 @@ export const categories: readonly {
     ],
   },
 ];
-export const featured = ['samejob', 'gearproof', 'litterround'].map((slug) =>
-  catalog.find((p) => p.slug === slug)!,
-);
+export const featured = [
+  'samejob',
+  'gearproof',
+  'tmproof',
+  'pressrecipe',
+  'litterround',
+  'calvingpocket',
+].map((slug) => catalog.find((p) => p.slug === slug)!);
 export const supportProducts = catalog;
 // Public US listings checked against Apple's public pages/lookup endpoint.
 // A US URL is not a claim of worldwide availability or a device purchase test.
@@ -170,32 +175,32 @@ export const listings: Record<
   samejob: {
     url: 'https://apps.apple.com/us/app/invoice-maker-samejob/id6814700434',
     ios: 17,
-    verified: '2026-10-04',
+    verified: '2026-10-08',
   },
   gearproof: {
     url: 'https://apps.apple.com/us/app/gearproof-equipment-checkout/id6814847023',
     ios: 18,
-    verified: '2026-10-04',
+    verified: '2026-10-08',
   },
   litterround: {
     url: 'https://apps.apple.com/us/app/litterround-puppy-tracker/id6814862263',
     ios: 18,
-    verified: '2026-10-04',
+    verified: '2026-10-08',
   },
   tmproof: {
     url: 'https://apps.apple.com/us/app/tmproof-t-m-tickets/id6814884804',
     ios: 18,
-    verified: '2026-10-04',
+    verified: '2026-10-08',
   },
   pressrecipe: {
     url: 'https://apps.apple.com/us/app/pressrecipe-heat-press-log/id6816618604',
     ios: 18,
-    verified: '2026-10-04',
+    verified: '2026-10-08',
   },
   calvingpocket: {
     url: 'https://apps.apple.com/us/app/calvingpocket-calf-records/id6815103146',
     ios: 18,
-    verified: '2026-10-04',
+    verified: '2026-10-08',
   },
 };
 // A missing verified link is not proof of an app's review or release status.

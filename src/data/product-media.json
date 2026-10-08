@@ -1,6 +1,6 @@
 {
-  "checked": "2026-09-29",
-  "note": "Existing App Store screenshots, checked against public Apple listing filenames. Resized only; interface content unchanged. English app UI on both language pages.",
+  "checked": "2026-10-08",
+  "note": "Actual app screenshots from existing Release Hub submission assets. Resized only; UI unchanged. Example records, English UI. Source hashes retained; not independently captured app exports.",
   "assets": [
     {
       "file": "public/products/samejob/01-repeat-invoices.jpg",
@@ -49,6 +49,102 @@
       "source": "ios-release-hub/apps/GearProof/screenshots/en-US/iphone-6.9/04-gearproof.png",
       "sourceSha256": "e3b0cc13f0230fee7a3832f656711bda21b66543529a46007a1d261b96e154ae",
       "sha256": "04234b8e618bee89cab77f0a7a8aab4630885164fa368d3ca2b6b33f1cb8656e"
+    },
+    {
+      "file": "public/products/tmproof/store-01-ticket.jpg",
+      "source": "ios-release-hub/apps/TMProof/screenshots/en-US/iphone-6.9/store-01-ticket.jpg",
+      "sourceSha256": "fc78a184588633fca0d339be67fc5af13a54dacbfca35ab2e269f7296bc4499f",
+      "sha256": "da611993057daebaaf6333438d51b049647456d2de0961d697ecd7a01f007ae7"
+    },
+    {
+      "file": "public/products/tmproof/store-02-signature.jpg",
+      "source": "ios-release-hub/apps/TMProof/screenshots/en-US/iphone-6.9/store-02-signature.jpg",
+      "sourceSha256": "c0c44c5c96a54eb5c1098afa40f53f8802b3f07763987018ddbe166594f35793",
+      "sha256": "76d77c5d8f6f301341f0e76c35a1a2b0b04692fbcf09531bbe65db4e3be147a2"
+    },
+    {
+      "file": "public/products/tmproof/store-03-pdf.jpg",
+      "source": "ios-release-hub/apps/TMProof/screenshots/en-US/iphone-6.9/store-03-pdf.jpg",
+      "sourceSha256": "79fb5e7de533245fab5b24ee288a20efbb86d51f2a4d652bbf6fd150d9e54204",
+      "sha256": "3c6ce3798ce9b7e63275576342b0adc2855d0fa8af8e9b02abd6f32b50422379"
+    },
+    {
+      "file": "public/products/tmproof/store-04-history.jpg",
+      "source": "ios-release-hub/apps/TMProof/screenshots/en-US/iphone-6.9/store-04-history.jpg",
+      "sourceSha256": "123a31df97cc8fa61fbb2d2220e83abc2f2994c3c392ec6f2e979822742ce65c",
+      "sha256": "bf2771c4af4f3afac01ada7fb91d4b47a714efdfdc144be50241e127761b9ebd"
+    },
+    {
+      "file": "public/products/litterround/01-litter-board.jpg",
+      "source": "ios-release-hub/apps/LitterRound/screenshots/en-US/iphone-6.9/01-litter-board.jpg",
+      "sourceSha256": "6d6bf2380452ec48b96a5e60ec3633428908d1142d25c0d74f580577944fe7a3",
+      "sha256": "9ea3c3119c9fe0c32022d123154d5de70aef38187d6b945052f8c9011f8358d8"
+    },
+    {
+      "file": "public/products/litterround/02-weight-round.jpg",
+      "source": "ios-release-hub/apps/LitterRound/screenshots/en-US/iphone-6.9/02-weight-round.jpg",
+      "sourceSha256": "9cfa83c8f3b3eb5c0cbaef413e6f9f888fa8d78c898afb47ea61c307919efaf1",
+      "sha256": "d4a2a976544b3e630538b6cb3ffe195614aed059d702940ea959f057569ed13d"
+    },
+    {
+      "file": "public/products/litterround/03-puppy-history.jpg",
+      "source": "ios-release-hub/apps/LitterRound/screenshots/en-US/iphone-6.9/03-puppy-history.jpg",
+      "sourceSha256": "3d90604c3f6703b40b8ebf21ca6ce0f51bbabe2838ff6edebb23f4758570721d",
+      "sha256": "daf3135cb7f317b185d6f7d4320c954d19efdd1a1fb77a8c4be6353740888c00"
+    },
+    {
+      "file": "public/products/litterround/04-handoff-pdf.jpg",
+      "source": "ios-release-hub/apps/LitterRound/screenshots/en-US/iphone-6.9/04-handoff-pdf.jpg",
+      "sourceSha256": "1c9f9f8d740e673595685bb0e12dd814293b0251b33943251b3e444afc93f423",
+      "sha256": "b15660f013c0a6e2fd34f5d23a2100522a11ba357a28a9833a3f58e1eae99058"
+    },
+    {
+      "file": "public/products/calvingpocket/01-quick-entry.jpg",
+      "source": "ios-release-hub/apps/CalvingPocket/screenshots/01-quick-entry.jpg",
+      "sourceSha256": "1d728188a33d72124364db5af05945d85f1f3ee780218916de686edca62e7785",
+      "sha256": "f82c9c515d7f9583c8ef2d9a1551b1167f6fc4680543568ce1bffde9cc4b35e5"
+    },
+    {
+      "file": "public/products/calvingpocket/02-untagged-record.jpg",
+      "source": "ios-release-hub/apps/CalvingPocket/screenshots/02-untagged-record.jpg",
+      "sourceSha256": "0b83d9f8e628fe323dde994f8f15444019260b038ed587b1a6d463f915090b2e",
+      "sha256": "cd86373762b3ba85aba54c495c86a37ddf389cba8c1979f1da35d4add3f35e0f"
+    },
+    {
+      "file": "public/products/calvingpocket/03-tag-later.jpg",
+      "source": "ios-release-hub/apps/CalvingPocket/screenshots/03-tag-later.jpg",
+      "sourceSha256": "c140dd9fcdf86317c8fdcda7feee677797d0314ed1396755f8043f289328451a",
+      "sha256": "ed9c003491fc4ec08ef390d1cc3763d68b23978148855f0d77ce8957c7028f14"
+    },
+    {
+      "file": "public/products/calvingpocket/04-export-backup.jpg",
+      "source": "ios-release-hub/apps/CalvingPocket/screenshots/04-export-backup.jpg",
+      "sourceSha256": "ed75ede3efc74a26e6585ee041327b9b208da5da18a334dcdd84868ee8c0e477",
+      "sha256": "c5b69eb78e1068e68f020da9619f98875a4484889e455fd4a5835468d4de33a6"
+    },
+    {
+      "file": "public/products/pressrecipe/01-repeat-what-worked.jpg",
+      "source": "ios-release-hub/apps/PressRecipe/screenshots/en-US/01-repeat-what-worked.png",
+      "sourceSha256": "47fbcec15f6ce9f8cd2a8053bda9f1cd3aca0d9f2db69efb4accf269c8d15ad2",
+      "sha256": "91a421a4bb1b0b4c66c2e09c1b1ee807846133632d44aa69c4bab0fc98a4cd04"
+    },
+    {
+      "file": "public/products/pressrecipe/02-save-every-real-test.jpg",
+      "source": "ios-release-hub/apps/PressRecipe/screenshots/en-US/02-save-every-real-test.png",
+      "sourceSha256": "83a9eb3cd800a39c6acbcf5a8b557bcbfa1e4678abae607242479ba2eb6ea058",
+      "sha256": "2376db606d04cd81e4bf94941332fe62698ba4d2e1ca748e0f8f3a452f39c3c3"
+    },
+    {
+      "file": "public/products/pressrecipe/03-proven-settings.jpg",
+      "source": "ios-release-hub/apps/PressRecipe/screenshots/en-US/03-proven-settings.png",
+      "sourceSha256": "33aa4e9d1cbf5c87c4142b08a88c93fcdd7c3ce901d8838dc52a9e799c52a38e",
+      "sha256": "451012c879c93af98d3c4b92c2d36364dcd801365d7bd6bf82c0f7a897cc85ca"
+    },
+    {
+      "file": "public/products/pressrecipe/04-wash-results.jpg",
+      "source": "ios-release-hub/apps/PressRecipe/screenshots/en-US/04-wash-results.png",
+      "sourceSha256": "87b5455498cc0ff37978df044d62f31a8eaf878a49e97177240b16504cabcfde",
+      "sha256": "5f406ceb93635e24d1b7183f1a44e994b5d8464a5aba80bbc259655ea490a2dc"
     }
   ]
 }

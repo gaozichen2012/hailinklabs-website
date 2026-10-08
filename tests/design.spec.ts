@@ -73,7 +73,7 @@ for (const chinese of [false, true]) {
     await expect(page.locator('main')).toBeFocused();
     await page.keyboard.press(tabKey);
     const products = page.getByRole('link', {
-      name: chinese ? '了解我们的产品' : 'Meet our products',
+      name: chinese ? '找到可下载的 App' : 'Find an app to download',
     });
     await expect(products).toBeFocused();
     const focus = await products.evaluate((link) => {
@@ -88,6 +88,6 @@ for (const chinese of [false, true]) {
     expect(focus.width).toBeGreaterThanOrEqual(2);
     expect(focus.transition).toBe('0s');
     await page.keyboard.press('Enter');
-    await expect(page).toHaveURL(/\/products$/);
+    await expect(page).toHaveURL(/\/products#downloadable$/);
   });
 }

@@ -1,12 +1,16 @@
 ---
-import { copy, type Copy } from '../data/products';
+import { type Copy } from '../data/products';
 import type { Locale } from '../data/i18n';
+import additional from '../data/product-galleries.json';
 interface Props {
   locale: Locale;
   slug: string;
 }
 const { locale, slug } = Astro.props;
-const galleries: Record<string, readonly { file: string; caption: Copy }[]> = {
+const galleries: Record<
+  string,
+  readonly { file: string; caption: Copy; width?: number; height?: number }[]
+> = {
   samejob: [
     {
       file: '01-repeat-invoices',
@@ -44,7 +48,14 @@ const galleries: Record<string, readonly { file: string; caption: Copy }[]> = {
     },
   ],
 };
-const shots = galleries[slug];
+const shots:
+  | readonly {
+      file: string;
+      caption: readonly string[];
+      width?: number;
+      height?: number;
+    }[]
+  | undefined = galleries[slug] || additional[slug as keyof typeof additional];
 ---
 
 {shots && (
@@ -54,7 +65,7 @@ const shots = galleries[slug];
     </h2>
     <p>
       {locale === 'en'
-        ? 'Actual app screens from the App Store listing. Example records shown.'
+        ? 'Actual app screens from existing store submission assets. Example records shown.'
         : '来自 App Store 展示素材的真实 App 界面，使用示例记录；App 界面为英文。'}
     </p>
     <div class="screenshot-grid">
@@ -62,13 +73,13 @@ const shots = galleries[slug];
         <figure>
           <img
             src={`/products/${slug}/${shot.file}.jpg`}
-            width="663"
-            height="1440"
-            loading="lazy"
+            width={shot.width || 663}
+            height={shot.height || 1440}
+            loading={shots.indexOf(shot) === 0 ? 'eager' : 'lazy'}
             decoding="async"
-            alt={copy(shot.caption, locale)}
+            alt={shot.caption[locale === 'en' ? 0 : 1]}
           />
-          <figcaption>{copy(shot.caption, locale)}</figcaption>
+          <figcaption>{shot.caption[locale === 'en' ? 0 : 1]}</figcaption>
         </figure>
       ))}
     </div>

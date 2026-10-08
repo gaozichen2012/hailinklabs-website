@@ -191,7 +191,34 @@ section.resource-body {
     font-size: 12px;
   }
   .print-sheet {
+    break-inside: auto;
+  }
+  .resource-page:has(.print-sheet) .resource-intro {
+    display: none;
+  }
+  .worksheet-section {
+    break-inside: auto;
+  }
+  .worksheet-section h3 {
+    break-after: avoid;
+  }
+  .worksheet-section tr {
     break-inside: avoid;
+  }
+  .worksheet-section thead {
+    display: table-header-group;
+  }
+  .worksheet-section caption {
+    display: none;
+  }
+  .worksheet-section table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  .worksheet-section th,
+  .worksheet-section td {
+    padding: 6px;
+    overflow-wrap: anywhere;
   }
   .record-table {
     font-size: 11px;
@@ -220,4 +247,35 @@ section.resource-body {
 }
 .site-footer nav a {
   flex-shrink: 0;
+}
+
+.worksheet-section .record-table td:first-child,
+.worksheet-section .record-table th:first-child {
+  width: auto;
+}
+.worksheet-section .metadata-table td:first-child,
+.worksheet-section .metadata-table th:first-child {
+  width: 38%;
+}
+
+@media print {
+  .print-sheet {
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+  .worksheet-section h3 {
+    margin-block: 12px 6px;
+  }
+  .worksheet-section .record-table {
+    font-size: 10px;
+    margin-block: 8px 14px;
+  }
+  .worksheet-section .record-table th,
+  .worksheet-section .record-table td {
+    padding: 6px;
+  }
+  .worksheet-section:has(.metadata-table) {
+    break-inside: avoid;
+  }
 }

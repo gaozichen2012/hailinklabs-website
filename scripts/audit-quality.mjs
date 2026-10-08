@@ -44,7 +44,7 @@ if (server)
     server.once('error', reject);
     server.listen(4322, '127.0.0.1', done);
   });
-const output = 'artifacts/quality';
+const output = process.env.QUALITY_OUTPUT || 'artifacts/quality';
 await mkdir(output, { recursive: true });
 let browser;
 try {
@@ -66,15 +66,18 @@ try {
     args: ['--remote-debugging-port=9229', '--no-proxy-server'],
   });
   const results = [];
-  for (const path of [
-    '/',
-    '/guides',
-    '/guides/time-and-materials-ticket-template',
-    '/templates/time-and-materials-ticket',
-    '/products/tmproof',
-    '/zh/guides/puppy-weight-log-template',
-    '/zh/templates/puppy-weight-log',
-  ]) {
+  const selectedPaths = process.env.QUALITY_PATHS
+    ? process.env.QUALITY_PATHS.split(',')
+    : [
+        '/',
+        '/guides',
+        '/guides/time-and-materials-ticket-template',
+        '/templates/time-and-materials-ticket',
+        '/products/tmproof',
+        '/zh/guides/puppy-weight-log-template',
+        '/zh/templates/puppy-weight-log',
+      ];
+  for (const path of selectedPaths) {
     const result = await lighthouse(base + path, {
       port: 9229,
       onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'],

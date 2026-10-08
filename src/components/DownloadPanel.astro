@@ -1,0 +1,53 @@
+---
+import AppStoreLink from './AppStoreLink.astro';
+import { listings } from '../data/catalog';
+import type { Locale } from '../data/i18n';
+interface Props {
+  locale: Locale;
+  slug: string;
+}
+const { locale, slug } = Astro.props;
+---
+
+{listings[slug] && (
+  <section class="section-row download-panel">
+    <div class="section-label">
+      <h2>{locale === 'en' ? 'Ready to try it?' : '开始使用'}</h2>
+    </div>
+    <div class="section-body">
+      <AppStoreLink locale={locale} slug={slug} />
+      <figure class="download-qr">
+        <img
+          src={`/products/${slug}/download-qr.png`}
+          width="184"
+          height="184"
+          loading="lazy"
+          alt={
+            locale === 'en'
+              ? 'Scan to open this app on the App Store'
+              : '扫描二维码前往此 App 的商店页面'
+          }
+        />
+        <figcaption>
+          {locale === 'en'
+            ? 'On a computer? Scan with your iPhone camera.'
+            : '在电脑上浏览？使用 iPhone 相机扫描。'}
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+)}
+<style>
+  .download-qr {
+    margin: 1.5rem 0 0;
+  }
+  .download-qr img {
+    background: white;
+    border-radius: 8px;
+  }
+  figcaption {
+    max-width: 28rem;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+</style>

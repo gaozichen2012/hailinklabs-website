@@ -1,0 +1,154 @@
+{
+  "tmproof": [
+    {
+      "file": "store-01-ticket",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "TMProof \u2014 01 ticket",
+        "TMProof \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "store-02-signature",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "TMProof \u2014 02 signature",
+        "TMProof \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "store-03-pdf",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "TMProof \u2014 03 pdf",
+        "TMProof \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "store-04-history",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "TMProof \u2014 04 history",
+        "TMProof \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    }
+  ],
+  "litterround": [
+    {
+      "file": "01-litter-board",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "LitterRound \u2014 litter board",
+        "LitterRound \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "02-weight-round",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "LitterRound \u2014 weight round",
+        "LitterRound \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "03-puppy-history",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "LitterRound \u2014 puppy history",
+        "LitterRound \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "04-handoff-pdf",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "LitterRound \u2014 handoff pdf",
+        "LitterRound \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    }
+  ],
+  "calvingpocket": [
+    {
+      "file": "01-quick-entry",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "CalvingPocket \u2014 quick entry",
+        "CalvingPocket \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "02-untagged-record",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "CalvingPocket \u2014 untagged record",
+        "CalvingPocket \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "03-tag-later",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "CalvingPocket \u2014 tag later",
+        "CalvingPocket \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "04-export-backup",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "CalvingPocket \u2014 export backup",
+        "CalvingPocket \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    }
+  ],
+  "pressrecipe": [
+    {
+      "file": "01-repeat-what-worked",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "PressRecipe \u2014 repeat what worked",
+        "PressRecipe \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "02-save-every-real-test",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "PressRecipe \u2014 save every real test",
+        "PressRecipe \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "03-proven-settings",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "PressRecipe \u2014 proven settings",
+        "PressRecipe \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    },
+    {
+      "file": "04-wash-results",
+      "width": 663,
+      "height": 1440,
+      "caption": [
+        "PressRecipe \u2014 wash results",
+        "PressRecipe \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+      ]
+    }
+  ]
+}

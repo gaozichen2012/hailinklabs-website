@@ -8,7 +8,7 @@
       "可打印的工时与材料工单，涵盖人工、材料、设备及现场签认，并提供可导入电子表格的 CSV。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04",
+    "updatedAt": "2026-10-08",
     "fields": [
       ["Date", "日期"],
       ["Project", "项目"],
@@ -20,11 +20,120 @@
       ["Notes", "备注"],
       ["Acknowledgment scope", "签认范围"],
       ["Signer name / role", "签认人姓名／角色"],
-      ["Signature / date", "签名／日期"]
+      ["Signature / date", "签名／日期"],
+      ["Ticket ID", "工单编号"],
+      ["Work location", "工作地点"],
+      ["Category: labor / material / equipment", "类别：人工／材料／设备"],
+      ["Item / person", "明细／人员"],
+      ["Quantity / duration", "数量／用时"],
+      ["Unit", "单位"],
+      ["Rate / currency", "单价／币种"],
+      ["Amount / currency", "金额／币种"],
+      ["Photo references", "照片引用"]
     ],
     "note": [
       "Use additional sheets for itemized work. This record is not a contract or a guarantee of payment. Define what the acknowledgment confirms.",
       "明细较多时使用附页。这是记录工具，不是合同或付款保证；请明确签认确认的事项。"
+    ],
+    "sections": [
+      {
+        "title": ["Job details", "工作信息"],
+        "columns": [
+          ["Field", "字段"],
+          ["Value", "内容"]
+        ],
+        "exampleRows": [
+          ["Ticket / project / date", "DEMO-T07 / Demo site / 2026-10-08"],
+          ["Location / customer", "West entrance / Demo customer"],
+          [
+            "Work description",
+            "Additional conduit support; scope recorded separately"
+          ]
+        ],
+        "blankRows": 3,
+        "blankLabels": [
+          ["Ticket / project / date", "工单 / 项目 / 日期"],
+          ["Location / customer", "地点 / 客户"],
+          ["Work description", "工作说明"]
+        ]
+      },
+      {
+        "title": ["Labor", "人工"],
+        "columns": [
+          ["Person / role", "人员／角色"],
+          ["Hours", "工时"],
+          ["Rate (USD/hour)", "单价（USD/小时）"],
+          ["Amount (USD)", "金额（USD）"]
+        ],
+        "exampleRows": [
+          ["Demo installer", 2.5, 40, 100],
+          ["Demo assistant", 1, 25, 25]
+        ],
+        "blankRows": 6,
+        "blankLabels": []
+      },
+      {
+        "title": ["Materials", "材料"],
+        "columns": [
+          ["Item", "项目"],
+          ["Quantity", "数量"],
+          ["Unit", "单位"],
+          ["Rate (USD/unit)", "单价（USD/单位）"],
+          ["Amount (USD)", "金额（USD）"]
+        ],
+        "exampleRows": [
+          ["Bracket", 4, "each", 3.5, 14],
+          ["Conduit", 6, "feet", 2, 12]
+        ],
+        "blankRows": 6,
+        "blankLabels": []
+      },
+      {
+        "title": ["Equipment", "设备"],
+        "columns": [
+          ["Item", "项目"],
+          ["Duration", "用时"],
+          ["Unit", "单位"],
+          ["Rate (USD/unit)", "单价（USD/单位）"],
+          ["Amount (USD)", "金额（USD）"]
+        ],
+        "exampleRows": [["Demo lift", 1, "hour", 35, 35]],
+        "blankRows": 6,
+        "blankLabels": []
+      },
+      {
+        "title": ["Evidence and acknowledgment", "证据与签认"],
+        "columns": [
+          ["Field", "字段"],
+          ["Value", "内容"]
+        ],
+        "exampleRows": [
+          ["Total recorded (USD)", 186],
+          ["Photo references", "DEMO-P01, DEMO-P02; attach separately"],
+          [
+            "Acknowledgment scope",
+            "Work and listed quantities observed, not payment approval"
+          ],
+          [
+            "Signer / role / date",
+            "Demo supervisor / site representative / 2026-10-08"
+          ],
+          ["Signature / notes", "DEMONSTRATION ONLY; no real signature"]
+        ],
+        "blankRows": 5,
+        "blankLabels": [
+          ["Total recorded (USD)", "记录合计（美元）"],
+          ["Photo references", "照片引用"],
+          ["Acknowledgment scope", "签认范围"],
+          ["Signer / role / date", "签认人 / 角色 / 日期"],
+          ["Signature / notes", "签名 / 备注"]
+        ]
+      }
+    ],
+    "formats": ["pdf", "a4", "example", "csv"],
+    "exampleLabel": [
+      "Illustrative filled worksheet, not an app export or customer record.",
+      "演示数据填写的工作表，不是 App 导出或客户记录。"
     ]
   },
   {
@@ -36,7 +145,7 @@
       "无需账号或注册，即可记录器材编号、借用人、预计及实际归还时间、状态和交接签认。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04",
+    "updatedAt": "2026-10-08",
     "fields": [
       ["Equipment", "器材"],
       ["Asset ID", "资产编号"],
@@ -46,11 +155,90 @@
       ["Returned: date / time", "实际归还日期／时间"],
       ["Condition out / in", "借出／归还状态"],
       ["Missing / damaged notes", "缺失／损坏备注"],
-      ["Sign-off", "交接签认"]
+      ["Sign-off", "交接签认"],
+      ["Handoff ID", "交接编号"],
+      ["Accessory / component ID", "附件／组件编号"],
+      ["Quantity out", "借出数量"],
+      ["Quantity returned", "归还数量"],
+      [
+        "Status: open / partial / returned / exception",
+        "状态：未归还／部分归还／已归还／异常"
+      ],
+      ["Unresolved / next action", "未完成／下一步"]
     ],
     "note": [
       "Use one record for each checkout. Keep past transactions when an item is borrowed again.",
       "每次借出使用一条记录，同一器材再次借出时保留此前交接历史。"
+    ],
+    "sections": [
+      {
+        "title": ["Single handoff", "单次交接单"],
+        "columns": [
+          ["Field", "字段"],
+          ["Value", "内容"]
+        ],
+        "exampleRows": [
+          ["Handoff / borrower", "DEMO-H01 / Demo borrower"],
+          ["Out / expected back", "2026-10-08 09:00 / 2026-10-09 17:00"],
+          ["Actual handoff / sign-off", "2026-10-09 16:00 / Demo custodian"]
+        ],
+        "blankRows": 3,
+        "blankLabels": [
+          ["Handoff / borrower", "交接编号 / 借用人"],
+          ["Out / expected back", "借出时间 / 预计归还"],
+          ["Actual handoff / sign-off", "实际交接 / 签认"]
+        ]
+      },
+      {
+        "title": ["Items and accessories", "主件与附件"],
+        "columns": [
+          ["Asset / accessory", "器材／附件"],
+          ["Out qty", "借出数量"],
+          ["Returned qty", "归还数量"],
+          ["Condition", "状态"],
+          ["Open issue", "未完成事项"]
+        ],
+        "exampleRows": [
+          ["CAM-01 camera", 1, 1, "Body returned", ""],
+          ["CAM-01 battery", 2, 1, "One returned", "1 battery missing"],
+          ["CAM-01 cable", 1, 1, "Damaged connector", "Damage review open"]
+        ],
+        "blankRows": 8,
+        "blankLabels": []
+      },
+      {
+        "title": ["Continuous checkout ledger", "连续借还台账"],
+        "columns": [
+          ["Handoff / asset", "交接／资产"],
+          ["Borrower / out", "借用人／借出"],
+          ["Due / actual return", "预计／实际归还"],
+          ["Status", "状态"],
+          ["Unresolved / next action", "未解决／下一步"]
+        ],
+        "exampleRows": [
+          [
+            "DEMO-H01 / CAM-01",
+            "Demo A / 2026-10-08",
+            "Oct 9 / Oct 9",
+            "Partial return",
+            "1 battery missing; cable damage review"
+          ],
+          [
+            "DEMO-H02 / MIC-02",
+            "Demo B / 2026-10-08",
+            "Oct 10 / not returned",
+            "Open",
+            "Confirm actual return before closing"
+          ]
+        ],
+        "blankRows": 10,
+        "blankLabels": []
+      }
+    ],
+    "formats": ["pdf", "a4", "example", "csv"],
+    "exampleLabel": [
+      "Illustrative filled worksheet, not an app export or customer record.",
+      "演示数据填写的工作表，不是 App 导出或客户记录。"
     ]
   },
   {
@@ -62,7 +250,7 @@
       "提供可打印及电子表格格式，记录幼犬标识、日期、体重、喂养与护理备注，方便统一整理每次观察。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04",
+    "updatedAt": "2026-10-08",
     "fields": [
       ["Puppy", "幼犬"],
       ["Identifier", "识别标记"],
@@ -70,11 +258,84 @@
       ["Weight", "体重"],
       ["Weight unit", "体重单位"],
       ["Feeding / care notes", "喂养／护理备注"],
-      ["Notes", "备注"]
+      ["Notes", "备注"],
+      ["Litter ID", "整窝编号"],
+      ["Recorder", "记录人"],
+      ["Handover date / scope", "交接日期／范围"]
     ],
     "note": [
       "Record observations only. This log does not diagnose illness or recommend treatment. Discuss health concerns with a veterinarian.",
       "仅记录观察情况。本表不诊断疾病，也不提供治疗建议；健康问题请联系兽医。"
+    ],
+    "sections": [
+      {
+        "title": ["Litter and handover", "整窝与交接"],
+        "columns": [
+          ["Field", "字段"],
+          ["Value", "内容"]
+        ],
+        "exampleRows": [
+          ["Litter / birth date", "DEMO-L1 / 2026-10-01"],
+          ["Recorder / handover date", "Demo carer / 2026-10-08"],
+          [
+            "Handover scope",
+            "Dated weights and observations; no medical interpretation"
+          ]
+        ],
+        "blankRows": 3,
+        "blankLabels": [
+          ["Litter / birth date", "整窝编号 / 出生日期"],
+          ["Recorder / handover date", "记录人 / 交接日期"],
+          ["Handover scope", "交接范围"]
+        ]
+      },
+      {
+        "title": ["Continuous individual observations", "多个个体的连续观察"],
+        "columns": [
+          ["Puppy ID", "幼犬编号"],
+          ["Date / time", "日期／时间"],
+          ["Weight", "体重"],
+          ["Unit", "单位"],
+          ["Observation / recorder", "观察／记录人"]
+        ],
+        "exampleRows": [
+          [
+            "L1-A",
+            "2026-10-07 08:00",
+            350,
+            "g",
+            "Routine observation / Demo A"
+          ],
+          [
+            "L1-B",
+            "2026-10-07 08:05",
+            370,
+            "g",
+            "Routine observation / Demo A"
+          ],
+          [
+            "L1-A",
+            "2026-10-08 08:00",
+            365,
+            "g",
+            "Routine observation / Demo B"
+          ],
+          [
+            "L1-B",
+            "2026-10-08 08:05",
+            382,
+            "g",
+            "Handover notes attached / Demo B"
+          ]
+        ],
+        "blankRows": 12,
+        "blankLabels": []
+      }
+    ],
+    "formats": ["pdf", "a4", "example", "csv"],
+    "exampleLabel": [
+      "Illustrative filled worksheet, not an app export or customer record.",
+      "演示数据填写的工作表，不是 App 导出或客户记录。"
     ]
   },
   {
@@ -86,7 +347,7 @@
       "在纸面或电子表格中记录产犊季、母牛与犊牛编号、出生详情及观察，便于日后核对和整理。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04",
+    "updatedAt": "2026-10-08",
     "fields": [
       ["Season", "产犊季"],
       ["Dam ID", "母牛编号"],
@@ -96,11 +357,72 @@
       ["Birth weight / unit", "出生体重／单位"],
       ["Calving ease: observed description", "产犊难易：观察描述"],
       ["Birth type", "出生类型"],
-      ["Notes", "备注"]
+      ["Notes", "备注"],
+      ["Stable record ID", "固定记录编号"],
+      ["Recorder / correction date", "记录人／更正日期"],
+      ["Unknown / pending fields", "未知／待补字段"]
     ],
     "note": [
       "Use your existing record definitions; identify unknown values explicitly. This is a record sheet, not veterinary guidance.",
       "沿用已有记录定义，未知值明确注明。本表仅用于记录，不提供兽医诊疗指导。"
+    ],
+    "sections": [
+      {
+        "title": ["Season and recorder", "产犊季与记录人"],
+        "columns": [
+          ["Field", "字段"],
+          ["Value", "内容"]
+        ],
+        "exampleRows": [
+          ["Season / location", "DEMO-2026 / Demo north pasture"],
+          ["Recorder / review date", "Demo recorder / 2026-10-08"]
+        ],
+        "blankRows": 2,
+        "blankLabels": [
+          ["Season / location", "产犊季 / 地点"],
+          ["Recorder / review date", "记录人 / 核对日期"]
+        ]
+      },
+      {
+        "title": ["Birth records", "出生记录"],
+        "columns": [
+          ["Record / dam / calf", "记录／母牛／犊牛"],
+          ["Date / time", "日期／时间"],
+          ["Sex / birth type", "性别／出生类型"],
+          ["Weight / unit", "体重／单位"],
+          ["Observed ease / follow-up", "观察难易／待补信息"]
+        ],
+        "exampleRows": [
+          [
+            "D01 / DAM-21 / pending",
+            "2026-10-07 / time unknown",
+            "Female / single",
+            "Not recorded",
+            "Observed unassisted; tag pending"
+          ],
+          [
+            "D01 / DAM-21 / CALF-42",
+            "2026-10-07 / time unknown",
+            "Female / single",
+            "Not recorded",
+            "Tag added Oct 8; birth time still unknown"
+          ],
+          [
+            "D02 / DAM-22 / CALF-43",
+            "2026-10-08 06:30",
+            "Male / single",
+            "34 kg",
+            "Observed unassisted"
+          ]
+        ],
+        "blankRows": 10,
+        "blankLabels": []
+      }
+    ],
+    "formats": ["pdf", "a4", "example", "csv"],
+    "exampleLabel": [
+      "Illustrative filled worksheet, not an app export or customer record.",
+      "演示数据填写的工作表，不是 App 导出或客户记录。"
     ]
   },
   {
@@ -112,7 +434,7 @@
       "记录材料、坯件、转印类型、实际参数和水洗测试结果；不提供虚构的通用最佳温度，方便复核自己的试样。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04",
+    "updatedAt": "2026-10-08",
     "fields": [
       ["Material", "材料"],
       ["Blank", "坯件"],
@@ -123,11 +445,102 @@
       ["Peel", "揭膜方式"],
       ["Wash test: conditions / date", "水洗测试：条件／日期"],
       ["Result", "结果"],
-      ["Notes", "备注"]
+      ["Notes", "备注"],
+      ["Test ID", "测试编号"],
+      ["Parent test ID", "上次测试编号"],
+      ["Test date (YYYY-MM-DD)", "测试日期（YYYY-MM-DD）"],
+      ["Press ID", "机器编号"],
+      ["Manufacturer instructions reference", "厂商说明引用"],
+      ["Wash cycles", "水洗次数"]
     ],
     "note": [
       "Follow the material, transfer and equipment manufacturer instructions. Record your actual settings; this sheet supplies no recommended temperature.",
       "遵循材料、转印产品与设备厂商的说明，记录实际参数；本表不提供建议温度。"
+    ],
+    "sections": [
+      {
+        "title": ["Test identity and materials", "测试身份与材料"],
+        "columns": [
+          ["Test / parent test", "测试／上次测试"],
+          ["Blank / transfer / press", "坯件／转印／机器"],
+          ["Date / source instructions", "日期／说明来源"]
+        ],
+        "exampleRows": [
+          [
+            "DEMO-T1 / none",
+            "Demo fabric A / transfer B / press C",
+            "2026-10-01 / actual manufacturer instructions"
+          ],
+          [
+            "DEMO-T2 / DEMO-T1",
+            "Same blank / transfer / press",
+            "2026-10-02 / same instructions"
+          ]
+        ],
+        "blankRows": 6,
+        "blankLabels": []
+      },
+      {
+        "title": ["Actual settings and observations", "实际条件与观察"],
+        "columns": [
+          ["Test ID", "测试编号"],
+          ["Temperature / unit", "温度／单位"],
+          ["Time / unit", "时间／单位"],
+          ["Pressure / peel", "压力／揭膜"],
+          ["Result", "结果"]
+        ],
+        "exampleRows": [
+          [
+            "DEMO-T1",
+            "155 C (illustrative)",
+            "12 seconds",
+            "Machine setting 3 / cool",
+            "Edge lifted"
+          ],
+          [
+            "DEMO-T2",
+            "155 C (illustrative)",
+            "15 seconds",
+            "Machine setting 3 / cool",
+            "Initial edge intact"
+          ]
+        ],
+        "blankRows": 8,
+        "blankLabels": []
+      },
+      {
+        "title": ["Follow-up wash observations", "后续水洗观察"],
+        "columns": [
+          ["Test ID", "测试编号"],
+          ["Date", "日期"],
+          ["Wash conditions", "水洗条件"],
+          ["Cycles", "次数"],
+          ["Observed result", "观察结果"]
+        ],
+        "exampleRows": [
+          [
+            "DEMO-T1",
+            "2026-10-07",
+            "Demo gentle cycle, air dry",
+            1,
+            "Edge lift retained"
+          ],
+          [
+            "DEMO-T2",
+            "2026-10-07",
+            "Same demo cycle, air dry",
+            1,
+            "No visible edge lift observed"
+          ]
+        ],
+        "blankRows": 8,
+        "blankLabels": []
+      }
+    ],
+    "formats": ["pdf", "a4", "example", "csv"],
+    "exampleLabel": [
+      "Illustrative filled worksheet, not an app export or customer record.",
+      "演示数据填写的工作表，不是 App 导出或客户记录。"
     ]
   },
   {
@@ -139,7 +552,7 @@
       "面向重复服务客户的发票工作表，包含服务描述、数量、单价、金额、日期及发票编号，便于逐次核对。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-04",
+    "updatedAt": "2026-10-08",
     "fields": [
       ["Customer", "客户"],
       ["Service", "服务"],
@@ -149,11 +562,95 @@
       ["Amount / currency", "金额／币种"],
       ["Date", "日期"],
       ["Invoice number", "发票编号"],
-      ["Notes", "备注"]
+      ["Notes", "备注"],
+      ["Issuer / address / contact", "开票方／地址／联系"],
+      ["Customer address / contact", "客户地址／联系"],
+      ["Service date (YYYY-MM-DD)", "服务日期（YYYY-MM-DD）"],
+      ["Quantity unit", "数量单位"],
+      ["Currency code", "币种代码"],
+      ["Explicit adjustment / currency", "明确输入的调整／币种"],
+      ["Subtotal / currency", "小计／币种"],
+      ["Total / currency", "总计／币种"]
     ],
     "note": [
       "Recheck quantities, rates and customer details for every invoice. This worksheet provides no tax or legal advice.",
       "每张发票均重新核对数量、单价和客户信息。本表不提供税务或法律建议。"
+    ],
+    "sections": [
+      {
+        "title": ["Invoice details", "发票信息"],
+        "columns": [
+          ["Field", "字段"],
+          ["Value", "内容"]
+        ],
+        "exampleRows": [
+          [
+            "Issuer / address / contact",
+            "Example Services, 14 Demo Lane, billing@example.invalid"
+          ],
+          [
+            "Customer / address / contact",
+            "Demo Customer, 25 Sample Road, customer@example.invalid"
+          ],
+          ["Invoice number / date / currency", "DEMO-104 / 2026-10-08 / USD"],
+          [
+            "Service dates / payment note",
+            "2026-10-07 / Payment terms agreed separately"
+          ]
+        ],
+        "blankRows": 4,
+        "blankLabels": [
+          ["Issuer / address / contact", "开票方 / 地址 / 联系方式"],
+          ["Customer / address / contact", "客户 / 地址 / 联系方式"],
+          ["Invoice number / date / currency", "发票编号 / 日期 / 币种"],
+          ["Service dates / payment note", "服务日期 / 付款备注"]
+        ]
+      },
+      {
+        "title": ["Service items", "服务明细"],
+        "columns": [
+          ["Description", "描述"],
+          ["Quantity", "数量"],
+          ["Unit", "单位"],
+          ["Unit price (USD)", "单价（USD）"],
+          ["Amount (USD)", "金额（USD）"]
+        ],
+        "exampleRows": [
+          ["Repeat visit", 2, "hours", 45, 90],
+          ["Additional cleanup", 1.5, "hours", 30, 45],
+          ["Supplies", 3, "items", 2.25, 6.75]
+        ],
+        "blankRows": 8,
+        "blankLabels": []
+      },
+      {
+        "title": ["Totals and notes", "合计与备注"],
+        "columns": [
+          ["Field", "字段"],
+          ["Value", "内容"]
+        ],
+        "exampleRows": [
+          ["Subtotal (USD)", 141.75],
+          ["Explicit adjustment (USD)", 0],
+          ["Total (USD)", 141.75],
+          [
+            "Notes",
+            "Previous visit reused; quantities reviewed for this invoice. No tax assumed."
+          ]
+        ],
+        "blankRows": 4,
+        "blankLabels": [
+          ["Subtotal (USD)", "小计（美元）"],
+          ["Explicit adjustment (USD)", "明确调整金额（美元）"],
+          ["Total (USD)", "合计（美元）"],
+          ["Notes", "备注"]
+        ]
+      }
+    ],
+    "formats": ["pdf", "a4", "example", "csv", "xlsx"],
+    "exampleLabel": [
+      "Illustrative filled worksheet, not an app export or customer record.",
+      "演示数据填写的工作表，不是 App 导出或客户记录。"
     ]
   }
 ]

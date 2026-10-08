@@ -29,7 +29,12 @@ const media = JSON.parse(
 const searchConfig = JSON.parse(
   await readFile('src/data/search-config.json', 'utf8'),
 );
+const qrTargets = JSON.parse(
+  await readFile('src/data/download-qr.json', 'utf8'),
+);
 const paths = [
+  '/acquisition-manifest.json',
+  ...Object.keys(qrTargets).map((slug) => `/products/${slug}/download-qr.png`),
   ...['storyundo', 'cluemend', 'affixhop', 'carttinker'].flatMap((slug) =>
     ['', '/zh'].flatMap((prefix) =>
       ['', '/support', '/privacy'].map(
