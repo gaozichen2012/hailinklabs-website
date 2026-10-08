@@ -3,6 +3,9 @@ import { resourceForPath } from './resources';
 // across existing pages. This is an explicit content date, never a build clock.
 // For later substantive edits, add an override and update the resource itself.
 const pageUpdates: Record<string, string> = {
+  '/products/cluemend': '2026-10-08',
+  '/products/storyundo': '2026-10-08',
+  '/products/tilltinker': '2026-10-08',
   '/products/cueladder': '2026-10-08',
   '/products/cueladder/support': '2026-10-08',
   '/products/cueladder/privacy': '2026-10-08',

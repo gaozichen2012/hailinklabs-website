@@ -1,0 +1,183 @@
+---
+import type { Locale } from '../data/i18n';
+interface Props {
+  locale: Locale;
+  slug: 'cluemend' | 'tilltinker' | 'storyundo';
+}
+const { locale, slug } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const guides = {
+  cluemend: {
+    title: c('A two-person barrier game at home', '在家玩双人遮挡描述游戏'),
+    answer: c(
+      'A barrier game gives one person a hidden arrangement and asks a partner to rebuild it from a description. Start with two familiar objects, describe their position, and invite one clear question before comparing. Swap roles after the reveal. The paper activity below works without an app and is a warm-up for describing and listening together.',
+      '遮挡描述游戏由一人观察隐藏的摆放，另一人根据描述重建。先用两个熟悉的物品，说清它们的位置，允许伙伴提出一个明确的问题，再一起比较并交换角色。下方纸面活动无需 App，可作为共同描述和倾听的热身。',
+    ),
+    steps: [
+      c(
+        'Prepare two matching sets of shapes and a divider. Agree on names such as blue square and red circle.',
+        '准备两套相同图形和一个遮挡板，先约定“蓝色正方形”“红色圆形”等名称。',
+      ),
+      c(
+        'The describer places a blue square above a red circle. The partner cannot see it. Say which object is where, rather than “put this over there.”',
+        '描述者把蓝色正方形放在红色圆形上方，伙伴不能查看。说出具体物品和位置，避免只说“把这个放那里”。',
+      ),
+      c(
+        'The builder asks a focused question, for example “Is the square above the circle?” Rebuild, reveal and explain any mismatch together.',
+        '搭建者提出具体问题，例如“正方形在圆形上方吗？”摆好后揭晓，一起解释不同之处。',
+      ),
+      c(
+        'Swap roles and try a fresh arrangement. Clarify the clue before adding more objects.',
+        '交换角色，换一种摆放。先把线索说清楚，再增加物品。',
+      ),
+    ],
+    faq: [
+      [
+        c('Do we need to record voices?', '一定要录音吗？'),
+        c(
+          'No. The paper warm-up uses live speech. ClueMend also offers Talk Live; microphone recording is an optional parent-enabled choice.',
+          '不需要。纸面热身直接当面说话，ClueMend 也提供 Talk Live；麦克风录音由家长选择开启。',
+        ),
+      ],
+      [
+        c(
+          'Does a mismatch mean poor speaking?',
+          '摆放不同代表表达能力不好吗？',
+        ),
+        c(
+          'No. Compare the object names and spatial words, then try a clearer clue. This is a shared activity, not a speech assessment or therapy.',
+          '不代表。比较物品名称和方位词，再尝试更清楚的线索。这是共同活动，不是语言测评或治疗。',
+        ),
+      ],
+    ],
+    source:
+      'https://www3.scholastic.ca/lpeyx-teaching-support/kindergarten/oral-language-kit/oral-language-games/barrier-games/',
+    sourceName: 'Scholastic — Barrier Games',
+  },
+  tilltinker: {
+    title: c(
+      'US coin values and counting up change',
+      '美国硬币价值与向上数找零',
+    ),
+    answer: c(
+      'Counting coins and counting their value are different tasks. Compare two combinations worth the same amount, then count up from a pretend price to the amount paid. Use paper coin drawings or coins with adult supervision. Say each new total aloud and check that the change plus the price equals the payment. This example is separate from the app’s preset activities.',
+      '硬币枚数和总价值是不同概念。先比较价值相同的两种组合，再从模拟价格向上数到支付金额。可用纸画硬币，使用实物时由成人陪同。说出每一步总额，最后检查价格加找零是否等于支付金额。本示例独立于 App 的预设活动。',
+    ),
+    steps: [
+      c(
+        'Label a dime as 10 cents and a nickel as 5 cents. Compare two dimes with four nickels: both total 20 cents.',
+        '标明 dime 为 10 美分、nickel 为 5 美分。比较两个 dime 和四个 nickel：两组都是 20 美分。',
+      ),
+      c(
+        'Write a pretend price of 35 cents and a payment of 50 cents. Keep price, payment and change separate.',
+        '写下模拟价格 35 美分、支付 50 美分，区分价格、支付和找零。',
+      ),
+      c(
+        'Count up 5 cents from 35 to 40, then 10 cents from 40 to 50. The coins added total 15 cents.',
+        '从 35 加 5 到 40，再加 10 到 50；补上的硬币价值合计 15 美分。',
+      ),
+      c(
+        'Check 35 + 15 = 50. Ask the child to show another 15-cent combination rather than only repeat the answer.',
+        '检查 35 + 15 = 50，让孩子摆出另一种 15 美分组合，而不是只重复答案。',
+      ),
+    ],
+    faq: [
+      [
+        c('Can we use pretend coins?', '可以使用模拟硬币吗？'),
+        c(
+          'Yes. Draw the denomination and value clearly on paper. The activity does not require spending or moving real money.',
+          '可以。在纸上清楚画出面值和价值即可，活动不需要花费或转移真实资金。',
+        ),
+      ],
+      [
+        c('Does this cover every currency?', '这里覆盖所有货币吗？'),
+        c(
+          'No. This example and TillTinker focus on US coins and money practice. Other currencies have different denominations; this is not a payment service or a complete finance curriculum.',
+          '不覆盖。本示例和 TillTinker 聚焦美国硬币与金钱练习，其他货币面值不同；这不是支付服务或完整财务课程。',
+        ),
+      ],
+    ],
+    source: 'https://kids.usmint.gov/resources/lessons-that-make-cents',
+    sourceName: 'U.S. Mint — Lessons That Make Cents',
+  },
+  storyundo: {
+    title: c(
+      'Find an unknown start in a word problem',
+      '在应用题中找出未知的开始数量',
+    ),
+    answer: c(
+      'In a one-step story, separate the starting amount, the change and the ending amount before choosing an operation. If the start is unknown, undo the stated change from the ending amount, then play the change forward to check. Use counters or a drawing and ask the child to explain where each number belongs. The original paper example below is not a promised StoryUndo level.',
+      '在一步应用题中，先区分开始数量、变化和结束数量，再选择运算。开始未知时，从结束数量撤销题目中的变化，再正向重演来检查。可用计数物或绘图，让孩子解释每个数字属于哪一部分。下方原创纸面示例不代表 StoryUndo 内已有同名关卡。',
+    ),
+    steps: [
+      c(
+        'Read: Mia had some blocks, received 3 more and now has 8. Ask what is known and what the question asks.',
+        '读题：Mia 原有一些积木，又得到 3 块，现在有 8 块。先问哪些信息已知、题目要找什么。',
+      ),
+      c(
+        'Mark Start as unknown, Change as +3 and Now as 8. Do not treat the first number mentioned as the starting amount.',
+        '标出 Start 未知、Change 为 +3、Now 为 8。不要把最先出现的数字直接当作开始数量。',
+      ),
+      c(
+        'Undo the addition: remove 3 from 8 to find 5. Show the removal with counters or a drawing.',
+        '撤销增加：从 8 去掉 3，得到 5。用计数物或图画表示去掉的过程。',
+      ),
+      c(
+        'Check forward: 5 + 3 = 8. Invite an explanation before giving help, and distinguish an independent attempt from a helped completion.',
+        '正向检查：5 + 3 = 8。先邀请孩子解释，再提供帮助，并区分独立尝试与在帮助下完成。',
+      ),
+    ],
+    faq: [
+      [
+        c('Why not always add the numbers?', '为什么不能总把两个数字相加？'),
+        c(
+          'The story determines the roles of the numbers. Here 8 is the ending amount, not another group to join. Building the story first avoids solving a different problem.',
+          '数字的角色由故事决定。这里 8 是结束数量，不是另一组要合并的积木。先构造故事，可以避免解成另一道题。',
+        ),
+      ],
+      [
+        c('Is this a full maths curriculum?', '这是完整数学课程吗？'),
+        c(
+          'No. This is one joining-story example. StoryUndo focuses on one-step joining and taking-away stories; it is not a complete curriculum or validated assessment.',
+          '不是。这只是一个合并故事示例。StoryUndo 聚焦合并和取走的一步故事，不是完整课程或经过验证的测评。',
+        ),
+      ],
+    ],
+    source:
+      'https://www.readingrockets.org/topics/content-area-literacy/articles/reading-and-understanding-written-math-problems',
+    sourceName:
+      'Reading Rockets — Reading and Understanding Written Math Problems',
+  },
+};
+const guide = guides[slug];
+---
+
+<section
+  class="policy prose"
+  id="practice-guide"
+  aria-labelledby="practice-title"
+>
+  <h2 id="practice-title">{guide.title}</h2>
+  <p>{guide.answer}</p>
+  <ol>
+    {guide.steps.map((step) => (
+      <li>{step}</li>
+    ))}
+  </ol>
+  <h3>{c('Questions before trying it', '开始前的常见问题')}</h3>
+  {guide.faq.map(([question, answer]) => (
+    <>
+      <h4>{question}</h4>
+      <p>{answer}</p>
+    </>
+  ))}
+  <p class="quiet">
+    {c(
+      'Original Hailink Labs activity suggestion, updated October 8, 2026. The external resource is background reading, not an endorsement or evidence of this app’s learning outcomes.',
+      'Hailink Labs 原创活动建议，更新于 2026 年 10 月 8 日。外部资源仅为背景阅读，不代表认可本 App 或证明学习效果。',
+    )}
+  </p>
+  <p>
+    <a href={guide.source}>{guide.sourceName}</a>
+  </p>
+</section>

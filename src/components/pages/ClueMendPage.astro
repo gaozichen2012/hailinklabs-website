@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PracticeGuide from '../PracticeGuide.astro';
 import { localizedPath, companyName, type Locale } from '../../data/i18n';
 import { site } from '../../data/site';
 interface Props {
@@ -184,6 +185,14 @@ const sections = {
     <p class="availability">
       {c('Download link not yet available.', '下载链接暂未提供。')}
     </p>
+    {kind === 'product' && (
+      <a class="text-link" href="#practice-guide">
+        {c(
+          'Try a paper activity and read the FAQ',
+          '试试纸面活动，阅读常见问题',
+        )}
+      </a>
+    )}
   </section>
   <article class="policy prose">
     {kind === 'privacy' && (
@@ -243,4 +252,5 @@ const sections = {
       </a>
     </p>
   </article>
+  {kind === 'product' && <PracticeGuide locale={locale} slug="cluemend" />}
 </Layout>

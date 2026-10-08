@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PracticeGuide from '../PracticeGuide.astro';
 import { familyProducts } from '../../data/family-products';
 import { availability } from '../../data/catalog';
 import { localizedPath, type Locale } from '../../data/i18n';
@@ -34,6 +35,16 @@ const href = (suffix: string) =>
     <a class="text-link" href="#pricing">
       {c(['Pricing details', '详细收费规则'])} <span aria-hidden="true">↓</span>
     </a>
+    {slug === 'tilltinker' && (
+      <p>
+        <a class="text-link" href="#practice-guide">
+          {c([
+            'Try a paper coin activity and read the FAQ',
+            '试试纸面硬币活动，阅读常见问题',
+          ])}
+        </a>
+      </p>
+    )}
   </section>
   <section class="product-story">
     <h2>{c(p.value)}</h2>
@@ -80,4 +91,5 @@ const href = (suffix: string) =>
       </a>
     </div>
   </section>
+  {slug === 'tilltinker' && <PracticeGuide locale={locale} slug="tilltinker" />}
 </Layout>
