@@ -1,17 +1,17 @@
 {
-  "contentSourceCommit": "a990785daba3da042df94f25acb6bc0954a4c3ed",
+  "contentSourceCommit": "cc35cfb09a96ff762337c7afe7a480353292aca4",
   "date": "2026-10-08",
   "validation": {
-    "lint": "scoped PASS",
+    "lint": "PASS",
     "typecheck": "0 errors,0 warnings,2 existing hints",
     "release": "PASS",
-    "build": "263 pages PASS",
-    "seo": "232 indexable URLs PASS",
-    "localBrowser": "24/24 affected RefSettle pages",
+    "build": "267 pages PASS",
+    "seo": "236 indexable URLs PASS",
+    "localBrowser": "24/24 affected LoadQuilt pages",
     "visual": "desktop privacy and Chinese320 support viewed"
   },
   "files": {
-    "indexnow-manifest.json": "8115a11df969242a383d06128e0102a8a741576fa57059739d4478d9dafef4f2",
+    "indexnow-manifest.json": "937eaba61fa8425a5b9be7ac248da8197fd078db77a84953d5012cb5931c4b5a",
     "llms.txt": "055911aa01d3efd22376f6c9d2dc61606ff5d49da35aa20de5daff11a155e32e",
     "index.html": "b90c88a05d6deb6947a200c4fdbf06139fde5c304d66515a03f1ac011b2d136b",
     "beatmend-privacy.html": "d53d196244b8c889728d30b49a61862f7b4993bfa82f15bba828cd210e5a4bba",
@@ -31,7 +31,7 @@
     "guides.html": "ddeeb5a1082d7ab370c73c7bd84924bf73d9c2501152f9e0dc6bbb48e71867af",
     "favicon-32.png": "c7861f16b7f1117af0f8da6dcf89ea9a83b6314a06c6165f47d3ed4f27b2a94e",
     "carttinker.html": "18b9a8514d188fa37846e3f9e202a90fd88480d9b9763d580d9237ff799139d9",
-    "sitemap.xml": "774465c480b79e12ddc5cc6fbb122a4b80c0506389bd3b47d063361be2b79dce",
+    "sitemap.xml": "60cabe583e581a13da8b09c52cca1feae2c6aaff5f4875fc26fd4a596f1adcfc",
     "robots.txt": "8f5c664d9a6e2393d16734c23080c1b5cc75250b07943b96f7595ca195c830d8",
     "affixhop.html": "73ecacc4ad635b38414bbbe96027c55cb20f34fc8da885b415019b813e536d2e",
     "cluemend.html": "2f5633f254884c689cebe78d1f06109d46fcdc07463087ee2b19ef44a460bc89",
@@ -84,6 +84,8 @@
     "products/pressrecipe/privacy.html": "ec512ed78d7ccb601f6197154da17fbf41612b6cbd749da6924178002c53bbfb",
     "products/batchmise/support.html": "1013a57dbfa06a5b4defd631d1b10e228cf73cfefa4b175f695be4485075663f",
     "products/batchmise/privacy.html": "2acc7fa18af73c5c1aedaef8a0a2db29701e9ced71a3113b07b6052f2b6bd927",
+    "products/loadquilt/support.html": "e5c3c1ecb18f342e461f94157cdeabed610eaf299fb615f8090b0cecf1fca6a9",
+    "products/loadquilt/privacy.html": "618fcd2cd3cd324bac6b99ae15bcc35799457df39c7ce62da5d5b84d72859cbd",
     "products/botsteps/support.html": "75a03d2e43fd829f797da05699bd635b576689e826e9f192d9a2cf7f0cf9d642",
     "products/botsteps/privacy.html": "2f2131d37ddf88a269185290fa8f6fb4ff963ce8f93113f052be473403540e71",
     "products/formalsflow/support.html": "728a1ee1000dda64b620e81b3a074c40ae23a9434c2b16f016de773cfe8a6331",
@@ -210,6 +212,8 @@
     "zh/products/pressrecipe/privacy.html": "acbf1a18c628dbb43de899d2556e19efc204b5c6767945ab95a9888e9a2756e4",
     "zh/products/batchmise/support.html": "f51126ae0694ac20cd5570ca84464d97eee98a10ae44ef2d902b2c2730f72a9f",
     "zh/products/batchmise/privacy.html": "fa365c8b1d441b927ec9d7e9bf3e1d8b382290f6cf4639f9bf2fdbb334c4f413",
+    "zh/products/loadquilt/support.html": "f842e4fbbb3450bc2bdb8886e6a8e6328808b3777e6ff11a1c603f7a4b8c7ac2",
+    "zh/products/loadquilt/privacy.html": "6d74bbe48f497a8bd10ea96253217101eb1c53cfbf44e51a562886a63eb6fe7b",
     "zh/products/botsteps/support.html": "682f3db953859eecb2fb91c9bc7c551fdb4afc046a05cdf29b0e8cc6aab99cf7",
     "zh/products/botsteps/privacy.html": "40b8faaae828197e85678a19f534cf0a27583817663d6ed7542ec92b0f9e2c98",
     "zh/products/formalsflow/support.html": "aa98540c89744d0d9ef14ccb20c17f1924f2d926fa6ab4f3d482e567dfe2fde4",
@@ -340,6 +344,5 @@
     "downloads/time-and-materials-ticket.pdf": "d742445abac4d71ad6e78eacc4e137cf80a8b5f702e70e0d22d709834e53ed1e",
     "affixhop/support.html": "ab0a69438ec37ce0790a5263d87acfdca22b3be1b109b068599e299e39ab3c1b",
     "affixhop/privacy.html": "0fe5d455cba024d9eb9168c831d5d1128fcd3d45cbb9e75e01d717c6cf8858b4"
-  },
-  "packageSHA256": "343c939416051be964b7c6e02a617e0318ef96de7838c42c95caec32708be162"
+  }
 }
