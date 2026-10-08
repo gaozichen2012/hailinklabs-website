@@ -5,7 +5,7 @@ for (const prefix of ['', '/zh']) {
     page,
   }) => {
     await page.goto(`${prefix}/products`);
-    await expect(page.locator('.catalog-group')).toHaveCount(4);
+    await expect(page.locator('.catalog-group')).toHaveCount(5);
     await page.locator('.category-links a[href="#family"]').click();
     await expect(page.locator('#family')).toBeInViewport();
     await expect(page.locator('#family')).toContainText('TurnMath');
@@ -13,7 +13,7 @@ for (const prefix of ['', '/zh']) {
     await expect(page.locator('#family')).toContainText('StoryUndo');
     await expect(page.locator('#family')).toContainText('ClueMend');
     await page.locator(`header a[href="${prefix}/support"]`).click();
-    await expect(page.locator('.support-directory a')).toHaveCount(25);
+    await expect(page.locator('.support-directory a')).toHaveCount(29);
     await page
       .locator('.support-directory a')
       .filter({ hasText: 'HearDraw' })

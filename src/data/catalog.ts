@@ -126,6 +126,9 @@ export const categories: readonly {
       'seamcarry',
       'siterevisit',
       'panebatch',
+      'kilnpair',
+      'refsettle',
+      'loadquilt',
     ],
   },
   {
@@ -133,6 +136,7 @@ export const categories: readonly {
     title: ['Animal Records', '动物记录'],
     slugs: ['litterround', 'calvingpocket'],
   },
+  { id: 'music', title: ['Music Practice', '音乐练习'], slugs: ['cueladder'] },
   { id: 'fitness', title: ['Fitness', '运动训练'], slugs: ['hybridloop'] },
   {
     id: 'family',

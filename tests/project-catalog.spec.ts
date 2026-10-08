@@ -5,6 +5,54 @@ import { site } from '../src/data/site';
 // data array. Each app keeps its own commercial and data-handling boundaries.
 const projects = [
   {
+    slug: 'cueladder',
+    name: 'CueLadder',
+    en: [
+      'You assess your playing. CueLadder does not listen, grade notes, use MIDI or AI scoring, or certify performance readiness. Respect copyright when choosing score images.',
+      'US$14.99',
+    ],
+    zh: [
+      '由你自评演奏；CueLadder 不听音、不评音符、不使用 MIDI 或 AI 评分、不认证演出准备度；选择乐谱图片时尊重版权。',
+      'US$14.99',
+    ],
+  },
+  {
+    slug: 'kilnpair',
+    name: 'KilnPair',
+    en: [
+      'App states describe recording progress, not temperature or safe opening. Follow your kiln operating instructions. Resized recording JPEGs are not color-calibrated references.',
+      'US$19.99',
+    ],
+    zh: [
+      'App 状态只描述记录进度，不表示温度或安全开窑；遵守窑炉操作规程。缩小 JPEG 不是色彩校准依据。',
+      'US$19.99',
+    ],
+  },
+  {
+    slug: 'refsettle',
+    name: 'RefSettle',
+    en: [
+      'RefSettle does not move money, connect banks, generate invoices or provide tax advice. Void corrects incorrect or duplicate payment entries; real refunds paid out are outside this version.',
+      'US$19.99',
+    ],
+    zh: [
+      'RefSettle 不转账、不连接银行、不开发票、不提供税务建议。Void 用于错误或重复收款；真实退款支出不在本版本范围。',
+      'US$19.99',
+    ],
+  },
+  {
+    slug: 'loadquilt',
+    name: 'LoadQuilt',
+    en: [
+      'LoadQuilt records human checks. It does not control machinery, certify safety or guarantee quilting quality. Follow your confirmed studio policy and equipment instructions.',
+      'US$19.99',
+    ],
+    zh: [
+      'LoadQuilt 记录人工检查，不控制机器、不认证安全、不保证绗缝质量；遵守已确认的工作室规则和设备说明。',
+      'US$19.99',
+    ],
+  },
+  {
     slug: 'batchmise',
     name: 'BatchMise',
     en: ['Uncertain', 'Hold', 'US$19.99', 'does not mean added or mixed'],
@@ -102,7 +150,7 @@ for (const prefix of ['', '/zh']) {
         ).toBe(true);
       }
       await page.screenshot({
-        path: `artifacts/project-catalog/${test.info().project.name}-${product.slug}${prefix ? '-zh' : '-en'}.png`,
+        path: `artifacts/catalog-20261008/${test.info().project.name}-${product.slug}${prefix ? '-zh' : '-en'}.png`,
         fullPage: true,
       });
       for (const kind of ['support', 'privacy']) {

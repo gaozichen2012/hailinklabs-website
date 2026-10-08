@@ -1,0 +1,7 @@
+---
+import Page from '../../../components/pages/ProjectOverview.astro';
+import { projectProducts } from '../../../data/project-products';
+const product = projectProducts.find((p) => p.slug === 'kilnpair')!;
+---
+
+<Page locale="en" product={product} />

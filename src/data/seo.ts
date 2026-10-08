@@ -182,9 +182,11 @@ export function structuredData(
   const applicationCategory =
     category?.id === 'family'
       ? 'EducationalApplication'
-      : category?.id === 'fitness'
-        ? 'SportsApplication'
-        : 'BusinessApplication';
+      : category?.id === 'music'
+        ? 'MusicApplication'
+        : category?.id === 'fitness'
+          ? 'SportsApplication'
+          : 'BusinessApplication';
   const application = {
     '@type': 'SoftwareApplication',
     '@id': `${canonical}#software`,

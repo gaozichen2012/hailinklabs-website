@@ -9,6 +9,11 @@ export const site = {
 };
 
 export const englishRoutes = [
+  '/products/cueladder',
+  '/products/kilnpair',
+  '/products/refsettle',
+  '/products/loadquilt',
+
   '/products/loadquilt/support',
   '/products/loadquilt/privacy',
   '/products/refsettle/support',

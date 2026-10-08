@@ -17,6 +17,218 @@ export interface ProjectProduct {
 }
 export const projectProducts: readonly ProjectProduct[] = [
   {
+    slug: 'cueladder',
+    name: 'CueLadder',
+    storeName: 'CueLadder',
+    subtitle: ['Piano Memory Practice & Landmarks', '钢琴记忆练习与路标'],
+    summary: [
+      'Check your unaided starts. Practice weak spots.',
+      '检查无提示起奏，练习薄弱路标。',
+    ],
+    value: [
+      'Separate clean starts from assisted practice.',
+      '区分独立起奏与有提示练习。',
+    ],
+    description: [
+      'Record piano landmarks, honest self-ratings and practice history locally. Check unaided starts, then practice weak spots and forward recovery.',
+      '在本机记录钢琴路标、诚实自评和练习历史，检查无提示起奏，再练习薄弱点与向前恢复。',
+    ],
+    steps: [
+      [
+        ['Create your landmarks', '建立自己的路标'],
+        [
+          'Use your score edition’s bar numbers and add at least three landmarks. Bar 0 supports a pickup; selected images can provide optional hints.',
+          '按所用谱本小节编号添加至少三个路标，弱起可用第0小节；可选择图片作为提示。',
+        ],
+      ],
+      [
+        ['Check before practising', '先检查，再练习'],
+        [
+          'Start Check and rate first unaided starts honestly. Revealing a hint changes Clean to Assisted; skipped or interrupted landmarks stay untested.',
+          'Start Check 后诚实自评首次无提示起奏；揭示提示使 Clean 变为 Assisted，跳过或中断仍属未测。',
+        ],
+      ],
+      [
+        ['Recover without overwriting the check', '保留检查，再练习恢复'],
+        [
+          'Practice Weak Spots and use Forward Recovery to start at the nearest later landmark, without wrapping. Practice does not overwrite the Check.',
+          '练习薄弱路标，Forward Recovery 从最近的后续路标开始，不绕回开头；练习不覆盖 Check。',
+        ],
+      ],
+    ],
+    scope: [
+      'You assess your playing. CueLadder does not listen, grade notes, use MIDI or AI scoring, or certify performance readiness. Respect copyright when choosing score images.',
+      '由你自评演奏；CueLadder 不听音、不评音符、不使用 MIDI 或 AI 评分、不认证演出准备度；选择乐谱图片时尊重版权。',
+    ],
+    access: [
+      'One active piece includes all features free. Archive it to activate another while keeping history. US$14.99 one-time Lifetime unlocks multiple active pieces. No subscription or timed trial; Apple displays the applicable price.',
+      '一首活跃曲目包含全部功能，永久免费；归档后可启用另一首并保留历史。US$14.99 一次性 Lifetime 解锁多首活跃曲目，无订阅或限时试用；实际价格以 Apple 显示为准。',
+    ],
+    data: [
+      'Practice data and selected image copies stay locally without automatic cloud sync. CSV is not a full backup. Save a complete .cueladderbackup outside the app; restore validates, previews and replaces the library after a safety copy. Purchase restoration is separate.',
+      '练习资料与所选图片副本保存在本机，无自动云同步。CSV 不是全量备份；将完整 .cueladderbackup 保存在 App 外。恢复先验证、预览并创建安全副本，再替换资料；恢复购买独立进行。',
+    ],
+  },
+  {
+    slug: 'kilnpair',
+    name: 'KilnPair',
+    storeName: 'KilnPair',
+    subtitle: ['Kiln Shelf Photos & Firing Records', '窑层照片与窑次记录'],
+    summary: [
+      'Pair before and after photos by shelf.',
+      '按窑层关联烧前与烧后照片。',
+    ],
+    value: [
+      'Keep firing observations tied to the recorded shelf.',
+      '让窑次观察对应实际记录的窑层。',
+    ],
+    description: [
+      'Record kiln firings, shelf photo pairs and manual piece marks. Compare observations across firings and export local PDF, CSV or full backups.',
+      '记录窑次、窑层前后照片和手工作品标记，跨窑次比较观察，并导出 PDF、CSV 或完整备份。',
+    ],
+    steps: [
+      [
+        ['Record the loading', '记录装窑'],
+        [
+          'Create a kiln and firing, name and reorder shelves, then add before photos and optional manual piece marks.',
+          '创建窑炉与窑次，命名和排序窑层，添加烧前照片及可选手工作品标记。',
+        ],
+      ],
+      [
+        ['Record the unloading', '记录出窑'],
+        [
+          'After confirming loading records, record unloading in reverse shelf order. Add after photos, missing-photo reasons and results.',
+          '确认装窑记录后，按逆序记录出窑，补充烧后照片、缺图原因与结果。',
+        ],
+      ],
+      [
+        ['Compare your observations', '比较自己的观察'],
+        [
+          'Compare one shelf or manually selected shelves and pieces across firings. Keep your records and save a full ZIP outside the app.',
+          '比较同层，或手动选择跨窑次的窑层与作品；保留记录，并将完整 ZIP 保存在 App 外。',
+        ],
+      ],
+    ],
+    scope: [
+      'App states describe recording progress, not temperature or safe opening. Follow your kiln operating instructions. Resized recording JPEGs are not color-calibrated references.',
+      'App 状态只描述记录进度，不表示温度或安全开窑；遵守窑炉操作规程。缩小 JPEG 不是色彩校准依据。',
+    ],
+    access: [
+      'Two user firing records include all features free. Archived records count; the sample and Trash do not. US$19.99 one-time Lifetime unlocks unlimited new firings, subject to storage. No subscription; Apple displays the applicable price.',
+      '两条用户窑次免费并包含全部功能；归档计数，示例和回收站不计。US$19.99 一次性 Lifetime 解锁不限新增窑次，受存储限制；无订阅，实际价格以 Apple 显示为准。',
+    ],
+    data: [
+      'Records and recording photos stay locally without automatic cloud sync. PDF and CSV cannot restore data. Full ZIP import validates files and appends independent records with new IDs, retaining existing data and skipping duplicates. Backups do not transfer purchase access.',
+      '记录和记录照片保存在本机，无自动云同步。PDF 和 CSV 不能恢复；完整 ZIP 导入先校验，再用新 ID 追加独立记录，保留已有资料并跳过重复。备份不转移购买权益。',
+    ],
+  },
+  {
+    slug: 'refsettle',
+    name: 'RefSettle',
+    storeName: 'RefSettle',
+    subtitle: ['Referee Pay & Game Fee Matching', '裁判报酬与比赛费用核对'],
+    summary: [
+      'Match received pay to game fees.',
+      '将已收到的报酬核对到比赛费用。',
+    ],
+    value: [
+      'Keep unmatched amounts and known deductions explicit.',
+      '明确待核对款项与已知扣减。',
+    ],
+    description: [
+      'Track referee game fees, received payments and explicit matching locally. Keep unknown amounts unmatched and export records or full backups.',
+      '在本机记录裁判比赛费用、实际收款与明确核销，未知金额保持待核对，并导出记录或完整备份。',
+    ],
+    steps: [
+      [
+        ['Record expected fees', '记录预期费用'],
+        [
+          'Record each game and its expected fee. Keep a payment source separate from the school or league payer identity.',
+          '记录每场比赛及预期费用，将支付来源与学校或联盟付款人身份分开。',
+        ],
+      ],
+      [
+        ['Match actual receipts', '核对实际到账'],
+        [
+          'Record a payment only after receiving it. Match payment with explicit credit for each game; unknown amounts remain unmatched.',
+          '实际到账后才记录收款；Match payment 时为每场明确输入核销额，未知金额保持待核对。',
+        ],
+      ],
+      [
+        ['Keep corrections accountable', '保留明确修订'],
+        [
+          'A short payment does not automatically become a deduction. Record only known withholding with a confirmed reason; it never increases cash received.',
+          '少款不自动成为扣减；只记录有确认原因的已知扣减，扣减不增加实际现金。',
+        ],
+      ],
+    ],
+    scope: [
+      'RefSettle does not move money, connect banks, generate invoices or provide tax advice. Void corrects incorrect or duplicate payment entries; real refunds paid out are outside this version.',
+      'RefSettle 不转账、不连接银行、不开发票、不提供税务建议。Void 用于错误或重复收款；真实退款支出不在本版本范围。',
+    ],
+    access: [
+      'The first 12 successfully created games are free with no time limit. Deletion or archiving does not return the allowance. US$19.99 one-time Lifetime unlocks unlimited new games. Existing payments, matching, corrections and exports remain available; Apple displays the applicable price.',
+      '累计前12场成功创建比赛免费，无时间限制；删除或归档不返还额度。US$19.99 一次性 Lifetime 解锁不限新增比赛；已有收款、核销、修订与导出保持可用，实际价格以 Apple 显示为准。',
+    ],
+    data: [
+      'The ledger stays on the device without automatic sync. Save readable full backups to a private location outside the device. Restore validates and replaces the ledger after confirmation; it does not merge or lower the known cumulative allowance. Purchase access is separate from backups.',
+      '账簿保存在本机，无自动同步。完整备份含可读取收入资料，保存在设备外私有位置。恢复先验证，经确认替换账簿，不合并或降低已知累计额度；购买权益与备份分开。',
+    ],
+  },
+  {
+    slug: 'loadquilt',
+    name: 'LoadQuilt',
+    storeName: 'LoadQuilt',
+    subtitle: [
+      'Longarm Quilt Backing & Intake Checks',
+      '长臂绗缝背布与收件复核',
+    ],
+    summary: ['Check the backing before loading.', '上机前复核实际背布。'],
+    value: [
+      'Keep each confirmation tied to the current revision.',
+      '让每次确认对应当前修订。',
+    ],
+    description: [
+      'Record quilt tops, usable backing dimensions, margins, photos and issues. Review the current revision before issuing a ticket or recording loading.',
+      '记录绗缝面层、可用背布尺寸、余量、照片与问题；签发检查单或记录上机前复核当前修订。',
+    ],
+    steps: [
+      [
+        ['Record actual usable dimensions', '记录实际可用尺寸'],
+        [
+          'Set your confirmed studio margin policy, then record the received top and usable backing rectangle, orientation and issues.',
+          '设置已确认的工作室余量规则，再记录实收面层与可用背布矩形、方向和问题。',
+        ],
+      ],
+      [
+        ['Resolve HOLD and remeasure', '处理 HOLD 并重测'],
+        [
+          'Correct any HOLD, remeasure and complete all four human checks for the current revision before READY.',
+          '处理 HOLD，重测并完成当前修订的全部四项人工检查后才可 READY。',
+        ],
+      ],
+      [
+        ['Issue the checked revision', '签发已核对版本'],
+        [
+          'Issue a ticket and record loading only after confirming the current revision. Relevant changes invalidate old confirmations while keeping historical tickets.',
+          '确认当前修订后签发检查单和记录上机；相关修改使旧确认失效，同时保留历史检查单。',
+        ],
+      ],
+    ],
+    scope: [
+      'LoadQuilt records human checks. It does not control machinery, certify safety or guarantee quilting quality. Follow your confirmed studio policy and equipment instructions.',
+      'LoadQuilt 记录人工检查，不控制机器、不认证安全、不保证绗缝质量；遵守已确认的工作室规则和设备说明。',
+    ],
+    access: [
+      'Actively claim the separate free seven-day Apple Trial. It starts with the first verified original transaction and does not renew or charge automatically. US$19.99 one-time Lifetime unlock is separate; no subscription. Existing data remains available after expiry; Apple displays the applicable price.',
+      '主动领取独立的七天 Apple 免费试用，从首次已验证原始交易开始，不续期或自动扣费。US$19.99 一次性 Lifetime 独立购买，无订阅；到期后已有资料保持可用，实际价格以 Apple 显示为准。',
+    ],
+    data: [
+      'Jobs, measurements, photos and tickets stay locally without automatic cloud sync. CSV is a summary, not a full backup. Save a complete .loadquiltbackup outside the device. Restore validates, saves a safety backup and replaces the full library; it does not merge or restore purchases.',
+      '工作、尺寸、照片和检查单保存在本机，无自动云同步。CSV 是摘要，不是完整备份；将完整 .loadquiltbackup 保存在设备外。恢复先验证并创建安全备份，再替换整库，不合并或恢复购买权益。',
+    ],
+  },
+  {
     slug: 'batchmise',
     name: 'BatchMise',
     storeName: 'BatchMise',

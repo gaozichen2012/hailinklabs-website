@@ -12,7 +12,7 @@ export const GET: APIRoute = () =>
       `Legal entity: ${site.legalName} / ${site.legalNameZh}`,
       `Website: ${site.url}`,
       `Support email: ${site.email}`,
-      'Last updated: 2026-10-07',
+      'Last updated: 2026-10-08',
       'This discovery file is supplementary; it is not a Google ranking requirement or a guarantee of AI citations.',
       '',
       '## Indexes',
