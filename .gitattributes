@@ -5,5 +5,5 @@
 public/downloads/*.pdf binary
 
 # Preserve actual App exports byte-for-byte, including their original CRLF.
-public/products/*/demo-*.csv -text
+public/products/*/demo-*.csv -text whitespace=cr-at-eol
 public/products/*/demo-*.pdf binary
