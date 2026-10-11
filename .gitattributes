@@ -3,3 +3,7 @@
 
 # Generated PDFs are binary assets, including ReportLab ASCII-encoded streams.
 public/downloads/*.pdf binary
+
+# Preserve actual App exports byte-for-byte, including their original CRLF.
+public/products/*/demo-*.csv -text
+public/products/*/demo-*.pdf binary
