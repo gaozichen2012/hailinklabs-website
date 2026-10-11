@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Product from '../../components/Product.astro';
-import AppStoreLink from '../AppStoreLink.astro';
 import { localizedPath } from '../../data/i18n';
 import { copy } from '../../data/products';
 import { catalog, categories, listings } from '../../data/catalog';
@@ -56,69 +55,73 @@ const t = translator(locale);
       {catalog
         .filter((p) => listings[p.slug])
         .map((product) => (
-          <article class="resource-card">
-            <h3>
-              <a href={localizedPath(`/products/${product.slug}`, locale)}>
-                {product.name}
-              </a>
-            </h3>
-            <p>{copy(product.summary, locale)}</p>
-            <AppStoreLink
-              locale={locale}
-              slug={product.slug}
-              source="catalog"
-            />
-          </article>
+          <Product locale={locale} product={product} compact />
         ))}
     </div>
   </section>
-  <nav
-    id="product-categories"
-    class="category-links"
-    aria-label={locale === 'en' ? 'Product categories' : '产品分类'}
-  >
-    {categories.map((category) => (
-      <a href={`#${category.id}`}>
-        {copy(category.title, locale)}{' '}
-        <span class="category-count">
-          {locale === 'en'
-            ? `${category.slugs.filter((slug) => listings[slug]).length} downloadable / ${category.slugs.length} total`
-            : `${category.slugs.filter((slug) => listings[slug]).length} 可下载 / ${category.slugs.length} 总数`}
-        </span>
-      </a>
-    ))}
-  </nav>
-  {categories.map((category) => (
-    <section
-      class="catalog-group"
-      id={category.id}
-      aria-labelledby={`${category.id}-title`}
+  <details class="full-catalog" open>
+    <summary>
+      {locale === 'en'
+        ? `All ${catalog.length} products by category`
+        : `全部 ${catalog.length} 款产品分类目录`}
+    </summary>
+    <nav
+      id="product-categories"
+      class="category-links"
+      aria-label={locale === 'en' ? 'Product categories' : '产品分类'}
     >
-      <div class="catalog-heading">
-        <h2 id={`${category.id}-title`}>{copy(category.title, locale)}</h2>
-        <span class="catalog-count">
-          {locale === 'en'
-            ? `${category.slugs.length} ${category.slugs.length === 1 ? 'app' : 'apps'} · ${category.slugs.filter((slug) => listings[slug]).length} downloadable`
-            : `${category.slugs.length} 款 App · ${category.slugs.filter((slug) => listings[slug]).length} 可下载`}
-        </span>
-      </div>
-      <div class="product-grid">
-        {category.slugs
-          .toSorted(
-            (a, b) =>
-              Number(Boolean(listings[b])) - Number(Boolean(listings[a])),
-          )
-          .map((slug) => (
-            <Product
-              locale={locale}
-              product={catalog.find((p) => p.slug === slug)!}
-            />
-          ))}
-      </div>
-      <a class="text-link category-return" href="#product-categories">
-        {locale === 'en' ? 'Back to categories' : '返回产品分类'}{' '}
-        <span aria-hidden="true">↑</span>
-      </a>
-    </section>
-  ))}
+      {categories.map((category) => (
+        <a href={`#${category.id}`}>
+          {copy(category.title, locale)}{' '}
+          <span class="category-count">
+            {locale === 'en'
+              ? `${category.slugs.filter((slug) => listings[slug]).length} downloadable / ${category.slugs.length} total`
+              : `${category.slugs.filter((slug) => listings[slug]).length} 可下载 / ${category.slugs.length} 总数`}
+          </span>
+        </a>
+      ))}
+    </nav>
+    {categories.map((category) => (
+      <section
+        class="catalog-group"
+        id={category.id}
+        aria-labelledby={`${category.id}-title`}
+      >
+        <div class="catalog-heading">
+          <h2 id={`${category.id}-title`}>{copy(category.title, locale)}</h2>
+          <span class="catalog-count">
+            {locale === 'en'
+              ? `${category.slugs.length} ${category.slugs.length === 1 ? 'app' : 'apps'} · ${category.slugs.filter((slug) => listings[slug]).length} downloadable`
+              : `${category.slugs.length} 款 App · ${category.slugs.filter((slug) => listings[slug]).length} 可下载`}
+          </span>
+        </div>
+        <div class="product-grid">
+          {category.slugs
+            .toSorted(
+              (a, b) =>
+                Number(Boolean(listings[b])) - Number(Boolean(listings[a])),
+            )
+            .map((slug) =>
+              listings[slug] ? (
+                <p class="available-reference">
+                  <a href={localizedPath(`/products/${slug}`, locale)}>
+                    {catalog.find((p) => p.slug === slug)!.name}
+                  </a>{' '}
+                  · {locale === 'en' ? 'Available above' : '上方可下载'}
+                </p>
+              ) : (
+                <Product
+                  locale={locale}
+                  product={catalog.find((p) => p.slug === slug)!}
+                />
+              ),
+            )}
+        </div>
+        <a class="text-link category-return" href="#product-categories">
+          {locale === 'en' ? 'Back to categories' : '返回产品分类'}{' '}
+          <span aria-hidden="true">↑</span>
+        </a>
+      </section>
+    ))}
+  </details>
 </Layout>

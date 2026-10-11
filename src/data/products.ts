@@ -239,8 +239,8 @@ export const products = [
       '记录护理进度，方便继续未完成的一轮。无需账号或复杂繁育配置。LitterRound 用于记录事实，不提供医疗、用药或喂养建议。',
     ],
     storage: [
-      'Litter and puppy records, including photos you select, are kept locally on your iPhone. No app-operated cloud sync or Hailink Labs record server is used. You choose whether to export files to another app or a cloud folder.',
-      '窝次与幼犬记录（包括你选择的照片）保存在 iPhone 本地。不使用 App 自动云同步或 Hailink Labs 记录服务器。是否导出至其他 App 或云端文件夹由你决定。',
+      'No account is required. Litter and puppy records, including photos you select, are kept locally on your iPhone and core recordkeeping works offline. No app-operated cloud sync or Hailink Labs record server is used. You choose whether to export files to another app or a cloud folder.',
+      '无需账号。窝次与幼犬记录（包括你选择的照片）保存在 iPhone 本地，核心记录流程支持离线。不使用 App 自动云同步或 Hailink Labs 记录服务器。是否导出至其他 App 或云端文件夹由你决定。',
     ],
     backup: [
       'Choose Create Backup in Settings and save the JSON file in Files. A full backup includes all litters, puppies, photos, rounds, records and notes. Restore Backup replaces the current data after confirmation and keeps a local pre-restore recovery copy.',
@@ -417,8 +417,8 @@ export const products = [
       '无需账号、无订阅广告、无团队同步或预约日历。面向一个主要负责人和一台主要交接 iPhone。',
     ],
     storage: [
-      'Gear, kits, borrowers, history, photos, signatures and drafts are stored locally on your iPhone. Core handoffs and exports work offline. GearProof has no backend or automatic cloud sync.',
-      '器材、套件、借用人、历史、照片、签名和草稿保存在 iPhone 本地。核心交接与导出支持离线，不使用后台或自动云同步。',
+      'No account is required. Gear, kits, borrowers, history, photos, signatures and drafts are stored locally on your iPhone. Core handoffs and exports work offline. GearProof has no backend or automatic cloud sync.',
+      '无需账号。器材、套件、借用人、历史、照片、签名和草稿保存在 iPhone 本地。核心交接与导出支持离线，不使用后台或自动云同步。',
     ],
     backup: [
       'In Settings, choose Create full backup and save the JSON outside the app. Restore from backup validates the file, asks before replacing records and keeps a local pre-restore recovery copy. Trial and purchase access are separate from backups.',
@@ -589,8 +589,8 @@ export const products = [
     features: [
       ['Press, transfer and blank libraries', '热压机、转印材料和坯料资料库'],
       [
-        'Immutable setup snapshots for historical tests',
-        '历史测试保留不随资料库编辑变化的快照',
+        'Keep historical settings when you edit library details',
+        '修改资料库后仍保留历史测试参数',
       ],
       [
         'Proven settings, wash-test history and search',
@@ -610,12 +610,12 @@ export const products = [
       '以你自己的测试结果为依据。PressRecipe 不推荐温度，也不保证结果。请遵循设备与材料说明。无需注册账号，无广告或订阅。',
     ],
     storage: [
-      'Records and selected photos are saved locally first. When available, private CloudKit sync uses your Apple Account. Hailink Labs does not operate a record server or automatically receive these records.',
-      '记录与所选照片优先保存在本地。可用时，私有 CloudKit 同步使用你的 Apple 账号。Hailink Labs 不运营记录服务器，也不会自动接收这些记录。',
+      'No app account is required. Records and selected photos are saved locally first and core recordkeeping works offline. When available, private CloudKit sync uses your Apple Account. Hailink Labs does not operate a record server or automatically receive these records.',
+      '无需 App 账号。记录与所选照片优先保存在本地，核心记录流程支持离线。可用时，私有 CloudKit 同步使用你的 Apple 账号。Hailink Labs 不运营记录服务器，也不会自动接收这些记录。',
     ],
     backup: [
-      'Choose Create Full Backup in Settings and save the .pressrecipe file outside the app. Restore Full Backup validates its schema, checksums, media and references before you confirm replacing all records. A safety backup is created first. Purchase access is excluded. Keep your own external backups; iCloud sync is not a backup history.',
-      '在 Settings 中选择 Create Full Backup，将 .pressrecipe 文件保存在 App 之外。Restore Full Backup 会先验证版本、校验和、媒体和引用，再由你确认替换全部记录；替换前创建安全备份。备份不包含购买权益。请保留外部备份，iCloud 同步不是历史备份。',
+      'Choose Create Full Backup in Settings and save the .pressrecipe file outside the app. Restore Full Backup checks that the file, photos and linked records are complete before you confirm replacing all records. A safety backup is created first. Purchase access is excluded. Keep your own external backups; iCloud sync is not a backup history.',
+      '在 Settings 中选择 Create Full Backup，将 .pressrecipe 文件保存在 App 之外。Restore Full Backup 会先检查文件、照片与关联记录是否完整，再由你确认替换全部记录；替换前创建安全备份。备份不包含购买权益。请保留外部备份，iCloud 同步不是历史备份。',
     ],
     export: [
       'Export CSV in Settings provides test records and settings in a spreadsheet-friendly file. CSV does not include photo files and cannot replace a full backup. Full backups include records, preferences and copied photos.',

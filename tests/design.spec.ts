@@ -73,7 +73,7 @@ for (const chinese of [false, true]) {
     await expect(page.locator('main')).toBeFocused();
     await page.keyboard.press(tabKey);
     const products = page.getByRole('link', {
-      name: chinese ? '找到可下载的 App' : 'Find an app to download',
+      name: chinese ? /浏览 \d+ 款 iPhone App/ : /Browse \d+ iPhone apps/,
     });
     await expect(products).toBeFocused();
     const focus = await products.evaluate((link) => {

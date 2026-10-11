@@ -61,11 +61,18 @@ const zh = locale === 'zh-CN';
     </p>
   </>
 ) : slug === 'tmproof' ? (
-  <p>
-    {zh
-      ? '免费下载，完整免费试用 7 天，之后以 $9.99 一次性买断。无订阅、无广告、不限制工单数量，核心功能不拆分收费。'
-      : 'Free download. Try the full app free for 7 days, then unlock it with a $9.99 one-time purchase. No subscription, no ads, no ticket limits and no separate charges for core features.'}
-  </p>
+  <>
+    <p>
+      {zh
+        ? '免费下载，完整免费试用 7 天，之后以 $9.99 一次性买断。无订阅、无广告、不限制工单数量，核心功能不拆分收费。'
+        : 'Free download. Try the full app free for 7 days, then unlock it with a $9.99 one-time purchase. No subscription, no ads, no ticket limits and no separate charges for core features.'}
+    </p>
+    <p>
+      {zh
+        ? '试用在你主动通过 App Store 确认后开始，不会自动扣款。到期后不能新建项目或工单；已有草稿仍可编辑、签字及完成，历史、PDF、备份与恢复仍可访问。激活、购买与恢复购买需要连接 App Store。'
+        : 'The trial starts when you choose it and confirm with the App Store. It does not charge automatically. After expiry, new projects and tickets require unlock; existing drafts can still be edited, signed and completed. History, PDFs, backups and recovery remain accessible. Activation, purchases and restoring purchases require the App Store.'}
+    </p>
+  </>
 ) : (
   <>
     <p>

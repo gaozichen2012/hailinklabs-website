@@ -14,8 +14,8 @@ for (const prefix of ['', '/zh']) {
     }) => {
       await page.goto(`${prefix}/products/${slug}`);
       for (const heading of prefix
-        ? ['适用与不适用', '导出与备份', '常见问题']
-        : ['When to choose it', 'Export and backup', 'Common questions']) {
+        ? ['是否适合你？', '导出与备份', '常见问题']
+        : ['Is it right for you?', 'Export and backup', 'Common questions']) {
         await expect(
           page.getByRole('heading', { name: heading, exact: true }),
         ).toBeVisible();

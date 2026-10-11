@@ -20,6 +20,19 @@ const guide = guides.find((g) => path === `/guides/${g.slug}`);
 const sheet = templates.find((t) => path === `/templates/${t.slug}`);
 const hub = hubs.find((h) => path === `/guides/${h.slug}`);
 const resource = guide || sheet;
+const relatedTemplates = sheet
+  ? templates.filter(
+      (t) =>
+        t.slug !== sheet.slug &&
+        guides.some(
+          (g) =>
+            g.app === sheet.app &&
+            guides.some(
+              (other) => other.app === t.app && other.category === g.category,
+            ),
+        ),
+    )
+  : [];
 const product = resource && catalog.find((p) => p.slug === resource.app);
 const workflowProduct =
   resource && products.find((p) => p.slug === resource.app);
@@ -43,10 +56,15 @@ const description = resource
   ? d(resource.description)
   : hub
     ? d(hub.intro)
-    : c(
-        'Practical guides and free record templates for contractors, small teams, animal carers, heat press makers and solo service businesses. No registration required.',
-        '面向承包商、小团队、动物照护者、热压制作者和个人服务经营者的实用指南与免费记录模板，提供可打印及电子表格资源，无需注册。',
-      );
+    : isTemplates
+      ? c(
+          'Download free printable Letter and A4 PDFs, editable CSV records and a formula Excel invoice. Preview blank sheets and filled examples without registration.',
+          '免费下载 Letter 与 A4 可打印 PDF、可编辑 CSV 及公式 Excel 发票，查看空白表和填写示例，无需注册或邮箱。',
+        )
+      : c(
+          'Learn how to fill in work records, organize a handoff and check common mistakes. Practical steps and fictional examples for everyday tasks.',
+          '学习如何填写工作记录、整理交接与检查常见错误。实用步骤和明确标注的虚构示例帮助你完成具体任务。',
+        );
 const guideList = hub ? guides.filter((g) => g.category === hub.slug) : guides;
 const templateList = hub
   ? templates.filter((t) => guideList.some((g) => g.app === t.app))
@@ -55,7 +73,7 @@ const templateList = hub
 
 <Layout
   locale={locale}
-  title={`${title}${sheet ? c(' — Free PDF & CSV', ' — 免费 PDF 与 CSV') : ''} | Hailink Labs`}
+  title={`${title}${sheet ? (sheet.app === 'samejob' ? c(' — Free Excel, PDF & CSV', ' — 免费公式 Excel、PDF 与 CSV') : c(' — Free PDF & CSV', ' — 免费 PDF 与 CSV')) : ''} | Hailink Labs`}
   description={description}
 >
   <article class="resource-page">
@@ -96,6 +114,10 @@ const templateList = hub
     </header>
     {guide && (
       <div class="resource-body">
+        <p>
+          {c('Prepared and maintained by', '制作与维护：')}{' '}
+          <a href={link('/about#content-method')}>Hailink Labs</a>
+        </p>
         <section>
           <h2>{c('What this record means', '这项记录是什么')}</h2>
           <p>{d(guide.definition)}</p>
@@ -136,7 +158,16 @@ const templateList = hub
           <h2>{c('Example', '示例')}</h2>
           <p class="example-note">{d(guide.example)}</p>
           {template && (
-            <WorksheetPreview sheet={template} locale={locale} example />
+            <a
+              class="text-link"
+              href={link(`/templates/${template.slug}#filled-example`)}
+            >
+              {c(
+                'Compare with the independent filled worksheet',
+                '对照独立工作表的填写示例',
+              )}{' '}
+              →
+            </a>
           )}
         </section>
         <section>
@@ -295,15 +326,36 @@ const templateList = hub
             )}
           </div>
         </section>
-        <WorksheetPreview sheet={sheet} locale={locale} />
-        <WorksheetPreview sheet={sheet} locale={locale} example />
+        <a class="button secondary" href="#filled-example">
+          {c('See how to fill it in', '先看怎么填')}
+        </a>
+        <details class="worksheet-preview" open>
+          <summary>{c('Blank worksheet preview', '空白表格预览')}</summary>
+          <WorksheetPreview sheet={sheet} locale={locale} />
+        </details>
+        <div class="print-only">
+          <WorksheetPreview sheet={sheet} locale={locale} />
+        </div>
+        <details class="worksheet-preview" id="filled-example" open>
+          <summary>
+            {c(
+              'Filled example · independent worksheet',
+              '填写示例 · 独立工作表',
+            )}
+          </summary>
+          <WorksheetPreview sheet={sheet} locale={locale} example />
+        </details>
         <section>
           <h2>{c('How to use the sheet', '如何使用')}</h2>
           <ol>
             <li>
               {c(
-                'Choose HTML for printing, Letter or A4 PDF for printing, or CSV for a spreadsheet. The invoice XLSX calculates line amounts and totals.',
-                '打印可用 HTML，保存打印副本可选 Letter 或 A4 PDF，电子表格可用 CSV；发票 XLSX 计算行金额与合计。',
+                sheet.app === 'samejob'
+                  ? 'Choose HTML, Letter or A4 PDF for printing, CSV for editing, or the invoice XLSX to calculate line amounts and totals.'
+                  : 'Choose HTML, Letter or A4 PDF for printing, or CSV for editing. CSV files do not contain formulas.',
+                sheet.app === 'samejob'
+                  ? '打印可选 HTML、Letter 或 A4 PDF，编辑可用 CSV；公式发票 XLSX 可计算行金额与合计。'
+                  : '打印可选 HTML、Letter 或 A4 PDF，编辑可用 CSV。CSV 文件不含公式。',
               )}
             </li>
             <li>
@@ -333,29 +385,18 @@ const templateList = hub
               ))}
           </ul>
         </section>
-        <section>
-          <h2>{c('Related Templates', '相关模板')}</h2>
-          <ul>
-            {templates
-              .filter(
-                (t) =>
-                  t.slug !== sheet.slug &&
-                  guides.some(
-                    (g) =>
-                      g.app === sheet.app &&
-                      guides.some(
-                        (other) =>
-                          other.app === t.app && other.category === g.category,
-                      ),
-                  ),
-              )
-              .map((t) => (
+        {relatedTemplates.length > 0 && (
+          <section>
+            <h2>{c('Related Templates', '相关模板')}</h2>
+            <ul>
+              {relatedTemplates.map((t) => (
                 <li>
                   <a href={link(`/templates/${t.slug}`)}>{d(t.title)}</a>
                 </li>
               ))}
-          </ul>
-        </section>
+            </ul>
+          </section>
+        )}
       </div>
     )}
     {product && resource && (
@@ -381,6 +422,16 @@ const templateList = hub
           {c('Explore', '了解')} {product.name}{' '}
           <span aria-hidden="true">→</span>
         </a>
+        {(product.slug === 'tmproof' || product.slug === 'pressrecipe') && (
+          <p>
+            <a href={link(`/products/${product.slug}#app-demo`)}>
+              {c(
+                'See the actual App demo and its scope',
+                '查看真实 App 演示与范围说明',
+              )}
+            </a>
+          </p>
+        )}
         <AppStoreLink
           locale={locale}
           slug={product.slug}
@@ -455,8 +506,8 @@ const templateList = hub
           <h2>{c('Free Templates', '免费模板')}</h2>
           <p>
             {c(
-              'HTML, English PDF and bilingual CSV. No registration required.',
-              'HTML、英文 PDF 和双语 CSV，无需注册。',
+              'HTML, English PDF and bilingual CSV; formula Excel is available for invoices. No registration required.',
+              'HTML、英文 PDF 和双语 CSV；发票另有公式 Excel。无需注册。',
             )}
           </p>
           <div class="resource-grid">

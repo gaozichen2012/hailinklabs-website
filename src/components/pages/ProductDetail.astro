@@ -1,7 +1,7 @@
 ---
 import DownloadPanel from '../DownloadPanel.astro';
 import RelatedResources from '../RelatedResources.astro';
-import { highlights, availability } from '../../data/catalog';
+import { highlights, availability, listings } from '../../data/catalog';
 import ProductGallery from '../ProductGallery.astro';
 import AppStoreLink from '../AppStoreLink.astro';
 import Layout from '../../layouts/Layout.astro';
@@ -45,6 +45,22 @@ const href = (suffix: string) =>
       {highlight && <p class="data-summary">{c(highlight.data)}</p>}
       <p class="availability">{c(availability(p.slug))}</p>
       <AppStoreLink locale={locale} slug={p.slug} />
+      {listings[p.slug] && (
+        <figure class="decision-qr">
+          <img
+            src={`/products/${p.slug}/download-qr.png`}
+            width="112"
+            height="112"
+            alt={c([
+              'Scan with your iPhone to open the App Store',
+              '用 iPhone 扫码打开 App Store',
+            ])}
+          />
+          <figcaption>
+            {c(['Scan with your iPhone', '用 iPhone 扫码下载'])}
+          </figcaption>
+        </figure>
+      )}
       {p.slug === 'turnmath' && (
         <p class="price-summary">{c(highlight.price)}</p>
       )}
@@ -53,7 +69,7 @@ const href = (suffix: string) =>
         <span aria-hidden="true">↓</span>
       </a>
     </section>
-    <ProductGallery locale={locale} slug={p.slug} />
+    <ProductGallery locale={locale} slug={p.slug} lead />
   </div>
   <section class="product-story">
     <h2>{c(p.value)}</h2>
@@ -67,6 +83,7 @@ const href = (suffix: string) =>
       ))}
     </div>
   </section>
+  <ProductGallery locale={locale} slug={p.slug} />
   <section class="section-row">
     <div class="section-label">
       <h2>{c(['Main features', '主要功能'])}</h2>
@@ -81,36 +98,19 @@ const href = (suffix: string) =>
   </section>
   <section class="section-row">
     <div class="section-label">
-      <h2>{c(['Product principles', '产品原则'])}</h2>
+      <h2>{c(['Is it right for you?', '是否适合你？'])}</h2>
     </div>
     <div class="section-body">
       <p>{c(p.principles)}</p>
+      {highlight?.fit && <p>{c(highlight.fit)}</p>}
     </div>
   </section>
-  {highlight?.fit && (
-    <section class="section-row">
-      <div class="section-label">
-        <h2>{c(['When to choose it', '适用与不适用'])}</h2>
-      </div>
-      <div class="section-body prose">
-        <p>{c(highlight.fit)}</p>
-      </div>
-    </section>
-  )}
   <section class="section-row" id="pricing">
     <div class="section-label">
       <h2>{c(['Pricing', '价格'])}</h2>
     </div>
     <div class="section-body prose">
       <Pricing locale={locale} slug={p.slug} />
-    </div>
-  </section>
-  <section class="section-row">
-    <div class="section-label">
-      <h2>{c(['Your data', '你的数据'])}</h2>
-    </div>
-    <div class="section-body">
-      <p>{c(p.storage)}</p>
     </div>
   </section>
   <section class="section-row">
@@ -127,7 +127,66 @@ const href = (suffix: string) =>
       <h2>{c(['Common questions', '常见问题'])}</h2>
     </div>
     <div class="section-body prose">
+      <h3>
+        {c([
+          'Can I work offline? Do I need an account or cloud sync?',
+          '能离线使用吗，需要账号或云同步吗？',
+        ])}
+      </h3>
+      <p>{c(p.storage)}</p>
+      <h3>
+        {c([
+          'How do I back up or move to another iPhone?',
+          '如何备份或换到另一台 iPhone？',
+        ])}
+      </h3>
+      <p>{c(p.backup)}</p>
+      <h3>
+        {c(['Can a team share these records?', '团队能共同使用这些记录吗？'])}
+      </h3>
+      <p>
+        {c(
+          p.slug === 'samejob' ||
+            p.slug === 'pressrecipe' ||
+            p.slug === 'hybridloop'
+            ? [
+                'Private iCloud sync uses your own Apple Account when available. It is not a shared team workspace. You can share exported files; keep a full backup for moving records.',
+                '私有 iCloud 同步在可用时使用你自己的 Apple 账号，不是团队共享工作区。可以分享导出的文件；迁移记录请保留完整备份。',
+              ]
+            : p.slug === 'turnmath'
+              ? [
+                  'TurnMath is for local shared play, without accounts or device sync.',
+                  'TurnMath 面向本机共同游戏，没有账号或设备同步。',
+                ]
+              : [
+                  'No automatic team or multi-device sync is provided. Share an exported document when needed, and use a full backup to move records to another iPhone.',
+                  '不提供自动团队或多设备同步。需要时分享导出的文档，换机时使用完整备份迁移记录。',
+                ],
+        )}
+      </p>
+      <h3>
+        {c([
+          'What limits apply, including after free access ends?',
+          '有哪些限制，免费使用结束后还能做什么？',
+        ])}
+      </h3>
       <p>{c(p.faq)}</p>
+      {p.slug === 'samejob' && (
+        <p>
+          {c([
+            'After the monthly free allowance is used, your history, exports and backups remain accessible. Pro removes the finalized-document limit; see the pricing above for subscription and lifetime options.',
+            '每月免费额度用完后仍可访问历史、导出及备份。Pro 取消已确认文档数量限制，订阅与终身购买选项见上方价格。',
+          ])}
+        </p>
+      )}
+      {p.slug === 'tmproof' && (
+        <p>
+          {c([
+            'After the trial ends, new projects and tickets require unlock. Existing drafts can still be edited, signed and completed; history, PDF, backup and restore remain available.',
+            '试用结束后新建项目和工单需要解锁。已有草稿仍可编辑、签字及完成；历史、PDF、备份与恢复仍可使用。',
+          ])}
+        </p>
+      )}
     </div>
   </section>
   <section class="section-row">

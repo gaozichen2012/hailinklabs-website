@@ -1,4 +1,5 @@
 ---
+import galleries from '../data/product-galleries.json';
 import AppStoreLink from './AppStoreLink.astro';
 import { localizedPath, type Locale } from '../data/i18n';
 import { copy } from '../data/products';
@@ -20,7 +21,7 @@ const preview =
     ? '01-repeat-invoices'
     : product.slug === 'gearproof'
       ? '04-gearproof'
-      : undefined;
+      : galleries[product.slug as keyof typeof galleries]?.[0]?.file;
 ---
 
 <article class:list={['matrix-card', { 'has-screen': !!preview }]}>

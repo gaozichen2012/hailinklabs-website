@@ -5,12 +5,12 @@
     "category": "contractors",
     "template": "time-and-materials-ticket",
     "title": [
-      "Time and Materials Ticket Template for Contractors",
-      "承包商工时与材料工单模板"
+      "How to Fill In a Time and Materials Ticket",
+      "如何填写工时与材料工单"
     ],
     "description": [
-      "Download a free time and materials ticket template. Record labor, materials, equipment, work details and on-site acknowledgment in PDF or CSV.",
-      "工时与材料工单用于记录某项工作的内容、人工工时、材料用量、设备用时和现场签认。先填写项目、客户和日期，再逐项记录实际数量，不要只写一个无法解释的总额。使用下方免费模板，将相关说明保存在一起，并在分享前明确签认人确认的是哪些事项。"
+      "A field-by-field T&M ticket tutorial: identify work, record labor and material units, clarify acknowledgment, and check the record before sharing.",
+      "逐字段填写工时与材料工单：标识工作，记录人工与材料单位，明确签认范围，并在分享前核对记录。"
     ],
     "answer": [
       "A time and materials ticket records the work performed, labor hours, materials used, equipment time and on-site acknowledgment for a specific job. Start with the project, customer and date, then itemize actual quantities rather than writing one unexplained total. Use the free printable ticket below, keep supporting notes together and clarify what the signer is acknowledging before sharing it.",
@@ -78,7 +78,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "how-to-document-extra-work",
@@ -112,8 +112,8 @@
       ["Open questions and follow-up owner", "未决问题与后续负责人"]
     ],
     "example": [
-      "Illustrative entry: the original task covered one wall; a second wall was requested later. Record the second wall separately, reference the request, attach the relevant photos and note that commercial approval is still pending.",
-      "示例：原任务只覆盖一面墙，后来要求处理第二面墙。单独记录第二面墙，关联请求和相关照片，并注明商业审批仍待完成。"
+      "Demo T07 at the west entrance: the original scope was conduit inspection. A supervisor requests additional conduit supports. Record that request separately; one technician spends two hours installing three supports. Attach photos T07-before and T07-after, note that the rate and commercial approval remain pending, and share the completed record for acknowledgment. This is fictional recordkeeping, not an approval or payment guarantee.",
+      "演示 T07 位于西入口：原范围是管线检查，主管另要求增加管线支架。单独保存新请求，一名技术人员用两小时安装三个支架，关联 T07-before 与 T07-after 照片；注明单价与商业审批待确认，核对后分享记录用于签认。这是虚构记录示例，不代表批准或付款保证。"
     ],
     "steps": [
       [
@@ -156,7 +156,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "what-to-include-in-a-tm-ticket",
@@ -237,7 +237,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "equipment-checkout-log-template",
@@ -315,7 +315,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "tool-sign-out-sheet",
@@ -390,7 +390,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "how-to-track-borrowed-tools",
@@ -471,7 +471,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "puppy-weight-log-template",
@@ -549,7 +549,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "newborn-puppy-record-keeping",
@@ -627,7 +627,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "puppy-litter-care-record",
@@ -705,7 +705,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "calving-record-book-template",
@@ -783,7 +783,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "calf-birth-record-sheet",
@@ -864,7 +864,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "offline-calving-records",
@@ -942,17 +942,20 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "heat-press-settings-log",
     "app": "pressrecipe",
     "category": "heat-press",
     "template": "heat-press-settings-log",
-    "title": ["Heat Press Settings Log Template", "热压参数记录模板"],
+    "title": [
+      "How to Fill In a Heat Press Settings Log",
+      "如何填写热压参数记录表"
+    ],
     "description": [
-      "Record heat press material, transfer, temperature, time, pressure and peel method in a free log. Follow the actual material and equipment instructions.",
-      "热压参数记录应写明测试的材料、坯件、转印产品、机器参数及观察结果。温度注明单位，时间、压力描述和揭膜方式完整记录，后续水洗测试关联同一试样。下方免费模板用于保留自己实际测试的参数；设置必须遵循相应材料、转印产品及设备厂商说明。"
+      "Fill in material, press, settings and observations with stable sample IDs. Learn which fields to check and how to connect later wash records.",
+      "用固定试样编号填写材料、机器、设置与观察，了解逐字段核对方法，以及如何关联后续洗涤记录。"
     ],
     "answer": [
       "A heat press settings log records the exact material, blank, transfer and machine settings used for a test, together with the observed result. Include temperature units, time, pressure description and peel method, then link any later wash test to that sample. Use the free log below to preserve your own tested settings. Parameters must follow the relevant material, transfer and equipment manufacturer instructions.",
@@ -1020,7 +1023,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "wash-test-log-for-heat-press",
@@ -1101,7 +1104,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "how-to-record-heat-press-settings",
@@ -1132,8 +1135,8 @@
       ["Changed variable and observed result", "改变变量与观察结果"]
     ],
     "example": [
-      "Illustrative comparison: tests S-20 and S-21 use the same labeled blank and transfer but one recorded variable differs. Keep separate entries and identify the difference explicitly. Do not overwrite S-20 with the later setup.",
-      "对比示例：S-20 和 S-21 使用相同标记的坯件与转印产品，只改变一个已记录变量。单独保存两条并注明差异，不用后续设置覆盖 S-20。"
+      "Fictional tests DEMO-P12-A and DEMO-P12-B use blank B, transfer T, press P and the same pressure and peel method. Only dwell time changes, from 12 to 14 seconds; these are illustrative recorded values, not recommended settings. A shows a lifting corner after cooling; B shows no lifting at that observation. Save both, then link wash observation DEMO-P12-W1 to B and record its wash conditions and observed corner lift. One observation does not establish durability.",
+      "虚构测试 DEMO-P12-A 与 DEMO-P12-B 使用相同坯件 B、转印产品 T、机器 P、压力与揭膜方式；仅时长从 12 秒改为 14 秒。这些是示例记录值，不是推荐参数。A 冷却后观察到角部翘起，B 当时未观察到翘起。分别保存，再把洗涤观察 DEMO-P12-W1 关联到 B，记录洗涤条件及观察到的角部翘起。单次观察不证明耐久性。"
     ],
     "steps": [
       [
@@ -1182,7 +1185,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "invoice-template-repeat-customers",
@@ -1260,7 +1263,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "repeat-invoice-workflow",
@@ -1338,7 +1341,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "estimate-to-invoice-workflow",
@@ -1419,6 +1422,6 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-11"
   }
 ]

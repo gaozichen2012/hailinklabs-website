@@ -8,7 +8,7 @@
       "可打印的工时与材料工单，涵盖人工、材料、设备及现场签认，并提供可导入电子表格的 CSV。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08",
+    "updatedAt": "2026-10-11",
     "fields": [
       ["Date", "日期"],
       ["Project", "项目"],
@@ -145,7 +145,7 @@
       "无需账号或注册，即可记录器材编号、借用人、预计及实际归还时间、状态和交接签认。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08",
+    "updatedAt": "2026-10-11",
     "fields": [
       ["Equipment", "器材"],
       ["Asset ID", "资产编号"],
@@ -250,7 +250,7 @@
       "提供可打印及电子表格格式，记录幼犬标识、日期、体重、喂养与护理备注，方便统一整理每次观察。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08",
+    "updatedAt": "2026-10-11",
     "fields": [
       ["Puppy", "幼犬"],
       ["Identifier", "识别标记"],
@@ -347,7 +347,7 @@
       "在纸面或电子表格中记录产犊季、母牛与犊牛编号、出生详情及观察，便于日后核对和整理。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08",
+    "updatedAt": "2026-10-11",
     "fields": [
       ["Season", "产犊季"],
       ["Dam ID", "母牛编号"],
@@ -434,7 +434,7 @@
       "记录材料、坯件、转印类型、实际参数和水洗测试结果；不提供虚构的通用最佳温度，方便复核自己的试样。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08",
+    "updatedAt": "2026-10-11",
     "fields": [
       ["Material", "材料"],
       ["Blank", "坯件"],
@@ -548,11 +548,11 @@
     "app": "samejob",
     "title": ["Repeat Customer Invoice Template", "回头客发票模板"],
     "description": [
-      "An invoice worksheet for recurring service customers with quantity, rate, amount, date and invoice number.",
-      "面向重复服务客户的发票工作表，包含服务描述、数量、单价、金额、日期及发票编号，便于逐次核对。"
+      "Free repeat-customer invoice: printable Letter/A4 PDF, editable CSV, and Excel XLSX with line-amount and total formulas plus a filled example. No registration.",
+      "免费回头客发票：Letter/A4 可打印 PDF、可编辑 CSV、含行金额与合计公式的 Excel XLSX 及填写示例，无需注册。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-08",
+    "updatedAt": "2026-10-11",
     "fields": [
       ["Customer", "客户"],
       ["Service", "服务"],

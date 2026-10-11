@@ -1034,6 +1034,19 @@ h1:lang(zh-CN),
 .data-summary {
   max-width: 46rem;
 }
+.decision-qr {
+  margin: 1rem 0;
+  font-size: 0.875rem;
+}
+.decision-qr img {
+  display: block;
+}
+@media (max-width: 600px) {
+  .decision-qr,
+  .download-qr {
+    display: none;
+  }
+}
 .product-gallery {
   margin-bottom: 4rem;
 }
@@ -1117,5 +1130,40 @@ h1:lang(zh-CN),
   .worksheet-section td {
     font-size: 8pt;
     overflow-wrap: anywhere;
+  }
+}
+
+.product-opening .screenshot-grid {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 260px;
+  margin-inline: auto;
+}
+.product-opening .product-gallery {
+  margin-bottom: 2rem;
+}
+.worksheet-preview summary {
+  cursor: pointer;
+  padding: 1rem;
+  font-weight: 600;
+}
+@media print {
+  .worksheet-preview > summary {
+    display: none;
+  }
+}
+
+/* The static print copy remains available even when screen previews are closed. */
+.print-only {
+  display: none;
+}
+@media print {
+  .worksheet-preview {
+    display: none !important;
+  }
+  .print-only {
+    display: block;
+  }
+  .resource-page:has(.print-only) .resource-body > .button {
+    display: none;
   }
 }

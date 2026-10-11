@@ -11,7 +11,7 @@ for (const prefix of ['', '/zh']) {
     await page.goto(`${prefix}/products`);
     await expect(page.locator('.availability')).toHaveCount(29);
     await expect(page.locator('.availability.is-available')).toHaveCount(6);
-    await expect(page.locator('.catalog-group .store-download')).toHaveCount(6);
+    await expect(page.locator('#downloadable .store-download')).toHaveCount(6);
     for (const product of catalog) {
       const card = page.locator('.matrix-card').filter({
         has: page.getByRole('heading', { name: product.name, exact: true }),
@@ -121,7 +121,7 @@ test('social previews cover every route and resolve to real 1200 × 630 PNGs', a
     expect(html).toMatch(/property="og:image:alt" content="[^"]+"/);
     images.add(new URL(image!).pathname);
   }
-  expect(images.size).toBe(30);
+  expect(images.size).toBe(catalog.length + 1 + 6);
   for (const image of images) {
     const response = await request.get(image);
     expect(response.ok(), image).toBe(true);

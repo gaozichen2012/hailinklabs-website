@@ -23,8 +23,8 @@ const href = (path: string) => localizedPath(path, locale);
   }
   description={
     locale === 'en'
-      ? 'Focused apps for work, training and family life. Explore practical tools for invoices, equipment, animal care, workouts and learning.'
-      : 'Hailink Labs 打造专注工作、运动与家庭生活的 App，涵盖开票、器材交接、动物护理、训练和学习。'
+      ? 'Practical iPhone apps for invoices, equipment handoffs and field records. Explore available apps and free worksheets without registration.'
+      : 'Hailink Labs 提供用于开票、器材交接与现场记录的实用 iPhone App。浏览已上架产品，免注册获取免费工作表。'
   }
 >
   <section class="hero studio-hero">
@@ -40,15 +40,17 @@ const href = (path: string) => localizedPath(path, locale);
       <div class="hero-bottom">
         <p>
           {locale === 'en'
-            ? 'Focused apps for work, training, and family life — built to solve one problem well.'
-            : '从工作记录到运动训练与家庭学习，把一件事做好。'}
+            ? 'Practical iPhone apps for invoices, equipment handoffs, field records, and everyday work.'
+            : '实用 iPhone App，帮助你开票、交接器材、记录现场工作与日常观察。'}
         </p>
         <a class="button" href={`${href('/products')}#downloadable`}>
-          {locale === 'en' ? 'Find an app to download' : '找到可下载的 App'}{' '}
+          {locale === 'en'
+            ? `Browse ${featured.length} iPhone apps`
+            : `浏览 ${featured.length} 款 iPhone App`}{' '}
           <span aria-hidden="true">→</span>
         </a>
         <a class="text-link" href={href('/templates')}>
-          {locale === 'en' ? 'Start with a free template' : '从免费模板开始'}
+          {locale === 'en' ? 'Get free templates' : '获取免费模板'}
           <span aria-hidden="true">→</span>
         </a>
       </div>

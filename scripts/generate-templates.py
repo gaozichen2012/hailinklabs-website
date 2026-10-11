@@ -45,7 +45,7 @@ def make_pdf(item,suffix,paper,filled=False,sections=None):
     def footer(canvas,doc):
         canvas.setFont('Helvetica',7)
         canvas.drawString(40,24,'hailinklabs.com/templates/'+item['slug'])
-        canvas.drawRightString(paper[0]-40,24,'2026-10-08 / '+str(doc.page))
+        canvas.drawRightString(paper[0]-40,24,item['updatedAt']+' / '+str(doc.page))
     SimpleDocTemplate(str(path),pagesize=paper,leftMargin=40,rightMargin=40,topMargin=36,bottomMargin=42,title=item['title'][0],author='Hailink Labs').build(story,onFirstPage=footer,onLaterPages=footer)
     return path
 for item in items:

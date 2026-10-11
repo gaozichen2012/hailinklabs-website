@@ -718,9 +718,6 @@ h1 {
   .products-section .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .products-section .matrix-card:last-child {
-    grid-column: 1 / -1;
-  }
   .section-row {
     gap: 40px;
   }
@@ -859,6 +856,18 @@ h1 {
     gap: 24px;
   }
 }
+@media (min-width: 761px) and (max-width: 1050px) {
+  .site-header {
+    flex-wrap: wrap;
+    height: auto;
+    padding-block: 16px;
+    gap: 8px;
+  }
+  .site-header nav {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
 @media (max-width: 600px) {
   :root {
     --section-space: 64px;
@@ -992,5 +1001,34 @@ h1 {
     border: 0;
     padding: 0;
     background: none;
+  }
+}
+
+.has-screen .card-art {
+  height: 290px;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+}
+.has-screen .card-art-name,
+.has-screen .card-art-rule {
+  display: none;
+}
+.card-art img {
+  position: static;
+  width: auto;
+  height: 266px;
+  max-width: 100%;
+  object-fit: contain;
+  transform: none;
+  border-radius: 6px;
+}
+
+@media (min-width: 601px) {
+  .matrix-card.has-screen .card-value {
+    min-height: 4.35em;
+  }
+  .matrix-card.has-screen .price-summary {
+    min-height: 8em;
   }
 }

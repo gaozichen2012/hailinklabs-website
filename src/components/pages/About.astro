@@ -91,4 +91,25 @@ const href = (path: string) => localizedPath(path, locale);
       </p>
     </div>
   </section>
+  <section class="section-row" id="content-method">
+    <div class="section-label">
+      <h2>
+        {locale === 'en'
+          ? 'How we maintain our resources'
+          : '资源制作与维护方法'}
+      </h2>
+    </div>
+    <div class="section-body prose">
+      <p>
+        {locale === 'en'
+          ? 'Hailink Labs maintains these guides and templates. Our record workflows are practical suggestions, with fictional examples clearly labeled. Product behavior is checked against product and support documentation; store availability and purchase options use current Apple listings.'
+          : '指南与模板由 Hailink Labs 维护。记录组织流程是我们的实用建议，虚构示例明确标识。产品行为依据产品与支持资料核对，商店供应及购买选项依据当前 Apple 信息。'}
+      </p>
+      <p>
+        {locale === 'en'
+          ? 'Free worksheet examples are independent documents. Actual app screenshots are labeled with their source. A file is described as an app export only when its origin can be verified. Content dates change when that content is maintained; checks and deployment do not prove customer outcomes.'
+          : '免费工作表填写示例是独立文档；真实 App 截图标明来源。只有可核验来源的文件才称为 App 导出。内容维护后更新相应日期；检查和部署不证明客户业务效果。'}
+      </p>
+    </div>
+  </section>
 </Layout>

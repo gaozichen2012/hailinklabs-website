@@ -5,8 +5,9 @@ import additional from '../data/product-galleries.json';
 interface Props {
   locale: Locale;
   slug: string;
+  lead?: boolean;
 }
-const { locale, slug } = Astro.props;
+const { locale, slug, lead = false } = Astro.props;
 const galleries: Record<
   string,
   readonly { file: string; caption: Copy; width?: number; height?: number }[]
@@ -48,7 +49,7 @@ const galleries: Record<
     },
   ],
 };
-const shots:
+const allShots:
   | readonly {
       file: string;
       caption: readonly string[];
@@ -56,11 +57,13 @@ const shots:
       height?: number;
     }[]
   | undefined = galleries[slug] || additional[slug as keyof typeof additional];
+const shots = lead ? allShots?.slice(0, 1) : allShots;
+const galleryId = lead ? 'gallery-preview-title' : 'gallery-title';
 ---
 
 {shots && (
-  <section class="product-gallery" aria-labelledby="gallery-title">
-    <h2 id="gallery-title">
+  <section class="product-gallery" aria-labelledby={galleryId}>
+    <h2 id={galleryId}>
       {locale === 'en' ? 'See it in action' : '看看实际使用过程'}
     </h2>
     <p>
@@ -68,20 +71,66 @@ const shots:
         ? 'Actual app screens from existing store submission assets. Example records shown.'
         : '来自 App Store 展示素材的真实 App 界面，使用示例记录；App 界面为英文。'}
     </p>
+    {!lead && slug === 'tmproof' && (
+      <div id="app-demo" class="prose">
+        <h3>
+          {locale === 'en' ? 'Demo ticket TM-000001' : '演示工单 TM-000001'}
+        </h3>
+        <p>
+          {locale === 'en'
+            ? 'In this fictional release demo, Fieldcraft Electric records additional conduit on the Bridge retrofit: an electrician for 4 hours, 12 conduit units and a lift for 3 hours. Alex Morgan acknowledges the ticket; the next screen shows the PDF generated inside TMProof. The PDF preview and ticket use the same record number.'
+            : '这组虚构发布演示中，Fieldcraft Electric 在 Bridge retrofit 项目记录新增线管：电工 4 小时、线管 12 件、升降设备 3 小时。Alex Morgan 签认后，下一张图展示 TMProof 内生成的 PDF；工单与 PDF 预览使用同一编号。'}
+        </p>
+        <p class="quiet">
+          {locale === 'en'
+            ? 'Source: existing 1.0.0 (1) release demo assets, captured September 23, 2026. This is an actual English App interface and in-app PDF preview, not the independent free worksheet. A downloadable copy of this App-generated PDF is not currently available.'
+            : '来源：2026 年 9 月 23 日既有 1.0.0 (1) 发布演示素材。这是真实英文 App 界面与 App 内 PDF 预览，不是独立免费工作表；当前没有可下载的这份 App 导出 PDF 副本。'}
+        </p>
+      </div>
+    )}
+    {!lead && slug === 'pressrecipe' && (
+      <div id="app-demo" class="prose">
+        <h3>
+          {locale === 'en'
+            ? 'A saved test and its wash observation'
+            : '已保存测试与对应洗涤观察'}
+        </h3>
+        <p>
+          {locale === 'en'
+            ? 'This fictional release demo shows Cotton Tee Shirt with Everyday DTF on StudioPress: 305°F, 12 seconds, Medium pressure and Hot peel. The completed Pass is marked Proven, so its settings stay locked. Wash 1 is recorded as Pass against that same test. These are example observations entered in the App, not a physical material-performance claim or a recommended setup.'
+            : '这组虚构发布演示使用 Cotton Tee Shirt、Everyday DTF 与 StudioPress：305°F、12 秒、Medium 压力、Hot peel。已完成的 Pass 测试设为 Proven 后参数锁定；Wash 1 的 Pass 观察关联同一次测试。这些是 App 内录入的演示观察，不代表材料实测通过，也不是推荐参数。'}
+        </p>
+        <p class="quiet">
+          {locale === 'en'
+            ? 'Source: existing 1.0.0 (3) release demo assets, captured on an iOS 18 simulator September 28, 2026. Screens show the English App. PressRecipe exports test CSV and full .pressrecipe backups; no matching downloadable App-exported file is currently available here. The free worksheet is separate.'
+            : '来源：2026 年 9 月 28 日 iOS 18 模拟器中的既有 1.0.0 (3) 发布演示素材，App 界面为英文。PressRecipe 可导出测试 CSV 与完整 .pressrecipe 备份；此处当前没有对应演示的可下载 App 导出文件。免费工作表是独立资源。'}
+        </p>
+      </div>
+    )}
     <div class="screenshot-grid">
       {shots.map((shot) => (
         <figure>
-          <img
-            src={`/products/${slug}/${shot.file}.jpg`}
-            width={shot.width || 663}
-            height={shot.height || 1440}
-            loading={shots.indexOf(shot) === 0 ? 'eager' : 'lazy'}
-            decoding="async"
-            alt={shot.caption[locale === 'en' ? 0 : 1]}
-          />
+          <a
+            href={`/products/${slug}/${shot.file}.jpg`}
+            aria-label={shot.caption[locale === 'en' ? 0 : 1]}
+          >
+            <img
+              src={`/products/${slug}/${shot.file}.jpg`}
+              width={shot.width || 663}
+              height={shot.height || 1440}
+              loading={shots.indexOf(shot) === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              alt={shot.caption[locale === 'en' ? 0 : 1]}
+            />
+          </a>
           <figcaption>{shot.caption[locale === 'en' ? 0 : 1]}</figcaption>
         </figure>
       ))}
     </div>
+    {lead && (
+      <a class="text-link" href="#gallery-title">
+        {locale === 'en' ? 'View all screenshots' : '查看全部截图'} ↓
+      </a>
+    )}
   </section>
 )}

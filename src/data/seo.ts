@@ -8,6 +8,8 @@ const absolute = (path: string) => new URL(path, site.url).href;
 
 // Keep page headings intact while giving long search titles a concise variant.
 const searchTitles: Record<string, string> = {
+  '/templates/repeat-customer-invoice':
+    'Free Repeat Customer Invoice — PDF & Excel | Hailink Labs',
   '/products/hybridloop':
     'HybridLoop — Voice-Guided Workout Timer | Hailink Labs',
   '/products/rulesprout': 'RuleSprout: Logic for Kids | Hailink Labs',
@@ -33,6 +35,20 @@ export const searchDescription = (path: string, fallback: string) =>
   searchDescriptions[path] || fallback;
 
 export function socialImage(englishPath: string, locale: Locale) {
+  const resource =
+    templates.find((item) => englishPath === `/templates/${item.slug}`) ||
+    guides.find((item) => englishPath === `/guides/${item.slug}`);
+  const sheet = resource && templates.find((item) => item.app === resource.app);
+  if (sheet && ['tmproof', 'pressrecipe', 'samejob'].includes(sheet.app)) {
+    return {
+      url: absolute(
+        `/social/template-${sheet.slug}${locale === 'en' ? '' : '-zh'}.png`,
+      ),
+      width: 1200,
+      height: 630,
+      alt: `${resourceText(sheet.title, locale)} · ${sheet.app === 'samejob' ? 'PDF · CSV · Excel' : 'PDF · CSV'} · ${locale === 'en' ? 'Independent worksheet preview' : '独立工作表预览'}`,
+    };
+  }
   const product = catalog.find(
     (item) =>
       englishPath === `/products/${item.slug}` ||

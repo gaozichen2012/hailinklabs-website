@@ -185,14 +185,18 @@ async function renderCard(card) {
 
 await mkdir(output, { recursive: true });
 const selectedSlugs = process.argv.slice(2);
+const resourceOnly = selectedSlugs.includes('--resources');
 for (const slug of selectedSlugs) {
+  if (slug === '--resources') continue;
   assert(
     cards.some((card) => card.slug === slug),
     `Unknown card: ${slug}`,
   );
 }
 for (const card of cards.filter(
-  (card) => !selectedSlugs.length || selectedSlugs.includes(card.slug),
+  (card) =>
+    !resourceOnly &&
+    (!selectedSlugs.length || selectedSlugs.includes(card.slug)),
 )) {
   const svg = await renderCard(card);
   const png = await sharp(Buffer.from(svg))
@@ -205,4 +209,35 @@ for (const card of cards.filter(
   console.log(
     `${card.slug}.png: ${width}×${height}, ${Math.ceil(png.length / 1024)} KiB`,
   );
+}
+
+// Resource previews use the actual worksheet fields from the shared source.
+// They are independent free worksheets, never representations of app exports.
+if (!selectedSlugs.length || resourceOnly) {
+  const sheets = JSON.parse(
+    await readFile(join(root, 'src/data/templates.json'), 'utf8'),
+  );
+  for (const sheet of sheets.filter((item) =>
+    ['tmproof', 'pressrecipe', 'samejob'].includes(item.app),
+  )) {
+    for (const locale of [0, 1]) {
+      const title = sheet.title[locale];
+      const lines = locale
+        ? [title]
+        : title.replace(' Template', '').match(/.{1,25}(?:\s|$)/g) || [title];
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#edf5ef"/><g font-family="Arial, PingFang SC, sans-serif" fill="#173d2c"><text x="56" y="80" font-size="26">HAILINK LABS / ${locale ? '免费模板' : 'FREE TEMPLATE'}</text>${lines.map((line, i) => `<text x="56" y="${200 + i * 62}" font-size="${locale ? 40 : 45}" font-weight="700">${escape(line.trim())}</text>`).join('')}<text x="56" y="410" font-size="26">${sheet.app === 'samejob' ? (locale ? 'PDF · CSV · 公式 Excel' : 'PDF · CSV · Formula Excel') : 'Letter / A4 PDF · CSV'}</text><text x="56" y="460" font-size="22">${locale ? '直接下载 · 无需注册' : 'Direct download · No registration'}</text><text x="56" y="570" font-size="22">hailinklabs.com</text><rect x="680" y="100" width="470" height="440" rx="10" fill="white" stroke="#cad4cb"/><text x="708" y="140" font-size="18">${locale ? '独立工作表预览' : 'Independent worksheet preview'}</text>${sheet.fields
+        .slice(0, 7)
+        .map(
+          (field, i) =>
+            `<text x="708" y="${190 + i * 46}" font-size="16">${escape(field[locale])}</text><path d="M708 ${205 + i * 46}H1120" stroke="#d6ded7"/>`,
+        )
+        .join('')}</g></svg>`;
+      const destination = join(
+        output,
+        `template-${sheet.slug}${locale ? '-zh' : ''}.png`,
+      );
+      await sharp(Buffer.from(svg)).png().toFile(destination);
+      console.log(`${destination}: ${width}×${height}`);
+    }
+  }
 }

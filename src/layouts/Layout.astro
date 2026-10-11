@@ -77,6 +77,10 @@ const schema = noindex
   ? undefined
   : structuredData(englishPath, canonical, locale);
 const nav = [
+  {
+    href: localizedPath('/templates', locale),
+    label: locale === 'en' ? 'Free Templates' : '免费模板',
+  },
   { href: localizedPath('/products', locale), label: t('Products') },
   {
     href: localizedPath('/guides', locale),
@@ -232,9 +236,6 @@ const nav = [
           {nav.map(({ href, label }) => (
             <a href={href}>{label}</a>
           ))}
-          <a href={localizedPath('/templates', locale)}>
-            {locale === 'en' ? 'Free Templates' : '免费模板'}
-          </a>
           <a href={localizedPath('/contact', locale)}>{t('Contact')}</a>
         </nav>
       </div>

@@ -5,8 +5,8 @@
       "width": 663,
       "height": 1440,
       "caption": [
-        "TMProof \u2014 01 ticket",
-        "TMProof \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+        "Record the work and resources",
+        "记录实际工作与资源（英文 App 界面）"
       ]
     },
     {
@@ -14,27 +14,21 @@
       "width": 663,
       "height": 1440,
       "caption": [
-        "TMProof \u2014 02 signature",
-        "TMProof \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+        "Capture the site acknowledgment",
+        "保存现场签认（英文 App 界面）"
       ]
     },
     {
       "file": "store-03-pdf",
       "width": 663,
       "height": 1440,
-      "caption": [
-        "TMProof \u2014 03 pdf",
-        "TMProof \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
-      ]
+      "caption": ["Review the ticket PDF", "核对工单 PDF（英文 App 界面）"]
     },
     {
       "file": "store-04-history",
       "width": 663,
       "height": 1440,
-      "caption": [
-        "TMProof \u2014 04 history",
-        "TMProof \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
-      ]
+      "caption": ["Find earlier tickets", "查找历史工单（英文 App 界面）"]
     }
   ],
   "litterround": [
@@ -42,37 +36,28 @@
       "file": "01-litter-board",
       "width": 663,
       "height": 1440,
-      "caption": [
-        "LitterRound \u2014 litter board",
-        "LitterRound \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
-      ]
+      "caption": ["Review the litter board", "查看整窝概览（英文 App 界面）"]
     },
     {
       "file": "02-weight-round",
       "width": 663,
       "height": 1440,
-      "caption": [
-        "LitterRound \u2014 weight round",
-        "LitterRound \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
-      ]
+      "caption": ["Record a weight round", "记录本轮体重（英文 App 界面）"]
     },
     {
       "file": "03-puppy-history",
       "width": 663,
       "height": 1440,
       "caption": [
-        "LitterRound \u2014 puppy history",
-        "LitterRound \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+        "Follow one puppy’s history",
+        "查看单只幼犬历史（英文 App 界面）"
       ]
     },
     {
       "file": "04-handoff-pdf",
       "width": 663,
       "height": 1440,
-      "caption": [
-        "LitterRound \u2014 handoff pdf",
-        "LitterRound \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
-      ]
+      "caption": ["Prepare a handoff PDF", "准备交接 PDF（英文 App 界面）"]
     }
   ],
   "calvingpocket": [
@@ -81,8 +66,8 @@
       "width": 663,
       "height": 1440,
       "caption": [
-        "CalvingPocket \u2014 quick entry",
-        "CalvingPocket \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+        "Record a calf birth in the field",
+        "现场记录犊牛出生（英文 App 界面）"
       ]
     },
     {
@@ -90,26 +75,23 @@
       "width": 663,
       "height": 1440,
       "caption": [
-        "CalvingPocket \u2014 untagged record",
-        "CalvingPocket \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+        "Keep an untagged calf identifiable",
+        "标识暂未编号的犊牛（英文 App 界面）"
       ]
     },
     {
       "file": "03-tag-later",
       "width": 663,
       "height": 1440,
-      "caption": [
-        "CalvingPocket \u2014 tag later",
-        "CalvingPocket \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
-      ]
+      "caption": ["Add the tag when available", "稍后补充耳标（英文 App 界面）"]
     },
     {
       "file": "04-export-backup",
       "width": 663,
       "height": 1440,
       "caption": [
-        "CalvingPocket \u2014 export backup",
-        "CalvingPocket \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+        "Export records and save a backup",
+        "导出记录并保存备份（英文 App 界面）"
       ]
     }
   ],
@@ -119,8 +101,8 @@
       "width": 663,
       "height": 1440,
       "caption": [
-        "PressRecipe \u2014 repeat what worked",
-        "PressRecipe \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+        "Find settings from an earlier test",
+        "查找历史测试参数（英文 App 界面）"
       ]
     },
     {
@@ -128,8 +110,8 @@
       "width": 663,
       "height": 1440,
       "caption": [
-        "PressRecipe \u2014 save every real test",
-        "PressRecipe \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+        "Save a new material test",
+        "保存新的材料测试（英文 App 界面）"
       ]
     },
     {
@@ -137,8 +119,8 @@
       "width": 663,
       "height": 1440,
       "caption": [
-        "PressRecipe \u2014 proven settings",
-        "PressRecipe \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+        "Review the recorded setup",
+        "核对已记录的设置（英文 App 界面）"
       ]
     },
     {
@@ -146,8 +128,8 @@
       "width": 663,
       "height": 1440,
       "caption": [
-        "PressRecipe \u2014 wash results",
-        "PressRecipe \u771f\u5b9e\u754c\u9762\uff08\u82f1\u6587\uff09"
+        "Connect wash observations to the test",
+        "关联洗涤观察与原测试（英文 App 界面）"
       ]
     }
   ]
