@@ -1,0 +1,96 @@
+---
+import type { Locale } from '../data/i18n';
+interface Props {
+  locale: Locale;
+  slug: string;
+}
+const { locale, slug } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const ticket = slug === 'tmproof';
+const shown = ticket || slug === 'pressrecipe';
+const shots = ticket
+  ? [
+      ['demo-ticket', 'Record extra work and resources', '记录新增工作与资源'],
+      ['demo-signature', 'Acknowledge the same ticket', '签认同一工单'],
+      [
+        'demo-pdf',
+        'Generate the ticket PDF inside TMProof',
+        '在 TMProof 内生成工单 PDF',
+      ],
+    ]
+  : [
+      [
+        'demo-A-wash',
+        'Test A: 12 seconds, Wash 1 Pass',
+        '测试 A：12 秒，Wash 1 Pass',
+      ],
+      [
+        'demo-B-wash',
+        'Test B: 14 seconds, Wash 1 Fail',
+        '测试 B：14 秒，Wash 1 Fail',
+      ],
+      ['demo-export', 'Export the two tests as CSV', '将两次测试导出为 CSV'],
+    ];
+---
+
+{shown && (
+  <section id="app-demo" class="app-demo" aria-labelledby="app-demo-title">
+    <h2 id="app-demo-title">
+      {c(
+        'A real App export, using DEMO records',
+        '使用 DEMO 记录的真实 App 导出',
+      )}
+    </h2>
+    <p>
+      {ticket
+        ? c(
+            'DEMO Fieldcraft Electric records extra conduit work for DEMO Bridge retrofit in TM-000001: an electrician for 4 hours, 12 conduit units and a lift for 3 hours. DEMO Alex Morgan signs the same ticket. TMProof then generates the two-page PDF linked below.',
+            'DEMO Fieldcraft Electric 在 DEMO Bridge retrofit 项目用 TM-000001 记录新增线管工作：电工 4 小时、线管 12 件、升降设备 3 小时。DEMO Alex Morgan 签认同一工单后，TMProof 生成下方可下载的两页 PDF。',
+          )
+        : c(
+            'DEMO Cotton Tee and DEMO Everyday DTF use DEMO Studio Press. Test A records 305°F, 12 seconds, Medium pressure and Hot peel, then is marked Proven with Wash 1 Pass. Repeat creates Test B at 14 seconds with the other settings unchanged; Wash 1 Fail is recorded against Test B, so the failed observation remains attached to that repeat. The exported CSV contains both tests and their wash outcomes.',
+            'DEMO Cotton Tee 与 DEMO Everyday DTF 使用 DEMO Studio Press。测试 A 记录 305°F、12 秒、Medium 压力、Hot peel，设为 Proven 并关联 Wash 1 Pass。重复配方创建测试 B，仅将时间改为 14 秒；录入的 Wash 1 Fail 关联测试 B，保留在这次重复测试中。导出的 CSV 含两次测试及对应洗涤结果。',
+          )}
+    </p>
+    <p class="quiet">
+      {c(
+        `Captured October 11, 2026 in the English App on an iOS 18 simulator: ${ticket ? 'TMProof 1.0.0 (2)' : 'PressRecipe 1.0.0 (3)'}. Test access was enabled locally. These are fictional records, not a real purchase, job approval or physical material test. The download is the unchanged App-generated file; the free worksheet is separate.`,
+        `2026 年 10 月 11 日在 iOS 18 模拟器中的英文 App 实际操作：${ticket ? 'TMProof 1.0.0 (2)' : 'PressRecipe 1.0.0 (3)'}，使用本地测试访问权限。记录为虚构演示，不证明真实购买、现场批准或材料实测。下载为未经改写的 App 生成文件，免费工作表是独立资源。`,
+      )}
+    </p>
+    <p>
+      <a
+        class="button"
+        href={`/products/${slug}/${ticket ? 'demo-TM-000001.pdf' : 'demo-tests.csv'}`}
+        download
+      >
+        {ticket
+          ? c(
+              'Download App-generated PDF · 2 pages',
+              '下载 App 生成 PDF · 2 页',
+            )
+          : c(
+              'Download App-exported CSV · 2 tests',
+              '下载 App 导出 CSV · 2 次测试',
+            )}
+      </a>
+    </p>
+    <div class="screenshot-grid">
+      {shots.map(([file, en, zh]) => (
+        <figure>
+          <a href={`/products/${slug}/${file}.jpg`} aria-label={c(en, zh)}>
+            <img
+              src={`/products/${slug}/${file}.jpg`}
+              width="663"
+              height="1441"
+              loading="lazy"
+              decoding="async"
+              alt={c(en, `${zh}（英文 App 界面）`)}
+            />
+          </a>
+          <figcaption>{c(en, zh)}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+)}

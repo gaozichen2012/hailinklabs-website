@@ -504,13 +504,27 @@ h1 {
   font-size: 14px;
   margin-left: 0;
 }
-.product-gallery {
+.product-gallery,
+.app-demo {
   margin-bottom: 64px;
 }
-.product-gallery > h2 {
+.product-gallery > h2,
+.app-demo > h2 {
   font-size: 28px;
   font-weight: 500;
   letter-spacing: -0.025em;
+}
+.app-demo > p {
+  margin-top: 16px;
+  line-height: 1.7;
+}
+.app-demo .screenshot-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 600px) {
+  .app-demo .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .product-gallery > p {
   color: var(--muted);

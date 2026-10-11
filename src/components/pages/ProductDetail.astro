@@ -3,6 +3,7 @@ import DownloadPanel from '../DownloadPanel.astro';
 import RelatedResources from '../RelatedResources.astro';
 import { highlights, availability, listings } from '../../data/catalog';
 import ProductGallery from '../ProductGallery.astro';
+import AppDemo from '../AppDemo.astro';
 import AppStoreLink from '../AppStoreLink.astro';
 import Layout from '../../layouts/Layout.astro';
 import { localizedPath, type Locale } from '../../data/i18n';
@@ -84,6 +85,7 @@ const href = (suffix: string) =>
     </div>
   </section>
   <ProductGallery locale={locale} slug={p.slug} />
+  <AppDemo locale={locale} slug={p.slug} />
   <section class="section-row">
     <div class="section-label">
       <h2>{c(['Main features', '主要功能'])}</h2>

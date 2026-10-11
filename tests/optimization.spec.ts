@@ -138,7 +138,9 @@ for (const prefix of ['', '/zh']) {
       await expect(page.locator('#filled-example')).toHaveAttribute('open', '');
       await page
         .locator('details')
-        .evaluateAll((es) => es.forEach((e) => (e.open = false)));
+        .evaluateAll((es) =>
+          es.forEach((e) => ((e as HTMLDetailsElement).open = false)),
+        );
       await page.emulateMedia({ media: 'print' });
       await expect(
         page.locator('.print-only .print-sheet table').first(),

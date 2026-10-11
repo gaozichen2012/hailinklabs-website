@@ -1,6 +1,6 @@
 {
-  "checked": "2026-10-08",
-  "note": "Actual app screenshots from existing Release Hub submission assets. Resized only; UI unchanged. Example records, English UI. Source hashes retained; not independently captured app exports.",
+  "checked": "2026-10-11",
+  "note": "Existing release screenshots plus explicitly dated simulator DEMO captures. Screenshots resized only; UI unchanged. App PDF and CSV copied unchanged. English UI; fictional observations; no real purchase or physical material test. Source and published hashes retained.",
   "assets": [
     {
       "file": "public/products/samejob/01-repeat-invoices.jpg",
@@ -145,6 +145,54 @@
       "source": "ios-release-hub/apps/PressRecipe/screenshots/en-US/04-wash-results.png",
       "sourceSha256": "87b5455498cc0ff37978df044d62f31a8eaf878a49e97177240b16504cabcfde",
       "sha256": "5f406ceb93635e24d1b7183f1a44e994b5d8464a5aba80bbc259655ea490a2dc"
+    },
+    {
+      "file": "public/products/tmproof/demo-TM-000001.pdf",
+      "source": "TMProof 1.0.0 (2), actual App-generated DEMO ticket, iOS 18 simulator, 2026-10-11",
+      "sourceSha256": "c37e86f12e0c8c6f6668b86f4af1aa5f523a3f7072394ea82ae2ba6a976769d8",
+      "sha256": "c37e86f12e0c8c6f6668b86f4af1aa5f523a3f7072394ea82ae2ba6a976769d8"
+    },
+    {
+      "file": "public/products/tmproof/demo-ticket.jpg",
+      "source": "TMProof 1.0.0 (2), XCTest screenshot of DEMO ticket, iOS 18 simulator, 2026-10-11",
+      "sourceSha256": "dd7dc86d594345ded70b2f47c3ca9f212d8979441320937957f9c8d196335848",
+      "sha256": "503520e554f9077677b00b0ce779b11c625b317e91845059aec9ec93e92ddf42"
+    },
+    {
+      "file": "public/products/tmproof/demo-signature.jpg",
+      "source": "TMProof 1.0.0 (2), XCTest screenshot of DEMO ticket, iOS 18 simulator, 2026-10-11",
+      "sourceSha256": "38fcc35751844c790c8caa311a5aa525e7e65d84a509f8c29d9672baad29e1b0",
+      "sha256": "644640c4dffb33773c707516c2deca01793a1d38477975aeb6ca8aaf5c104b30"
+    },
+    {
+      "file": "public/products/tmproof/demo-pdf.jpg",
+      "source": "TMProof 1.0.0 (2), XCTest screenshot of DEMO ticket, iOS 18 simulator, 2026-10-11",
+      "sourceSha256": "9b3efecccf8bd9a05ea18b10a22dc47c70ff8d1cd59ba1c50dc8b45de3a5b013",
+      "sha256": "2d939c628de7fd8888409719aab385fa97a39e06329f10287c21e0d0cde74a96"
+    },
+    {
+      "file": "public/products/pressrecipe/demo-A-wash.jpg",
+      "source": "PressRecipe 1.0.0 (3), XCTest screenshot of DEMO tests, iOS 18 simulator, 2026-10-11",
+      "sourceSha256": "cbc2aa5afde847934dfdc97cde7b4e1b2b623114dfb0f9ede467f53e51b44422",
+      "sha256": "9782fde660a2447fa012fb81dd4db861344c6dfec9eaf446a92cf4c7b9ab4682"
+    },
+    {
+      "file": "public/products/pressrecipe/demo-B-wash.jpg",
+      "source": "PressRecipe 1.0.0 (3), XCTest screenshot of DEMO tests, iOS 18 simulator, 2026-10-11",
+      "sourceSha256": "2cb6c6a4c2134e4824aa08581833e16431f5c7f583ee2466d56ec650e7e09542",
+      "sha256": "13b9110b2ac7a6558d05ca57618ea3d4b5c0f922af162732d9217f54e91fc96f"
+    },
+    {
+      "file": "public/products/pressrecipe/demo-export.jpg",
+      "source": "PressRecipe 1.0.0 (3), XCTest screenshot of DEMO tests, iOS 18 simulator, 2026-10-11",
+      "sourceSha256": "6a42ebf51ba10e0ea83bc941d3505e342b5213cddeb5274a332d70bb4102328a",
+      "sha256": "791fc18280f210eff6a53f4f65eecab8dd7c1a9773331684dddae4932f84ee3f"
+    },
+    {
+      "file": "public/products/pressrecipe/demo-tests.csv",
+      "source": "PressRecipe 1.0.0 (3), actual App CSV export of two DEMO tests, iOS 18 simulator, 2026-10-11",
+      "sourceSha256": "6655c6001a21e96cde3620092cd1a1ac028bb151bab4d158242ce38dfcb425e3",
+      "sha256": "6655c6001a21e96cde3620092cd1a1ac028bb151bab4d158242ce38dfcb425e3"
     }
   ]
 }
