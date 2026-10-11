@@ -1,7 +1,7 @@
 {
-  "contentSourceCommit": "952ee20a3a2b1e2e137890354835775ef531838f",
+  "contentSourceCommit": "1034db583a6e9427095dcf90e9a65dc7b5891080",
   "date": "2026-10-11",
-  "packageSha256": "b5e912a7e218244559e63f74ae7d4f7d459eaefc832f6dde179d22396925472a",
+  "packageSha256": "d14083fd06620d846d064efc3cf3f1fe12a18e7df66f942211357f2979202198",
   "validation": {
     "lint": "PASS",
     "typecheck": "0 errors/0 warnings/2 existing hints",
