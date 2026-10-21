@@ -11,7 +11,7 @@
     "localBrowser": "32 existing checks PASS; 12 Chromium/WebKit width/language no-JS flows PASS; keyboard disclosure PASS",
     "visual": "Chinese 320px and English desktop worksheet cards inspected after spacing fix",
     "evidence": "artifacts/gefei-20261021",
-    "deployment": "NOT_DEPLOYED_PENDING_EXPLICIT_RELEASE_AUTHORIZATION"
+    "deployment": "PASS: run 39562380141; 401 HTTP/resource/redirect checks; 398 public file hashes match; 12 production browser flows; Actions disabled"
   },
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -414,5 +414,24 @@
     "zh/templates/time-and-materials-ticket.html": "2b67d2d29d157e99eac66779bc98583ca7b27b9f3a5486965af3fc5ee936008e",
     "zh/templates.html": "22fda68a6016ef9198426af80a3176ec50970dbdf1af81c20332fbfbacff2fcb",
     "zh.html": "bc4454bb075afdb435aee1ab33da89dc13d9783866c16aaf449274714e14ef37"
+  },
+  "deployment": {
+    "state": "DEPLOYED_AND_PRODUCTION_VERIFIED",
+    "authorizedOn": "2026-10-21",
+    "url": "https://hailinklabs.com",
+    "workflowRun": 39562380141,
+    "deploymentHead": "e5eb01ffc1e91e8281e36da135011a869fc9aa7f",
+    "sourceCommit": "1b893b88dfbe8b2a8e80362a4853813df34f6eb5",
+    "packageCommit": "c7bc38d",
+    "verifiedAt": "2026-10-21T07:36:35.046Z",
+    "httpChecks": 401,
+    "matchedPublicFileHashes": 398,
+    "browserFlows": 12,
+    "indexNow": {
+      "state": "ACCEPTED",
+      "changedUrls": 62
+    },
+    "actionsEnabled": false,
+    "businessImpact": "NOT_MEASURED"
   }
 }
