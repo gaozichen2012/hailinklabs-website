@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import TemplateCards from '../TemplateCards.astro';
+import { templates } from '../../data/resources';
 import Product from '../../components/Product.astro';
 import { categories, featured, listings } from '../../data/catalog';
 import { copy } from '../../data/products';
@@ -114,6 +116,24 @@ const href = (path: string) => localizedPath(path, locale);
         </a>
       ))}
   </nav>
+  <section class="products-section" aria-labelledby="free-resources-title">
+    <div class="section-label">
+      <h2 id="free-resources-title">
+        {locale === 'en'
+          ? 'Start with a free worksheet'
+          : '先用免费工作表完成任务'}
+      </h2>
+    </div>
+    <p>
+      {locale === 'en'
+        ? 'Choose the record you need. Preview a filled example, print a blank sheet or download an editable file. No account or email required.'
+        : '选择需要的记录，查看填写示例、打印空白表或下载可编辑文件。无需账号或邮箱。'}
+    </p>
+    <TemplateCards locale={locale} items={templates} />
+    <a class="text-link catalog-all" href={href('/guides')}>
+      {locale === 'en' ? 'Read step-by-step guides' : '阅读分步指南'} →
+    </a>
+  </section>
   <section class="products-section" aria-labelledby="products-title">
     <div class="section-label">
       <h2 id="products-title">
@@ -134,28 +154,6 @@ const href = (path: string) => localizedPath(path, locale);
       {locale === 'en' ? 'Explore all apps' : '浏览全部 App'}{' '}
       <span aria-hidden="true">→</span>
     </a>
-  </section>
-  <section class="section-row" aria-labelledby="free-resources-title">
-    <div class="section-label">
-      <h2 id="free-resources-title">
-        {locale === 'en' ? 'Get the work done' : '开始完成具体工作'}
-      </h2>
-    </div>
-    <div class="section-body">
-      <p>
-        {locale === 'en'
-          ? 'Start with a practical guide or a free printable record. No account or email required.'
-          : '从实用指南或免费记录模板开始，无需账号、邮箱或注册。'}
-      </p>
-      <div class="resource-links">
-        <a href={href('/templates')}>
-          {locale === 'en' ? 'Free templates' : '免费模板'}
-        </a>
-        <a href={href('/guides')}>
-          {locale === 'en' ? 'Step-by-step guides' : '分步指南'}
-        </a>
-      </div>
-    </div>
   </section>
   <section class="section-row company-section" aria-labelledby="company-title">
     <div class="section-label">

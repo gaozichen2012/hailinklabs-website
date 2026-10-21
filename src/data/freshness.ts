@@ -1,8 +1,13 @@
-import { resourceForPath } from './resources';
+import { guides, templates, hubs, resourceForPath } from './resources';
 // The 2026-10-04 release changes navigation, structured data and related links
 // across existing pages. This is an explicit content date, never a build clock.
 // For later substantive edits, add an override and update the resource itself.
 const pageUpdates: Record<string, string> = {
+  ...Object.fromEntries([
+    ...guides.map((g) => [`/guides/${g.slug}`, '2026-10-21']),
+    ...templates.map((t) => [`/templates/${t.slug}`, '2026-10-21']),
+    ...hubs.map((h) => [`/guides/${h.slug}`, '2026-10-21']),
+  ]),
   '/products/samejob': '2026-10-11',
   '/products/gearproof': '2026-10-11',
   '/products/gearproof/support': '2026-10-11',
@@ -13,8 +18,8 @@ const pageUpdates: Record<string, string> = {
   '/products/pressrecipe': '2026-10-11',
   '/products/pressrecipe/support': '2026-10-11',
   '/products/turnmath': '2026-10-11',
-  '/guides': '2026-10-11',
-  '/templates': '2026-10-11',
+  '/guides': '2026-10-21',
+  '/templates': '2026-10-21',
   '/products/cluemend': '2026-10-08',
   '/products/storyundo': '2026-10-08',
   '/products/tilltinker': '2026-10-08',
@@ -31,7 +36,7 @@ const pageUpdates: Record<string, string> = {
   '/products/loadquilt/support': '2026-10-08',
   '/products/loadquilt/privacy': '2026-10-08',
 
-  '/': '2026-10-11',
+  '/': '2026-10-21',
   '/products': '2026-10-11',
   '/support': '2026-10-08',
   '/contact': '2026-10-08',
@@ -70,10 +75,6 @@ const pageUpdates: Record<string, string> = {
   '/products/formalsflow/privacy': '2026-10-05',
   '/products/hybridloop': '2026-10-11',
   '/products/rulesprout': '2026-10-05',
-  '/guides/contractors': '2026-10-05',
-  '/guides/animal-records': '2026-10-05',
-  '/guides/heat-press': '2026-10-05',
-  '/guides/small-business': '2026-10-05',
 };
 export const lastModified = (path: string) => {
   const english = path.replace(/^\/zh/, '') || '/';

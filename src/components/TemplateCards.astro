@@ -1,0 +1,65 @@
+---
+import { type Template, resourceText } from '../data/resources';
+import { localizedPath, type Locale } from '../data/i18n';
+interface Props {
+  locale: Locale;
+  items: Template[];
+}
+const { locale, items } = Astro.props;
+const d = (value: readonly string[]) => resourceText(value, locale);
+---
+
+<div class="resource-grid template-cards">
+  {items.map((template) => (
+    <article class="resource-card">
+      <h3>
+        <a href={localizedPath(`/templates/${template.slug}`, locale)}>
+          {d(template.title)}
+        </a>
+      </h3>
+      <p>{d(template.description)}</p>
+      <small>
+        {template.app === 'samejob'
+          ? locale === 'en'
+            ? 'PDF · CSV · Formula XLSX'
+            : 'PDF · CSV · 公式 XLSX'
+          : 'PDF · CSV'}
+      </small>
+      <div class="resource-links">
+        <a
+          href={localizedPath(
+            `/templates/${template.slug}#filled-example`,
+            locale,
+          )}
+        >
+          {locale === 'en' ? 'Filled example' : '填写示例'}
+        </a>
+        <a href={`/downloads/${template.slug}.pdf`} download>
+          {locale === 'en' ? 'Download PDF (English)' : '下载 PDF（英文）'}
+        </a>
+      </div>
+    </article>
+  ))}
+</div>
+
+<style>
+  .template-cards .resource-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .template-cards h3 a {
+    color: inherit;
+  }
+  .template-cards .resource-links {
+    display: grid;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+  .template-cards .resource-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 8px;
+  }
+</style>
