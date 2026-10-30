@@ -11,7 +11,7 @@
     "localBrowser": "1191 PASS; 1 directory timeout passed unchanged isolated retest; 8/8 final CalvingPocket media checks PASS",
     "media": "6 genuine simulator screenshots; 23s H264 30fps video; English/Chinese captions; desktop and Chinese 320px visual checks",
     "evidence": "artifacts/calvingpocket-20261030",
-    "deployment": "PENDING"
+    "deployment": "PASS: publish-only run 41035280308; 432/432 public file hashes; 8/8 production browser flows; Actions disabled; IndexNow accepted 14 URLs (not indexing). Network timeouts and readback-script error retained; targeted retests passed."
   },
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
