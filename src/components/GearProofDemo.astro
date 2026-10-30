@@ -1,15 +1,17 @@
 ---
 import type { Locale } from '../data/i18n';
 import { localizedPath } from '../data/i18n';
+import { gearproofDemo as demo } from '../data/gearproof-demo';
 interface Props {
   locale: Locale;
+  watchPage?: boolean;
 }
-const { locale } = Astro.props;
+const { locale, watchPage = false } = Astro.props;
 const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
 ---
 
 <section id="gearproof-demo" aria-labelledby="gearproof-demo-title">
-  <h2 id="gearproof-demo-title">
+  <h2 id="gearproof-demo-title" class:list={{ 'watch-heading': watchPage }}>
     {c(
       'The camera is back. One battery is not.',
       '相机回来了，一块电池还没有。',
@@ -25,13 +27,13 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
     controls
     playsinline
     preload="metadata"
-    poster="/products/gearproof/demo-poster.jpg"
+    poster={demo.poster}
     aria-label={c(
       'GearProof camera kit checkout and return demo',
       'GearProof 相机套装借出与归还演示',
     )}
   >
-    <source src="/products/gearproof/camera-kit-demo.mp4" type="video/mp4" />
+    <source src={demo.video} type="video/mp4" />
     <track
       kind="captions"
       src="/products/gearproof/camera-kit-demo-en.vtt"
@@ -57,6 +59,14 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
     )}
   </p>
   <p>
+    {!watchPage && (
+      <>
+        <a href={localizedPath(demo.path, locale)}>
+          {c('Watch with the full text walkthrough', '观看视频与完整文字步骤')}
+        </a>
+        {' · '}
+      </>
+    )}
     <a href="/products/gearproof/camera-kit-demo.mp4" download>
       {c('Download the video', '下载演示视频')}
     </a>{' '}
@@ -79,5 +89,8 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
   }
   .quiet {
     font-size: 0.9rem;
+  }
+  .watch-heading {
+    font-size: 1.2rem;
   }
 </style>

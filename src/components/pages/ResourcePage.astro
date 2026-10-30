@@ -4,6 +4,7 @@ import TemplateCards from '../TemplateCards.astro';
 import WorksheetPreview from '../WorksheetPreview.astro';
 import AppStoreLink from '../AppStoreLink.astro';
 import CalvingDemo from '../CalvingDemo.astro';
+import GearProofChoices from '../GearProofChoices.astro';
 import { guides, templates, hubs, resourceText } from '../../data/resources';
 import { catalog, highlights } from '../../data/catalog';
 import { products, copy } from '../../data/products';
@@ -203,6 +204,19 @@ const templateList = hub
             ))}
           </ol>
         </section>
+        {guide.slug === 'equipment-checkout-log-template' && (
+          <GearProofChoices locale={locale} />
+        )}
+        {guide.app === 'gearproof' && (
+          <p>
+            <a href={link('/products/gearproof/demo')}>
+              {c(
+                'Watch GearProof reconcile a partial camera kit return',
+                '观看 GearProof 核对相机套装部分归还',
+              )}
+            </a>
+          </p>
+        )}
         {guide.app === 'calvingpocket' && (
           <CalvingDemo locale={locale} compact />
         )}

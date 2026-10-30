@@ -18,6 +18,7 @@ export interface ProductData {
   backup: Copy;
   export: Copy;
   faq: Copy;
+  questions?: readonly { question: Copy; answer: Copy }[];
   privacy: readonly Copy[];
   media: readonly Copy[];
 }
@@ -361,6 +362,58 @@ export const products = [
   },
   {
     slug: 'gearproof',
+    questions: [
+      {
+        question: [
+          'What is GearProof, and who is it for?',
+          'GearProof 是什么，适合谁？',
+        ],
+        answer: [
+          'GearProof: Equipment Checkout is an iPhone app by Hailink Labs for one coordinator managing shared camera kits and other equipment. It keeps borrowers, due dates, partial returns and condition records together on one primary iPhone.',
+          'GearProof: Equipment Checkout 是 Hailink Labs 的 iPhone App，供一名负责人管理共享相机套装及其他器材，将借用人、归还期限、部分归还和状况记录集中在一台主要 iPhone 上。',
+        ],
+      },
+      {
+        question: [
+          'Can GearProof track a partially returned camera kit?',
+          '可以记录只归还一部分的相机套装吗？',
+        ],
+        answer: [
+          'Yes. Reconcile returned quantities against the original handoff. If three batteries left and only two return, record two returned and keep one outstanding. Record a damaged charger separately so damage does not hide a missing item. The demonstration uses fictional records.',
+          '可以。对照原始交接核对归还数量。例如借出三块电池，只归还两块，就记录两块已归还、一块仍未归还。充电器损坏应单独记录，避免把损坏和缺失混为一谈。演示使用虚构记录。',
+        ],
+      },
+      {
+        question: [
+          'Is GearProof a subscription? What happens after the trial?',
+          'GearProof 是订阅制吗？试用结束后怎样？',
+        ],
+        answer: [
+          'No subscription. The full trial lasts seven days from first launch. Lifetime access is a one-time $19.99 purchase in the US; check your local App Store price. After the trial, existing returns, history and exports remain available. Adding or editing gear and starting new handoffs requires lifetime access.',
+          '无订阅。从首次启动开始完整试用七天。美区终身买断为一次性 $19.99，其他地区以当地 App Store 为准。试用结束后仍可处理已有归还、查看历史和导出；新增或编辑器材、新建交接需要终身权益。',
+        ],
+      },
+      {
+        question: [
+          'Does GearProof automatically sync across team phones?',
+          'GearProof 会自动同步团队的多台手机吗？',
+        ],
+        answer: [
+          'No. GearProof stores records on one primary iPhone and provides no automatic cloud or team synchronization. It is not a fit if several people need to edit a live shared inventory from different phones. Sharing a PDF or CSV, or restoring a backup, is not live synchronization.',
+          '不会。GearProof 在一台主要 iPhone 上保存记录，没有自动云同步或团队同步。如果需要多人从不同手机实时编辑同一份库存，它不适用。分享 PDF、CSV 或恢复备份不等于实时同步。',
+        ],
+      },
+      {
+        question: [
+          'Which iPhone and languages does GearProof support?',
+          '支持哪些 iPhone 系统和语言？',
+        ],
+        answer: [
+          'The current App Store version requires iOS 18 or later and its interface is English. This website offers English and Simplified Chinese explanations; that does not mean the app has a Chinese interface. Purchases and restoring purchases require an App Store connection.',
+          '当前 App Store 版本要求 iOS 18 或更高版本，App 界面为英文。官网提供英文和简体中文说明，不代表 App 有中文界面。购买与恢复购买需要连接 App Store。',
+        ],
+      },
+    ],
     name: 'GearProof',
     storeName: 'GearProof: Equipment Checkout',
     subtitle: ['Scan Gear. Prove Returns.', '扫描器材，核对归还。'],

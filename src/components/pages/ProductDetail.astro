@@ -11,6 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 import { localizedPath, type Locale } from '../../data/i18n';
 import { copy, type ProductData } from '../../data/products';
 import Pricing from '../Pricing.astro';
+import { buildAppStoreUrl } from '../../data/app-store';
 interface Props {
   locale: Locale;
   product: ProductData;
@@ -57,7 +58,7 @@ const href = (suffix: string) =>
       )}
       {p.slug === 'gearproof' && (
         <p>
-          <a href="#gearproof-demo">
+          <a href={href('/demo')}>
             {c(['Watch the camera kit demo', '观看相机套装演示'])}
           </a>{' '}
           ·{' '}
@@ -156,6 +157,12 @@ const href = (suffix: string) =>
       <h2>{c(['Common questions', '常见问题'])}</h2>
     </div>
     <div class="section-body prose">
+      {p.questions?.map((item) => (
+        <div>
+          <h3>{c(item.question)}</h3>
+          <p>{c(item.answer)}</p>
+        </div>
+      ))}
       <h3>
         {c([
           'Can I work offline? Do I need an account or cloud sync?',
@@ -170,36 +177,43 @@ const href = (suffix: string) =>
         ])}
       </h3>
       <p>{c(p.backup)}</p>
-      <h3>
-        {c(['Can a team share these records?', '团队能共同使用这些记录吗？'])}
-      </h3>
-      <p>
-        {c(
-          p.slug === 'samejob' ||
-            p.slug === 'pressrecipe' ||
-            p.slug === 'hybridloop'
-            ? [
-                'Private iCloud sync uses your own Apple Account when available. It is not a shared team workspace. You can share exported files; keep a full backup for moving records.',
-                '私有 iCloud 同步在可用时使用你自己的 Apple 账号，不是团队共享工作区。可以分享导出的文件；迁移记录请保留完整备份。',
-              ]
-            : p.slug === 'turnmath'
-              ? [
-                  'TurnMath is for local shared play, without accounts or device sync.',
-                  'TurnMath 面向本机共同游戏，没有账号或设备同步。',
-                ]
-              : [
-                  'No automatic team or multi-device sync is provided. Share an exported document when needed, and use a full backup to move records to another iPhone.',
-                  '不提供自动团队或多设备同步。需要时分享导出的文档，换机时使用完整备份迁移记录。',
-                ],
-        )}
-      </p>
-      <h3>
-        {c([
-          'What limits apply, including after free access ends?',
-          '有哪些限制，免费使用结束后还能做什么？',
-        ])}
-      </h3>
-      <p>{c(p.faq)}</p>
+      {!p.questions && (
+        <>
+          <h3>
+            {c([
+              'Can a team share these records?',
+              '团队能共同使用这些记录吗？',
+            ])}
+          </h3>
+          <p>
+            {c(
+              p.slug === 'samejob' ||
+                p.slug === 'pressrecipe' ||
+                p.slug === 'hybridloop'
+                ? [
+                    'Private iCloud sync uses your own Apple Account when available. It is not a shared team workspace. You can share exported files; keep a full backup for moving records.',
+                    '私有 iCloud 同步在可用时使用你自己的 Apple 账号，不是团队共享工作区。可以分享导出的文件；迁移记录请保留完整备份。',
+                  ]
+                : p.slug === 'turnmath'
+                  ? [
+                      'TurnMath is for local shared play, without accounts or device sync.',
+                      'TurnMath 面向本机共同游戏，没有账号或设备同步。',
+                    ]
+                  : [
+                      'No automatic team or multi-device sync is provided. Share an exported document when needed, and use a full backup to move records to another iPhone.',
+                      '不提供自动团队或多设备同步。需要时分享导出的文档，换机时使用完整备份迁移记录。',
+                    ],
+            )}
+          </p>
+          <h3>
+            {c([
+              'What limits apply, including after free access ends?',
+              '有哪些限制，免费使用结束后还能做什么？',
+            ])}
+          </h3>
+          <p>{c(p.faq)}</p>
+        </>
+      )}
       {p.slug === 'samejob' && (
         <p>
           {c([
@@ -234,5 +248,17 @@ const href = (suffix: string) =>
     </div>
   </section>
   <RelatedResources locale={locale} slug={p.slug} />
+  {p.slug === 'gearproof' && (
+    <p class="quiet">
+      {c([
+        'Product facts checked against the public US App Store listing:',
+        '产品事实已对照公开美区 App Store 核对：',
+      ])}{' '}
+      {listings[p.slug].verified}.{' '}
+      <a href={buildAppStoreUrl({ slug: p.slug })}>
+        {c(['Official App Store listing', '官方 App Store 页面'])}
+      </a>
+    </p>
+  )}
   <DownloadPanel locale={locale} slug={p.slug} />
 </Layout>

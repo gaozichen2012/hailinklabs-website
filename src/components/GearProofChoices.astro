@@ -1,0 +1,92 @@
+---
+import type { Locale } from '../data/i18n';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+---
+
+<section>
+  <h2>
+    {c('Choose the record system for your handoff', '按交接方式选择记录工具')}
+  </h2>
+  <div class="record-table-wrap">
+    <table class="record-table">
+      <caption>
+        {c(
+          'A workflow choice, not a ranking of apps',
+          '按流程选择，不是 App 排名',
+        )}
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">{c('Your situation', '你的情况')}</th>
+          <th scope="col">{c('Start with', '可选起点')}</th>
+          <th scope="col">{c('What to check', '需要核对')}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+            {c('Occasional handoffs at a desk', '偶尔在固定地点交接')}
+          </th>
+          <td>{c('A printed checkout sheet', '可打印借出表')}</td>
+          <td>
+            {c(
+              'Keep each loan and partial return legible; retain the original sheet.',
+              '每次借用和部分归还都应清晰记录，保留原表。',
+            )}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            {c('You mainly need sortable rows', '主要需要排序筛选记录')}
+          </th>
+          <td>{c('CSV in a spreadsheet', '用电子表格打开 CSV')}</td>
+          <td>
+            {c(
+              'Use stable asset IDs and a separate entry for each event. A CSV file does not provide a shared live workspace by itself.',
+              '使用固定资产编号，每次事件单独记录。CSV 文件本身不提供实时共享工作区。',
+            )}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            {c(
+              'One coordinator checks kits in and out',
+              '一名负责人管理套装借还',
+            )}
+          </th>
+          <td>GearProof</td>
+          <td>
+            {c(
+              'Use one primary iPhone for quantities, condition photos and partial returns. Export regular full backups.',
+              '在一台主要 iPhone 上记录数量、状况照片与部分归还，定期导出完整备份。',
+            )}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            {c(
+              'Several people must edit from different phones',
+              '多人必须从不同手机共同编辑',
+            )}
+          </th>
+          <td>
+            {c(
+              'A system explicitly supporting shared live access',
+              '明确支持实时共享访问的系统',
+            )}
+          </td>
+          <td>
+            {c(
+              'Verify simultaneous editing, permissions and conflict handling. GearProof does not provide automatic team sync or reservations.',
+              '核实同时编辑、权限与冲突处理。GearProof 不提供自动团队同步或预约功能。',
+            )}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

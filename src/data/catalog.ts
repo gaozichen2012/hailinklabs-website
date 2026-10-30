@@ -194,7 +194,7 @@ export const listings: Record<
   gearproof: {
     url: 'https://apps.apple.com/us/app/gearproof-equipment-checkout/id6814847023',
     ios: 18,
-    verified: '2026-10-08',
+    verified: '2026-10-30',
     appId: 6814847023,
     storeName: 'GearProof: Equipment Checkout',
     version: '1.0',

@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GearProofDemo from '../GearProofDemo.astro';
+import AppStoreLink from '../AppStoreLink.astro';
+import { gearproofDemo as demo } from '../../data/gearproof-demo';
+import { copy } from '../../data/products';
+import { localizedPath, type Locale } from '../../data/i18n';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const link = (path: string) => localizedPath(path, locale);
+---
+
+<Layout
+  locale={locale}
+  title={`${copy(demo.title, locale)} | Hailink Labs`}
+  description={copy(demo.description, locale)}
+>
+  <article class="watch-page">
+    <a class="breadcrumb" href={link('/products/gearproof')}>
+      GearProof · {c('Product information', '产品介绍')}
+    </a>
+    <h1>{copy(demo.title, locale)}</h1>
+    <GearProofDemo locale={locale} watchPage />
+    <section id="transcript">
+      <h2>
+        {c('Video transcript and visual walkthrough', '视频字幕与画面步骤说明')}
+      </h2>
+      <p>
+        {c(
+          'This is a silent recording. Each heading below reproduces or describes a video chapter; the text explains the visible action. The example is fictional, not a customer testimonial.',
+          '视频无旁白。下方标题对应视频章节，文字说明可见操作。示例为虚构数据，不是客户证言。',
+        )}
+      </p>
+      <ol class="transcript">
+        {demo.segments.map((segment) => (
+          <li>
+            <h3>
+              <a href={`${demo.video}#t=${segment.start},${segment.end}`}>
+                {segment.time}
+              </a>{' '}
+              · {copy(segment.title, locale)}
+            </h3>
+            <p>{copy(segment.text, locale)}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+    <section>
+      <h2>
+        {c(
+          'Use this workflow on one checkout iPhone',
+          '在一台交接 iPhone 上使用这一流程',
+        )}
+      </h2>
+      <p>
+        {c(
+          'GearProof is for one coordinator recording shared equipment. The demonstration covers checkout and return reconciliation; it does not show multi-phone synchronization, reservations or a real purchase. Read the product page for trial, lifetime access and backup details.',
+          'GearProof 面向一名负责人记录共享器材。演示覆盖借出与归还核对，不展示多手机同步、预约或真实购买。试用、终身权益与备份详情见产品页。',
+        )}
+      </p>
+      <AppStoreLink locale={locale} slug="gearproof" />
+      <ul>
+        <li>
+          <a href={link('/products/gearproof')}>
+            {c(
+              'GearProof features, pricing and common questions',
+              'GearProof 功能、价格与常见问题',
+            )}
+          </a>
+        </li>
+        <li>
+          <a href={link('/guides/camera-equipment-checkout-sheet')}>
+            {c('Prepare a camera kit checkout sheet', '准备相机套装借出表')}
+          </a>
+        </li>
+        <li>
+          <a href={link('/guides/camera-kit-return-checklist')}>
+            {c('Reconcile a camera kit return', '核对相机套装归还')}
+          </a>
+        </li>
+      </ul>
+    </section>
+  </article>
+</Layout>
+<style>
+  .watch-page {
+    max-width: 820px;
+    margin: 2rem auto 4rem;
+  }
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.15;
+  }
+  section {
+    margin-block: 2.5rem;
+  }
+  .transcript {
+    padding-left: 1.5rem;
+  }
+  li {
+    margin-block: 1rem;
+  }
+</style>

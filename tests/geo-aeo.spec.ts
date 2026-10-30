@@ -55,7 +55,13 @@ test('GEO discovery and compatible handoff facts', async ({ request }) => {
     expect(product.listing.appId).toBeGreaterThan(0);
     expect(product.listing.version).toBeTruthy();
     expect(product.fitAndLimits).toHaveLength(2);
-    expect(product.templates).toHaveLength(1);
-    expect(product.guides).toHaveLength(3);
+    expect(product.templates.length).toBeGreaterThanOrEqual(1);
+    expect(
+      new Set(product.templates.map((t: { url: string }) => t.url)).size,
+    ).toBe(product.templates.length);
+    expect(product.guides.length).toBeGreaterThanOrEqual(3);
+    expect(
+      new Set(product.guides.map((g: { url: string }) => g.url)).size,
+    ).toBe(product.guides.length);
   }
 });

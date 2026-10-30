@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { catalog, listings, highlights } from '../data/catalog';
 import { guides, templates } from '../data/resources';
-import { products } from '../data/products';
+import { products, type ProductData } from '../data/products';
 import { site } from '../data/site';
 export const GET: APIRoute = () =>
   new Response(
@@ -13,7 +13,7 @@ export const GET: APIRoute = () =>
       `Legal entity: ${site.legalName} / ${site.legalNameZh}`,
       `Website: ${site.url}`,
       `Support email: ${site.email}`,
-      'Last updated: 2026-10-08',
+      'Last updated: 2026-10-30',
       'This discovery file is supplementary; it is not a Google ranking requirement or a guarantee of AI citations.',
       '',
       '## Indexes',
@@ -39,6 +39,14 @@ export const GET: APIRoute = () =>
               `- Storage: ${item.storage[0]}`,
               `- Export: ${item.export[0]}`,
               `- Backup: ${item.backup[0]}`,
+              ...((item as ProductData).questions || []).map(
+                (q) => `- ${q.question[0]} ${q.answer[0]}`,
+              ),
+              ...(item.slug === 'gearproof'
+                ? [
+                    `- [Real simulator video and transcript](${site.url}/products/gearproof/demo)`,
+                  ]
+                : []),
             ]),
           `- [Support](${site.url}/products/${p.slug}/support)`,
           `- [Privacy](${site.url}/products/${p.slug}/privacy)`,

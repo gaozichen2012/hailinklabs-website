@@ -114,6 +114,7 @@ export const englishRoutes = [
   '/products/pressrecipe/privacy',
   '/products/pressrecipe/support',
   '/products/gearproof',
+  '/products/gearproof/demo',
   '/products/gearproof/privacy',
   '/products/gearproof/support',
   '/products/calvingpocket',

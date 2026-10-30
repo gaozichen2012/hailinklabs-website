@@ -3,6 +3,7 @@ import type { Locale } from './i18n';
 import { copy } from './products';
 import { guides, templates, hubs, resourceText } from './resources';
 import { site } from './site';
+import { gearproofDemo as demo } from './gearproof-demo';
 
 const absolute = (path: string) => new URL(path, site.url).href;
 
@@ -20,6 +21,8 @@ export const searchTitle = (path: string, fallback: string) =>
   searchTitles[path] || fallback;
 
 const searchDescriptions: Record<string, string> = {
+  '/products/gearproof':
+    'Track camera kit checkout, partial returns and damaged accessories on one iPhone. Try GearProof free for 7 days, then unlock lifetime access. No subscription.',
   '/products/hybridloop':
     'Time and record your own hybrid workouts on iPhone with automatic timing, large controls and optional voice commands. Keep your routine customizable.',
   '/guides/contractors':
@@ -51,6 +54,7 @@ export function socialImage(englishPath: string, locale: Locale) {
   }
   const product = catalog.find(
     (item) =>
+      (resource?.app === 'gearproof' && item.slug === 'gearproof') ||
       englishPath === `/products/${item.slug}` ||
       englishPath.startsWith(`/products/${item.slug}/`) ||
       englishPath === `/${item.slug}` ||
@@ -143,6 +147,63 @@ export function structuredData(
       ...crumb,
     })),
   };
+  if (englishPath === demo.path) {
+    const videoId = `${canonical}#video`;
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [
+        organization,
+        {
+          '@type': 'WebPage',
+          '@id': canonical,
+          name: copy(demo.title, locale),
+          inLanguage: locale,
+          mainEntity: { '@id': videoId },
+          datePublished: demo.publishedAt,
+          publisher: { '@id': organization['@id'] },
+        },
+        {
+          '@type': 'VideoObject',
+          '@id': videoId,
+          name: copy(demo.title, locale),
+          description: copy(demo.description, locale),
+          thumbnailUrl: [absolute(demo.poster)],
+          contentUrl: absolute(demo.video),
+          uploadDate: demo.uploadedAt,
+          duration: demo.duration,
+          inLanguage: ['en', 'zh-CN'],
+          creator: { '@id': organization['@id'] },
+          publisher: { '@id': organization['@id'] },
+          mainEntityOfPage: canonical,
+          about: { '@id': `${site.url}/products/gearproof#software` },
+          transcript: demo.segments
+            .map(
+              (segment) =>
+                `${segment.time} ${copy(segment.title, locale)}. ${copy(segment.text, locale)}`,
+            )
+            .join(' '),
+        },
+        {
+          ...breadcrumb,
+          itemListElement: [
+            ...breadcrumb.itemListElement,
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: 'GearProof',
+              item: `${site.url}${prefix}/products/gearproof`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 4,
+              name: copy(demo.title, locale),
+              item: canonical,
+            },
+          ],
+        },
+      ],
+    };
+  }
   if (!product) {
     const graph: unknown[] = [organization];
     if (englishPath === '/')
@@ -174,6 +235,9 @@ export function structuredData(
         publisher: { '@id': organization['@id'] },
         mainEntityOfPage: canonical,
         inLanguage: locale,
+        ...(guide.app === 'gearproof' && {
+          about: { '@id': `${site.url}/products/gearproof#software` },
+        }),
         image: socialImage(englishPath, locale).url,
       });
     if (template)
@@ -205,7 +269,10 @@ export function structuredData(
           : 'BusinessApplication';
   const application = {
     '@type': 'SoftwareApplication',
-    '@id': `${canonical}#software`,
+    '@id':
+      product.slug === 'gearproof'
+        ? `${site.url}/products/gearproof#software`
+        : `${canonical}#software`,
     name: product.storeName,
     description: copy(product.description, locale),
     url: canonical,
@@ -214,6 +281,12 @@ export function structuredData(
     publisher: { '@id': organization['@id'] },
     image: socialImage(englishPath, locale).url,
     ...(listing && {
+      ...(product.slug === 'gearproof' && {
+        identifier: String(listing.appId),
+        softwareVersion: listing.version,
+        inLanguage: 'en',
+        subjectOf: { '@id': `${site.url}/products/gearproof/demo#video` },
+      }),
       downloadUrl: listing.url,
       sameAs: listing.url,
       offers: {

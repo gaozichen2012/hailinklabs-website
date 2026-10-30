@@ -6,7 +6,9 @@ for (const prefix of ['', '/zh']) {
   }) => {
     await page.goto(`${prefix}/products/gearproof`);
     await expect(
-      page.locator('.product-intro a[href="#gearproof-demo"]'),
+      page.locator(
+        `.product-intro a[href="${prefix}/products/gearproof/demo"]`,
+      ),
     ).toBeVisible();
     await expect(
       page.locator('.product-gallery').last().locator('img'),

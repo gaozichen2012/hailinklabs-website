@@ -9,7 +9,7 @@ export function GET() {
     JSON.stringify(
       {
         schemaVersion: 1,
-        updatedAt: '2026-10-08',
+        updatedAt: '2026-10-30',
         origin: site.url,
         listingSource: 'src/data/catalog.ts; verified public US Apple listings',
         metrics:
