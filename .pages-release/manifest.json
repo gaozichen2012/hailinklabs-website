@@ -10,7 +10,8 @@
     "seo": "250 indexable URLs; 4 infrastructure tests PASS",
     "localBrowser": "1136 smoke and GearProof checks PASS; 56 related resource/product/demo checks PASS; initial media CSP failures fixed and retained",
     "media": "3 PDF pages visually inspected; 2 CSVs verified; 38.3s H264 video decoded and scene alignment visually checked",
-    "evidence": "artifacts/gearproof-20261030"
+    "evidence": "artifacts/gearproof-20261030",
+    "deployment": "PASS: publish-only run 41014724976; 421/421 HTTP and file hashes; 8/8 production browser flows; Actions disabled; IndexNow accepted 28 URLs (not indexing)"
   },
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
