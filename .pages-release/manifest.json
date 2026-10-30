@@ -1,7 +1,7 @@
 {
-  "contentSourceCommit": "4fa9ce6bc116c5ad4a75dcfe39585672169e9fbe",
+  "contentSourceCommit": "b2b1096f0ac7600faad6c525bdef0971ecc2181e",
   "date": "2026-10-30",
-  "packageSha256": "8cb1277797a9cae713e32d85d675f034eace0bee4854d74935090aa1c96e2f47",
+  "packageSha256": "4390e5f5a13720d205e08b015e1518fd6da4c5fc908ab390e539ed776d503ad1",
   "validation": {
     "lint": "PASS",
     "typecheck": "0 errors / 0 warnings / 2 existing hints",
@@ -144,8 +144,8 @@
     "products/gearproof/02-reconcile-returns.jpg": "0826ad2b9a69edb8095963cf365d21ced5baa0abc3eab9bb80615401bfcbdf61",
     "products/gearproof/03-handoff-history.jpg": "034db4c8560e75fd658525251ee7a2d7e2f8c376e93933faf0113c00c5e0f870",
     "products/gearproof/04-gearproof.jpg": "04234b8e618bee89cab77f0a7a8aab4630885164fa368d3ca2b6b33f1cb8656e",
-    "products/gearproof/camera-kit-demo-en.vtt": "bcbede44e07aeb68166e6524637c95a04439be8931c7f451a2d977528d54074e",
-    "products/gearproof/camera-kit-demo-zh.vtt": "0a747c01b5a46f54dbd0d89d378cdd4cc8134aa71c7bf6e5703b9918a4e64830",
+    "products/gearproof/camera-kit-demo-en.vtt": "1b952499a8ca0a9bcc8352fe120d88cd235af0f684fb20ac341732f21fe11a30",
+    "products/gearproof/camera-kit-demo-zh.vtt": "ce3b3127aebb06f31127db7ab85686ae5d308f192115c2e6d59d4227e237033b",
     "products/gearproof/camera-kit-demo.mp4": "e841c0eba7ac69f0c09a4c902d7563328c79327205b4c0fb184f0d6fa35b80a1",
     "products/gearproof/demo-poster.jpg": "6ff7caa4ba35432cafeb2cde1e44c75c896ee3bc39e5991578f10b0e855a2631",
     "products/gearproof/download-qr.png": "063c33631a405b06dc7a7cb153ee5c0c3d25901dc87e8b2326898c8a0fb6ecc8",
