@@ -10,7 +10,8 @@
     "seo": "252 indexable URLs; 4 infrastructure tests PASS",
     "localBrowser": "64 initial PASS; 4 stale resource-count assertions corrected and retested PASS. Smoke 280 PASS; 4 temporary 404 during local rebuild, related 6 unchanged checks PASS after rebuild. Final 8 search journeys PASS.",
     "visual": "English desktop and Chinese mobile watch pages; Chinese 320px decision table reviewed",
-    "evidence": "artifacts/gearproof-search-20261030"
+    "evidence": "artifacts/gearproof-search-20261030",
+    "deployment": "PASS: publish-only run 41049064234; 436/436 public files HTTP200 and SHA256 match; 8/8 production browser search journeys; Actions disabled; IndexNow accepted 14 changed URLs (not indexing)."
   },
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
