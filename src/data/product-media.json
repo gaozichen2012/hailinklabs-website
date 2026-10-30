@@ -258,13 +258,13 @@
       "file": "public/products/gearproof/camera-kit-demo-en.vtt",
       "source": "GearProof camera-kit marketing capture",
       "sourceSha256": "0dd391cf08d979ab96cb46b09e57dcd0080b033eeedf2ab5422437f774f04d93",
-      "sha256": "bcbede44e07aeb68166e6524637c95a04439be8931c7f451a2d977528d54074e"
+      "sha256": "1b952499a8ca0a9bcc8352fe120d88cd235af0f684fb20ac341732f21fe11a30"
     },
     {
       "file": "public/products/gearproof/camera-kit-demo-zh.vtt",
       "source": "GearProof camera-kit marketing capture",
       "sourceSha256": "0dd391cf08d979ab96cb46b09e57dcd0080b033eeedf2ab5422437f774f04d93",
-      "sha256": "0a747c01b5a46f54dbd0d89d378cdd4cc8134aa71c7bf6e5703b9918a4e64830"
+      "sha256": "ce3b3127aebb06f31127db7ab85686ae5d308f192115c2e6d59d4227e237033b"
     }
   ]
 }
