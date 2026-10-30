@@ -32,20 +32,28 @@ const galleries: Record<
   ],
   gearproof: [
     {
-      file: '04-gearproof',
-      caption: ['Start with your equipment', '从器材首页开始'],
+      file: 'growth-01-whole-kit',
+      caption: ['Check out the whole camera kit', '借出整套相机器材'],
+      width: 663,
+      height: 1441,
     },
     {
-      file: '01-multi-item-handoff',
-      caption: ['Choose gear for a handoff', '选择本次交接的器材'],
+      file: 'growth-03-two-of-three-batteries',
+      caption: ['Three batteries out. Two back.', '借出三块电池，归还两块'],
+      width: 663,
+      height: 1441,
     },
     {
-      file: '02-reconcile-returns',
-      caption: ['Check what came back', '逐项核对归还器材'],
+      file: 'growth-04-damage-note',
+      caption: ['Record damage separately', '单独记录器材损坏'],
+      width: 663,
+      height: 1441,
     },
     {
-      file: '03-handoff-history',
-      caption: ['See returns and open issues', '查看归还记录与未解决异常'],
+      file: 'growth-07-keep-the-record',
+      caption: ['Keep missing gear and damage on record', '保留缺失与损坏记录'],
+      width: 663,
+      height: 1441,
     },
   ],
 };
@@ -67,9 +75,13 @@ const galleryId = lead ? 'gallery-preview-title' : 'gallery-title';
       {locale === 'en' ? 'See it in action' : '看看实际使用过程'}
     </h2>
     <p>
-      {locale === 'en'
-        ? 'Actual app screens from existing store submission assets. Example records shown.'
-        : '来自 App Store 展示素材的真实 App 界面，使用示例记录；App 界面为英文。'}
+      {slug === 'gearproof'
+        ? locale === 'en'
+          ? 'Real App screens captured on an iOS 18 simulator, October 30, 2026. Fictional records.'
+          : '2026 年 10 月 30 日在 iOS 18 模拟器采集的真实 App 界面，记录为虚构示例；界面为英文。'
+        : locale === 'en'
+          ? 'Actual app screens from existing store submission assets. Example records shown.'
+          : '来自 App Store 展示素材的真实 App 界面，使用示例记录；App 界面为英文。'}
     </p>
     <div class="screenshot-grid">
       {shots.map((shot) => (

@@ -7,7 +7,7 @@ interface Props {
 }
 const { slug, locale } = Astro.props;
 const related = guides.filter((g) => g.app === slug);
-const sheet = templates.find((t) => t.app === slug);
+const sheets = templates.filter((t) => t.app === slug);
 ---
 
 {related.length > 0 && (
@@ -25,14 +25,14 @@ const sheet = templates.find((t) => t.app === slug);
           </li>
         ))}
       </ul>
-      {sheet && (
+      {sheets.map((sheet) => (
         <p>
           <a href={localizedPath(`/templates/${sheet.slug}`, locale)}>
             {locale === 'en' ? 'Free Template: ' : '免费模板：'}
             {resourceText(sheet.title, locale)}
           </a>
         </p>
-      )}
+      ))}
     </div>
   </section>
 )}

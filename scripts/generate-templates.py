@@ -50,7 +50,7 @@ def make_pdf(item,suffix,paper,filled=False,sections=None):
     return path
 for item in items:
     generated=[make_pdf(item,'',letter),make_pdf(item,'-a4',A4),make_pdf(item,'-example',letter,True)]
-    if item['app']=='gearproof': generated += [make_pdf(item,'-handoff',letter,sections=item['sections'][:2]),make_pdf(item,'-ledger',letter,sections=item['sections'][2:])]
+    if item['slug']=='equipment-checkout-log': generated += [make_pdf(item,'-handoff',letter,sections=item['sections'][:2]),make_pdf(item,'-ledger',letter,sections=item['sections'][2:])]
     for lang,suffix in [(0,''),(1,'-zh')]:
         path=output/(item['slug']+suffix+'.csv')
         with path.open('w',encoding='utf-8-sig',newline='') as f:

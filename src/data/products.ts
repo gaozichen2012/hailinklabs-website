@@ -370,12 +370,12 @@ export const products = [
       '记录共享器材借出，逐件核对归还。',
     ],
     description: [
-      'Equipment checkout for small video and media teams with one gear room and one primary iPhone. Record who took the gear and what came back.',
-      '为使用一个器材间和一台主要 iPhone 的小型视频与媒体团队记录器材交接，明确谁借走了什么、归还情况如何。',
+      'Track camera kits from checkout to return. Record missing accessories and damage on one iPhone, for small video and media teams.',
+      '用一台 iPhone 记录相机套装从借出到归还的全过程，核对缺失附件与损坏情况，适合小型视频与媒体团队。',
     ],
     problem: [
-      'Scattered notes make missing accessories and changed conditions hard to trace. Keep the original handoff and return evidence together.',
-      '分散的记录让附件缺失和状况变化难以追溯。将原始交接与归还证据保存在一起。',
+      'The camera is back. Is every battery back too? Compare the returned kit with the original handoff, keep missing items outstanding and record damage separately.',
+      '相机回来了，电池也全部回来了吗？对照原始交接核对归还套装，将缺件保留为未归还，并单独记录损坏。',
     ],
     steps: [
       [

@@ -4,6 +4,7 @@ import RelatedResources from '../RelatedResources.astro';
 import { highlights, availability, listings } from '../../data/catalog';
 import ProductGallery from '../ProductGallery.astro';
 import AppDemo from '../AppDemo.astro';
+import GearProofDemo from '../GearProofDemo.astro';
 import AppStoreLink from '../AppStoreLink.astro';
 import Layout from '../../layouts/Layout.astro';
 import { localizedPath, type Locale } from '../../data/i18n';
@@ -46,6 +47,22 @@ const href = (suffix: string) =>
       {highlight && <p class="data-summary">{c(highlight.data)}</p>}
       <p class="availability">{c(availability(p.slug))}</p>
       <AppStoreLink locale={locale} slug={p.slug} />
+      {p.slug === 'gearproof' && (
+        <p>
+          <a href="#gearproof-demo">
+            {c(['Watch the camera kit demo', '观看相机套装演示'])}
+          </a>{' '}
+          ·{' '}
+          <a
+            href={localizedPath(
+              '/guides/camera-equipment-checkout-sheet',
+              locale,
+            )}
+          >
+            {c(['Free camera checkout sheet', '免费相机借出表'])}
+          </a>
+        </p>
+      )}
       {listings[p.slug] && (
         <figure class="decision-qr">
           <img
@@ -86,6 +103,7 @@ const href = (suffix: string) =>
   </section>
   <ProductGallery locale={locale} slug={p.slug} />
   <AppDemo locale={locale} slug={p.slug} />
+  {p.slug === 'gearproof' && <GearProofDemo locale={locale} />}
   <section class="section-row">
     <div class="section-label">
       <h2>{c(['Main features', '主要功能'])}</h2>

@@ -1,6 +1,6 @@
 {
-  "checked": "2026-10-11",
-  "note": "Existing release screenshots plus explicitly dated simulator DEMO captures. Screenshots resized only; UI unchanged. App PDF and CSV copied unchanged. English UI; fictional observations; no real purchase or physical material test. Source and published hashes retained.",
+  "checked": "2026-10-30",
+  "note": "Existing release screenshots plus explicitly dated simulator DEMO captures. Screenshots resized only; UI unchanged. App PDF and CSV copied unchanged. English UI; fictional observations; no real purchase or physical material test. Source and published hashes retained. GearProof camera-kit captures dated 2026-10-30 are simulator footage with fictional records; the video is edited and captioned.",
   "assets": [
     {
       "file": "public/products/samejob/01-repeat-invoices.jpg",
@@ -193,6 +193,78 @@
       "source": "PressRecipe 1.0.0 (3), actual App CSV export of two DEMO tests, iOS 18 simulator, 2026-10-11",
       "sourceSha256": "6655c6001a21e96cde3620092cd1a1ac028bb151bab4d158242ce38dfcb425e3",
       "sha256": "6655c6001a21e96cde3620092cd1a1ac028bb151bab4d158242ce38dfcb425e3"
+    },
+    {
+      "file": "public/products/gearproof/growth-05-partial-return.jpg",
+      "source": "GearProof/marketing/camera-kit-20261030/growth-05-partial-return.png",
+      "sourceSha256": "515c2b87b21542d0efe1b0d89ad15daaa474c15e63485e1a3f6af5f5a8a02c23",
+      "sha256": "3129a5e3220229da7b3fe9b3f798d25ad7cd73a28a8fa088f8b134ebf9e9df43"
+    },
+    {
+      "file": "public/products/gearproof/growth-07-keep-the-record.jpg",
+      "source": "GearProof/marketing/camera-kit-20261030/growth-07-keep-the-record.png",
+      "sourceSha256": "313cee22af32c0465b5660d7fd1e1e7045286b26e9ea13dd1f1f86fa09485196",
+      "sha256": "3747cbb2741e30a7098e10ec363fe0b52fbb53439560bee4b3497c94f304c002"
+    },
+    {
+      "file": "public/products/gearproof/growth-02-check-every-return.jpg",
+      "source": "GearProof/marketing/camera-kit-20261030/growth-02-check-every-return.png",
+      "sourceSha256": "3d593bb860b28872c665c911f006c8cb3d8357d4ccf932dfc1e60db921f00140",
+      "sha256": "fbb459b02f72f00d5170533ebf6a169cd5c5c93b5169df7479966b6fe5657bf7"
+    },
+    {
+      "file": "public/products/gearproof/growth-03-two-of-three-batteries.jpg",
+      "source": "GearProof/marketing/camera-kit-20261030/growth-03-two-of-three-batteries.png",
+      "sourceSha256": "55cf5155f4ba5284eb685fd8a98c0cfd7ff1ee2de7b13f2610a948dd72806d95",
+      "sha256": "e69c9895d01636ebfff7930e9ddb13f3112e52e6d673b864c1df557f9befb7ad"
+    },
+    {
+      "file": "public/products/gearproof/growth-01-whole-kit.jpg",
+      "source": "GearProof/marketing/camera-kit-20261030/growth-01-whole-kit.png",
+      "sourceSha256": "ae81648d94d9e80771da25374c2579c547634150ec5d9d362e7328cd82a48243",
+      "sha256": "b6f9939ea7ff45cd3fbe356750be921c51375d0cda56a8c8ad51416fa3073d45"
+    },
+    {
+      "file": "public/products/gearproof/growth-08-open-issues.jpg",
+      "source": "GearProof/marketing/camera-kit-20261030/growth-08-open-issues.png",
+      "sourceSha256": "972e0780fec6a45116ce631e319cdefa1eb19b79186724cd3556f8623dfa960b",
+      "sha256": "672d7ffd33e119ffa4c6e6da988cf52010d4a3d766a95bec13be9a08173ce6ea"
+    },
+    {
+      "file": "public/products/gearproof/growth-04-damage-note.jpg",
+      "source": "GearProof/marketing/camera-kit-20261030/growth-04-damage-note.png",
+      "sourceSha256": "482ba38f4e3a6a75c0667dd609aac45da00a1ce7ffb5e01d349d5413c0e494a4",
+      "sha256": "0fdc707756cbaf0bf0d10b2296289f92b8ddd3caa137be32befbcb935d7fe84c"
+    },
+    {
+      "file": "public/products/gearproof/growth-06-one-battery-missing.jpg",
+      "source": "GearProof/marketing/camera-kit-20261030/growth-06-one-battery-missing.png",
+      "sourceSha256": "8ad4b47b03d05771d37fed849397ffc844d7e9c57d30fd0ff32c1b01019f2993",
+      "sha256": "9d72bf89cfee78fff4678ebfcddd4aec1a7dc25164dd741dc9740103c35c99b1"
+    },
+    {
+      "file": "public/products/gearproof/camera-kit-demo.mp4",
+      "source": "GearProof simulator capture-5; normalized to 30fps, trimmed and captioned",
+      "sourceSha256": "0dd391cf08d979ab96cb46b09e57dcd0080b033eeedf2ab5422437f774f04d93",
+      "sha256": "e841c0eba7ac69f0c09a4c902d7563328c79327205b4c0fb184f0d6fa35b80a1"
+    },
+    {
+      "file": "public/products/gearproof/demo-poster.jpg",
+      "source": "GearProof camera-kit marketing capture",
+      "sourceSha256": "0dd391cf08d979ab96cb46b09e57dcd0080b033eeedf2ab5422437f774f04d93",
+      "sha256": "6ff7caa4ba35432cafeb2cde1e44c75c896ee3bc39e5991578f10b0e855a2631"
+    },
+    {
+      "file": "public/products/gearproof/camera-kit-demo-en.vtt",
+      "source": "GearProof camera-kit marketing capture",
+      "sourceSha256": "0dd391cf08d979ab96cb46b09e57dcd0080b033eeedf2ab5422437f774f04d93",
+      "sha256": "bcbede44e07aeb68166e6524637c95a04439be8931c7f451a2d977528d54074e"
+    },
+    {
+      "file": "public/products/gearproof/camera-kit-demo-zh.vtt",
+      "source": "GearProof camera-kit marketing capture",
+      "sourceSha256": "0dd391cf08d979ab96cb46b09e57dcd0080b033eeedf2ab5422437f774f04d93",
+      "sha256": "0a747c01b5a46f54dbd0d89d378cdd4cc8134aa71c7bf6e5703b9918a4e64830"
     }
   ]
 }

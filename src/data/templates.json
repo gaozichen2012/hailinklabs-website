@@ -652,5 +652,91 @@
       "Illustrative filled worksheet, not an app export or customer record.",
       "演示数据填写的工作表，不是 App 导出或客户记录。"
     ]
+  },
+  {
+    "slug": "camera-kit-return-checklist",
+    "app": "gearproof",
+    "title": ["Camera Kit Return Checklist", "相机套装归还核对清单"],
+    "description": [
+      "Count returned camera gear and accessories against the original checkout. Keep missing items and damage visible without an account or registration.",
+      "对照原始借出记录清点机身与附件，保留缺件和损坏问题，无需账号或注册。"
+    ],
+    "publishedAt": "2026-10-30",
+    "updatedAt": "2026-10-30",
+    "fields": [
+      ["Handoff ID", "交接编号"],
+      ["Borrower", "借用人"],
+      ["Return checked at", "归还核对时间"],
+      ["Item / asset ID", "物品／资产编号"],
+      ["Quantity out", "借出数量"],
+      ["Quantity returned", "归还数量"],
+      ["Outstanding", "仍未归还"],
+      ["Condition before", "借出状况"],
+      ["Condition on return", "归还状况"],
+      ["Open issue / next action", "未解决问题／后续处理"]
+    ],
+    "note": [
+      "Keep the original checkout. Do not close the handoff while items remain outstanding. Condition notes record observations, not a determination of liability.",
+      "保留原始借出记录。有物品未归还时不关闭交接。状况备注记录观察事实，不确定责任。"
+    ],
+    "sections": [
+      {
+        "title": ["Return reference", "归还引用"],
+        "columns": [
+          ["Field", "字段"],
+          ["Value", "内容"]
+        ],
+        "exampleRows": [
+          ["Handoff / borrower", "DEMO-H01 / Alex"],
+          ["Checked at", "2026-10-30 17:00"],
+          ["Original checkout", "CAM-01 / Interview kit"]
+        ],
+        "blankRows": 3,
+        "blankLabels": []
+      },
+      {
+        "title": ["Count each item and accessory", "逐项清点器材与附件"],
+        "columns": [
+          ["Item / ID", "物品／编号"],
+          ["Out", "借出"],
+          ["Returned", "归还"],
+          ["Outstanding", "未归还"],
+          ["Return condition", "归还状况"]
+        ],
+        "exampleRows": [
+          ["CAM-01 camera", 1, 1, 0, "No new issue"],
+          ["LENS-01 lens", 1, 1, 0, "No new issue"],
+          ["Battery", 3, 2, 1, "Two received"],
+          ["Charger", 1, 1, 0, "Bent connector"]
+        ],
+        "blankRows": 8,
+        "blankLabels": []
+      },
+      {
+        "title": ["Keep exceptions open", "保留未完成问题"],
+        "columns": [
+          ["Item", "物品"],
+          ["Before", "借出状况"],
+          ["Return observation", "归还观察"],
+          ["Next action", "后续处理"]
+        ],
+        "exampleRows": [
+          ["Battery", "3 handed out", "1 missing", "Follow up with borrower"],
+          [
+            "Charger",
+            "No issue recorded",
+            "Connector bent",
+            "Review damage; keep note"
+          ]
+        ],
+        "blankRows": 4,
+        "blankLabels": []
+      }
+    ],
+    "formats": ["pdf", "a4", "example", "csv"],
+    "exampleLabel": [
+      "Fictional camera-kit example, not an App export or customer record.",
+      "虚构相机套装示例，不是 App 导出或客户记录。"
+    ]
   }
 ]

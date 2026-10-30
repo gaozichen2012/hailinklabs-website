@@ -1,5 +1,5 @@
 {
-  "sourceSha256": "f22078aac760101e74b3d115ae3504c0163434b338eecd166e82c1519bd22795",
+  "sourceSha256": "709c4c1a86d3a1d0f1a4618ea0e5e54e8c6530a4a36a6a992f8ef3ffef4481fc",
   "assets": [
     {
       "file": "/downloads/time-and-materials-ticket.pdf",
@@ -160,6 +160,31 @@
       "file": "/downloads/repeat-customer-invoice-zh.csv",
       "sha256": "624053d07d4cbd06dc4289968055504486e38935ca114e4ee2a90179dc6f1f62",
       "bytes": 598
+    },
+    {
+      "file": "/downloads/camera-kit-return-checklist.pdf",
+      "sha256": "6833ea0db01040e4828c76ae04d6a2463dab32aeb3af7d457e2f771d78b0464a",
+      "bytes": 2925
+    },
+    {
+      "file": "/downloads/camera-kit-return-checklist-a4.pdf",
+      "sha256": "c7ea362d1e232adb14e3b9e541eff78abe028c8ff3c9ea0725b1f617a3bbcd03",
+      "bytes": 3015
+    },
+    {
+      "file": "/downloads/camera-kit-return-checklist-example.pdf",
+      "sha256": "12b3105461886a9f8a43e8f88d0678743a8e32f968798be1f5b8d49f31562340",
+      "bytes": 3041
+    },
+    {
+      "file": "/downloads/camera-kit-return-checklist.csv",
+      "sha256": "c3659b6a424c78c6d58b4fc5a30e62ce2ce40eb598c09d9d5f1de6b75654bab2",
+      "bytes": 362
+    },
+    {
+      "file": "/downloads/camera-kit-return-checklist-zh.csv",
+      "sha256": "b44f4d96db3436b4bcdd0c7773af59d6e234f5d521f876e104be1c2ea50b6dc8",
+      "bytes": 363
     },
     {
       "file": "/downloads/repeat-customer-invoice-example.xlsx",

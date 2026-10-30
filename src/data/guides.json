@@ -1,5 +1,185 @@
 [
   {
+    "slug": "camera-equipment-checkout-sheet",
+    "app": "gearproof",
+    "category": "contractors",
+    "template": "equipment-checkout-log",
+    "title": [
+      "Camera Equipment Checkout Sheet for Small Crews",
+      "小型摄制团队的相机器材借出清单"
+    ],
+    "description": [
+      "Record a camera kit, borrower, due date and outgoing condition with a free checkout sheet. Keep batteries and accessories on the same handoff.",
+      "使用免费清单记录相机套装、借用人、归还日期及借出状况，把电池与附件保留在同一次交接中。"
+    ],
+    "answer": [
+      "A camera equipment checkout sheet records one handoff: the borrower, expected return, identifiable camera and lens, and the accessories that leave with them. Count batteries, chargers and cables before the kit leaves. Keep the outgoing condition beside the item list so the coordinator can compare the actual return with the original handoff, including anything that is still outstanding.",
+      "相机器材借出清单记录一次交接：借用人、预计归还时间、可识别的机身和镜头，以及随附附件。离开器材间前清点电池、充电器和线缆。在物品清单旁保留借出状况，归还时对照原记录检查，包括仍未归还的部分。"
+    ],
+    "definition": [
+      "A kit list describes what belongs together; a checkout sheet records what actually left with a particular borrower.",
+      "套装清单描述固定组合；借出清单记录某位借用人实际带走了什么。"
+    ],
+    "audience": [
+      "One coordinator managing a shared camera cupboard or gear room for a small video or media team.",
+      "由一位负责人管理共享器材柜或器材间的小型视频、媒体团队。"
+    ],
+    "fields": [
+      ["Handoff ID, borrower and due date", "交接编号、借用人与归还日期"],
+      ["Camera, lens and tripod asset IDs", "机身、镜头和三脚架编号"],
+      ["Accessory names and quantities", "附件名称与数量"],
+      ["Outgoing condition and optional acknowledgment", "借出状况与可选签认"]
+    ],
+    "example": [
+      "Fictional example: Alex takes CAM-01, LENS-01 and TRI-01, with three batteries and one charger. Record the existing scratch on the camera body before checkout. If only two batteries return, keep the third outstanding instead of marking the entire kit returned.",
+      "虚构示例：Alex 借走 CAM-01、LENS-01、TRI-01，另带三块电池和一个充电器。借出前记录机身已有划痕。若只归还两块电池，第三块仍记未归还，不能将整套标为全部归还。"
+    ],
+    "steps": [
+      [
+        "Count the actual kit at the handoff point.",
+        "在交接点清点实际带走的套装。"
+      ],
+      [
+        "Assign one borrower and due date to the handoff.",
+        "为整次交接确定一位借用人与归还日期。"
+      ],
+      [
+        "Record existing condition before the gear leaves.",
+        "器材离开前记录已有状况。"
+      ],
+      [
+        "Keep the original entry and reconcile the return against it.",
+        "保留原始条目，归还时逐项对照。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "A saved kit list is not proof that every listed accessory left.",
+        "固定套装清单不能证明每个附件都已借出。"
+      ],
+      [
+        "Do not overwrite the outgoing condition with the return condition.",
+        "不要用归还状况覆盖借出状况。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": [
+          "Can I use the free sheet without GearProof?",
+          "不使用 GearProof 也能用免费清单吗？"
+        ],
+        "answer": [
+          "Yes. Print the PDF or use the CSV without an account. The sheet is a separate worksheet, not an App export.",
+          "可以。无需账号即可打印 PDF 或使用 CSV；它是独立工作表，不是 App 导出。"
+        ]
+      },
+      {
+        "question": [
+          "When does GearProof fit this workflow?",
+          "GearProof 适合哪种交接方式？"
+        ],
+        "answer": [
+          "When one coordinator uses one main iPhone to record handoffs and check returns. It provides local records, not shared reservations or automatic team sync.",
+          "适合由一位负责人用一台主要 iPhone 记录交接并核对归还；提供本地记录，不提供共享预约或自动团队同步。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-30",
+    "updatedAt": "2026-10-30"
+  },
+  {
+    "slug": "camera-kit-return-checklist",
+    "app": "gearproof",
+    "category": "contractors",
+    "template": "camera-kit-return-checklist",
+    "title": [
+      "Camera Kit Return Checklist: Missing Gear & Damage",
+      "相机套装归还核对：电池、损坏与缺件"
+    ],
+    "description": [
+      "Check a returned camera kit against its original handoff. Count accessories, record changed condition and keep missing items open with a free checklist.",
+      "对照原始交接核对归还的相机套装，清点附件、记录状况变化，并用免费清单保留未归还项。"
+    ],
+    "answer": [
+      "Check a returned camera kit against the original checkout, not memory. Count the camera, lens, tripod, batteries and charger separately. Record what physically returned and compare its condition with the outgoing notes. Keep missing items outstanding, and record damage separately from quantity: a returned charger can still have an unresolved damage issue.",
+      "对照原始借出记录核对相机套装，避免依赖记忆。分别清点机身、镜头、三脚架、电池及充电器，记录实际归还数量并对照借出备注。缺件保持未归还；损坏与数量分别记录：充电器已归还，仍可能有未解决的损坏问题。"
+    ],
+    "definition": [
+      "Return reconciliation compares the items and condition that left with the items and condition that actually came back.",
+      "归还核对是对照借出的物品及状况，记录实际归还结果。"
+    ],
+    "audience": [
+      "A camera-room coordinator checking kits after a shoot, using a paper sheet, spreadsheet or one primary iPhone.",
+      "拍摄结束后使用纸面、表格或一台主要 iPhone 核对器材的负责人。"
+    ],
+    "fields": [
+      ["Original handoff and borrower", "原始交接与借用人"],
+      [
+        "Quantity out, returned and still outstanding",
+        "借出、归还与仍未归还数量"
+      ],
+      ["Outgoing and return condition", "借出与归还状况"],
+      ["Unresolved issue and next action", "未解决问题与后续处理"]
+    ],
+    "example": [
+      "Fictional example: three batteries went out and two came back. One battery stays outstanding. The charger came back with a bent connector: count it as returned, record the condition change and keep the damage issue open. These are two separate exceptions in one handoff.",
+      "虚构示例：借出三块电池，只归还两块，一块保持未归还。充电器归还时接口弯曲：数量记已归还，记录状况变化并保留损坏问题。同一交接中有两项独立异常。"
+    ],
+    "steps": [
+      [
+        "Open the original checkout and count each item and accessory.",
+        "打开原始借出记录，逐项清点器材与附件。"
+      ],
+      [
+        "Record returned quantities before closing the handoff.",
+        "关闭交接前记录实际归还数量。"
+      ],
+      [
+        "Describe condition changes; add photos when useful.",
+        "描述状况变化，按需附照片。"
+      ],
+      [
+        "Leave missing items outstanding and track unresolved damage separately.",
+        "缺件保持未归还，损坏问题单独跟进。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "A bag arriving back does not mean every accessory is inside.",
+        "器材包已归还，不代表附件全部在包内。"
+      ],
+      [
+        "Do not count a missing item as physically returned.",
+        "不要将缺失物品计为实际归还。"
+      ],
+      [
+        "A damage note records an observation; it does not determine liability.",
+        "损坏备注记录观察事实，不自行确定责任。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": ["Can I complete a partial return?", "能记录部分归还吗？"],
+        "answer": [
+          "Yes. Record the items physically received and keep the rest outstanding against the same original handoff.",
+          "可以。记录实际收到的物品，其余保留在同一原始交接中。"
+        ]
+      },
+      {
+        "question": [
+          "Is this checklist a rental contract?",
+          "这份清单是租赁合同吗？"
+        ],
+        "answer": [
+          "No. It records counts and condition observations. Rental payments, deposits and agreements are separate.",
+          "不是。它记录数量和状况观察；租赁付款、押金及协议另行处理。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-10-30",
+    "updatedAt": "2026-10-30"
+  },
+  {
     "slug": "time-and-materials-ticket-template",
     "app": "tmproof",
     "category": "contractors",

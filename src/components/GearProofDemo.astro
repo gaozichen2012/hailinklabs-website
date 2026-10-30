@@ -1,0 +1,83 @@
+---
+import type { Locale } from '../data/i18n';
+import { localizedPath } from '../data/i18n';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+---
+
+<section id="gearproof-demo" aria-labelledby="gearproof-demo-title">
+  <h2 id="gearproof-demo-title">
+    {c(
+      'The camera is back. One battery is not.',
+      '相机回来了，一块电池还没有。',
+    )}
+  </h2>
+  <p>
+    {c(
+      'Follow one interview kit from checkout to return: count the batteries, record a damaged charger and keep the missing item outstanding.',
+      '跟随一套采访器材完成借出与归还：核对电池数量、记录充电器损坏，并保留尚未归还的器材。',
+    )}
+  </p>
+  <video
+    controls
+    playsinline
+    preload="metadata"
+    poster="/products/gearproof/demo-poster.jpg"
+    aria-label={c(
+      'GearProof camera kit checkout and return demo',
+      'GearProof 相机套装借出与归还演示',
+    )}
+  >
+    <source src="/products/gearproof/camera-kit-demo.mp4" type="video/mp4" />
+    <track
+      kind="captions"
+      src="/products/gearproof/camera-kit-demo-en.vtt"
+      srclang="en"
+      label="English"
+      default={locale === 'en'}
+    />
+    <track
+      kind="captions"
+      src="/products/gearproof/camera-kit-demo-zh.vtt"
+      srclang="zh"
+      label="简体中文"
+      default={locale !== 'en'}
+    />
+    <a href="/products/gearproof/camera-kit-demo.mp4">
+      {c('Download the demonstration', '下载演示视频')}
+    </a>
+  </video>
+  <p class="quiet">
+    {c(
+      'Recorded in GearProof 1.0.0 (1) on an iOS 18 simulator, October 30, 2026. Fictional records; silent, edited demonstration. The App interface is English.',
+      '2026 年 10 月 30 日在 iOS 18 模拟器实际录制，GearProof 1.0.0 (1)。使用虚构记录，无声剪辑演示；App 界面为英文。',
+    )}
+  </p>
+  <p>
+    <a href="/products/gearproof/camera-kit-demo.mp4" download>
+      {c('Download the video', '下载演示视频')}
+    </a>{' '}
+    ·{' '}
+    <a href={localizedPath('/templates/camera-kit-return-checklist', locale)}>
+      {c('Get the free return checklist', '获取免费归还核对表')}
+    </a>
+  </p>
+</section>
+<style>
+  section {
+    margin-block: 3rem;
+  }
+  video {
+    display: block;
+    width: min(100%, 380px);
+    height: auto;
+    border-radius: 18px;
+    background: #112d33;
+  }
+  .quiet {
+    font-size: 0.9rem;
+  }
+</style>
