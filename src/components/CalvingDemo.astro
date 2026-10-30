@@ -1,0 +1,151 @@
+---
+import type { Locale } from '../data/i18n';
+import { localizedPath } from '../data/i18n';
+interface Props {
+  locale: Locale;
+  compact?: boolean;
+}
+const { locale, compact = false } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+---
+
+<section
+  id="calving-demo"
+  class="calving-demo"
+  aria-labelledby="calving-demo-title"
+>
+  <h2 id="calving-demo-title">
+    {c('One birth. A tag added later.', '一次出生记录，稍后补齐耳标。')}
+  </h2>
+  <p>
+    {c(
+      'Save a birth for dam DEMO057 with no calf tag. CalvingPocket gives it Untagged #1. Later, edit that same record to add DEMO-A101; the dam and birth details stay together.',
+      '先为母牛 DEMO057 保存一条没有犊牛耳标的出生记录，CalvingPocket 提供 Untagged #1 临时编号。之后编辑同一条记录，补入 DEMO-A101，保留对应母牛与出生信息。',
+    )}
+  </p>
+  {compact ? (
+    <div class="calving-example-pair">
+      {[
+        [
+          'growth-03-untagged',
+          c('Save without a permanent tag', '没有永久耳标也能保存'),
+        ],
+        [
+          'growth-04-tag-later',
+          c('Add the tag to the same record', '在同一条记录中补齐耳标'),
+        ],
+      ].map(([file, caption]) => (
+        <figure>
+          <img
+            src={`/products/calvingpocket/${file}.jpg`}
+            width="663"
+            height="1440"
+            loading="lazy"
+            alt={caption}
+          />
+          <figcaption>{caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  ) : (
+    <video
+      controls
+      playsinline
+      preload="none"
+      poster="/products/calvingpocket/demo-poster.jpg"
+      aria-label={c(
+        'CalvingPocket record now and tag later demonstration',
+        'CalvingPocket 先记录后补耳标演示',
+      )}
+    >
+      <source
+        src="/products/calvingpocket/record-now-tag-later.mp4"
+        type="video/mp4"
+      />
+      <track
+        kind="captions"
+        src="/products/calvingpocket/record-now-tag-later-en.vtt"
+        srclang="en"
+        label="English"
+        default={locale === 'en'}
+      />
+      <track
+        kind="captions"
+        src="/products/calvingpocket/record-now-tag-later-zh.vtt"
+        srclang="zh"
+        label="简体中文"
+        default={locale !== 'en'}
+      />
+      <a href="/products/calvingpocket/record-now-tag-later.mp4">
+        {c('Download the demonstration', '下载演示视频')}
+      </a>
+    </video>
+  )}
+  <p class="quiet">
+    {c(
+      'Real App screens recorded on an iOS 18 simulator, October 30, 2026. Fictional records, English interface and local test access. The silent video is edited; it does not measure field entry time.',
+      '2026 年 10 月 30 日在 iOS 18 模拟器采集的真实 App 画面。虚构记录、英文界面、本地测试访问权限。无声视频经过剪辑，不代表现场录入耗时。',
+    )}
+  </p>
+  <aside class="activation-note">
+    <h3>{c('Before leaving mobile coverage', '离开有网络的区域前')}</h3>
+    <p>
+      {c(
+        'While connected, open Settings and activate the free seven-day trial through the App Store, or restore your existing purchase. Check your access before heading out. Recording works offline with active access; the trial does not renew or charge automatically.',
+        '有网络时，在 Settings 中通过 App Store 激活七天免费试用，或恢复已有购买。出发前确认访问权限有效；之后可离线记录。试用不会续费或自动扣款。',
+      )}
+    </p>
+  </aside>
+  <p>
+    <a
+      href={localizedPath(
+        compact
+          ? '/products/calvingpocket#calving-demo'
+          : '/templates/calving-record-sheet',
+        locale,
+      )}
+    >
+      {compact
+        ? c('Watch the full workflow and see pricing', '观看完整流程与收费说明')
+        : c('Get the free printable record sheet', '获取免费可打印记录表')}{' '}
+      →
+    </a>
+  </p>
+</section>
+<style>
+  .calving-demo {
+    margin-block: 2.5rem;
+  }
+  video {
+    display: block;
+    width: min(100%, 380px);
+    height: auto;
+    border-radius: 18px;
+    background: #173d2d;
+  }
+  .calving-example-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 560px;
+  }
+  figure {
+    margin: 0;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #d7e1da;
+    border-radius: 12px;
+  }
+  figcaption,
+  .quiet {
+    font-size: 0.9rem;
+  }
+  .activation-note {
+    border-left: 3px solid #226344;
+    padding-left: 1rem;
+    margin-block: 1.5rem;
+  }
+</style>

@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import TemplateCards from '../TemplateCards.astro';
 import WorksheetPreview from '../WorksheetPreview.astro';
 import AppStoreLink from '../AppStoreLink.astro';
+import CalvingDemo from '../CalvingDemo.astro';
 import { guides, templates, hubs, resourceText } from '../../data/resources';
 import { catalog, highlights } from '../../data/catalog';
 import { products, copy } from '../../data/products';
@@ -202,6 +203,9 @@ const templateList = hub
             ))}
           </ol>
         </section>
+        {guide.app === 'calvingpocket' && (
+          <CalvingDemo locale={locale} compact />
+        )}
         <section>
           <h2 id="common-mistakes">{c('Common mistakes', '常见错误')}</h2>
           <ul>

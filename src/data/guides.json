@@ -925,6 +925,10 @@
         "录入前确定产犊季与编号规则。"
       ],
       [
+        "If a permanent tag is pending, use a stable temporary reference and add the tag to that same record later.",
+        "永久耳标待定时使用固定临时编号，之后在同一条记录中补齐耳标。"
+      ],
+      [
         "Record each birth under the dam and calf IDs.",
         "将每次出生对应到母牛和犊牛编号。"
       ],
@@ -960,10 +964,20 @@
           "No. The worksheet focuses on calving and birth records.",
           "不是。工作表专注于产犊与出生记录。"
         ]
+      },
+      {
+        "question": [
+          "What if the calf has no tag yet?",
+          "犊牛还没有耳标怎么办？"
+        ],
+        "answer": [
+          "On paper, assign a stable temporary reference. CalvingPocket supplies an Untagged number when Calf ID is blank. Add the tag to the existing record later so one birth remains one record.",
+          "纸面记录可使用固定临时编号；CalvingPocket 在 Calf ID 留空时提供 Untagged 编号。之后在原记录补齐耳标，保持一次出生对应一条记录。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-30"
   },
   {
     "slug": "calf-birth-record-sheet",
@@ -1001,6 +1015,10 @@
       [
         "Confirm the dam and calf IDs before filling other fields.",
         "填写其他字段前确认母牛与犊牛编号。"
+      ],
+      [
+        "If a permanent tag is pending, use a stable temporary reference and add the tag to that same record later.",
+        "永久耳标待定时使用固定临时编号，之后在同一条记录中补齐耳标。"
       ],
       [
         "Separate known birth details from the time of observation.",
@@ -1041,10 +1059,20 @@
           "No. The sheet accepts your recorded description; do not infer a medical score.",
           "不需要。可填写已有观察描述，不推断医疗评分。"
         ]
+      },
+      {
+        "question": [
+          "What if the calf has no tag yet?",
+          "犊牛还没有耳标怎么办？"
+        ],
+        "answer": [
+          "On paper, assign a stable temporary reference. CalvingPocket supplies an Untagged number when Calf ID is blank. Add the tag to the existing record later so one birth remains one record.",
+          "纸面记录可使用固定临时编号；CalvingPocket 在 Calf ID 留空时提供 Untagged 编号。之后在原记录补齐耳标，保持一次出生对应一条记录。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-30"
   },
   {
     "slug": "offline-calving-records",
@@ -1060,8 +1088,8 @@
       "无网络时，可提前准备产犊季与动物编号，在现场使用本地记录或打印表，稍后备份。及时记录已知事实，标注缺失信息，回到办公室后仔细核对纸面转录。CalvingPocket 将产犊记录保存在设备上，换机前应保留完整导出备份。"
     ],
     "answer": [
-      "Keep calving records without internet by preparing the season and animal IDs in advance, using a local record or printed sheet at the birth site and backing up later. Capture known facts immediately, flag missing details and reconcile paper entries carefully when returning to the office. CalvingPocket stores calving records on the device; keep a full exported backup before changing phones.",
-      "无网络时，可提前准备产犊季与动物编号，在现场使用本地记录或打印表，稍后备份。及时记录已知事实，标注缺失信息，回到办公室后仔细核对纸面转录。CalvingPocket 将产犊记录保存在设备上，换机前应保留完整导出备份。"
+      "Keep calving records offline by activating CalvingPocket’s trial or restoring your purchase while you still have an App Store connection. In the field, enter the dam ID and sex, save without a permanent calf tag, then complete that same record later. Keep a printed sheet as a fallback and save a separate full backup when convenient.",
+      "离线记录产犊前，先在有 App Store 连接时激活 CalvingPocket 试用或恢复购买。现场填写母牛编号与性别，没有永久耳标也能保存，之后补齐同一条记录。可带一份打印表备用，并另存完整备份。"
     ],
     "definition": [
       "Offline record keeping means the entry does not depend on a live connection. Backup and sharing are separate steps that still need a deliberate process.",
@@ -1078,21 +1106,21 @@
       ["Backup date and saved copy location", "备份日期与副本位置"]
     ],
     "example": [
-      "Illustrative workflow: write a birth on sheet P-07 in the field. Later, add it to the local register and mark P-07 as transcribed after checking the IDs and date. Retain the original sheet and a separate backup.",
-      "流程示例：现场填写纸表 P-07；稍后录入本地登记，核对编号和日期后标记 P-07 已转录。保留原表和独立备份。"
+      "Illustrative App workflow: dam DEMO057 has a heifer before the calf is tagged. Save it as Untagged #1, then add DEMO-A101 to the same record later. Do not create another birth just to add a tag.",
+      "App 流程示例：母牛 DEMO057 生下一头尚未打标的母犊，先保存为 Untagged #1，之后在原记录补入 DEMO-A101；不要为了补耳标重复创建出生记录。"
     ],
     "steps": [
       [
-        "Prepare IDs and blank sheets before leaving coverage.",
-        "离开有网络区域前准备编号与空白表。"
+        "While online, activate the trial or restore your purchase in Settings and confirm your access.",
+        "有网络时，在 Settings 激活试用或恢复购买，并确认访问权限。"
       ],
       [
-        "Record facts locally and keep pending transcription visible.",
-        "本地记录事实，让待转录项目保持可见。"
+        "Open New Calf, enter Dam ID and sex, check the birth time, and save. Leave Calf ID blank until the tag is available.",
+        "打开 New Calf，填写 Dam ID 与性别，核对出生时间后保存；尚无耳标时，Calf ID 留空。"
       ],
       [
-        "Reconcile once, then export and verify the saved backup exists.",
-        "逐项核对转录，再导出并确认备份文件已保存。"
+        "Search the dam or temporary ID and edit the same record to add the tag. Export a separate full backup and verify the saved file.",
+        "按母牛或临时编号找到原记录，编辑补齐耳标；另存完整备份，并确认文件已保存。"
       ]
     ],
     "mistakes": [
@@ -1103,6 +1131,10 @@
       [
         "Transcribing the same sheet twice creates duplicate births.",
         "同一纸表转录两次会产生重复出生记录。"
+      ],
+      [
+        "Installing the app does not activate the trial. Initial activation needs an App Store connection.",
+        "安装 App 不等于激活试用；首次激活需要连接 App Store。"
       ]
     ],
     "faq": [
@@ -1122,7 +1154,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-30"
   },
   {
     "slug": "heat-press-settings-log",

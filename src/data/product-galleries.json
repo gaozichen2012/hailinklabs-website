@@ -62,36 +62,30 @@
   ],
   "calvingpocket": [
     {
-      "file": "01-quick-entry",
+      "file": "growth-02-quick-entry",
+      "width": 663,
+      "height": 1440,
+      "caption": ["Record now. No herd setup.", "立即记录，无需牛群配置。"]
+    },
+    {
+      "file": "growth-03-untagged",
+      "width": 663,
+      "height": 1440,
+      "caption": ["No tag yet? Save the birth.", "没有耳标？先保存出生记录。"]
+    },
+    {
+      "file": "growth-04-tag-later",
+      "width": 663,
+      "height": 1440,
+      "caption": ["Add the tag to the same record", "在同一条记录中补齐耳标"]
+    },
+    {
+      "file": "growth-05-export-backup",
       "width": 663,
       "height": 1440,
       "caption": [
-        "Record a calf birth in the field",
-        "现场记录犊牛出生（英文 App 界面）"
-      ]
-    },
-    {
-      "file": "02-untagged-record",
-      "width": 663,
-      "height": 1440,
-      "caption": [
-        "Keep an untagged calf identifiable",
-        "标识暂未编号的犊牛（英文 App 界面）"
-      ]
-    },
-    {
-      "file": "03-tag-later",
-      "width": 663,
-      "height": 1440,
-      "caption": ["Add the tag when available", "稍后补充耳标（英文 App 界面）"]
-    },
-    {
-      "file": "04-export-backup",
-      "width": 663,
-      "height": 1440,
-      "caption": [
-        "Export records and save a backup",
-        "导出记录并保存备份（英文 App 界面）"
+        "Export your season and keep a backup",
+        "导出产犊季并保存备份"
       ]
     }
   ],

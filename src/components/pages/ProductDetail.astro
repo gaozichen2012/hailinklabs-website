@@ -5,6 +5,7 @@ import { highlights, availability, listings } from '../../data/catalog';
 import ProductGallery from '../ProductGallery.astro';
 import AppDemo from '../AppDemo.astro';
 import GearProofDemo from '../GearProofDemo.astro';
+import CalvingDemo from '../CalvingDemo.astro';
 import AppStoreLink from '../AppStoreLink.astro';
 import Layout from '../../layouts/Layout.astro';
 import { localizedPath, type Locale } from '../../data/i18n';
@@ -47,6 +48,13 @@ const href = (suffix: string) =>
       {highlight && <p class="data-summary">{c(highlight.data)}</p>}
       <p class="availability">{c(availability(p.slug))}</p>
       <AppStoreLink locale={locale} slug={p.slug} />
+      {p.slug === 'calvingpocket' && (
+        <p>
+          <a href="#calving-demo">
+            {c(['Watch: record now, tag later', '观看：先记录，后补耳标'])}
+          </a>
+        </p>
+      )}
       {p.slug === 'gearproof' && (
         <p>
           <a href="#gearproof-demo">
@@ -104,6 +112,7 @@ const href = (suffix: string) =>
   <ProductGallery locale={locale} slug={p.slug} />
   <AppDemo locale={locale} slug={p.slug} />
   {p.slug === 'gearproof' && <GearProofDemo locale={locale} />}
+  {p.slug === 'calvingpocket' && <CalvingDemo locale={locale} />}
   <section class="section-row">
     <div class="section-label">
       <h2>{c(['Main features', '主要功能'])}</h2>

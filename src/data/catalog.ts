@@ -279,8 +279,8 @@ export const highlights: Record<
       '7 天完整试用 · $19.99 终身买断 · 无订阅',
     ],
     data: [
-      'Keep calving and calf records on your device. Export a full backup before moving phones.',
-      '产犊与犊牛记录保存在本机，换机前请导出完整备份。',
+      'No herd setup. Save without a calf tag, then complete the same record later. Activate access before heading offline.',
+      '无需牛群配置，没有耳标也能保存，再补齐同一条记录。离线出发前先激活访问权限。',
     ],
     seo: [
       'CalvingPocket — Offline Calving and Calf Record App',
