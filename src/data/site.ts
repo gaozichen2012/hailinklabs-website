@@ -118,6 +118,7 @@ export const englishRoutes = [
   '/products/gearproof/privacy',
   '/products/gearproof/support',
   '/products/calvingpocket',
+  '/products/calvingpocket/demo',
   '/products/calvingpocket/privacy',
   '/products/calvingpocket/support',
 ] as const;

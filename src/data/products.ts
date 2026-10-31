@@ -270,6 +270,75 @@ export const products = [
   },
   {
     slug: 'calvingpocket',
+    questions: [
+      {
+        question: [
+          'Can I save a calf birth before adding its ear tag?',
+          '还没有耳标时，可以保存犊牛出生记录吗？',
+        ],
+        answer: [
+          'Yes. Enter the dam ID and sex; the birth time defaults to now. Leave Calf ID empty to save an Untagged record. Later, edit that same record to add the permanent tag without creating a duplicate calf.',
+          '可以。填写母牛标识与性别，出生时间默认为当前时间。犊牛标识留空时，会保存为 Untagged 临时记录。之后编辑同一条记录补齐永久耳标，无需重复创建犊牛。',
+        ],
+      },
+      {
+        question: [
+          'Do I need to set up a herd or create an account first?',
+          '需要先配置牛群或注册账号吗？',
+        ],
+        answer: [
+          'No. CalvingPocket is a focused calving book for small cow-calf ranches. Start recording in the current season without creating an account, ranch, herd or separate cow profiles.',
+          '不需要。CalvingPocket 是面向小型母牛—犊牛牧场的专用产犊本。直接在当前产犊季开始记录，无需创建账号、牧场、牛群或单独的母牛档案。',
+        ],
+      },
+      {
+        question: ['Can I record calves offline?', '可以离线记录犊牛吗？'],
+        answer: [
+          'Yes, with active access. Before leaving mobile coverage, connect to the internet and activate the seven-day trial through the App Store, or restore your existing purchase in Settings. Check your access before heading out. Birth records are stored on your iPhone.',
+          '可以，但需要有效访问权限。离开有网络的区域前，请联网在 Settings 中通过 App Store 激活七天试用，或恢复已有购买，并确认访问权限有效。出生记录保存在你的 iPhone 上。',
+        ],
+      },
+      {
+        question: [
+          'Is CalvingPocket a subscription, and what happens after the trial?',
+          'CalvingPocket 是订阅吗？试用到期后会怎样？',
+        ],
+        answer: [
+          'The seven-day free trial does not renew or charge automatically. Optional lifetime access is a one-time purchase (US reference price: $19.99; check your local App Store). After expiry, you can still view, delete, export, back up and restore existing records. Adding or editing records requires lifetime access.',
+          '七天免费试用不会自动续费或扣款。可选的终身访问权限为一次性购买（美国参考价 19.99 美元，具体以当地 App Store 为准）。到期后仍可查看、删除、导出、备份和恢复已有记录；新建或编辑记录需要终身解锁。',
+        ],
+      },
+      {
+        question: [
+          'Does CalvingPocket automatically sync between phones?',
+          'CalvingPocket 会在多台手机之间自动同步吗？',
+        ],
+        answer: [
+          'No. Records live on one iPhone, with no account or built-in cloud sync. To move the book, create and save a full backup in Settings, then restore that file on the other iPhone. Restore replaces the current book after confirmation, so save a separate backup first.',
+          '不会。记录保存在一台 iPhone 上，没有账号或内置云同步。如需迁移记录本，在设置中创建并保存完整备份，再到另一台 iPhone 恢复该文件。恢复会在确认后替换当前记录本，请先另存备份。',
+        ],
+      },
+      {
+        question: [
+          'Can I import a spreadsheet or use CSV as a full backup?',
+          '可以导入表格，或用 CSV 作为完整备份吗？',
+        ],
+        answer: [
+          'CalvingPocket exports CSV for use in a spreadsheet; it does not import arbitrary CSV files. Use Create Full Backup and Restore from Backup to preserve and restore the complete book. CSV and printable PDF are exports, not full backups.',
+          'CalvingPocket 可导出 CSV 供表格软件使用，不支持导入任意 CSV 文件。要保存和恢复完整记录本，请使用 Create Full Backup 与 Restore from Backup。CSV 和可打印 PDF 属于导出文件，不是完整备份。',
+        ],
+      },
+      {
+        question: [
+          'What should I check when opening an exported calving record?',
+          '打开导出的产犊记录时，需要注意什么？',
+        ],
+        answer: [
+          'CSV birth times use UTC; printable season PDF times use the iPhone’s current time zone. When opening CSV in a spreadsheet, set ID columns to Text to preserve leading zeros. Check the season and selected export scope before sharing.',
+          'CSV 出生时间使用 UTC，可打印产犊季 PDF 使用 iPhone 当前时区。在表格软件中打开 CSV 时，将标识列设为文本以保留开头的零。分享前请检查产犊季及所选导出范围。',
+        ],
+      },
+    ],
     summary: [
       'Record newborn calves in the field without herd setup.',
       '无需配置牛群，即可现场记录新生犊牛。',

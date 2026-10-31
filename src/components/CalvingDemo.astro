@@ -4,25 +4,33 @@ import { localizedPath } from '../data/i18n';
 interface Props {
   locale: Locale;
   compact?: boolean;
+  watchPage?: boolean;
 }
-const { locale, compact = false } = Astro.props;
+const { locale, compact = false, watchPage = false } = Astro.props;
 const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
 ---
 
 <section
   id="calving-demo"
-  class="calving-demo"
-  aria-labelledby="calving-demo-title"
+  class:list={['calving-demo', { 'watch-player': watchPage }]}
+  aria-labelledby={watchPage ? undefined : 'calving-demo-title'}
+  aria-label={
+    watchPage ? c('CalvingPocket video', 'CalvingPocket 视频') : undefined
+  }
 >
-  <h2 id="calving-demo-title">
-    {c('One birth. A tag added later.', '一次出生记录，稍后补齐耳标。')}
-  </h2>
-  <p>
-    {c(
-      'Save a birth for dam DEMO057 with no calf tag. CalvingPocket gives it Untagged #1. Later, edit that same record to add DEMO-A101; the dam and birth details stay together.',
-      '先为母牛 DEMO057 保存一条没有犊牛耳标的出生记录，CalvingPocket 提供 Untagged #1 临时编号。之后编辑同一条记录，补入 DEMO-A101，保留对应母牛与出生信息。',
-    )}
-  </p>
+  {!watchPage && (
+    <>
+      <h2 id="calving-demo-title">
+        {c('One birth. A tag added later.', '一次出生记录，稍后补齐耳标。')}
+      </h2>
+      <p>
+        {c(
+          'Save a birth for dam DEMO057 with no calf tag. CalvingPocket gives it Untagged #1. Later, edit that same record to add DEMO-A101; the dam and birth details stay together.',
+          '先为母牛 DEMO057 保存一条没有犊牛耳标的出生记录，CalvingPocket 提供 Untagged #1 临时编号。之后编辑同一条记录，补入 DEMO-A101，保留对应母牛与出生信息。',
+        )}
+      </p>
+    </>
+  )}
   {compact ? (
     <div class="calving-example-pair">
       {[
@@ -51,7 +59,7 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
     <video
       controls
       playsinline
-      preload="none"
+      preload={watchPage ? 'metadata' : 'none'}
       poster="/products/calvingpocket/demo-poster.jpg"
       aria-label={c(
         'CalvingPocket record now and tag later demonstration',
@@ -81,6 +89,14 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
       </a>
     </video>
   )}
+  {watchPage && (
+    <p>
+      {c(
+        'Save a birth for dam DEMO057 with no calf tag. CalvingPocket gives it Untagged #1. Later, edit that same record to add DEMO-A101; the dam and birth details stay together.',
+        '先为母牛 DEMO057 保存一条没有犊牛耳标的出生记录，CalvingPocket 提供 Untagged #1 临时编号。之后编辑同一条记录，补入 DEMO-A101，保留对应母牛与出生信息。',
+      )}
+    </p>
+  )}
   <p class="quiet">
     {c(
       'Real App screens recorded on an iOS 18 simulator, October 30, 2026. Fictional records, English interface and local test access. The silent video is edited; it does not measure field entry time.',
@@ -96,17 +112,25 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
       )}
     </p>
   </aside>
+  {!compact && !watchPage && (
+    <p>
+      <a href={localizedPath('/products/calvingpocket/demo', locale)}>
+        {c('Watch with the step-by-step transcript', '观看视频与分步文字说明')}{' '}
+        →
+      </a>
+    </p>
+  )}
   <p>
     <a
       href={localizedPath(
         compact
-          ? '/products/calvingpocket#calving-demo'
+          ? '/products/calvingpocket/demo'
           : '/templates/calving-record-sheet',
         locale,
       )}
     >
       {compact
-        ? c('Watch the full workflow and see pricing', '观看完整流程与收费说明')
+        ? c('Watch the video and read each step', '观看视频与分步说明')
         : c('Get the free printable record sheet', '获取免费可打印记录表')}{' '}
       →
     </a>
@@ -115,6 +139,12 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
 <style>
   .calving-demo {
     margin-block: 2.5rem;
+  }
+  .watch-player {
+    margin-top: 1rem;
+  }
+  .watch-player h2 {
+    font-size: 1.1rem;
   }
   video {
     display: block;

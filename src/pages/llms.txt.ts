@@ -13,7 +13,7 @@ export const GET: APIRoute = () =>
       `Legal entity: ${site.legalName} / ${site.legalNameZh}`,
       `Website: ${site.url}`,
       `Support email: ${site.email}`,
-      'Last updated: 2026-10-30',
+      'Last updated: 2026-10-31',
       'This discovery file is supplementary; it is not a Google ranking requirement or a guarantee of AI citations.',
       '',
       '## Indexes',
@@ -42,9 +42,9 @@ export const GET: APIRoute = () =>
               ...((item as ProductData).questions || []).map(
                 (q) => `- ${q.question[0]} ${q.answer[0]}`,
               ),
-              ...(item.slug === 'gearproof'
+              ...(['gearproof', 'calvingpocket'].includes(item.slug)
                 ? [
-                    `- [Real simulator video and transcript](${site.url}/products/gearproof/demo)`,
+                    `- [Real simulator video and transcript](${site.url}/products/${item.slug}/demo)`,
                   ]
                 : []),
             ]),

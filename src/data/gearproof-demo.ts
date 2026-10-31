@@ -2,6 +2,8 @@ import type { Copy } from './products';
 
 // Media metadata for the actual edited simulator recording, not an App feature list.
 export const gearproofDemo = {
+  slug: 'gearproof',
+  name: 'GearProof',
   path: '/products/gearproof/demo',
   video: '/products/gearproof/camera-kit-demo.mp4',
   poster: '/products/gearproof/demo-poster.jpg',

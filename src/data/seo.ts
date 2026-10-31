@@ -3,7 +3,8 @@ import type { Locale } from './i18n';
 import { copy } from './products';
 import { guides, templates, hubs, resourceText } from './resources';
 import { site } from './site';
-import { gearproofDemo as demo } from './gearproof-demo';
+import { gearproofDemo } from './gearproof-demo';
+import { calvingpocketDemo } from './calvingpocket-demo';
 
 const absolute = (path: string) => new URL(path, site.url).href;
 
@@ -21,6 +22,8 @@ export const searchTitle = (path: string, fallback: string) =>
   searchTitles[path] || fallback;
 
 const searchDescriptions: Record<string, string> = {
+  '/products/calvingpocket':
+    'Record calf births without herd setup. Save an untagged calf, add its tag later and export CSV or PDF. Offline with active access. No subscription.',
   '/products/gearproof':
     'Track camera kit checkout, partial returns and damaged accessories on one iPhone. Try GearProof free for 7 days, then unlock lifetime access. No subscription.',
   '/products/hybridloop':
@@ -54,7 +57,9 @@ export function socialImage(englishPath: string, locale: Locale) {
   }
   const product = catalog.find(
     (item) =>
-      (resource?.app === 'gearproof' && item.slug === 'gearproof') ||
+      (resource &&
+        ['gearproof', 'calvingpocket'].includes(resource.app) &&
+        item.slug === resource.app) ||
       englishPath === `/products/${item.slug}` ||
       englishPath.startsWith(`/products/${item.slug}/`) ||
       englishPath === `/${item.slug}` ||
@@ -147,7 +152,10 @@ export function structuredData(
       ...crumb,
     })),
   };
-  if (englishPath === demo.path) {
+  const demo = [gearproofDemo, calvingpocketDemo].find(
+    (item) => englishPath === item.path,
+  );
+  if (demo) {
     const videoId = `${canonical}#video`;
     return {
       '@context': 'https://schema.org',
@@ -175,7 +183,7 @@ export function structuredData(
           creator: { '@id': organization['@id'] },
           publisher: { '@id': organization['@id'] },
           mainEntityOfPage: canonical,
-          about: { '@id': `${site.url}/products/gearproof#software` },
+          about: { '@id': `${site.url}/products/${demo.slug}#software` },
           transcript: demo.segments
             .map(
               (segment) =>
@@ -190,8 +198,8 @@ export function structuredData(
             {
               '@type': 'ListItem',
               position: 3,
-              name: 'GearProof',
-              item: `${site.url}${prefix}/products/gearproof`,
+              name: demo.name,
+              item: `${site.url}${prefix}/products/${demo.slug}`,
             },
             {
               '@type': 'ListItem',
@@ -235,8 +243,8 @@ export function structuredData(
         publisher: { '@id': organization['@id'] },
         mainEntityOfPage: canonical,
         inLanguage: locale,
-        ...(guide.app === 'gearproof' && {
-          about: { '@id': `${site.url}/products/gearproof#software` },
+        ...(['gearproof', 'calvingpocket'].includes(guide.app) && {
+          about: { '@id': `${site.url}/products/${guide.app}#software` },
         }),
         image: socialImage(englishPath, locale).url,
       });
@@ -269,10 +277,9 @@ export function structuredData(
           : 'BusinessApplication';
   const application = {
     '@type': 'SoftwareApplication',
-    '@id':
-      product.slug === 'gearproof'
-        ? `${site.url}/products/gearproof#software`
-        : `${canonical}#software`,
+    '@id': ['gearproof', 'calvingpocket'].includes(product.slug)
+      ? `${site.url}/products/${product.slug}#software`
+      : `${canonical}#software`,
     name: product.storeName,
     description: copy(product.description, locale),
     url: canonical,

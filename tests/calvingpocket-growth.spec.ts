@@ -49,7 +49,7 @@ for (const prefix of ['', '/zh']) {
       ).toBe(true);
       await expect(page.locator('#calving-demo a')).toHaveAttribute(
         'href',
-        `${prefix}/products/calvingpocket#calving-demo`,
+        `${prefix}/products/calvingpocket/demo`,
       );
     }
   });
