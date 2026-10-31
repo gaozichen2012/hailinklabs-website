@@ -11,7 +11,7 @@
     "localBrowser": "92 related flows PASS; final 16 CalvingPocket flows PASS after video moved above introductory text",
     "visual": "English desktop and Chinese 320px watch pages inspected; no horizontal overflow",
     "evidence": "artifacts/calvingpocket-20261031",
-    "deployment": "NOT_YET_DEPLOYED"
+    "deployment": "PASS: publish-only run 41155851893; 439/439 public files HTTP200 and SHA256 match; production flows 7 initial PASS + 1 unchanged targeted retest PASS after media-load timeout; Actions disabled; IndexNow accepted 10 changed URLs (not indexing)."
   },
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
