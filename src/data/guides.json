@@ -255,10 +255,58 @@
           "No. It records an acknowledgment; payment depends on your separate arrangements.",
           "不保证。它仅记录签认，付款取决于另行约定。"
         ]
+      },
+      {
+        "question": [
+          "What is TMProof used for on a jobsite?",
+          "TMProof 在现场用于记录什么？"
+        ],
+        "answer": [
+          "TMProof records extra work in time-and-materials tickets: project, work description, labor, materials, equipment, notes, photos and acknowledgment. It creates a PDF record; it is not an invoice, accounting system or payment processor.",
+          "TMProof 用工时与材料工单记录额外工作，包括项目、工作说明、人工、材料、设备、备注、照片和签认，并生成 PDF 记录；它不是发票、会计系统或支付处理工具。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31",
+    "comparison": {
+      "title": [
+        "Choose a record format for your workflow",
+        "按流程选择记录方式"
+      ],
+      "rows": [
+        [
+          ["Paper record for occasional work", "偶尔的纸面工作记录"],
+          ["Free printable T&M worksheet", "免费可打印工时材料工作表"],
+          [
+            "Write actual quantities, units and the acknowledgment scope clearly.",
+            "清楚记录实际数量、单位和签认范围。"
+          ]
+        ],
+        [
+          [
+            "Local photos, signature and a ticket PDF",
+            "本地照片、签名及工单 PDF"
+          ],
+          ["TMProof on one iPhone", "一台 iPhone 上的 TMProof"],
+          [
+            "Keep one project/ticket reference; save a full backup separately from the PDF.",
+            "保留统一项目与工单引用，完整备份与 PDF 分开保存。"
+          ]
+        ],
+        [
+          ["Formal approval, invoicing or payment", "正式审批、开票或付款"],
+          [
+            "The project process and appropriate separate tools",
+            "项目流程与适用的其他工具"
+          ],
+          [
+            "A T&M acknowledgment is a work record, not an automatic approval or payment guarantee.",
+            "工单签认属于工作记录，不等于自动批准或付款保证。"
+          ]
+        ]
+      ]
+    }
   },
   {
     "slug": "how-to-document-extra-work",
@@ -333,10 +381,20 @@
           "Keep the original and add a dated correction that identifies what changed.",
           "保留原记录，添加带日期的更正，说明改了什么。"
         ]
+      },
+      {
+        "question": [
+          "Can I finish a ticket when nobody can sign?",
+          "无人签字时可以完成工单吗？"
+        ],
+        "answer": [
+          "Yes. A ticket can be completed unsigned, with that status made explicit. If someone signs, record their name and acknowledgment on the same ticket. A signature does not guarantee payment or replace the project’s change-order process.",
+          "可以。工单可明确以未签字状态完成。有人签认时，将姓名与签认保存在同一工单；签字不保证付款，也不能替代项目的变更单流程。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31"
   },
   {
     "slug": "what-to-include-in-a-tm-ticket",
@@ -414,10 +472,20 @@
           "Keep them linked to the same job and ticket reference with a short explanation.",
           "关联到相同项目与工单引用，并附简短说明。"
         ]
+      },
+      {
+        "question": [
+          "Will a full backup merge into my existing ticket library?",
+          "完整备份会合并到已有工单库吗？"
+        ],
+        "answer": [
+          "No. TMProof restore requires an empty project and ticket library and checks the backup before import. Save a full backup before moving devices. A shared PDF cannot restore the projects, photos, signatures and other records in the library.",
+          "不会。TMProof 恢复要求项目与工单库为空，导入前会检查备份。换机前保存完整备份；分享的 PDF 无法恢复库中的项目、照片、签名及其他记录。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31"
   },
   {
     "slug": "equipment-checkout-log-template",
@@ -726,10 +794,58 @@
           "Yes. Keep a distinct identifier on every row and filter by puppy in the CSV.",
           "可以。每行保留不同识别标记，CSV 可按幼犬筛选。"
         ]
+      },
+      {
+        "question": [
+          "Which weight units and puppy details can I record?",
+          "支持哪些体重单位和幼犬资料？"
+        ],
+        "answer": [
+          "Record weights in ounces, pounds plus ounces, or grams. Keep each puppy’s identifier, optional photos, weight history, feeding and other care records together. Preserve the unit and observation time when comparing entries.",
+          "体重可用盎司、磅加盎司或克记录。每只幼犬的标识、可选照片、体重历史、喂养和其他护理记录放在一起；比较时保留单位与观察时间。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31",
+    "comparison": {
+      "title": [
+        "Choose a record format for your workflow",
+        "按流程选择记录方式"
+      ],
+      "rows": [
+        [
+          ["Paper handovers or spreadsheet rows", "纸面交接或表格记录"],
+          ["Free puppy weight worksheet", "免费幼犬体重工作表"],
+          [
+            "Use a stable puppy ID, time and unit; mark missed observations explicitly.",
+            "使用固定幼犬编号、时间和单位，明确标记漏记。"
+          ]
+        ],
+        [
+          [
+            "Repeated weights and care across a litter",
+            "反复记录整窝体重与护理"
+          ],
+          [
+            "LitterRound rounds on one iPhone",
+            "一台 iPhone 上的 LitterRound 轮次"
+          ],
+          [
+            "Resume saved progress and review skipped or incomplete entries.",
+            "继续已保存进度，核对跳过或未完成条目。"
+          ]
+        ],
+        [
+          ["Health interpretation or feeding advice", "健康解释或喂养建议"],
+          ["Your veterinarian", "你的兽医"],
+          [
+            "Bring the recorded history; the log itself does not diagnose or prescribe.",
+            "提供已记录历史；日志本身不诊断或给出治疗方案。"
+          ]
+        ]
+      ]
+    }
   },
   {
     "slug": "newborn-puppy-record-keeping",
@@ -804,10 +920,20 @@
           "No. Record observations and contact a veterinarian about health concerns.",
           "不能。记录观察，健康问题联系兽医。"
         ]
+      },
+      {
+        "question": [
+          "Does LitterRound automatically sync between carers’ phones?",
+          "LitterRound 会在照护者手机之间自动同步吗？"
+        ],
+        "answer": [
+          "No. Core records stay on one iPhone and work offline. Share exports deliberately and keep a separate full backup. Restore Backup replaces current data after confirmation; it is not a way to merge several carers’ libraries.",
+          "不会。核心记录保存在一台 iPhone 上并支持离线。需要时主动分享导出文件，并单独保存完整备份。Restore Backup 经确认后替换当前数据，不用于合并多位照护者的记录库。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31"
   },
   {
     "slug": "puppy-litter-care-record",
@@ -882,10 +1008,20 @@
           "No. It organizes observations and handovers, with health decisions left to qualified professionals.",
           "不指导。它整理观察与交接，健康决策由合格专业人员处理。"
         ]
+      },
+      {
+        "question": [
+          "How do I keep track of every puppy during a round?",
+          "每轮如何确认整窝幼犬的记录进度？"
+        ],
+        "answer": [
+          "Start a Weight or Care Round and work through the litter. LitterRound shows who is done, saves progress and lets you pause and resume. Skip or exclude a puppy explicitly, then review the complete or incomplete summary instead of treating a missing entry as a completed observation.",
+          "开始 Weight 或 Care Round，逐只处理整窝幼犬。LitterRound 显示完成对象、保存进度并支持暂停后继续。明确跳过或排除幼犬，再核对完整或未完成摘要，不把缺失记录当作已完成观察。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31"
   },
   {
     "slug": "calving-record-book-template",
@@ -1232,10 +1368,58 @@
           "Use it as a reference and recheck when the material, transfer or equipment changes.",
           "可作参考；材料、转印产品或设备变化时重新核对。"
         ]
+      },
+      {
+        "question": [
+          "Does PressRecipe provide recommended DTF, HTV or sublimation settings?",
+          "PressRecipe 提供推荐的 DTF、HTV 或升华参数吗？"
+        ],
+        "answer": [
+          "No. It records settings you enter and test on your own press, transfer and blank. Use the applicable manufacturer instructions for a starting point. A saved or Proven recipe is not a manufacturer certification or a guarantee of compatibility.",
+          "不提供。它记录你在自己的机器、转印产品和坯件上输入并测试的参数。起点应参考适用厂商说明；已保存或标为 Proven 的配方不是厂商认证，也不保证兼容性。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31",
+    "comparison": {
+      "title": [
+        "Choose a record format for your workflow",
+        "按流程选择记录方式"
+      ],
+      "rows": [
+        [
+          ["A few sample records", "少量试样记录"],
+          ["Free PDF or CSV log", "免费 PDF 或 CSV 日志"],
+          [
+            "Keep the sample ID, units and material references with every result.",
+            "每项结果保留试样编号、单位与材料引用。"
+          ]
+        ],
+        [
+          [
+            "Repeat tests and later wash observations",
+            "重复测试与后续水洗观察"
+          ],
+          ["PressRecipe test records", "PressRecipe 测试记录"],
+          [
+            "Keep a separate test for each repeat and attach observations to that test.",
+            "每次重复保留独立测试，观察关联到对应测试。"
+          ]
+        ],
+        [
+          ["Manufacturer settings or certification", "厂商参数或认证"],
+          [
+            "Instructions for the actual materials and equipment",
+            "实际材料与设备的适用说明"
+          ],
+          [
+            "A Proven label represents your recorded result, not a certified setting.",
+            "Proven 标记代表你记录的结果，不代表认证参数。"
+          ]
+        ]
+      ]
+    }
   },
   {
     "slug": "wash-test-log-for-heat-press",
@@ -1313,10 +1497,20 @@
           "Yes. Link the wash observation to its sample and settings record.",
           "应保留，将水洗观察与试样及参数记录关联。"
         ]
+      },
+      {
+        "question": [
+          "How do I compare a repeated recipe with the original test?",
+          "如何比较重复配方与原始测试？"
+        ],
+        "answer": [
+          "Use Repeat to create another test from the recorded setup, then record what changed and the new result. Keep the tests distinct, with each wash observation attached to the test that produced that sample.",
+          "使用 Repeat 从已记录配置创建另一次测试，记录改变的内容与新结果。各次测试分别保留，每次水洗观察关联产生该试样的测试。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31"
   },
   {
     "slug": "how-to-record-heat-press-settings",
@@ -1394,10 +1588,20 @@
           "Yes. Use the free sheet and keep it linked to your samples; an app is another way to organize records.",
           "可以。使用免费表并关联试样；App 是另一种整理方式。"
         ]
+      },
+      {
+        "question": [
+          "Is the CSV export a complete backup?",
+          "CSV 导出是完整备份吗？"
+        ],
+        "answer": [
+          "No. CSV is for reviewing exported test records in a spreadsheet. Use the full backup and restore workflow to move the complete record collection. Keep photos and the original backup file safe; a worksheet downloaded from this website is a separate resource, not an App backup.",
+          "不是。CSV 用于在表格中查看导出的测试记录。迁移完整记录集合应使用完整备份与恢复流程。妥善保管照片与原始备份文件；从本网站下载的工作表是独立资源，不是 App 备份。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31"
   },
   {
     "slug": "invoice-template-repeat-customers",
@@ -1472,10 +1676,52 @@
           "The worksheet can be adapted, but this guide does not determine applicable tax requirements.",
           "可修改工作表，但本指南不判断适用税务要求。"
         ]
+      },
+      {
+        "question": [
+          "What counts toward the five free invoices and estimates?",
+          "每月五张免费额度如何计算？"
+        ],
+        "answer": [
+          "Free includes five finalized invoices and estimates combined per calendar month. Drafts do not count. An estimate and a later finalized invoice are two documents in that combined allowance; it is not five of each type.",
+          "Free 每自然月可免费确认合计五张发票与估价单，草稿不计入。估价单与之后确认的发票是两张文档，不是每种各五张。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31",
+    "comparison": {
+      "title": [
+        "Choose a record format for your workflow",
+        "按流程选择记录方式"
+      ],
+      "rows": [
+        [
+          ["Occasional invoice", "偶尔开票"],
+          ["Free PDF or spreadsheet worksheet", "免费 PDF 或电子表格工作表"],
+          [
+            "Review each new number, date and total; keep the issued copy.",
+            "逐张核对新编号、日期与总额，保留已发出副本。"
+          ]
+        ],
+        [
+          ["Repeat service customers", "经常服务老客户"],
+          ["SameJob: Invoice Again", "SameJob：Invoice Again"],
+          [
+            "Reuse the old job as a starting point, then finalize a distinct new invoice.",
+            "以旧工作为起点，核对后确认独立新发票。"
+          ]
+        ],
+        [
+          ["Automatic recurring charges", "自动周期扣费"],
+          ["A separate payment service", "另选支付服务"],
+          [
+            "SameJob prepares documents and records payment status; it does not collect payments.",
+            "SameJob 制作文档与记录付款状态，不代收款。"
+          ]
+        ]
+      ]
+    }
   },
   {
     "slug": "repeat-invoice-workflow",
@@ -1550,10 +1796,20 @@
           "Its documented workflow reuses customer and work information; see the product page for current features and pricing.",
           "其已说明流程复用客户与工作信息；当前功能和收费见产品页。"
         ]
+      },
+      {
+        "question": [
+          "Can I reuse a previous invoice without changing the original?",
+          "可以复用历史发票而不改动原件吗？"
+        ],
+        "answer": [
+          "Use Invoice Again to start a new invoice from a previous job. Check the customer, service, date, quantities and rates before finalizing the new document. Keep the earlier invoice as the record of the earlier work.",
+          "使用 Invoice Again 从历史工作创建新发票。确认前核对客户、服务、日期、数量与单价；旧发票继续作为上次工作的记录。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31"
   },
   {
     "slug": "estimate-to-invoice-workflow",
@@ -1631,9 +1887,19 @@
           "No. Check actual work, quantities, rates and recipient every time.",
           "仍需每次核对实际工作、数量、单价和收件人。"
         ]
+      },
+      {
+        "question": [
+          "Does Invoice Again automatically bill or charge my customer?",
+          "Invoice Again 会自动开账单或向客户扣费吗？"
+        ],
+        "answer": [
+          "No. You review and finalize each new invoice yourself. SameJob does not process or hold customer payments. Add your own payment instructions and mark payment status manually; a Paid status is your record, not independent payment confirmation.",
+          "不会。每张新发票由你核对并确认。SameJob 不处理或持有客户付款。你可填写自己的付款说明并手动标记状态；Paid 是你的记录，不是独立付款确认。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-31"
   }
 ]

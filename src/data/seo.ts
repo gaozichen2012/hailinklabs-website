@@ -58,7 +58,14 @@ export function socialImage(englishPath: string, locale: Locale) {
   const product = catalog.find(
     (item) =>
       (resource &&
-        ['gearproof', 'calvingpocket'].includes(resource.app) &&
+        [
+          'gearproof',
+          'calvingpocket',
+          'samejob',
+          'tmproof',
+          'pressrecipe',
+          'litterround',
+        ].includes(resource.app) &&
         item.slug === resource.app) ||
       englishPath === `/products/${item.slug}` ||
       englishPath.startsWith(`/products/${item.slug}/`) ||
@@ -243,7 +250,14 @@ export function structuredData(
         publisher: { '@id': organization['@id'] },
         mainEntityOfPage: canonical,
         inLanguage: locale,
-        ...(['gearproof', 'calvingpocket'].includes(guide.app) && {
+        ...([
+          'gearproof',
+          'calvingpocket',
+          'samejob',
+          'tmproof',
+          'pressrecipe',
+          'litterround',
+        ].includes(guide.app) && {
           about: { '@id': `${site.url}/products/${guide.app}#software` },
         }),
         image: socialImage(englishPath, locale).url,
@@ -277,7 +291,14 @@ export function structuredData(
           : 'BusinessApplication';
   const application = {
     '@type': 'SoftwareApplication',
-    '@id': ['gearproof', 'calvingpocket'].includes(product.slug)
+    '@id': [
+      'gearproof',
+      'calvingpocket',
+      'samejob',
+      'tmproof',
+      'pressrecipe',
+      'litterround',
+    ].includes(product.slug)
       ? `${site.url}/products/${product.slug}#software`
       : `${canonical}#software`,
     name: product.storeName,
@@ -288,6 +309,12 @@ export function structuredData(
     publisher: { '@id': organization['@id'] },
     image: socialImage(englishPath, locale).url,
     ...(listing && {
+      ...(['samejob', 'tmproof', 'pressrecipe', 'litterround'].includes(
+        product.slug,
+      ) && {
+        identifier: String(listing.appId),
+        softwareVersion: listing.version,
+      }),
       ...(product.slug === 'gearproof' && {
         identifier: String(listing.appId),
         softwareVersion: listing.version,

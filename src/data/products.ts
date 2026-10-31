@@ -25,6 +25,78 @@ export interface ProductData {
 export const products = [
   {
     slug: 'samejob',
+    questions: [
+      {
+        question: [
+          'What is Invoice Maker: SameJob?',
+          'Invoice Maker: SameJob 是什么？',
+        ],
+        answer: [
+          'Invoice Maker: SameJob is Hailink Labs’ iPhone app for invoices and estimates in a solo service business. It reuses customer and service details through Invoice Again, exports PDFs and records payment status manually. Its official App Store ID is 6814700434.',
+          'Invoice Maker: SameJob 是 Hailink Labs 面向独立服务经营者的 iPhone 发票与估价单 App。通过 Invoice Again 复用客户和服务详情，导出 PDF，并手动记录付款状态。官方 App Store ID 为 6814700434。',
+        ],
+      },
+      {
+        question: [
+          'Can I reuse a previous invoice without changing the original?',
+          '可以复用历史发票而不改动原件吗？',
+        ],
+        answer: [
+          'Use Invoice Again to start a new invoice from a previous job. Check the customer, service, date, quantities and rates before finalizing the new document. Keep the earlier invoice as the record of the earlier work.',
+          '使用 Invoice Again 从历史工作创建新发票。确认前核对客户、服务、日期、数量与单价；旧发票继续作为上次工作的记录。',
+        ],
+      },
+      {
+        question: [
+          'What counts toward the five free invoices and estimates?',
+          '每月五张免费额度如何计算？',
+        ],
+        answer: [
+          'Free includes five finalized invoices and estimates combined per calendar month. Drafts do not count. An estimate and a later finalized invoice are two documents in that combined allowance; it is not five of each type.',
+          'Free 每自然月可免费确认合计五张发票与估价单，草稿不计入。估价单与之后确认的发票是两张文档，不是每种各五张。',
+        ],
+      },
+      {
+        question: [
+          'Is SameJob a free trial or a subscription?',
+          'SameJob 是免费试用还是订阅？',
+        ],
+        answer: [
+          'SameJob has an ongoing Free plan, not a seven-day trial. Pro removes the document allowance with monthly, yearly or lifetime access. US reference prices are $1.49/month, $14.99/year or $29.99 once; monthly and yearly plans renew until canceled through Apple. Check your local App Store price.',
+          'SameJob 提供持续的 Free 方案，不是七天试用。Pro 可选择月度、年度或终身权限，解除文档额度限制。美国参考价为每月 1.49 美元、每年 14.99 美元或一次性 29.99 美元；月度与年度方案通过 Apple 自动续费，直至取消，具体以当地商店价格为准。',
+        ],
+      },
+      {
+        question: [
+          'Does Invoice Again automatically bill or charge my customer?',
+          'Invoice Again 会自动开账单或向客户扣费吗？',
+        ],
+        answer: [
+          'No. You review and finalize each new invoice yourself. SameJob does not process or hold customer payments. Add your own payment instructions and mark payment status manually; a Paid status is your record, not independent payment confirmation.',
+          '不会。每张新发票由你核对并确认。SameJob 不处理或持有客户付款。你可填写自己的付款说明并手动标记状态；Paid 是你的记录，不是独立付款确认。',
+        ],
+      },
+      {
+        question: [
+          'Can I use SameJob as a shared team billing system?',
+          'SameJob 能作为团队共享开票系统吗？',
+        ],
+        answer: [
+          'It is designed for a solo service business. Available private iCloud sync uses your own Apple Account, not a team workspace or customer portal. You can share exported PDFs with other people.',
+          '它面向独立服务经营者。可用的私有 iCloud 同步使用你自己的 Apple 账号，不是团队工作区或客户门户；可将导出 PDF 分享给他人。',
+        ],
+      },
+      {
+        question: [
+          'What stays available when I use the Free plan?',
+          '使用 Free 方案时，哪些内容仍可使用？',
+        ],
+        answer: [
+          'Your history, exports, full backups and restore remain available. PDF invoices and estimates are document copies; customers and service items can be exported as CSV. Use a full backup to restore business data rather than treating a PDF or CSV as a complete backup.',
+          '历史、导出、完整备份与恢复仍可使用。发票和估价单 PDF 是文档副本，客户与服务项目可导出 CSV。恢复业务数据应使用完整备份，不把 PDF 或 CSV 当作完整备份。',
+        ],
+      },
+    ],
     summary: [
       'Reuse previous jobs to create the next invoice.',
       '复用历史工作，创建下一张发票。',
@@ -98,6 +170,68 @@ export const products = [
   },
   {
     slug: 'tmproof',
+    questions: [
+      {
+        question: [
+          'What is TMProof used for on a jobsite?',
+          'TMProof 在现场用于记录什么？',
+        ],
+        answer: [
+          'TMProof records extra work in time-and-materials tickets: project, work description, labor, materials, equipment, notes, photos and acknowledgment. It creates a PDF record; it is not an invoice, accounting system or payment processor.',
+          'TMProof 用工时与材料工单记录额外工作，包括项目、工作说明、人工、材料、设备、备注、照片和签认，并生成 PDF 记录；它不是发票、会计系统或支付处理工具。',
+        ],
+      },
+      {
+        question: [
+          'Can I finish a ticket when nobody can sign?',
+          '无人签字时可以完成工单吗？',
+        ],
+        answer: [
+          'Yes. A ticket can be completed unsigned, with that status made explicit. If someone signs, record their name and acknowledgment on the same ticket. A signature does not guarantee payment or replace the project’s change-order process.',
+          '可以。工单可明确以未签字状态完成。有人签认时，将姓名与签认保存在同一工单；签字不保证付款，也不能替代项目的变更单流程。',
+        ],
+      },
+      {
+        question: [
+          'Can I prepare tickets and PDFs without a signal?',
+          '没有网络信号时能制作工单和 PDF 吗？',
+        ],
+        answer: [
+          'Core ticket work and PDF generation run locally on your iPhone. Activate the trial or restore an existing purchase while online before the job. App Store trial, purchase and purchase restoration require a connection; sharing a PDF depends on the destination you choose.',
+          '核心工单与 PDF 生成在 iPhone 本地运行。前往现场前，请联网激活试用或恢复已有购买。App Store 试用、购买与恢复购买需要网络；分享 PDF 是否需要网络取决于所选目标。',
+        ],
+      },
+      {
+        question: [
+          'What happens after TMProof’s seven-day trial?',
+          'TMProof 七天试用结束后会怎样？',
+        ],
+        answer: [
+          'Creating new projects and tickets requires the one-time Lifetime Unlock after expiry. Existing drafts, records, PDFs, backup and restore remain available. The US reference price is $9.99 once, with no subscription or ticket quota; check your local App Store.',
+          '到期后，创建新项目和工单需要一次性 Lifetime Unlock。已有草稿、记录、PDF、备份与恢复仍可使用。美国参考价为一次性 9.99 美元，无订阅或工单数量限制，具体以当地 App Store 为准。',
+        ],
+      },
+      {
+        question: [
+          'Will a full backup merge into my existing ticket library?',
+          '完整备份会合并到已有工单库吗？',
+        ],
+        answer: [
+          'No. TMProof restore requires an empty project and ticket library and checks the backup before import. Save a full backup before moving devices. A shared PDF cannot restore the projects, photos, signatures and other records in the library.',
+          '不会。TMProof 恢复要求项目与工单库为空，导入前会检查备份。换机前保存完整备份；分享的 PDF 无法恢复库中的项目、照片、签名及其他记录。',
+        ],
+      },
+      {
+        question: [
+          'Can several phones edit the same project automatically?',
+          '多台手机能自动共同编辑同一个项目吗？',
+        ],
+        answer: [
+          'No automatic cloud or team sync is provided. Each iPhone keeps its own library. Share a completed PDF when another person needs a document copy, and keep full backups separately.',
+          '不提供自动云端或团队同步，每台 iPhone 保存自己的记录库。需要向他人提供文档副本时分享已完成 PDF，并单独保管完整备份。',
+        ],
+      },
+    ],
     summary: [
       'Record extra work and on-site signatures in a T&M ticket.',
       '用工时与材料工单记录额外工作及现场签认。',
@@ -184,6 +318,68 @@ export const products = [
   },
   {
     slug: 'litterround',
+    questions: [
+      {
+        question: [
+          'How do I keep track of every puppy during a round?',
+          '每轮如何确认整窝幼犬的记录进度？',
+        ],
+        answer: [
+          'Start a Weight or Care Round and work through the litter. LitterRound shows who is done, saves progress and lets you pause and resume. Skip or exclude a puppy explicitly, then review the complete or incomplete summary instead of treating a missing entry as a completed observation.',
+          '开始 Weight 或 Care Round，逐只处理整窝幼犬。LitterRound 显示完成对象、保存进度并支持暂停后继续。明确跳过或排除幼犬，再核对完整或未完成摘要，不把缺失记录当作已完成观察。',
+        ],
+      },
+      {
+        question: [
+          'Which weight units and puppy details can I record?',
+          '支持哪些体重单位和幼犬资料？',
+        ],
+        answer: [
+          'Record weights in ounces, pounds plus ounces, or grams. Keep each puppy’s identifier, optional photos, weight history, feeding and other care records together. Preserve the unit and observation time when comparing entries.',
+          '体重可用盎司、磅加盎司或克记录。每只幼犬的标识、可选照片、体重历史、喂养和其他护理记录放在一起；比较时保留单位与观察时间。',
+        ],
+      },
+      {
+        question: [
+          'Does LitterRound diagnose low weight or recommend feeding amounts?',
+          'LitterRound 会诊断低体重或推荐喂养量吗？',
+        ],
+        answer: [
+          'No. It records breeder-maintained weights and care observations. Charts and notes are records, not a diagnosis, medication plan or feeding recommendation. Share the relevant history with your veterinarian when you need health interpretation.',
+          '不会。它记录繁育者维护的体重和护理观察。图表与备注属于记录，不是诊断、用药方案或喂养量建议；需要健康解释时，将相关历史提供给兽医。',
+        ],
+      },
+      {
+        question: [
+          'What should I export for puppy handoff and for moving phones?',
+          '幼犬交接与换手机分别应导出什么？',
+        ],
+        answer: [
+          'Use the puppy PDF for an individual handoff record and CSV for weight and care rows. Use Create Backup for the complete book, including litters, puppies, photos, rounds, records and notes. PDF and CSV exports are not full backups.',
+          '单只幼犬交接可用其 PDF 记录，体重与护理行可导出 CSV。完整记录本应使用 Create Backup，包含窝次、幼犬、照片、轮次、记录和备注；PDF 和 CSV 不属于完整备份。',
+        ],
+      },
+      {
+        question: [
+          'Does LitterRound automatically sync between carers’ phones?',
+          'LitterRound 会在照护者手机之间自动同步吗？',
+        ],
+        answer: [
+          'No. Core records stay on one iPhone and work offline. Share exports deliberately and keep a separate full backup. Restore Backup replaces current data after confirmation; it is not a way to merge several carers’ libraries.',
+          '不会。核心记录保存在一台 iPhone 上并支持离线。需要时主动分享导出文件，并单独保存完整备份。Restore Backup 经确认后替换当前数据，不用于合并多位照护者的记录库。',
+        ],
+      },
+      {
+        question: [
+          'Does the trial start automatically, and what remains after it ends?',
+          '试用会自动开始吗？到期后还保留什么？',
+        ],
+        answer: [
+          'The seven-day trial starts when you choose Start 7-Day Trial and confirm through the App Store. It does not become an automatic subscription. After expiry, existing records, PDF/CSV export, backup and restore remain available; new litters, puppies, rounds and records require the one-time $9.99 US Lifetime Unlock. Check your local price.',
+          '选择 Start 7-Day Trial 并通过 App Store 确认后，七天试用才开始，不会转为自动订阅。到期后已有记录、PDF/CSV 导出、备份和恢复仍可使用；新增窝次、幼犬、轮次与记录需要一次性 Lifetime Unlock，美国参考价 9.99 美元，具体以当地价格为准。',
+        ],
+      },
+    ],
     summary: [
       'Keep daily weight and care records for the whole litter.',
       '记录整窝幼犬的日常体重与护理。',
@@ -669,6 +865,68 @@ export const products = [
   },
   {
     slug: 'pressrecipe',
+    questions: [
+      {
+        question: [
+          'Does PressRecipe provide recommended DTF, HTV or sublimation settings?',
+          'PressRecipe 提供推荐的 DTF、HTV 或升华参数吗？',
+        ],
+        answer: [
+          'No. It records settings you enter and test on your own press, transfer and blank. Use the applicable manufacturer instructions for a starting point. A saved or Proven recipe is not a manufacturer certification or a guarantee of compatibility.',
+          '不提供。它记录你在自己的机器、转印产品和坯件上输入并测试的参数。起点应参考适用厂商说明；已保存或标为 Proven 的配方不是厂商认证，也不保证兼容性。',
+        ],
+      },
+      {
+        question: [
+          'How do I compare a repeated recipe with the original test?',
+          '如何比较重复配方与原始测试？',
+        ],
+        answer: [
+          'Use Repeat to create another test from the recorded setup, then record what changed and the new result. Keep the tests distinct, with each wash observation attached to the test that produced that sample.',
+          '使用 Repeat 从已记录配置创建另一次测试，记录改变的内容与新结果。各次测试分别保留，每次水洗观察关联产生该试样的测试。',
+        ],
+      },
+      {
+        question: [
+          'Does a good first result prove wash durability?',
+          '首次结果良好就证明耐洗吗？',
+        ],
+        answer: [
+          'No. Record later wash-test observations against the same sample and test. Keep failed results as well as successful ones. PressRecipe organizes your observations; it does not certify durability or perform a physical test for you.',
+          '不能。后续水洗观察应关联同一试样与测试，失败和成功结果都保留。PressRecipe 整理你的观察，不认证耐久性，也不会替你进行实物测试。',
+        ],
+      },
+      {
+        question: [
+          'Is the CSV export a complete backup?',
+          'CSV 导出是完整备份吗？',
+        ],
+        answer: [
+          'No. CSV is for reviewing exported test records in a spreadsheet. Use the full backup and restore workflow to move the complete record collection. Keep photos and the original backup file safe; a worksheet downloaded from this website is a separate resource, not an App backup.',
+          '不是。CSV 用于在表格中查看导出的测试记录。迁移完整记录集合应使用完整备份与恢复流程。妥善保管照片与原始备份文件；从本网站下载的工作表是独立资源，不是 App 备份。',
+        ],
+      },
+      {
+        question: [
+          'Can a team share my private iCloud recipe library?',
+          '团队能共享我的私有 iCloud 配方库吗？',
+        ],
+        answer: [
+          'Private iCloud sync, when available, uses your own Apple Account. It is not a shared team workspace. Core records work offline without a PressRecipe account; you choose when to share exported files.',
+          '可用时，私有 iCloud 同步使用你自己的 Apple 账号，不是团队共享工作区。核心记录无需 PressRecipe 账号并可离线使用；何时分享导出文件由你决定。',
+        ],
+      },
+      {
+        question: [
+          'What can I do after the PressRecipe trial ends?',
+          'PressRecipe 试用结束后能做什么？',
+        ],
+        answer: [
+          'After the seven-day full trial, continued creation and editing require Lifetime Unlock. Existing records remain readable and exportable. Lifetime is a one-time purchase, with a US reference price of $9.99; check the price in your local App Store.',
+          '七天完整试用后，继续创建和编辑需要 Lifetime Unlock；已有记录仍可阅读和导出。终身权限为一次性购买，美国参考价为 9.99 美元，具体价格请查看当地 App Store。',
+        ],
+      },
+    ],
     name: 'PressRecipe',
     storeName: 'PressRecipe: Heat Press Log',
     subtitle: ['Your heat press test log', '你的热压测试记录'],

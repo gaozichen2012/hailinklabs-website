@@ -204,6 +204,57 @@ const templateList = hub
             ))}
           </ol>
         </section>
+        {'comparison' in guide && guide.comparison && (
+          <section id="record-format">
+            <h2>{d(guide.comparison.title)}</h2>
+            <div class="record-table-wrap">
+              <table class="record-table">
+                <caption>
+                  {c('Match the format to the task', '根据任务选择格式')}
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">{c('Your task', '你的任务')}</th>
+                    <th scope="col">{c('Start with', '可选起点')}</th>
+                    <th scope="col">{c('What to check', '需要核对')}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {guide.comparison.rows.map((row) => (
+                    <tr>
+                      <th scope="row">{d(row[0])}</th>
+                      <td>{d(row[1])}</td>
+                      <td>{d(row[2])}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+        {['samejob', 'tmproof', 'pressrecipe', 'litterround'].includes(
+          guide.app,
+        ) && (
+          <p class="resource-product-details">
+            <a href={link(`/products/${guide.app}#common-questions`)}>
+              {c(
+                'Check the App’s workflow, access and backup limits',
+                '查看 App 流程、使用权限与备份边界',
+              )}
+            </a>
+            {['tmproof', 'pressrecipe'].includes(guide.app) && (
+              <>
+                {' · '}
+                <a href={link(`/products/${guide.app}#app-demo`)}>
+                  {c(
+                    'Inspect the real App export with DEMO records',
+                    '查看使用 DEMO 记录的真实 App 导出',
+                  )}
+                </a>
+              </>
+            )}
+          </p>
+        )}
         {guide.slug === 'equipment-checkout-log-template' && (
           <GearProofChoices locale={locale} />
         )}

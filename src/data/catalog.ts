@@ -184,7 +184,7 @@ export const listings: Record<
   samejob: {
     url: 'https://apps.apple.com/us/app/invoice-maker-samejob/id6814700434',
     ios: 17,
-    verified: '2026-10-08',
+    verified: '2026-10-31',
     appId: 6814700434,
     storeName: 'Invoice Maker: SameJob',
     version: '1.0',
@@ -204,7 +204,7 @@ export const listings: Record<
   litterround: {
     url: 'https://apps.apple.com/us/app/litterround-puppy-tracker/id6814862263',
     ios: 18,
-    verified: '2026-10-08',
+    verified: '2026-10-31',
     appId: 6814862263,
     storeName: 'LitterRound: Puppy Tracker',
     version: '1.0',
@@ -214,7 +214,7 @@ export const listings: Record<
   tmproof: {
     url: 'https://apps.apple.com/us/app/tmproof-t-m-tickets/id6814884804',
     ios: 18,
-    verified: '2026-10-08',
+    verified: '2026-10-31',
     appId: 6814884804,
     storeName: 'TMProof: T&M Tickets',
     version: '1.0',
@@ -224,7 +224,7 @@ export const listings: Record<
   pressrecipe: {
     url: 'https://apps.apple.com/us/app/pressrecipe-heat-press-log/id6816618604',
     ios: 18,
-    verified: '2026-10-08',
+    verified: '2026-10-31',
     appId: 6816618604,
     storeName: 'PressRecipe: Heat Press Log',
     version: '1.0.0',

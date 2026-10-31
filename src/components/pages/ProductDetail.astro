@@ -1,6 +1,7 @@
 ---
 import DownloadPanel from '../DownloadPanel.astro';
 import RelatedResources from '../RelatedResources.astro';
+import { guides, templates } from '../../data/resources';
 import { highlights, availability, listings } from '../../data/catalog';
 import ProductGallery from '../ProductGallery.astro';
 import AppDemo from '../AppDemo.astro';
@@ -18,6 +19,14 @@ interface Props {
 }
 const { locale, product: p } = Astro.props;
 const highlight = highlights[p.slug];
+const searchJourney = [
+  'samejob',
+  'tmproof',
+  'pressrecipe',
+  'litterround',
+].includes(p.slug);
+const firstGuide = guides.find((g) => g.app === p.slug);
+const firstTemplate = templates.find((t) => t.app === p.slug);
 const c = (value: readonly [string, string]) => copy(value, locale);
 const href = (suffix: string) =>
   localizedPath(`/products/${p.slug}${suffix}`, locale);
@@ -70,6 +79,24 @@ const href = (suffix: string) =>
           >
             {c(['Free camera checkout sheet', '免费相机借出表'])}
           </a>
+        </p>
+      )}
+      {searchJourney && firstGuide && firstTemplate && (
+        <p class="product-resource-links">
+          <a
+            href={localizedPath(
+              `/guides/${firstGuide.slug}#record-format`,
+              locale,
+            )}
+          >
+            {c(['Choose a record format', '选择记录方式'])}
+          </a>
+          {' · '}
+          <a href={localizedPath(`/templates/${firstTemplate.slug}`, locale)}>
+            {c(['Free worksheet', '免费工作表'])}
+          </a>
+          {' · '}
+          <a href="#common-questions">{c(['App questions', 'App 常见问题'])}</a>
         </p>
       )}
       {listings[p.slug] && (
@@ -152,13 +179,13 @@ const href = (suffix: string) =>
       <p>{c(p.backup)}</p>
     </div>
   </section>
-  <section class="section-row">
+  <section class="section-row" id="common-questions">
     <div class="section-label">
       <h2>{c(['Common questions', '常见问题'])}</h2>
     </div>
     <div class="section-body prose">
       {p.questions?.map((item) => (
-        <div>
+        <div class:list={{ 'product-question': searchJourney }}>
           <h3>{c(item.question)}</h3>
           <p>{c(item.answer)}</p>
         </div>
@@ -262,3 +289,9 @@ const href = (suffix: string) =>
   )}
   <DownloadPanel locale={locale} slug={p.slug} />
 </Layout>
+
+<style>
+  .product-question {
+    margin-bottom: 1.25rem;
+  }
+</style>
