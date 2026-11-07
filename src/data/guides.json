@@ -1752,21 +1752,33 @@
       ["Review and confirmation state", "核对与确认状态"]
     ],
     "example": [
-      "Illustrative workflow: last month’s service draft has the right customer but this visit takes a different quantity. Reuse the draft structure, change the quantity and date, check the recipient and confirm a new invoice.",
-      "流程示例：上月草稿客户正确，本次数量不同。复用结构，修改数量与日期，核对收件人后确认一张新发票。"
+      "Fictional example: Avery cleans the same customer’s studio on two visits. The customer and hourly service remain the same, but the second visit takes an extra half hour and includes agreed supplies. Keep invoice DEMO-104 intact and prepare DEMO-105 as a new draft. The comparison below is a worksheet example, not an actual invoice or an App export.",
+      "虚构示例：Avery 两次为同一客户清洁工作室。客户和按小时计费的服务相同，第二次多用了半小时，并包含已约定的耗材。保留 DEMO-104 原发票，另建 DEMO-105 草稿。下表是工作表示例，不是真实发票或 App 导出。"
     ],
     "steps": [
       [
-        "Keep reusable drafts separate from confirmed historical invoices.",
-        "将可复用草稿与已确认历史发票区分。"
+        "Start a separate draft from checked customer and service details. Keep the previous confirmed invoice unchanged; in SameJob, Invoice Again starts a new invoice from a previous job.",
+        "从已核对的客户与服务信息创建独立草稿，保留上次已确认发票；在 SameJob 中，Invoice Again 可从历史工作创建新发票。"
       ],
       [
-        "Update the variable fields for the actual visit.",
-        "按实际服务更新变化字段。"
+        "Confirm who the work was for and where it happened. Recheck the recipient even when the customer name is unchanged.",
+        "确认服务对象与地点。即使客户名称没变，也重新核对收件人。"
       ],
       [
-        "Review the complete new invoice before confirming and sharing.",
-        "确认和分享前审核完整新发票。"
+        "Enter this visit’s service date, a distinct invoice number and the actual invoice date. Do not copy a previous visit’s date or payment entry.",
+        "填写本次服务日期、独立发票编号及实际开票日期，不复制上次服务日期或付款记录。"
+      ],
+      [
+        "Compare each service line with the actual work. Update quantities, check the agreed rate, remove work not supplied and add only reviewed extra items.",
+        "逐行对照实际工作：更新数量，核对约定单价，去掉未提供的服务，只添加已核对的额外项目。"
+      ],
+      [
+        "Recalculate every line and the total. In the free invoice XLSX, check quantity × rate and the displayed total; in CSV, calculate and check amounts yourself.",
+        "重新核算每行金额与合计。免费发票 XLSX 中核对数量乘单价及显示合计；CSV 的金额需自行计算和检查。"
+      ],
+      [
+        "Review the finished document against the visit notes, then confirm and share the new invoice. Save the issued copy separately and record any payment against this invoice.",
+        "将完成的文件与本次服务记录对照，核对后确认并分享新发票。单独保存已发出副本，付款关联到本张发票。"
       ]
     ],
     "mistakes": [
@@ -1777,6 +1789,14 @@
       [
         "Automatic reuse of an old rate may no longer match the agreement.",
         "自动沿用旧单价可能不符合现有约定。"
+      ],
+      [
+        "Copying a paid label or an old payment into the new record can make an unpaid visit look settled.",
+        "把已付款标签或旧付款复制到新记录，会让尚未结清的本次服务看起来已经付款。"
+      ],
+      [
+        "Changing the quantity without recalculating the line amount and total leaves inconsistent figures.",
+        "修改数量却不重新核算行金额与合计，会让数字不一致。"
       ]
     ],
     "faq": [
@@ -1806,10 +1826,84 @@
           "Use Invoice Again to start a new invoice from a previous job. Check the customer, service, date, quantities and rates before finalizing the new document. Keep the earlier invoice as the record of the earlier work.",
           "使用 Invoice Again 从历史工作创建新发票。确认前核对客户、服务、日期、数量与单价；旧发票继续作为上次工作的记录。"
         ]
+      },
+      {
+        "question": [
+          "What if this visit has exactly the same work and price?",
+          "如果本次工作和价格完全相同呢？"
+        ],
+        "answer": [
+          "Still create a distinct invoice with the current service date, invoice date and number. Recheck the recipient and payment record. Repeated work is a new event even when the line amounts do not change.",
+          "仍需使用本次服务日期、开票日期和独立编号创建新发票，并重新核对收件人与付款记录。即使明细金额相同，重复服务也属于新事件。"
+        ]
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-31"
+    "updatedAt": "2026-11-07",
+    "workedExample": {
+      "title": [
+        "From the previous invoice to this visit",
+        "从上次发票到本次服务"
+      ],
+      "columns": [
+        ["Field", "字段"],
+        ["Previous: DEMO-104", "上次：DEMO-104"],
+        ["New draft: DEMO-105", "新草稿：DEMO-105"]
+      ],
+      "rows": [
+        [
+          ["Customer / location", "客户／地点"],
+          ["Demo Studio / Room A", "示例工作室／A 室"],
+          [
+            "Same customer and location; recheck recipient",
+            "客户与地点相同；重新核对收件人"
+          ]
+        ],
+        [
+          ["Service date", "服务日期"],
+          ["2026-10-06", "2026-10-06"],
+          ["2026-11-03", "2026-11-03"]
+        ],
+        [
+          ["Invoice date / number", "发票日期／编号"],
+          ["2026-10-06 / DEMO-104", "2026-10-06／DEMO-104"],
+          ["2026-11-04 / DEMO-105", "2026-11-04／DEMO-105"]
+        ],
+        [
+          ["Service line", "服务明细"],
+          [
+            "Studio cleaning: 2 h × USD 40 = USD 80",
+            "工作室清洁：2 小时 × 40 美元 = 80 美元"
+          ],
+          [
+            "Studio cleaning: 2.5 h × USD 40 = USD 100",
+            "工作室清洁：2.5 小时 × 40 美元 = 100 美元"
+          ]
+        ],
+        [
+          ["Agreed supplies", "已约定耗材"],
+          ["None billed", "未计费"],
+          [
+            "1 set × USD 12 = USD 12; verify agreement",
+            "1 组 × 12 美元 = 12 美元；核对约定"
+          ]
+        ],
+        [
+          ["Sum of displayed lines", "所示明细合计"],
+          ["USD 80", "80 美元"],
+          ["USD 112", "112 美元"]
+        ],
+        [
+          ["Payment record", "付款记录"],
+          ["Earlier invoice marked paid", "上次发票已记录付款"],
+          ["No payment recorded for this visit yet", "本次服务尚无付款记录"]
+        ]
+      ],
+      "note": [
+        "The USD 32 difference is USD 20 for the extra half hour plus USD 12 for supplies. These are fictional amounts, not suggested rates. The example shows line arithmetic only; it does not determine taxes, discounts or required invoice wording. Check the current agreement and any applicable amounts separately. A paid status on DEMO-104 does not show that DEMO-105 has been paid.",
+        "32 美元差额由额外半小时的 20 美元和耗材的 12 美元组成。金额均为虚构，不是建议收费；示例仅展示明细计算，不判断税费、折扣或必需的发票措辞。另行核对当前约定及适用金额。DEMO-104 已付款，不代表 DEMO-105 已付款。"
+      ]
+    }
   },
   {
     "slug": "estimate-to-invoice-workflow",

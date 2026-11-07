@@ -1,5 +1,5 @@
 {
-  "sourceSha256": "709c4c1a86d3a1d0f1a4618ea0e5e54e8c6530a4a36a6a992f8ef3ffef4481fc",
+  "sourceSha256": "add42212068e961521e0415233d5d998c2337c8029776ffcc5a201c997626a06",
   "assets": [
     {
       "file": "/downloads/time-and-materials-ticket.pdf",
@@ -113,18 +113,18 @@
     },
     {
       "file": "/downloads/heat-press-settings-log.pdf",
-      "sha256": "2cc88949a273b97388acbfa8a5ca8b1bdba2ef1b9d12a83699cb26a88ab2eee6",
+      "sha256": "27f6eedda99bfe075e4e4b0e8bb348468f8da70a9807d293201dab3b1e65bc2c",
       "bytes": 3912
     },
     {
       "file": "/downloads/heat-press-settings-log-a4.pdf",
-      "sha256": "99cf427ce0670b5640ba1e61aa1e39bcc90c3e0445a841cec6dc00fb545980b4",
+      "sha256": "1c2d11d87e177b120be6cc46b75c3a1126fc91468e87a40dc2aa538211dd249c",
       "bytes": 3995
     },
     {
       "file": "/downloads/heat-press-settings-log-example.pdf",
-      "sha256": "933661017f53ef0e600891e5578ac06bfc85dffb7677929b33623475fd1a6eb5",
-      "bytes": 2962
+      "sha256": "74d4fff2d3af75cc6d02ae4f9da0dccb5a54949249119eeba0d8bc6045bba525",
+      "bytes": 2965
     },
     {
       "file": "/downloads/heat-press-settings-log.csv",

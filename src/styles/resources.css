@@ -68,6 +68,18 @@ section.resource-body {
 .resource-faq {
   margin-top: 20px;
 }
+#record-walkthrough > div {
+  margin-top: 24px;
+}
+#worked-example .record-table-wrap {
+  overflow-x: auto;
+}
+#worked-example .record-table {
+  min-width: 600px;
+}
+#worked-example .record-table thead th:first-child {
+  width: 24%;
+}
 .example-note,
 .related-app,
 .free-resource {

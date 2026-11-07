@@ -72,7 +72,7 @@ for (const prefix of ['', '/zh']) {
         page.locator('.worksheet-preview .print-sheet .worksheet-section'),
       ).toHaveCount(sheet.sections.length);
       await expect(page.locator('.worksheet-example')).toContainText(
-        prefix ? '不是 App 导出' : 'not an app export',
+        prefix ? '不是 App 导出' : /not an app export/i,
       );
       for (const suffix of ['-a4.pdf', '-example.pdf']) {
         const asset = await request.get(`/downloads/${sheet.slug}${suffix}`);

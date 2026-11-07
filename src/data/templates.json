@@ -434,7 +434,7 @@
       "记录材料、坯件、转印类型、实际参数和水洗测试结果；不提供虚构的通用最佳温度，方便复核自己的试样。"
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-11",
+    "updatedAt": "2026-11-07",
     "fields": [
       ["Material", "材料"],
       ["Blank", "坯件"],
@@ -541,7 +541,73 @@
     "exampleLabel": [
       "Illustrative filled worksheet, not an app export or customer record.",
       "演示数据填写的工作表，不是 App 导出或客户记录。"
-    ]
+    ],
+    "walkthrough": {
+      "title": [
+        "Connect the first press, repeat test and wash record",
+        "串联首次试压、重复测试与水洗记录"
+      ],
+      "intro": [
+        "Use the three tables together. The filled example follows DEMO-T1 and DEMO-T2 through the same record sequence. It is invented demonstration data, not a tested recipe or a record of a physical material test.",
+        "将三组表一起使用。填写示例用 DEMO-T1 与 DEMO-T2 演示相同记录顺序；数据为虚构演示，不是已验证配方或真实材料实测记录。"
+      ],
+      "steps": [
+        {
+          "title": [
+            "1. Give the first sample its own identity",
+            "1. 给首次试样独立标识"
+          ],
+          "body": [
+            "In Test identity and materials, enter your test ID, date, blank, transfer and press ID. Leave Parent test ID empty for the first test and explain “first test” in Notes. Replace the example’s instruction placeholder with the actual product instructions or revision you used.",
+            "在“测试身份与材料”中填写测试编号、日期、坯件、转印产品及机器编号。首次测试的“上次测试编号”留空，在备注说明“首次测试”。将示例中的说明占位文字替换为实际采用的产品说明或版本。"
+          ]
+        },
+        {
+          "title": [
+            "2. Record what happened at the press",
+            "2. 记录试压时实际发生的情况"
+          ],
+          "body": [
+            "Use the same test ID in Actual settings and observations. Write the actual temperature with its unit, duration, machine pressure notation and peel method. Describe an observable result such as “edge lifted”; do not replace it with a bare “pass”. Example values such as 155 C and 12 seconds are illustrative only, not settings to copy.",
+            "在“实际条件与观察”中使用同一测试编号，填写实际温度及单位、时长、机器压力表示和揭膜方式。写明“边缘翘起”等可观察结果，不只填写“通过”。示例中的 155 C、12 秒等仅为演示，不能直接照用。"
+          ]
+        },
+        {
+          "title": [
+            "3. Create a new linked test when you repeat",
+            "3. 重复测试时新建并关联记录"
+          ],
+          "body": [
+            "The example keeps DEMO-T1 and adds DEMO-T2 with Parent test ID DEMO-T1. The displayed duration changes from 12 to 15 seconds; the other displayed settings stay the same. In your own record, describe every actual change, including a different material or press. This example demonstrates traceability and does not establish which setting causes a better result.",
+            "示例保留 DEMO-T1，新增 DEMO-T2，并把“上次测试编号”填为 DEMO-T1。所示时长从 12 秒变为 15 秒，其他所示设置保持相同。自己的记录中应写明每项实际变化，包括更换材料或机器。本例演示可追溯性，不证明哪项参数会带来更好效果。"
+          ]
+        },
+        {
+          "title": [
+            "4. Append the later wash observation",
+            "4. 追加后续水洗观察"
+          ],
+          "body": [
+            "In Follow-up wash observations, reuse the ID of the sample you washed. Enter the observation date, actual wash and drying conditions, cycles completed and what you saw. The example records one cycle separately for each test. Keep the initial press result and add further dated rows for later observations; do not overwrite it or treat one wash as a durability guarantee.",
+            "在“后续水洗观察”中使用被洗试样的测试编号，填写观察日期、实际洗涤与干燥条件、已完成次数及所见结果。示例为两个测试分别记录一次水洗。保留最初试压结果，后续观察新增带日期的行；不覆盖原结果，也不把一次水洗当作耐久保证。"
+          ]
+        }
+      ],
+      "checks": [
+        [
+          "Not washed yet? Write “not yet observed”; an empty result does not mean it passed.",
+          "尚未水洗时写“尚未观察”；结果为空不代表通过。"
+        ],
+        [
+          "For CSV, keep the same Test ID and settings on each follow-up row, distinguish the wash date from Test date, and specify whether Wash cycles is a cumulative count.",
+          "CSV 的每条后续记录保留相同测试编号与参数，区分水洗日期和测试日期，并注明水洗次数是否为累计值。"
+        ],
+        [
+          "Keep your filled copy and its instruction reference together. Use a fresh blank copy for unrelated materials or jobs.",
+          "将填写后的副本与说明来源一起保存；无关联的材料或工作使用新的空白副本。"
+        ]
+      ]
+    }
   },
   {
     "slug": "repeat-customer-invoice",
