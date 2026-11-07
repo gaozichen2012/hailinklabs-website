@@ -558,7 +558,7 @@
             "1. 给首次试样独立标识"
           ],
           "body": [
-            "In Test identity and materials, enter your test ID, date, blank, transfer and press ID. Leave Parent test ID empty for the first test and explain “first test” in Notes. Replace the example’s instruction placeholder with the actual product instructions or revision you used.",
+            "In Test identity and materials, enter your test ID, date, blank, transfer and press ID. Leave Parent test ID empty for the first test and explain “first test” in Notes. Replace the example’s generic instruction text with the actual product instructions or revision you used.",
             "在“测试身份与材料”中填写测试编号、日期、坯件、转印产品及机器编号。首次测试的“上次测试编号”留空，在备注说明“首次测试”。将示例中的说明占位文字替换为实际采用的产品说明或版本。"
           ]
         },
