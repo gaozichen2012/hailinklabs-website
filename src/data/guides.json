@@ -211,8 +211,8 @@
       ["Acknowledgment scope and signer role", "签认范围与签认人角色"]
     ],
     "example": [
-      "Illustrative entry: Project A, west doorway repair; one worker, 2 hours; three replacement pieces; equipment not used. The supervisor acknowledges the recorded work and quantities, with any disagreement written in notes. This is an example, not a rate schedule.",
-      "示例：项目 A 西侧门口维修；一名工人工作 2 小时；三个替换件；未使用设备。主管确认记录的工作和数量，分歧写入备注。这仅是示例，不是收费标准。"
+      "Use DEMO-T07 to check a complete ticket: identify the job, calculate each line, reconcile the total, and state exactly what the acknowledgment covers. All names and rates in this worksheet are fictional.",
+      "使用 DEMO-T07 核对完整工单：标识工作、计算明细、核对合计，并明确签认范围。工作表中的姓名与单价均为虚构。"
     ],
     "steps": [
       [
@@ -268,7 +268,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-31",
+    "updatedAt": "2026-11-14",
     "comparison": {
       "title": [
         "Choose a record format for your workflow",
@@ -305,6 +305,71 @@
             "工单签认属于工作记录，不等于自动批准或付款保证。"
           ]
         ]
+      ]
+    },
+    "workedExample": {
+      "title": ["Worked ticket: DEMO-T07", "工单填写示例：DEMO-T07"],
+      "caption": [
+        "Fictional worksheet example; not a customer record",
+        "虚构工作表示例，不是真实客户记录"
+      ],
+      "scrollHint": [
+        "On a narrow screen, scroll the table sideways to read every column.",
+        "窄屏可横向滚动表格，查看所有列。"
+      ],
+      "columns": [
+        ["Section", "项目"],
+        ["Calculation or entry", "计算或填写内容"],
+        ["Check before sharing", "分享前核对"]
+      ],
+      "rows": [
+        [
+          ["Labor", "人工"],
+          [
+            "Installer: 2.5 h × $40 = $100; assistant: 1 h × $25 = $25",
+            "安装工：2.5 小时 × 40 美元 = 100 美元；助手：1 小时 × 25 美元 = 25 美元"
+          ],
+          ["Keep each role and its hours separate.", "分别保留各工种及工时。"]
+        ],
+        [
+          ["Materials", "材料"],
+          [
+            "4 brackets × $3.50 = $14; 6 ft conduit × $2 = $12",
+            "支架 4 个 × 3.50 美元 = 14 美元；导管 6 英尺 × 2 美元 = 12 美元"
+          ],
+          ["Pieces and feet are different units.", "个数与英尺是不同单位。"]
+        ],
+        [
+          ["Equipment", "设备"],
+          ["Lift: 1 h × $35 = $35", "升降机：1 小时 × 35 美元 = 35 美元"],
+          ["State the equipment and billing unit.", "注明设备与计费单位。"]
+        ],
+        [
+          ["Total", "合计"],
+          [
+            "$125 labor + $26 materials + $35 equipment = $186",
+            "人工 125 + 材料 26 + 设备 35 = 186 美元"
+          ],
+          [
+            "These fictional rates are not a price recommendation.",
+            "虚构单价不是报价建议。"
+          ]
+        ],
+        [
+          ["Acknowledgment", "签认"],
+          [
+            "Work and quantities observed; payment approval not implied",
+            "确认观察到的工作与数量，不代表付款批准"
+          ],
+          [
+            "Record exceptions and leave an unsigned acknowledgment blank.",
+            "记录异议；未签认时保持空白。"
+          ]
+        ]
+      ],
+      "note": [
+        "This matches the downloadable filled worksheet for additional conduit support at the west entrance on October 8, 2026. The free worksheet is separate from the actual TMProof app PDF shown below.",
+        "本例对应可下载的填写示例：2026 年 10 月 8 日西入口增加导管支撑。免费工作表与下方 TMProof App 实际导出的 PDF 分开展示。"
       ]
     }
   },
@@ -493,12 +558,12 @@
     "category": "contractors",
     "template": "equipment-checkout-log",
     "title": [
-      "Equipment Checkout Log Template for Small Teams",
-      "小团队器材借出归还记录模板"
+      "How to Record Equipment Checkout and Partial Returns",
+      "如何记录器材借出与部分归还"
     ],
     "description": [
-      "Use a free equipment checkout log to record asset IDs, borrowers, due dates, return condition and sign-off. Print it or download PDF and CSV.",
-      "器材借出记录应写明借出的具体资产、借用人、预计归还时间和交接状态。每次借用新建一条记录，归还时补上实际时间与状态。下方免费模板可以打印或导入电子表格；使用一致的资产编号，让同一器材的多次借用能够区分。"
+      "Match asset IDs, count returned accessories and keep missing or damaged items visible. A worked checkout example accompanies the free PDF and CSV log.",
+      "按资产编号核对借出与归还数量，分别保留缺件与损坏记录。结合填写示例使用免费 PDF 与 CSV 借出记录表。"
     ],
     "answer": [
       "An equipment checkout log records which asset left, who took it, when it is expected back and what condition it was in at handover. Start a new transaction for every loan and close it with the actual return time and condition. The free template below works on paper or in a spreadsheet; use consistent asset IDs so repeated loans remain distinguishable.",
@@ -519,8 +584,8 @@
       ["Condition and sign-off", "状态与交接签认"]
     ],
     "example": [
-      "Illustrative entry: drill DR-014 goes to Alex at 08:30, due back Friday. The case is already scratched. On return, record the time and whether the drill, battery and case were all received.",
-      "示例：电钻 DR-014 在 08:30 借给 Alex，预计周五归还。工具箱已有划痕。归还时记录时间，并确认电钻、电池和工具箱是否全部收到。"
+      "The filled worksheet demonstrates a partial camera-kit return. Check every listed accessory against its outgoing count rather than marking the whole kit returned when the camera body comes back.",
+      "填写示例展示相机套装部分归还。逐项对照附件借出数量，不因机身归还就把整套标为全部归还。"
     ],
     "steps": [
       [
@@ -563,7 +628,50 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-30"
+    "updatedAt": "2026-11-14",
+    "workedExample": {
+      "title": [
+        "Reconcile the filled checkout worksheet",
+        "核对已填写的借出工作表"
+      ],
+      "caption": [
+        "Fictional worksheet example; not a customer record",
+        "虚构工作表示例，不是真实客户记录"
+      ],
+      "scrollHint": [
+        "On a narrow screen, scroll the table sideways to read every column.",
+        "窄屏可横向滚动表格，查看所有列。"
+      ],
+      "columns": [
+        ["Item", "物品"],
+        ["Return count", "归还数量"],
+        ["Keep visible", "保留的状态"]
+      ],
+      "rows": [
+        [
+          ["CAM-01 body", "CAM-01 机身"],
+          ["1 out / 1 returned", "借出 1 / 归还 1"],
+          ["Compare condition with the outgoing note.", "与借出状况备注对照。"]
+        ],
+        [
+          ["Batteries", "电池"],
+          ["2 out / 1 returned", "借出 2 / 归还 1"],
+          ["1 remains outstanding.", "仍有 1 块未归还。"]
+        ],
+        [
+          ["Cable", "线缆"],
+          ["1 out / 1 returned", "借出 1 / 归还 1"],
+          [
+            "Returned with a damaged connector; not missing.",
+            "已归还但接头损坏，不是未归还。"
+          ]
+        ]
+      ],
+      "note": [
+        "Count and condition are separate checks. Keep the handoff open while a battery is outstanding, and retain the cable damage note even though its count reconciles. The camera demo below is a separate illustrative handoff.",
+        "数量与状况分开核对。电池仍缺少时保持交接未结清；线缆数量已对上，也要保留损坏备注。下方相机演示是另一次示例交接。"
+      ]
+    }
   },
   {
     "slug": "tool-sign-out-sheet",
@@ -726,10 +834,10 @@
     "app": "litterround",
     "category": "animal-records",
     "template": "puppy-weight-log",
-    "title": ["Puppy Weight Log Template", "幼犬体重记录模板"],
+    "title": ["How to Fill In a Puppy Weight Log", "如何填写幼犬体重记录"],
     "description": [
-      "Use a free puppy weight log with animal IDs, dates, weights, units and observation notes. Print or download PDF and CSV; leave diagnosis to a vet.",
-      "幼犬体重记录将固定识别标记与日期、时间、实测体重和单位对应。按时间顺序填写，并使用一致单位，避免日后比较时猜测。喂养和护理观察单独写入备注。下方打印与 CSV 模板仅用于整理记录，不解释生长情况、诊断问题或建议治疗。"
+      "Keep puppy IDs, measurement times and units consistent, and preserve corrections. A walkthrough with a free weight log, without health interpretation.",
+      "统一幼犬编号、测量时间和单位，并保留更正记录。结合免费体重表学习填写方法，不作健康判断。"
     ],
     "answer": [
       "A puppy weight log pairs a stable puppy identifier with a date, time, measured weight and unit. Keep entries in order and use the same unit so later readings can be compared without guessing. Add feeding or care observations in separate notes. The printable and CSV templates below organize records; they do not interpret growth, diagnose a condition or suggest a treatment.",
@@ -807,7 +915,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-31",
+    "updatedAt": "2026-11-14",
     "comparison": {
       "title": [
         "Choose a record format for your workflow",
@@ -1028,10 +1136,13 @@
     "app": "calvingpocket",
     "category": "animal-records",
     "template": "calving-record-sheet",
-    "title": ["Calving Record Book Template", "产犊记录簿模板"],
+    "title": [
+      "How to Organize a Calving Record Book for the Season",
+      "如何整理一个产犊季的记录簿"
+    ],
     "description": [
-      "Download a free calving record sheet for season, dam and calf IDs, birth details and notes. Print it or use PDF and CSV to organize observations.",
-      "产犊记录簿将产犊季、母牛与犊牛对应到出生日期、时间及观察。使用固定编号，注明体重单位，未知值明确标记。可使用下方打印表或 CSV 季度登记；更正时保留原始观察。模板只整理出生记录，不提供兽医操作指导。"
+      "Organize calving records by season and stable IDs. Follow a worked example from a temporary calf reference to a permanent tag without duplicating the birth.",
+      "按产犊季与固定编号整理出生记录。通过示例了解如何从临时犊牛编号补齐永久耳标，而不重复登记出生。"
     ],
     "answer": [
       "A calving record book connects a season, dam and calf with the birth date, time and recorded observations. Use stable IDs, state weight units and keep unknown values explicit. Start with the printable sheet below or use its CSV for a seasonal register. Keep the original observations when correcting a record. This template organizes birth records and does not provide veterinary instructions.",
@@ -1052,8 +1163,8 @@
       ["Birth type, observed ease and notes", "出生类型、观察到的难易与备注"]
     ],
     "example": [
-      "Illustrative entry: season 2026, dam D-042, calf C-018, birth date October 4. Birth weight was not recorded, so the field says “not recorded” instead of zero.",
-      "示例：2026 产犊季，母牛 D-042，犊牛 C-018，出生日期 10 月 4 日。未记录出生体重时填写“未记录”，而不是零。"
+      "Follow D01 and DAM-21 through the filled worksheet: the permanent calf tag is pending at first and added later, while unknown birth details remain unknown.",
+      "跟随填写示例中的 D01 与 DAM-21：永久耳标最初待定，之后补齐；未知出生详情仍保留未知。"
     ],
     "steps": [
       [
@@ -1113,17 +1224,65 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-30"
+    "updatedAt": "2026-11-14",
+    "workedExample": {
+      "title": [
+        "One birth, two stages of the same record",
+        "一次出生，同一记录的两个阶段"
+      ],
+      "caption": [
+        "Fictional worksheet example; not a customer record",
+        "虚构工作表示例，不是真实客户记录"
+      ],
+      "scrollHint": [
+        "On a narrow screen, scroll the table sideways to read every column.",
+        "窄屏可横向滚动表格，查看所有列。"
+      ],
+      "columns": [
+        ["Field", "字段"],
+        ["Initial entry", "首次记录"],
+        ["Later update", "后续补充"]
+      ],
+      "rows": [
+        [
+          ["Record and dam", "记录与母牛"],
+          ["D01 / DAM-21", "D01 / DAM-21"],
+          ["Keep D01 / DAM-21", "保留 D01 / DAM-21"]
+        ],
+        [
+          ["Calf tag", "犊牛耳标"],
+          ["Pending; use D01 to find the record", "待定；用 D01 定位记录"],
+          ["Add CALF-42 on October 8", "10 月 8 日补入 CALF-42"]
+        ],
+        [
+          ["Birth date and time", "出生日期与时间"],
+          ["October 7, 2026; time unknown", "2026 年 10 月 7 日；时间未知"],
+          ["Keep the known date and unknown time", "保留已知日期及未知时间"]
+        ],
+        [
+          ["Birth weight", "出生体重"],
+          ["Not recorded", "未记录"],
+          ["Do not substitute a later weight or zero", "不用后测体重或零替代"]
+        ]
+      ],
+      "note": [
+        "The filled worksheet shows this update under one stable reference. In a spreadsheet, keep a dated correction note or an archived copy before editing; do not count the later tag entry as another birth. This is record organization, not veterinary guidance.",
+        "填写示例在同一固定编号下展示补充过程。编辑电子表格前保留带日期的更正备注或旧副本，不把补耳标算作另一次出生。本例仅说明记录整理，不提供兽医指导。"
+      ]
+    }
   },
   {
     "slug": "calf-birth-record-sheet",
     "app": "calvingpocket",
     "category": "animal-records",
     "template": "calving-record-sheet",
-    "title": ["Calf Birth Record Sheet", "犊牛出生记录表"],
+    "title": [
+      "How to Record a Calf Birth When Details Are Missing",
+      "出生信息不完整时如何记录犊牛出生"
+    ],
     "description": [
-      "Record calf births with dam and calf IDs, birth date, sex, weight and calving notes. Use a free sheet; leave health interpretation to a veterinarian.",
-      "犊牛出生记录表记录一次出生，并提供足够标识，将犊牛与母牛和产犊季关联。填写已知日期、时间、性别、实测体重及单位、出生类型和事实备注。未完整的信息明确注明，供后续核对。免费表提供一致格式，不作兽医评估，也不指导生产时的操作。"
+      "Record known calf birth details, distinguish observation time from birth time, and mark missing values. Use the free sheet without inventing measurements.",
+      "填写已知出生信息，区分发现时间与出生时间，明确标注缺失值。使用免费记录表，不补造测量数据。"
     ],
     "answer": [
       "A calf birth record sheet captures one birth with enough identification to link the calf to its dam and season. Record the known date and time, sex, weight with units if measured, birth type and factual notes. Mark incomplete details clearly for later review. The free sheet provides a consistent record format; it does not define a veterinary assessment or prescribe what to do at a birth.",
@@ -1208,7 +1367,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-10-30"
+    "updatedAt": "2026-11-14"
   },
   {
     "slug": "offline-calving-records",
@@ -1902,6 +2061,11 @@
       "note": [
         "The USD 32 difference is USD 20 for the extra half hour plus USD 12 for supplies. These are fictional amounts, not suggested rates. The example shows line arithmetic only; it does not determine taxes, discounts or required invoice wording. Check the current agreement and any applicable amounts separately. A paid status on DEMO-104 does not show that DEMO-105 has been paid.",
         "32 美元差额由额外半小时的 20 美元和耗材的 12 美元组成。金额均为虚构，不是建议收费；示例仅展示明细计算，不判断税费、折扣或必需的发票措辞。另行核对当前约定及适用金额。DEMO-104 已付款，不代表 DEMO-105 已付款。"
+      ],
+      "caption": ["Fictional figures in USD", "虚构金额（美元）"],
+      "scrollHint": [
+        "On a narrow screen, scroll the table sideways to compare both visits.",
+        "窄屏可横向滚动表格，对照两次服务。"
       ]
     }
   },

@@ -186,12 +186,7 @@ const templateList = hub
           {'workedExample' in guide && guide.workedExample && (
             <div id="worked-example">
               <h3>{d(guide.workedExample.title)}</h3>
-              <p>
-                {c(
-                  'On a narrow screen, scroll the table sideways to compare both visits.',
-                  '窄屏可横向滚动表格，对照两次服务。',
-                )}
-              </p>
+              <p>{d(guide.workedExample.scrollHint)}</p>
               <div
                 class="record-table-wrap"
                 tabindex="0"
@@ -199,9 +194,7 @@ const templateList = hub
                 aria-label={d(guide.workedExample.title)}
               >
                 <table class="record-table">
-                  <caption>
-                    {c('Fictional figures in USD', '虚构金额（美元）')}
-                  </caption>
+                  <caption>{d(guide.workedExample.caption)}</caption>
                   <thead>
                     <tr>
                       {guide.workedExample.columns.map((column) => (

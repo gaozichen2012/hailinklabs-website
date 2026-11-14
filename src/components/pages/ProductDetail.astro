@@ -249,6 +249,21 @@ const href = (suffix: string) =>
           ])}
         </p>
       )}
+      {p.slug === 'samejob' && (
+        <p>
+          <a
+            href={localizedPath(
+              '/guides/repeat-invoice-workflow#worked-example',
+              locale,
+            )}
+          >
+            {c([
+              'Compare two repeat visits: what to copy and what to recheck before invoicing',
+              '对照两次重复服务：开票前哪些可复用、哪些必须重新核对',
+            ])}
+          </a>
+        </p>
+      )}
       {p.slug === 'tmproof' && (
         <p>
           {c([
