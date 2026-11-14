@@ -4,6 +4,7 @@ import AppStoreLink from './AppStoreLink.astro';
 import { localizedPath, type Locale } from '../data/i18n';
 import { copy } from '../data/products';
 import { availability, listings, type CatalogProduct } from '../data/catalog';
+import { screenshot } from '../data/screenshots';
 interface Props {
   locale: Locale;
   product: CatalogProduct;
@@ -29,9 +30,8 @@ const preview =
     <span class="card-art-name">{product.name}</span>
     {preview && (
       <img
-        src={`/products/${product.slug}/${preview}.jpg`}
-        width="663"
-        height="1440"
+        {...screenshot(`/products/${product.slug}/${preview}.jpg`)}
+        sizes="124px"
         alt=""
         loading="lazy"
         decoding="async"

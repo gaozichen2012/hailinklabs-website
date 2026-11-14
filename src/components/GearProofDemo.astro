@@ -26,7 +26,9 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
   <video
     controls
     playsinline
-    preload="metadata"
+    width="720"
+    height="1800"
+    preload={watchPage ? 'metadata' : 'none'}
     poster={demo.poster}
     aria-label={c(
       'GearProof camera kit checkout and return demo',

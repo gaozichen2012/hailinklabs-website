@@ -1,5 +1,6 @@
 ---
 import type { Locale } from '../data/i18n';
+import { screenshot } from '../data/screenshots';
 interface Props {
   locale: Locale;
   slug: string;
@@ -80,9 +81,8 @@ const shots = ticket
         <figure>
           <a href={`/products/${slug}/${file}.jpg`} aria-label={c(en, zh)}>
             <img
-              src={`/products/${slug}/${file}.jpg`}
-              width="663"
-              height="1441"
+              {...screenshot(`/products/${slug}/${file}.jpg`)}
+              sizes="(max-width: 600px) calc(100vw - 80px), (max-width: 1050px) calc((100vw - 200px) / 3), 340px"
               loading="lazy"
               decoding="async"
               alt={c(en, `${zh}（英文 App 界面）`)}

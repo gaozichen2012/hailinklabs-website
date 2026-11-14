@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../data/i18n';
 import { localizedPath } from '../data/i18n';
+import { screenshot } from '../data/screenshots';
 interface Props {
   locale: Locale;
   compact?: boolean;
@@ -8,6 +9,7 @@ interface Props {
 }
 const { locale, compact = false, watchPage = false } = Astro.props;
 const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const ActivationHeading = watchPage ? 'h2' : 'h3';
 ---
 
 <section
@@ -45,9 +47,8 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
       ].map(([file, caption]) => (
         <figure>
           <img
-            src={`/products/calvingpocket/${file}.jpg`}
-            width="663"
-            height="1440"
+            {...screenshot(`/products/calvingpocket/${file}.jpg`)}
+            sizes="(max-width: 600px) calc((100vw - 64px) / 2), 272px"
             loading="lazy"
             alt={caption}
           />
@@ -59,6 +60,8 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
     <video
       controls
       playsinline
+      width="660"
+      height="1434"
       preload={watchPage ? 'metadata' : 'none'}
       poster="/products/calvingpocket/demo-poster.jpg"
       aria-label={c(
@@ -104,7 +107,9 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
     )}
   </p>
   <aside class="activation-note">
-    <h3>{c('Before leaving mobile coverage', '离开有网络的区域前')}</h3>
+    <ActivationHeading>
+      {c('Before leaving mobile coverage', '离开有网络的区域前')}
+    </ActivationHeading>
     <p>
       {c(
         'While connected, open Settings and activate the free seven-day trial through the App Store, or restore your existing purchase. Check your access before heading out. Recording works offline with active access; the trial does not renew or charge automatically.',

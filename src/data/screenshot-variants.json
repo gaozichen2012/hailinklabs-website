@@ -1,0 +1,684 @@
+{
+  "/products/calvingpocket/growth-02-quick-entry.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 61084,
+    "sourceSha256": "427a8f161d774602060ac7c665befd3ff21229d85937536d71bdbdd47c46a550",
+    "variants": [
+      {
+        "file": "/products/calvingpocket/growth-02-quick-entry-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 9602,
+        "sha256": "53c4e851e99c6a8e0d14ff6f78907032c1cc605b1c4118c7beb2c19f63802343"
+      },
+      {
+        "file": "/products/calvingpocket/growth-02-quick-entry-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 24076,
+        "sha256": "8a15d69ae2f4abb12d4a86dd0306f4f37a7dd03368c0be09f3ce6149469377b3"
+      }
+    ]
+  },
+  "/products/calvingpocket/growth-03-untagged.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 49838,
+    "sourceSha256": "9e1fd2d88da1b1c14e1ad8631e7755e7a92df5eca523cfeb36141d285d7e7503",
+    "variants": [
+      {
+        "file": "/products/calvingpocket/growth-03-untagged-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 8042,
+        "sha256": "d77a3433df1bdf849d5d2f87074b2b26214b759dc84cbd210598e35606e2d680"
+      },
+      {
+        "file": "/products/calvingpocket/growth-03-untagged-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 19640,
+        "sha256": "3671cb4a03890c2b5152316c1f2799d2d3d354724c4b4a489d9ddefd68645839"
+      }
+    ]
+  },
+  "/products/calvingpocket/growth-04-tag-later.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 48205,
+    "sourceSha256": "5c66ea6231c07677c40b0bc741a926bf8f16639e13025d4790f80c2386495a74",
+    "variants": [
+      {
+        "file": "/products/calvingpocket/growth-04-tag-later-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 7486,
+        "sha256": "cb21f3a618f6a42a512376275037350b4309770686edf8b1baa11ff4a1be747b"
+      },
+      {
+        "file": "/products/calvingpocket/growth-04-tag-later-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 18924,
+        "sha256": "0e6e3d5ee39c7ef45c4577d050abda25608a4bbf56264e3d90aa9f59e4460c3c"
+      }
+    ]
+  },
+  "/products/calvingpocket/growth-05-export-backup.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 125356,
+    "sourceSha256": "c0a251b4f26710baeccce3a4b2bea020517ff871da5975abcc9ed424b7397b80",
+    "variants": [
+      {
+        "file": "/products/calvingpocket/growth-05-export-backup-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 23008,
+        "sha256": "5358945367f5c61825d6708eea3d239f90d331c53d4e0cb434037ba5f91910a4"
+      },
+      {
+        "file": "/products/calvingpocket/growth-05-export-backup-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 61118,
+        "sha256": "91e374d0bbcc0c8c1d51465daa7e715f9424accfc7f0d5be63050e9f851bdba5"
+      }
+    ]
+  },
+  "/products/gearproof/04-gearproof.jpg": {
+    "width": 662,
+    "height": 1440,
+    "sourceBytes": 79323,
+    "sourceSha256": "04234b8e618bee89cab77f0a7a8aab4630885164fa368d3ca2b6b33f1cb8656e",
+    "variants": [
+      {
+        "file": "/products/gearproof/04-gearproof-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 11414,
+        "sha256": "2a85442141f1945b1ba1e1cae1e5df2566e0ad98098fafc67a2f7155b757783c"
+      },
+      {
+        "file": "/products/gearproof/04-gearproof-662w.webp",
+        "width": 662,
+        "height": 1440,
+        "bytes": 25592,
+        "sha256": "9ed04c01a4562f98dcbce6ea24a1310dcdeb672104363d0aeec6b757e023e100"
+      }
+    ]
+  },
+  "/products/gearproof/growth-01-whole-kit.jpg": {
+    "width": 663,
+    "height": 1441,
+    "sourceBytes": 112724,
+    "sourceSha256": "b6f9939ea7ff45cd3fbe356750be921c51375d0cda56a8c8ad51416fa3073d45",
+    "variants": [
+      {
+        "file": "/products/gearproof/growth-01-whole-kit-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 14956,
+        "sha256": "db67640ccff06458642e10c7f075538f62fa7bcde49c920b2c81c781d6e9fe9f"
+      },
+      {
+        "file": "/products/gearproof/growth-01-whole-kit-663w.webp",
+        "width": 663,
+        "height": 1441,
+        "bytes": 33878,
+        "sha256": "000044ec22372319de67a10a2b33078c3646e15c5b214e92459b381c74e41bcb"
+      }
+    ]
+  },
+  "/products/gearproof/growth-03-two-of-three-batteries.jpg": {
+    "width": 663,
+    "height": 1441,
+    "sourceBytes": 47316,
+    "sourceSha256": "e69c9895d01636ebfff7930e9ddb13f3112e52e6d673b864c1df557f9befb7ad",
+    "variants": [
+      {
+        "file": "/products/gearproof/growth-03-two-of-three-batteries-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 4984,
+        "sha256": "ec247bf3337eb0af018c2d1a80e5c887958f5c14f5921b53309ea81a5b898fb9"
+      },
+      {
+        "file": "/products/gearproof/growth-03-two-of-three-batteries-663w.webp",
+        "width": 663,
+        "height": 1441,
+        "bytes": 11340,
+        "sha256": "b58195e65a0e54198d60872410de28b7543f9fdc66c8a4b7ceb01ae6df3dd30a"
+      }
+    ]
+  },
+  "/products/gearproof/growth-04-damage-note.jpg": {
+    "width": 663,
+    "height": 1441,
+    "sourceBytes": 70212,
+    "sourceSha256": "0fdc707756cbaf0bf0d10b2296289f92b8ddd3caa137be32befbcb935d7fe84c",
+    "variants": [
+      {
+        "file": "/products/gearproof/growth-04-damage-note-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 8368,
+        "sha256": "2b83b255cf7f9bc97308b6e36c0d9ac093387e7a1d720e8d2f8ea8edfc326499"
+      },
+      {
+        "file": "/products/gearproof/growth-04-damage-note-663w.webp",
+        "width": 663,
+        "height": 1441,
+        "bytes": 19436,
+        "sha256": "1d56a3fcd61bc0b101d9cfe782d52b28dd277e366297e3a06273a5484aa7955d"
+      }
+    ]
+  },
+  "/products/gearproof/growth-07-keep-the-record.jpg": {
+    "width": 663,
+    "height": 1441,
+    "sourceBytes": 122050,
+    "sourceSha256": "3747cbb2741e30a7098e10ec363fe0b52fbb53439560bee4b3497c94f304c002",
+    "variants": [
+      {
+        "file": "/products/gearproof/growth-07-keep-the-record-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 15978,
+        "sha256": "27f59362a4572203eb9125a86ad094043c6918934e66bc05993bb71e3a11585f"
+      },
+      {
+        "file": "/products/gearproof/growth-07-keep-the-record-663w.webp",
+        "width": 663,
+        "height": 1441,
+        "bytes": 37740,
+        "sha256": "57710eff5cc0afce895b6b70086068fa37df940d36128b73f9aec8de642704ba"
+      }
+    ]
+  },
+  "/products/litterround/01-litter-board.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 62445,
+    "sourceSha256": "9ea3c3119c9fe0c32022d123154d5de70aef38187d6b945052f8c9011f8358d8",
+    "variants": [
+      {
+        "file": "/products/litterround/01-litter-board-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 12186,
+        "sha256": "556682581acc16a0634af7127dc4101685ed6b563684ea64ac92005574716aec"
+      },
+      {
+        "file": "/products/litterround/01-litter-board-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 28936,
+        "sha256": "ccf76b64518c12818dfba4b9d956888e75411e94330978b9fe0e93882526091c"
+      }
+    ]
+  },
+  "/products/litterround/02-weight-round.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 62282,
+    "sourceSha256": "d4a2a976544b3e630538b6cb3ffe195614aed059d702940ea959f057569ed13d",
+    "variants": [
+      {
+        "file": "/products/litterround/02-weight-round-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 12662,
+        "sha256": "535e91110b1e0b1f553c28dd81fa89a9ef0cbae77f2107b15b07d737fb8c20c5"
+      },
+      {
+        "file": "/products/litterround/02-weight-round-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 30440,
+        "sha256": "bbaccadded211a23b5687bd7c96838eb165b42d93a2484d49349cdc9000d4ab9"
+      }
+    ]
+  },
+  "/products/litterround/03-puppy-history.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 46052,
+    "sourceSha256": "daf3135cb7f317b185d6f7d4320c954d19efdd1a1fb77a8c4be6353740888c00",
+    "variants": [
+      {
+        "file": "/products/litterround/03-puppy-history-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 8774,
+        "sha256": "23f167125fe30a08d8cc564625636b16cca91997ba6ff0733fcdc1ecd88e6305"
+      },
+      {
+        "file": "/products/litterround/03-puppy-history-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 21114,
+        "sha256": "64f350174f1bb0ac6581a3f7ddd7c4abca2180047615f32138b6b1f4ce248e2e"
+      }
+    ]
+  },
+  "/products/litterround/04-handoff-pdf.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 54394,
+    "sourceSha256": "b15660f013c0a6e2fd34f5d23a2100522a11ba357a28a9833a3f58e1eae99058",
+    "variants": [
+      {
+        "file": "/products/litterround/04-handoff-pdf-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 9902,
+        "sha256": "6d727dc0096745727e0f6c22568a0a37e210357709e771efd3ac30c49ce202d9"
+      },
+      {
+        "file": "/products/litterround/04-handoff-pdf-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 28492,
+        "sha256": "3f1daa4919b77bf3f4e54d7a47acdb9968bbce73cdb76dd21fa884a3cc15d6cc"
+      }
+    ]
+  },
+  "/products/pressrecipe/01-repeat-what-worked.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 65090,
+    "sourceSha256": "91a421a4bb1b0b4c66c2e09c1b1ee807846133632d44aa69c4bab0fc98a4cd04",
+    "variants": [
+      {
+        "file": "/products/pressrecipe/01-repeat-what-worked-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 12712,
+        "sha256": "604fa6adec4c24cbeb9282ac4ee81e438ab82b70466d5a7d5d3e9cd0ea8bb653"
+      },
+      {
+        "file": "/products/pressrecipe/01-repeat-what-worked-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 31140,
+        "sha256": "118d77ee4d24caaa2a76d059914e46644b7a7b418198bc9921112ace4a6735c9"
+      }
+    ]
+  },
+  "/products/pressrecipe/02-save-every-real-test.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 76241,
+    "sourceSha256": "2376db606d04cd81e4bf94941332fe62698ba4d2e1ca748e0f8f3a452f39c3c3",
+    "variants": [
+      {
+        "file": "/products/pressrecipe/02-save-every-real-test-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 14852,
+        "sha256": "f72d74be73238a1d7f6be954700c7c9b7836b59e6909a3a21cf9796320d37760"
+      },
+      {
+        "file": "/products/pressrecipe/02-save-every-real-test-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 35612,
+        "sha256": "c80f553a3c66797b2486b431f07c07551f0b75d84860055208989cff43081860"
+      }
+    ]
+  },
+  "/products/pressrecipe/03-proven-settings.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 70095,
+    "sourceSha256": "451012c879c93af98d3c4b92c2d36364dcd801365d7bd6bf82c0f7a897cc85ca",
+    "variants": [
+      {
+        "file": "/products/pressrecipe/03-proven-settings-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 13160,
+        "sha256": "b55160fd259b01abf05ac27814e4426609949c0ae37ace09fd0e38de5c92614a"
+      },
+      {
+        "file": "/products/pressrecipe/03-proven-settings-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 32368,
+        "sha256": "ca64877da6819f8de87813291d35ef6c6494bfc519b6c188592b31d771c09f39"
+      }
+    ]
+  },
+  "/products/pressrecipe/04-wash-results.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 65592,
+    "sourceSha256": "5f406ceb93635e24d1b7183f1a44e994b5d8464a5aba80bbc259655ea490a2dc",
+    "variants": [
+      {
+        "file": "/products/pressrecipe/04-wash-results-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 12772,
+        "sha256": "4d282aec533a6059c5bb9eaafd1f00bea66d81f413e36c9929933466ecaa5ffc"
+      },
+      {
+        "file": "/products/pressrecipe/04-wash-results-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 30634,
+        "sha256": "f610138c64812a90f994893910f6ebf33453b0c56b7652093eae820b5934af49"
+      }
+    ]
+  },
+  "/products/pressrecipe/demo-A-wash.jpg": {
+    "width": 663,
+    "height": 1441,
+    "sourceBytes": 82712,
+    "sourceSha256": "9782fde660a2447fa012fb81dd4db861344c6dfec9eaf446a92cf4c7b9ab4682",
+    "variants": [
+      {
+        "file": "/products/pressrecipe/demo-A-wash-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 13618,
+        "sha256": "6687695f026bfe0b8a3df9562fdbd8313c5bfccd1466e4648d1d343b154d4284"
+      },
+      {
+        "file": "/products/pressrecipe/demo-A-wash-663w.webp",
+        "width": 663,
+        "height": 1441,
+        "bytes": 33118,
+        "sha256": "64649e499de7ed37b374a4c2b8b6d785f4c88ab54ab6fa04c7326a7c256a3f26"
+      }
+    ]
+  },
+  "/products/pressrecipe/demo-B-wash.jpg": {
+    "width": 663,
+    "height": 1441,
+    "sourceBytes": 82282,
+    "sourceSha256": "13b9110b2ac7a6558d05ca57618ea3d4b5c0f922af162732d9217f54e91fc96f",
+    "variants": [
+      {
+        "file": "/products/pressrecipe/demo-B-wash-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 13626,
+        "sha256": "4bf83e630a80459c7c6a338293b3cc613ae1c201b26e4ce676fb55747867dca9"
+      },
+      {
+        "file": "/products/pressrecipe/demo-B-wash-663w.webp",
+        "width": 663,
+        "height": 1441,
+        "bytes": 32436,
+        "sha256": "b1fb2ab48f55c786ecf4b77bfe1c7db1732faba6fe2ec5d2f95e901b17995b1f"
+      }
+    ]
+  },
+  "/products/pressrecipe/demo-export.jpg": {
+    "width": 663,
+    "height": 1441,
+    "sourceBytes": 102087,
+    "sourceSha256": "791fc18280f210eff6a53f4f65eecab8dd7c1a9773331684dddae4932f84ee3f",
+    "variants": [
+      {
+        "file": "/products/pressrecipe/demo-export-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 17636,
+        "sha256": "b06caa744f2699716f863e59361dbdc67bc37c39c6167cc3e7ce1b0517dc138a"
+      },
+      {
+        "file": "/products/pressrecipe/demo-export-663w.webp",
+        "width": 663,
+        "height": 1441,
+        "bytes": 44364,
+        "sha256": "d3616de3e12c8706f7c341c7265f6ad7358d13dc2e924962eff33a81f97615b2"
+      }
+    ]
+  },
+  "/products/samejob/01-repeat-invoices.jpg": {
+    "width": 662,
+    "height": 1440,
+    "sourceBytes": 60463,
+    "sourceSha256": "94198277c416116743abf52c18c9d66679cf594e078b6f010973e97d0b72a3da",
+    "variants": [
+      {
+        "file": "/products/samejob/01-repeat-invoices-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 7818,
+        "sha256": "45a104670470d6607a2b99ee4ae61c181c8baaf93afc19e74c3fa6991f99d3d8"
+      },
+      {
+        "file": "/products/samejob/01-repeat-invoices-662w.webp",
+        "width": 662,
+        "height": 1440,
+        "bytes": 17484,
+        "sha256": "a1724936a6fcdbb7d13b52e1cc25d8e71316449396afa90aee4b9755e7c371f9"
+      }
+    ]
+  },
+  "/products/samejob/02-reuse-job-details.jpg": {
+    "width": 662,
+    "height": 1440,
+    "sourceBytes": 80171,
+    "sourceSha256": "80b9f13005dd4250d17d192e4027415757c69cee0e514a6fe5ca8db1223591b0",
+    "variants": [
+      {
+        "file": "/products/samejob/02-reuse-job-details-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 11376,
+        "sha256": "80ae826ca2ffd6ecc2ab2c9cfa3541111faf4b3a26c7a177b60611a64d2389ad"
+      },
+      {
+        "file": "/products/samejob/02-reuse-job-details-662w.webp",
+        "width": 662,
+        "height": 1440,
+        "bytes": 27078,
+        "sha256": "5776b1baf64b71a72e6ac51d02c2d08c99fd1a816003039a038af92223defebf"
+      }
+    ]
+  },
+  "/products/samejob/03-preview-pdf.jpg": {
+    "width": 662,
+    "height": 1440,
+    "sourceBytes": 56480,
+    "sourceSha256": "dde5e2214d6de167a70e48fd8ddec4420f4e92adba0605089a3de2283a550554",
+    "variants": [
+      {
+        "file": "/products/samejob/03-preview-pdf-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 6666,
+        "sha256": "9366acc2e811fdfa16b6f0d456b82c9e8cec3873556a03f624f59ed00d14679a"
+      },
+      {
+        "file": "/products/samejob/03-preview-pdf-662w.webp",
+        "width": 662,
+        "height": 1440,
+        "bytes": 15848,
+        "sha256": "43c9e73d6fdea17dd138b1eab2667ab6f9f05a5f727300a5583b1986ba42e99b"
+      }
+    ]
+  },
+  "/products/samejob/04-keep-your-records.jpg": {
+    "width": 662,
+    "height": 1440,
+    "sourceBytes": 90941,
+    "sourceSha256": "ec17b6533a0baf4519bafc7df59638693ffae14a05445416b3dbbfd0b6560308",
+    "variants": [
+      {
+        "file": "/products/samejob/04-keep-your-records-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 13052,
+        "sha256": "edc4df92272aefc0a99789bf87aa3cad12630a0f3f08847712f8b98c6458de82"
+      },
+      {
+        "file": "/products/samejob/04-keep-your-records-662w.webp",
+        "width": 662,
+        "height": 1440,
+        "bytes": 30174,
+        "sha256": "c496bb8a03b5054c732baa529ed15d119321e9bceb0f7645ff8d5401769921f5"
+      }
+    ]
+  },
+  "/products/tmproof/demo-pdf.jpg": {
+    "width": 663,
+    "height": 1441,
+    "sourceBytes": 75035,
+    "sourceSha256": "2d939c628de7fd8888409719aab385fa97a39e06329f10287c21e0d0cde74a96",
+    "variants": [
+      {
+        "file": "/products/tmproof/demo-pdf-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 10246,
+        "sha256": "3e63440aa669ae7692b1677586c7e0f794ed85b2057da87729bc1237e4a9d3b9"
+      },
+      {
+        "file": "/products/tmproof/demo-pdf-663w.webp",
+        "width": 663,
+        "height": 1441,
+        "bytes": 30642,
+        "sha256": "70caaa352d9eb82031129d656298dc0113dcc54be460a30802bfd9e0dbbcf973"
+      }
+    ]
+  },
+  "/products/tmproof/demo-signature.jpg": {
+    "width": 663,
+    "height": 1441,
+    "sourceBytes": 90314,
+    "sourceSha256": "644640c4dffb33773c707516c2deca01793a1d38477975aeb6ca8aaf5c104b30",
+    "variants": [
+      {
+        "file": "/products/tmproof/demo-signature-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 15838,
+        "sha256": "d99c16bbdd923f8b92f57b60e4bda9efa40e6f3538e4ff127d506da9eed3b93d"
+      },
+      {
+        "file": "/products/tmproof/demo-signature-663w.webp",
+        "width": 663,
+        "height": 1441,
+        "bytes": 41250,
+        "sha256": "73b6fc5c31daea874cf40cb7ad67ec17a75c226ceceb76e1f89b934befb08d14"
+      }
+    ]
+  },
+  "/products/tmproof/demo-ticket.jpg": {
+    "width": 663,
+    "height": 1441,
+    "sourceBytes": 75030,
+    "sourceSha256": "503520e554f9077677b00b0ce779b11c625b317e91845059aec9ec93e92ddf42",
+    "variants": [
+      {
+        "file": "/products/tmproof/demo-ticket-320w.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 12544,
+        "sha256": "7e3d18155b90946471ed3369f7f329bef01224e3a74915883a867d3fea1c2953"
+      },
+      {
+        "file": "/products/tmproof/demo-ticket-663w.webp",
+        "width": 663,
+        "height": 1441,
+        "bytes": 31860,
+        "sha256": "725d92808c80ee8ab4763cb4829a2aebeec04c502f7c31e841fb96860df021c1"
+      }
+    ]
+  },
+  "/products/tmproof/store-01-ticket.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 59148,
+    "sourceSha256": "da611993057daebaaf6333438d51b049647456d2de0961d697ecd7a01f007ae7",
+    "variants": [
+      {
+        "file": "/products/tmproof/store-01-ticket-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 11208,
+        "sha256": "3a720c62a233ba2cb3f07574c14c8d4e05239bf85cb7c353abfb513f9ceb2854"
+      },
+      {
+        "file": "/products/tmproof/store-01-ticket-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 29432,
+        "sha256": "712b755f3659f922614f9b51da0f1da56d96dd382f1b35524491e626ae57ddc2"
+      }
+    ]
+  },
+  "/products/tmproof/store-02-signature.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 76040,
+    "sourceSha256": "76d77c5d8f6f301341f0e76c35a1a2b0b04692fbcf09531bbe65db4e3be147a2",
+    "variants": [
+      {
+        "file": "/products/tmproof/store-02-signature-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 15180,
+        "sha256": "d123e5c53bd4bc342b7d30b97f9ed6776d7da7b98dd21aadd821f0a78c049265"
+      },
+      {
+        "file": "/products/tmproof/store-02-signature-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 39754,
+        "sha256": "3483cd2ffd1fdf53f4236932c30c2e95846f593693de2025014f580cdc115218"
+      }
+    ]
+  },
+  "/products/tmproof/store-03-pdf.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 59924,
+    "sourceSha256": "3c6ce3798ce9b7e63275576342b0adc2855d0fa8af8e9b02abd6f32b50422379",
+    "variants": [
+      {
+        "file": "/products/tmproof/store-03-pdf-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 10462,
+        "sha256": "8ffd5ae895053305cab19a784ed658a38a3308cc226e17e40a11b11417a82b17"
+      },
+      {
+        "file": "/products/tmproof/store-03-pdf-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 28714,
+        "sha256": "9fbc800ecb3baf39cea6e49cda59bcc07403b1efeda4349d99c22026227476a4"
+      }
+    ]
+  },
+  "/products/tmproof/store-04-history.jpg": {
+    "width": 663,
+    "height": 1440,
+    "sourceBytes": 45881,
+    "sourceSha256": "bf2771c4af4f3afac01ada7fb91d4b47a714efdfdc144be50241e127761b9ebd",
+    "variants": [
+      {
+        "file": "/products/tmproof/store-04-history-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 8730,
+        "sha256": "da775a49e1318edecb7f955d52f14cf90ada6eafc3327d132c73a5b9121d4546"
+      },
+      {
+        "file": "/products/tmproof/store-04-history-663w.webp",
+        "width": 663,
+        "height": 1440,
+        "bytes": 21094,
+        "sha256": "4998ff02dd8ce14308217c55a558cd02e6166a02a7716dc46d7c604b36591279"
+      }
+    ]
+  }
+}

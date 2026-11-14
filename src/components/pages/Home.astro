@@ -6,6 +6,7 @@ import Product from '../../components/Product.astro';
 import { categories, featured, listings } from '../../data/catalog';
 import { copy } from '../../data/products';
 import { site } from '../../data/site';
+import { screenshot } from '../../data/screenshots';
 
 import { translator, localizedPath, type Locale } from '../../data/i18n';
 interface Props {
@@ -66,9 +67,8 @@ const href = (path: string) => localizedPath(path, locale);
       <div class="showcase-screens">
         <div class="showcase-screen screen-primary">
           <img
-            src="/products/samejob/01-repeat-invoices.jpg"
-            width="663"
-            height="1440"
+            {...screenshot('/products/samejob/01-repeat-invoices.jpg')}
+            sizes="(max-width: 600px) 45vw, (max-width: 1050px) 35vw, 240px"
             fetchpriority="high"
             alt={
               locale === 'en'
@@ -79,9 +79,8 @@ const href = (path: string) => localizedPath(path, locale);
         </div>
         <div class="showcase-screen screen-secondary">
           <img
-            src="/products/gearproof/04-gearproof.jpg"
-            width="663"
-            height="1440"
+            {...screenshot('/products/gearproof/04-gearproof.jpg')}
+            sizes="(max-width: 600px) 40vw, (max-width: 1050px) 30vw, 200px"
             decoding="async"
             alt={
               locale === 'en'
