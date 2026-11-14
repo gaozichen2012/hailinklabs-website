@@ -71,13 +71,8 @@ const href = (suffix: string) =>
             {c(['Watch the camera kit demo', '观看相机套装演示'])}
           </a>{' '}
           ·{' '}
-          <a
-            href={localizedPath(
-              '/guides/camera-equipment-checkout-sheet',
-              locale,
-            )}
-          >
-            {c(['Free camera checkout sheet', '免费相机借出表'])}
+          <a href={localizedPath('/templates/equipment-checkout-log', locale)}>
+            {c(['Free equipment checkout sheet', '免费器材借出表'])}
           </a>
         </p>
       )}

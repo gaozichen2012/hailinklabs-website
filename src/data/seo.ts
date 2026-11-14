@@ -309,15 +309,9 @@ export function structuredData(
     publisher: { '@id': organization['@id'] },
     image: socialImage(englishPath, locale).url,
     ...(listing && {
-      ...(['samejob', 'tmproof', 'pressrecipe', 'litterround'].includes(
-        product.slug,
-      ) && {
-        identifier: String(listing.appId),
-        softwareVersion: listing.version,
-      }),
+      identifier: String(listing.appId),
+      softwareVersion: listing.version,
       ...(product.slug === 'gearproof' && {
-        identifier: String(listing.appId),
-        softwareVersion: listing.version,
         inLanguage: 'en',
         subjectOf: { '@id': `${site.url}/products/gearproof/demo#video` },
       }),
