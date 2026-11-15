@@ -593,6 +593,33 @@ const templateList = hub
             </div>
           </nav>
         )}
+        {sheet.slug === 'repeat-customer-invoice' && (
+          <nav
+            class="resource-product-details task-app-shortcut"
+            aria-label={c('Optional iPhone workflow', '可选的 iPhone 记录方式')}
+          >
+            <p>
+              {c(
+                'Prefer reusing customer details on an iPhone? The worksheet stays free; SameJob is a separate option.',
+                '想在 iPhone 上复用客户资料？工作表仍可免费使用，SameJob 是独立的可选 App。',
+              )}
+            </p>
+            <div class="resource-links">
+              <a class="text-link" href={link('/products/samejob')}>
+                {c(
+                  'SameJob workflow, free allowance and pricing',
+                  'SameJob 流程、免费额度与价格',
+                )}
+              </a>
+              <a
+                class="text-link"
+                href={link('/products/samejob#gallery-title')}
+              >
+                {c('See the App screenshots', '查看 App 实际界面截图')}
+              </a>
+            </div>
+          </nav>
+        )}
         <details class="worksheet-preview" open>
           <summary>{c('Blank worksheet preview', '空白表格预览')}</summary>
           <WorksheetPreview sheet={sheet} locale={locale} />
