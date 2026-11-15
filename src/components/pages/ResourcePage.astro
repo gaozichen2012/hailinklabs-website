@@ -566,6 +566,33 @@ const templateList = hub
             </div>
           </nav>
         )}
+        {sheet.slug === 'puppy-weight-log' && (
+          <nav
+            class="resource-product-details task-app-shortcut"
+            aria-label={c('Optional iPhone workflow', '可选的 iPhone 记录方式')}
+          >
+            <p>
+              {c(
+                'Prefer recording the whole litter on an iPhone? The worksheet stays free; LitterRound is a separate option.',
+                '想用 iPhone 记录整窝幼犬？工作表仍可免费使用，LitterRound 是独立的可选 App。',
+              )}
+            </p>
+            <div class="resource-links">
+              <a class="text-link" href={link('/products/litterround')}>
+                {c(
+                  'LitterRound workflow and pricing',
+                  'LitterRound 流程与价格',
+                )}
+              </a>
+              <a
+                class="text-link"
+                href={link('/products/litterround#gallery-title')}
+              >
+                {c('See the App screenshots', '查看 App 实际界面截图')}
+              </a>
+            </div>
+          </nav>
+        )}
         <details class="worksheet-preview" open>
           <summary>{c('Blank worksheet preview', '空白表格预览')}</summary>
           <WorksheetPreview sheet={sheet} locale={locale} />

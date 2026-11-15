@@ -11,6 +11,7 @@ const pageUpdates: Record<string, string> = {
   '/guides/invoice-template-repeat-customers': '2026-10-31',
   '/guides/repeat-invoice-workflow': '2026-11-14',
   '/templates/calving-record-sheet': '2026-11-14',
+  '/templates/puppy-weight-log': '2026-11-15',
   '/templates/heat-press-settings-log': '2026-11-15',
   '/guides/estimate-to-invoice-workflow': '2026-10-31',
   '/guides/time-and-materials-ticket-template': '2026-11-15',
