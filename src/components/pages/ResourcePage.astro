@@ -144,6 +144,16 @@ const templateList = hub
             </a>
           </p>
         )}
+        {guide.slug === 'time-and-materials-ticket-template' && (
+          <p class="resource-product-details task-app-shortcut">
+            <a class="text-link" href={link('/products/tmproof')}>
+              {c(
+                'Prefer an iPhone workflow? See TMProof ticket signing, PDF export and pricing',
+                '想在 iPhone 上完成？查看 TMProof 工单签认、PDF 导出与价格',
+              )}
+            </a>
+          </p>
+        )}
       </nav>
     )}
     {guide && (

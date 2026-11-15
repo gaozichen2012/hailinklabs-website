@@ -58,6 +58,16 @@ const href = (suffix: string) =>
       {highlight && <p class="data-summary">{c(highlight.data)}</p>}
       <p class="availability">{c(availability(p.slug))}</p>
       <AppStoreLink locale={locale} slug={p.slug} />
+      {p.slug === 'tmproof' && (
+        <p>
+          <a href="#app-demo">
+            {c([
+              'See a signed DEMO ticket and the App-generated PDF',
+              '查看已签认的 DEMO 工单与 App 生成的 PDF',
+            ])}
+          </a>
+        </p>
+      )}
       {p.slug === 'calvingpocket' && (
         <p>
           <a href="#calving-demo">
