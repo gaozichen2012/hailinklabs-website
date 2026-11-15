@@ -58,6 +58,16 @@ const href = (suffix: string) =>
       {highlight && <p class="data-summary">{c(highlight.data)}</p>}
       <p class="availability">{c(availability(p.slug))}</p>
       <AppStoreLink locale={locale} slug={p.slug} />
+      {p.slug === 'pressrecipe' && (
+        <p>
+          <a href="#app-demo">
+            {c([
+              'See two DEMO tests, wash outcomes and the App-exported CSV',
+              '查看两次 DEMO 测试、水洗结果与 App 导出的 CSV',
+            ])}
+          </a>
+        </p>
+      )}
       {p.slug === 'tmproof' && (
         <p>
           <a href="#app-demo">
