@@ -16,10 +16,17 @@ const heading = privacy
 <Layout
   locale={locale}
   title={`${heading} | Hailink Labs`}
-  description={c(
-    'Parent information for BotSteps real-world robot missions.',
-    'BotSteps 现实机器人任务的家长支持指南，包含玩法、试用、购买恢复和隐私信息。',
-  )}
+  description={
+    privacy
+      ? c(
+          'BotSteps privacy policy: local progress and custom missions, bundled audio, Apple purchases, deletion and parent support email.',
+          'BotSteps 隐私政策：了解本地进度与自定义任务、内置音频、Apple 购买、数据删除，以及家长支持邮件中的信息如何处理。',
+        )
+      : c(
+          'BotSteps support: set up room missions, build and run commands, use Mission Maker, troubleshoot audio and restore purchases.',
+          'BotSteps 使用支持：布置真人机器人任务、编排并运行指令、使用 Mission Maker、排查声音，以及了解试用和恢复购买。',
+        )
+  }
 >
   <section class="page-intro policy-intro">
     <a class="breadcrumb" href={localizedPath('/products/botsteps', locale)}>

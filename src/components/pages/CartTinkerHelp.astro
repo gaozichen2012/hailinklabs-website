@@ -101,10 +101,22 @@ const sections = privacy
 <Layout
   locale={locale}
   title={`${title} | Hailink Labs`}
-  description={c(
-    'CartTinker support and privacy: pretend budget puzzles, parent controls, local progress, private iCloud and Apple purchases.',
-    'CartTinker 使用支持与隐私：虚构预算谜题、家长门禁、本地学习记录、可选私有 iCloud，以及 Apple 试用、购买与恢复。',
-  )}
+  description={
+    privacy
+      ? c(
+          'CartTinker privacy policy: how local learning records, optional private iCloud sync, Apple purchases and support email are handled.',
+          'CartTinker 隐私政策：了解本地学习记录、可选私有 iCloud 同步、Apple 购买、备份与删除，以及支持邮件中的信息如何处理。',
+        )
+      : kind === 'overview'
+        ? c(
+            'CartTinker budget puzzles for ages 6–8: compare pretend shopping plans, swap items and check every condition. Includes a free example and parent controls.',
+            'CartTinker 面向 6–8 岁儿童的预算谜题：比较虚构购物计划、替换用品并检查全部条件，练习在预算内保留目标。提供免费示例与家长入口。',
+          )
+        : c(
+            'CartTinker help for parents: start the free example, use parent controls, restore purchases and back up learning records.',
+            'CartTinker 使用支持：家长如何开启免费示例、使用家长入口、恢复购买、导出与导入学习备份，以及排查声音和保存问题。',
+          )
+  }
 >
   <section class="page-intro policy-intro">
     <a class="breadcrumb" href={localizedPath('/products', locale)}>

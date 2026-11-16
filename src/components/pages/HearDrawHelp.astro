@@ -16,10 +16,17 @@ const heading = privacy
 <Layout
   locale={locale}
   title={`${heading} | Hailink Labs`}
-  description={c(
-    'Parent support and privacy information for HearDraw listening and paper drawing mysteries.',
-    'HearDraw 听力与纸上神秘绘画的家长支持指南，包含玩法、试用、购买恢复和隐私信息。',
-  )}
+  description={
+    privacy
+      ? c(
+          'HearDraw privacy policy: on-device progress, bundled audio, Apple purchases, deletion and parent support email.',
+          'HearDraw 隐私政策：了解设备上的任务进度、内置音频、Apple 购买、数据删除，以及家长支持邮件中的信息如何处理。',
+        )
+      : c(
+          'HearDraw support: play listen-and-draw mysteries, repeat audio clues, resume progress and manage the trial or restore purchases.',
+          'HearDraw 使用支持：准备纸笔听线索绘画、重听音频、继续未完成任务、了解试用与恢复购买，以及排查声音问题。',
+        )
+  }
 >
   <section class="page-intro policy-intro">
     <a class="breadcrumb" href={localizedPath('/products/heardraw', locale)}>

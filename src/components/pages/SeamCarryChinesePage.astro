@@ -11,7 +11,11 @@ const title = kind === 'privacy' ? 'SeamCarry 隐私政策' : 'SeamCarry 支持'
 <Layout
   locale="zh-CN"
   title={`${title} — Hailink Labs`}
-  description="SeamCarry 本地纸样记录、实物版本核对、备份和购买支持。"
+  description={
+    kind === 'privacy'
+      ? 'SeamCarry 隐私政策：了解本地纸样记录与照片、自选文件服务、Apple 购买、数据保留和删除，以及外部备份副本的管理。'
+      : 'SeamCarry 使用支持：核对实物纸样版本、保留制作历史、导出报告、恢复完整备份和购买权益，以及处理保存问题。'
+  }
 >
   <section class="section intro">
     <p class="eyebrow">Hailink Labs · SeamCarry</p>

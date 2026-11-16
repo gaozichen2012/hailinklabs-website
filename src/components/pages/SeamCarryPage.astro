@@ -11,7 +11,11 @@ const title =
 
 <Layout
   title={`${title} — Hailink Labs`}
-  description="SeamCarry local sewing records, paper version checks, backups and purchase support."
+  description={
+    kind === 'privacy'
+      ? 'SeamCarry privacy policy: local sewing records and photos, chosen file providers, Apple purchases, retention and deletion.'
+      : 'SeamCarry support: check paper pattern versions, preserve make history, export reports, restore full backups and restore purchases.'
+  }
 >
   <section class="section intro">
     <p class="eyebrow">Hailink Labs · SeamCarry</p>

@@ -112,10 +112,22 @@ const sections = {
 <Layout
   locale={locale}
   title={`${titles[kind]} | Hailink Labs`}
-  description={c(
-    'MinuteSprout time experiments, personal time cards and family information.',
-    'MinuteSprout 时间实验、个人时间卡与家长指南。',
-  )}
+  description={
+    kind === 'product'
+      ? c(
+          'MinuteSprout time games for ages 6–8: predict and measure real activities, compare results and plan with personal time cards. Three activities stay free.',
+          'MinuteSprout 面向 6–8 岁儿童的时间游戏：预测并测量真实活动用时、比较结果，再用个人时间卡练习安排。三个活动持续免费。',
+        )
+      : kind === 'privacy'
+        ? c(
+            'MinuteSprout privacy policy: local experiments and plans, optional private iCloud sync, exported files, Apple purchases and deletion.',
+            'MinuteSprout 隐私政策：了解本地实验与计划、可选私有 iCloud 同步、导出文件、Apple 购买及数据删除的处理范围。',
+          )
+        : c(
+            'MinuteSprout help for parents: set up time experiments, use time cards, restore purchases and export or restore learning backups.',
+            'MinuteSprout 使用支持：家长如何准备时间实验、使用时间卡和计划、恢复购买，以及导出学习记录、备份与恢复数据。',
+          )
+  }
 >
   <section
     class:list={[

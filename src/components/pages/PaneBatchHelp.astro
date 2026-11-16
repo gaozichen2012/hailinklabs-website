@@ -18,10 +18,17 @@ const href = (suffix: string) =>
 <Layout
   locale={locale}
   title={`${heading} | Hailink Labs`}
-  description={c(
-    'PaneBatch support and privacy: screen repair jobs, measurements, workshop, refit, local backups and Lifetime purchases.',
-    'PaneBatch 使用支持与隐私说明：纱窗维修工单、尺寸和五金记录、工作台与返装、本地完整备份，以及终身购买与恢复。',
-  )}
+  description={
+    privacy
+      ? c(
+          'PaneBatch privacy policy: local job records and photos, chosen exports and backups, Apple purchases, retention, deletion and support email.',
+          'PaneBatch 隐私政策：了解本地工单与照片、自选导出和备份、Apple 购买、数据保留与删除，以及支持邮件的处理范围。',
+        )
+      : c(
+          'PaneBatch support: record screen measurements, track workshop and refit work, export worksheets, restore backups and restore purchases.',
+          'PaneBatch 使用支持：记录纱窗尺寸、跟进工作台与返装流程、导出工作表、恢复完整备份和购买权益，以及处理保存问题。',
+        )
+  }
 >
   <section class="page-intro policy-intro">
     <a class="breadcrumb" href={localizedPath('/support', locale)}>

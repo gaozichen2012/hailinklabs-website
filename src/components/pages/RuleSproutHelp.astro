@@ -16,10 +16,17 @@ const heading = privacy
 <Layout
   locale={locale}
   title={`${heading} | Hailink Labs`}
-  description={c(
-    'Parent information for RuleSprout offline logic lessons: local progress, purchases, privacy and support.',
-    'RuleSprout 离线逻辑游戏的家长指南，说明本地关卡进度、一次性购买与恢复、儿童隐私及支持方式。',
-  )}
+  description={
+    privacy
+      ? c(
+          'RuleSprout privacy policy: local lesson progress and settings, Apple purchases, deletion, permissions and parent support email.',
+          'RuleSprout 隐私政策：了解本机关卡进度与设置、Apple 购买、数据删除、权限，以及家长支持邮件中的信息如何处理。',
+        )
+      : c(
+          'RuleSprout support: choose evidence, continue lessons, understand free access, restore purchases and troubleshoot saved progress.',
+          'RuleSprout 使用支持：选择能区分想法的证据、继续关卡、了解免费范围、恢复购买，以及排查进度和显示问题。',
+        )
+  }
 >
   <section class="page-intro policy-intro">
     <a class="breadcrumb" href={localizedPath('/products/rulesprout', locale)}>

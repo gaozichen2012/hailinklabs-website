@@ -16,10 +16,17 @@ const heading = privacy
 <Layout
   locale={locale}
   title={`${heading} | Hailink Labs`}
-  description={c(
-    'Parent information for TillTinker money games: coin trades, local learning, a seven-day trial, purchases, backups and private iCloud progress.',
-    'TillTinker 钱币学习游戏的家长指南，说明等值兑换、本地学习、七天试用、一次性购买与恢复、JSON 备份和可选私有 iCloud 进度同步。',
-  )}
+  description={
+    privacy
+      ? c(
+          'TillTinker privacy policy: local learning history, optional private iCloud completion progress, backups, Apple purchases and deletion.',
+          'TillTinker 隐私政策：了解本地学习历史、可选私有 iCloud 完成进度、备份、Apple 购买与数据删除的处理范围。',
+        )
+      : c(
+          'TillTinker support: practice coin trades and payments, replay saved steps, start the trial, restore purchases and back up learning.',
+          'TillTinker 使用支持：练习钱币兑换与支付、回放已保存步骤、开启七天试用、恢复购买，以及备份和恢复学习记录。',
+        )
+  }
 >
   <section class="page-intro policy-intro">
     <a class="breadcrumb" href={localizedPath('/products/tilltinker', locale)}>
