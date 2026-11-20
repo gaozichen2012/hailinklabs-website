@@ -10,8 +10,12 @@ for (const prefix of ['', '/zh']) {
   }) => {
     await page.goto(`${prefix}/products`);
     await expect(page.locator('.availability')).toHaveCount(29);
-    await expect(page.locator('.availability.is-available')).toHaveCount(6);
-    await expect(page.locator('#downloadable .store-download')).toHaveCount(6);
+    await expect(page.locator('.availability.is-available')).toHaveCount(
+      Object.keys(listings).length,
+    );
+    await expect(page.locator('#downloadable .store-download')).toHaveCount(
+      Object.keys(listings).length,
+    );
     for (const product of catalog) {
       const card = page.locator('.matrix-card').filter({
         has: page.getByRole('heading', { name: product.name, exact: true }),
@@ -30,6 +34,7 @@ for (const prefix of ['', '/zh']) {
       ['tmproof', '6814884804', '$9.99'],
       ['calvingpocket', '6815103146', '$19.99'],
       ['pressrecipe', '6816618604', '$9.99'],
+      ['hybridloop', '6815237954', '$19.99'],
     ]) {
       const link = page.locator(`.matrix-card a[href*="/id${id}"]`);
       await expect(link).toBeVisible();

@@ -126,5 +126,40 @@
         "关联洗涤观察与原测试（英文 App 界面）"
       ]
     }
+  ],
+  "hybridloop": [
+    {
+      "file": "build8-01-train",
+      "width": 660,
+      "height": 1434,
+      "caption": ["Import or choose a workout", "导入或选择训练"]
+    },
+    {
+      "file": "build8-03-manual-workout",
+      "width": 660,
+      "height": 1434,
+      "caption": [
+        "Time your workout and see what’s next",
+        "计时并查看下一项动作"
+      ]
+    },
+    {
+      "file": "build8-05-review-and-repeat",
+      "width": 660,
+      "height": 1434,
+      "caption": [
+        "Review the result and repeat the original plan",
+        "回顾成绩并复练原计划"
+      ]
+    },
+    {
+      "file": "build8-04-compatible-progress",
+      "width": 660,
+      "height": 1434,
+      "caption": [
+        "Compare sessions with matching conditions",
+        "比较条件相同的训练"
+      ]
+    }
   ]
 }

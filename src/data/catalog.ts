@@ -241,6 +241,16 @@ export const listings: Record<
     source: 'https://itunes.apple.com/lookup?id=6815103146&country=us',
     priceRegion: 'US; lookup confirms free download only, not IAP pricing',
   },
+  hybridloop: {
+    url: 'https://apps.apple.com/us/app/hybridloop-workout-timer/id6815237954',
+    ios: 18,
+    verified: '2026-11-20',
+    appId: 6815237954,
+    storeName: 'HybridLoop: Workout Timer',
+    version: '1.0.1',
+    source: 'https://itunes.apple.com/lookup?id=6815237954&country=us',
+    priceRegion: 'US; lookup confirms free download only, not IAP pricing',
+  },
 };
 // A missing verified link is not proof of an app's review or release status.
 export const availability = (slug: string): Copy =>
@@ -251,6 +261,24 @@ export const highlights: Record<
   string,
   { price: Copy; data: Copy; seo: Copy; fit?: Copy }
 > = {
+  hybridloop: {
+    price: [
+      '7-day full trial · US$19.99 lifetime · No subscription',
+      '7 天完整试用 · 美区 US$19.99 终身买断 · 无订阅',
+    ],
+    data: [
+      'Workout plans and results are stored on your iPhone, with optional private iCloud sync.',
+      '训练计划和成绩保存在 iPhone 上，可选用私有 iCloud 同步。',
+    ],
+    seo: [
+      'HybridLoop — Voice-Guided Workout Timer',
+      'HybridLoop — 语音引导训练计时器',
+    ],
+    fit: [
+      'Time and record your own hybrid workouts. Repeat the original plan and compare sessions with matching conditions.',
+      '计时并记录自己的混合训练。按原计划复练，并比较条件相同的训练。',
+    ],
+  },
   tmproof: {
     fit: [
       'Choose it to document extra work and itemized labor, materials and equipment. A signed acknowledgment is not a payment guarantee or a replacement for a formal change order.',

@@ -1,0 +1,48 @@
+---
+import type { Locale } from '../data/i18n';
+
+const { locale } = Astro.props as { locale: Locale };
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const video = '/products/hybridloop/workout-walkthrough.mp4';
+---
+
+<section id="hybridloop-demo" aria-labelledby="hybridloop-demo-title">
+  <h2 id="hybridloop-demo-title">
+    {c('Import, time and repeat a workout', '导入、计时与复练')}
+  </h2>
+  <p>
+    {c(
+      'Open Import Workout, review the draft, then time your workout. Save the result and use Repeat Original Plan for your next session.',
+      '打开 Import Workout，核对草稿后开始计时。保存这次训练，再用 Repeat Original Plan 按原计划复练。',
+    )}
+  </p>
+  <video
+    controls
+    playsinline
+    width="720"
+    height="1280"
+    preload="none"
+    poster="/products/hybridloop/workout-walkthrough.jpg"
+    aria-label={c('HybridLoop workout walkthrough', 'HybridLoop 训练流程演示')}
+  >
+    <source src={video} type="video/mp4" />
+  </video>
+  <p>
+    {c(
+      'Silent walkthrough made from existing App Store screenshots with sample data. The App interface is in English.',
+      '无声演示以现有 App Store 截图制作，使用示例数据。App 界面为英文。',
+    )}
+    <a href={video} download>
+      {c('Download the video', '下载视频')}
+    </a>
+  </p>
+</section>
+
+<style>
+  video {
+    display: block;
+    width: min(100%, 380px);
+    height: auto;
+    border-radius: 18px;
+  }
+</style>

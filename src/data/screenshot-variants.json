@@ -197,6 +197,94 @@
       }
     ]
   },
+  "/products/hybridloop/build8-01-train.jpg": {
+    "width": 660,
+    "height": 1434,
+    "sourceBytes": 82073,
+    "sourceSha256": "42d8b9a4d1b2af287cdc44204925374d0830f007c6525b69ee42d656ebb6f2b0",
+    "variants": [
+      {
+        "file": "/products/hybridloop/build8-01-train-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 13584,
+        "sha256": "57f67963a75d479b78d21db4341d93ae30e407ad4b5843b261617e65d683db97"
+      },
+      {
+        "file": "/products/hybridloop/build8-01-train-660w.webp",
+        "width": 660,
+        "height": 1434,
+        "bytes": 32496,
+        "sha256": "b73e87399e8bf42d58f3762be613f4c17d1a87f5c180e6512b1ec9b461c9b4a6"
+      }
+    ]
+  },
+  "/products/hybridloop/build8-03-manual-workout.jpg": {
+    "width": 660,
+    "height": 1434,
+    "sourceBytes": 65811,
+    "sourceSha256": "13f51c1ae550ca79182dd08e518cffac3c731b3171a5e1f3878c6d71ad699938",
+    "variants": [
+      {
+        "file": "/products/hybridloop/build8-03-manual-workout-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 11612,
+        "sha256": "9f4ace358750862a1825f16179f8d64d58fdab7f581f54468bff09164280a6da"
+      },
+      {
+        "file": "/products/hybridloop/build8-03-manual-workout-660w.webp",
+        "width": 660,
+        "height": 1434,
+        "bytes": 26892,
+        "sha256": "69049dde2f1150487ec6c98826b80360f6b49afead270bd5128425c1ad0e670b"
+      }
+    ]
+  },
+  "/products/hybridloop/build8-04-compatible-progress.jpg": {
+    "width": 660,
+    "height": 1434,
+    "sourceBytes": 92011,
+    "sourceSha256": "898f9d8f2cda7aea2554485792362289cd3232067ccc653c32f4207c7ad111df",
+    "variants": [
+      {
+        "file": "/products/hybridloop/build8-04-compatible-progress-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 14290,
+        "sha256": "3521fed63ec681a5c93dc73623116d2d5732fd4dfe4c4dfe40ac600d8b74193a"
+      },
+      {
+        "file": "/products/hybridloop/build8-04-compatible-progress-660w.webp",
+        "width": 660,
+        "height": 1434,
+        "bytes": 36662,
+        "sha256": "9945b3fc107217b8c3bbeddb378127607bf0505782bfd60f83f980b0d1987383"
+      }
+    ]
+  },
+  "/products/hybridloop/build8-05-review-and-repeat.jpg": {
+    "width": 660,
+    "height": 1434,
+    "sourceBytes": 107675,
+    "sourceSha256": "0c02bba4c660dbb955197071206e22dfbf9a8e4e504db4628d07adc9bfe8d917",
+    "variants": [
+      {
+        "file": "/products/hybridloop/build8-05-review-and-repeat-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 17990,
+        "sha256": "bc462f82c161493e7eb9b1b75fc69a2bcda544526d7bbe16a40ec1bac900a7be"
+      },
+      {
+        "file": "/products/hybridloop/build8-05-review-and-repeat-660w.webp",
+        "width": 660,
+        "height": 1434,
+        "bytes": 45504,
+        "sha256": "f906029957135fbf9ffdb6dcdd3b96eeadc4e02b2471911fddc60fe45faac3a9"
+      }
+    ]
+  },
   "/products/litterround/01-litter-board.jpg": {
     "width": 663,
     "height": 1440,

@@ -101,7 +101,7 @@ const pageUpdates: Record<string, string> = {
   '/products/formalsflow': '2026-10-05',
   '/products/formalsflow/support': '2026-10-05',
   '/products/formalsflow/privacy': '2026-10-05',
-  '/products/hybridloop': '2026-10-11',
+  '/products/hybridloop': '2026-11-20',
   '/products/rulesprout': '2026-10-05',
 };
 export const lastModified = (path: string) => {

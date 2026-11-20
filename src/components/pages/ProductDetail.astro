@@ -7,6 +7,7 @@ import ProductGallery from '../ProductGallery.astro';
 import AppDemo from '../AppDemo.astro';
 import GearProofDemo from '../GearProofDemo.astro';
 import CalvingDemo from '../CalvingDemo.astro';
+import HybridLoopDemo from '../HybridLoopDemo.astro';
 import AppStoreLink from '../AppStoreLink.astro';
 import Layout from '../../layouts/Layout.astro';
 import { localizedPath, type Locale } from '../../data/i18n';
@@ -85,6 +86,13 @@ const href = (suffix: string) =>
           </a>
         </p>
       )}
+      {p.slug === 'hybridloop' && (
+        <p>
+          <a href="#hybridloop-demo">
+            {c(['Watch the workout walkthrough', '观看训练流程演示'])}
+          </a>
+        </p>
+      )}
       {p.slug === 'gearproof' && (
         <p>
           <a href={href('/demo')}>
@@ -156,6 +164,7 @@ const href = (suffix: string) =>
   <AppDemo locale={locale} slug={p.slug} />
   {p.slug === 'gearproof' && <GearProofDemo locale={locale} />}
   {p.slug === 'calvingpocket' && <CalvingDemo locale={locale} />}
+  {p.slug === 'hybridloop' && <HybridLoopDemo locale={locale} />}
   <section class="section-row">
     <div class="section-label">
       <h2>{c(['Main features', '主要功能'])}</h2>

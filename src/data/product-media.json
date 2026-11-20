@@ -265,6 +265,30 @@
       "source": "GearProof camera-kit marketing capture",
       "sourceSha256": "0dd391cf08d979ab96cb46b09e57dcd0080b033eeedf2ab5422437f774f04d93",
       "sha256": "ce3b3127aebb06f31127db7ab85686ae5d308f192115c2e6d59d4227e237033b"
+    },
+    {
+      "file": "public/products/hybridloop/build8-01-train.jpg",
+      "source": "ios-release-hub/apps/HybridLoop/screenshots/en-US/build8/build8-01-train.png",
+      "sourceSha256": "13e219161c7545ab7efeece6a47fb9aded744c38a298148334a70681bafa10eb",
+      "sha256": "42d8b9a4d1b2af287cdc44204925374d0830f007c6525b69ee42d656ebb6f2b0"
+    },
+    {
+      "file": "public/products/hybridloop/build8-03-manual-workout.jpg",
+      "source": "ios-release-hub/apps/HybridLoop/screenshots/en-US/build8/build8-03-manual-workout.png",
+      "sourceSha256": "660960464a8e3a239efb89a4975cbc6223a7180ab352acddb4656c9fb1399ee7",
+      "sha256": "13f51c1ae550ca79182dd08e518cffac3c731b3171a5e1f3878c6d71ad699938"
+    },
+    {
+      "file": "public/products/hybridloop/build8-05-review-and-repeat.jpg",
+      "source": "ios-release-hub/apps/HybridLoop/screenshots/en-US/build8/build8-05-review-and-repeat.png",
+      "sourceSha256": "7c975c980f3e0a33c9740138d64b30eff94797b9159935071202d5b249c23f94",
+      "sha256": "0c02bba4c660dbb955197071206e22dfbf9a8e4e504db4628d07adc9bfe8d917"
+    },
+    {
+      "file": "public/products/hybridloop/build8-04-compatible-progress.jpg",
+      "source": "ios-release-hub/apps/HybridLoop/screenshots/en-US/build8/build8-04-compatible-progress.png",
+      "sourceSha256": "c6f26f5c4730362cd6d78e5211b5c254ce66443344b85d5ede3bce91b8bc3b4d",
+      "sha256": "898f9d8f2cda7aea2554485792362289cd3232067ccc653c32f4207c7ad111df"
     }
   ]
 }
