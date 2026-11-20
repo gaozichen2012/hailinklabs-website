@@ -1,7 +1,10 @@
 ---
 import type { Locale } from '../data/i18n';
 
-const { locale } = Astro.props as { locale: Locale };
+const { locale, workoutGuidePath } = Astro.props as {
+  locale: Locale;
+  workoutGuidePath?: string;
+};
 const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
 const video = '/products/hybridloop/workout-walkthrough.mp4';
 ---
@@ -16,6 +19,16 @@ const video = '/products/hybridloop/workout-walkthrough.mp4';
       '打开 Import Workout，核对草稿后开始计时。保存这次训练，再用 Repeat Original Plan 按原计划复练。',
     )}
   </p>
+  {workoutGuidePath && (
+    <p>
+      <a href={workoutGuidePath}>
+        {c(
+          'Follow the first-workout guide and copy the sample plan',
+          '查看首练指南并复制示例计划',
+        )}
+      </a>
+    </p>
+  )}
   <video
     controls
     playsinline

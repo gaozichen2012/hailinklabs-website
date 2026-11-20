@@ -774,8 +774,8 @@ export const products = [
       '执行混合训练，留下可供重复与比较的记录。',
     ],
     description: [
-      'An iPhone workout timer and recorder for hybrid and functional training. Follow your own workout with automatic timing, large touch controls and optional voice commands.',
-      '面向混合训练与功能性训练的 iPhone 计时和记录工具。通过自动计时、大触控按钮及可选语音指令，执行你自己的训练。',
+      'Import your own hybrid workout, time it on iPhone with touch or optional English voice commands, and save it to repeat.',
+      '导入自己的混合训练计划，用 iPhone 触控或可选英文语音指令计时，保存记录以便下次复练。',
     ],
     problem: [
       'You already know what to train. Keep your attention on the workout, see what comes next and save a useful record for next time.',
@@ -845,6 +845,65 @@ export const products = [
     faq: [
       'Voice commands are optional and use English on-device recognition. If permissions or recognition are unavailable, use touch controls. Background audio and voice availability depend on iOS. Review image-import drafts before saving. After the trial, history, corrections, exports, backups and an already started workout remain available; starting a new workout requires Lifetime.',
       '语音指令可选，使用设备端英文识别。权限或识别不可用时可使用触控。后台音频与语音可用性取决于 iOS。图片导入后请先核对草稿。试用结束后，历史、修正、导出、备份及已开始的训练仍可继续；新训练需要终身解锁。',
+    ],
+    questions: [
+      {
+        question: [
+          'Can I import my own workout?',
+          '可以导入自己的训练计划吗？',
+        ],
+        answer: [
+          'Yes. Paste English workout text or choose a screenshot in Import Workout. HybridLoop processes the text on your iPhone and creates a draft. Review the movements, units, rounds and timing rule before choosing Save Only or Save & Start.',
+          '可以。在 Import Workout 粘贴英文训练文本或选择截图。HybridLoop 在 iPhone 上处理文字并生成草稿。核对动作、单位、轮数和计时规则，再选 Save Only 或 Save & Start。',
+        ],
+      },
+      {
+        question: [
+          'Which workout timers are included?',
+          '有哪些训练计时模式？',
+        ],
+        answer: [
+          'HybridLoop provides For Time, Interval, Fixed Cycle / EMOM, AMRAP and Open. Use For Time for prescribed work, Interval for timed work and rest, Fixed Cycle for repeated starts, AMRAP for scored output under a time cap and Open to log a flexible session.',
+          'HybridLoop 提供 For Time、Interval、Fixed Cycle / EMOM、AMRAP 和 Open。依次适用于固定任务计时、按时长工作和休息、固定周期开始、限时累计结果，以及灵活训练记录。',
+        ],
+      },
+      {
+        question: [
+          'Can I use it without voice commands?',
+          '可以不用语音指令吗？',
+        ],
+        answer: [
+          'Yes. Use the large touch controls throughout your workout. Optional English voice recognition runs on the device when available. Use touch if recognition is unavailable or the gym is too noisy.',
+          '可以。整场训练都能使用大触控按钮。可选英文语音识别在可用时于设备端运行；识别不可用或场地太吵时可用触控。',
+        ],
+      },
+      {
+        question: [
+          'Can I compare repeat workouts?',
+          '可以比较两次复练的成绩吗？',
+        ],
+        answer: [
+          'Use Repeat Original Plan to reuse the saved plan. Check the work actually performed before comparing results. A different movement, target, rest rule or recording detail can make results incomparable. Partial sessions and missing records still belong in your history.',
+          '用 Repeat Original Plan 复用已保存的原计划，比较前核对实际完成内容。动作、目标、休息规则或记录粒度不同都可能导致结果不可比。部分完成与缺失记录仍保留在历史中。',
+        ],
+      },
+      {
+        question: [
+          'What happens after the free trial?',
+          '试用结束后还能做什么？',
+        ],
+        answer: [
+          'The full trial lasts seven days from first launch, with no automatic charge. Afterward, new workouts require the one-time Lifetime unlock. History, corrections, exports, backups and an already started workout remain available.',
+          '从首次运行起完整试用七天，不会自动扣款。到期后开始新训练需一次性购买 Lifetime。历史、修正、导出、备份和已开始的训练仍可使用。',
+        ],
+      },
+      {
+        question: ['Is there a team workspace?', '支持团队共享工作区吗？'],
+        answer: [
+          'HybridLoop uses the Apple Account’s private iCloud database when sync is enabled and available. You can share exported files. Team accounts, shared timers and collaborative editing are outside this workflow.',
+          '启用同步且 iCloud 可用时，HybridLoop 使用 Apple 账号的私有数据库。你可以分享导出文件。使用流程不包含团队账号、共享计时器或协同编辑。',
+        ],
+      },
     ],
     privacy: [
       [

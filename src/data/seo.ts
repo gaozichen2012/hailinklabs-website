@@ -7,13 +7,22 @@ import { gearproofDemo } from './gearproof-demo';
 import { calvingpocketDemo } from './calvingpocket-demo';
 
 const absolute = (path: string) => new URL(path, site.url).href;
+const linkedApplications = [
+  'gearproof',
+  'calvingpocket',
+  'samejob',
+  'tmproof',
+  'pressrecipe',
+  'litterround',
+  'hybridloop',
+];
 
 // Keep page headings intact while giving long search titles a concise variant.
 const searchTitles: Record<string, string> = {
   '/templates/repeat-customer-invoice':
     'Free Repeat Customer Invoice — PDF & Excel | Hailink Labs',
   '/products/hybridloop':
-    'HybridLoop — Voice-Guided Workout Timer | Hailink Labs',
+    'HybridLoop — Hybrid Workout Timer for iPhone | Hailink Labs',
   '/products/rulesprout': 'RuleSprout: Logic for Kids | Hailink Labs',
   '/guides/estimate-to-invoice-workflow':
     'Estimate-to-Invoice Workflow for Solo Businesses | Hailink Labs',
@@ -27,7 +36,7 @@ const searchDescriptions: Record<string, string> = {
   '/products/gearproof':
     'Track camera kit checkout, partial returns and damaged accessories on one iPhone. Try GearProof free for 7 days, then unlock lifetime access. No subscription.',
   '/products/hybridloop':
-    'Time and record your own hybrid workouts on iPhone with automatic timing, large controls and optional voice commands. Keep your routine customizable.',
+    'Import your own workout, run For Time, EMOM, AMRAP or intervals, then save and repeat the plan. Optional English voice commands. For iPhone.',
   '/guides/contractors':
     'Practical guides and free templates for T&M tickets, extra work and tool handovers. Keep job records separate from equipment movements.',
   '/guides/animal-records':
@@ -36,6 +45,8 @@ const searchDescriptions: Record<string, string> = {
     'Keep heat press setup and wash-test records tied to materials, equipment and sample IDs. Explore free templates without universal setting claims.',
   '/guides/small-business':
     'Prepare repeat-customer invoices and estimates with clear job details. Explore guides and free templates for solo service businesses.',
+  '/guides/workout-timing':
+    'Choose a workout timer, try a sample hybrid plan and compare repeat sessions with a free workout log. Guides for For Time, EMOM, AMRAP and intervals.',
 };
 export const searchDescription = (path: string, fallback: string) =>
   searchDescriptions[path] || fallback;
@@ -58,14 +69,7 @@ export function socialImage(englishPath: string, locale: Locale) {
   const product = catalog.find(
     (item) =>
       (resource &&
-        [
-          'gearproof',
-          'calvingpocket',
-          'samejob',
-          'tmproof',
-          'pressrecipe',
-          'litterround',
-        ].includes(resource.app) &&
+        linkedApplications.includes(resource.app) &&
         item.slug === resource.app) ||
       englishPath === `/products/${item.slug}` ||
       englishPath.startsWith(`/products/${item.slug}/`) ||
@@ -250,14 +254,7 @@ export function structuredData(
         publisher: { '@id': organization['@id'] },
         mainEntityOfPage: canonical,
         inLanguage: locale,
-        ...([
-          'gearproof',
-          'calvingpocket',
-          'samejob',
-          'tmproof',
-          'pressrecipe',
-          'litterround',
-        ].includes(guide.app) && {
+        ...(linkedApplications.includes(guide.app) && {
           about: { '@id': `${site.url}/products/${guide.app}#software` },
         }),
         image: socialImage(englishPath, locale).url,
@@ -291,14 +288,7 @@ export function structuredData(
           : 'BusinessApplication';
   const application = {
     '@type': 'SoftwareApplication',
-    '@id': [
-      'gearproof',
-      'calvingpocket',
-      'samejob',
-      'tmproof',
-      'pressrecipe',
-      'litterround',
-    ].includes(product.slug)
+    '@id': linkedApplications.includes(product.slug)
       ? `${site.url}/products/${product.slug}#software`
       : `${canonical}#software`,
     name: product.storeName,
@@ -311,6 +301,7 @@ export function structuredData(
     ...(listing && {
       identifier: String(listing.appId),
       softwareVersion: listing.version,
+      ...(product.slug === 'hybridloop' && { inLanguage: 'en' }),
       ...(product.slug === 'gearproof' && {
         inLanguage: 'en',
         subjectOf: { '@id': `${site.url}/products/gearproof/demo#video` },

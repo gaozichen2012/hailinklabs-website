@@ -19,6 +19,7 @@ interface Props {
   product: ProductData;
 }
 const { locale, product: p } = Astro.props;
+const isHybridLoop = p.slug === 'hybridloop';
 const highlight = highlights[p.slug];
 const searchJourney = [
   'samejob',
@@ -28,6 +29,10 @@ const searchJourney = [
 ].includes(p.slug);
 const firstGuide = guides.find((g) => g.app === p.slug);
 const firstTemplate = templates.find((t) => t.app === p.slug);
+const workoutGuidePath =
+  isHybridLoop && firstGuide
+    ? localizedPath(`/guides/${firstGuide.slug}#sample-plan`, locale)
+    : undefined;
 const c = (value: readonly [string, string]) => copy(value, locale);
 const href = (suffix: string) =>
   localizedPath(`/products/${p.slug}${suffix}`, locale);
@@ -39,7 +44,13 @@ const href = (suffix: string) =>
   description={c(p.description)}
 >
   <div class="product-opening">
-    <section class="page-intro product-intro">
+    <section
+      class:list={[
+        'page-intro',
+        'product-intro',
+        { 'hybridloop-intro': isHybridLoop },
+      ]}
+    >
       <a class="breadcrumb" href={localizedPath('/products', locale)}>
         {c(['Products', '产品'])} <span aria-hidden="true">/</span>
       </a>
@@ -49,16 +60,23 @@ const href = (suffix: string) =>
               'For iPad and iPhone · iOS 18+',
               '适用于 iPad 与 iPhone · iOS 18+',
             ])
-          : c(['For iPhone', '适用于 iPhone'])}
+          : isHybridLoop
+            ? c(['For iPhone · iOS 18+', '适用于 iPhone · iOS 18+'])
+            : c(['For iPhone', '适用于 iPhone'])}
       </p>
       <h1 class="matrix-title" lang="en">
         {p.storeName}
       </h1>
-      <p class="intro-copy">{c(p.subtitle)}</p>
+      {!isHybridLoop && <p class="intro-copy">{c(p.subtitle)}</p>}
       <p class="product-positioning">{c(p.description)}</p>
+      {isHybridLoop && <AppStoreLink locale={locale} slug={p.slug} />}
       {highlight && <p class="data-summary">{c(highlight.data)}</p>}
-      <p class="availability">{c(availability(p.slug))}</p>
-      <AppStoreLink locale={locale} slug={p.slug} />
+      {!isHybridLoop && (
+        <>
+          <p class="availability">{c(availability(p.slug))}</p>
+          <AppStoreLink locale={locale} slug={p.slug} />
+        </>
+      )}
       {p.slug === 'pressrecipe' && (
         <p>
           <a href="#app-demo">
@@ -86,8 +104,12 @@ const href = (suffix: string) =>
           </a>
         </p>
       )}
-      {p.slug === 'hybridloop' && (
-        <p>
+      {workoutGuidePath && (
+        <p class="product-resource-links">
+          <a href={workoutGuidePath}>
+            {c(['Try a sample workout plan', '试用示例训练计划'])}
+          </a>
+          {' · '}
           <a href="#hybridloop-demo">
             {c(['Watch the workout walkthrough', '观看训练流程演示'])}
           </a>
@@ -164,7 +186,9 @@ const href = (suffix: string) =>
   <AppDemo locale={locale} slug={p.slug} />
   {p.slug === 'gearproof' && <GearProofDemo locale={locale} />}
   {p.slug === 'calvingpocket' && <CalvingDemo locale={locale} />}
-  {p.slug === 'hybridloop' && <HybridLoopDemo locale={locale} />}
+  {isHybridLoop && (
+    <HybridLoopDemo locale={locale} workoutGuidePath={workoutGuidePath} />
+  )}
   <section class="section-row">
     <div class="section-label">
       <h2>{c(['Main features', '主要功能'])}</h2>
@@ -328,6 +352,14 @@ const href = (suffix: string) =>
   )}
   <DownloadPanel locale={locale} slug={p.slug} />
 </Layout>
+
+<style>
+  @media (max-width: 760px) {
+    .hybridloop-intro .product-positioning {
+      margin-block: 0.75rem;
+    }
+  }
+</style>
 
 <style>
   .product-question {

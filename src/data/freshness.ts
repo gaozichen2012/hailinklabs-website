@@ -46,8 +46,13 @@ const pageUpdates: Record<string, string> = {
   '/products/pressrecipe': '2026-11-15',
   '/products/pressrecipe/support': '2026-10-11',
   '/products/turnmath': '2026-10-11',
-  '/guides': '2026-10-30',
-  '/templates': '2026-10-30',
+  '/guides': '2026-11-20',
+  '/templates': '2026-11-20',
+  '/guides/workout-timing': '2026-11-20',
+  '/guides/how-to-import-a-workout': '2026-11-20',
+  '/guides/for-time-emom-amrap-timer': '2026-11-20',
+  '/guides/compare-repeat-workouts': '2026-11-20',
+  '/templates/repeat-workout-log': '2026-11-20',
   '/products/cluemend': '2026-10-08',
   '/products/storyundo': '2026-10-08',
   '/products/tilltinker': '2026-10-08',
@@ -64,7 +69,7 @@ const pageUpdates: Record<string, string> = {
   '/products/loadquilt/support': '2026-10-08',
   '/products/loadquilt/privacy': '2026-10-08',
 
-  '/': '2026-10-30',
+  '/': '2026-11-20',
   '/products': '2026-10-30',
   '/support': '2026-10-08',
   '/contact': '2026-10-08',
@@ -102,6 +107,7 @@ const pageUpdates: Record<string, string> = {
   '/products/formalsflow/support': '2026-10-05',
   '/products/formalsflow/privacy': '2026-10-05',
   '/products/hybridloop': '2026-11-20',
+  '/products/hybridloop/support': '2026-11-20',
   '/products/rulesprout': '2026-10-05',
 };
 export const lastModified = (path: string) => {

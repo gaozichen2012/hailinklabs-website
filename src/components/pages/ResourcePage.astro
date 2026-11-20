@@ -20,6 +20,8 @@ const path =
     .replace(/^\/zh/, '')
     .replace(/\/$/, '') || '/';
 const guide = guides.find((g) => path === `/guides/${g.slug}`);
+const importText =
+  guide && 'importText' in guide ? guide.importText : undefined;
 const sheet = templates.find((t) => path === `/templates/${t.slug}`);
 const hub = hubs.find((h) => path === `/guides/${h.slug}`);
 const resource = guide || sheet;
@@ -115,6 +117,25 @@ const templateList = hub
         </p>
       )}
     </header>
+    {importText && (
+      <section
+        class="resource-body"
+        id="sample-plan"
+        aria-labelledby="sample-plan-title"
+      >
+        <h2 id="sample-plan-title">
+          {c('Sample workout plan', '示例训练计划')}
+        </h2>
+        <pre lang="en">{importText}</pre>
+        <p>
+          {c(
+            'Select and copy the English text, then use Paste Clipboard in Import Workout. Adjust the sample to your usual training before starting.',
+            '选中并复制英文文本，在 Import Workout 选择 Paste Clipboard。开始前可按平时的训练内容调整示例。',
+          )}
+        </p>
+        <a href="#workflow">{c('Follow the import steps', '查看导入步骤')}</a>
+      </section>
+    )}
     {guide && template && (
       <nav
         class="resource-body task-shortcuts"
@@ -176,8 +197,12 @@ const templateList = hub
           </h2>
           <p>
             {c(
-              'Use this review checklist before sharing your record.',
-              '分享记录前，用下面的清单核对。',
+              guide.app === 'hybridloop'
+                ? 'Use this checklist to verify your workout record.'
+                : 'Use this review checklist before sharing your record.',
+              guide.app === 'hybridloop'
+                ? '用下面的清单核对训练记录。'
+                : '分享记录前，用下面的清单核对。',
             )}
           </p>
           <div class="record-table-wrap">
@@ -325,6 +350,16 @@ const templateList = hub
         {guide.app === 'calvingpocket' && (
           <CalvingDemo locale={locale} compact />
         )}
+        {guide.app === 'hybridloop' && (
+          <p>
+            <a href={link('/products/hybridloop#hybridloop-demo')}>
+              {c(
+                'Watch the HybridLoop workout walkthrough',
+                '观看 HybridLoop 训练流程演示',
+              )}
+            </a>
+          </p>
+        )}
         <section>
           <h2 id="common-mistakes">{c('Common mistakes', '常见错误')}</h2>
           <ul>
@@ -339,8 +374,12 @@ const templateList = hub
           </h2>
           <p>
             {c(
-              'Paper works at a handover without a device. CSV makes rows easy to sort in Excel, Numbers or Google Sheets, but you must manage revisions and copies. An iPhone app can keep related records together; choose it when its documented workflow fits your needs. None of these formats removes the need to verify the original entry or keep a backup.',
-              '纸面适合无需设备的交接。CSV 可在 Excel、Numbers 或 Google Sheets 中排序，但修订和副本需要自己管理。iPhone App 可以集中关联记录，当其已说明流程适合你时再选择。无论哪种格式，都需要核对原始记录并保留备份。',
+              guide.app === 'hybridloop'
+                ? 'Use paper for a quick training note, CSV to sort sessions across dates, or HybridLoop when you want a timer linked to the saved plan and session history.'
+                : 'Paper works at a handover without a device. CSV makes rows easy to sort in Excel, Numbers or Google Sheets, but you must manage revisions and copies. An iPhone app can keep related records together; choose it when its documented workflow fits your needs. None of these formats removes the need to verify the original entry or keep a backup.',
+              guide.app === 'hybridloop'
+                ? '纸面适合快速记下训练情况，CSV 适合按日期整理多次训练。需要把计时、已保存计划和历史记录关联起来时，可以用 HybridLoop。'
+                : '纸面适合无需设备的交接。CSV 可在 Excel、Numbers 或 Google Sheets 中排序，但修订和副本需要自己管理。iPhone App 可以集中关联记录，当其已说明流程适合你时再选择。无论哪种格式，都需要核对原始记录并保留备份。',
             )}
           </p>
         </section>
@@ -369,8 +408,12 @@ const templateList = hub
           <h2>{c('Sources & scope', '来源与范围')}</h2>
           <p>
             {c(
-              'Original workflow suggestions by Hailink Labs. Examples are illustrative, not customer records or industry standards. App descriptions are based on the public product and support pages below; the free worksheet is a separate resource and does not imply that every field is an app feature.',
-              'Hailink Labs 原创流程建议。示例为说明用途，不是客户记录或行业标准。App 说明依据下方公开产品与支持页；免费工作表为独立资源，不代表每个字段都是 App 功能。',
+              guide.app === 'hybridloop'
+                ? 'Original workflows and fictional examples by Hailink Labs. The examples illustrate timer setup and record keeping. The independent worksheet can be used with your own training plan.'
+                : 'Original workflow suggestions by Hailink Labs. Examples are illustrative, not customer records or industry standards. App descriptions are based on the public product and support pages below; the free worksheet is a separate resource and does not imply that every field is an app feature.',
+              guide.app === 'hybridloop'
+                ? 'Hailink Labs 原创流程与虚构示例，用来说明计时和记录方法。独立工作表可配合自己的训练计划使用。'
+                : 'Hailink Labs 原创流程建议。示例为说明用途，不是客户记录或行业标准。App 说明依据下方公开产品与支持页；免费工作表为独立资源，不代表每个字段都是 App 功能。',
             )}
           </p>
           <ul>

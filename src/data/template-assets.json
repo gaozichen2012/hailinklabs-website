@@ -1,5 +1,5 @@
 {
-  "sourceSha256": "baca50f18a0ed5ae68d1b6c98c9ff7bc0660c11a9a5c5108f591b9b80e9b90a0",
+  "sourceSha256": "025f1693a0b35109133de7d7395aa1ce1d40aa8b83408c4c6340c2ae40138731",
   "assets": [
     {
       "file": "/downloads/time-and-materials-ticket.pdf",
@@ -185,6 +185,31 @@
       "file": "/downloads/camera-kit-return-checklist-zh.csv",
       "sha256": "b44f4d96db3436b4bcdd0c7773af59d6e234f5d521f876e104be1c2ea50b6dc8",
       "bytes": 363
+    },
+    {
+      "file": "/downloads/repeat-workout-log.pdf",
+      "sha256": "6dd791e4477247957ed6b0b8703ed5908cecc74654580fc9840363bb23ca862f",
+      "bytes": 2528
+    },
+    {
+      "file": "/downloads/repeat-workout-log-a4.pdf",
+      "sha256": "8f8c5e2ce1790d269339287e0e4d08e0d2352bbec3d4d4ded6d453945663c689",
+      "bytes": 2577
+    },
+    {
+      "file": "/downloads/repeat-workout-log-example.pdf",
+      "sha256": "9b1191d660c6514628fa4239a7b623672ad7db3637785e661fe4d92600edad2a",
+      "bytes": 2701
+    },
+    {
+      "file": "/downloads/repeat-workout-log.csv",
+      "sha256": "d30a28c51da42de4008935d9f4ce1f5607b16e2cb8c71f4d3f1afa481004ae53",
+      "bytes": 260
+    },
+    {
+      "file": "/downloads/repeat-workout-log-zh.csv",
+      "sha256": "18748e4bc770d81ce32206001b6dd4c6bc10eb29a2a0af15ff352461f23e6e81",
+      "bytes": 252
     },
     {
       "file": "/downloads/repeat-customer-invoice-example.xlsx",

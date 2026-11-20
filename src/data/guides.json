@@ -2159,5 +2159,338 @@
     ],
     "publishedAt": "2026-10-04",
     "updatedAt": "2026-10-31"
+  },
+  {
+    "app": "hybridloop",
+    "category": "workout-timing",
+    "template": "repeat-workout-log",
+    "slug": "how-to-import-a-workout",
+    "title": [
+      "How to Import and Time Your First Hybrid Workout",
+      "如何导入计划并完成第一次混合训练"
+    ],
+    "description": [
+      "Paste a sample workout into HybridLoop. Check rounds, distances and rest, time your first session, then save and repeat the original plan.",
+      "将示例计划粘贴到 HybridLoop，核对轮数、距离和休息，完成首次计时并保存原计划以便复练。"
+    ],
+    "answer": [
+      "To run your first workout in HybridLoop, open Import Workout and paste a short English plan with one movement per line. Tap Parse Draft, then check the rounds, units and timing rule. Choose Save & Start when you are ready, confirm each completed task, and review the saved result. Use Repeat Original Plan in History to run the same plan again.",
+      "首次使用 HybridLoop 时，打开 Import Workout，粘贴每行一个动作的英文计划。点击 Parse Draft，检查轮数、单位和计时规则。准备好后选择 Save & Start，逐项确认实际完成内容并查看保存的结果。下次在 History 选择 Repeat Original Plan，按同一计划复练。"
+    ],
+    "definition": [
+      "An imported draft is an editable version of your plan. HybridLoop recognizes English workout text and can extract text from an image on your iPhone.",
+      "导入草稿是计划的可编辑版本。HybridLoop 能读取英文训练文本，也能在 iPhone 上识别图片文字。"
+    ],
+    "audience": [
+      "People bringing an existing plan from notes, a coach or a whiteboard to the iPhone timer.",
+      "适合手头已有笔记、教练计划或白板内容，想用 iPhone 计时的人。"
+    ],
+    "fields": [
+      [
+        "One rounds line and an ordered list of movements",
+        "一行轮数及按顺序排列的动作"
+      ],
+      ["Distance or reps with clear units", "带单位的距离或次数"],
+      ["Rest duration and timing rule", "休息时长及计时规则"],
+      [
+        "Actual completion and any changes made during the workout",
+        "实际完成情况和训练中的调整"
+      ]
+    ],
+    "example": [
+      "Use the English sample above to check the import workflow. It should show three rounds, two distance targets, one rep target and a 60-second rest. Adapt the plan to your usual training before starting.",
+      "可用上面的英文示例检查导入流程。草稿应显示三轮、两项目标距离、一项目标次数和 60 秒休息。开练前可按平时的训练内容修改。"
+    ],
+    "importText": "3 rounds\nRun 800 m\nRow 500 m\nWall Ball 20 reps\nRest 60 s",
+    "steps": [
+      [
+        "Copy the sample text. On the Train screen, open Import Workout, tap Paste Clipboard, then Parse Draft.",
+        "复制示例文本。在 Train 打开 Import Workout，点 Paste Clipboard，再点 Parse Draft。"
+      ],
+      [
+        "Choose Review and Edit Draft. Verify For Time, three rounds, the order of movements and the rest duration. Correct any import warnings.",
+        "选择 Review and Edit Draft，核对 For Time、三轮、动作顺序和休息时长，并处理导入警告。"
+      ],
+      [
+        "Choose Save & Start. Use the touch controls to confirm work when completed. If you finish early, use Finish and confirm Finish Workout. Review what was recorded before leaving.",
+        "选择 Save & Start。完成任务时用触控按钮确认；提前结束时用 Finish 并确认 Finish Workout。离开前检查实际记录。"
+      ],
+      [
+        "Open the saved session in History and choose Repeat Original Plan when you want to run it again.",
+        "在 History 打开已保存的训练，需要按原计划再练时选择 Repeat Original Plan。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Review OCR results for swapped digits or missing units. Correct them in the draft before saving.",
+        "检查图片识别有无数字错读或单位缺失，保存前在草稿修正。"
+      ],
+      [
+        "Use one rounds heading for a simple import. For an interval or a more complex workout, choose the rule and review the blocks in the builder.",
+        "简单导入用一个轮数标题。间歇或更复杂的训练可在编辑器选择计时规则并逐训练组核对。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": [
+          "Does pasting a plan start the timer?",
+          "粘贴后会立即开始计时吗？"
+        ],
+        "answer": [
+          "No. Paste Clipboard fills the text field. Parse Draft and Review and Edit Draft let you check the plan before you choose Save & Start.",
+          "不会。Paste Clipboard 只填入文本。你可用 Parse Draft 和 Review and Edit Draft 核对计划，之后自行选择 Save & Start。"
+        ]
+      },
+      {
+        "question": [
+          "Do I need to use English voice commands?",
+          "需要使用英文语音指令吗？"
+        ],
+        "answer": [
+          "No. The import sample stays in English for the parser. Touch controls are available for the workout.",
+          "不用。导入示例使用英文供解析器处理，训练时可以全程用触控。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-11-20",
+    "updatedAt": "2026-11-20"
+  },
+  {
+    "app": "hybridloop",
+    "category": "workout-timing",
+    "template": "repeat-workout-log",
+    "slug": "for-time-emom-amrap-timer",
+    "title": [
+      "For Time, EMOM or AMRAP? Choose a Workout Timer",
+      "For Time、EMOM 或 AMRAP 怎么选"
+    ],
+    "description": [
+      "Match the timer to the workout. Compare For Time, EMOM, AMRAP, Interval and Open, with worked examples of what to record.",
+      "根据训练目标选择计时模式，对比 For Time、EMOM、AMRAP、Interval 与 Open，并用示例说明应记录什么。"
+    ],
+    "answer": [
+      "Choose For Time when the work is fixed and elapsed time is the result. Choose EMOM when each round begins on a fixed clock. Choose AMRAP when the clock is fixed and completed work is the result. For fixed work and rest windows, choose Interval. Use Open when the order or volume will be decided during the session.",
+      "任务固定、用时是结果时选 For Time。每轮必须按固定时间开始时选 EMOM。时间固定、完成量是结果时选 AMRAP。工作和休息都按时长切换时用 Interval。训练中才决定顺序或完成量时选 Open。"
+    ],
+    "definition": [
+      "EMOM means every minute on the minute. In HybridLoop it is a one-minute Fixed Cycle. AMRAP counts completed rounds or reps within a time cap.",
+      "EMOM 表示每分钟开始一轮，在 HybridLoop 对应一分钟的 Fixed Cycle。AMRAP 记录限时内实际完成的轮数或次数。"
+    ],
+    "audience": [
+      "Athletes setting up the timer for an existing workout that already defines its tasks or time windows.",
+      "适合已经有任务或计时规则、正在为训练选择计时方式的人。"
+    ],
+    "fields": [
+      [
+        "What stays fixed: work, starts, work/rest windows or the time cap",
+        "固定条件：任务量、每轮开始时刻、工作／休息窗口或总时限"
+      ],
+      [
+        "Record elapsed time, completed work or per-window output as appropriate",
+        "按模式记录完成时间、完成量或各窗口实际输出"
+      ]
+    ],
+    "example": [
+      "In an illustrative five-minute EMOM, each round starts on the minute. If you confirm work at 0:32, the next round still starts at 1:00. In a five-minute AMRAP, the result might be three rounds plus five reps.",
+      "在虚构的五分钟 EMOM 示例中，每轮整分钟开始。若在 0:32 确认完成，下一轮仍在 1:00 开始。五分钟 AMRAP 的结果可以是三轮加五次。"
+    ],
+    "steps": [
+      [
+        "Decide what your result will be before setting up the timer.",
+        "设置计时前先确定要记录的结果。"
+      ],
+      [
+        "Enter the work, round length or time cap in the workout builder. Verify the displayed timing rule before starting.",
+        "在编辑器填入任务量、周期时长或总时限，开练前核对显示的计时规则。"
+      ],
+      [
+        "Record completions during the session. Leave unknown quantities unresolved when you review the result.",
+        "训练中确认实际完成量，回顾时保留无法确定的数量。"
+      ]
+    ],
+    "comparison": {
+      "title": [
+        "Which workout timer should I use?",
+        "应该用哪种训练计时模式？"
+      ],
+      "rows": [
+        [
+          ["Complete a fixed amount of work", "完成固定任务量"],
+          ["For Time", "For Time"],
+          [
+            "Compare elapsed time only when the work and rules match",
+            "任务和规则一致时比较用时"
+          ]
+        ],
+        [
+          [
+            "Start a task when each minute or period begins",
+            "在每分钟或周期开始时启动任务"
+          ],
+          ["Fixed Cycle / EMOM", "Fixed Cycle / EMOM"],
+          [
+            "Confirm work and wait for the next scheduled start",
+            "确认完成后等待原定的下一轮"
+          ]
+        ],
+        [
+          [
+            "Complete as much work as possible in a time cap",
+            "在固定时限内尽可能多做任务"
+          ],
+          ["AMRAP", "AMRAP"],
+          [
+            "Record completed rounds and actual remaining reps",
+            "记录完整轮数与最后实际完成次数"
+          ]
+        ],
+        [
+          ["Alternate timed work and rest", "按时间交替工作与休息"],
+          ["Interval", "Interval"],
+          [
+            "The window changes automatically. Record your actual output separately.",
+            "窗口自动切换，实际输出另行确认。"
+          ]
+        ],
+        [
+          ["Choose movements during the session", "训练中决定动作"],
+          ["Open", "Open"],
+          [
+            "Record the actual sequence and review it afterward",
+            "记录实际动作顺序，结束后核对"
+          ]
+        ]
+      ]
+    },
+    "mistakes": [
+      [
+        "A work interval ending does not tell you how many reps you performed.",
+        "工作窗口到期无法说明实际完成多少次。"
+      ],
+      [
+        "An unconfirmed EMOM round is missing a confirmation. Keep that status distinct from a completed round.",
+        "EMOM 未确认轮次应保留未确认状态，与已完成轮次区分。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": [
+          "Is an EMOM the same as an interval workout?",
+          "EMOM 和 Interval 一样吗？"
+        ],
+        "answer": [
+          "In HybridLoop, Fixed Cycle schedules repeated starts. Finishing a task early leaves a wait until the next start. Interval switches between defined work and rest durations.",
+          "在 HybridLoop 中，Fixed Cycle 按周期安排开始时间。任务提前结束会等到下一轮。Interval 在预设的工作和休息时长之间自动切换。"
+        ]
+      },
+      {
+        "question": [
+          "Do I set a number of rounds for AMRAP?",
+          "AMRAP 需要设置计划轮数吗？"
+        ],
+        "answer": [
+          "Set the time cap and the movements that repeat. The number of completed rounds and the last partial round come from what you actually do before the cap.",
+          "设置总时限和循环动作即可。完成轮数和最后未完成一轮的结果，取决于时限内实际完成的任务。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-11-20",
+    "updatedAt": "2026-11-20"
+  },
+  {
+    "app": "hybridloop",
+    "category": "workout-timing",
+    "template": "repeat-workout-log",
+    "slug": "compare-repeat-workouts",
+    "title": [
+      "How to Compare Repeat Workout Results",
+      "如何比较两次复练的成绩"
+    ],
+    "description": [
+      "Compare repeat workout results by checking the movement order, targets, rest and recording detail. Use an independent repeat-workout log.",
+      "比较复练成绩前先核对动作顺序、目标、休息与记录粒度，可使用独立复练记录表。"
+    ],
+    "answer": [
+      "Compare workout results only after checking that both sessions used the same movements, order, timing rules and relevant targets. Use the same recording detail and look for substitutions, skipped work and unconfirmed results. Keep sessions with changed conditions in your log and label what changed. For Time compares elapsed time, while AMRAP compares completed work under the same cap.",
+      "比较复练前，先确认两次的动作、顺序、计时规则及相关目标相同，记录粒度一致，并检查替换、跳过和未确认项。条件变化的训练仍保留在记录里并注明改变。For Time 比用时，AMRAP 在相同限时下比实际完成量。"
+    ],
+    "definition": [
+      "A repeat result links a saved plan, the actual work performed and the result measured under that session’s conditions.",
+      "复练结果关联保存的计划、实际做过的任务和在当次条件下记录的结果。"
+    ],
+    "audience": [
+      "People repeating a benchmark workout who want reliable comparisons across sessions.",
+      "适合重复同一基准训练、希望做可靠比较的人。"
+    ],
+    "fields": [
+      [
+        "Plan name or ID, timer mode, and recording detail",
+        "计划名称或编号、计时模式和记录粒度"
+      ],
+      [
+        "Movements, rounds, targets, rest rules and time cap",
+        "动作、轮数、目标、休息规则和总时限"
+      ],
+      [
+        "Date, actual result and any substitutions, skipped work or missing entries",
+        "日期、实际结果，以及替换、跳过或缺失项"
+      ]
+    ],
+    "example": [
+      "Fictional comparison: two For Time sessions on the same two-round plan take 9:48 and 9:12, with the same work and rest. A third result of 8:55 on a shorter row goes in the log with the changed distance. Compare the first two results and keep the third as a variation.",
+      "虚构比较：同一个两轮 For Time 计划，任务和休息相同时，两次用时分别是 9:48 与 9:12。第三次划船距离缩短、用时 8:55，应注明变化，作为变式保留；前两次可以进行比较。"
+    ],
+    "steps": [
+      [
+        "Open your previous completed session and choose Repeat Original Plan in HybridLoop.",
+        "在 HybridLoop 打开上一次完成的训练，选择 Repeat Original Plan。"
+      ],
+      [
+        "Record what actually happened in the new session. Check its result and timing conditions before comparing.",
+        "记录新一轮实际发生的内容，比较前核对结果及计时条件。"
+      ],
+      [
+        "Mark substitutions, shortened distances and early finishes in your log. Keep unknown results marked as not recorded.",
+        "在记录表注明替换动作、缩短距离或提前结束。未知结果标记为未记录。"
+      ],
+      [
+        "If you want to keep a variation, use Review & Repeat to review the recorded tasks as a new plan.",
+        "如果想保留变式，使用 Review & Repeat 核对实际任务并另存为新计划。"
+      ]
+    ],
+    "mistakes": [
+      [
+        "A matching plan name alone does not prove that the work was identical.",
+        "计划名称一样无法证明实际任务一致。"
+      ],
+      [
+        "Do not rank a partial session as a completed benchmark.",
+        "部分完成的训练不能按完成的基准训练排名。"
+      ]
+    ],
+    "faq": [
+      {
+        "question": [
+          "Can I compare a five-minute AMRAP with an eight-minute AMRAP?",
+          "五分钟和八分钟 AMRAP 可以直接比较吗？"
+        ],
+        "answer": [
+          "Keep both results. They use different time caps, so treat them as separate benchmarks.",
+          "两次结果都保留。时限不同，分别作为两个基准。"
+        ]
+      },
+      {
+        "question": [
+          "Does the worksheet import into HybridLoop?",
+          "这份工作表可以导入 HybridLoop 吗？"
+        ],
+        "answer": [
+          "The PDF and CSV are independent logs for review. Use the text or image workflow to import a plan, and a HybridLoop JSON backup to restore previously saved app records.",
+          "PDF 和 CSV 是独立记录表。用文本或图片流程导入计划，用 HybridLoop JSON 备份恢复此前的 App 记录。"
+        ]
+      }
+    ],
+    "publishedAt": "2026-11-20",
+    "updatedAt": "2026-11-20"
   }
 ]

@@ -271,8 +271,8 @@ export const highlights: Record<
       '训练计划和成绩保存在 iPhone 上，可选用私有 iCloud 同步。',
     ],
     seo: [
-      'HybridLoop — Voice-Guided Workout Timer',
-      'HybridLoop — 语音引导训练计时器',
+      'HybridLoop — Hybrid Workout Timer for iPhone',
+      'HybridLoop — iPhone 混合训练计时器',
     ],
     fit: [
       'Time and record your own hybrid workouts. Repeat the original plan and compare sessions with matching conditions.',

@@ -804,5 +804,73 @@
       "Fictional camera-kit example, not an App export or customer record.",
       "虚构相机套装示例，不是 App 导出或客户记录。"
     ]
+  },
+  {
+    "slug": "repeat-workout-log",
+    "app": "hybridloop",
+    "title": ["Repeat Workout Log", "复练成绩记录表"],
+    "description": [
+      "Record workout conditions, actual results and changes. Compare repeat sessions with the same rules using a free printable workout log.",
+      "用免费可打印的记录表填写训练条件、实际成绩及调整，核对两次复练是否可比。"
+    ],
+    "publishedAt": "2026-11-20",
+    "updatedAt": "2026-11-20",
+    "fields": [
+      ["Date", "日期"],
+      ["Plan / reference", "计划／编号"],
+      ["Mode", "计时模式"],
+      ["Planned conditions and units", "计划条件与单位"],
+      ["Actual result and units", "实际成绩与单位"],
+      ["Changes or missing work", "调整或缺失"],
+      ["Compare with", "可比对象"]
+    ],
+    "note": [
+      "Keep changed or partial sessions in the log. Write not recorded for unknown values. Use this independent worksheet for review, alongside your own workout plan.",
+      "保留条件有变化或部分完成的训练。未知值写未记录。此表为独立回顾工具，配合自己的训练计划使用。"
+    ],
+    "sections": [
+      {
+        "title": ["Benchmark conditions", "基准条件"],
+        "columns": [
+          ["Field", "字段"],
+          ["Entry", "填写内容"]
+        ],
+        "exampleRows": [
+          ["Plan / mode", "Sample circuit / For Time"],
+          [
+            "Work and timing rule",
+            "2 rounds: 200 m run, 100 m row, 6 ball reps; 30 s planned rest"
+          ],
+          ["Recording detail", "Confirm each task"]
+        ],
+        "blankRows": 3,
+        "blankLabels": [
+          ["Plan / mode", "计划／模式"],
+          ["Work and timing rule", "任务与计时规则"],
+          ["Recording detail", "记录粒度"]
+        ]
+      },
+      {
+        "title": ["Actual sessions", "实际训练记录"],
+        "columns": [
+          ["Date or ID", "日期或编号"],
+          ["Actual result", "实际成绩"],
+          ["Conditions or changes", "条件与变化"],
+          ["Compare with", "可比对象"]
+        ],
+        "exampleRows": [
+          ["DEMO 1", "9:48", "All planned work confirmed", "DEMO 2"],
+          ["DEMO 2", "9:12", "Same work and rest", "DEMO 1"],
+          ["DEMO 3", "8:55", "Shorter row", "Separate variation"]
+        ],
+        "blankRows": 4,
+        "blankLabels": []
+      }
+    ],
+    "formats": ["pdf", "a4", "example", "csv"],
+    "exampleLabel": [
+      "Fictional training log for illustration. HybridLoop exports use a separate format.",
+      "此表用虚构训练记录演示。HybridLoop 使用独立的导出格式。"
+    ]
   }
 ]

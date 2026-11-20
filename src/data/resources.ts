@@ -10,6 +10,37 @@ export const resourceText = (
 ) => value[locale === 'en' ? 0 : 1];
 export const hubs = [
   {
+    slug: 'workout-timing',
+    title: ['Workout Timing & Logs', '训练计时与记录'],
+    intro: [
+      'Pick a timer based on what stays fixed in the session: the work, the start of each round, the work and rest windows, or a time cap. Keep the plan, the work actually completed and the result together so you can compare repeat workouts on the same terms.',
+      '根据训练中的固定条件选择计时方式：固定任务量、每轮开始时刻、工作与休息窗口，或总时限。将计划、实际完成的任务和结果放在一起，才能按一致条件比较复练。',
+    ],
+    questions: [
+      [
+        ['What should I decide before I start?', '开练前要先确定什么？'],
+        [
+          'Choose which result to record. A For Time effort records elapsed time. An AMRAP records completed work under a fixed cap.',
+          '先确定要记录的结果。For Time 记用时，AMRAP 记固定时限内的实际完成量。',
+        ],
+      ],
+      [
+        [
+          'Can changed sessions stay in the same log?',
+          '条件改变的训练还能留在同一张表吗？',
+        ],
+        [
+          'Yes. Keep them with the specific change and treat them as variations when comparing results.',
+          '可以。注明具体变化，比较成绩时将它们作为变式单独看待。',
+        ],
+      ],
+    ],
+    workflow: [
+      'Start from your own plan or the example import text, review the movements and timing rule, then record what happened. Reuse the original plan for a benchmark and note any differences on the free repeat workout log.',
+      '从自己的计划或示例导入文本开始，核对动作和计时规则，再记录实际完成情况。复用原计划作为基准，用免费复练表记下实际差异。',
+    ],
+  },
+  {
     slug: 'contractors',
     title: ['Contractor & Team Records', '施工与团队记录'],
     intro: [

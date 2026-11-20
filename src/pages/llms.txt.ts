@@ -47,6 +47,11 @@ export const GET: APIRoute = () =>
                     `- [Real simulator video and transcript](${site.url}/products/${item.slug}/demo)`,
                   ]
                 : []),
+              ...(item.slug === 'hybridloop'
+                ? [
+                    `- [Workout walkthrough using App Store screenshots](${site.url}/products/hybridloop#hybridloop-demo)`,
+                  ]
+                : []),
             ]),
           `- [Support](${site.url}/products/${p.slug}/support)`,
           `- [Privacy](${site.url}/products/${p.slug}/privacy)`,
