@@ -71,7 +71,8 @@ const pageUpdates: Record<string, string> = {
 
   '/': '2026-11-20',
   '/products': '2026-10-30',
-  '/support': '2026-10-08',
+  '/support': '2026-11-22',
+  '/products/songorun/privacy': '2026-11-22',
   '/contact': '2026-10-08',
   '/about': '2026-10-11',
   '/products/batchmise': '2026-10-07',

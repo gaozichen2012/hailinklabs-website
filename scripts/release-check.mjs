@@ -19,6 +19,7 @@ for (const slug of [
   'calvingpocket',
   'gearproof',
   'hybridloop',
+  'songorun',
   'pressrecipe',
   'turnmath',
   'minutesprout',

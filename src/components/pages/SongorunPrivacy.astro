@@ -1,0 +1,217 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { companyName, localizedPath, type Locale } from '../../data/i18n';
+import { site } from '../../data/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
+const title = c('SONGORUN Privacy Policy', '松果跑隐私政策');
+const sections = [
+  {
+    id: 'location',
+    title: c('Recording workouts and using location', '运动记录与位置权限'),
+    body: [
+      c(
+        'You can record, review and export workouts without an account. With your permission, the app uses phone location to calculate your route, distance and pace. A pre-run GPS check does not add its location to your route. When you start recording, location may continue in the background or while the screen is locked. Pausing or ending the workout stops route recording.',
+        '无需注册或登录即可记录、回看和导出运动。经你授权，App 使用手机定位计算路线、距离和配速。开跑前用于检查 GPS 的位置不会记入运动路线。开始记录后，切换应用或锁屏时定位可继续运行。暂停或结束运动后停止记录路线。',
+      ),
+      c(
+        'Precise routes can reveal your movements and are sensitive personal information. They stay on your device by default. Without precise location, you may see a timing-only or retry option depending on the state of the workout. You can manage location permissions in system settings.',
+        '精确路线可反映你的行动轨迹，属于敏感个人信息，默认保存在手机内。无法取得精准定位时，App 会按运动状态提供重试或仅计时等选项。你可在系统设置中管理定位权限。',
+      ),
+    ],
+  },
+  {
+    id: 'account',
+    title: c('Account and profile', '账号与个人资料'),
+    body: [
+      c(
+        'If the account service is available and you choose to sign in, we process your mobile number, one-time code and session information for authentication, security and account management. The app keeps its sign-in credentials in system-protected storage. Optional profile information, such as your nickname and selected avatar, is used to display your identity in features you use. A club administrator may also choose a club name and emblem.',
+        '账号服务可用且你选择登录时，我们处理手机号码、一次性验证码和会话信息，用于身份验证、安全和账号管理。App 将登录凭据保存在系统安全存储中。你选填的昵称、头像等资料用于在你使用的功能中展示身份。跑团管理员也可设置团名和团徽。',
+      ),
+      c(
+        'When SMS sign-in is available, the SMS provider receives the information needed to deliver the verification message. Signing in or reconnecting to the network does not authorize an upload of your complete routes.',
+        '短信登录开放时，短信服务商接收发送验证码所需的信息。登录或恢复联网不会授权上传你的完整路线。',
+      ),
+    ],
+  },
+  {
+    id: 'clubs',
+    title: c('Running clubs and mileage', '跑团与里程统计'),
+    body: [
+      c(
+        'If you join a club and agree to mileage tracking, SONGORUN may sync the minimum verifiable summaries needed to count eligible historical and subsequent runs. These can include source identifiers, workout type, times, effective duration and distance, and information used to avoid duplicate entries. Full GPS routes are excluded from club sync. Members can see rank, avatar, nickname and total mileage for the selected period. They cannot see individual workout details or routes through the club ranking.',
+        '主动加入跑团并同意里程统计后，松果跑会同步计算合格历史及后续跑步所需的最少可核验摘要。这可包括来源标识、运动类型、运动时间、有效时长与距离及去重信息。跑团同步不包含完整 GPS 路线。成员榜单只展示选定统计周期内的名次、头像、昵称和汇总里程，不提供单次运动详情或轨迹。',
+      ),
+      c(
+        'You can pause club sync in Settings or leave a club. Leaving stops new contributions to that club and removes your rank from its current member board. Necessary records may be retained to correct historical results and for audit. When you re-enable the feature, the app explains how counting resumes. Workouts during the pause are not silently uploaded.',
+        '你可以在设置中暂停跑团同步，也可以退出跑团。退团后停止向该团新增贡献，并从该团当前成员榜单移除你的排名。纠正历史成绩和审计所需的记录可按需保留。重新开启时，App 会说明统计如何恢复，不会静默补传关闭期间的运动。',
+      ),
+    ],
+  },
+  {
+    id: 'territories',
+    title: c('Territory competitions and appeals', '个人领地参赛与申诉'),
+    body: [
+      c(
+        'Each territory entry requires your separate confirmation before the necessary route and workout information is uploaded. The route is used to verify distance, eligibility and contributions and to resolve appeals. Competition screens may show the nickname, territory, contributions and results needed for public rankings. They do not publish your route. Disabling the territory feature stops new entries and route uploads, while existing results remain subject to the competition and deletion rules.',
+        '个人领地参赛须逐场由你单独确认，之后才上传核验所需的路线和运动信息，用于校验距离、参赛资格及贡献，以及处理申诉。竞技页面可能公开榜单所需的昵称、领地、贡献及成绩，不公开路线。关闭领地功能后停止新的参赛和轨迹上传，既有成绩按竞赛及删除规则处理。',
+      ),
+      c(
+        'Competition routes are held in restricted storage in mainland China. We clean up the temporary route and recoverable copies once verification is complete, the applicable 14-calendar-day appeal period has expired, and any appeals accepted within that period are resolved. For entries eligible for settlement, the period starts when the settlement results first appear in the app. For rejected entries or entries outside settlement, it starts when the final decision appears. Times are shown in Beijing time. Necessary summaries, contribution records and deletion audit identifiers may be retained for results, corrections and audit.',
+        '参赛路线存放在中国大陆的受控存储中。校验结束、适用的 14 个自然日申诉期届满，且期限内已受理的申诉结案后，我们清理临时路线及可恢复副本。可进入月结的记录从月结结果首次在 App 公布时起算。最终未通过或不进入月结的记录从最终处理结果在 App 可见时起算。时间按北京时间显示。成绩查询、纠错及审计所需的摘要、贡献明细和删除审计标识可按需保留。',
+      ),
+    ],
+  },
+  {
+    id: 'coros',
+    title: c('Optional COROS connection', '可选的 COROS 高驰同步'),
+    body: [
+      c(
+        'Where available, you can connect COROS from Data Sources and approve access on its official authorization page. The connection reads the workout summaries and available FIT files needed for the feature within the scope COROS grants. The initial or manual sync can request up to the latest three months of available history. Your device downloads and saves available routes. The sync feature does not store complete FIT routes on our server. Connection credentials are stored securely and used to maintain or revoke the connection.',
+        '高驰同步开放时，你可从数据源管理连接 COROS 高驰，并在其官方授权页同意访问。在高驰批准的范围内，连接读取功能所需的运动摘要和可用的 FIT 文件。首次或手动同步可请求最近三个月内可用的历史。手机下载相关文件并保存可用路线，设备同步本身不会在松果跑服务端保存完整 FIT 轨迹。连接凭据受保护，用于维持或解除连接。',
+      ),
+      c(
+        'Counting COROS runs toward a club requires a separate confirmation for that purpose. Disconnecting COROS stops further access. Existing on-device copies remain available until you delete them.',
+        '高驰跑步计入跑团前，需要另外确认此用途。解除高驰授权将停止后续访问；已保存到手机的记录可继续回看，也可在本机删除。',
+      ),
+    ],
+  },
+  {
+    id: 'maps',
+    title: c('Optional AMap basemap', '可选的高德底图'),
+    body: [
+      c(
+        'If you agree to use the online basemap, the app initializes the AMap Open Platform Maps SDK from Beijing Amap Tuqiang Technology Co., Ltd. It provides standard and satellite basemaps and map interactions. To provide these services, the SDK may process the requested map area, IP address, network, device and app information and relevant diagnostics, depending on the system, permissions and SDK version. Examples include network type and Wi-Fi status, system version and device model, and app name and version. The app displays its own recording and territory overlays. You can select the offline map in Basemap Options.',
+        '你同意使用在线底图后，App 会初始化由北京高德图强科技有限公司提供的高德开放平台地图 SDK，用于加载标准或卫星底图和地图交互。依设备系统、权限与 SDK 版本，高德可能处理所请求的地图范围、IP 地址、网络信息、设备和应用信息及相关诊断数据，例如网络类型和 Wi-Fi 状态、系统版本和机型、应用名称和版本。松果跑在地图上绘制自身的轨迹和领地覆盖层。你可在「底图选项」切换到离线示意图。',
+      ),
+    ],
+  },
+  {
+    id: 'sharing',
+    title: c('Photos, exports and sharing', '照片、导出与分享'),
+    body: [
+      c(
+        'We use selected photos for the avatar, club emblem or workout image you choose to create. Photo library write access is used when you save an image. A workout image defaults to a summary; you decide whether to include the route outline or precise start time. GPX may contain the full route with timestamps, and JSON may contain workout identifiers, source and precise times. Before sending, you choose the content and destination in the app and system share sheet. The recipient or target service controls any copy you send or save outside the app.',
+        '你选择的照片用于设置头像、团徽或制作运动成绩图。保存图片时使用系统相册写入权限。成绩图默认只含摘要，你可选加路线轮廓或精确开始时间。GPX 可能包含完整路线和逐点时间，JSON 可能包含运动标识、来源和精确时间。你在 App 及系统分享界面选择内容和去向，外部保存或发出的副本由相应接收方或服务管理。',
+      ),
+    ],
+  },
+  {
+    id: 'providers',
+    title: c('Service providers and data protection', '服务提供方与数据保护'),
+    body: [
+      c(
+        'Where we use a provider to store service data or deliver a verification code on our behalf, we limit access to the information needed for that task and require protection consistent with this policy and applicable law. AMap and COROS describe their own handling in the policies linked above. We may provide information where required by law, limited to what the legal process requires.',
+        '受托为我们存储服务数据或发送验证码的服务提供方只可访问完成该事项所需的信息，并须按与本政策一致的标准及适用法律提供保护。高德与高驰对其各自处理的信息适用上文所链接的政策。依法必须提供信息时，我们仅提供法定程序所需的信息。',
+      ),
+    ],
+  },
+  {
+    id: 'retention',
+    title: c('Retention, feedback and security', '保存期限、反馈与安全'),
+    body: [
+      c(
+        'Local workout records are kept on the device until you remove them. For service data, we retain what is necessary for the stated purposes and applicable obligations, subject to the route and appeal limits above. When we no longer need identifiable data, we delete or anonymize it, except where applicable law requires retention. We restrict service access and keep authentication and private route storage separate from public rankings.',
+        '本机运动资料保存在设备上，直至你将其删除。服务端数据按列明用途及适用义务所需保存，并遵守上述轨迹和申诉期限。可识别资料不再需要时，我们删除或匿名化处理，依法须留存的情形除外。我们限制服务端访问权限，并将认证资料、私有轨迹存储与公开榜单分开。',
+      ),
+      c(
+        'Feedback uses the category and description you submit. You can choose to provide a contact method and to attach the diagnostics you preview, such as app version, OS, model, screen and error code. The in-app service clears the structured callback contact 30 days after issue closure. If feedback submission is unavailable, the app can save a draft on your device. If you contact us by email, we use the information you choose to send to handle your request.',
+        '反馈功能处理你提交的问题类别和描述。你可以选择留下联系方式，也可预览并选择附上 App 版本、系统、机型、页面和错误编号等诊断信息。应用内反馈服务会在问题关闭 30 天后清除结构化回访联系方式。反馈服务暂不可用时，可在本机保存草稿。如果你发送邮件，我们使用你选择提供的信息处理请求。',
+      ),
+    ],
+  },
+  {
+    id: 'rights',
+    title: c('Your choices and rights', '你的选择与个人信息权利'),
+    body: [
+      c(
+        'Use My → Privacy & Permissions to view or delete local workouts and manage system access. Use Data Sources to disconnect COROS, and Settings to turn off club sync or territory participation. These actions stop the relevant future processing. You can request account cancellation in Account when that service is available. We delete or anonymize identifiable account data and achievements as applicable, retaining only information necessary for legal obligations, historical results or fair competition. Local workouts are managed separately.',
+        '可从「我的 → 隐私与权限」查看或删除本机运动、管理系统权限，从「数据源管理」解除高驰授权，从「设置」关闭跑团同步或领地参赛。这些操作停止相应的后续处理。账号服务可用时，可在「账号」申请注销。我们依法删除或匿名化可识别的账号资料及成果，并仅保留法律义务、既有成绩或竞赛公平所需的信息。本机运动可另行管理。',
+      ),
+      c(
+        'You may contact us to request access, a copy, correction, deletion, withdrawal of consent or an explanation of how your personal information is handled. We may verify that the request is yours before responding. If you are under 14, have your parent or guardian contact us before using services that require processing your personal information. Guardians may also contact us about access or deletion.',
+        '你可联系我们申请查阅、复制、更正、删除、撤回同意，或要求解释个人信息处理规则。我们可能在答复前核实请求人身份。未满 14 周岁的用户，在使用需要处理个人信息的服务前，请由父母或其他监护人联系我们。监护人也可联系我们提出查阅或删除请求。',
+      ),
+    ],
+  },
+];
+---
+
+<Layout
+  locale={locale}
+  title={`${title} | Hailink Labs`}
+  description={c(
+    'How SONGORUN handles location, workout data, clubs, territory entries and privacy requests.',
+    '松果跑如何处理定位、运动记录、跑团摘要、领地参赛资料，以及如何撤权、删除数据或联系我们。',
+  )}
+>
+  <section class="page-intro policy-intro">
+    <a class="breadcrumb" href={localizedPath('/support', locale)}>
+      {c('Support', '支持')}
+    </a>
+    <h1>{title}</h1>
+    <p>
+      {c('Effective ', '生效日期 ')}
+      <time datetime="2026-11-22">
+        {c('November 22, 2026', '2026 年 11 月 22 日')}
+      </time>
+    </p>
+  </section>
+  <article class="policy prose">
+    <p>
+      {c('SONGORUN is operated by ', '松果跑由')}
+      {companyName(locale)}
+      {c(
+        ', which is responsible for the processing described here. This policy covers the SONGORUN app. Optional services are described for when they are available and you use them.',
+        '运营，该公司负责本政策所述的个人信息处理。本政策适用于松果跑 App。下文所述可选功能仅在该功能可用且你选择使用时适用。',
+      )}
+    </p>
+    {sections.map(({ id, title, body }) => (
+      <section aria-labelledby={id}>
+        <h2 id={id}>{title}</h2>
+        {body.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+        {id === 'maps' && (
+          <p>
+            <a href="https://lbs.amap.com/pages/privacy/">
+              {c(
+                'AMap Open Platform Privacy Policy',
+                '高德地图开放平台隐私权政策',
+              )}
+            </a>
+          </p>
+        )}
+        {id === 'coros' && (
+          <p>
+            <a href="https://faq.coros.com/index/getartcate.html?catename=agreements&lang=zh">
+              {c('COROS Privacy Policy', 'COROS 高驰隐私政策')}
+            </a>
+          </p>
+        )}
+      </section>
+    ))}
+    <h2 id="contact">
+      {c('Privacy contact and updates', '隐私联系与政策更新')}
+    </h2>
+    <p>
+      <a
+        class="email-link"
+        href={`mailto:${site.email}?subject=SONGORUN%20Privacy`}
+      >
+        {site.email}
+      </a>
+    </p>
+    <p>
+      {c(
+        'For privacy requests, include SONGORUN and a short description. Please leave out passwords, one-time codes and complete routes. We will update this page if the policy changes and seek further consent when required.',
+        '联系时请注明松果跑及请求事项，请勿附上密码、验证码或完整轨迹。政策更新时我们会更新此页，并在需要时另行取得同意。',
+      )}
+    </p>
+  </article>
+</Layout>

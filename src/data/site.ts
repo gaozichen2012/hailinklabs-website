@@ -106,6 +106,7 @@ export const englishRoutes = [
   '/products/litterround/support',
   '/products/hybridloop',
   '/products/hybridloop/privacy',
+  '/products/songorun/privacy',
   '/products/hybridloop/support',
   '/products/turnmath',
   '/products/turnmath/privacy',

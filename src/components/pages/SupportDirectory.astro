@@ -49,6 +49,11 @@ const c = (en: string, zh: string) => (locale === 'en' ? en : zh);
           </li>
         ))}
       </ul>
+      <p>
+        <a href={localizedPath('/products/songorun/privacy', locale)}>
+          {c('SONGORUN Privacy Policy', '松果跑隐私政策')}
+        </a>
+      </p>
     </div>
   </section>
   <section class="section-row">
