@@ -76,11 +76,17 @@ for (const englishPath of englishRoutes) {
         links.filter((link) => /\.html|\/$/.test(link) && link !== '/'),
       ).toEqual([]);
       // All business links stay in the current language, except the explicit switch
-      // and the Chinese policy's link to its authoritative English version.
+      // and the shared media and download files.
       for (const link of links) {
-        if (link === otherPath || link.startsWith('/downloads/')) continue;
+        if (
+          link === otherPath ||
+          /^\/downloads\//.test(link) ||
+          /^\/products\/[^/]+\/[^/#]+\.(?:jpg|pdf|csv|mp4)(?:#.*)?$/.test(link)
+        )
+          continue;
         expect(
           locale === 'en' ? !link.startsWith('/zh') : link.startsWith('/zh'),
+          `${path}: ${link}`,
         ).toBe(true);
       }
       expect(
@@ -89,36 +95,33 @@ for (const englishPath of englishRoutes) {
           .count(),
       ).toBe(0);
       const resource = resourceForPath(englishPath);
-      const expectedStoreLinks = resource
-        ? [listings[resource.app].url]
-        : englishPath === '/'
-          ? featured.map((p) => listings[p.slug].url)
-          : englishPath === '/products'
-            ? Object.values(listings).map((l) => l.url)
-            : listings[englishPath.replace('/products/', '')]
-              ? [listings[englishPath.replace('/products/', '')].url]
-              : [];
-      expect(
-        await page.locator('a[href*="apps.apple.com"]').evaluateAll((links) =>
+      const appMatch = englishPath.match(/^\/products\/([^/]+)(\/demo)?$/);
+      const listing = appMatch && listings[appMatch[1]];
+      let expectedStoreLinks: string[] = [];
+      if (resource) expectedStoreLinks = [listings[resource.app].url];
+      else if (englishPath === '/')
+        expectedStoreLinks = featured.map((p) => listings[p.slug].url);
+      else if (englishPath === '/products')
+        expectedStoreLinks = Object.values(listings).map((l) => l.url);
+      else if (listing) {
+        const [, slug, demo] = appMatch;
+        expectedStoreLinks = Array<string>(
+          demo ? 1 : slug === 'gearproof' ? 3 : 2,
+        ).fill(listing.url);
+      }
+      const storeLinks = await page
+        .locator('a[href^="https://apps.apple.com/"]')
+        .evaluateAll((links) =>
           links.map((link) => {
             const url = new URL(link.getAttribute('href')!);
             url.search = '';
             return url.href;
           }),
-        ),
-      ).toEqual(expect.arrayContaining(expectedStoreLinks));
-      await expect(page.locator('a[href*="apps.apple.com"]')).toHaveCount(
-        expectedStoreLinks.length *
-          (englishPath === '/products' ||
-          /^\/products\/(samejob|gearproof|tmproof|litterround|calvingpocket|pressrecipe)$/.test(
-            englishPath,
-          )
-            ? 2
-            : 1),
-      );
+        );
+      expect(storeLinks.sort()).toEqual(expectedStoreLinks.sort());
       for (const download of await page.locator('.store-download').all()) {
         await expect(download).toContainText(
-          locale === 'en' ? 'Link opens the US store.' : '链接前往美国商店。',
+          locale === 'en' ? /US store[;.]/ : /美国商店[。；]/,
         );
       }
       expect(await context.cookies()).toEqual([]);

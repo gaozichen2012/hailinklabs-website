@@ -64,7 +64,7 @@ for (const prefix of ['', '/zh']) {
         `${prefix}/templates/${slug === 'tmproof' ? 'time-and-materials-ticket' : 'heat-press-settings-log'}`,
       );
       await expect(
-        page.locator(`a[href="${prefix}/products/${slug}#app-demo"]`),
+        page.locator(`a[href="${prefix}/products/${slug}#app-demo"]`).first(),
       ).toBeVisible();
     });
   }

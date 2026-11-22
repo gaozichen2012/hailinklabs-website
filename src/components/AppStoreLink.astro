@@ -11,14 +11,20 @@ interface Props {
 }
 const { locale, slug, source = 'product', content = '' } = Astro.props;
 const listing = listings[slug];
+const label =
+  locale === 'en' ? 'Download on the US App Store' : '前往美国 App Store 下载';
 ---
 
 {listing && (
   <div class="store-download">
-    <a class="button" href={buildAppStoreUrl({ slug, source, content })}>
-      {locale === 'en'
-        ? 'Download on the US App Store'
-        : '前往美国 App Store 下载'}
+    <a
+      class="button"
+      href={buildAppStoreUrl({ slug, source, content })}
+      aria-label={
+        source === 'catalog' ? `${label}: ${listing.storeName}` : undefined
+      }
+    >
+      {label}
       <span aria-hidden="true">↗</span>
     </a>
     <p class="price-summary">

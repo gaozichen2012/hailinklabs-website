@@ -25,7 +25,9 @@ for (const prefix of ['', '/zh']) {
         slug === 'samejob' ? '$29.99' : '$19.99',
       );
       await expect(page.locator('.product-intro .data-summary')).toBeVisible();
-      const images = page.locator('.product-gallery img');
+      const images = page.locator(
+        '.product-gallery:not(.product-opening .product-gallery) img',
+      );
       await expect(images).toHaveCount(4);
       for (const image of await images.all()) {
         await image.scrollIntoViewIfNeeded();

@@ -72,7 +72,11 @@ for (const [slug, guide, sheet, appId] of cases) {
           .digest('hex'),
       );
       await page.goto(`${prefix}/guides/${guide}`);
-      await page.locator('.resource-product-details a').first().click();
+      await page
+        .locator(
+          `.resource-product-details a[href="${prefix}/products/${slug}#common-questions"]`,
+        )
+        .click();
       await expect(page).toHaveURL(
         new RegExp(`/products/${slug}#common-questions$`),
       );

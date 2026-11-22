@@ -41,6 +41,10 @@ for (const prefix of ['', '/zh']) {
     try {
       const page = await context.newPage();
       await page.goto(prefix + product);
+      await expect(page.locator('#hybridloop-demo ol li')).toHaveCount(4);
+      await expect(page.locator('#hybridloop-demo ol')).toContainText(
+        'Repeat Original Plan',
+      );
       const sampleLink = `${prefix}/guides/${guide}#sample-plan`;
       await expect(
         page.locator(`#hybridloop-demo a[href="${sampleLink}"]`),

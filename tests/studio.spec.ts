@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { catalog, listings } from '../src/data/catalog';
 
 for (const prefix of ['', '/zh']) {
   test(`${prefix || 'English'} studio hero keeps real imagery, conversion and reduced motion`, async ({
@@ -21,6 +22,7 @@ for (const prefix of ['', '/zh']) {
         .toBeGreaterThan(0);
     }
     const action = page.locator('.hero .button');
+    await expect(action).toContainText(String(Object.keys(listings).length));
     await action.focus();
     await expect(action).toBeFocused();
     expect(
@@ -44,7 +46,7 @@ for (const prefix of ['', '/zh']) {
     await expect(page).toHaveURL(
       new RegExp(`${prefix}/products#downloadable$`),
     );
-    await expect(page.locator('.matrix-card')).toHaveCount(29);
+    await expect(page.locator('.matrix-card')).toHaveCount(catalog.length);
     await expect(page.locator('.card-index, .catalog-index')).toHaveCount(0);
     await page.locator('.category-links a[href="#family"]').click();
     await expect(page.locator('#family')).toBeInViewport();

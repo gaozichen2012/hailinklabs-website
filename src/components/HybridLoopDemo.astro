@@ -13,12 +13,6 @@ const video = '/products/hybridloop/workout-walkthrough.mp4';
   <h2 id="hybridloop-demo-title">
     {c('Import, time and repeat a workout', '导入、计时与复练')}
   </h2>
-  <p>
-    {c(
-      'Open Import Workout, review the draft, then time your workout. Save the result and use Repeat Original Plan for your next session.',
-      '打开 Import Workout，核对草稿后开始计时。保存这次训练，再用 Repeat Original Plan 按原计划复练。',
-    )}
-  </p>
   {workoutGuidePath && (
     <p>
       <a href={workoutGuidePath}>
@@ -49,6 +43,33 @@ const video = '/products/hybridloop/workout-walkthrough.mp4';
       {c('Download the video', '下载视频')}
     </a>
   </p>
+  <h3>{c('What the video shows', '演示中的四个步骤')}</h3>
+  <ol>
+    <li>
+      {c(
+        'Import the workout. From Train, open Import Workout to start with your plan.',
+        '导入训练。在 Train 页面打开 Import Workout，从自己的计划开始。',
+      )}
+    </li>
+    <li>
+      {c(
+        'Review the draft. On Build Workout, check the rounds, targets and timing rule before saving.',
+        '核对草稿。在 Build Workout 页面检查轮数、目标及计时规则，然后保存。',
+      )}
+    </li>
+    <li>
+      {c(
+        'Follow the timer. The screen shows the current task and what comes next. Use Complete · Next to move on.',
+        '跟随计时。界面显示当前任务和下一项。完成后点 Complete · Next 继续。',
+      )}
+    </li>
+    <li>
+      {c(
+        'Review the result. Workout Review shows the recorded time. Choose Repeat Original Plan to reuse the same plan.',
+        '复盘成绩。在 Workout Review 查看记录用时。下次可点 Repeat Original Plan 复用原计划。',
+      )}
+    </li>
+  </ol>
 </section>
 
 <style>

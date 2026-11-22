@@ -27,6 +27,32 @@ for (const prefix of ['', '/zh']) {
         prefix ? `${available} 可下载` : `${available} downloadable`,
       );
     }
+    const catalogToggle = page.locator('.full-catalog > summary');
+    expect((await catalogToggle.boundingBox())!.height).toBeGreaterThanOrEqual(
+      44,
+    );
+    await catalogToggle.press('Enter');
+    await expect(page.locator('#product-categories')).not.toBeVisible();
+    await page
+      .locator('#downloadable > a[href="#product-categories"]')
+      .press('Enter');
+    await expect(page.locator('#product-categories')).toBeVisible();
+    await page.locator('.category-links a[href="#fitness"]').press('Enter');
+    await page
+      .locator('#fitness a[href="#download-hybridloop"]')
+      .press('Enter');
+    const workoutCard = page.locator('#download-hybridloop');
+    await expect(workoutCard).toBeInViewport();
+    await expect(
+      workoutCard.locator('a[href$="/products/hybridloop"]'),
+    ).toHaveAccessibleName(`${prefix ? '了解更多' : 'Learn More'}: HybridLoop`);
+    await expect(workoutCard.locator('.store-download a')).toHaveAccessibleName(
+      /HybridLoop/,
+    );
+    await expect(workoutCard.locator('.store-download a')).toHaveAttribute(
+      'href',
+      buildAppStoreUrl({ slug: 'hybridloop', source: 'catalog' })!,
+    );
     await expect(page.locator('main')).not.toContainText('1 apps');
   });
   for (const slug of Object.keys(listings)) {
@@ -72,7 +98,13 @@ for (const prefix of ['', '/zh']) {
         page.locator('.worksheet-preview .print-sheet .worksheet-section'),
       ).toHaveCount(sheet.sections.length);
       await expect(page.locator('.worksheet-example')).toContainText(
-        prefix ? '不是 App 导出' : /not an app export/i,
+        sheet.app === 'hybridloop'
+          ? prefix
+            ? 'HybridLoop 使用独立的导出格式'
+            : 'HybridLoop exports use a separate format'
+          : prefix
+            ? '不是 App 导出'
+            : /not an app export/i,
       );
       for (const suffix of ['-a4.pdf', '-example.pdf']) {
         const asset = await request.get(`/downloads/${sheet.slug}${suffix}`);

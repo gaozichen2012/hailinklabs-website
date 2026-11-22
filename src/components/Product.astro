@@ -9,14 +9,17 @@ interface Props {
   locale: Locale;
   product: CatalogProduct;
   compact?: boolean;
+  id?: string;
   headingLevel?: 'h2' | 'h3';
 }
 const {
   locale,
   product,
+  id,
   compact = false,
   headingLevel: Heading = 'h3',
 } = Astro.props;
+const detailsLabel = locale === 'en' ? 'Learn More' : '了解更多';
 const preview =
   product.slug === 'samejob'
     ? '01-repeat-invoices'
@@ -25,7 +28,11 @@ const preview =
       : galleries[product.slug as keyof typeof galleries]?.[0]?.file;
 ---
 
-<article class:list={['matrix-card', { 'has-screen': !!preview }]}>
+<article
+  id={id}
+  tabindex={id ? -1 : undefined}
+  class:list={['matrix-card', { 'has-screen': !!preview }]}
+>
   <div class="card-art" aria-hidden="true">
     <span class="card-art-name">{product.name}</span>
     {preview && (
@@ -60,10 +67,9 @@ const preview =
   <a
     class="text-link"
     href={localizedPath(`/products/${product.slug}`, locale)}
-    aria-label={`${locale === 'en' ? 'Learn more about' : '了解'} ${product.name}`}
+    aria-label={`${detailsLabel}: ${product.name}`}
   >
-    {locale === 'en' ? 'Learn More' : '了解更多'}{' '}
-    <span aria-hidden="true">→</span>
+    {detailsLabel} <span aria-hidden="true">→</span>
   </a>
   <AppStoreLink locale={locale} slug={product.slug} source="catalog" />
 </article>
