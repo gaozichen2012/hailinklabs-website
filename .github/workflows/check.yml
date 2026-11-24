@@ -12,17 +12,15 @@ concurrency:
   group: pages-production
   cancel-in-progress: false
 jobs:
-  publish:
+  upload:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     permissions:
       contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      pages: read
+    outputs:
+      artifact_id: ${{ steps.pages_artifact.outputs.artifact_id }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -37,7 +35,44 @@ jobs:
           tar -xzf .pages-release/site.tar.gz -C pages-output
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
+        id: pages_artifact
         with:
           path: pages-output
+
+  publish:
+    needs: upload
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Wait for the uploaded Pages artifact to be visible
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ needs.upload.outputs.artifact_id }}
+        run: |
+          if [[ ! "$ARTIFACT_ID" =~ ^[0-9]+$ ]]; then
+            echo "::error::The upload did not return a valid Pages artifact ID."
+            exit 1
+          fi
+          expected="$GITHUB_RUN_ID"$'\t'"$GITHUB_SHA"
+          for attempt in {1..12}; do
+            if metadata=$(timeout 8s gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID" \
+              --jq 'select(.name == "github-pages" and .expired == false and .size_in_bytes > 0) | [.workflow_run.id, .workflow_run.head_sha] | @tsv' 2>/dev/null) &&
+              [[ "$metadata" == "$expected" ]]; then
+              echo "Verified Pages artifact $ARTIFACT_ID for this run and commit."
+              exit 0
+            fi
+            if (( attempt < 12 )); then sleep 3; fi
+          done
+          echo "::error::The uploaded Pages artifact did not become visible for this run and commit."
+          exit 1
       - uses: actions/deploy-pages@v5
         id: deployment
