@@ -72,6 +72,15 @@ for (const chinese of [false, true]) {
     await page.keyboard.press('Enter');
     await expect(page.locator('main')).toBeFocused();
     await page.keyboard.press(tabKey);
+    const workout = page.getByRole('link', {
+      name: chinese ? 'HybridLoop 为训练计时' : 'HybridLoop workout timer',
+    });
+    await expect(workout).toBeFocused();
+    await expect(workout).toHaveAttribute(
+      'href',
+      `${chinese ? '/zh' : ''}/products/hybridloop`,
+    );
+    await page.keyboard.press(tabKey);
     const products = page.getByRole('link', {
       name: chinese ? /浏览 \d+ 款 iPhone App/ : /Browse \d+ iPhone apps/,
     });
