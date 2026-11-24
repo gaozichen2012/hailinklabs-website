@@ -191,6 +191,19 @@ const nav = [
       >
         <BrandLogo />
       </a>
+      {hasAlternate && (
+        <a
+          class="language-switch"
+          href={alternate}
+          lang={otherLocale}
+          hreflang={otherLocale}
+          aria-label={
+            locale === 'en' ? '切换到本页中文版' : 'Read this page in English'
+          }
+        >
+          {locale === 'en' ? '中文' : 'English'}
+        </a>
+      )}
       <nav aria-label={t('Main navigation')}>
         {nav.map(({ href, label }) => (
           <a
@@ -206,19 +219,6 @@ const nav = [
             {label}
           </a>
         ))}
-        {hasAlternate && (
-          <a
-            class="language-switch"
-            href={alternate}
-            lang={otherLocale}
-            hreflang={otherLocale}
-            aria-label={
-              locale === 'en' ? '切换到本页中文版' : 'Read this page in English'
-            }
-          >
-            {locale === 'en' ? '中文' : 'English'}
-          </a>
-        )}
       </nav>
     </header>
     <main id="main" class="shell" tabindex="-1">

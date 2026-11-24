@@ -3,6 +3,48 @@ import { guides, templates } from '../src/data/resources';
 import { listings } from '../src/data/catalog';
 import { buildAppStoreUrl, campaignName } from '../src/data/app-store';
 for (const prefix of ['', '/zh']) {
+  test(`${prefix || 'English'} compact navigation and direct resource links at 320px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 320, height: 650 });
+    await page.goto(`${prefix}/guides`);
+    const header = page.locator('.site-header');
+    const navigation = header.locator('nav');
+    const bounds = await header.boundingBox();
+    expect(bounds!.height).toBeLessThan(120);
+    const linkRows = await navigation.locator('a').evaluateAll((links) =>
+      links.map((link) => ({
+        top: link.getBoundingClientRect().top,
+        height: link.getBoundingClientRect().height,
+      })),
+    );
+    expect(new Set(linkRows.map((link) => link.top)).size).toBe(1);
+    expect(linkRows.every((link) => link.height >= 44)).toBe(true);
+    await expect(header.locator('.language-switch')).toHaveAttribute(
+      'href',
+      prefix ? '/guides' : '/zh/guides',
+    );
+    await expect(
+      page.locator('.resource-breadcrumb a[href$="/guides"]'),
+    ).toHaveCount(0);
+    await expect(page.locator('.guide-group-title')).toHaveCount(5);
+
+    await page.goto(`${prefix}/templates/repeat-workout-log`);
+    const downloads = page.locator('.resource-downloads');
+    await expect(downloads.locator('a[href$=".csv"]')).toHaveCount(2);
+    await expect(
+      downloads.locator('a[href$="/repeat-workout-log.pdf"]'),
+    ).toContainText('Letter PDF');
+    const regionNames = await page
+      .locator('.worksheet-preview [role="region"]')
+      .evaluateAll((regions) =>
+        regions.map((region) => region.getAttribute('aria-label')),
+      );
+    expect(regionNames).toHaveLength(4);
+    expect(new Set(regionNames).size).toBe(regionNames.length);
+    await expect(page.locator('.print-only [tabindex]')).toHaveCount(0);
+  });
+
   test(`${prefix || 'English'} resource clusters, answers and real App Store banners`, async ({
     request,
   }) => {

@@ -5,8 +5,9 @@ interface Props {
   sheet: Template;
   locale: Locale;
   example?: boolean;
+  printOnly?: boolean;
 }
-const { sheet, locale, example = false } = Astro.props;
+const { sheet, locale, example = false, printOnly = false } = Astro.props;
 const d = (v: readonly string[]) => resourceText(v, locale);
 ---
 
@@ -16,7 +17,11 @@ const d = (v: readonly string[]) => resourceText(v, locale);
       ? locale === 'en'
         ? 'Filled demonstration'
         : '完整填写演示'
-      : d(sheet.title)}
+      : printOnly
+        ? d(sheet.title)
+        : locale === 'en'
+          ? 'Blank worksheet'
+          : '空白工作表'}
   </h2>
   <p>{example ? d(sheet.exampleLabel) : d(sheet.note)}</p>
   {sheet.sections.map((section) => (
@@ -24,9 +29,15 @@ const d = (v: readonly string[]) => resourceText(v, locale);
       <h3>{d(section.title)}</h3>
       <div
         class="record-table-wrap"
-        tabindex="0"
-        role="region"
-        aria-label={d(section.title)}
+        tabindex={printOnly ? undefined : 0}
+        role={printOnly ? undefined : 'region'}
+        aria-label={
+          printOnly
+            ? undefined
+            : locale === 'en'
+              ? `${example ? 'Filled example' : 'Blank worksheet'}: ${d(section.title)}`
+              : `${example ? '填写示例' : '空白表格'}：${d(section.title)}`
+        }
       >
         <table
           class:list={[

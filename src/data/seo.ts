@@ -271,7 +271,9 @@ export function structuredData(
         inLanguage: locale,
         relatedLink: [
           `${site.url}/downloads/${template.slug}.pdf`,
+          `${site.url}/downloads/${template.slug}-a4.pdf`,
           `${site.url}/downloads/${template.slug}.csv`,
+          `${site.url}/downloads/${template.slug}-zh.csv`,
         ],
       });
     return { '@context': 'https://schema.org', '@graph': graph };

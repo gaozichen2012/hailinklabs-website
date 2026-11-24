@@ -73,7 +73,13 @@ const galleryId = lead ? 'gallery-preview-title' : 'gallery-title';
 {shots && (
   <section class="product-gallery" aria-labelledby={galleryId}>
     <h2 id={galleryId}>
-      {locale === 'en' ? 'See it in action' : '看看实际使用过程'}
+      {lead
+        ? locale === 'en'
+          ? 'App preview'
+          : 'App 界面预览'
+        : locale === 'en'
+          ? 'App screenshots'
+          : 'App 截图'}
     </h2>
     <p>
       {slug === 'gearproof' || slug === 'calvingpocket'

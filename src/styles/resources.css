@@ -125,12 +125,17 @@ section.resource-body {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 20px;
   align-items: center;
+}
+.resource-downloads + .format-help {
+  margin-block: 12px;
+}
+.format-help > summary {
+  padding-block: 10px;
+  cursor: pointer;
 }
 .resource-downloads .button,
 .free-resource .button {
-  margin-top: 12px;
   white-space: normal;
   text-align: center;
 }
@@ -154,7 +159,33 @@ section.resource-body {
   color: var(--muted);
   font-size: 15px;
 }
+.resource-grid + .guide-group-title {
+  margin-top: 32px;
+}
+.guide-card-title {
+  margin: 0 0 10px;
+  font-size: 19px;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+.record-table-wrap:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
 @media (max-width: 600px) {
+  .resource-page {
+    padding-top: 20px;
+  }
+  .resource-intro {
+    padding-block: 16px 22px;
+  }
+  .resource-intro h1 {
+    margin-top: 4px;
+  }
+  .resource-body > .free-resource:first-child {
+    margin-top: 8px;
+  }
   .resource-grid {
     grid-template-columns: 1fr;
   }
@@ -247,13 +278,6 @@ section.resource-body {
     margin: 15mm;
   }
 }
-@media (max-width: 760px) {
-  .site-header nav {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-}
-
 .site-footer nav {
   flex-wrap: wrap;
 }
