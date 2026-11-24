@@ -87,6 +87,72 @@
       }
     ]
   },
+  "/products/calvingpocket/preview-01-record-a-calf-birth.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 115903,
+    "sourceSha256": "7e99f043c0619159fdf7531d1777ae26ff19a3b7a08ebe4aff8f02e99d1cfdb0",
+    "variants": [
+      {
+        "file": "/products/calvingpocket/preview-01-record-a-calf-birth-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 12784,
+        "sha256": "9fa8a1a503f1b6f3fd98c28fde7e757110c22a05c1ac64d9421f687c9ca0cbff"
+      },
+      {
+        "file": "/products/calvingpocket/preview-01-record-a-calf-birth-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 40392,
+        "sha256": "6a8e13bc9c16ca2dde6ec0d59c80b7f3dd5ad0c9224ac79015ebaa67f4d4b16d"
+      }
+    ]
+  },
+  "/products/calvingpocket/preview-02-save-without-a-tag.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 122732,
+    "sourceSha256": "7a4a824fa4acbffdeb61341c30faaf08c2a4925a352c068f8bfcc9cb31f3d9e2",
+    "variants": [
+      {
+        "file": "/products/calvingpocket/preview-02-save-without-a-tag-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 15888,
+        "sha256": "1b38c708843aa19cebc9cded7c57b21b3502f764314a77800db4367666cd1f98"
+      },
+      {
+        "file": "/products/calvingpocket/preview-02-save-without-a-tag-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 50320,
+        "sha256": "18a3fc8c78ceda2bb089c7422c6f5368a0bbd6f89859dafbaae954bca71486bf"
+      }
+    ]
+  },
+  "/products/calvingpocket/preview-03-add-the-tag-later.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 114478,
+    "sourceSha256": "dd755ca4cfc99b23ebf5edd417a92d37931fbb0ed10fe6fa21cc8dee05f24bb0",
+    "variants": [
+      {
+        "file": "/products/calvingpocket/preview-03-add-the-tag-later-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 12524,
+        "sha256": "1826d0babb8682f675e2a0e6286f0a7e173353438ac7225bb70584e399ac072d"
+      },
+      {
+        "file": "/products/calvingpocket/preview-03-add-the-tag-later-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 39292,
+        "sha256": "af9ab42255a1495724f87eb382459525883b393d3d3fa7693797357f2722079e"
+      }
+    ]
+  },
   "/products/gearproof/04-gearproof.jpg": {
     "width": 662,
     "height": 1440,
@@ -197,6 +263,72 @@
       }
     ]
   },
+  "/products/gearproof/preview-01-know-who-has-your-gear.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 150655,
+    "sourceSha256": "9eb65fc326a288da1453af749224a25b38e64e393770114ddb5e40f1c12b50f6",
+    "variants": [
+      {
+        "file": "/products/gearproof/preview-01-know-who-has-your-gear-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 17144,
+        "sha256": "cdc0125d214429c7000319ee9101c2b88798fc48e84d857c385054c9296d73d6"
+      },
+      {
+        "file": "/products/gearproof/preview-01-know-who-has-your-gear-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 55328,
+        "sha256": "51efaf62ac9e8ffa3887bf8627d1847a3c6fe32f3b15ebf4992eadb8f6d867e5"
+      }
+    ]
+  },
+  "/products/gearproof/preview-02-scan-out-a-kit.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 144325,
+    "sourceSha256": "b98d33244868a9f2e4185acc2404892c5635045e3d4d5c446bb03f09872c5b0c",
+    "variants": [
+      {
+        "file": "/products/gearproof/preview-02-scan-out-a-kit-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 18218,
+        "sha256": "24651f8a2853298dc94aba4f8672e30001ce4760062511e038379311125ea6a2"
+      },
+      {
+        "file": "/products/gearproof/preview-02-scan-out-a-kit-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 59382,
+        "sha256": "f33d96a9d2819106d7736233cdca356bdf9d4198e7f6553f28bd87e915d11757"
+      }
+    ]
+  },
+  "/products/gearproof/preview-03-check-every-return.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 140033,
+    "sourceSha256": "39e3266af934644fe437a2d5122f102f17b3e58301944915518332bf5495e8f7",
+    "variants": [
+      {
+        "file": "/products/gearproof/preview-03-check-every-return-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 16294,
+        "sha256": "e6c1ddfd2dd98ffc36cf0463d6683e9224ffb14f4f7fc8c299d25b9ccf88fb75"
+      },
+      {
+        "file": "/products/gearproof/preview-03-check-every-return-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 50274,
+        "sha256": "00b2afde7eee704c989ec18e68dc8a26b8f8e40d5e4983285467ef5ac24dc2ab"
+      }
+    ]
+  },
   "/products/hybridloop/build8-01-train.jpg": {
     "width": 660,
     "height": 1434,
@@ -285,6 +417,72 @@
       }
     ]
   },
+  "/products/hybridloop/preview-01-time-workout-blocks.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 122535,
+    "sourceSha256": "acacc8455d183f5774d0f4a523971f075d987d0ab409e7a85146b064c763f6b5",
+    "variants": [
+      {
+        "file": "/products/hybridloop/preview-01-time-workout-blocks-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 15550,
+        "sha256": "aabe549d6b91634c65738975c3f6098d92f88bc109ff297382ebcf2047a9daa5"
+      },
+      {
+        "file": "/products/hybridloop/preview-01-time-workout-blocks-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 45824,
+        "sha256": "497a8adfe90ebb2aef087c76c8057d788a89fb5602a39ec592b66d4e32e7e804"
+      }
+    ]
+  },
+  "/products/hybridloop/preview-02-build-a-circuit.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 143119,
+    "sourceSha256": "0c44279b95810475401e9227e567c01c1d1c6bbe99683fd9ee45a3e24673ec6c",
+    "variants": [
+      {
+        "file": "/products/hybridloop/preview-02-build-a-circuit-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 18270,
+        "sha256": "9a54d4982321d83267a6e9a672cabd3473d88303c06ebe2e5a2f6314c2245aa7"
+      },
+      {
+        "file": "/products/hybridloop/preview-02-build-a-circuit-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 59856,
+        "sha256": "b6ff7ff8b9d4fd9187a21fd2a0b5fdb2f965d8c67fd1521b8216a83feda8d2f9"
+      }
+    ]
+  },
+  "/products/hybridloop/preview-03-compare-repeat-workouts.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 144021,
+    "sourceSha256": "304195a29e0c58fe7b4964159515cebb03d54daeb5bb15b2f8167784f1aaabc0",
+    "variants": [
+      {
+        "file": "/products/hybridloop/preview-03-compare-repeat-workouts-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 17198,
+        "sha256": "06106a303a5864faacea8deb8b98dbf5e3318cf94bb0f1ea16ab43f181cf1753"
+      },
+      {
+        "file": "/products/hybridloop/preview-03-compare-repeat-workouts-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 55452,
+        "sha256": "b03efce437350bf0ec028c000ea4bdaed376eb9d84ccd2925d1a6f06fed7dd47"
+      }
+    ]
+  },
   "/products/litterround/01-litter-board.jpg": {
     "width": 663,
     "height": 1440,
@@ -370,6 +568,72 @@
         "height": 1440,
         "bytes": 28492,
         "sha256": "3f1daa4919b77bf3f4e54d7a47acdb9968bbce73cdb76dd21fa884a3cc15d6cc"
+      }
+    ]
+  },
+  "/products/litterround/preview-01-track-puppy-growth.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 121451,
+    "sourceSha256": "6b18683258c613043a4334145ad894c9220c6ef2235a1a0f5c9a5c4ea18b5259",
+    "variants": [
+      {
+        "file": "/products/litterround/preview-01-track-puppy-growth-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 13556,
+        "sha256": "20f8f4d96f152b2217c67ef47886acedc0231a93e0339af7c230e9c855137e75"
+      },
+      {
+        "file": "/products/litterround/preview-01-track-puppy-growth-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 41396,
+        "sha256": "545588edadfcfcc7626c522c2c5f6702499495062f74c6e12ec2b38544d6e789"
+      }
+    ]
+  },
+  "/products/litterround/preview-02-weigh-the-litter.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 144223,
+    "sourceSha256": "b7f5cb2d1d92161004b6fe95f4a7a74d2914db1d4c9321e46f2c6361b7ec4ec6",
+    "variants": [
+      {
+        "file": "/products/litterround/preview-02-weigh-the-litter-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 18632,
+        "sha256": "016c38cbe577ee5cbe69e3d3c74a327f0e4586b81ea118a5796bd7c7baad1a3f"
+      },
+      {
+        "file": "/products/litterround/preview-02-weigh-the-litter-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 60310,
+        "sha256": "17dd768b085d3faf4c15b94015f767ad5b26e008ad26af195d2acae3966c72a1"
+      }
+    ]
+  },
+  "/products/litterround/preview-03-share-a-puppy-record.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 118443,
+    "sourceSha256": "b127523b4817f9103751672c6632d0757b68cd3a585db03a07f359e1d3a1b63d",
+    "variants": [
+      {
+        "file": "/products/litterround/preview-03-share-a-puppy-record-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 12950,
+        "sha256": "0ae543b0a3dc6bfc4fda335b57d54760260528198f1e0815eb235a1cf6d20342"
+      },
+      {
+        "file": "/products/litterround/preview-03-share-a-puppy-record-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 44006,
+        "sha256": "e2c516d20adf34a2e6abf83e035a27e35f7d29638ff89d2a837d094afc72f6e6"
       }
     ]
   },
@@ -527,6 +791,72 @@
       }
     ]
   },
+  "/products/pressrecipe/preview-01-repeat-proven-settings.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 147289,
+    "sourceSha256": "55d673ebdd013c1611309d842f1f8f8fd96ecf2872a8b79d4a9fce743824452d",
+    "variants": [
+      {
+        "file": "/products/pressrecipe/preview-01-repeat-proven-settings-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 17794,
+        "sha256": "d290d972c97d2f17533af935f9a4017cfa09f2893c341f1689a2d73c33f361af"
+      },
+      {
+        "file": "/products/pressrecipe/preview-01-repeat-proven-settings-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 53744,
+        "sha256": "e4bb0f565e3ec750e7af4e9ee03804da960bbc96b12f6c70d9bd60b02f8a0a9a"
+      }
+    ]
+  },
+  "/products/pressrecipe/preview-02-log-each-press-test.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 142126,
+    "sourceSha256": "f3b9acaa30139813cf6590ae17a3771fdc82cf604bd2a9224799d3ef632f8084",
+    "variants": [
+      {
+        "file": "/products/pressrecipe/preview-02-log-each-press-test-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 18984,
+        "sha256": "c5dd52a59c0a440d479803a7dd9de7b927441a3f50e4638ed1c25460652d95fe"
+      },
+      {
+        "file": "/products/pressrecipe/preview-02-log-each-press-test-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 61168,
+        "sha256": "35da148600f6eb78ccefe3fe185ad70cdc2543a5044d165a6dad9f6ac731f461"
+      }
+    ]
+  },
+  "/products/pressrecipe/preview-03-find-a-recipe.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 133274,
+    "sourceSha256": "ba4148669d21abbdef08f9fb6eb8d9a53f41a1137e69b7e68be2693fda111b82",
+    "variants": [
+      {
+        "file": "/products/pressrecipe/preview-03-find-a-recipe-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 16136,
+        "sha256": "8640b43f8a487a8dd2f966b224c31742821863b4746bebcae5e31edaf37599c7"
+      },
+      {
+        "file": "/products/pressrecipe/preview-03-find-a-recipe-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 47314,
+        "sha256": "ef7b59880b2628842203ab327fde82859e1cc0d0dd3e050a266cb29214c8392b"
+      }
+    ]
+  },
   "/products/samejob/01-repeat-invoices.jpg": {
     "width": 662,
     "height": 1440,
@@ -615,6 +945,72 @@
       }
     ]
   },
+  "/products/samejob/preview-01-send-a-clean-invoice.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 115348,
+    "sourceSha256": "728a568435683919c55e6b30e0543abcc7a05a7eb19bb603a77a5cc0465c1528",
+    "variants": [
+      {
+        "file": "/products/samejob/preview-01-send-a-clean-invoice-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 12296,
+        "sha256": "e34c0a894c8ac62d3eaa712561e3f0f4288f146d07383b95c82c0897b6173601"
+      },
+      {
+        "file": "/products/samejob/preview-01-send-a-clean-invoice-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 37920,
+        "sha256": "35c3f70988801e618f5f5f3e8ad8c068b8e3d87919e641a166566c00b5e10521"
+      }
+    ]
+  },
+  "/products/samejob/preview-02-create-an-invoice.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 138353,
+    "sourceSha256": "08c369ea0d0277149bb5460b2d617247a496bd443c7c15cf4290a5272e284232",
+    "variants": [
+      {
+        "file": "/products/samejob/preview-02-create-an-invoice-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 17940,
+        "sha256": "1220f9d21361fbbe5dd47c7ae14582b5f1e41b03a711c2f7f759b1524e4ccde3"
+      },
+      {
+        "file": "/products/samejob/preview-02-create-an-invoice-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 57844,
+        "sha256": "f30482ac3156744e8352cd99fcf1daedf80149aa25b576248759d541bf287ff2"
+      }
+    ]
+  },
+  "/products/samejob/preview-03-reuse-an-invoice.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 116360,
+    "sourceSha256": "c7e0b41e23e8c500e90ab29e2eb7f2bffb13e561a41a4d05c1d9d3e612ee56b8",
+    "variants": [
+      {
+        "file": "/products/samejob/preview-03-reuse-an-invoice-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 12326,
+        "sha256": "2b1b51d6aa55b7c0d7bf4a9588effbc9f7e12b3d7cf6f797efe266c259bb4e77"
+      },
+      {
+        "file": "/products/samejob/preview-03-reuse-an-invoice-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 38588,
+        "sha256": "626ec0e9ed62d5d36a0cb5b682b984fe1198e85fe91de0cb0b2cdddbacbaf17d"
+      }
+    ]
+  },
   "/products/tmproof/demo-pdf.jpg": {
     "width": 663,
     "height": 1441,
@@ -678,6 +1074,72 @@
         "height": 1441,
         "bytes": 31860,
         "sha256": "725d92808c80ee8ab4763cb4829a2aebeec04c502f7c31e841fb96860df021c1"
+      }
+    ]
+  },
+  "/products/tmproof/preview-01-document-extra-work.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 131940,
+    "sourceSha256": "6b9a163e757f125b9c00fd58574a1c378eec996e6a94c984cc41e1d25ed368a7",
+    "variants": [
+      {
+        "file": "/products/tmproof/preview-01-document-extra-work-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 14542,
+        "sha256": "5af02850e7befe47062774296976fd09b1d5f3e24f93391db5f7ee50bf67fa56"
+      },
+      {
+        "file": "/products/tmproof/preview-01-document-extra-work-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 46900,
+        "sha256": "4abdca205fb3a395c4245f9f691b417cd7901f115a76d2fb858ef8e82f89b8db"
+      }
+    ]
+  },
+  "/products/tmproof/preview-02-capture-a-signature.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 147002,
+    "sourceSha256": "dd96485f69a0f3d2f6b7bc4153eff98c5facfa8897fba398adfa299863d9f8c8",
+    "variants": [
+      {
+        "file": "/products/tmproof/preview-02-capture-a-signature-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 19180,
+        "sha256": "da9c1b71f38847350bae3d2a06a5ad6a49df0e4d3b263f60e6dae855655ee24c"
+      },
+      {
+        "file": "/products/tmproof/preview-02-capture-a-signature-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 64718,
+        "sha256": "f923d1fb895d3a4b488e0ddacc09f60b54d24bd8b21a8718d11dcb4b8af5245f"
+      }
+    ]
+  },
+  "/products/tmproof/preview-03-share-the-ticket.jpg": {
+    "width": 792,
+    "height": 1721,
+    "sourceBytes": 132469,
+    "sourceSha256": "c816f7aaa24ce75dc79b7cdadb535e8c987d045ab094329292d1440443102d3d",
+    "variants": [
+      {
+        "file": "/products/tmproof/preview-03-share-the-ticket-320w.webp",
+        "width": 320,
+        "height": 695,
+        "bytes": 13284,
+        "sha256": "ea609cb883b89470f5ba72d91621b12adfdf93b3f0e4c6acce490f5f399db182"
+      },
+      {
+        "file": "/products/tmproof/preview-03-share-the-ticket-792w.webp",
+        "width": 792,
+        "height": 1721,
+        "bytes": 43902,
+        "sha256": "4e69c1d13e82260d17a36205a309bc61ca242c124bc7a161b846e57c6c325a9e"
       }
     ]
   },

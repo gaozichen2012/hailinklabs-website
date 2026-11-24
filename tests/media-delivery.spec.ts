@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { listings } from '../src/data/catalog';
+import { productGalleries } from '../src/data/screenshots';
 
 test.use({ javaScriptEnabled: false, reducedMotion: 'reduce' });
 
@@ -15,6 +16,16 @@ for (const prefix of ['', '/zh']) {
       ...Object.keys(listings).map((slug) => `/products/${slug}`),
     ]) {
       await page.goto(`${prefix}${path === '/' ? '' : path}` || '/');
+      if (path === '/') {
+        for (const [index, slug] of ['samejob', 'gearproof'].entries()) {
+          await expect(
+            page.locator('.hero-showcase img').nth(index),
+          ).toHaveAttribute(
+            'src',
+            `/products/${slug}/${productGalleries[slug][0].file}.jpg`,
+          );
+        }
+      }
       const screenshots = page.locator('main img[srcset]');
       expect(await screenshots.count(), path).toBeGreaterThan(0);
       for (const image of await screenshots.all()) {

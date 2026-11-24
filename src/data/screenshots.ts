@@ -1,4 +1,10 @@
-import variants from './screenshot-variants.json';
+import galleries from './product-galleries.json' with { type: 'json' };
+import variants from './screenshot-variants.json' with { type: 'json' };
+
+export const productGalleries: Record<
+  string,
+  readonly { file: string; caption: readonly string[] }[]
+> = galleries;
 
 // Delivery metadata only; product facts and original screenshot links remain
 // in their existing sources. Run scripts/generate-screenshot-variants.mjs after

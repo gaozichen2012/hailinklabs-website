@@ -1,53 +1,99 @@
 {
-  "tmproof": [
+  "samejob": [
     {
-      "file": "store-01-ticket",
-      "width": 663,
-      "height": 1440,
+      "file": "preview-01-send-a-clean-invoice",
+      "caption": ["Preview a finished invoice PDF", "预览生成的发票 PDF"]
+    },
+    {
+      "file": "preview-02-create-an-invoice",
+      "caption": ["Add the customer and service details", "填写客户和服务明细"]
+    },
+    {
+      "file": "preview-03-reuse-an-invoice",
       "caption": [
-        "Record the work and resources",
-        "记录实际工作与资源（英文 App 界面）"
+        "Reuse a previous invoice for a repeat job",
+        "沿用旧发票，为重复服务开票"
       ]
     },
     {
-      "file": "store-02-signature",
-      "width": 663,
-      "height": 1440,
+      "file": "01-repeat-invoices",
+      "caption": ["Start from a repeat customer", "从回头客的历史工作开始"]
+    },
+    {
+      "file": "02-reuse-job-details",
+      "caption": ["Review the customer and service", "核对客户与服务内容"]
+    },
+    {
+      "file": "03-preview-pdf",
+      "caption": ["Preview the finished invoice PDF", "预览生成的发票 PDF"]
+    },
+    {
+      "file": "04-keep-your-records",
+      "caption": ["Export and back up your records", "导出与备份记录"]
+    }
+  ],
+  "gearproof": [
+    {
+      "file": "preview-01-know-who-has-your-gear",
+      "caption": ["See who borrowed the gear", "查看器材借用人"]
+    },
+    {
+      "file": "preview-02-scan-out-a-kit",
+      "caption": ["Scan out a complete camera kit", "扫码借出整套相机器材"]
+    },
+    {
+      "file": "preview-03-check-every-return",
+      "caption": ["Check off returned items one by one", "逐件核对归还的器材"]
+    },
+    {
+      "file": "growth-01-whole-kit",
+      "caption": ["Check out the whole camera kit", "借出整套相机器材"]
+    },
+    {
+      "file": "growth-03-two-of-three-batteries",
+      "caption": ["Three batteries out. Two back.", "借出三块电池，归还两块"]
+    },
+    {
+      "file": "growth-04-damage-note",
+      "caption": ["Record damage separately", "单独记录器材损坏"]
+    },
+    {
+      "file": "growth-07-keep-the-record",
       "caption": [
-        "Capture the site acknowledgment",
-        "保存现场签认（英文 App 界面）"
+        "Keep missing gear and damage on record",
+        "保留缺失与损坏记录"
       ]
-    },
-    {
-      "file": "store-03-pdf",
-      "width": 663,
-      "height": 1440,
-      "caption": ["Review the ticket PDF", "核对工单 PDF（英文 App 界面）"]
-    },
-    {
-      "file": "store-04-history",
-      "width": 663,
-      "height": 1440,
-      "caption": ["Find earlier tickets", "查找历史工单（英文 App 界面）"]
     }
   ],
   "litterround": [
     {
+      "file": "preview-01-track-puppy-growth",
+      "caption": ["Follow a puppy’s weight history", "查看单只幼犬的体重变化"]
+    },
+    {
+      "file": "preview-02-weigh-the-litter",
+      "caption": [
+        "Weigh the litter one puppy at a time",
+        "逐只记录整窝幼犬的体重"
+      ]
+    },
+    {
+      "file": "preview-03-share-a-puppy-record",
+      "caption": [
+        "Share a puppy’s record as a PDF",
+        "以 PDF 分享单只幼犬的记录"
+      ]
+    },
+    {
       "file": "01-litter-board",
-      "width": 663,
-      "height": 1440,
       "caption": ["Review the litter board", "查看整窝概览（英文 App 界面）"]
     },
     {
       "file": "02-weight-round",
-      "width": 663,
-      "height": 1440,
       "caption": ["Record a weight round", "记录本轮体重（英文 App 界面）"]
     },
     {
       "file": "03-puppy-history",
-      "width": 663,
-      "height": 1440,
       "caption": [
         "Follow one puppy’s history",
         "查看单只幼犬历史（英文 App 界面）"
@@ -55,45 +101,72 @@
     },
     {
       "file": "04-handoff-pdf",
-      "width": 663,
-      "height": 1440,
       "caption": ["Prepare a handoff PDF", "准备交接 PDF（英文 App 界面）"]
     }
   ],
-  "calvingpocket": [
+  "tmproof": [
     {
-      "file": "growth-02-quick-entry",
-      "width": 663,
-      "height": 1440,
-      "caption": ["Record now. No herd setup.", "立即记录，无需牛群配置。"]
-    },
-    {
-      "file": "growth-03-untagged",
-      "width": 663,
-      "height": 1440,
-      "caption": ["No tag yet? Save the birth.", "没有耳标？先保存出生记录。"]
-    },
-    {
-      "file": "growth-04-tag-later",
-      "width": 663,
-      "height": 1440,
-      "caption": ["Add the tag to the same record", "在同一条记录中补齐耳标"]
-    },
-    {
-      "file": "growth-05-export-backup",
-      "width": 663,
-      "height": 1440,
+      "file": "preview-01-document-extra-work",
       "caption": [
-        "Export your season and keep a backup",
-        "导出产犊季并保存备份"
+        "Record extra work, labor, and materials",
+        "记录额外工作、工时和材料"
       ]
+    },
+    {
+      "file": "preview-02-capture-a-signature",
+      "caption": ["Capture a signature on site", "保存现场签认"]
+    },
+    {
+      "file": "preview-03-share-the-ticket",
+      "caption": [
+        "Share the finished T&M ticket as a PDF",
+        "以 PDF 分享工料工单"
+      ]
+    },
+    {
+      "file": "store-01-ticket",
+      "caption": [
+        "Record the work and resources",
+        "记录实际工作与资源（英文 App 界面）"
+      ]
+    },
+    {
+      "file": "store-02-signature",
+      "caption": [
+        "Capture the site acknowledgment",
+        "保存现场签认（英文 App 界面）"
+      ]
+    },
+    {
+      "file": "store-03-pdf",
+      "caption": ["Review the ticket PDF", "核对工单 PDF（英文 App 界面）"]
+    },
+    {
+      "file": "store-04-history",
+      "caption": ["Find earlier tickets", "查找历史工单（英文 App 界面）"]
     }
   ],
   "pressrecipe": [
     {
+      "file": "preview-01-repeat-proven-settings",
+      "caption": ["Repeat proven heat press settings", "复用已验证的热压参数"]
+    },
+    {
+      "file": "preview-02-log-each-press-test",
+      "caption": [
+        "Log the settings and result of a press test",
+        "记录热压测试的参数和结果"
+      ]
+    },
+    {
+      "file": "preview-03-find-a-recipe",
+      "caption": [
+        "Search and filter saved recipes",
+        "搜索和筛选已保存的热压配方"
+      ]
+    },
+    {
       "file": "01-repeat-what-worked",
-      "width": 663,
-      "height": 1440,
       "caption": [
         "Find settings from an earlier test",
         "查找历史测试参数（英文 App 界面）"
@@ -101,8 +174,6 @@
     },
     {
       "file": "02-save-every-real-test",
-      "width": 663,
-      "height": 1440,
       "caption": [
         "Save a new material test",
         "保存新的材料测试（英文 App 界面）"
@@ -110,8 +181,6 @@
     },
     {
       "file": "03-proven-settings",
-      "width": 663,
-      "height": 1440,
       "caption": [
         "Review the recorded setup",
         "核对已记录的设置（英文 App 界面）"
@@ -119,25 +188,76 @@
     },
     {
       "file": "04-wash-results",
-      "width": 663,
-      "height": 1440,
       "caption": [
         "Connect wash observations to the test",
         "关联洗涤观察与原测试（英文 App 界面）"
       ]
     }
   ],
+  "calvingpocket": [
+    {
+      "file": "preview-01-record-a-calf-birth",
+      "caption": ["Record a calf’s birth", "记录小牛出生信息"]
+    },
+    {
+      "file": "preview-02-save-without-a-tag",
+      "caption": [
+        "Save a calf record without an ear tag",
+        "没有耳标也能先保存小牛档案"
+      ]
+    },
+    {
+      "file": "preview-03-add-the-tag-later",
+      "caption": [
+        "Add the ear tag to the same record later",
+        "稍后在同一条记录上补录耳标"
+      ]
+    },
+    {
+      "file": "growth-02-quick-entry",
+      "caption": ["Record now. No herd setup.", "立即记录，无需牛群配置。"]
+    },
+    {
+      "file": "growth-03-untagged",
+      "caption": ["No tag yet? Save the birth.", "没有耳标？先保存出生记录。"]
+    },
+    {
+      "file": "growth-04-tag-later",
+      "caption": ["Add the tag to the same record", "在同一条记录中补齐耳标"]
+    },
+    {
+      "file": "growth-05-export-backup",
+      "caption": [
+        "Export your season and keep a backup",
+        "导出产犊季并保存备份"
+      ]
+    }
+  ],
   "hybridloop": [
     {
+      "file": "preview-01-time-workout-blocks",
+      "caption": [
+        "Time a workout block and see the next move",
+        "给当前训练环节计时并查看下一项动作"
+      ]
+    },
+    {
+      "file": "preview-02-build-a-circuit",
+      "caption": ["Build a run and row circuit", "编排跑步与划船组合"]
+    },
+    {
+      "file": "preview-03-compare-repeat-workouts",
+      "caption": [
+        "Compare times across comparable workouts",
+        "比较条件相同的复练用时"
+      ]
+    },
+    {
       "file": "build8-01-train",
-      "width": 660,
-      "height": 1434,
       "caption": ["Import or choose a workout", "导入或选择训练"]
     },
     {
       "file": "build8-03-manual-workout",
-      "width": 660,
-      "height": 1434,
       "caption": [
         "Time your workout and see what’s next",
         "计时并查看下一项动作"
@@ -145,8 +265,6 @@
     },
     {
       "file": "build8-05-review-and-repeat",
-      "width": 660,
-      "height": 1434,
       "caption": [
         "Review the result and repeat the original plan",
         "回顾成绩并复练原计划"
@@ -154,8 +272,6 @@
     },
     {
       "file": "build8-04-compatible-progress",
-      "width": 660,
-      "height": 1434,
       "caption": [
         "Compare sessions with matching conditions",
         "比较条件相同的训练"

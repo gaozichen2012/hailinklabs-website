@@ -1,6 +1,6 @@
 {
   "checked": "2026-10-30",
-  "note": "Existing release screenshots plus explicitly dated simulator DEMO captures. Screenshots resized only; UI unchanged. App PDF and CSV copied unchanged. English UI; fictional observations; no real purchase or physical material test. Source and published hashes retained. GearProof camera-kit captures dated 2026-10-30 are simulator footage with fictional records; the video is edited and captioned.",
+  "note": "Existing release screenshots plus explicitly dated simulator DEMO captures. Screenshots resized only; UI unchanged. App PDF and CSV copied unchanged. English UI; fictional observations; no real purchase or physical material test. Source and published hashes retained. GearProof camera-kit captures dated 2026-10-30 are simulator footage with fictional records; the video is edited and captioned. The November 24 promotional images frame real English app screens with captions and example records. Website JPEGs are resized from the promotional PNG originals.",
   "assets": [
     {
       "file": "public/products/samejob/01-repeat-invoices.jpg",
@@ -289,6 +289,132 @@
       "source": "ios-release-hub/apps/HybridLoop/screenshots/en-US/build8/build8-04-compatible-progress.png",
       "sourceSha256": "c6f26f5c4730362cd6d78e5211b5c254ce66443344b85d5ede3bce91b8bc3b4d",
       "sha256": "898f9d8f2cda7aea2554485792362289cd3232067ccc653c32f4207c7ad111df"
+    },
+    {
+      "file": "public/products/samejob/preview-01-send-a-clean-invoice.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / samejob-01-send-a-clean-invoice.png",
+      "sourceSha256": "fc9a1aa95df231771d2ddfb4a71695d448036d035a6323f7a448b962926a143f",
+      "sha256": "728a568435683919c55e6b30e0543abcc7a05a7eb19bb603a77a5cc0465c1528"
+    },
+    {
+      "file": "public/products/samejob/preview-02-create-an-invoice.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / samejob-02-create-an-invoice.png",
+      "sourceSha256": "b5ed05a973f69e16ce9da8221352c1473a1522ff6c7abf3650a8fe0424e56eae",
+      "sha256": "08c369ea0d0277149bb5460b2d617247a496bd443c7c15cf4290a5272e284232"
+    },
+    {
+      "file": "public/products/samejob/preview-03-reuse-an-invoice.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / samejob-03-reuse-an-invoice.png",
+      "sourceSha256": "3b64343995eefd9202e9223b79ca0026a79f3e4d2f1f52ed0369935ab235d118",
+      "sha256": "c7e0b41e23e8c500e90ab29e2eb7f2bffb13e561a41a4d05c1d9d3e612ee56b8"
+    },
+    {
+      "file": "public/products/gearproof/preview-01-know-who-has-your-gear.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / gearproof-01-know-who-has-your-gear.png",
+      "sourceSha256": "f06ccb498841f73e8fed6733205eef238ec0dc346fbe8dc77f7f45f183e61762",
+      "sha256": "9eb65fc326a288da1453af749224a25b38e64e393770114ddb5e40f1c12b50f6"
+    },
+    {
+      "file": "public/products/gearproof/preview-02-scan-out-a-kit.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / gearproof-02-scan-out-a-kit.png",
+      "sourceSha256": "d6651d6f6eb8c06a8ea3605f8729d4d7e2b9321f939f4a4c2e160f1a44e13f8c",
+      "sha256": "b98d33244868a9f2e4185acc2404892c5635045e3d4d5c446bb03f09872c5b0c"
+    },
+    {
+      "file": "public/products/gearproof/preview-03-check-every-return.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / gearproof-03-check-every-return.png",
+      "sourceSha256": "d2c0d771143c2c804e394c73be0fabbcd9ad4c48839b144dede924a7cf8acc7d",
+      "sha256": "39e3266af934644fe437a2d5122f102f17b3e58301944915518332bf5495e8f7"
+    },
+    {
+      "file": "public/products/litterround/preview-01-track-puppy-growth.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / litterround-01-track-puppy-growth.png",
+      "sourceSha256": "ee7c154465c154ed65ef534c5ef157feebfe3327fc05d72aa1ac612e2421567f",
+      "sha256": "6b18683258c613043a4334145ad894c9220c6ef2235a1a0f5c9a5c4ea18b5259"
+    },
+    {
+      "file": "public/products/litterround/preview-02-weigh-the-litter.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / litterround-02-weigh-the-litter.png",
+      "sourceSha256": "2018e151552a69816ba6c0ccbaf497e0dfcd27bf380c4cc44b7655db7bdd7ccf",
+      "sha256": "b7f5cb2d1d92161004b6fe95f4a7a74d2914db1d4c9321e46f2c6361b7ec4ec6"
+    },
+    {
+      "file": "public/products/litterround/preview-03-share-a-puppy-record.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / litterround-03-share-a-puppy-record.png",
+      "sourceSha256": "c5d268b99a9260b5ed65fed90ae52c6237a9967fcf93d2a0b7ee171609644c47",
+      "sha256": "b127523b4817f9103751672c6632d0757b68cd3a585db03a07f359e1d3a1b63d"
+    },
+    {
+      "file": "public/products/tmproof/preview-01-document-extra-work.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / tmproof-01-document-extra-work.png",
+      "sourceSha256": "bbe0b4954ef848458621bc2a1e47c400f384b9921b018da6696945464451577a",
+      "sha256": "6b9a163e757f125b9c00fd58574a1c378eec996e6a94c984cc41e1d25ed368a7"
+    },
+    {
+      "file": "public/products/tmproof/preview-02-capture-a-signature.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / tmproof-02-capture-a-signature.png",
+      "sourceSha256": "fc76b8106e1f64c260cd6e2818dc020e1d1e8ed1a71441a92a01801d980718d7",
+      "sha256": "dd96485f69a0f3d2f6b7bc4153eff98c5facfa8897fba398adfa299863d9f8c8"
+    },
+    {
+      "file": "public/products/tmproof/preview-03-share-the-ticket.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / tmproof-03-share-the-ticket.png",
+      "sourceSha256": "3a38224587571615944cd9e894f8f74c5675b8b0f67f041a1780eef57876eecf",
+      "sha256": "c816f7aaa24ce75dc79b7cdadb535e8c987d045ab094329292d1440443102d3d"
+    },
+    {
+      "file": "public/products/pressrecipe/preview-01-repeat-proven-settings.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / pressrecipe-01-repeat-proven-settings.png",
+      "sourceSha256": "dace1ace28a8f1ef00cd83f4f2fe4987ec7e0167341a5aa29d6ba7d565ed2f45",
+      "sha256": "55d673ebdd013c1611309d842f1f8f8fd96ecf2872a8b79d4a9fce743824452d"
+    },
+    {
+      "file": "public/products/pressrecipe/preview-02-log-each-press-test.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / pressrecipe-02-log-each-press-test.png",
+      "sourceSha256": "75b003478afa9e9acce01c24381d6c2584e20a13b1ff17912cca45c8d44f0e1a",
+      "sha256": "f3b9acaa30139813cf6590ae17a3771fdc82cf604bd2a9224799d3ef632f8084"
+    },
+    {
+      "file": "public/products/pressrecipe/preview-03-find-a-recipe.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / pressrecipe-03-find-a-recipe.png",
+      "sourceSha256": "7d99690e5afe84c85ffe377ab483ab710ab006544363ffd08395400cdb523c95",
+      "sha256": "ba4148669d21abbdef08f9fb6eb8d9a53f41a1137e69b7e68be2693fda111b82"
+    },
+    {
+      "file": "public/products/calvingpocket/preview-01-record-a-calf-birth.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / calvingpocket-01-record-a-calf-birth.png",
+      "sourceSha256": "6b9df9fc987d73268dcd78870a4d2855db23d6da7469aea0a96c317890a6c5d4",
+      "sha256": "7e99f043c0619159fdf7531d1777ae26ff19a3b7a08ebe4aff8f02e99d1cfdb0"
+    },
+    {
+      "file": "public/products/calvingpocket/preview-02-save-without-a-tag.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / calvingpocket-02-save-without-a-tag.png",
+      "sourceSha256": "0a7f574fe7f97260cf9573294d80e106376d25df8d75717108ce9f18c59c42e1",
+      "sha256": "7a4a824fa4acbffdeb61341c30faaf08c2a4925a352c068f8bfcc9cb31f3d9e2"
+    },
+    {
+      "file": "public/products/calvingpocket/preview-03-add-the-tag-later.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / calvingpocket-03-add-the-tag-later.png",
+      "sourceSha256": "99202824aab395fab649b71acd9eda1905182b49d98f9ea3665c4e3504c67b32",
+      "sha256": "dd755ca4cfc99b23ebf5edd417a92d37931fbb0ed10fe6fa21cc8dee05f24bb0"
+    },
+    {
+      "file": "public/products/hybridloop/preview-01-time-workout-blocks.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / hybridloop-01-time-workout-blocks.png",
+      "sourceSha256": "1e4ddc7b7dd91ccf22eea4435a806f68be81d18b1f404b9bf263be4a41a7af18",
+      "sha256": "acacc8455d183f5774d0f4a523971f075d987d0ab409e7a85146b064c763f6b5"
+    },
+    {
+      "file": "public/products/hybridloop/preview-02-build-a-circuit.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / hybridloop-02-build-a-circuit.png",
+      "sourceSha256": "24eab4ce28c64891ca2c2ab1883b360d104a7a33910dff44b9707760ff97677a",
+      "sha256": "0c44279b95810475401e9227e567c01c1d1c6bbe99683fd9ee45a3e24673ec6c"
+    },
+    {
+      "file": "public/products/hybridloop/preview-03-compare-repeat-workouts.jpg",
+      "source": "Hailink Labs iPhone promotional artwork, 2026-11-24 / hybridloop-03-compare-repeat-workouts.png",
+      "sourceSha256": "82ae1e7e62900df1ca37334ed8b8da1c96d800934e78314be344de60a318e705",
+      "sha256": "304195a29e0c58fe7b4964159515cebb03d54daeb5bb15b2f8167784f1aaabc0"
     }
   ]
 }

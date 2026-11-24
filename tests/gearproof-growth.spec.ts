@@ -12,7 +12,7 @@ for (const prefix of ['', '/zh']) {
     ).toBeVisible();
     await expect(
       page.locator('.product-gallery').last().locator('img'),
-    ).toHaveCount(4);
+    ).toHaveCount(7);
     const video = page.locator('#gearproof-demo video');
     await video.scrollIntoViewIfNeeded();
     await expect(video).toBeVisible();

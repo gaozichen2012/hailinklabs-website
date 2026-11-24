@@ -28,7 +28,7 @@ for (const prefix of ['', '/zh']) {
       const images = page.locator(
         '.product-gallery:not(.product-opening .product-gallery) img',
       );
-      await expect(images).toHaveCount(4);
+      await expect(images).toHaveCount(7);
       for (const image of await images.all()) {
         await image.scrollIntoViewIfNeeded();
         await expect(image).toBeVisible();

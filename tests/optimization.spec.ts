@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { catalog, categories, listings } from '../src/data/catalog';
 import { buildAppStoreUrl } from '../src/data/app-store';
 import qrTargets from '../src/data/download-qr.json' with { type: 'json' };
+import { productGalleries } from '../src/data/screenshots';
 import { templates } from '../src/data/resources';
 for (const prefix of ['', '/zh']) {
   test(`${prefix || 'English'} downloadable catalog preserves every category deep link`, async ({
@@ -11,6 +12,14 @@ for (const prefix of ['', '/zh']) {
     await expect(page.locator('#downloadable .matrix-card')).toHaveCount(
       Object.keys(listings).length,
     );
+    for (const slug of Object.keys(listings)) {
+      await expect(
+        page.locator(`#download-${slug} .card-art img`),
+      ).toHaveAttribute(
+        'src',
+        `/products/${slug}/${productGalleries[slug][0].file}.jpg`,
+      );
+    }
     await expect(page.locator('.catalog-group .matrix-card')).toHaveCount(
       catalog.length - Object.keys(listings).length,
     );
@@ -60,11 +69,25 @@ for (const prefix of ['', '/zh']) {
       page,
     }) => {
       await page.goto(`${prefix}/products/${slug}`);
+      const gallery = page.locator(
+        '.product-gallery:not(.product-opening .product-gallery) img',
+      );
+      await expect(gallery).toHaveCount(7);
+      for (const [index, shot] of productGalleries[slug]
+        .slice(0, 3)
+        .entries()) {
+        expect(shot.file).toMatch(new RegExp(`^preview-0${index + 1}-`));
+        await expect(gallery.nth(index)).toHaveAttribute(
+          'src',
+          `/products/${slug}/${shot.file}.jpg`,
+        );
+      }
       await expect(
-        page.locator(
-          '.product-gallery:not(.product-opening .product-gallery) img',
-        ),
-      ).toHaveCount(4);
+        page.locator('.product-opening .product-gallery img'),
+      ).toHaveAttribute(
+        'src',
+        `/products/${slug}/${productGalleries[slug][0].file}.jpg`,
+      );
       await expect(
         page.locator('.product-intro .store-download a'),
       ).toHaveAttribute('href', buildAppStoreUrl({ slug })!);

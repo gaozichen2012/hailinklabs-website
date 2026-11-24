@@ -64,7 +64,7 @@ const pageUpdates: Record<string, string> = {
   '/products/loadquilt/privacy': '2026-10-08',
 
   '/': '2026-11-24',
-  '/products': '2026-11-22',
+  '/products': '2026-11-24',
   '/support': '2026-11-22',
   '/products/songorun/privacy': '2026-11-22',
   '/contact': '2026-10-08',

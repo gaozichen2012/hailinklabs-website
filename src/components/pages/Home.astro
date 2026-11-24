@@ -6,7 +6,7 @@ import Product from '../../components/Product.astro';
 import { categories, featured, listings } from '../../data/catalog';
 import { copy } from '../../data/products';
 import { site } from '../../data/site';
-import { screenshot } from '../../data/screenshots';
+import { productGalleries, screenshot } from '../../data/screenshots';
 
 import { translator, localizedPath, type Locale } from '../../data/i18n';
 interface Props {
@@ -16,6 +16,9 @@ const { locale } = Astro.props;
 const t = translator(locale);
 const href = (path: string) => localizedPath(path, locale);
 const downloadableCount = Object.keys(listings).length;
+const sameJobPreview = productGalleries.samejob[0];
+const gearProofPreview = productGalleries.gearproof[0];
+const captionIndex = locale === 'en' ? 0 : 1;
 ---
 
 <Layout
@@ -80,26 +83,18 @@ const downloadableCount = Object.keys(listings).length;
       <div class="showcase-screens">
         <div class="showcase-screen screen-primary">
           <img
-            {...screenshot('/products/samejob/01-repeat-invoices.jpg')}
+            {...screenshot(`/products/samejob/${sameJobPreview.file}.jpg`)}
             sizes="(max-width: 600px) 45vw, (max-width: 1050px) 35vw, 240px"
             fetchpriority="high"
-            alt={
-              locale === 'en'
-                ? 'SameJob: actual App Store screen showing repeat invoices'
-                : 'SameJob：展示重复开票的真实 App Store 界面'
-            }
+            alt={`SameJob · ${sameJobPreview.caption[captionIndex]}`}
           />
         </div>
         <div class="showcase-screen screen-secondary">
           <img
-            {...screenshot('/products/gearproof/04-gearproof.jpg')}
+            {...screenshot(`/products/gearproof/${gearProofPreview.file}.jpg`)}
             sizes="(max-width: 600px) 40vw, (max-width: 1050px) 30vw, 200px"
             decoding="async"
-            alt={
-              locale === 'en'
-                ? 'GearProof: actual App Store equipment screen'
-                : 'GearProof：真实 App Store 器材界面'
-            }
+            alt={`GearProof · ${gearProofPreview.caption[captionIndex]}`}
           />
         </div>
       </div>

@@ -48,6 +48,7 @@ for (const prefix of ['', '/zh']) {
       .nth(1)
       .locator('.screenshot-grid img');
     expect(await shots.count()).toBeGreaterThan(1);
+    for (const shot of await shots.all()) await shot.scrollIntoViewIfNeeded();
     await expect
       .poll(() =>
         shots.evaluateAll((imgs: HTMLImageElement[]) =>
