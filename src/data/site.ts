@@ -5,6 +5,8 @@ export const site = {
   legalNameZh: '深圳市海狸智联科技有限公司',
   email: 'gaozichen@hailinklabs.com',
   url: 'https://hailinklabs.com',
+  appStoreDeveloperUrl:
+    'https://apps.apple.com/us/developer/shenzhen-hailink-technology-co-ltd/id6814700436',
   productName: 'Invoice Maker: SameJob',
 };
 

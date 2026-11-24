@@ -110,7 +110,9 @@ for (const englishPath of englishRoutes) {
         ).fill(listing.url);
       }
       const storeLinks = await page
-        .locator('a[href^="https://apps.apple.com/"]')
+        .locator(
+          `a[href^="https://apps.apple.com/"]:not([href="${site.appStoreDeveloperUrl}"])`,
+        )
         .evaluateAll((links) =>
           links.map((link) => {
             const url = new URL(link.getAttribute('href')!);
@@ -119,6 +121,11 @@ for (const englishPath of englishRoutes) {
           }),
         );
       expect(storeLinks.sort()).toEqual(expectedStoreLinks.sort());
+      if (englishPath === '/about') {
+        await expect(
+          page.locator(`main a[href="${site.appStoreDeveloperUrl}"]`),
+        ).toHaveCount(1);
+      }
       for (const download of await page.locator('.store-download').all()) {
         await expect(download).toContainText(
           locale === 'en' ? /US store[;.]/ : /美国商店[。；]/,

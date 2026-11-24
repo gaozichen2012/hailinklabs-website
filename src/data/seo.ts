@@ -41,6 +41,8 @@ const searchDescriptions: Record<string, string> = {
     'Practical guides and free templates for T&M tickets, extra work and tool handovers. Keep job records separate from equipment movements.',
   '/guides/animal-records':
     'Organize puppy observations and calf birth records with clear identities, dates and units. Explore free logs and guides for reliable handovers.',
+  '/zh/guides/animal-records':
+    '用幼犬体重记录表和犊牛出生记录表整理个体编号、日期、测量单位与缺失值。查看填写示例，免费下载可打印的英文 PDF 或可编辑的中文 CSV，无需注册。',
   '/guides/heat-press':
     'Keep heat press setup and wash-test records tied to materials, equipment and sample IDs. Explore free templates without universal setting claims.',
   '/guides/small-business':
@@ -113,6 +115,9 @@ export function structuredData(
     url: site.url,
     logo: absolute('/brand/hailink-symbol.svg?v=1.1'),
     email: site.email,
+    ...((englishPath === '/' || englishPath === '/about') && {
+      sameAs: [site.appStoreDeveloperUrl],
+    }),
   };
   const product = catalog.find(
     (item) => englishPath === `/products/${item.slug}`,

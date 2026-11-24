@@ -53,26 +53,39 @@ test('public AI crawler policy preserves all declared allow groups', async () =>
 });
 test('fixed AI benchmark has independent categories and unbranded discovery questions', async () => {
   const { readFile } = await import('node:fs/promises');
-  const { questions } = JSON.parse(
+  const { questions, extensions } = JSON.parse(
     await readFile('tests/ai-discovery-benchmark.json', 'utf8'),
   );
   assert.equal(questions.length, 36);
   assert.equal(new Set(questions.map((q) => q.id)).size, 36);
+  const hybridloop = extensions.hybridloop.questions;
+  assert.equal(hybridloop.length, 6);
+  assert.ok(hybridloop.every((q) => q.app === 'hybridloop'));
+  const allQuestions = [...questions, ...hybridloop];
+  assert.equal(
+    new Set(allQuestions.map((q) => q.id)).size,
+    allQuestions.length,
+  );
   for (const [category, count] of Object.entries({
     recommendation: 12,
     workflow_template: 12,
     brand_fact: 6,
     negative_fit: 6,
-  }))
+  })) {
     assert.equal(
       questions.filter((q) => q.category === category).length,
       count,
     );
-  for (const q of questions.filter((q) =>
+    assert.equal(
+      hybridloop.filter((q) => q.category === category).length,
+      count / 6,
+    );
+  }
+  for (const q of allQuestions.filter((q) =>
     ['recommendation', 'workflow_template'].includes(q.category),
   ))
     assert.ok(
-      !/Hailink|SameJob|GearProof|TMProof|PressRecipe|LitterRound|CalvingPocket|hailinklabs\.com/i.test(
+      !/Hailink|SameJob|GearProof|TMProof|PressRecipe|LitterRound|CalvingPocket|HybridLoop|hailinklabs\.com/i.test(
         q.question,
       ),
     );

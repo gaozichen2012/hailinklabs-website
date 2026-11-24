@@ -212,6 +212,21 @@ for (const name of names.filter((name) => name.endsWith('.html'))) {
   for (const href of links.filter((href) =>
     href.startsWith('https://apps.apple.com/'),
   )) {
+    if (
+      english === '/about' &&
+      href ===
+        'https://apps.apple.com/us/developer/shenzhen-hailink-technology-co-ltd/id6814700436'
+    ) {
+      const organization = graph.find(
+        (node) => node['@type'] === 'Organization',
+      );
+      assert.deepEqual(
+        organization?.sameAs,
+        [href],
+        `${path} publisher identity`,
+      );
+      continue;
+    }
     const url = new URL(href);
     assert(
       [...listings.values()].some(

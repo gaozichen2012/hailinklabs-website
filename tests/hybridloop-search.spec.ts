@@ -7,6 +7,35 @@ const guide = 'how-to-import-a-workout';
 const product = `/products/${slug}`;
 
 for (const prefix of ['', '/zh']) {
+  test(`${prefix || 'English'} homepage links to HybridLoop and the repeat guide separates comparable results`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 320, height: 640 });
+    await page.goto(prefix || '/');
+    const homepageLink = page.locator(
+      `.hero-bottom a[href="${prefix}${product}"]`,
+    );
+    await expect(homepageLink).toBeInViewport();
+    await homepageLink.click();
+    await expect(page.locator('main h1')).toContainText('HybridLoop');
+    await page
+      .locator(`main a[href="${prefix}/guides/compare-repeat-workouts"]`)
+      .click();
+    const example = page.locator('#worked-example');
+    await expect(example.getByRole('row')).toHaveCount(4);
+    await expect(example.getByRole('row').nth(2)).toContainText('9:12');
+    await expect(example.getByRole('row').nth(2)).toContainText(
+      prefix ? '快 36 秒' : '36 seconds faster',
+    );
+    await expect(example.getByRole('row').nth(3)).toContainText(
+      prefix ? '变式' : 'Variation',
+    );
+    const overflows = await page.evaluate(
+      () => document.documentElement.scrollWidth > window.innerWidth,
+    );
+    expect(overflows).toBe(false);
+  });
+
   test(`${prefix || 'English'} HybridLoop download fits a short phone viewport`, async ({
     page,
   }) => {

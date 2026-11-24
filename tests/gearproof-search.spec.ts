@@ -7,6 +7,15 @@ for (const prefix of ['', '/zh']) {
   }) => {
     test.setTimeout(120000);
     await page.goto(`${prefix}/guides/equipment-checkout-log-template`);
+    const answer = page.locator('.quick-answer');
+    await expect(answer).toContainText(
+      prefix
+        ? '只登记实际收到的数量'
+        : 'record only the quantity actually received',
+    );
+    await expect(answer).toContainText(
+      prefix ? '另记损坏状况' : 'record its condition separately',
+    );
     await expect(page.locator('.record-table').last()).toContainText(
       'GearProof',
     );

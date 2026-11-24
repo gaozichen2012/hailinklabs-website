@@ -566,8 +566,8 @@
       "按资产编号核对借出与归还数量，分别保留缺件与损坏记录。结合填写示例使用免费 PDF 与 CSV 借出记录表。"
     ],
     "answer": [
-      "An equipment checkout log records which asset left, who took it, when it is expected back and what condition it was in at handover. Start a new transaction for every loan and close it with the actual return time and condition. The free template below works on paper or in a spreadsheet; use consistent asset IDs so repeated loans remain distinguishable.",
-      "器材借出记录应写明借出的具体资产、借用人、预计归还时间和交接状态。每次借用新建一条记录，归还时补上实际时间与状态。下方免费模板可以打印或导入电子表格；使用一致的资产编号，让同一器材的多次借用能够区分。"
+      "For a partial return, match the original checkout by asset ID and record only the quantity actually received. Keep missing items marked as outstanding and leave the checkout open. Count a damaged item as returned if you received it, then record its condition separately. For example, if one of two batteries comes back, one battery stays outstanding even if the camera body is back.",
+      "器材只归还一部分时，按资产编号找到原借出记录，只登记实际收到的数量。缺件继续标为待归还，借出记录暂不结清。已收到但有损坏的物品计入归还数量，另记损坏状况。例如，借出两块电池、只收到一块，即使机身已归还，也还有一块电池待归还。"
     ],
     "definition": [
       "A checkout log is a transaction history for equipment, not merely a list of what a team owns.",
@@ -597,8 +597,12 @@
         "确定预计归还时间并记录借出状态。"
       ],
       [
-        "Close the loan only after checking the returned item and parts.",
-        "检查归还器材和部件后再关闭借用记录。"
+        "Count what came back, record its return time and note any damage separately from missing items.",
+        "清点实际归还的物品，记录归还时间，分别注明损坏与缺件。"
+      ],
+      [
+        "Keep the checkout open while items are outstanding. Close it after all expected items have been accounted for, and retain the condition notes.",
+        "还有物品待归还时，保留原借出记录为未结清。预期归还的物品均核对后再结清，并保留状况备注。"
       ]
     ],
     "mistakes": [
@@ -628,7 +632,7 @@
       }
     ],
     "publishedAt": "2026-10-04",
-    "updatedAt": "2026-11-14",
+    "updatedAt": "2026-11-24",
     "workedExample": {
       "title": [
         "Reconcile the filled checkout worksheet",
@@ -2437,8 +2441,8 @@
       ]
     ],
     "example": [
-      "Fictional comparison: two For Time sessions on the same two-round plan take 9:48 and 9:12, with the same work and rest. A third result of 8:55 on a shorter row goes in the log with the changed distance. Compare the first two results and keep the third as a variation.",
-      "虚构比较：同一个两轮 For Time 计划，任务和休息相同时，两次用时分别是 9:48 与 9:12。第三次划船距离缩短、用时 8:55，应注明变化，作为变式保留；前两次可以进行比较。"
+      "Start with the same two-round For Time plan and check what was actually completed in each session. The example below shows how a shorter row changes which results you can compare.",
+      "从同一个两轮 For Time 计划开始，核对每次实际完成了什么。下面的示例展示缩短划船距离后，哪些成绩可以放在一起比较。"
     ],
     "steps": [
       [
@@ -2491,6 +2495,49 @@
       }
     ],
     "publishedAt": "2026-11-20",
-    "updatedAt": "2026-11-20"
+    "updatedAt": "2026-11-24",
+    "workedExample": {
+      "title": [
+        "Compare two repeats and one variation",
+        "对比两次同条件复练与一次变式"
+      ],
+      "caption": [
+        "Fictional For Time sessions using a two-round plan",
+        "虚构示例，使用两轮 For Time 计划"
+      ],
+      "scrollHint": [
+        "On a narrow screen, scroll the table sideways to read every column.",
+        "窄屏可横向滚动表格，查看所有列。"
+      ],
+      "columns": [
+        ["Session & time", "场次与用时"],
+        ["Actual work", "实际任务"],
+        ["How to log it", "记录方式"]
+      ],
+      "rows": [
+        [
+          ["1 · 9:48", "1 · 9:48"],
+          ["Row 500 m each round", "每轮划船 500 米"],
+          ["Baseline", "基准"]
+        ],
+        [
+          ["2 · 9:12", "2 · 9:12"],
+          ["Same work and rest as session 1", "任务与休息同第 1 场"],
+          ["Comparable repeat, 36 seconds faster", "同条件复练，快 36 秒"]
+        ],
+        [
+          ["3 · 8:55", "3 · 8:55"],
+          [
+            "Row reduced to 400 m each round. All other conditions unchanged.",
+            "每轮划船缩短到 400 米，其余条件相同。"
+          ],
+          ["Variation. Record the shorter distance.", "变式，注明缩短的距离。"]
+        ]
+      ],
+      "note": [
+        "Use sessions 1 and 2 to compare times under the original plan. Keep session 3 in the log as a variation with a shorter row.",
+        "用第 1、2 场比较原计划下的用时。第 3 场也保留在记录里，标为缩短划船距离的变式。"
+      ]
+    }
   }
 ]

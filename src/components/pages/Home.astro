@@ -28,7 +28,7 @@ const downloadableCount = Object.keys(listings).length;
   description={
     locale === 'en'
       ? 'Find iPhone apps for invoicing, equipment handoffs, field records and workout timing. Browse available apps and free worksheets without signing up.'
-      : 'Hailink Labs 提供用于开票、器材交接、现场记录和训练计时的 iPhone App。浏览已上架产品，免注册获取免费工作表。'
+      : '浏览 Hailink Labs 在美国 App Store 上架的 iPhone App，用于开票、器材借还、动物记录和训练计时。查看填写示例，免注册下载可打印 PDF 和可编辑 CSV 工作表。'
   }
 >
   <section class="hero studio-hero">
@@ -43,9 +43,21 @@ const downloadableCount = Object.keys(listings).length;
       </h1>
       <div class="hero-bottom">
         <p>
-          {locale === 'en'
-            ? 'Practical iPhone apps for invoicing, equipment handoffs, field records and workout timing.'
-            : '用实用的 iPhone App 开票、交接器材、记录现场工作或为训练计时。'}
+          {locale === 'en' ? (
+            <>
+              Practical iPhone apps for invoicing, equipment handoffs and field
+              records. For training, try the{' '}
+              <a href={href('/products/hybridloop')}>
+                HybridLoop workout timer
+              </a>
+              .
+            </>
+          ) : (
+            <>
+              用 iPhone App 开票、交接器材和记录现场工作，也可以用
+              <a href={href('/products/hybridloop')}>HybridLoop 为训练计时</a>。
+            </>
+          )}
         </p>
         <a class="button" href={`${href('/products')}#downloadable`}>
           {locale === 'en'

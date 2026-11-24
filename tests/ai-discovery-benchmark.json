@@ -220,5 +220,48 @@
       "category": "negative_fit",
       "question": "Is CalvingPocket suitable for complete herd management with vaccination and weight histories?"
     }
-  ]
+  ],
+  "extensions": {
+    "hybridloop": {
+      "addedAt": "2026-11-24",
+      "questions": [
+        {
+          "id": "hybridloop-1",
+          "app": "hybridloop",
+          "category": "recommendation",
+          "question": "Which iPhone workout timer lets me import my own text plan and run the same plan again later?"
+        },
+        {
+          "id": "hybridloop-2",
+          "app": "hybridloop",
+          "category": "recommendation",
+          "question": "What iPhone app can time a workout with running, rowing and reps and keep a record of the result?"
+        },
+        {
+          "id": "hybridloop-3",
+          "app": "hybridloop",
+          "category": "workflow_template",
+          "question": "How should I choose between For Time, EMOM and AMRAP, and what result should I record for each?"
+        },
+        {
+          "id": "hybridloop-4",
+          "app": "hybridloop",
+          "category": "workflow_template",
+          "question": "Can I compare two repeat workout times if I shortened the rowing distance in the second session?"
+        },
+        {
+          "id": "hybridloop-5",
+          "app": "hybridloop",
+          "category": "brand_fact",
+          "question": "Which timer modes and voice command language does HybridLoop support?"
+        },
+        {
+          "id": "hybridloop-6",
+          "app": "hybridloop",
+          "category": "negative_fit",
+          "question": "Does HybridLoop independently measure the distance and repetitions I complete using sensors?"
+        }
+      ]
+    }
+  }
 }

@@ -69,6 +69,13 @@ const href = (path: string) => localizedPath(path, locale);
           <dd>{t('Shenzhen, China')}</dd>
         </div>
       </dl>
+      <p>
+        <a href={site.appStoreDeveloperUrl}>
+          {locale === 'en'
+            ? 'Hailink Labs publisher page on the US App Store'
+            : '在美国 App Store 查看 Hailink Labs 发布者页面'}
+        </a>
+      </p>
     </div>
   </section>
   <section class="section-row">
